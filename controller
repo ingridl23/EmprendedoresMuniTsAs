@@ -1,0 +1,4 @@
+
+Warning: require(C:\laragon\www\EmprendedoresMuniTsAs/vendor/autoload.php): failed to open stream: No such file or directory in C:\laragon\www\EmprendedoresMuniTsAs\artisan on line 18
+
+Fatal error: require(): Failed opening required 'C:\laragon\www\EmprendedoresMuniTsAs/vendor/autoload.php' (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\EmprendedoresMuniTsAs\artisan on line 18
