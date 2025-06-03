@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+//controller para emprendedores
 class HomeController extends Controller
 {
 
