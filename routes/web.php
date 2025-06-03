@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use function view;
 use App\Http\Controllers\HomeController;
 
 
-Route::get('/', [HomeController::class, "invoke"]); //home del sitio emprendedores general, este seria nuestro index
+
+
+Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
+
+//agregar rutas para las secciones individuales del emprendedor
+// agregar para admin
