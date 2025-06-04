@@ -14,13 +14,26 @@ class EmprendedorController extends Controller{
     }
 
     public function showEmprendimientoId($id){
-        $emprendimiento=emprendedores::find($id);
-        $redesId=$emprendimiento->redes_id;
-        if(isset($redesId)){
-            $informacionRedes=redes::find($redesId);
-            return view("emprendedores.emprendedor", compact("emprendimiento", "informacionRedes"));
+        $emprendimiento=emprendedores::join('redes', 'redes_id', '=', 'redes.id')->where('emprendedores.id',$id)->get();
+        if(isset($emprendimiento)){
+            return view("emprendedores.emprendedor", compact('emprendimiento'));
         }
-        return view("emprendedores.emprendedor", compact("emprendimiento"));
+        return view("error"); 
+    }
+
+    public function filterEmprendimientos(Request $request){
+        if(isset($request->categoria) && isset($request->nombre)){
+            //buscar filtro por los dos
+        }
+        else if(isset($request->categoria) && !isset($request->nombre)){
+            //buscar por categoria
+        }
+        else if(!isset($request->categoria) && isset($request->nombre)){
+            //buscar por nombre
+        }
+        else{
+           return $this->showEmprendimientos();
+        }
     }
 
 
