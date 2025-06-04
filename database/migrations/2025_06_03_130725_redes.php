@@ -15,8 +15,9 @@ class Redes extends Migration
     {
         Schema::create('redes', function (Blueprint $table) {
             $table->id();
-            $table->string('Instagram')->nullable();
-            $table->string('Facebook')->nullable();
+            $table->string('instagram');
+            $table->string('facebook');
+            $table->integer('whatsapp');
             $table->timestamps();
         });
         

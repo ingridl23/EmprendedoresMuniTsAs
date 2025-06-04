@@ -18,8 +18,8 @@ class Emprendedores extends Migration
             $table->string('nombre');
             $table->text('descripcion');
             $table->string('categoria');
-            $table->integer('contacto');
-            $table->unsignedBigInteger('redes_id')->references('id')->on('redes');
+            $table->unsignedBigInteger('redes_id');
+            $table->foreign('redes_id')->references('id')->on('redes')->onDelete('restrict');
             $table->string('imagen');
             $table->timestamps();
         });

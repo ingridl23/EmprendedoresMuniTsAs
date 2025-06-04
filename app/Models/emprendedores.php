@@ -13,5 +13,10 @@ class emprendedores extends Model
         return $this->hasOne(redes::class);
         //en el controller se puede usar para buscar las redes como $phone = User::find(1)->phone;
     }
+
+    public static function showEmprendimientos(){
+        $emprendimientos= emprendedores::select(['id','nombre','descripcion', 'imagen'])->get();
+        return $emprendimientos;
+    }
     
 }
