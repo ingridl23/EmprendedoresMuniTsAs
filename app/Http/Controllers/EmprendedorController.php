@@ -1,38 +1,77 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\constants;
 use Illuminate\Http\Request;
 use App\Models\emprendedores;
 use App\Models\redes;
 class EmprendedorController extends Controller{
    public function showEmprendimientos(){
-        $emprendimientos= emprendedores::showEmprendimientos();
         //VER SI TRAER TODOS LOS DATOS O SOLO IMG, NOMBRE, DESCRIPCION PARA DESPUES
         //SI SE HACE CLICK EN EL EMPRENDIMIENTO SE MUESTREN TODOS LOS DATOS
-        return view("emprendedores.emprendedores", compact("emprendimientos"));
+        $emprendimientos= emprendedores::showEmprendimientos();
+        if(count($emprendimientos)>constants::VALORMIN){
+            return view("emprendedores.emprendedores", compact("emprendimientos"));
+        }
+        return view("error");
     }
 
     public function showEmprendimientoId($id){
-        $emprendimiento=emprendedores::join('redes', 'redes_id', '=', 'redes.id')->where('emprendedores.id',$id)->get();
-        if(isset($emprendimiento)){
-            return view("emprendedores.emprendedor", compact('emprendimiento'));
+        if(is_numeric($id) && $id>constants::VALORMIN){
+            $emprendimiento=emprendedores::showEmprendimientoId($id);
+            if(count($emprendimiento)>constants::VALORMIN){
+                return view("emprendedores.emprendedor", compact('emprendimiento'));
+            }
         }
-        return view("error"); 
+        return null; 
+        //return view("error"); CREAR VISTA
     }
 
     public function filterEmprendimientos(Request $request){
-        if(isset($request->categoria) && isset($request->nombre)){
-            //buscar filtro por los dos
-        }
-        else if(isset($request->categoria) && !isset($request->nombre)){
-            //buscar por categoria
-        }
-        else if(!isset($request->categoria) && isset($request->nombre)){
-            //buscar por nombre
+
+        $request->validate([
+            'categoria'=>'string|min:1|max:60',
+            'nombre'=>'string|min:1|max:100'
+        ]);
+        $categoria=$request->categoria;
+        $nombre=$request->nombre;
+        $emprendimientos=emprendedores::filterEmprendimientos($categoria, $nombre);
+        
+        if(count($emprendimiento)>constants::VALORMIN){
+            return view("emprendedores.emprendedores", compact("emprendimientos"));
         }
         else{
-           return $this->showEmprendimientos();
+            return view("error");
+        }
+    }
+
+    public function filterEmprendimientosCategoria(Request $request){
+        $categoria=$request->categoria;
+        $request->validate([
+            'categoria'=>'string|min:1|max:60',
+        ]);
+        $emprendimientos=emprendedores::filterEmprendimientosCategoria($categoria);
+        if(count($emprendimientos)>constants::VALORMIN){
+           
+            return view("emprendedores.emprendedores", compact("emprendimientos"));
+        }
+        else{
+            return view("error");
+        }
+    }
+
+        public function filterEmprendimientosNombre(Request $request){
+        $nombre=$request->nombre;
+        $request->validate([
+            'nombre'=>'string|min:1|max:100'
+        ]);
+        $emprendimientos=emprendedores::filterEmprendimientosNombre($nombre);
+        
+        if(count($emprendimiento)>constants::VALORMIN){
+            return view("emprendedores.emprendedores", compact("emprendimientos"));
+        }
+        else{
+            return view("error");
         }
     }
 
