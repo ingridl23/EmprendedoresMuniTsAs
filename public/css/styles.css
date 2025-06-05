@@ -11709,77 +11709,8 @@ header.masthead .h1 {
 }
 
 
-/*logo tresa*/
-
-.navbar-brand {
-    font-size: 18px;
-    font-family: 'Lucida Sans', Verdana, sans-serif;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.logo-img {
-    max-height: 40px;
-}
+/* ======= ESTILOS ESPECÍFICOS DE SECCIÓN ======= */
 
 .section-services {
     text-align: center;
-}
-
-
-/* botones en el nav de mi tresa , portal y gobierno abierto*/
-
-
-/* Botones extra */
-
-.get-started-buttons a {
-    display: inline-block;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #343a40;
-    background-color: #ffc451;
-    border-radius: 5px;
-    margin-left: 5px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    border-right: 2px solid #fff;
-}
-
-.get-started-buttons a:last-child {
-    border-right: none;
-}
-
-.get-started-group i {
-    padding-right: 8px;
-    font-size: 20px;
-}
-
-.get-started-btn:hover {
-    background: #ffbb38;
-    color: #343a40 !important;
-}
-
-
-/* Ajuste de tamaños específicos */
-
-.get-started-buttons a:nth-child(1) {
-    font-size: 14px;
-}
-
-.get-started-buttons a:nth-child(2) {
-    font-size: 12px;
-}
-
-.footer-us {
-    background-color: #000;
-}
-
-#textfootercentrocomputo {
-    color: #25afc3;
-}
-
-#textfootercentrocomputo:hover {
-    color: #25afc3;
-    text-shadow: 0 0 10px #00f, 0 0 10px #00f;
 }
