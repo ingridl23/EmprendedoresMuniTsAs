@@ -11,12 +11,11 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-papmVJ9pbXePfEwRrPfjg4ZrV8Y9r8V9jylKJ1Zw+vWNS7NchM9GZfQK2Qb6n1r7vEUZjD9kP7C7nMYYI8AfQ=="
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Bootstrap Icons-->
-    <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
 
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
@@ -27,6 +26,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+
 </head>
 
 <body id="page-top">
@@ -98,44 +99,30 @@
                 <hr class="divider" />
 
                 <!--
-                                <div class="row gx-4 gx-lg-5">
-                                    <div class="col-lg-3 col-md-6 text-center">
-                                        <div class="mt-5">
-                                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                                            <h3 class="h4 mb-2">Sturdy Themes</h3>
-                                            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
-                                        </div>
-                                    </div>
-                                -->
+                                                                                                                                                        <div class="row gx-4 gx-lg-5">
+                                                                                                                                                            <div class="col-lg-3 col-md-6 text-center">
+                                                                                                                                                                <div class="mt-5">
+                                                                                                                                                                    <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                                                                                                                                                                    <h3 class="h4 mb-2">Sturdy Themes</h3>
+                                                                                                                                                                    <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                        -->
 
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
-                        <p class="text-muted mb-0">Si sos parte de la Dirección de Cultura, podés sumarte a esta iniciativa
-                            para difundir tu proyecto.</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 text-center seccion-tenes-emprendimiento">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="fa-solid fa-laptop fs-1 text-primary  style="color:
+                                    #004d4d!important;"></i>
+                            </div>
+                            <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
+                            <p class="text-muted mb-0">Si sos parte de la Dirección de Cultura, podés sumarte a esta
+                                iniciativa para difundir tu proyecto.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!--
-                                    <div class="col-lg-3 col-md-6 text-center">
-                                        <div class="mt-5">
-                                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                                            <h3 class="h4 mb-2">Ready to Publish</h3>
-                                            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 text-center">
-                                        <div class="mt-5">
-                                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                                            <h3 class="h4 mb-2">Made with Love</h3>
-                                            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
-                                        </div>
-                                    </div>
-                                -->
 
-            </div>
-            </div>
         </section>
         <!-- Portfolio-->
         <div id="portfolio">
@@ -199,12 +186,20 @@
             </div>
         </div>
         <!-- Call to action-->
-        <section class="page-section bg-dark text-white">
+        <section class="page-section text-white" style="background-color: #d63384 !important;">
             <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">Conoce a nuestros emprendedores que ya son parte!</h2>
-                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/"> Ver Mas!</a>
+                <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
+                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Ver Más</a>
             </div>
         </section>
+
+
+
+
+
+
+
+
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container px-4 px-lg-5">
@@ -301,7 +296,11 @@
             </div>
         </section>
 
+        @extends('layouts.app')
+        <!-- barra de navegacion -->
+        @include('emprendedor.footer')
 
+    @section('content')
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -311,6 +310,7 @@
         <script src="{{ asset('js/scripts.js') }} "></script>
 
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
     </body>
 
     </html>

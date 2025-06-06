@@ -26,7 +26,7 @@
 }
 
 #mainNav .navbar-nav .nav-link {
-    color: #f1f8ff;
+    color: #6f7983 !important;
     font-weight: 500;
     font-size: 16px !important;
     text-transform: uppercase;
@@ -70,7 +70,7 @@
 .navbar-brand {
     font-size: 1.25rem !important;
     font-family: "Open Sans", sans-serif !important;
-    font-weight: 600;
+    font-weight: 300;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #e9eef3;
@@ -101,7 +101,7 @@
 .fas.fa-laptop,
 .fas.fa-lock-open {
     font-size: 1.25rem;
-    color: #7c7d80;
+    color: #dfdfdf;
     margin-right: 5px;
 }
 
@@ -128,7 +128,7 @@
     align-items: center;
     padding: 8px 15px;
     text-decoration: none;
-    color: #7c7d80;
+    color: #f4f4ff;
     border-radius: 0;
     font-weight: 300;
     font-size: 1.25rem;
@@ -168,7 +168,7 @@
 
 .get-started-btn:hover {
     background: #25afc3;
-    color: #dee5ec;
+    color: #f9fcff;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(240, 231, 213, 0.4);
 }
@@ -191,6 +191,8 @@
     line-height: 1.1;
     font-weight: 600;
     font-family: "open sans", Arial !important;
+    text-transform: capitalize;
+    padding-top: 0.25rem;
 }
 
 
@@ -214,6 +216,21 @@
     }
     .btn-text {
         font-size: 9px;
+    }
+    #header {
+        background: transparent;
+        backdrop-filter: blur(10px);
+    }
+    #header.header-scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+    .servicio-icono {
+        font-size: 26px;
+        color: #dfdfdf;
+    }
+    #header.header-scrolled .servicio-icono {
+        color: #25afc3;
     }
 }
 
@@ -284,6 +301,21 @@
     #mainNav .navbar-nav .nav-link:last-child {
         border-bottom: none;
     }
+    #header {
+        background: transparent;
+        backdrop-filter: blur(10px);
+    }
+    #header.header-scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+    .servicio-icono {
+        font-size: 22px;
+        color: #dfdfdf;
+    }
+    #header.header-scrolled .servicio-icono {
+        color: #25afc3;
+    }
 }
 
 
@@ -312,4 +344,17 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+.servicio-icono {
+    color: #dfdfdf;
+    transition: color 0.3s ease;
+}
+
+#header.header-scrolled .servicio-icono {
+    color: #31588a;
+}
+
+#header.header-scrolled .btn-text {
+    color: #4f5052;
 }
