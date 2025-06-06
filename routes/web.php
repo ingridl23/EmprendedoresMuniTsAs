@@ -14,3 +14,7 @@ Route::get('/emprendimientos/{categoria}/{nombre}', [EmprendedorController::clas
 Route::get('/emprendimientos/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
 
 // agregar para admins
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

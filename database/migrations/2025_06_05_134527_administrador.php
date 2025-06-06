@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Redes extends Migration
+class Administrador extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class Redes extends Migration
      */
     public function up()
     {
-        Schema::create('redes', function (Blueprint $table) {
+         Schema::create('administrador', function (Blueprint $table) {
             $table->id();
-            $table->string('instagram');
-            $table->string('facebook');
-            $table->bigInteger('whatsapp');
+            $table->string('nombre');
+            $table->string('email')->unique();
+            $table->string('contraseña');
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -30,6 +29,6 @@ class Redes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('redes');
+        Schema::dropIfExists('administrador');
     }
 }

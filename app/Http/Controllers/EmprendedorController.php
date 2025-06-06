@@ -13,7 +13,7 @@ class EmprendedorController extends Controller{
         if(count($emprendimientos)>constants::VALORMIN){
             return view("emprendedores.emprendedores", compact("emprendimientos"));
         }
-        return view("error");
+        //return view("error");
     }
 
     public function showEmprendimientoId($id){
