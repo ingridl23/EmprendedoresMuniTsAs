@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\emprendedores;
 use App\Models\redes;
 class EmprendedorController extends Controller{
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
    public function showEmprendimientos(){
         //VER SI TRAER TODOS LOS DATOS O SOLO IMG, NOMBRE, DESCRIPCION PARA DESPUES
         //SI SE HACE CLICK EN EL EMPRENDIMIENTO SE MUESTREN TODOS LOS DATOS
@@ -73,6 +77,10 @@ class EmprendedorController extends Controller{
         else{
             return view("error");
         }
+    }
+
+    public function showFormCrearEmprendimiento(){
+        return view('administradores.formNuevoEmprendimiento');
     }
 
 

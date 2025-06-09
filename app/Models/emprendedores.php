@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class emprendedores extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'nombre',
+        'descripcion',
+        'categoria',
+        'imagen',
+        'redes_id',
+    ];
 
     public function redes(): HasOne{
         return $this->hasOne(redes::class);

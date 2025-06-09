@@ -31,13 +31,10 @@ class RoleAndPermissionsSeeder extends Seeder
         Permission::firstOrCreate([
             'name'=>'eliminar emprendimiento',
         ]);
-        Permission::firstOrCreate([
-            'name'=>'ver emprendimiento',
-        ]);
 
         $admin->givePermissionTo('crear emprendimiento');
         $admin->givePermissionTo('editar emprendimiento');
         $admin->givePermissionTo('eliminar emprendimiento');
-        $admin->givePermissionTo('ver emprendimiento');
+        
     }   
 }
