@@ -5,7 +5,7 @@
         @foreach($emprendimiento as $valor)
             <li>{{$valor->nombre}}</li>
             <li>{{$valor->descripcion}}</li>
-            <li>{{$valor->imagen}}</li>
+            <li><img src="{{ asset('storage/' . $valor->imagen)}}" alt="Imagen de {{$valor->nombre}}"></li>
             <li>{{$valor->categoria}}</li>
             <li>Instagram: {{$valor->instagram}}</li>
             <li>Facebook: {{$valor->facebook}}</li>

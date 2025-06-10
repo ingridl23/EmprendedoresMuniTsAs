@@ -8,7 +8,7 @@
    @foreach($emprendimientos as $emprendimiento)
         <li>{{$emprendimiento->nombre}}</li>
         <li>{{$emprendimiento->descripcion}}</li>
-        <li>{{$emprendimiento->imagen}}</li>
+        <li><img src="{{ asset('storage/' . $emprendimiento->imagen)}}" alt="Imagen de {{$emprendimiento->nombre}}"></li>
          <form action="/emprendimientos/{{$emprendimiento->id}}" method="get">
             @csrf
             <input type="submit" value="Mas detalles">

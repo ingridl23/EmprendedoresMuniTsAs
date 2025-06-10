@@ -43,19 +43,46 @@ class administradorController extends Controller
         ]);
 
         $imagen=$request->file("imagen");
-        $nombreImagen=Str::slug($request->nombre).uniqid().".".$imagen->guessExtension();
-        $ruta=public_path("img/emprendimientos/");
-        $imagen->move($ruta,$nombreImagen);
-        $url=$ruta.$nombreImagen;
+        $path = $imagen->store('img', 'public');
 
         $emprendimiento= emprendedores::create([
             'nombre' => $request->nombre,
             'categoria' => $request->categoria,
             'descripcion' => $request->descripcion,
-            'imagen' => $url,
+            'imagen' => $path,
             'redes_id'=>$redes->id,
         ]);
 
+       return redirect('/emprendimientos');
+    }
+
+    public function showFormEditarEmprendimiento($id){
+        $emprendimiento=emprendedores::find($id);
+        return view("administradores.formNuevoEmprendimiento", compact('emprendimiento'));
+    }
+
+    public function editarEmprendimiento($id, validacionCrearEmprendimiento $request){
+        $emprendimiento=emprendedores::showEmprendimientoId($id);
+        $redes= redes::find($emprendimiento->redes_id);
+        if($redes->instagram != $request->input('instagram') || $redes->facebook != $request->input('facebook')
+            || $redes->whatsapp != $request->input('whatsapp')){
+                $redes->instagram=$request->input('instagram');
+                $redes->facebook=$request->input('facebook');
+                $redes->whatsapp=$request->input('whatsapp');
+                $redes->save();
+            }
+        
+        if($emprendimiento->imagen != $request->input('imagen')){
+            $imagen=$request->file("imagen");
+            $path = $imagen->store('img', 'public');
+            $emprendimiento->imagen=$path;
+        }
+        
+        $emprendimiento->nombre=$request->input('nombre');
+        $emprendimiento->descripcion=$request->input('descripcion');
+        $emprendimiento->categoria=$request->input('categoria');
+        $emprendimiento->save();
+        
        return redirect('/emprendimientos');
     }
 }
