@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\PermissionRegistrar;
 
 class RoleAndPermissionsSeeder extends Seeder
 {
@@ -15,26 +16,25 @@ class RoleAndPermissionsSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = Role::firstOrCreate([
-            'name'=>'admin',
-        ]);
-        $user = Role::firstOrCreate([
-            'name'=>'user',
-        ]);
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
-        Permission::firstOrCreate([
-            'name'=>'crear emprendimiento',
-        ]);
-        Permission::firstOrCreate([
-            'name'=>'editar emprendimiento',
-        ]);
-        Permission::firstOrCreate([
-            'name'=>'eliminar emprendimiento',
-        ]);
+        // create permissions
+        $permissions = [
+            'crear emprendimiento',
+            'editar emprendimiento',
+            'eliminar emprendimiento',
+            
+         ];
 
-        $admin->givePermissionTo('crear emprendimiento');
-        $admin->givePermissionTo('editar emprendimiento');
-        $admin->givePermissionTo('eliminar emprendimiento');
+        foreach ($permissions as $permission) {
+            Permission::create(['name' => $permission]);
+        }
+
+        $role1 = Role::create(['name' => 'admin']);
+        foreach ($permissions as $permission) {
+            $role1->givePermissionTo($permission);
+        }
+        $role2 = Role::create(['name' => 'user']);
         
     }   
 }
