@@ -7,7 +7,7 @@
                 <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
 
                     <!-- Logo y marca -->
-                    <a class="navbar-brand d-flex align-items-center" href="#page-top">
+                    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                         <img src="assets/img/logo-muni-azul-claro-removebg-preview.png" alt="Logo Tres Arroyos"
                             class="logo-img me-2">
                         <span class="brand-text"></span>
@@ -30,10 +30,10 @@
                                 <a class="nav-link" href="#services">Objetivo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#portfolio">Emprendedores</a>
+                                <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact">Quiero Formar Parte</a>
+                                <a class="nav-link" href="{{ url('/formarparte') }}"">ser parte</a>
                             </li>
                         </ul>
 
@@ -57,7 +57,8 @@
                                 </div>
                             </a>
 
-                            <a href="/transparencia-fiscal" target="_blank" class="get-started-btn scrollto">
+                            <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
+                                class="get-started-btn scrollto">
                                 <div class="get-started-group font-color-bl">
                                     <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 

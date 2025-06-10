@@ -1,0 +1,1 @@
+@extends('emprendedor.abouthome')

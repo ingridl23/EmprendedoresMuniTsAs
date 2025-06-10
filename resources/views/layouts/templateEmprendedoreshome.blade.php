@@ -35,7 +35,7 @@
 
     <!--aca va incluide component navbar -->
 
-    @extends('layouts.app')
+
     <!-- barra de navegacion -->
     @include('emprendedor.navBar')
 
@@ -73,6 +73,8 @@
 
     <!-- About-->
     <section class="page-section custom-about" id="about">
+
+
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 text-center">
@@ -91,6 +93,7 @@
                 </div>
             </div>
         </div>
+
     </section>
     <!-- Services-->
     <section class="page-section section-services" id="services">
@@ -209,6 +212,9 @@
 
     <!-- Contact-->
     <section class="page-section" id="contact">
+
+        @include('emprendedor.formulario')
+        <!--
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
@@ -223,15 +229,11 @@
             </div>
             <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                 <div class="col-lg-6">
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
+
                     <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Name input-->
+
+        <!--
                         <div class="form-floating mb-3">
                             <input class="form-control" id="name" type="text"
                                 placeholder="Enter your name..." data-sb-validations="required" />
@@ -241,6 +243,7 @@
                                 apellido.</div>
                         </div>
                         <!-- Email address input-->
+        <!--
                         <div class="form-floating mb-3">
                             <input class="form-control" id="email" type="email" placeholder="name@example.com"
                                 data-sb-validations="required,email" />
@@ -252,6 +255,7 @@
                                 (ejemplo : @example.com).</div>
                         </div>
                         <!-- Phone number input-->
+        <!--
                         <div class="form-floating mb-3">
                             <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
                                 data-sb-validations="required" />
@@ -260,6 +264,7 @@
                                 telefono que manejes diariamente</div>
                         </div>
                         <!-- Message input-->
+        <!--
                         <div class="form-floating mb-3">
                             <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
                                 style="height: 10rem" data-sb-validations="required"></textarea>
@@ -269,9 +274,10 @@
                             </div>
                         </div>
                         <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
+        <!---->
+        <!-- This is what your users will see when the form-->
+        <!-- has successfully submitted-->
+        <!--
                         <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3">
                                 <div class="fw-bolder">Enviado exitosamente!</div>
@@ -284,9 +290,10 @@
                             </div>
                         </div>
                         <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
+        <!---->
+        <!-- This is what your users will see when there is-->
+        <!-- an error submitting the form-->
+        <!--
                         <div class="d-none" id="submitErrorMessage">
                             <div class="text-center text-danger mb-3">Ocurrio un error al enviar tu respuesta, verifica
                                 que tengas conexion o que
@@ -294,6 +301,7 @@
                             </div>
                         </div>
                         <!-- Submit Button-->
+        <!--
                         <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton"
                                 type="submit">Enviar Peticion</button></div>
                     </form>
@@ -301,10 +309,11 @@
             </div>
 
         </div>
+    -->
     </section>
-    <!-- barra de navegacion -->
-    @include('emprendedor.footer')
 
+    <!-- barra de navegacion footer -->
+    @include('emprendedor.footer')
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -313,8 +322,7 @@
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
-
 </body>
+
 
 </html>
