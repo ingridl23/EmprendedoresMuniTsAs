@@ -8,16 +8,16 @@
     <meta name="author" content="" />
     <title>emprendedores</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />   -->
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/styles3.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/stylesnavemprendedores.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
@@ -120,6 +120,20 @@
             </div>
         </div>
     </header>
+
+    <!--************************************************************************************************************************* -->
+
+
+
+
+
+
+
+
+
+
+
+    <!--******************************************************************************************************* -->
     <!-- Portfolio Grid-->
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
@@ -132,6 +146,7 @@
 
 
             <br>
+
             <div class="row">
 
 
@@ -139,19 +154,57 @@
                 @yield('content') <!-- aca traeria cada card de forma iterativa con los datos de emprendedores directamete
                         desde la bbddd -->
 
-                <div class="portfolio-item">
+                <div class="portfolio-item  col-lg-4 col-sm-6 mb-4">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
+                        <img class="img-fluid" src="assets/img/bg-masthead.jpg" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Explore</div>
-                        <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                        <div class="portfolio-caption-heading">Nombre de emprendedor</div>
+                        <div class="portfolio-caption-subheading text-muted">categoria o rubro</div>
                     </div>
                 </div>
+
+
+
+                <!--duplicamos para saber como se organiza esto se debe iterar con un foreach respetando la info del modal -->
+                <div class="portfolio-item  col-lg-4 col-sm-6 mb-4 ">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/bg-masthead.jpg" alt="..." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Nombre de emprendedor</div>
+                        <div class="portfolio-caption-subheading text-muted">categoria o rubro</div>
+                    </div>
+                </div>
+
+
+
+                <!--duplicamos para saber como se organiza -->
+                <div class="portfolio-item  col-lg-4 col-sm-6 mb-4">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/bg-masthead.jpg" alt="..." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Nombre de emprendedor</div>
+                        <div class="portfolio-caption-subheading text-muted">categoria o rubro</div>
+                    </div>
+                </div>
+
+
+
+
+
             </div>
+
             <div class="col-lg-4 col-sm-6 mb-4">
 
 
@@ -185,7 +238,7 @@
 
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg"
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/bg-masthead.jpg"
                                         alt="..." />
                                     <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                         adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
@@ -200,10 +253,11 @@
                                             <strong>Category:</strong> Graphic Design
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    <button class=" btn-vermas btn-xl text-uppercase" data-bs-dismiss="modal"
                                         type="button">
 
-                                        <a href="/emprendedor/$id"> ver mas acerca de este emprendedor</a>
+                                        <a id="vermas" href="/emprendedor/$id"> ver mas acerca de este
+                                            emprendedor</a>
                                     </button>
                                 </div>
                             </div>
@@ -236,6 +290,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
 
 </body>
 
