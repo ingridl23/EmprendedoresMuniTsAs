@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class validacionCrearEmprendimiento extends FormRequest
+class validacionEditarEmprendimiento extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,9 +27,9 @@ class validacionCrearEmprendimiento extends FormRequest
             'nombre'=>'bail|required|string|min:1|max:100',
             'descripcion'=>'bail|required|string|min:1',
             'categoria'=>'bail|required|string|min:1|max:60',
-            'imagen'=>'bail|required|image|mimes:jpeg,jpg,png',
-            'facebook'=>'bail|string|min:1|max:100',
-            'instagram'=>'bail|string|min:1|max:100',
+            'imagen'=>'image|mimes:jpeg,jpg,png',
+            'facebook'=>'nullable|string|min:1|max:100',
+            'instagram'=>'nullable|string|min:1|max:100',
             'whatsapp'=>'numeric|digits_between:8,11',
         ];
     }
@@ -39,7 +39,6 @@ class validacionCrearEmprendimiento extends FormRequest
             'nombre.required'=>'El nombre es necesario',
             'descripcion.required'=>'La descripcion es necesaria',
             'categoria.required'=>'La categoria es necesaria',
-            'imagen.required'=>'La imagen es necesaria',
             'nombre'=>'bail|required|string|min:1|max:100',
             'nombre.string'=>'Debe ingresar un nombre valido',
             'descripcion.string'=>'Debe ingresar una descripcion valida',

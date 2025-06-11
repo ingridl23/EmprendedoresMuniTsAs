@@ -72,7 +72,7 @@ class RegisterController extends Controller
         ]);
 
         
-        if($data['email']=="valen@gmail.com"){
+        if($data['email']=="valen@gmail.com" || $data['email']=="juana@gmail.com"){
             $user->assignRole('admin');
         }
         else{

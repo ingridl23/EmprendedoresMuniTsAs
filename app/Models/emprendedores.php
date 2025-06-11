@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\constants;
 
 class emprendedores extends Model
 {
@@ -23,12 +24,19 @@ class emprendedores extends Model
 
     public static function showEmprendimientos(){
         $emprendimientos= emprendedores::select(['id','nombre','descripcion', 'imagen'])->get();
-        return $emprendimientos;
+        if(count($emprendimientos)>constants::VALORMIN){
+            return $emprendimientos;
+        }
+        return null;
     }
 
     public static function showEmprendimientoId($id){
         $emprendimiento=emprendedores::join('redes', 'redes_id', '=', 'redes.id')->where('emprendedores.id',$id)->get();
-        return $emprendimiento;
+        if(count($emprendimiento)>constants::VALORMIN){
+            $emprendimiento=$emprendimiento[0];
+            return $emprendimiento;
+        }
+        return null;
     }
 
     public static function filterEmprendimientos($categoria, $nombre){

@@ -14,7 +14,7 @@ class EmprendedorController extends Controller{
         //VER SI TRAER TODOS LOS DATOS O SOLO IMG, NOMBRE, DESCRIPCION PARA DESPUES
         //SI SE HACE CLICK EN EL EMPRENDIMIENTO SE MUESTREN TODOS LOS DATOS
         $emprendimientos= emprendedores::showEmprendimientos();
-        if(count($emprendimientos)>constants::VALORMIN){
+        if($emprendimientos!=null){
             return view("emprendedores.emprendedores", compact("emprendimientos"));
         }
         //return view("error");
@@ -23,7 +23,7 @@ class EmprendedorController extends Controller{
     public function showEmprendimientoId($id){
         if(is_numeric($id) && $id>constants::VALORMIN){
             $emprendimiento=emprendedores::showEmprendimientoId($id);
-            if(count($emprendimiento)>constants::VALORMIN){
+            if($emprendimiento!=null){
                 return view("emprendedores.emprendedor", compact('emprendimiento'));
             }
         }
@@ -41,7 +41,7 @@ class EmprendedorController extends Controller{
         $nombre=$request->nombre;
         $emprendimientos=emprendedores::filterEmprendimientos($categoria, $nombre);
         
-        if(count($emprendimiento)>constants::VALORMIN){
+        if(count($emprendimientos)>constants::VALORMIN){
             return view("emprendedores.emprendedores", compact("emprendimientos"));
         }
         else{
