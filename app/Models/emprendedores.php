@@ -39,6 +39,25 @@ class emprendedores extends Model
         return null;
     }
 
+    public static function crearEmprendimiento($request, $path){
+                $redes= redes::create([
+            'instagram'=> $request->instagram,
+            'facebook' => $request->facebook,
+            'whatsapp' => $request->whatsapp,
+        ]);
+        $emprendimiento= emprendedores::create([
+            'nombre' => $request->nombre,
+            'categoria' => $request->categoria,
+            'descripcion' => $request->descripcion,
+            'imagen' => $path,
+            'redes_id'=>$redes->id,
+        ]);
+    }
+
+    public static function editarEmprendimiento($emprendimiento){
+        $emprendimiento->save();
+    }
+
     public static function filterEmprendimientos($categoria, $nombre){
          $emprendimientos=emprendedores::query()->when($categoria, function($query, $categoria){
             return $query->where('categoria','like','%'.$categoria.'%');

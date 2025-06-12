@@ -31,10 +31,12 @@ class RoleAndPermissionsSeeder extends Seeder
         }
 
         $role1 = Role::create(['name' => 'admin']);
+        $role2 = Role::create(['name' => 'user']);
+        
         foreach ($permissions as $permission) {
             $role1->givePermissionTo($permission);
         }
-        $role2 = Role::create(['name' => 'user']);
+        
         
     }   
 }

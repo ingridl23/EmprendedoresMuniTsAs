@@ -39,23 +39,9 @@ class administradorController extends Controller
     }
 
     public function crearEmprendimiento(validacionEmprendimiento $request){
-        $redes= redes::create([
-            'instagram'=> $request->instagram,
-            'facebook' => $request->facebook,
-            'whatsapp' => $request->whatsapp,
-        ]);
-
         $imagen=$request->file("imagen");
         $path = $imagen->store('img', 'public');
-
-        $emprendimiento= emprendedores::create([
-            'nombre' => $request->nombre,
-            'categoria' => $request->categoria,
-            'descripcion' => $request->descripcion,
-            'imagen' => $path,
-            'redes_id'=>$redes->id,
-        ]);
-
+        emprendedores::crearEmprendimiento($request, $path);
        return redirect('/emprendimientos');
     }
 
@@ -79,7 +65,6 @@ class administradorController extends Controller
                 $redes->instagram=$request->input('instagram');
                 $redes->facebook=$request->input('facebook');
                 $redes->whatsapp=$request->input('whatsapp');
-                $redes->save();
             }
             if($request->file('imagen')!=null){
                 Storage::disk('public')->delete($emprendimiento->imagen);
@@ -87,20 +72,27 @@ class administradorController extends Controller
                 $path = $imagen->store('img', 'public');
                 $emprendimiento->imagen=$path;
             }
-
             $emprendimiento->nombre=$request->input('nombre');
             $emprendimiento->descripcion=$request->input('descripcion');
             $emprendimiento->categoria=$request->input('categoria');
-            $emprendimiento->save();
 
+            emprendedores::editarEmprendimiento($emprendimiento);
+            redes::editarEmprendimiento($redes);
             return redirect('/emprendimientos');
         }
-        return view("/view");
+        return view("/");
        //return redirect("emprendedores.emprendedor", compact('emprendimiento'));
     }
 
     public function eliminarEmprendimiento($id){
         $emprendimiento=emprendedores::find($id);
         $redes= redes::find($emprendimiento->redes_id);
+        if($emprendimiento!=null && $redes!=null){
+            Storage::disk('public')->delete($emprendimiento->imagen);
+            $emprendimiento->delete();
+            $redes->delete();
+            return redirect('/emprendimientos');
+        }
+        return redirect("/error", "Emprendimiento incorrecto, ingrese uno válido");
     }
 }

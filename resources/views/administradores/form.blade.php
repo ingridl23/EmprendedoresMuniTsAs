@@ -1,5 +1,5 @@
 <label for="nombre">Nombre:</label>
-<input type="text" name="nombre" id="nombre" value={{isset($emprendimiento) ? $emprendimiento->nombre : old('nombre')}}>
+<textarea name="descripcion" id="descripcion">{{isset($emprendimiento) ? $emprendimiento->nombre : old('nombre')}}</textarea>
     <br>
 <label for="descripcion">descripcion:</label>
 <textarea name="descripcion" id="descripcion">{{isset($emprendimiento) ? $emprendimiento->descripcion : old('descripcion')}}</textarea>
@@ -8,7 +8,9 @@
 <input type="text" name="categoria" id="categoria" value={{isset($emprendimiento) ? $emprendimiento->categoria : old('categoria')}}>
     <br>
 <label for="imagen">Imagen</label>
-<img src="{{ asset('storage/' . $emprendimiento->imagen)}}" alt="Imagen de {{$emprendimiento->nombre}}">
+@if(isset($emprendimiento->imagen))
+    <img src="{{ asset('storage/' . $emprendimiento->imagen)}}" alt="Imagen de {{$emprendimiento->nombre}}">
+@endif
 <input type="file" name="imagen" id="imagen">
     <br>
 <label for="facebook">facebook:</label>

@@ -8,8 +8,10 @@
         <li>Instagram: {{$emprendimiento->instagram}}</li>
         <li>Facebook: {{$emprendimiento->facebook}}</li>
         <li>Whatsapp: {{$emprendimiento->whatsapp}}</li>
-        <form action="/emprendimientos" method="get">
+        <button type="button"><a href="/emprendimientos">Volver</a></button>
+        <form action="/emprendimientos/{{$emprendimiento->id}}" method="post">
             @csrf
-            <input type="submit" value="Volver">
+            @method('DELETE')
+            <input type="submit" value="Eliminar">
         </form>  
 @endsection

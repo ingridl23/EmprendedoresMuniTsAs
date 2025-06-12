@@ -14,4 +14,9 @@ class redes extends Model
         'facebook',
         'whatsapp',
     ];
+
+        public static function editarEmprendimiento($redes){
+        $redes->save();
+    }
+
 }
