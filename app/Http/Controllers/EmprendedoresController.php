@@ -16,6 +16,6 @@ class EmprendedoresController extends Controller
         // return view("emprendedor.index", compact("emprendedores"));
 
 
-        return view("emprendedor.index");
+        return view("layouts.index");
     }
 }

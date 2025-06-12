@@ -63,8 +63,10 @@
                         ¡este es tu lugar! </p>
                     <a class="btn btn-primary btn-xl" href="#contact">Quiero Ser Parte</a>
                 </div>
+                <br>
             </div>
         </div>
+
     </header>
 
 
@@ -134,6 +136,7 @@
 
                 @yield('content')
 
+                <!--esto se va y solo quedaria el foreach para traer las 6 imagenes -->
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
                         <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
@@ -195,6 +198,10 @@
             </div>
         </div>
     </div>
+
+
+
+
     <!-- Call to action-->
     <section class="page-section text-white" style="background-color: #d63384 !important;">
         <div class="container px-4 px-lg-5 text-center">

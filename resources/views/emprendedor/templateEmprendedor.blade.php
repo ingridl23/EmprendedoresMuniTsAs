@@ -13,20 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
-        rel="stylesheet" type="text/css" />>
 
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href= "{{ asset('css/styles2.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href= "{{ asset('css/footer.css') }}" rel="stylesheet" />
+    <link href= "{{ asset('css/styles2.css') }}" rel="stylesheet" />
+
+
 </head>
 
-<body>
 
+<body id="page-top">
     <!-- ======= Header ======= -->
     <div class="custom-navbar-container">
         <header id="header" class="fixed-top header-scrolled">
@@ -56,9 +59,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#productos">Productos</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#compra">Como Comprar</a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="#contacto ">Contacto</a>
                                 </li>
@@ -99,41 +100,228 @@
             </div>
         </header>
     </div>
-    <!-- End Header -->
+    <!-- End nav -->
+
+    <header class="masthead">
+
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Emprendedor </h1> <!--((emprendedor-nombre)) -->
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam id
+                        sapiente tempore,
+                        sint quae eveniet quisquam inventore adipisci a, voluptatibus perspiciatis ad dicta dolores et.
+                        Ratione veritatis eius dolor dicta.</p> <!--((emprendedor -descripcion)) -->
 
 
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <!-- seccion productos -->
+
+
+    <!--
+
+    <div class="container d-flex justify-content-center  align-items-center min-vh-100">
+
+
+        <div id="carrousel" class="shadow-wrapper p-2 rounded-4"> <!-- sombreado acá -->
+    <!--
+            <div id="carouselExampleAutoplaying" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/bg-masthead.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/bg-masthead.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/bg-masthead.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+-->
+
+
+    <!--otra alternativa para mostrar productos  -->
+
+    <br>
+    <br>
+
+    <!-- Card 1 --> <!--aca iria el content para traer iteradas las cards -->
+    <div id="productos" class="container">
+        <div class="row">
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- contenido -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- contenido -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- contenido -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agregár más desde la base de datos -->
+
+            <!--card 4 -->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- contenido -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--seccion informacion de contacto, ubicacion  y horarios -->
 
     <section class="page-section cta">
         <div class="container">
             <div class="row">
                 <div class="col-xl-9 mx-auto">
                     <div class="cta-inner bg-faded text-center rounded">
-                        <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">nombre emprendedor</span>
+                        <h2 class="section-heading mb-5">
+                            <span class="section-heading-upper">Horarios De Atencion </span>
 
                         </h2>
-                        <p class="mb-0">When you walk into our shop to start your day, we are dedicated to
-                            providing
-                            you with friendly service, a welcoming atmosphere, and above all else, excellent
-                            products
-                            made with the highest quality ingredients. If you are not satisfied, please let us know
-                            and
-                            we will do whatever we can to make things right!</p>
+                        <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Sunday
+                                <span class="ms-auto">Cerrado</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Monday
+                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                                <!--((emprendedor-- horainicio))  ((emprendedor-- horafin))-->
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Tuesday
+                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Wednesday
+                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Thursday
+                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Friday
+                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Saturday
+                                <span class="ms-auto">9:00 AM to 5:00 PM</span>
+                            </li>
+                        </ul>
+                        <p class="address mb-5">
+                            <em>
+                                Encontranos en
+                                <br />
+                                <strong>1116 Orchard Street</strong> <!--((emprendedor- direccion)) -->
+                            </em>
+                        </p>
+
+
+                        <div class="contactoemprendedor" id="contacto">
+
+                            <p class="mb-0">
+                                <em>
+                                    <h3><em>Medios de Contacto</em></h3>
+
+                                    <br />
+                                    <strong> contactate con el emprendedor aqui </strong>
+                                </em>
+                                <br />
+                            <div class="social-links mt-3">
+
+                                <a href="https://www.facebook.com/municipalidaddetresarroyos" class="facebook"
+                                    target="_blank">
+                                    <!--link de facebook -->
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/municipalidadtresarroyos/" class="instagram"
+                                    target="_blank">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a class="whatsapp"
+                                    href="https://api.whatsapp.com/send/?phone=5492983509001&text&type=phone_number&app_absent=0"
+                                    target="_blank">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </div>
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <br>
+    <br>
+    <br>
+    <br>
 
-
-
-    <!-- barra de navegacion -->
+    <!-- seccion footer -->
     @include('emprendedor.footer')
 
+    <script src="{{ asset('js/scripts.js') }} "></script>
+    <script src="{{ asset('js/scripts2.js') }}"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="{{ asset('js/scripts2.js') }}"></script>
+
 
 </body>
 

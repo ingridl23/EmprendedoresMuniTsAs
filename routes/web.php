@@ -13,10 +13,10 @@ Route::get('/formarparte', [HomeController::class, "formarparte"]); // redirecci
 
 
 //agregar rutas para las secciones individuales del emprendedor
-Route::get('/emprendedo/{{$id}}', [EmprendedorController::class, "emprendedor"]);
+Route::get('/emprendedor', [EmprendedorController::class, "emprendedor"]);
 Route::get('/emprendedores', [EmprendedoresController::class, "emprendedores"]); //vista general para emprendedores
 Route::get('/info', [EmprendedorController::class, "infoMaps"]);
 Route::get('/About', [EmprendedorController::class, "About"]);
-Route::get('/productos', [EmprendedorController::class, "products"]);
+
 
 // agregar para admin

@@ -151,7 +151,7 @@
 
 
                 <!-- Portfolio item 2-->
-                @yield('content') <!-- aca traeria cada card de forma iterativa con los datos de emprendedores directamete
+                @yield('content') <!-- viene desde (indexblade) aca traeria cada card de forma iterativa con los datos de emprendedores directamete
                         desde la bbddd -->
 
                 <div class="portfolio-item  col-lg-4 col-sm-6 mb-4">
