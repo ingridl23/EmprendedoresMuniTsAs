@@ -4,11 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class redes extends Model
-{
+class Redes extends Model{
     use HasFactory;
+    protected $table = 'redes'; // tu tabla real
 
+     public function emprendedor(): HasOne{
+    return $this->hasOne(Emprendedor::class, 'redes_id', 'id');
+    }
+    
     protected $fillable=[
         'instagram',
         'facebook',
@@ -22,5 +27,4 @@ class redes extends Model
     public static function eliminarEmprendimiento($redes){
         $redes->delete();
     }
-
 }

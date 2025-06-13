@@ -1,3 +1,4 @@
+// require("../../resources/js/bootstrap");
 /*
  * ATTENTION: An "eval-source-map" devtool has been used.
  * This devtool is neither made for production nor for readable output files.
@@ -173,3 +174,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	
 /******/ })()
 ;
+
+
+

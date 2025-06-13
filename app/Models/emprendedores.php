@@ -5,9 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\constants;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Database\Factories\EmprendedorFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class emprendedores extends Model
 {
+    protected $table = 'emprendedores'; // tu tabla real
+
+     protected static function newFactory()
+    {
+        return EmprendedorFactory::new();
+    }
     use HasFactory;
     protected $fillable=[
         'nombre',
@@ -17,9 +26,8 @@ class emprendedores extends Model
         'redes_id',
     ];
 
-    public static function redes(): HasOne{
-        return $this->hasOne(redes::class);
-        //en el controller se puede usar para buscar las redes como $phone = User::find(1)->phone;
+    public function redes(): BelongsTo {
+        return $this->belongsTo(Redes::class, 'redes_id', 'id');
     }
 
     public static function showEmprendimientos(){
@@ -61,31 +69,5 @@ class emprendedores extends Model
     public static function eliminarEmprendimiento($emprendimiento){
         $emprendimiento->delete();
         $redes->delete();
-    }
-    public static function filterEmprendimientos($categoria, $nombre){
-         $emprendimientos=emprendedores::query()->when($categoria, function($query, $categoria){
-            return $query->where('categoria','like','%'.$categoria.'%');
-        })
-        ->when($nombre, function($query, $nombre){
-            return $query->where('nombre','like','%'.$nombre.'%');
-        })
-        ->get();
-        return $emprendimientos;
-    }
-
-     public static function filterEmprendimientosCategoria($categoria){
-         $emprendimientos=emprendedores::query()->when($categoria, function($query, $categoria){
-            return $query->where('categoria','like','%'.$categoria.'%');
-        })->get();
-        return $emprendimientos;
-    }
-
-        public static function filterEmprendimientosNombre($nombre){
-         $emprendimientos=emprendedores::query()->when($nombre, function($query, $nombre){
-            return $query->where('nombre','like','%'.$nombre.'%');
-        })->get();
-        return $emprendimientos;
-    }
-
-    
+    }  
 }
