@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Emprendedor;
+use App\Models\emprendedores;
 use Emprendedores as GlobalEmprendedores;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,7 @@ class EmprendedorController extends Controller
     public function info() {} // defolvera informacion del emprendedor
 
     public function getEmprendimientos(){
-        $emprendimientos = Emprendedor::with('redes')->paginate(20);
+        $emprendimientos = emprendedores::with('redes')->paginate(20);
 
 
 
@@ -25,7 +25,7 @@ class EmprendedorController extends Controller
     public function filterEmprendimientosByName(Request $request){
         $busqueda = $request->query('busqueda');
 
-            $emprendimientos = Emprendedor::with('redes')
+            $emprendimientos = emprendedores::with('redes')
             ->where('nombre', 'LIKE', '%' . $busqueda . '%')
             // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
             ->get();

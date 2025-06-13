@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Emprendedor;
+use App\Models\emprendedores;
 
 class EmprendedorSeeder extends Seeder
 {
@@ -14,6 +14,6 @@ class EmprendedorSeeder extends Seeder
      */
     public function run()
     {
-         Emprendedor::factory()->count(50)->create();
+         emprendedores::factory()->count(50)->create();
     }
 }

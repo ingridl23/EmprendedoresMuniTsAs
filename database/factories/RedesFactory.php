@@ -16,6 +16,7 @@ class RedesFactory extends Factory
         return [
             'instagram' => "https://instagram.com/{$username}",
             'facebook' => "https://facebook.com/{$username}",
+            'whatsapp' => $this->faker->numerify('######'),
             'created_at' => now(),
             'updated_at' => now(),
         ];

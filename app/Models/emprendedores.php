@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Database\Factories\EmprendedorFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Emprendedor extends Model
+class emprendedores extends Model
 {
     use HasFactory;
 
-    protected $table = 'emprendedor'; // tu tabla real
+    protected $table = 'emprendedores'; // tu tabla real
 
      protected static function newFactory()
     {
@@ -23,7 +23,6 @@ class Emprendedor extends Model
         'nombre',
         'descripcion',
         'categoria',
-        'contacto',
         'redes_id',
         'imagen'
     ];
