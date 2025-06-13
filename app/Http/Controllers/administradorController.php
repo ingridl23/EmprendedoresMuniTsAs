@@ -86,12 +86,14 @@ class administradorController extends Controller
 
     public function eliminarEmprendimiento($id){
         $emprendimiento=emprendedores::find($id);
-        $redes= redes::find($emprendimiento->redes_id);
-        if($emprendimiento!=null && $redes!=null){
-            Storage::disk('public')->delete($emprendimiento->imagen);
-            $emprendimiento->delete();
-            $redes->delete();
-            return redirect('/emprendimientos');
+        if($emprendimiento!=null){
+            $redes= redes::find($emprendimiento->redes_id);
+            if($redes!=null){
+                Storage::disk('public')->delete($emprendimiento->imagen);
+                emprendedores::eliminarEmprendimiento($emprendimiento);
+                redes::eliminarEmprendimiento($redes);
+                return redirect('/emprendimientos');
+            }
         }
         return redirect("/error", "Emprendimiento incorrecto, ingrese uno válido");
     }

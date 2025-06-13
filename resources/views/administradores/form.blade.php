@@ -1,5 +1,5 @@
 <label for="nombre">Nombre:</label>
-<textarea name="descripcion" id="descripcion">{{isset($emprendimiento) ? $emprendimiento->nombre : old('nombre')}}</textarea>
+<textarea name="nombre" id="nombre">{{isset($emprendimiento) ? $emprendimiento->nombre : old('nombre')}}</textarea>
     <br>
 <label for="descripcion">descripcion:</label>
 <textarea name="descripcion" id="descripcion">{{isset($emprendimiento) ? $emprendimiento->descripcion : old('descripcion')}}</textarea>

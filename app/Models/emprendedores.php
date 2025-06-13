@@ -17,7 +17,7 @@ class emprendedores extends Model
         'redes_id',
     ];
 
-    public function redes(): HasOne{
+    public static function redes(): HasOne{
         return $this->hasOne(redes::class);
         //en el controller se puede usar para buscar las redes como $phone = User::find(1)->phone;
     }
@@ -58,6 +58,10 @@ class emprendedores extends Model
         $emprendimiento->save();
     }
 
+    public static function eliminarEmprendimiento($emprendimiento){
+        $emprendimiento->delete();
+        $redes->delete();
+    }
     public static function filterEmprendimientos($categoria, $nombre){
          $emprendimientos=emprendedores::query()->when($categoria, function($query, $categoria){
             return $query->where('categoria','like','%'.$categoria.'%');

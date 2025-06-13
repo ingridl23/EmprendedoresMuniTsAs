@@ -15,8 +15,12 @@ class redes extends Model
         'whatsapp',
     ];
 
-        public static function editarEmprendimiento($redes){
+    public static function editarEmprendimiento($redes){
         $redes->save();
+    }
+
+    public static function eliminarEmprendimiento($redes){
+        $redes->delete();
     }
 
 }
