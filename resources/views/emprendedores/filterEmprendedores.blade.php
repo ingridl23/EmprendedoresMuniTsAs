@@ -68,7 +68,7 @@
             <li>{{$emp->categoria}}</li>
             <li>Instagram: {{$emp->redes->instagram}}</li>
             <li>Facebook: {{$emp->redes->facebook}}</li>
-            <li>Whatsapp: {{$emp->contacto}}</li>
+            <li>Whatsapp: {{$emp->redes->whatsapp}}</li>
             <br>
         @endforeach
 
