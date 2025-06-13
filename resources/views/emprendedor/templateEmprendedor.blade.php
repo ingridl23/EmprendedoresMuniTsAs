@@ -14,16 +14,14 @@
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+
 
 
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
-    <link href= "{{ asset('css/footer.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href= "{{ asset('css/styles2.css') }}" rel="stylesheet" />
+    <link href= "{{ asset('css/footer.css') }}" rel="stylesheet" />
 
 
 </head>
@@ -316,11 +314,17 @@
     <!-- seccion footer -->
     @include('emprendedor.footer')
 
-    <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/scripts2.js') }}"></script>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+    <script src="{{ asset('js/scripts.js') }} "></script>
+
+
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 
 </body>
