@@ -25,7 +25,9 @@ Route::get('/formarparte', [HomeController::class, "formarparte"]); // redirecci
 
 
 //agregar rutas para las secciones individuales del emprendedor
-Route::get('/emprendedor', [EmprendedorController::class, "emprendedor"]);
+/*Route::get('/emprendedor', [EmprendedorController::class, "emprendedor"]);*/
+
+Route::get('emprendedor', [EmprendedorController::class, 'getEmprendimientos'])->name('emprendimientos'); //Muestra los emprendimientos
 Route::get('/emprendedores', [EmprendedoresController::class, "emprendedores"]); //vista general para emprendedores
 
 
@@ -40,7 +42,5 @@ Route::get('/emprendedores/formEditarEmprendimiento/{id}', [administradorControl
 Route::patch('/emprendedores/update/{id}', [administradorController::class, "editarEmprendimiento"]);
 
 Route::delete('/emprendedores/delete/{id}', [administradorController::class, "eliminarEmprendimiento"]);
-
-Route::get('emprendedores', [EmprendedorController::class, 'getEmprendimientos'])->name('emprendimientos'); //Muestra los emprendimientos
 
 Auth::routes();

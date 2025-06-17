@@ -44,7 +44,7 @@ class EmprendedorController extends Controller
         if (is_numeric($id) && $id > constants::VALORMIN) {
             $emprendimiento = emprendedores::showEmprendimientoId($id);
             if ($emprendimiento != null) {
-                return view("emprendedores.emprendedor", compact('emprendimiento'));
+                return view("emprendedor.templateEmprendedor", compact('emprendimiento'));
             }
         }
         return null;
@@ -54,10 +54,10 @@ class EmprendedorController extends Controller
 
 
 
-    public function emprendedor()
+    /* public function emprendedor()
     {
 
         return view('emprendedor.templateEmprendedor');
     } // devolvera la seccion para un emprendedor
-
+*/
 }
