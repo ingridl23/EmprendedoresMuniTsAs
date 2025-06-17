@@ -6,17 +6,17 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\administradorController;
 use App\Http\Controllers\EmprendedorController;
 
-use App\Http\Controllers\Auth\ConfirmPasswordController;
+use App\Http\Controllers\ConfirmPasswordController;
 
-use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\ForgotPasswordController;
 
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\LoginController;
 
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\RegisterController;
 
-use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\ResetPasswordController;
 
-use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\VerificationController;
 
 use App\Http\Controllers\EmprendedoresController;
 
