@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/formarparte') }}"">ser parte</a>
+                                <a class="nav-link" href="{{ url('/formarparte') }}">ser parte</a>
                             </li>
                         </ul>
 
@@ -66,6 +66,19 @@
                                     <span class="btn-text">Gobierno<br>Abierto</span>
                                 </div>
                             </a>
+
+
+                            <a href="{{ url('/login') }}" target="_blank" class="get-started-btn scrollto">
+                                <div class="get-started-group font-color-bl">
+                                    <i class="fa fa-user-circle img-btn-logonav servicio-icono">
+
+                                    </i>
+                                    <span class="btn-text">Panel<br>Admin</span>
+                                </div>
+                            </a>
+
+
+
                         </div>
                     </div>
                 </div>
