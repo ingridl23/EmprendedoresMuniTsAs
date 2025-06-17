@@ -24,7 +24,7 @@
                         Av. Rivadavia 1 - Tres Arroyos <br>
                         <strong>Tel:</strong> (02983) 439200 <br> <strong>Consultas frecuentes:</strong> (02983)
                         15600000<br>
-                        <strong>Email:</strong> reclamos@tresarroyos.gov.ar<br>
+
 
                         <div class="social-links mt-3">
                             <a href="https://x.com/i/flow/login?redirect_after_login=%2FTresArroyosMun" class="twitter"
@@ -44,6 +44,11 @@
                                 target="_blank">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
+
+                            <a class="email" href="mailto:reclamos@tresarroyos.gov.ar" target="_blank">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+
                         </div>
 
                     </div>

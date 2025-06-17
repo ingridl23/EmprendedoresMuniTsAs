@@ -233,85 +233,70 @@
                 </div>
             </div>
             <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+
                 <div class="col-lg-6">
 
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form class="form" id="contactForm">
                         <!-- Name input-->
 
+                        <div class="field-group">
 
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text"
-                                placeholder="Enter your name..." data-sb-validations="required" />
-                            <label for="name">Nombre y apellido (nombre completo)</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">completa con al menos un
-                                nombre y un
-                                apellido.</div>
+                            <input id="name" name="message" type="text" placeholder="" required></input>
+                            <label class="message" for="message">Nombre y Apellido</label>
+                            <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                         </div>
-                        <!-- Email address input-->
 
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                                data-sb-validations="required,email" />
-                            <label for="email">Correo electronico</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">ingresa un correo que uses
-                                con regularidad.
-                            </div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">ingresa un email valido
-                                (ejemplo : @example.com).</div>
+                        <!--inpt email-->
+
+                        <div class="field-group">
+
+                            <input id="email" name="message" type="email" placeholder="" required></input>
+                            <label class="message" for="message">Email</label>
+                            <p class="form-subtitulos">Registre un email que utilice frecuentemente</p>
                         </div>
-                        <!-- Phone number input-->
 
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
-                                data-sb-validations="required" />
-                            <label for="phone">Numero de telefono</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">ingresa un numero de
-                                telefono que manejes diariamente</div>
+
+                        <!--input telefono -->
+
+                        <div class="field-group">
+
+                            <input type="tel" id="phone" name="telefono" placeholder="" required></input>
+                            <label class="message" for="message">Telefono</label>
+                            <p class="form-subtitulos">Otorgue un numero de telefono de uso frecuente</p>
                         </div>
-                        <!-- Message input-->
 
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
-                                style="height: 10rem" data-sb-validations="required"></textarea>
-                            <label for="message">Describe brevemente tu emprendimiento y a que te dedicas.</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required"> Completa con una breve
-                                presentacion sobre tu emprendimiento.
-                            </div>
+                        <!-- input descripcion -->
+                        <div class="field-group">
+
+                            <textarea id="descripcion" name="descripcion" type="text" placeholder="" required></textarea>
+                            <label class="message" for="message">Describa brevemente su emprendimiento</label>
+                            <p class="form-subtitulos">Escriba una descripcion a continuacion</p>
                         </div>
-                        <!-- Submit success message-->
 
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
+                        <!-- input oculto -->
 
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Enviado exitosamente!</div>
-                                Gracias por completar el formulario, estamos felices que quieras ser parte de esta gran
-                                iniciativa.
-                                En la brevedad nos comunicaremos con vos para que puedas formar parte.
-                                <br />
-                                <a
-                                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
+                        <input type="text" id="oculto" name="oculto" class="oculto" autocomplete="off"
+                            value="dato oculto">
 
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Ocurrio un error al enviar tu respuesta, verifica
-                                que tengas conexion o que
-                                se hayan ingresado los datos correctamente
-                            </div>
-                        </div>
                         <!-- Submit Button-->
+                        <div class=" d-grid  ">
+                            <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
 
-                        <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton"
-                                type="submit">Enviar Peticion</button></div>
+                                <span class="btntext"> Enviar
+                                    Peticion </span>
+
+                                <span class="checkmark">&#10004;</span>
+                                <span class="checkmark2">&#10008; </span>
+                            </button>
+
+                            <p class="error-msg">Complete los campos obligatorios</p>
+                        </div>
+
                     </form>
                 </div>
             </div>
+
+        </div>
 
         </div>
 
@@ -321,11 +306,12 @@
     @include('emprendedor.footer')
 
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js/scripts.js') }} "></script>
+    <script src="{{ asset('js/logicaform.js') }} "></script>
+    <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>-->
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
-    <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
