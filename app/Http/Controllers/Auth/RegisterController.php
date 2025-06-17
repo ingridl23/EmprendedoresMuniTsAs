@@ -71,13 +71,14 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        
         if($data['email']=="valen@gmail.com" || $data['email']=="juana@gmail.com"){
             $user->assignRole('admin');
         }
         else{
             $user->assignRole('user');
         }
+
+        $token= $user->createToken('auth_token')->plainTextToken;
         return $user;
     }
 }

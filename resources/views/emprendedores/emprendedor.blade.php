@@ -9,9 +9,11 @@
         <li>Facebook: {{$emprendimiento->facebook}}</li>
         <li>Whatsapp: {{$emprendimiento->whatsapp}}</li>
         <button type="button"><a href="/emprendimientos">Volver</a></button>
-        <form action="/emprendimientos/{{$emprendimiento->id}}" method="post">
-            @csrf
-            @method('DELETE')
-            <input type="submit" value="Eliminar">
-        </form>  
+        @can('eliminar emprendimiento')
+            <form action="/emprendimientos/{{$emprendimiento->id}}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="Eliminar">
+            </form> 
+        @endcan 
 @endsection

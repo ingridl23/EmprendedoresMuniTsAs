@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\constants;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Database\Factories\EmprendedorFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -48,7 +47,7 @@ class emprendedores extends Model
     }
 
     public static function crearEmprendimiento($request, $path){
-                $redes= redes::create([
+        $redes= redes::create([
             'instagram'=> $request->instagram,
             'facebook' => $request->facebook,
             'whatsapp' => $request->whatsapp,

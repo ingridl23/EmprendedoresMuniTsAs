@@ -7,7 +7,7 @@ use App\Http\Controllers\EmprendedorController;
 use App\Http\Controllers\administradorController;
 
 
-Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
+Route::get('/', [HomeController::class, "index"])->name('home'); //home del sitio emprendedores general, este seria nuestro index
 
 
 Route::get('/emprendimientos/nuevoEmprendimiento', [administradorController::class,"showFormCrearEmprendimiento"]);
@@ -18,10 +18,8 @@ Route::patch('/emprendimientos/{id}', [administradorController::class,"editarEmp
 
 Route::delete('/emprendimientos/{id}', [administradorController::class,"eliminarEmprendimiento"]);
 
-Route::get('emprendimientos', [App\Http\Controllers\EmprendedorController::class, 'getEmprendimientos'])->name('emprendimientos'); //Muestra los emprendimientos
+Route::get('emprendimientos', [EmprendedorController::class, 'getEmprendimientos'])->name('emprendimientos'); //Muestra los emprendimientos
 Route::get('/emprendimientos/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
-
-Route::get('emprendimientos/buscador', [App\Http\Controllers\EmprendedorController::class, 'filterEmprendimientosByName'])->name('filterByName');
 
 
 Auth::routes();

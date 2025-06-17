@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
         console.log(search);
 
-        fetch(`/emprendimientos/buscador?busqueda=${search}`, {
+        fetch(`api/emprendimientos/buscador?busqueda=${search}`, {
             method: 'get'
         })
         .then(response => response.json())
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', e => {
             <div class="card-body">
                 <h5 class="card-title">${emprendimiento.nombre}</h5>
                 <p class="card-text">${emprendimiento.categoria}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="/emprendimientos/${emprendimiento.id}" class="btn btn-primary">Go somewhere</a>
             </div>
             </div>`;
             container.appendChild(card);

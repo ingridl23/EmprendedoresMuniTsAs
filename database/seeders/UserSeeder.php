@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
     {
         $user = User::where('email', 'valen@gmail.com')->first();
         if(empty($user)){
-            User::create([
+            $user=User::create([
             'name' => 'Valentina',
             'email' => 'valen@gmail.com',
             'password' => Hash::make('valentina1212'),
