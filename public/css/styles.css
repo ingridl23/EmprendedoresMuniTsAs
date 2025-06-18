@@ -11672,7 +11672,7 @@
     /* primer seccion */
     
     .custom-about {
-        background-color: var(--bs-pink);
+        background-color: var(--bs-red);
     }
     /* ======= ESTILOS ESPECÍFICOS DE SECCIÓN ======= */
     
@@ -11811,4 +11811,9 @@
     
     .btntext {
         font-size: medium !important;
+    }
+    
+    .divider {
+        width: 10rem;
+        height: auto;
     }

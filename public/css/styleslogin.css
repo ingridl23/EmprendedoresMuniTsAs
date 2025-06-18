@@ -1,0 +1,89 @@
+    #mainNav {
+        justify-content: space-between;
+    }
+    
+    @keyframes spinY {
+        0% {
+            transform: rotateY(0deg);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+    
+    #imgcultura {
+        margin-top: 6rem;
+        width: 200px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        transition: transform 0.6s ease-in-out;
+        transform-style: preserve-3d;
+    }
+    
+    #imgcultura:hover {
+        animation: spinY 1s ease-in-out;
+    }
+    /* seccion del formulario*/
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+    }
+    
+    .container {
+        max-width: 400px;
+        /* Ajusta según necesidad */
+        width: 100%;
+    }
+    /* Reemplazo de los círculos por logos */
+    
+    .logo-left,
+    .logo-right {
+        width: 120px;
+        height: auto;
+    }
+    /* Alineación para cada panel */
+    
+    .left-panel {
+        background-color: #28aadc;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .right-panel {
+        width: 50%;
+        background-color: rgb(216, 196, 196);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+    
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .card-header {
+        display: flex;
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+    }
+    
+    .card-body {
+        display: flex;
+        text-align: center;
+    }

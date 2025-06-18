@@ -203,7 +203,7 @@
 
 
     <!-- Call to action-->
-    <section class="page-section text-white" style="background-color: #d63384 !important;">
+    <section class="page-section text-white" style="background-color: #d63333 !important;">
         <div class="container px-4 px-lg-5 text-center">
             <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
             <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
@@ -223,8 +223,8 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
+                    <img class="divider" src="assets//img/logocultura.png">
                     <h2 class="mt-0"> Unite como emprendedor</h2>
-                    <hr class="divider" />
                     <p class="text-muted mb-5">
                         Completá el formulario con tus datos y desde la Oficina de Cultura nos pondremos en
                         contacto para que puedas integrarte a esta valiosa propuesta.
