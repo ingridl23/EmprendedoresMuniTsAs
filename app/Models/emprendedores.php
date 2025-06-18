@@ -30,7 +30,7 @@ class emprendedores extends Model
     }
 
     public static function showEmprendimientos(){
-        $emprendimientos= emprendedores::select(['id','nombre','descripcion', 'imagen'])->get();
+        $emprendimientos= emprendedores::select(['id','nombre','descripcion', 'imagen','categoria'])->paginate(10);
         if(count($emprendimientos)>constants::VALORMIN){
             return $emprendimientos;
         }
@@ -38,7 +38,7 @@ class emprendedores extends Model
     }
 
     public static function showEmprendimientoId($id){
-        $emprendimiento=emprendedores::join('redes', 'redes_id', '=', 'redes.id')->where('emprendedores.id',$id)->get();
+        $emprendimiento=emprendedores::with('redes')->where('emprendedores.id',$id)->get();
         if(count($emprendimiento)>constants::VALORMIN){
             $emprendimiento=$emprendimiento[0];
             return $emprendimiento;
@@ -67,6 +67,5 @@ class emprendedores extends Model
 
     public static function eliminarEmprendimiento($emprendimiento){
         $emprendimiento->delete();
-        $redes->delete();
     }  
 }

@@ -303,7 +303,9 @@ kbd kbd {
 figure {
   margin: 0 0 1rem;
 }
-
+div img.card-img-top{
+  width: 50%;
+}
 img,
 svg {
   vertical-align: middle;

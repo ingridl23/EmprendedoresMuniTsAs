@@ -42,7 +42,7 @@ class validacionEditarEmprendimiento extends FormRequest
             'nombre'=>'bail|required|string|min:1|max:100',
             'nombre.string'=>'Debe ingresar un nombre valido',
             'descripcion.string'=>'Debe ingresar una descripcion valida',
-            'imagen.mimes'=>'El formato de la imagen debe de ser en: jpeg,jpg,png',
+            'imagen.mimes'=>'El formato de la imagen debe de ser en: jpeg,jpg,png,webp',
             'whatsapp.digits_between'=>'El numero de telefono debe de tener entre 8 y 11 digitos'
         ];
     }

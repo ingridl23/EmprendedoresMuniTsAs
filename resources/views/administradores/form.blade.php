@@ -14,12 +14,12 @@
 <input type="file" name="imagen" id="imagen">
     <br>
 <label for="facebook">facebook:</label>
-<input type="text" name="facebook" id="facebook" value={{isset($emprendimiento) ? $emprendimiento->facebook : old('facebook')}}>
+<input type="text" name="facebook" id="facebook" value={{isset($emprendimiento) ? $emprendimiento->redes->facebook : old('facebook')}}>
     <br>
 <label for="instagram">instagram:</label>
-<input type="text" name="instagram" id="instagram" value={{isset($emprendimiento) ? $emprendimiento->instagram : old('instagram')}}>
+<input type="text" name="instagram" id="instagram" value={{isset($emprendimiento) ? $emprendimiento->redes->instagram : old('instagram')}}>
     <br>
 <label for="whatsapp">whatsapp:</label>
-<input type="text" name="whatsapp" id="whatsapp" value={{isset($emprendimiento) ? $emprendimiento->whatsapp : old('whatsapp')}}>
+<input type="text" name="whatsapp" id="whatsapp" value={{isset($emprendimiento) ? $emprendimiento->redes->whatsapp : old('whatsapp')}}>
     <br>
 <button type="submit" value="Guardar datos">Enviar</button>

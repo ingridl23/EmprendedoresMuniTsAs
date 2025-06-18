@@ -42,7 +42,7 @@ class administradorController extends Controller
         $imagen=$request->file("imagen");
         $path = $imagen->store('img', 'public');
         emprendedores::crearEmprendimiento($request, $path);
-       return redirect('/emprendimientos');
+        return redirect('/emprendimientos');
     }
 
     public function showFormEditarEmprendimiento($id){
@@ -53,7 +53,7 @@ class administradorController extends Controller
             }
         };
         
-        return view("/error");        
+         return view("errors.mensaje")->with('mensaje', "No se encuentra un emprendimiento válido, revise los datos e intente nuevamente.");        
     }
 
     public function editarEmprendimiento($id, validacionEditarEmprendimiento $request){
@@ -80,8 +80,8 @@ class administradorController extends Controller
             redes::editarEmprendimiento($redes);
             return redirect('/emprendimientos');
         }
-        return view("/");
-       //return redirect("emprendedores.emprendedor", compact('emprendimiento'));
+        return view("errors.mensaje")->with('mensaje', "No se encuentra cargado ningún emprendimiento");
+
     }
 
     public function eliminarEmprendimiento($id){
@@ -91,10 +91,10 @@ class administradorController extends Controller
             if($redes!=null){
                 Storage::disk('public')->delete($emprendimiento->imagen);
                 emprendedores::eliminarEmprendimiento($emprendimiento);
-                redes::eliminarEmprendimiento($redes);
+                redes::eliminarRedesEmprendimiento($redes);
                 return redirect('/emprendimientos');
             }
         }
-        return redirect("/error", "Emprendimiento incorrecto, ingrese uno válido");
+         return view("errors.mensaje")->with('mensaje', "No se encuentra cargado ningún emprendimiento, ingrese una válido");
     }
 }

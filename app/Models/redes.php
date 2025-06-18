@@ -24,7 +24,7 @@ class Redes extends Model{
         $redes->save();
     }
 
-    public static function eliminarEmprendimiento($redes){
+    public static function eliminarRedesEmprendimiento($redes){
         $redes->delete();
     }
 }

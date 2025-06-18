@@ -13,11 +13,11 @@ class EmprendedorController extends Controller{
     }
 
     public function getEmprendimientos(){
-        $emprendimientos = emprendedores::with('redes')->paginate(20);
+        $emprendimientos = emprendedores::showEmprendimientos();
         if($emprendimientos!=null){
             return view('emprendedores.filterEmprendedores')->with('emprendimientos', $emprendimientos);
         }
-        return view("error");
+        return view("errors.mensaje")->with('mensaje', "No se encuentra cargado ningún emprendimiento");
     }
 
     /*Filtro de busqueda de emprendedores por nombre*/
@@ -37,8 +37,7 @@ class EmprendedorController extends Controller{
                 return view("emprendedores.emprendedor", compact('emprendimiento'));
             }
         }
-        return null; 
-        //return view("error"); CREAR VISTA
+         return view("errors.mensaje")->with('mensaje', "No se encuentra cargado ningún emprendimiento");; 
     }
 
     public function showFormCrearEmprendimiento(){

@@ -41,15 +41,19 @@
         @foreach($emprendimientos as $emp)
             <li>{{$emp->nombre}}</li>
             <li>{{$emp->descripcion}}</li>
-            <li>{{$emp->imagen}}</li>
+            <li><img src="{{ asset('storage/' .$emp->imagen)}}" alt="Imagen de {{$emp->nombre}}"></li>
             <li>{{$emp->categoria}}</li>
-            <li>Instagram: {{$emp->redes->instagram}}</li>
-            <li>Facebook: {{$emp->redes->facebook}}</li>
-            <li>Whatsapp: {{$emp->redes->whatsapp}}</li>
+            <button><a href="/emprendimientos/{{$emp->id}}">Más detalles</a></button>
+            <br>
             <br>
         @endforeach
 
 @endif
+<div>
+    {{ $emprendimientos->onEachSide(2)->links('pagination::bootstrap-4')}}
+</div>
+
+
 
 
 @endsection

@@ -27,7 +27,7 @@ class validacionEmprendimiento extends FormRequest
             'nombre'=>'bail|required|string|min:1|max:100',
             'descripcion'=>'bail|required|string|min:1',
             'categoria'=>'bail|required|string|min:1|max:60',
-            'imagen'=>'bail|required|image|mimes:jpeg,jpg,png',
+            'imagen'=>'bail|required|image|mimes:jpeg,jpg,png,webp',
             'facebook'=>'nullable|string|min:1|max:100',
             'instagram'=>'nullable|string|min:1|max:100',
             'whatsapp'=>'numeric|digits_between:8,11',
@@ -44,6 +44,7 @@ class validacionEmprendimiento extends FormRequest
             'nombre.string'=>'Debe ingresar un nombre valido',
             'descripcion.string'=>'Debe ingresar una descripcion valida',
             'imagen.mimes'=>'El formato de la imagen debe de ser en: jpeg,jpg,png',
+            'whatsapp.numeric'=>'Debe ingresar un número de teléfono',
             'whatsapp.digits_between'=>'El numero de telefono debe de tener entre 8 y 11 digitos'
         ];
     }
