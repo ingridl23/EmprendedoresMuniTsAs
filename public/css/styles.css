@@ -11813,7 +11813,22 @@
         font-size: medium !important;
     }
     
+    @keyframes spinY {
+        0% {
+            transform: rotateY(0deg);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+    
     .divider {
         width: 10rem;
         height: auto;
+        transition: transform 0.6s ease-in-out;
+        transform-style: preserve-3d;
+    }
+    
+    .divider:hover {
+        animation: spinY 1s ease-in-out;
     }
