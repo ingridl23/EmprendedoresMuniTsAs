@@ -26,6 +26,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+
+    <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
 </head>
@@ -218,7 +220,7 @@
 
 
     <!-- Contact-->
-    <section class="page-section" id="contact">
+    <section class="page-section" id="contact" style="background-color: white">
 
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -302,13 +304,89 @@
 
     </section>
 
+
+    <!-- OVERLAY -->
+    <div class="modal-overlay" id="overlay"></div>
+
+    {{-- Panel : formulario de login --}}
+    <div class=" modal" id="modal">
+
+        <!--  logo y titulo -->
+        <div class="card-header  modal-header">
+            <img id="imgcultura" src="{{ asset('assets/img/logocultura.png') }}" alt="Logo Cultura">
+            <span class="titulologin">Panel Para Administrador</span>
+            <button class="modal-close" id="closeModal">&times;</button>
+        </div>
+
+
+        <!--body del modal form -->
+        <div class=" modal-body card-body">
+            <form method="POST" action="{{ route('login') }}" autocomplete="off" class="w-100"
+                style="max-width: 400px;">
+                @csrf
+
+                {{-- Email --}}
+                <div class="field-group">
+                    <input id="email" type="email" name="email" required placeholder="">
+                    <label for="email">Ingresar Email</label>
+                    @error('email')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                {{-- Contraseña --}}
+                <div class="field-group">
+                    <input id="password" type="password" name="password" required placeholder=""
+                        autocomplete="current-password">
+                    <label for="password">Ingresar Contraseña</label>
+                    @error('password')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                {{-- Recordar credenciales --}}
+                <div class="checkbox-group mb-3">
+                    <label>
+                        <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        Recordar credenciales
+                    </label>
+                </div>
+
+                {{-- Botón --}}
+                <div class="text-center mb-2">
+                    <button type="submit" class="btn btn-primary w-100" id="loginForm">
+                        {{ __('Ingresar') }}
+                    </button>
+                </div>
+
+                {{-- Olvidaste contraseña --}}
+                @if (Route::has('password.request'))
+                    <div class="text-center">
+                        <a class="btn btn-link p-0" href="{{ route('password.request') }}">
+                            {{ __('¿Olvidaste cómo ingresar?') }}
+                        </a>
+                    </div>
+                @endif
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/logicaform.js') }} "></script>
-    <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>-->
+
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->

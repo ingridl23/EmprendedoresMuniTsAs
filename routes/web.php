@@ -27,17 +27,18 @@ Route::get('/formarparte', [HomeController::class, "formarparte"]); // redirecci
 //agregar rutas para las secciones individuales del emprendedor
 /*Route::get('/emprendedor', [EmprendedorController::class, "emprendedor"]);*/
 
-Route::get('emprendedor', [EmprendedorController::class, 'getEmprendimientos'])->name('emprendimientos'); //Muestra los emprendimientos
+//Route::get('emprendedor', [EmprendedorController::class, 'getEmprendimientos'])->name('emprendimientos'); //Muestra los emprendimientos
 Route::get('/emprendedores', [EmprendedoresController::class, "emprendedores"]); //vista general para emprendedores
 
+//Route::get('/emprendedores/panelAdmin', [administradorController::class, "show"]);
 
 
 // agregar para admin
 
 Route::get('/emprendedores/nuevoEmprendimiento', [administradorController::class, "showFormCrearEmprendimiento"]);
-Route::post('/emprendimientos/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"]);
+Route::post('/emprendores/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"]);
 
-Route::get('/emprendedores/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
+//Route::get('/emprendedores/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
 Route::get('/emprendedores/formEditarEmprendimiento/{id}', [administradorController::class, "showFormEditarEmprendimiento"]);
 Route::patch('/emprendedores/update/{id}', [administradorController::class, "editarEmprendimiento"]);
 

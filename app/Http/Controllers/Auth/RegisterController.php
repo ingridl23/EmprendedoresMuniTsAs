@@ -65,20 +65,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user= User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
 
-        if($data['email']=="valen@gmail.com" || $data['email']=="juana@gmail.com"){
+        if ($data['email'] == "valen@gmail.com" || $data['email'] == "cultura@gmail.com") {
             $user->assignRole('admin');
-        }
-        else{
+        } else {
             $user->assignRole('user');
         }
 
-        $token= $user->createToken('auth_token')->plainTextToken;
+        $token = $user->createToken('auth_token')->plainTextToken;
         return $user;
     }
 }

@@ -68,7 +68,8 @@
                             </a>
 
 
-                            <a href="{{ url('/login') }}" target="_blank" class="get-started-btn scrollto">
+
+                            <a href="#" class="btn-contact" target="_blank" class="get-started-btn scrollto">
                                 <div class="get-started-group font-color-bl">
                                     <i class="fa fa-user-circle img-btn-logonav servicio-icono">
 

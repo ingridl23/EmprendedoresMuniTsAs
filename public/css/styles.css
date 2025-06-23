@@ -11832,3 +11832,7 @@
     .divider:hover {
         animation: spinY 1s ease-in-out;
     }
+    
+    .section-services {
+        background-color: white !important;
+    }
