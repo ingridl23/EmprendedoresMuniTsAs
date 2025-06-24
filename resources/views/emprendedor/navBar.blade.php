@@ -67,17 +67,14 @@
                                 </div>
                             </a>
 
-
-
-                            <a href="#" class="btn-contact" target="_blank" class="get-started-btn scrollto">
+                            <a href="" target="_blank" class="get-started-btn scrollto btn-contact">
                                 <div class="get-started-group font-color-bl">
-                                    <i class="fa fa-user-circle img-btn-logonav servicio-icono">
+                                    <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
 
                                     </i>
                                     <span class="btn-text">Panel<br>Admin</span>
                                 </div>
                             </a>
-
 
 
                         </div>

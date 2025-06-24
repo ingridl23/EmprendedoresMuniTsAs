@@ -47,7 +47,7 @@ class administradorController extends Controller
         $imagen = $request->file("imagen");
         $path = $imagen->store('img', 'public');
         emprendedores::crearEmprendimiento($request, $path);
-        return redirect('/emprendimientos');
+        return redirect('/emprendedores');
     }
 
     public function showFormEditarEmprendimiento($id)
@@ -87,7 +87,7 @@ class administradorController extends Controller
 
             emprendedores::editarEmprendimiento($emprendimiento);
             redes::editarEmprendimiento($redes);
-            return redirect('/emprendimientos');
+            return redirect('/emprendedores');
         }
         return view("/");
         //return redirect("emprendedores.emprendedor", compact('emprendimiento'));
@@ -102,7 +102,7 @@ class administradorController extends Controller
                 Storage::disk('public')->delete($emprendimiento->imagen);
                 emprendedores::eliminarEmprendimiento($emprendimiento);
                 redes::eliminarEmprendimiento($redes);
-                return redirect('/emprendimietos');
+                return redirect('/emprendedores');
             }
         }
         return redirect("/error", "Emprendimiento incorrecto, ingrese uno válido");

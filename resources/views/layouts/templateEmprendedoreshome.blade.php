@@ -119,8 +119,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-6 text-center seccion-tenes-emprendimiento">
                     <div class="mt-5">
-                        <div class="mb-2"><i class="fa-solid fa-laptop fs-1 text-primary  style="color:
-                                #004d4d!important;"></i>
+                        <div class="mb-2"><i
+                                class="fa-solid fa-laptop fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
                         <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
                         <p class="text-muted mb-0">Si sos parte de la Dirección de Cultura, podés sumarte a esta
@@ -278,17 +278,14 @@
                         <!-- input oculto -->
 
                         <input type="text" id="oculto" name="oculto" class="oculto" autocomplete="off"
-                            value="dato oculto">
+                            value="">
 
                         <!-- Submit Button-->
-                        <div class=" d-grid  ">
-                            <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
-
-                                <span class="btntext"> Enviar
-                                    Peticion </span>
-
+                        <div class="d-grid">
+                            <button class="submit btn btn-primary btn-xl" id="submitButton" type="submit">
+                                <span class="btn-text2">Enviar Petición</span>
                                 <span class="checkmark">&#10004;</span>
-                                <span class="checkmark2">&#10008; </span>
+                                <span class="checkmark2">&#10008;</span>
                             </button>
 
                             <p class="error-msg">Complete los campos obligatorios</p>
@@ -309,7 +306,7 @@
     <div class="modal-overlay" id="overlay"></div>
 
     {{-- Panel : formulario de login --}}
-    <div class=" modal" id="modal">
+    <div class="modal" id="modal">
 
         <!--  logo y titulo -->
         <div class="card-header  modal-header">
@@ -321,13 +318,13 @@
 
         <!--body del modal form -->
         <div class=" modal-body card-body">
-            <form method="POST" action="{{ route('login') }}" autocomplete="off" class="w-100"
+            <form id="loginForm" method="POST" action="{{ route('login') }}" autocomplete="off" class="w-100"
                 style="max-width: 400px;">
                 @csrf
 
                 {{-- Email --}}
                 <div class="field-group">
-                    <input id="email" type="email" name="email" required placeholder="">
+                    <input id="email2" type="email" name="email" required placeholder="">
                     <label for="email">Ingresar Email</label>
                     @error('email')
                         <span class="invalid-feedback d-block" role="alert">
@@ -358,7 +355,7 @@
 
                 {{-- Botón --}}
                 <div class="text-center mb-2">
-                    <button type="submit" class="btn btn-primary w-100" id="loginForm">
+                    <button type="submit" class="btn btn-primary w-100" id="Form">
                         {{ __('Ingresar') }}
                     </button>
                 </div>

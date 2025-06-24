@@ -80,7 +80,8 @@
                                 <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                     class="get-started-btn scrollto">
                                     <div class="get-started-group font-color-bl">
-                                        <i class="fa-solid fa-laptop servicio-icono"></i>
+                                        <i class="fa-solid fa-laptop servicio-icono"
+                                            style="color: rgb(38, 92, 172)"></i>
                                         <span class="btn-text">Autogestion</span>
 
                                     </div>
@@ -89,7 +90,8 @@
                                 <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
                                     class="get-started-btn scrollto">
                                     <div class="get-started-group font-color-bl">
-                                        <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
+                                        <i class="fas fa-lock-open  img-btn-logonav servicio-icono"
+                                            style="color: rgb(38, 92, 172)">
 
                                         </i>
                                         <span class="btn-text">Gobierno<br>Abierto</span>

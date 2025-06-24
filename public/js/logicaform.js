@@ -37,15 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".field-group input").forEach((input) => {
-            if (input.value.trim() !== "") {
-                input.classList.add("has-value");
-            }
+    document.querySelectorAll(".field-group input").forEach((input) => {
+        if (input.value.trim() !== "") {
+            input.classList.add("has-value");
+        }
 
-            input.addEventListener("input", () => {
-                input.classList.toggle("has-value", input.value.trim() !== "");
-            });
+        input.addEventListener("input", () => {
+            input.classList.toggle("has-value", input.value.trim() !== "");
         });
     });
 
@@ -60,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("modal").classList.remove("open");
     });
 
-    $("#loginForm").on("submit", function(e) {
+    $("#Form").on("submit", function(e) {
         e.preventDefault();
         let $form = $(this);
         $.ajax({

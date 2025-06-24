@@ -11689,6 +11689,7 @@
         border: #ccc solid 0.2rem;
         cursor: pointer;
         overflow: hidden;
+        position: relative;
     }
     
     .submit:hover {
@@ -11806,10 +11807,10 @@
     textarea:not(:placeholder-shown)+label {
         top: -0.9rem;
         font-size: 0.75rem;
-        color: #ff4500;
+        color: #53c9ff !important;
     }
     
-    .btntext {
+    .btn-text2 {
         font-size: medium !important;
     }
     

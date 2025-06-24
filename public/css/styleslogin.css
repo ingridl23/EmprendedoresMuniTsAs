@@ -203,17 +203,7 @@ body {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 20;
-}
-
-.modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+    z-index: 25;
 }
 
 
@@ -222,17 +212,63 @@ body {
 .modal.open {
     display: block;
     position: fixed;
-    top: 58%;
+    top: 50%;
+    left: 50%;
+    bottom: 30%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem 1.5rem;
+    width: 90%;
+    max-width: 380px;
+    box-shadow: 0 8px 24px rgba(57, 245, 135, 0.1);
+    z-index: 1000;
+    text-align: center;
+}
+
+
+/* ─── ESTILO WIRE-FRAME PARA EL MODAL ─── */
+
+.modal {
+    display: none;
+    /* sigue oculto hasta que JS le ponga .open */
+    position: fixed;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
     border-radius: 1rem;
     padding: 2rem 1.5rem 1.5rem;
-    width: 93%;
-    max-width: 390px;
+    width: 90%;
+    max-width: 380px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    z-index: 25;
+    z-index: 1200;
     text-align: center;
+}
+
+.modal-header img {
+    width: 60px;
+    height: auto;
+}
+
+.modal-header span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+
+/* Botón de cerrar (X) */
+
+.modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #666;
 }
 
 
@@ -250,8 +286,9 @@ body {
 
 .titulologin {
     font-family: "Merriweather Sans";
-    font-weight: 500;
+    font-weight: 100;
     line-height: 1.2;
+    color: #212122!important;
 }
 
 
@@ -335,9 +372,10 @@ button[type="submit"]:hover {
 /* Enlace "¿Olvidaste cómo ingresar?" */
 
 a.btn-link {
-    color: #fff;
+    color: #a59f9f;
     font-size: 0.9rem;
     text-decoration: underline;
+    margin-top: 1rem;
 }
 
 a.btn-link:hover {
