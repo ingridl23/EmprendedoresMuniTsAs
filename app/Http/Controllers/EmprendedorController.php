@@ -2,62 +2,82 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Emprendedor;
+use App\Http\Requests\EmprendedorRequest;
 
-
-use App\constants;
-use emprendedores as GlobalEmprendedores;
-use Illuminate\Http\Request;
-use App\Models\emprendedores;
-use App\Models\redes;
-
+/**
+ * Class EmprendedorController
+ * @package App\Http\Controllers
+ */
 class EmprendedorController extends Controller
 {
-
-    /*****codigo valen***** */
-    public function __construct()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        $this->middleware('auth');
+        $emprendedors = Emprendedor::paginate();
+
+        return view('emprendedor.index', compact('emprendedors'))
+            ->with('i', (request()->input('page', 1) - 1) * $emprendedors->perPage());
     }
 
-    public function getEmprendimientos()
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        $emprendimientos = emprendedores::with('redes')->paginate(20);
-        if ($emprendimientos != null) {
-            return view('emprendedores.filterEmprendedores')->with('emprendimientos', $emprendimientos);
-        }
-        return view("error");
+        $emprendedor = new Emprendedor();
+        return view('emprendedor.create', compact('emprendedor'));
     }
 
-    /*Filtro de busqueda de emprendedores por nombre*/
-    public function filterEmprendimientosByName(Request $request)
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(EmprendedorRequest $request)
     {
-        $busqueda = $request->query('busqueda');
-        $emprendimientos = emprendedores::with('redes')
-            ->where('nombre', 'LIKE', '%' . $busqueda . '%')
-            // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
-            ->get();
-        return response()->json($emprendimientos);
+        Emprendedor::create($request->validated());
+
+        return redirect()->route('emprendedors.index')
+            ->with('success', 'Emprendedor created successfully.');
     }
 
-    public function showEmprendimientoId($id)
+    /**
+     * Display the specified resource.
+     */
+    public function show($id)
     {
-        if (is_numeric($id) && $id > constants::VALORMIN) {
-            $emprendimiento = emprendedores::showEmprendimientoId($id);
-            if ($emprendimiento != null) {
-                return view("emprendedor.templateEmprendedor", compact('emprendimiento'));
-            }
-        }
-        return null;
-        //return view("error"); CREAR VISTA
+        $emprendedor = Emprendedor::find($id);
+
+        return view('emprendedor.show', compact('emprendedor'));
     }
 
-
-
-
-    /* public function emprendedor()
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($id)
     {
+        $emprendedor = Emprendedor::find($id);
 
-        return view('emprendedor.templateEmprendedor');
-    } // devolvera la seccion para un emprendedor
-*/
+        return view('emprendedor.edit', compact('emprendedor'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(EmprendedorRequest $request, Emprendedor $emprendedor)
+    {
+        $emprendedor->update($request->validated());
+
+        return redirect()->route('emprendedors.index')
+            ->with('success', 'Emprendedor updated successfully');
+    }
+
+    public function destroy($id)
+    {
+        Emprendedor::find($id)->delete();
+
+        return redirect()->route('emprendedors.index')
+            ->with('success', 'Emprendedor deleted successfully');
+    }
 }

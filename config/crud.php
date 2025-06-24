@@ -61,4 +61,6 @@ return [
         'namespace' => 'App\Http\Controllers',
     ],
 
+    'relations' => []
+
 ];
