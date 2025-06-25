@@ -1,0 +1,396 @@
+/* #mainNav {
+        justify-content: space-between;
+    }
+    
+    @keyframes spinY {
+        0% {
+            transform: rotateY(0deg);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+    
+    #logotresa {
+        padding-bottom: 8rem;
+    }
+    
+    #imgcultura {
+        margin-top: 6rem;
+        width: 200px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        transition: transform 0.6s ease-in-out;
+        transform-style: preserve-3d;
+    }
+    
+    #imgcultura:hover {
+        animation: spinY 1s ease-in-out;
+    }
+    /* seccion del formulario*/
+
+
+/*  
+    body {
+        background-color: #d6d6d6 !important;
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+    }
+    
+    .container {
+        max-width: 400px;
+        /* Ajusta según necesidad */
+
+
+/*  width: 100%;
+    }
+    /* Contenedor que posiciona el label correctamente */
+
+
+/*  
+    .field-group {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+    /* INPUT Y TEXTAREA con diseño minimalista */
+
+
+/*  .field-group input {
+        border: none !important;
+        border-bottom: 2px solid #007bff!important;
+        background-color: transparent !important;
+        padding: 0.8rem 0.5rem 0.3rem !important;
+        font-size: 1rem !important;
+        color: #000 !important;
+        width: 80%;
+        transition: border-color 0.3s;
+        outline: none;
+    }
+    /* LABEL con animación flotante */
+
+
+/* .field-group label {
+        position: absolute;
+        left: 0.9rem;
+        top: 0.9rem;
+        font-size: 1rem;
+        pointer-events: none;
+        transition: 0.2s ease all;
+        color: rgb(90, 85, 85);
+    }
+    /* Si el input tiene foco o contenido, anima el label hacia arriba */
+
+
+/* .field-group input:focus+label,
+    .field-group input.has-value+label {
+        top: -0.9rem;
+        font-size: 0.85rem;
+        color: #ffffff;
+    }
+    /* Checkbox (recordar credenciales) */
+
+
+/* .message {
+        color: #222;
+        font-size: 0.9rem;
+    }
+    /* Botón login */
+
+
+/* button[type="submit"] {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        background-color: #007bff;
+        border: none;
+        color: #fff;
+        border-radius: 0.3rem;
+        transition: background-color 0.3s;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    /***********************************************************************************************************/
+
+
+/* Estilos generales */
+
+body {
+    background-color: #d6d6d6 !important;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#logotresa {
+    max-width: 80%;
+    height: auto;
+}
+
+
+/* Panel derecho */
+
+.right-panel {
+    background-color: rgb(228, 201, 201);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+
+/* Logo cultura */
+
+#imgcultura {
+    margin-top: 2rem;
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+#imgcultura:hover {
+    animation: spinY 1s ease-in-out;
+}
+
+@keyframes spinY {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+/* ✂ Base: ocultar overlay y modal por defecto */
+
+.modal-overlay,
+.modal {
+    display: none;
+}
+
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+/* ✂ Mostrar overlay cuando tenga .open */
+
+.modal-overlay.open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 25;
+}
+
+
+/* ✂ Mostrar modal cuando tenga .open */
+
+.modal.open {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    bottom: 30%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem 1.5rem;
+    width: 90%;
+    max-width: 380px;
+    box-shadow: 0 8px 24px rgba(57, 245, 135, 0.1);
+    z-index: 1000;
+    text-align: center;
+}
+
+
+/* ─── ESTILO WIRE-FRAME PARA EL MODAL ─── */
+
+.modal {
+    display: none;
+    /* sigue oculto hasta que JS le ponga .open */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem 1.5rem;
+    width: 90%;
+    max-width: 380px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    z-index: 1200;
+    text-align: center;
+}
+
+.modal-header img {
+    width: 60px;
+    height: auto;
+}
+
+.modal-header span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+
+/* Botón de cerrar (X) */
+
+.modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #666;
+}
+
+
+/* Sección del formulario */
+
+.card-body {
+    width: 100%;
+    max-width: 400px;
+}
+
+.field-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.titulologin {
+    font-family: "Merriweather Sans";
+    font-weight: 100;
+    line-height: 1.2;
+    color: #212122!important;
+}
+
+
+/* Input minimalista */
+
+.field-group input {
+    border: none !important;
+    border-bottom: 2px solid #0262c9 !important;
+    background-color: transparent !important;
+    padding: 0.8rem 0.5rem 0.3rem !important;
+    font-size: 1rem !important;
+    color: #000 !important;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+
+/* Label flotante */
+
+.field-group label {
+    position: absolute;
+    left: 0.9rem;
+    top: 0.3rem;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    color: rgb(90, 85, 85);
+}
+
+.field-group input:focus+label,
+.field-group input.has-value+label {
+    top: -0.9rem;
+    font-size: 0.85rem;
+    color: #53c9ff;
+}
+
+
+/* Checkbox alineado */
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: #007bff;
+    margin: 0;
+}
+
+.checkbox-group label {
+    font-size: 0.95rem;
+    color: #222;
+    margin: 0;
+}
+
+
+/* Botón */
+
+button[type="submit"] {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* Enlace "¿Olvidaste cómo ingresar?" */
+
+a.btn-link {
+    color: #a59f9f;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    margin-top: 1rem;
+}
+
+a.btn-link:hover {
+    color: #e0e0e0;
+}
+
+
+/* Ajustes responsivos básicos */
+
+@media (max-width: 768px) {
+    .left-panel {
+        display: none;
+    }
+    .right-panel {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+}

@@ -1,1 +1,1 @@
-require("../../resources/js/bootstrap");
+require("./bootstrap");

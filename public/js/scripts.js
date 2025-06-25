@@ -9,15 +9,19 @@
 
 window.addEventListener("DOMContentLoaded", (event) => {
     // Navbar shrink function
-    var navbarShrink = function () {
+    var navbarShrink = function() {
         const navbarCollapsible = document.body.querySelector("#mainNav");
-        if (!navbarCollapsible) {
-            return;
-        }
+        const header = document.querySelector("#header");
+
+        if (!navbarCollapsible) return;
+        if (!header) return;
+
         if (window.scrollY === 0) {
             navbarCollapsible.classList.remove("navbar-shrink");
+            header.classList.remove("header-scrolled");
         } else {
             navbarCollapsible.classList.add("navbar-shrink");
+            header.classList.add("header-scrolled");
         }
     };
 
@@ -41,7 +45,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll("#navbarResponsive .nav-link")
     );
-    responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItems.map(function(responsiveNavItem) {
         responsiveNavItem.addEventListener("click", () => {
             if (window.getComputedStyle(navbarToggler).display !== "none") {
                 navbarToggler.click();
