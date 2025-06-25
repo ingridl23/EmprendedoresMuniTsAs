@@ -13,7 +13,8 @@ class Redes extends Model
 
      protected $fillable = [
         'instagram',
-        'facebook'
+        'facebook',
+        'whatsapp'
     ];
 
  public function emprendedor(): HasOne
