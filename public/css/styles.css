@@ -86,6 +86,13 @@
         box-sizing: border-box;
     }
     
+    #imagenFormulario label { 
+        font-size: 1rem;
+        color: #000 !important;
+    }
+    .tituloNuevoEmprendimiento{
+        margin-top: 7rem;
+    }
     @media (prefers-reduced-motion: no-preference) {
          :root {
             scroll-behavior: smooth;
