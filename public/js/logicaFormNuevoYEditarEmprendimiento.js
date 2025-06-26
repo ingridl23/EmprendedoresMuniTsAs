@@ -11,8 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const categoriaEmprendimiento = document.getElementById("categoria").value.trim();
         const imagenEmprendimiento = document.getElementById("imagen").value;
         const whatsappEmprendimiento = document.getElementById("whatsapp").value.trim();
+        //imagenCargada referencia en, editar un emprendimiento, cuando el emprendimiento ya tiene una foto
+        //y desea cambiar otro dato pero no la foto (el campo input estará vacio si no desea cambiarla, entonces se
+        //muestra la imagen que ya estaba cargada.)
+        const imagenCargada=document.querySelector(".imagenEmprendimientoFormulario");
         const inputOculto = document.getElementById("oculto").value.trim();
-
         submitBtn.classList.remove("click", "error");
         errorMsg.classList.remove("show");
     
@@ -45,9 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
             console.warn("Posible bot detectado. Envío cancelado.");
             return; // Cancela el envío silenciosamente
         }
-
         if (nombreEmprendimiento === "" || descripcionEmprendimiento === "" || categoriaEmprendimiento === ""
-            || imagenEmprendimiento === "" || whatsappEmprendimiento === "") {
+            || (imagenEmprendimiento === "" && imagenCargada==null) || whatsappEmprendimiento === "") {
             // Mostrar cruz roja y mensaje de error
             submitBtn.classList.add("error");
             errorMsg.classList.add("show");
@@ -86,5 +88,30 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("modal").classList.remove("open");
     });
 
-
+    $("#Form").on("submit", function(e) {
+        e.preventDefault();
+        let $form = $(this);
+        $.ajax({
+            url: $form.attr("action"),
+            method: $form.attr("method"),
+            data: $form.serialize(),
+            success(data, status, xhr) {
+                // Si Laravel devuelve un JSON de éxito o te redirige:
+                // puedes forzar la carga del panel admin:
+                window.location.href = "{{ route('administradores.form') }}";
+            },
+            error(xhr) {
+                // Si hay validación / credenciales incorrectas,
+                // muestra los errores dentro del modal:
+                let errors = xhr.responseJSON.errors || {
+                    email: [xhr.responseJSON.message],
+                };
+                Object.keys(errors).forEach(function(field) {
+                    let msg = errors[field][0];
+                    // Añade aquí código para mostrar msg en tu modal
+                    alert(msg);
+                });
+            },
+        });
+    });
 });

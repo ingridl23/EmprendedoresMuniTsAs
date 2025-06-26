@@ -62,7 +62,7 @@ class administradorController extends Controller
         return view("/error");
     }
 
-    public function editarEmprendimiento($id, validacionEditarEmprendimiento $request)
+    public function editarEmprendimiento($id, Request $request)
     {
         $emprendimiento = emprendedores::find($id);
         $redes = redes::find($emprendimiento->redes_id);

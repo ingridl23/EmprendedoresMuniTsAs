@@ -18,9 +18,12 @@ class Redes extends Model
         'whatsapp'
     ];
 
- public function emprendedor(): HasOne
-{
-    return $this->hasOne(Emprendedor::class, 'redes_id', 'id');
-}
+    public function emprendedor(): HasOne
+    {
+        return $this->hasOne(Emprendedor::class, 'redes_id', 'id');
+    }
+    public static function editarEmprendimiento($redes){
+        $redes->save();
+    }
 
 }

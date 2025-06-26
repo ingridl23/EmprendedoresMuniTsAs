@@ -16,12 +16,12 @@
 </div>
 
 <div class="field-group" id="imagenFormulario">
-     @if (isset($emprendimiento->imagen))
-        <img src="{{ asset('storage/' . $emprendimiento->imagen) }}" alt="Imagen de {{ $emprendimiento->nombre }}">
+    @if (isset($emprendimiento->imagen))
+        <img src="{{ asset('storage/' . $emprendimiento->imagen) }}" alt="Imagen de {{ $emprendimiento->nombre }}" class="imagenEmprendimientoFormulario">
     @endif
     <input type="file" name="imagen" id="imagen">
     <label for="imagen">Imagen</label>
-    <p class="form-subtitulos">Otorgue una categoria del emprendimiento</p>
+    <p class="form-subtitulos">Cargue una imagen del emprendimiento</p>
 </div>
 
 <input type="text" id="oculto" name="oculto" class="oculto" autocomplete="off" >
@@ -46,13 +46,5 @@
 </div>
 
 
-<div class=" d-grid  ">
-    <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
-        <span class="btntext" value="Guardar datos"> Guardar emprendimiento </span>
-        <span class="checkmark">&#10004;</span>
-        <span class="checkmark2">&#10008; </span>
-    </button>
 
-    <p class="error-msg">Complete los campos obligatorios</p>
-</div>
 

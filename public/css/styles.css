@@ -93,6 +93,9 @@
     .tituloNuevoEmprendimiento{
         margin-top: 7rem;
     }
+    .imagenEmprendimientoFormulario{
+        margin-top: 1rem;
+    }
     @media (prefers-reduced-motion: no-preference) {
          :root {
             scroll-behavior: smooth;
