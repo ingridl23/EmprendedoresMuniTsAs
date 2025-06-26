@@ -73,6 +73,5 @@ class Emprendedores extends Model
     public static function eliminarEmprendimiento($emprendimiento)
     {
         $emprendimiento->delete();
-        $redes->delete();
     }
 }

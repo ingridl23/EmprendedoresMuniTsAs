@@ -61,6 +61,13 @@ return [
         'namespace' => 'App\Http\Controllers',
     ],
 
-    'relations' => []
+    'relations' => [
+        [
+            'name' => 'belongsTo',
+            'relatedModel' => 'App\Models\Rede',
+            'foreignKey' => 'redes_id',
+            'localKey' => 'id',
+        ],
+    ]
 
 ];

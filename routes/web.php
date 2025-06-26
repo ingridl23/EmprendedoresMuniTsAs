@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -5,20 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\administradorController;
 use App\Http\Controllers\EmprendedorController;
-
-use App\Http\Controllers\ConfirmPasswordController;
-
-use App\Http\Controllers\ForgotPasswordController;
-
-use App\Http\Controllers\LoginController;
-
-use App\Http\Controllers\RegisterController;
-
-use App\Http\Controllers\ResetPasswordController;
-
-use App\Http\Controllers\VerificationController;
-
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EmprendedoresController;
+
+
+Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
 Route::get('/formarparte', [HomeController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura

