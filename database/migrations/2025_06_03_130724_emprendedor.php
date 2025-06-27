@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Emprendedores extends Migration
+class Emprendedor extends Migration
 {
     /**
      * Run the migrations.
@@ -19,6 +19,7 @@ class Emprendedores extends Migration
             $table->text('descripcion');
             $table->string('categoria');
             $table->unsignedBigInteger('redes_id')->references('id')->on('redes');
+            $table->unsignedBigInteger('direccion_id')->references('id')->on('direccion');
             $table->string('imagen');
             $table->timestamps();
         });
@@ -31,6 +32,6 @@ class Emprendedores extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('emprendedores');
+        Schema::dropIfExists('emprendedor');
     }
 }

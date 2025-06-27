@@ -1,79 +1,71 @@
-@extends('layouts.app')
 
-@section('template_title')
-    Emprendedor
-@endsection
+               @foreach($emprendedores as $emprendedor)
+                    <!--lasa redes sociales van en el otro template cuando se redirecciona a
+                                     un emprendedor en especifico -->
 
-@section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
-                                {{ __('Emprendedor') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('emprendedors.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                    <div class="portfolio-item">
+                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="{{ asset('storage/' . $emprendedor->imagen) }}" alt="..." />
                                 </a>
-                              </div>
-                        </div>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-heading">{{$emprendedor->nombre }}</div>
+                                    <div class="portfolio-caption-subheading text-muted"> {{$emprendedor->categoria }}</div>
+                                </div>
                     </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success m-4">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
-
-                    <div class="card-body bg-white">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-                                        
-										<th>Nombre</th>
-										<th>Descripcion</th>
-										<th>Categoria</th>
-										<th>Redes Id</th>
-										<th>Imagen</th>
-
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($emprendedors as $emprendedor)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $emprendedor->nombre }}</td>
-											<td>{{ $emprendedor->descripcion }}</td>
-											<td>{{ $emprendedor->categoria }}</td>
-											<td>{{ $emprendedor->redes_id }}</td>
-											<td>{{ $emprendedor->imagen }}</td>
-
-                                            <td>
-                                                <form action="{{ route('emprendedors.destroy',$emprendedor->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('emprendedors.show',$emprendedor->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('emprendedors.edit',$emprendedor->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                {!! $emprendedors->links() !!}
+                            <div class="col-lg-4 col-sm-6 mb-4"></div>
             </div>
         </div>
-    </div>
-@endsection
+
+
+
+
+
+
+                            <!-- Portfolio item 2 modal popup-->
+
+
+                            <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                                                alt="Close modal" /></div>
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-8">
+                                                    <div class="modal-body">
+
+                                                        <!-- Project details-->
+                                                        <h2 class="text-uppercase"> {{$emprendedor->nombre }}</h2>
+                                                        <!--   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
+                                                        <img class="img-fluid d-block mx-auto" src="{{ asset('storage/' . $emprendedor->imagen) }}"
+                                                            alt="..." />
+                                                        <p>{{$emprendedor->descripcion }}</p>
+                                                        <ul class="list-inline">
+                                                            <li>
+                                                                <strong> Emprendedor</strong>
+                                                            </li>
+                                                            <li>
+                                                                <strong>Categoria:</strong>{{$emprendedor->categoria }}
+                                                            </li>
+                                                        </ul>
+                                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                                            type="button">
+                                                            <i class="fas fa-xmark me-1"></i>
+                                                            retroceder
+                                                        </button>
+                                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                                            type="button">
+                                                            <i class="fas fa-xmark me-1"></i>
+                                                            ver mas acerca de {{$emprendedor->nombre }}
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                @endforeach

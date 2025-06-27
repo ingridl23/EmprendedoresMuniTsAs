@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Emprendedor extends Model
 {
     protected $perPage = 20;
-    protected $table = 'emprendedores'; // tu tabla real
+    protected $table = 'emprendedor'; // tu tabla real
 
     protected static function newFactory()
     {
@@ -39,16 +39,22 @@ class Emprendedor extends Model
         'categoria',
         'imagen',
         'redes_id',
+        'direccion_id'
     ];
 
     public function redes(): BelongsTo
     {
         return $this->belongsTo(Redes::class, 'redes_id', 'id');
     }
+     public function direccion(): BelongsTo
+    {
+        return $this->belongsTo(direccion::class, 'direccion_id', 'id');
+    }
 
     public static function showEmprendimientos()
     {
-        $emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen'])->get();
+        //$emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen', 'categoria'])->get();
+        $emprendimientos=emprendedores::all();
         if (count($emprendimientos) > constants::VALORMIN) {
             return $emprendimientos;
         }
@@ -57,7 +63,7 @@ class Emprendedor extends Model
 
     public static function showEmprendimientoId($id)
     {
-        $emprendimiento = emprendedores::join('redes', 'redes_id', '=', 'redes.id')->where('emprendedores.id', $id)->get();
+        $emprendimiento = Emprendedor::with(['redes', 'direccion'])->where('emprendedor.id', $id)->get();
         if (count($emprendimiento) > constants::VALORMIN) {
             $emprendimiento = $emprendimiento[0];
             return $emprendimiento;

@@ -35,11 +35,7 @@
             </div>
         </div>
         <div>
-            <div class="get-started-group font-color-bl">
-                                        <img src="assets/img/MiTr-remove-removebg-preview.png" slt
-                                            class=" img-btn-logonav img-fluid mb-1">
-                                        <span class="btn-text">MiTresa</span>
-                                    </div>
+            
             @if (count($errors) > 0)
                 @foreach ($errors->all() as $error)
                     <br>

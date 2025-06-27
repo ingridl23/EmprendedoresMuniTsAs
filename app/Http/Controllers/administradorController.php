@@ -25,6 +25,11 @@ class administradorController extends Controller
                 'showFormCrearEmprendimiento'
             ]
         ]);
+        $this->middleware('can:ver emprendimiento', [
+            'only' => [
+                'emprendedores'
+            ]
+        ]);
         $this->middleware('can:editar emprendimiento', [
             'only' => [
                 'editarEmprendimiento',
@@ -37,6 +42,15 @@ class administradorController extends Controller
             ]
         ]);
     }
+
+    public function emprendedores(){
+        $emprendedores = Emprendedor::paginate(10);
+        return view('emprendedor.index', compact('emprendedores'))
+            ->with('i', (request()->input('page', 1) - 1) * $emprendedores->perPage());
+        
+        // return view("emprendedor.index", compact("emprendedores"));
+    }
+
     public function showFormCrearEmprendimiento()
     {
         return view('administradores.formNuevoEmprendimiento');
@@ -46,14 +60,14 @@ class administradorController extends Controller
     {
         $imagen = $request->file("imagen");
         $path = $imagen->store('img', 'public');
-        emprendedores::crearEmprendimiento($request, $path);
+        emprendedor::crearEmprendimiento($request, $path);
         return redirect('/emprendedores');
     }
 
     public function showFormEditarEmprendimiento($id)
     {
         if (is_numeric($id) && $id > constants::VALORMIN) {
-            $emprendimiento = emprendedores::showEmprendimientoId($id);
+            $emprendimiento = emprendedor::showEmprendimientoId($id);
             if ($emprendimiento != null) {
                 return view("administradores.formEditarEmprendimiento", compact('emprendimiento'));
             }
@@ -64,7 +78,7 @@ class administradorController extends Controller
 
     public function editarEmprendimiento($id, Request $request)
     {
-        $emprendimiento = emprendedores::find($id);
+        $emprendimiento = emprendedor::find($id);
         $redes = redes::find($emprendimiento->redes_id);
         if ($redes != null && $emprendimiento != null) {
             if (
@@ -85,11 +99,11 @@ class administradorController extends Controller
             $emprendimiento->descripcion = $request->input('descripcion');
             $emprendimiento->categoria = $request->input('categoria');
 
-            emprendedores::editarEmprendimiento($emprendimiento);
+            emprendedor::editarEmprendimiento($emprendimiento);
             redes::editarEmprendimiento($redes);
             return redirect('/emprendedores');
         }
-        return view("/");
+        //return view("/");
         //return redirect("emprendedores.emprendedor", compact('emprendimiento'));
     }
 
@@ -100,11 +114,11 @@ class administradorController extends Controller
             $redes = redes::find($emprendimiento->redes_id);
             if ($redes != null) {
                 Storage::disk('public')->delete($emprendimiento->imagen);
-                emprendedores::eliminarEmprendimiento($emprendimiento);
+                emprendedor::eliminarEmprendimiento($emprendimiento);
                 redes::eliminarEmprendimiento($redes);
-                return redirect('/emprendedores');
+                return redirect('/');
             }
         }
-        return redirect("/error", "Emprendimiento incorrecto, ingrese uno válido");
+        //return redirect("/error", "Emprendimiento incorrecto, ingrese uno válido");
     }
 }

@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EmprendedoresController;
 
 
-Route::post('/login', [LoginController::class, 'login']);
+
 
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
 Route::get('/formarparte', [HomeController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura
@@ -19,21 +19,22 @@ Route::get('/formarparte', [HomeController::class, "formarparte"]); // redirecci
 //agregar rutas para las secciones individuales del emprendedor
 /*Route::get('/emprendedor', [EmprendedorController::class, "emprendedor"]);*/
 
-//Route::get('emprendedor', [EmprendedorController::class, 'getEmprendimientos'])->name('emprendimientos'); //Muestra los emprendimientos
-Route::get('/emprendedores', [EmprendedoresController::class, "emprendedores"]); //vista general para emprendedores
+Route::get('/emprendedores', [EmprendedorController::class, "emprendedores"])->name("emprendedores"); //vista general para emprendedores
 
 //Route::get('/emprendedores/panelAdmin', [administradorController::class, "show"]);
-
+Route::get('/emprendedor/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
 
 // agregar para admin
+Route::get('/emprendedores/acciones', [administradorController::class, "emprendedores"]);
 
 Route::get('/emprendedores/nuevoEmprendimiento', [administradorController::class, "showFormCrearEmprendimiento"]);
 Route::post('/emprendedores/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"]);
 
 //Route::get('/emprendedores/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
 Route::get('/emprendedores/formEditarEmprendimiento/{id}', [administradorController::class, "showFormEditarEmprendimiento"]);
-Route::patch('/emprendedores/update/{id}', [administradorController::class, "editarEmprendimiento"]);
+Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmprendimiento"]);
 
-Route::delete('/emprendedores/delete/{id}', [administradorController::class, "eliminarEmprendimiento"]);
+Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmprendimiento"]);
 
 Auth::routes();
+//Route::resource('emprendedores', EmprendedorController::class);
