@@ -13,21 +13,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+         <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 
-
-
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+      <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
-
-
 </head>
 
-@include('emprendedor.navBar')
-
-
 <body id="page-top">
+    @include('emprendedor.navBar')
+   
 
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
@@ -131,7 +131,7 @@
                                                         </button>
                                                         <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
                                                             type="button">
-                                                            <a href="/emprendedor/{{$emprendedor->id}}">
+                                                            <a href="/emprendedor/{{$emprendedor->id}}" class="linkEmprendedorMas">
                                                                 <i class="fas fa-xmark me-1"></i>
                                                             ver mas acerca de {{$emprendedor->nombre }}
                                                             </a>
@@ -217,10 +217,10 @@
 
     </section>
 
-    <!-- barra de navegacion -->
+    @include('layouts.panelAdmin')
+   
+
     @include('emprendedor.footer')
-
-
 
 
 
@@ -228,23 +228,15 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core theme JS-->
-    <script src="{{ asset('js/scripts3.js') }}"></script>
-
+    
     <script src="{{ asset('js/scripts.js') }} "></script>
-
-
+    <script src="{{ asset('js/logicaform.js') }} "></script>
+    <script src="{{ asset('js/scripts3.js') }}"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-
-
 </body>
-
-
-
 </html>

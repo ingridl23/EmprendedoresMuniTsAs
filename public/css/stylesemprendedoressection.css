@@ -85,6 +85,10 @@
         *::after {
             box-sizing: border-box;
         }
+
+        a.linkEmprendedorMas{
+            color: white;
+        }
         
         @media (prefers-reduced-motion: no-preference) {
              :root {

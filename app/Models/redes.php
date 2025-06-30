@@ -26,4 +26,13 @@ class Redes extends Model
         $redes->save();
     }
 
+    public static function crearRedes($instagram, $facebook, $whatsapp){
+        $redes= redes::create([
+            'instagram' => $request->instagram,
+            'facebook' => $request->facebook,
+            'whatsapp' => $request->whatsapp,
+        ]);
+        return $redes->id;
+    }
+
 }
