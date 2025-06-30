@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /*logica para popup*/
+    /*
     document.querySelector("#submitButton").addEventListener("click", (e) => {
         e.preventDefault();
         document.getElementById("overlay").classList.add("open");
@@ -83,5 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             },
         });
+
     });
+    */
 });

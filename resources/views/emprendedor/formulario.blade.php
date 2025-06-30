@@ -21,7 +21,7 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
@@ -95,6 +95,16 @@
 
                                         </i>
                                         <span class="btn-text">Gobierno<br>Abierto</span>
+                                    </div>
+                                </a>
+
+                                <a href="{{ url('/showlogin') }}" target="_blank"
+                                    class="get-started-btn scrollto btn-contact">
+                                    <div class="get-started-group font-color-bl">
+                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+
+                                        </i>
+                                        <span class="btn-text">Panel<br>Admin</span>
                                     </div>
                                 </a>
                             </div>
@@ -205,7 +215,7 @@
 <script src="{{ asset('js/scripts3.js') }}"></script>
 
 <script src="{{ asset('js/logicaform.js') }}"></script>
-<script src="{{ asset('js/scripts.js') }} "></script>
+
 
 
 

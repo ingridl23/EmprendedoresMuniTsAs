@@ -64,11 +64,13 @@ class LoginController extends Controller
                 'password' => Hash::make($credentials['password']),
             ]);
             $user->assignRole('admin');
+        } else {
+            return redirect()->intended('emprendedores/nuevoEmprendimiento');
         }
         // Intentar login
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('emprendedores/nuevoEmprendimiento');
         }
 
         return back()->withErrors([

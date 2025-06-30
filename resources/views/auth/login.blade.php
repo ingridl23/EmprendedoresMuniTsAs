@@ -170,6 +170,7 @@
                         {{-- Botón --}}
                         <div class="text-center mb-2">
                             <button id="submitButton" type="submit" class="btn btn-primary w-100">
+
                                 {{ __('Ingresar') }}
                             </button>
                         </div>
