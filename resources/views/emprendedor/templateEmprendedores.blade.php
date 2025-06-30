@@ -57,10 +57,7 @@
                                 <a class="nav-link navbar-brand " id="emprendedorestext"
                                     href="{{ url('/') }}">Inicio</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link navbar-brand " id="emprendedorestext"
-                                    href="{{ url('/emprendedores') }}">Emprendedores</a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/formarparte') }}"">ser parte</a>
                             </li>
@@ -107,7 +104,7 @@
 
 
 <body id="page-top">
-    @include('emprendedor.navBar')
+
 
 
     <header class="masthead">
