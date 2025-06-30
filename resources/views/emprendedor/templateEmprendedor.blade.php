@@ -106,14 +106,11 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Emprendedor </h1> <!--((emprendedor-nombre)) -->
+                    <h1 class="text-white font-weight-bold">{{$emprendimiento->nombre}} </h1> <!--((emprendedor-nombre)) -->
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam id
-                        sapiente tempore,
-                        sint quae eveniet quisquam inventore adipisci a, voluptatibus perspiciatis ad dicta dolores et.
-                        Ratione veritatis eius dolor dicta.</p> <!--((emprendedor -descripcion)) -->
+                    <p class="text-white-75 mb-5">{{$emprendimiento->descripcion}}</p> <!--((emprendedor -descripcion)) -->
 
 
                 </div>
@@ -267,7 +264,9 @@
                             <em>
                                 Encontranos en
                                 <br />
-                                <strong>1116 Orchard Street</strong> <!--((emprendedor- direccion)) -->
+                                <strong>Ciudad: {{$emprendimiento->direccion->ciudad}}</strong>
+                                <br />
+                                <strong>{{$emprendimiento->direccion->calle}} {{$emprendimiento->direccion->altura}}</strong> <!--((emprendedor- direccion)) -->
                             </em>
                         </p>
 
@@ -284,17 +283,17 @@
                                 <br />
                             <div class="social-links mt-3">
 
-                                <a href="https://www.facebook.com/municipalidaddetresarroyos" class="facebook"
+                                <a href="{{$emprendimiento->redes->facebook}}" class="facebook"
                                     target="_blank">
                                     <!--link de facebook -->
                                     <i class="fa-brands fa-facebook-f"></i>
                                 </a>
-                                <a href="https://www.instagram.com/municipalidadtresarroyos/" class="instagram"
+                                <a href="{{$emprendimiento->redes->instagram}}" class="instagram"
                                     target="_blank">
                                     <i class="fa-brands fa-instagram"></i>
                                 </a>
                                 <a class="whatsapp"
-                                    href="https://api.whatsapp.com/send/?phone=5492983509001&text&type=phone_number&app_absent=0"
+                                    href="https://api.whatsapp.com/send/?phone={{$emprendimiento->redes->whatsapp}}&text&type=phone_number&app_absent=0"
                                     target="_blank">
                                     <i class="fa-brands fa-whatsapp"></i>
                                 </a>

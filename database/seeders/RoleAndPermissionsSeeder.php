@@ -23,6 +23,7 @@ class RoleAndPermissionsSeeder extends Seeder
             'crear emprendimiento',
             'editar emprendimiento',
             'eliminar emprendimiento',
+            'ver emprendimiento'
             
          ];
 
