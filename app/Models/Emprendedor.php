@@ -73,17 +73,15 @@ class Emprendedor extends Model
 
     public static function crearEmprendimiento($request, $path)
     {
-        $redes = redes::create([
-            'instagram' => $request->instagram,
-            'facebook' => $request->facebook,
-            'whatsapp' => $request->whatsapp,
-        ]);
-        $emprendimiento = emprendedores::create([
+        $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);  
+        $idDireccion = direccion::crearDireccion($request->ciudad,$request->calle,$request->altura);
+        $emprendimiento = Emprendedor::create([
             'nombre' => $request->nombre,
             'categoria' => $request->categoria,
             'descripcion' => $request->descripcion,
             'imagen' => $path,
-            'redes_id' => $redes->id,
+            'redes_id' => $idRedes,
+            'direccion_id' => $idDireccion,
         ]);
     }
 

@@ -13,19 +13,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 
 
-
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
+
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
-
-
 </head>
 
-
-<!-- ======= Header ======= -->
+<!--=======Header=======-->
 <div class="custom-navbar-container">
     <header id="header" class="fixed-top header-scrolled">
         <div class="container-fluid px-4 container">
@@ -101,7 +104,11 @@
 </div>
 <!-- End Header -->
 
+
+
 <body id="page-top">
+    @include('emprendedor.navBar')
+
 
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
@@ -116,7 +123,8 @@
                         Aquí encontrarás historias, productos y proyectos que reflejan el talento, la identidad y la
                         creatividad de nuestra comunidad.</p>
 
-                    <p class="text-white-75 mb-5">Si formás parte de la Dirección de Cultura y tenés un emprendimiento,
+                    <p class="text-white-75 mb-5">Si formás parte de la Dirección de Cultura y tenés un
+                        emprendimiento,
                         ¡este es tu lugar! </p>
 
                 </div>
@@ -160,7 +168,8 @@
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{ $emprendedor->nombre }}</div>
-                            <div class="portfolio-caption-subheading text-muted"> {{ $emprendedor->categoria }}</div>
+                            <div class="portfolio-caption-subheading text-muted"> {{ $emprendedor->categoria }}
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4"></div>
@@ -213,12 +222,44 @@
                                         </a>
 
                                     </button>
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase"> {{ $emprendedor->nombre }}</h2>
+                                    <!--   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
+                                    <img class="img-fluid d-block mx-auto"
+                                        src="{{ asset('storage/' . $emprendedor->imagen) }}" alt="..." />
+                                    <p>{{ $emprendedor->descripcion }}</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong> Emprendedor</strong>
+                                        </li>
+                                        <li>
+                                            <strong>Categoria:</strong>{{ $emprendedor->categoria }}
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        retroceder
+                                    </button>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">
+                                        <a href="/emprendedor/{{ $emprendedor->id }}" class="linkEmprendedorMas">
+                                            <i class="fas fa-xmark me-1"></i>
+                                            ver mas acerca de {{ $emprendedor->nombre }}
+                                        </a>
+
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
         @endforeach
 
@@ -264,7 +305,8 @@
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/bg-masthead.jpg"
                                         alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet,
+                                        consectetur
                                         adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
                                         deserunt
                                         repellat aperiam quasi sunt officia expedita beatae cupiditate,
@@ -293,10 +335,10 @@
 
     </section>
 
-    <!-- barra de navegacion -->
+    @include('layouts.panelAdmin')
+
+
     @include('emprendedor.footer')
-
-
 
 
 
@@ -304,23 +346,16 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core theme JS-->
-    <script src="{{ asset('js/scripts3.js') }}"></script>
 
     <script src="{{ asset('js/scripts.js') }} "></script>
-
-
+    <script src="{{ asset('js/logicaform.js') }} "></script>
+    <script src="{{ asset('js/scripts3.js') }}"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-
-
 </body>
-
-
 
 </html>
