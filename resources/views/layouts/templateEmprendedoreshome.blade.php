@@ -21,8 +21,8 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
 
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
@@ -33,7 +33,7 @@
 <body id="page-top">
     <!-- Navigation-->
 
-    <!--aca va incluide component navbar -->
+
 
 
     <!-- barra de navegacion -->
@@ -62,13 +62,13 @@
                     <p class="text-white-75 mb-5">Si formás parte de la Dirección de Cultura y tenés un emprendimiento,
                         ¡este es tu lugar! </p>
                     <a class="btn btn-primary btn-xl" href="#contact">Quiero Ser Parte</a>
+
                 </div>
-                <br>
+
             </div>
+
         </div>
-
     </header>
-
 
 
 
@@ -95,6 +95,8 @@
                 </div>
             </div>
         </div>
+
+
 
     </section>
     <!-- Services-->

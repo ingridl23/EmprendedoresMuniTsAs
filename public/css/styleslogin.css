@@ -1,7 +1,7 @@
 /* #mainNav {
         justify-content: space-between;
     }
-    
+
     @keyframes spinY {
         0% {
             transform: rotateY(0deg);
@@ -10,11 +10,11 @@
             transform: rotateY(360deg);
         }
     }
-    
+
     #logotresa {
         padding-bottom: 8rem;
     }
-    
+
     #imgcultura {
         margin-top: 6rem;
         width: 200px;
@@ -24,18 +24,18 @@
         transition: transform 0.6s ease-in-out;
         transform-style: preserve-3d;
     }
-    
+
     #imgcultura:hover {
         animation: spinY 1s ease-in-out;
     }
     /* seccion del formulario*/
 
 
-/*  
+/*
     body {
         background-color: #d6d6d6 !important;
     }
-    
+
     html,
     body {
         height: 100%;
@@ -44,7 +44,7 @@
         justify-content: center;
         align-items: stretch;
     }
-    
+
     .container {
         max-width: 400px;
         /* Ajusta según necesidad */
@@ -55,7 +55,7 @@
     /* Contenedor que posiciona el label correctamente */
 
 
-/*  
+/*
     .field-group {
         position: relative;
         margin-bottom: 2rem;
@@ -114,7 +114,7 @@
         border-radius: 0.3rem;
         transition: background-color 0.3s;
     }
-    
+
     button[type="submit"]:hover {
         background-color: #0056b3;
     }
@@ -124,9 +124,8 @@
 /* Estilos generales */
 
 body {
-    background-color: #d6d6d6 !important;
+    background-color: #fcfcfc !important;
     font-family: Arial, sans-serif;
-    margin: 0;
     padding: 0;
     height: 100%;
 }
@@ -145,7 +144,6 @@ body {
 /* Panel derecho */
 
 .right-panel {
-    background-color: rgb(228, 201, 201);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,7 +155,7 @@ body {
 /* Logo cultura */
 
 #imgcultura {
-    margin-top: 2rem;
+    margin-top: 10rem;
     width: 180px;
     height: auto;
     object-fit: contain;
@@ -182,6 +180,8 @@ body {
 
 /* ✂ Base: ocultar overlay y modal por defecto */
 
+
+/*
 .modal-overlay,
 .modal {
     display: none;
@@ -198,6 +198,8 @@ body {
 
 /* ✂ Mostrar overlay cuando tenga .open */
 
+
+/*
 .modal-overlay.open {
     display: block;
     position: fixed;
@@ -209,6 +211,8 @@ body {
 
 /* ✂ Mostrar modal cuando tenga .open */
 
+
+/*
 .modal.open {
     display: block;
     position: fixed;
@@ -229,10 +233,14 @@ body {
 
 /* ─── ESTILO WIRE-FRAME PARA EL MODAL ─── */
 
+
+/*
 .modal {
     display: none;
     /* sigue oculto hasta que JS le ponga .open */
-    position: fixed;
+
+
+/*  position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -260,6 +268,8 @@ body {
 
 /* Botón de cerrar (X) */
 
+
+/*
 .modal-close {
     position: absolute;
     top: 0.75rem;

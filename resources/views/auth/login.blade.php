@@ -6,40 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>tres arroyos</title>
+    <title>tres-arroyos-panel</title>
 
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+
+
+
 </head>
+
+
 <!--nav para el admin -->
 
+<body id="page-top">
 
 
 
 
-<body>
 
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="row w-100">
+    <div class="custom-navbar-container">
+        <header id="header" class="fixed-top header-scrolled">
+            <div class="container-fluid px-4 container">
+                <!-- Navbar principal -->
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
+                    <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
 
-            {{-- Panel izquierdo: logo municipalidad --}}
-            <div class="col-md-6 left-panel">
-                <div class="text-center">
-                    <img id="logotresa" src="{{ asset('assets/img/logo-muni-azul-claro-removebg-preview.png') }}"
-                        alt="Logo Tres Arroyos">
-                </div>
+                        <!-- Logo y marca -->
+                        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                            <img src="assets/img/logo-muni-azul-claro-removebg-preview.png" alt="Logo Tres Arroyos"
+                                class="logo-img me-2">
+                            <span class="brand-text"></span>
+                        </a>
+
+                        <!-- Botones de toggle para móvil -->
+                        <button class="navbar-toggler navbar-toggler-right d-lg-none" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Menú de navegación principal -->
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav mx-auto my-2 my-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/') }}">Pagina Principal</a>
+
+
+                            </ul>
+
+
+                            <!-- Botones de servicios externos -->
+                            <div class="get-started-buttons d-flex align-items-center">
+                                <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
+                                    get-started-btn crollto" class="get-started-btn">
+                                    <div class="get-started-group font-color-bl">
+                                        <img src="assets/img/MiTr-remove-removebg-preview.png" slt
+                                            class=" img-btn-logonav img-fluid mb-1" alt="Imagen municipalidad">
+                                        <span class="btn-text">MiTresa</span>
+                                    </div>
+                                </a>
+
+                                <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
+                                    class="get-started-btn scrollto">
+                                    <div class="get-started-group font-color-bl">
+                                        <i class="fa-solid fa-laptop servicio-icono"></i>
+                                        <span class="btn-text">Autogestion</span>
+
+                                    </div>
+                                </a>
+
+                                <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
+                                    class="get-started-btn scrollto">
+                                    <div class="get-started-group font-color-bl">
+                                        <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
+
+                                        </i>
+                                        <span class="btn-text">Gobierno<br>Abierto</span>
+                                    </div>
+                                </a>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
+        </header>
+    </div>
 
-            {{-- Panel derecho: formulario de login --}}
-            <div class="col-md-6 right-panel d-flex flex-column justify-content-center align-items-center px-4">
+
+
+    <div class="container d-flex justify-content-center align-items-center vh-1000">
+        <div>
+
+
+
+            {{-- Panel: formulario de login --}}
+            <div class=" right-panel d-flex flex-column justify-content-center align-items-center px-4">
                 <div class="card-header">
                     <img id="imgcultura" src="{{ asset('assets/img/logocultura.png') }}" alt="Logo Cultura">
                 </div>
 
                 <div class="card-body">
 
-                    <form method="POST" action="{{ route('login') }}" autocomplete="off" class="w-100"
-                        style="max-width: 400px;">
+                    <form method="POST" action="{{ route('login') }}" data-sb-form-api-token="TU_TOKEN_AQUI"
+                        autocomplete="off" class="w-100">
                         @csrf
 
                         {{-- Email --}}
@@ -63,7 +147,15 @@
                                 <span class="invalid-feedback d-block" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
+
+                                <span class="valid-feedback d-block" id="submitSuccessMessage" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             @enderror
+
+
+
+
                         </div>
 
                         {{-- Recordar credenciales --}}
@@ -77,7 +169,7 @@
 
                         {{-- Botón --}}
                         <div class="text-center mb-2">
-                            <button type="submit" class="btn btn-primary w-100">
+                            <button id="submitButton" type="submit" class="btn btn-primary w-100">
                                 {{ __('Ingresar') }}
                             </button>
                         </div>
@@ -97,7 +189,7 @@
         </div>
     </div>
 
-
+    @include('emprendedor.footer')
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll('.field-group input').forEach(input => {
@@ -111,7 +203,16 @@
             });
         });
     </script>
+    <!-- Bootstrap core JS-->
+    <script src="{{ asset('js/scriptsnavlogin.js') }} "></script>
+    <script src="{{ asset('js/scripts3.js') }}"></script>
 
+
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
