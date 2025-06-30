@@ -37,7 +37,7 @@
                             </li>
                         </ul>
 
-                        
+
                         <!-- Botones de servicios externos -->
                         <div class="get-started-buttons d-flex align-items-center">
                             <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
@@ -67,16 +67,17 @@
                                     <span class="btn-text">Gobierno<br>Abierto</span>
                                 </div>
                             </a>
-                            @if (!Auth::check())
-                                <a href="" target="_blank" class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl">
-                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
 
-                                        </i>
-                                        <span class="btn-text">Panel<br>Admin</span>
-                                    </div>
-                                </a>   
-                            @endif              
+                            <a href="{{ url('/showlogin') }}" target="_blank"
+                                class="get-started-btn scrollto btn-contact">
+                                <div class="get-started-group font-color-bl">
+                                    <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+
+                                    </i>
+                                    <span class="btn-text">Panel<br>Admin</span>
+                                </div>
+                            </a>
+
                         </div>
                     </div>
                 </div>

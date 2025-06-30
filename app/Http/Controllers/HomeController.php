@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view("layouts.indexform");
     }
+
+    public function showlogin()
+    {
+        return view("auth.login");
+    }
 }
