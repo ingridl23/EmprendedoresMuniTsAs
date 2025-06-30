@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /*logica para popup*/
-    document.querySelector(".btn-contact").addEventListener("click", (e) => {
+    document.querySelector("#submitButton").addEventListener("click", (e) => {
         e.preventDefault();
         document.getElementById("overlay").classList.add("open");
         document.getElementById("modal").classList.add("open");
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("modal").classList.remove("open");
     });
 
-    $("#Form").on("submit", function(e) {
+    document.querySelector("#submitButton").addEventListener("submit", (e) => {
         e.preventDefault();
         let $form = $(this);
         $.ajax({
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let errors = xhr.responseJSON.errors || {
                     email: [xhr.responseJSON.message],
                 };
-                Object.keys(errors).forEach(function(field) {
+                Object.keys(errors).forEach(function (field) {
                     let msg = errors[field][0];
                     // Añade aquí código para mostrar msg en tu modal
                     alert(msg);

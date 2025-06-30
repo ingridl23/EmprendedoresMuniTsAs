@@ -10,7 +10,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EmprendedoresController;
 
 
-Route::post('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'login']); //invoca la logica del login admin
+Route::post('/showlogin', [HomeController::class, 'showlogin']); //invoca la vista del login admin
 
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
 Route::get('/formarparte', [HomeController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura

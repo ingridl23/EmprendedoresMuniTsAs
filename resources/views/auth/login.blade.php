@@ -37,6 +37,7 @@
                 </div>
 
                 <div class="card-body">
+
                     <form method="POST" action="{{ route('login') }}" autocomplete="off" class="w-100"
                         style="max-width: 400px;">
                         @csrf
@@ -90,6 +91,7 @@
                             </div>
                         @endif
                     </form>
+
                 </div>
             </div>
         </div>

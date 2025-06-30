@@ -27,6 +27,7 @@
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
+
 </head>
 
 <body id="page-top">
@@ -231,11 +232,13 @@
                     </p>
                 </div>
             </div>
-            <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+
+
+            <div class="row gx-4 gx-lg-5 justify-content-center mb-5" id="page-top">
 
                 <div class="col-lg-6">
 
-                    <form class="form" id="contactForm">
+                    <form class="form" id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Name input-->
 
                         <div class="field-group">
@@ -281,8 +284,8 @@
                         <div class="d-grid">
                             <button class="submit btn btn-primary btn-xl" id="submitButton" type="submit">
                                 <span class="btn-text2">Enviar Petición</span>
-                                <span class="checkmark">&#10004;</span>
-                                <span class="checkmark2">&#10008;</span>
+                                <span class="checkmark" id="submitSuccessMessage">&#10004;</span>
+                                <span class="checkmark2" id="submitErrorMessage">&#10008;</span>
                             </button>
 
                             <p class="error-msg">Complete los campos obligatorios</p>

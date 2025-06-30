@@ -42,9 +42,9 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-}
 
-/*
+
+
     public function login(Request $request)
     {
         // Validar entrada
@@ -74,4 +74,5 @@ class LoginController extends Controller
         return back()->withErrors([
             'email' => 'Credenciales incorrectas.',
         ]);
-    }*/
+    }
+}
