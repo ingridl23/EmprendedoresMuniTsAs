@@ -141,7 +141,7 @@
 
             <div class="col-lg-6">
 
-                <form method="post" class="form" id="contactForm">
+                <form method="post" action= "{{ route('/formarpartesend') }}" class="form" id="contactForm">
                     <!-- Name input-->
                     @csrf
                     <div class="field-group">
