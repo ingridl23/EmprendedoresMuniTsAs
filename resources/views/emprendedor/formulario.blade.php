@@ -22,7 +22,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 
     <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
 
@@ -141,7 +143,7 @@
 
             <div class="col-lg-6">
 
-                <form method="post" action= "{{ route('/formarpartesend') }}" class="form" id="contactForm">
+                <form method="post" class="form" id="contactForm">
                     <!-- Name input-->
                     @csrf
                     <div class="field-group">
@@ -174,7 +176,7 @@
                     <div class="field-group">
 
                         <textarea id="descripcion" name="description" type="text" required placeholder=""></textarea>
-                        <label for="message">Describa brevemente su emprendimiento</label>
+                        <label for="message">Describa Brevemente Su Emprendimiento</label>
                         <p class="form-subtitulos">Escriba una descripcion a continuacion</p>
                     </div>
 
@@ -205,20 +207,22 @@
     <br>
     <br>
     @include('emprendedor.footer')
+
+
+    <!-- Core theme JS-->
+    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/scripts3.js') }}"></script>
+
+
+
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core theme JS-->
-<script src="{{ asset('js/scripts3.js') }}"></script>
-
-
-
-<!-- SimpleLightbox plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-
-<!--<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </html>
