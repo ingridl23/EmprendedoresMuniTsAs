@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.querySelector(".form");
     const submitBtn = formulario.querySelector(".submit");
     const errorMsg = formulario.querySelector(".error-msg");
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /*logica para popup*/
-    /*
+/*
     document.querySelector("#submitButton").addEventListener("click", (e) => {
         e.preventDefault();
         document.getElementById("overlay").classList.add("open");
@@ -87,4 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
     */
+/*
 });
+*/

@@ -61,7 +61,7 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/') }}">Pagina Principal</a>
+                                    <a class="nav-link" href="{{ url('/') }}">Volver a Inicio</a>
 
 
                             </ul>
@@ -138,6 +138,8 @@
                             @enderror
                         </div>
 
+                        @csrf
+
                         {{-- Contraseña --}}
                         <div class="field-group">
                             <input id="password" type="password" name="password" required placeholder=""
@@ -145,11 +147,11 @@
                             <label for="password">Ingresar Contraseña</label>
                             @error('password')
                                 <span class="invalid-feedback d-block" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                    <p>{{ $message }}</p>
                                 </span>
 
                                 <span class="valid-feedback d-block" id="submitSuccessMessage" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                    <p>{{ $message }}</p>
                                 </span>
                             @enderror
 

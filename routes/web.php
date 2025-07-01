@@ -8,6 +8,7 @@ use App\Http\Controllers\administradorController;
 use App\Http\Controllers\EmprendedorController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EmprendedoresController;
+use App\Http\Controllers\FormSerParteController;
 
 
 Route::post('/login', [LoginController::class, 'login']); //invoca la logica del login admin
@@ -16,7 +17,7 @@ Route::get('/showlogin', [HomeController::class, 'showlogin']); //invoca la vist
 
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
 Route::get('/formarparte', [HomeController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura
-
+Route::post('/formarpartesend', [FormSerParteController::class, "index"]); //ruta que envia  la regla post del formulario
 
 //agregar rutas para las secciones individuales del emprendedor
 /*Route::get('/emprendedor', [EmprendedorController::class, "emprendedor"]);*/

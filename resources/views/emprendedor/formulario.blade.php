@@ -58,7 +58,7 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/') }}"> Pagina principal </a>
+                                    <a class="nav-link" href="{{ url('/') }}"> Volver Al Inicio </a>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
@@ -141,12 +141,12 @@
 
             <div class="col-lg-6">
 
-                <form class="form" id="contactForm">
+                <form method="post" class="form" id="contactForm">
                     <!-- Name input-->
-
+                    @csrf
                     <div class="field-group">
 
-                        <input id="name" name="message" type="text"required placeholder=""></input>
+                        <input id="name" name="first_name" type="text"required placeholder=""></input>
                         <label for="message">Nombre y Apellido</label>
                         <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                     </div>
@@ -155,7 +155,7 @@
 
                     <div class="field-group">
 
-                        <input id="email" name="message" type="email" required placeholder=""></input>
+                        <input id="email" name="email" type="email" required placeholder=""></input>
                         <label for="message">Email</label>
                         <p class="form-subtitulos">Registre un email que utilice frecuentemente</p>
                     </div>
@@ -165,7 +165,7 @@
 
                     <div class="field-group">
 
-                        <input type="tel" id="phone" name="telefono" required placeholder=""></input>
+                        <input type="tel" id="phone" name="tel" required placeholder=""></input>
                         <label for="message">Telefono</label>
                         <p class="form-subtitulos">Otorgue un numero de telefono de uso frecuente</p>
                     </div>
@@ -173,7 +173,7 @@
                     <!-- input descripcion -->
                     <div class="field-group">
 
-                        <textarea id="descripcion" name="descripcion" type="text" required placeholder=""></textarea>
+                        <textarea id="descripcion" name="description" type="text" required placeholder=""></textarea>
                         <label for="message">Describa brevemente su emprendimiento</label>
                         <p class="form-subtitulos">Escriba una descripcion a continuacion</p>
                     </div>
@@ -181,20 +181,19 @@
                     <!-- input oculto -->
 
                     <input type="text" id="oculto" name="oculto" class="oculto" autocomplete="off"
-                        value="dato oculto">
+                        value="">
 
                     <!-- Submit Button-->
                     <div class=" d-grid  ">
-                        <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
+                        <button class=" submit btn btn-primary btn-xl" id="submitButton" type="submit">
 
                             <span class="btntext"> Enviar
                                 Peticion </span>
 
-                            <span class="checkmark">&#10004;</span>
-                            <span class="checkmark2">&#10008; </span>
+
                         </button>
 
-                        <p class="error-msg">Complete los campos obligatorios</p>
+                        <p>Complete los campos obligatorios</p>
                     </div>
 
                 </form>
@@ -214,15 +213,12 @@
 <!-- Core theme JS-->
 <script src="{{ asset('js/scripts3.js') }}"></script>
 
-<script src="{{ asset('js/logicaform.js') }}"></script>
-
-
 
 
 <!-- SimpleLightbox plugin JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<!--<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </html>
