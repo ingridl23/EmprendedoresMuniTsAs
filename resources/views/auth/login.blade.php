@@ -125,17 +125,21 @@
                     <form method="POST" action="{{ route('login') }}" data-sb-form-api-token="TU_TOKEN_AQUI"
                         autocomplete="off" class="w-100">
                         @csrf
-
+                        @error('error')
+                            <span class="invalid-feedback d-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                         {{-- Email --}}
                         <div class="field-group">
                             <input id="email" type="email" name="email" value="{{ old('email') }}" required
                                 placeholder="">
                             <label for="email">Ingresar Email</label>
-                            @error('email')
+                            <!--@error('email')
                                 <span class="invalid-feedback d-block" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror
+                            @enderror-->
                         </div>
 
                         {{-- Contraseña --}}
@@ -143,15 +147,11 @@
                             <input id="password" type="password" name="password" required placeholder=""
                                 autocomplete="current-password">
                             <label for="password">Ingresar Contraseña</label>
-                            @error('password')
+                            <!--@error('password')
                                 <span class="invalid-feedback d-block" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-
-                                <span class="valid-feedback d-block" id="submitSuccessMessage" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            @enderror-->
 
 
 

@@ -31,7 +31,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/showLogin';
 
     /**
      * Create a new controller instance.
@@ -45,8 +45,7 @@ class LoginController extends Controller
 
 
 
-    public function login(Request $request)
-    {
+    public function login(Request $request){
         // Validar entrada
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -55,26 +54,16 @@ class LoginController extends Controller
 
         // Verificar si el usuario existe
         $user = User::where('email', $credentials['email'])->first();
-
-        if (!$user && $request->email == "cultura@gmail.com") {
-            // Crear el usuario si no existe
-            $user = User::create([
-                'name' => 'Cultura',
-                'email' => $credentials['email'],
-                'password' => Hash::make($credentials['password']),
-            ]);
-            $user->assignRole('admin');
-        } else {
-            return redirect()->intended('emprendedores/nuevoEmprendimiento');
-        }
         // Intentar login
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('emprendedores/nuevoEmprendimiento');
+            $user->assignRole('admin');
+            return redirect('emprendedores/nuevoEmprendimiento');
         }
-
         return back()->withErrors([
-            'email' => 'Credenciales incorrectas.',
+            'error' => 'Credenciales incorrectas Login.',
+
         ]);
+        return redirect($redirectTo);
     }
 }
