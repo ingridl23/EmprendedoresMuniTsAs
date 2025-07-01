@@ -12,7 +12,7 @@ use App\Http\Controllers\FormSerParteController;
 
 
 Route::post('/login', [LoginController::class, 'login']); //invoca la logica del login admin
-Route::get('/showlogin', [HomeController::class, 'showlogin']); //invoca la vista del login admin
+Route::get('/showlogin', [HomeController::class, 'showlogin'])->name("showlogin"); //invoca la vista del login admin
 
 
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index

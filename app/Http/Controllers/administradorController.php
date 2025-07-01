@@ -9,7 +9,7 @@ use App\Http\Controllers\DireccionController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\user;
-use App\Models\emprendedores;
+use App\Models\Emprendedor;
 use App\Models\redes;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
