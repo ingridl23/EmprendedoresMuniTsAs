@@ -140,7 +140,16 @@
         .h1 {
             font-size: calc(1.375rem + 1.5vw);
         }
-        
+        img.cierreEmprendedor{
+                width: 100%;
+        }
+
+        div.modal-body button.detalleEmprendedor{
+            border: none;
+        }
+        div.modal-body button.detalleEmprendedor:hover{
+           color: #076d81; 
+        }
         @media (min-width: 1200px) {
             h1,
             .h1 {

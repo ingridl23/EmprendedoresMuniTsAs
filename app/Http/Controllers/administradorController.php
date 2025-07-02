@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\user;
 use App\Models\Emprendedor;
 use App\Models\redes;
+use App\Models\direccion;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\constants;
@@ -89,9 +90,10 @@ class administradorController extends Controller
                 $redes->facebook = $request->input('facebook');
                 $redes->whatsapp = $request->input('whatsapp');
             }
-            if ($direccion->ciudad != $request->input('ciudad') || $direccion->calle != $request->input('calle')
+            if ($direccion->ciudad != $request->input('ciudad') || $direccion->localidad !=$request->input('localidad') || $direccion->calle != $request->input('calle')
                 || $direccion->altura != $request->input('altura')) {
                 $direccion->ciudad = $request->input('ciudad');
+                $direccion->localidad=$request->input('localidad');
                 $direccion->calle = $request->input('calle');
                 $direccion->altura = $request->input('altura');
             }

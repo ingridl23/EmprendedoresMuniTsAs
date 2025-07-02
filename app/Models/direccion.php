@@ -13,6 +13,7 @@ class direccion extends Model
 
      protected $fillable = [
         'ciudad',
+        'localidad',
         'calle',
         'altura'
     ];
@@ -22,20 +23,21 @@ class direccion extends Model
         return $this->hasOne(Emprendedor::class, 'direccion_id', 'id');
     }
 
-    public function crearDireccion($ciudad, $calle, $altura){
+    public static function crearDireccion($ciudad,$localidad, $calle, $altura){
         $direccion=direccion::create([
             'ciudad' =>$ciudad,
+            'localidad' =>$localidad,
             'calle' =>$calle,
             'altura' =>$altura,
         ]);
         return $direccion->id;
     }
 
-    public function editarEmprendimiento($direccion){
+    public static function editarEmprendimiento($direccion){
         $direccion->save();
     }
 
-    public function eliminarEmprendimiento($direccion){
+    public static function eliminarEmprendimiento($direccion){
         $direccion->delete();
     }
 }

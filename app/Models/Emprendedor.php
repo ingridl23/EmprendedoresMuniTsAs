@@ -42,12 +42,11 @@ class Emprendedor extends Model
         'direccion_id'
     ];
 
-    public function redes(): BelongsTo
-    {
-        return $this->belongsTo(Redes::class, 'redes_id', 'id');
+    public function redes(): BelongsTo{
+        return $this->belongsTo(redes::class, 'redes_id', 'id');
     }
-     public function direccion(): BelongsTo
-    {
+
+    public function direccion(): BelongsTo{
         return $this->belongsTo(direccion::class, 'direccion_id', 'id');
     }
 
@@ -74,7 +73,7 @@ class Emprendedor extends Model
     public static function crearEmprendimiento($request, $path)
     {
         $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);  
-        $idDireccion = direccion::crearDireccion($request->ciudad,$request->calle,$request->altura);
+        $idDireccion = direccion::crearDireccion($request->ciudad,$request->localidades, $request->calle,$request->altura);
         $emprendimiento = Emprendedor::create([
             'nombre' => $request->nombre,
             'categoria' => $request->categoria,

@@ -48,7 +48,11 @@ class validacionNuevoEmprendimiento extends FormRequest
             'descripcion.string'=>'Debe ingresar una descripcion valida',
             'imagen.mimes'=>'El formato de la imagen debe de ser en: jpeg,jpg,png,webp',
             'whatsapp.numeric'=>'Debe ingresar un número de teléfono',
-            'whatsapp.digits_between'=>'El numero de telefono debe de tener entre 8 y 11 digitos'
+            'whatsapp.digits_between'=>'El numero de telefono debe de tener entre 8 y 11 digitos',
+            'ciudad' =>'Es necesario agregar la ciudad donde se encuentra el emprendimiento',
+            'localidad' =>'Es necesario agregar la localidad donde se encuentra el emprendimiento',
+            'calle' =>'Es necesario agregar la calle donde se encuentra el emprendimiento',
+            'altura' =>'Es necesario agregar la altura de la calle donde se encuentra el emprendimiento'
         ];
     }
 }

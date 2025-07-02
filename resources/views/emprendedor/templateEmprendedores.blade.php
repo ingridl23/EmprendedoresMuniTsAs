@@ -159,12 +159,10 @@
                 <h1 class="section-subheading text-muted"> Conoce La propuesta de cada emprendedor</h1>
             </div>
             <br>
-            <div class="row">
-
-                @foreach ($emprendedores as $emprendedor)
+            @foreach ($emprendedores as $emprendedor)
+                <div class="row">
                     <!--lasa redes sociales van en el otro template cuando se redirecciona a
                                      un emprendedor en especifico -->
-
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                             <div class="portfolio-hover">
@@ -180,168 +178,55 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4"></div>
-            </div>
-        </div>
-
-
-
-
-
-
+                </div>
         <!-- Portfolio item 2 modal popup-->
-
-
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                            alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase"> {{ $emprendedor->nombre }}</h2>
-                                    <!--   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="{{ asset('storage/' . $emprendedor->imagen) }}" alt="..." />
-                                    <p>{{ $emprendedor->descripcion }}</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong> Emprendedor</strong>
-                                        </li>
-                                        <li>
-                                            <strong>Categoria:</strong>{{ $emprendedor->categoria }}
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                        type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        retroceder
-                                    </button>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                        type="button">
-                                        <a href="/emprendedor/{{ $emprendedor->id }}">
-                                            <i class="fas fa-xmark me-1"></i>
-                                            ver mas acerca de {{ $emprendedor->nombre }}
-                                        </a>
-
-                                    </button>
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase"> {{ $emprendedor->nombre }}</h2>
-                                    <!--   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="{{ asset('storage/' . $emprendedor->imagen) }}" alt="..." />
-                                    <p>{{ $emprendedor->descripcion }}</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong> Emprendedor</strong>
-                                        </li>
-                                        <li>
-                                            <strong>Categoria:</strong>{{ $emprendedor->categoria }}
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                        type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        retroceder
-                                    </button>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                        type="button">
-                                        <a href="/emprendedor/{{ $emprendedor->id }}" class="linkEmprendedorMas">
-                                            <i class="fas fa-xmark me-1"></i>
-                                            ver mas acerca de {{ $emprendedor->nombre }}
-                                        </a>
-
-                                    </button>
+         <p>{{$emprendedor->nombre}}</p>
+                <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                                    alt="Close modal" class="cierreEmprendedor" />
+                            </div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="modal-body">
+                                            <!-- Project details-->
+                                            <h2 class="text-uppercase"> {{ $emprendedor->nombre }}</h2>
+                                            <!--   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
+                                            <img class="img-fluid d-block mx-auto"
+                                                src="{{ asset('storage/' . $emprendedor->imagen) }}" alt="..." />
+                                            <p>{{ $emprendedor->descripcion }}</p>
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <strong> Emprendedor</strong>
+                                                </li>
+                                                <li>
+                                                    <strong>Categoria:</strong>{{ $emprendedor->categoria }}
+                                                </li>
+                                            </ul>
+                                            <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor" data-bs-dismiss="modal"
+                                                type="button">
+                                                <a href="/emprendedor/{{ $emprendedor->id }}">
+                                                    <i class="fas fa-xmark me-1"></i>
+                                                    ver mas acerca de {{ $emprendedor->nombre }}
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        @endforeach
-
-        <div>
     </section>
     {{ $emprendedores->onEachSide(2)->links('pagination::bootstrap-4') }}
-    </div>
-
-    </div>
-
     <div class="col-lg-4 col-sm-6 mb-4">
 
-
     </div>
-    </div>
-    </div>
-
-    </section>
-
-
-
-
-
-    <!-- Portfolio item 2 modal popup-->
-
-    <section>
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal">
-                        <i class="fas fa-xmark me-1"></i>
-
-                    </div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-
-                                    <!-- Project details-->
-
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/bg-masthead.jpg"
-                                        alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet,
-                                        consectetur
-                                        adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
-                                        deserunt
-                                        repellat aperiam quasi sunt officia expedita beatae cupiditate,
-                                        maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong> Explore
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong> Graphic Design
-                                        </li>
-                                    </ul>
-                                    <button class=" btn-vermas btn-xl text-uppercase" data-bs-dismiss="modal"
-                                        type="button">
-
-                                        <a id="vermas" href="/emprendedor/$id"> ver mas acerca de este
-                                            emprendedor</a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
     @include('layouts.panelAdmin')
 
 

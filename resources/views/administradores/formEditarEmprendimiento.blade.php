@@ -17,6 +17,7 @@
             <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
              <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
+             <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
         </head>
         @include('emprendedor.navBar')
@@ -45,7 +46,7 @@
         </div>
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
-                <form action="/emprendedores/update/{{$emprendimiento->id}}" method="POST" enctype="multipart/form-data" class="form" id="contactForm">
+                <form action="/emprendedores/{{$emprendimiento->id}}" method="POST" enctype="multipart/form-data" class="form" id="contactForm">
                     @csrf
                     {{ method_field('PATCH') }}
                     @include('administradores.form')
@@ -73,6 +74,7 @@
 <script src="{{ asset('js/scripts3.js') }}"></script>
 <script src="{{ asset('js/logicaFormNuevoYEditarEmprendimiento.js') }}"></script>
 <script src="{{ asset('js/scripts.js') }} "></script>
+<script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>
 
 <!-- SimpleLightbox plugin JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

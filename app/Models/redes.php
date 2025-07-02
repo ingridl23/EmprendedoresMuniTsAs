@@ -28,9 +28,9 @@ class Redes extends Model
 
     public static function crearRedes($instagram, $facebook, $whatsapp){
         $redes= redes::create([
-            'instagram' => $request->instagram,
-            'facebook' => $request->facebook,
-            'whatsapp' => $request->whatsapp,
+            'instagram' => $instagram,
+            'facebook' => $facebook,
+            'whatsapp' => $whatsapp,
         ]);
         return $redes->id;
     }
