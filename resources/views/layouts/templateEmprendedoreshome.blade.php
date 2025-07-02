@@ -22,9 +22,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
 
@@ -240,12 +239,12 @@
 
                 <div class="col-lg-6">
 
-                    <form class="form" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form method="post" class="form" id="contactForm" action="{{ route('formulario.enviar') }}">
                         <!-- Name input-->
-
+                        @csrf
                         <div class="field-group">
 
-                            <input id="name" name="message" type="text" placeholder="" required></input>
+                            <input id="name" name="first_name" type="text" placeholder="" required></input>
                             <label class="message" for="message">Nombre y Apellido</label>
                             <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                         </div>
@@ -254,7 +253,7 @@
 
                         <div class="field-group">
 
-                            <input id="email" name="message" type="email" placeholder="" required></input>
+                            <input id="email" name="email" type="email" placeholder="" required></input>
                             <label class="message" for="message">Email</label>
                             <p class="form-subtitulos">Registre un email que utilice frecuentemente</p>
                         </div>
@@ -264,7 +263,7 @@
 
                         <div class="field-group">
 
-                            <input type="tel" id="phone" name="telefono" placeholder="" required></input>
+                            <input type="tel" id="phone" name="tel" placeholder="" required></input>
                             <label class="message" for="message">Telefono</label>
                             <p class="form-subtitulos">Otorgue un numero de telefono de uso frecuente</p>
                         </div>
@@ -272,7 +271,7 @@
                         <!-- input descripcion -->
                         <div class="field-group">
 
-                            <textarea id="descripcion" name="descripcion" type="text" placeholder="" required></textarea>
+                            <textarea id="descripcion" name="description" type="text" placeholder="" required></textarea>
                             <label class="message" for="message">Describa brevemente su emprendimiento</label>
                             <p class="form-subtitulos">Escriba una descripcion a continuacion</p>
                         </div>
@@ -283,14 +282,16 @@
                             value="">
 
                         <!-- Submit Button-->
-                        <div class="d-grid">
-                            <button class="submit btn btn-primary btn-xl" id="submitButton" type="submit">
-                                <span class="btn-text2">Enviar Petición</span>
-                                <span class="checkmark" id="submitSuccessMessage">&#10004;</span>
-                                <span class="checkmark2" id="submitErrorMessage">&#10008;</span>
+                        <div class=" d-grid  ">
+                            <button class=" submit btn btn-primary btn-xl" id="submitButton" type="submit">
+
+                                <span class="btntext"> Enviar
+                                    Peticion </span>
+
+
                             </button>
 
-                            <p class="error-msg">Complete los campos obligatorios</p>
+                            <p>Complete los campos obligatorios</p>
                         </div>
 
                     </form>
@@ -319,7 +320,7 @@
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>

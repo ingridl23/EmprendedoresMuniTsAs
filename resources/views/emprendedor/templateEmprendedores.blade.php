@@ -55,7 +55,7 @@
                         <ul class="navbar-nav mx-auto my-2 my-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link navbar-brand " id="emprendedorestext"
-                                    href="{{ url('/') }}">Inicio</a>
+                                    href="{{ url('/') }}">Volver a Inicio</a>
                             </li>
 
                             <li class="nav-item">

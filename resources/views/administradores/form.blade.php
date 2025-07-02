@@ -61,7 +61,7 @@
         </select>
     </div>
 </div>
-<div>
+<div class="alturaYCalle field-group">
     <div class="field-group">
         <input type="text" name="calle" id="calle" required placeholder=""
                value={{ isset($emprendimiento) ? $emprendimiento->direccion->calle : old('calle') }}>

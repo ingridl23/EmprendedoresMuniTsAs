@@ -22,7 +22,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 
     <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
 
@@ -39,14 +41,12 @@
                 <!-- Navbar principal -->
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
                     <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
-
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="assets/img/logo-muni-azul-claro-removebg-preview.png" alt="Logo Tres Arroyos"
-                                class="logo-img me-2">
+                            <img src="\EmprendedoresMuniTsAs\public\assets\img\logo-muni-azul-claro-removebg-preview.png"
+                                alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
-
                         <!-- Botones de toggle para móvil -->
                         <button class="navbar-toggler navbar-toggler-right d-lg-none" type="button"
                             data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
@@ -58,7 +58,7 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/') }}"> Pagina principal </a>
+                                    <a class="nav-link" href="{{ url('/') }}"> Volver Al Inicio </a>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
@@ -71,8 +71,8 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
                                     get-started-btn crollto" class="get-started-btn">
                                     <div class="get-started-group font-color-bl">
-                                        <img src="assets/img/MiTr-remove-removebg-preview.png" slt
-                                            class=" img-btn-logonav img-fluid mb-1">
+                                        <img src="\EmprendedoresMuniTsAs\public\assets\img\MiTr-remove-removebg-preview.png"
+                                            slt class=" img-btn-logonav img-fluid mb-1">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
@@ -126,8 +126,9 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
+                <img class="divider" src="\EmprendedoresMuniTsAs\public\assets\img\logocultura.png">
                 <h2 class="mt-0"> Unite como emprendedor</h2>
-                <hr class="divider" />
+
                 <p class="text-muted mb-5">
                     Completá el formulario con tus datos y desde la Oficina de Cultura nos pondremos en contacto para
                     que
@@ -141,21 +142,28 @@
 
             <div class="col-lg-6">
 
-                <form class="form" id="contactForm">
+                <form method="post" class="form" id="contactForm" action="{{ route('formulario.enviar') }}">
                     <!-- Name input-->
-
+                    @csrf
                     <div class="field-group">
 
-                        <input id="name" name="message" type="text"required placeholder=""></input>
+                        <input id="name" name="first_name" type="text" required placeholder=""></input>
+
                         <label for="message">Nombre y Apellido</label>
                         <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                     </div>
 
-                    <!--inpt email-->
+                    <!--input email-->
 
                     <div class="field-group">
 
-                        <input id="email" name="message" type="email" required placeholder=""></input>
+                        <input id="email" name="email" type="email" required placeholder=""></input>
+
+
+
+
+
+
                         <label for="message">Email</label>
                         <p class="form-subtitulos">Registre un email que utilice frecuentemente</p>
                     </div>
@@ -165,7 +173,11 @@
 
                     <div class="field-group">
 
-                        <input type="tel" id="phone" name="telefono" required placeholder=""></input>
+                        <input type="tel" id="phone" name="tel" required placeholder=""></input>
+
+
+
+
                         <label for="message">Telefono</label>
                         <p class="form-subtitulos">Otorgue un numero de telefono de uso frecuente</p>
                     </div>
@@ -173,28 +185,29 @@
                     <!-- input descripcion -->
                     <div class="field-group">
 
-                        <textarea id="descripcion" name="descripcion" type="text" required placeholder=""></textarea>
-                        <label for="message">Describa brevemente su emprendimiento</label>
+                        <textarea id="descripcion" name="description" type="text" required placeholder=""></textarea>
+
+
+                        <label for="message">Describa Brevemente Su Emprendimiento</label>
                         <p class="form-subtitulos">Escriba una descripcion a continuacion</p>
                     </div>
 
                     <!-- input oculto -->
 
                     <input type="text" id="oculto" name="oculto" class="oculto" autocomplete="off"
-                        value="dato oculto">
+                        value="">
 
                     <!-- Submit Button-->
                     <div class=" d-grid  ">
-                        <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
+                        <button class=" submit btn btn-primary btn-xl" id="submitButton" type="submit">
 
                             <span class="btntext"> Enviar
                                 Peticion </span>
 
-                            <span class="checkmark">&#10004;</span>
-                            <span class="checkmark2">&#10008; </span>
+
                         </button>
 
-                        <p class="error-msg">Complete los campos obligatorios</p>
+
                     </div>
 
                 </form>
@@ -206,23 +219,22 @@
     <br>
     <br>
     @include('emprendedor.footer')
+
+
+    <!-- Core theme JS-->
+    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/scripts3.js') }}"></script>
+
+
+
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core theme JS-->
-<script src="{{ asset('js/scripts3.js') }}"></script>
-
-<script src="{{ asset('js/logicaform.js') }}"></script>
-
-
-
-
-<!-- SimpleLightbox plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </html>

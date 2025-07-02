@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/formarparte') }}">ser parte</a>
+                                <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
                             </li>
                         </ul>
 

@@ -61,7 +61,7 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/') }}">Pagina Principal</a>
+                                    <a class="nav-link" href="{{ url('/') }}">Volver a Inicio</a>
 
 
                             </ul>
@@ -136,84 +136,86 @@
                                 placeholder="">
                             <label for="email">Ingresar Email</label>
                             <!--@error('email')
-                                <span class="invalid-feedback d-block" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                    <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                             @enderror-->
                         </div>
+
+                        @csrf
 
                         {{-- Contraseña --}}
                         <div class="field-group">
                             <input id="password" type="password" name="password" required placeholder=""
                                 autocomplete="current-password">
                             <label for="password">Ingresar Contraseña</label>
-                            <!--@error('password')
-                                <span class="invalid-feedback d-block" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror-->
+
+                            <span class="invalid-feedback d-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror-->
 
 
 
 
+                    </div>
+
+                    {{-- Recordar credenciales --}}
+                    <div class="checkbox-group mb-3">
+                        <label>
+                            <input type="checkbox" name="remember" id="remember"
+                                {{ old('remember') ? 'checked' : '' }}>
+                            Recordar credenciales
+                        </label>
+                    </div>
+
+                    {{-- Botón --}}
+                    <div class="text-center mb-2">
+                        <button id="submitButton" type="submit" class="btn btn-primary w-100">
+
+                            {{ __('Ingresar') }}
+                        </button>
+                    </div>
+
+                    {{-- Olvidaste contraseña --}}
+                    @if (Route::has('password.request'))
+                        <div class="text-center">
+                            <a class="btn btn-link p-0" href="{{ route('password.request') }}">
+                                {{ __('¿Olvidaste cómo ingresar?') }}
+                            </a>
                         </div>
+                    @endif
+                </form>
 
-                        {{-- Recordar credenciales --}}
-                        <div class="checkbox-group mb-3">
-                            <label>
-                                <input type="checkbox" name="remember" id="remember"
-                                    {{ old('remember') ? 'checked' : '' }}>
-                                Recordar credenciales
-                            </label>
-                        </div>
-
-                        {{-- Botón --}}
-                        <div class="text-center mb-2">
-                            <button id="submitButton" type="submit" class="btn btn-primary w-100">
-
-                                {{ __('Ingresar') }}
-                            </button>
-                        </div>
-
-                        {{-- Olvidaste contraseña --}}
-                        @if (Route::has('password.request'))
-                            <div class="text-center">
-                                <a class="btn btn-link p-0" href="{{ route('password.request') }}">
-                                    {{ __('¿Olvidaste cómo ingresar?') }}
-                                </a>
-                            </div>
-                        @endif
-                    </form>
-
-                </div>
             </div>
         </div>
     </div>
+</div>
 
-    @include('emprendedor.footer')
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            document.querySelectorAll('.field-group input').forEach(input => {
-                if (input.value.trim() !== '') {
-                    input.classList.add('has-value');
-                }
+@include('emprendedor.footer')
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.field-group input').forEach(input => {
+            if (input.value.trim() !== '') {
+                input.classList.add('has-value');
+            }
 
-                input.addEventListener('input', () => {
-                    input.classList.toggle('has-value', input.value.trim() !== '');
-                });
+            input.addEventListener('input', () => {
+                input.classList.toggle('has-value', input.value.trim() !== '');
             });
         });
-    </script>
-    <!-- Bootstrap core JS-->
-    <script src="{{ asset('js/scriptsnavlogin.js') }} "></script>
-    <script src="{{ asset('js/scripts3.js') }}"></script>
+    });
+</script>
+<!-- Bootstrap core JS-->
+<script src="{{ asset('js/scriptsnavlogin.js') }} "></script>
+<script src="{{ asset('js/scripts3.js') }}"></script>
 
 
-    <!-- SimpleLightbox plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- SimpleLightbox plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+<!-- Core theme JS-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
