@@ -16,6 +16,7 @@ class Direccion extends Migration
        Schema::create('direccion', function (Blueprint $table) {
             $table->id();
             $table->string('ciudad');
+            $table->string('localidad')->default("");
             $table->string('calle');
             $table->integer('altura');
             $table->timestamps();

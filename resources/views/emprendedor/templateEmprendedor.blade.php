@@ -264,7 +264,7 @@
                             <em>
                                 Encontranos en
                                 <br />
-                                <strong>Ciudad: {{$emprendimiento->direccion->ciudad}}</strong>
+                                <strong>Ciudad: {{$emprendimiento->direccion->ciudad}} - {{$emprendimiento->direccion->localidad}}</strong>
                                 <br />
                                 <strong>{{$emprendimiento->direccion->calle}} {{$emprendimiento->direccion->altura}}</strong> <!--((emprendedor- direccion)) -->
                             </em>

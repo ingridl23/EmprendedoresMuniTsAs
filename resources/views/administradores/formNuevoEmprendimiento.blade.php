@@ -15,6 +15,7 @@
             <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
+            <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
             
             <!-- Favicon-->
@@ -84,6 +85,7 @@
 <script src="{{ asset('js/scripts3.js') }}"></script>
 <script src="{{ asset('js/logicaFormNuevoYEditarEmprendimiento.js') }}"></script>
 <script src="{{ asset('js/scripts.js') }} "></script>
+<script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>
 
 <!-- SimpleLightbox plugin JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

@@ -16,6 +16,7 @@ class direccionFactory extends Factory
         $username = $this->faker->userName;
         return [
             'ciudad'=>$this->faker->city,
+            'localidad'=>$this->faker->city,
             'calle' => $this->faker->streetName,
             'altura' => $this->faker->numerify('####'),
             'created_at' => now(),

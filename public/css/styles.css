@@ -86,19 +86,12 @@
         box-sizing: border-box;
     }
     
-    #imagenFormulario label {
-        font-size: 1rem;
-        color: #000 !important;
-    }
+
     
     .tituloNuevoEmprendimiento {
         margin-top: 7rem;
     }
-    
-    .imagenEmprendimientoFormulario {
-        margin-top: 1rem;
-    }
-    
+
     div .table-responsive {
         overflow-x: visible;
     }

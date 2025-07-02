@@ -1,0 +1,61 @@
+label.direccionEmprendimiento{
+    display: block;
+    position: relative;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    margin-bottom: 0.5rem;
+}
+.imagenEmprendimientoFormulario {
+    margin-top: 1rem;
+}
+#imagenFormulario label {
+    font-size: 1rem;
+    color: #000 !important;
+}
+
+select{
+    width: 100%;
+    border: none;
+    padding: 0.3rem;
+    border-bottom: 2px solid #0262c9;
+    background-color: transparent;
+}
+
+select:hover {
+    background-color: rgba(109, 109, 109, 0.2);
+}
+
+label.seleccionLocalidad{
+    font-size: 0.85rem;
+    color: #53c9ff;
+}
+
+.oculto{
+    display: none;
+}
+
+div.mostrar{
+    display: block;
+    animation: 0.5s linear 0s mostrarDiv;
+    animation-direction:unset;
+}
+.alturaYCalle{
+    display: flex;
+    justify-content: space-between;
+}
+div.alturaYCalle p.form-subtitulos{
+    margin-left: 0;
+}
+@keyframes mostrarDiv {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+
+/* label.direccionEmprendimiento::after {
+    color: #53c9ff;
+  }*/
