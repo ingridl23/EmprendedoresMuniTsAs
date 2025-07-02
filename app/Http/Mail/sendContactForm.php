@@ -12,12 +12,41 @@ class sendContactForm extends Mailable
 {
 
 
+    public $data;
+
+    public function __construct($data)
+    {
+        $this->data = $data;
+    }
+
+    public function build()
+    {
+        return $this->subject('Nuevo formulario de contacto')
+            ->view('emails.contact')
+            ->with('data', $this->data);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     use Queueable, SerializesModels;
 
 
     /**
        @var string
      */
+    /*
     public string  $first_name;
     public string  $email;
     public int $tel;
@@ -33,6 +62,7 @@ class sendContactForm extends Mailable
 
      * @return void
      */
+    /*
     public function __construct(string $first_name, string $email, int $tel, string $description)
     {
 
@@ -46,10 +76,12 @@ class sendContactForm extends Mailable
      *
      * @return $this
      */
+    /*
     public function build()
     {
 
         $this->subject("Formulario de contacto - " . config("app.name"));
         $this->markdown("emails.contact");
     }
+        */
 }

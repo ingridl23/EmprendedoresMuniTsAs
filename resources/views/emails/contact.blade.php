@@ -1,16 +1,25 @@
-@component('mail::message')
-    #Hola Oficina De Cultura
+<!DOCTYPE html>
+<html>
 
-    <br>
+<head>
+    <title>Nuevo mensaje de contacto</title>
+    <meta charset="UTF-8">
+</head>
 
-    <p>
-        Has recibido un nuevo mensaje desde el formulario de contacto de {{ config('app.name') }}
+<body>
+    <h1>Nuevo mensaje de contacto</h1>
 
-    <p>
-        motivo del mensaje : {{ $description }}
-    </p>
+    <p><strong>Nombre:</strong> {{ $data['first_name'] }}</p>
+    <p><strong>Email:</strong> {{ $data['email'] }}</p>
+    <p><strong>Teléfono:</strong> {{ $data['tel'] ?? 'No provisto' }}</p>
 
+    <p><strong>Mensaje:</strong></p>
+    <p>{{ $data['description'] }}</p>
 
+    <hr>
 
-    </p>
-@endcomponent
+    <p>Gracias,<br>
+        {{ config('app.name') }}</p>
+</body>
+
+</html>

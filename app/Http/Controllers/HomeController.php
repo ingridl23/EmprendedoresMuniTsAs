@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -19,10 +20,6 @@ class HomeController extends Controller
         return view('layouts.templateEmprendedoreshome');
     }
 
-    public function formarparte()
-    {
-        return view("layouts.indexform");
-    }
 
     public function showlogin()
     {

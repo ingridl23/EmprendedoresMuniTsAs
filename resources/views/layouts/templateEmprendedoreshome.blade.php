@@ -239,9 +239,9 @@
 
                 <div class="col-lg-6">
 
-                    <form method="post" class="form" id="contactForm">
+                    <form method="post" class="form" id="contactForm" action="{{ route('formulario.enviar') }}">
                         <!-- Name input-->
-
+                        @csrf
                         <div class="field-group">
 
                             <input id="name" name="first_name" type="text" placeholder="" required></input>
@@ -320,7 +320,7 @@
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>

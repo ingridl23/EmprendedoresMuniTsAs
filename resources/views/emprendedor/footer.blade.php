@@ -19,7 +19,8 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-info">
-                        <img class="logomuni"src="./assets/img/logo-muni-azul-claro-removebg-preview.png">
+                        <img
+                            class="logomuni"src="\EmprendedoresMuniTsAs\public\assets\img\logo-muni-azul-claro-removebg-preview.png">
                         <br>
                         Av. Rivadavia 1 - Tres Arroyos <br>
                         <strong>Tel:</strong> (02983) 439200 <br> <strong>Consultas frecuentes:</strong> (02983)
