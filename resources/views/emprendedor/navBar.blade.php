@@ -1,10 +1,10 @@
 <!-- ======= Header ======= -->
 <div class="custom-navbar-container">
     <header id="header" class="fixed-top header-scrolled">
-        <div class="container-fluid px-4 container">
+        <div class="container-fluid px-6 container">
             <!-- Navbar principal -->
             <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
-                <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
+                <div class="container px-4 px-lg-6 d-flex align-items-center justify-content-between">
 
                     <!-- Logo y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
@@ -40,8 +40,8 @@
 
                         <!-- Botones de servicios externos -->
                         <div class="get-started-buttons d-flex align-items-center">
-                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
-                                get-started-btn crollto" class="get-started-btn">
+                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
+                                class="get-started-btn crollto">
                                 <div class="get-started-group font-color-bl">
                                     <img src="assets/img/MiTr-remove-removebg-preview.png" slt
                                         class=" img-btn-logonav img-fluid mb-1" alt="Imagen municipalidad">
@@ -52,7 +52,7 @@
                             <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                 class="get-started-btn scrollto">
                                 <div class="get-started-group font-color-bl">
-                                    <i class="fa-solid fa-laptop servicio-icono"></i>
+                                    <i class="fa-solid fa-laptop  servicio-icono"></i>
                                     <span class="btn-text">Autogestion</span>
 
                                 </div>
@@ -67,15 +67,14 @@
                                     <span class="btn-text">Gobierno<br>Abierto</span>
                                 </div>
                             </a>
-                                <a href="{{ url('/showlogin') }}"
-                                    class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl">
-                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+                            <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
+                                <div class="get-started-group font-color-bl">
+                                    <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
 
-                                        </i>
-                                        <span class="btn-text">Panel<br>Admin</span>
-                                    </div>
-                                </a>
+                                    </i>
+                                    <span class="btn-text">Panel<br>Admin</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>

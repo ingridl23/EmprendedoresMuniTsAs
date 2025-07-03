@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EmprendedoresController;
 use App\Http\Controllers\FormSerParteController;
 
-
+//rutas form admin
 Route::post('/login', [LoginController::class, 'login']); //invoca la logica del login admin
 Route::get('/showlogin', [HomeController::class, 'showlogin'])->name("showlogin"); //invoca la vista del login admin
 
@@ -23,12 +23,12 @@ Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedore
 Route::get('/formar/parte', [FormSerParteController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura
 Route::post('/formulario-enviar', [FormSerParteController::class, "enviar"])->name("formulario.enviar"); //ruta que envia  la regla post del formulario
 
-//agregar rutas para las secciones individuales del emprendedor
-/*Route::get('/emprendedor', [EmprendedorController::class, "emprendedor"]);*/
+
 
 Route::get('/emprendedores', [EmprendedorController::class, "emprendedores"])->name("emprendedores"); //vista general para emprendedores
 
-//Route::get('/emprendedores/panelAdmin', [administradorController::class, "show"]);
+
+// ruta para las secciones individuales del emprendedor
 Route::get('/emprendedor/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
 
 // agregar para admin
@@ -44,4 +44,3 @@ Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmpr
 Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmprendimiento"]);
 
 Auth::routes();
-//Route::resource('emprendedores', EmprendedorController::class);

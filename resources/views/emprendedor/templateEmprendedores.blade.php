@@ -59,14 +59,14 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/formarparte') }}"">ser parte</a>
+                                <a class="nav-link" href="{{ url('/formar/parte') }}"">ser parte</a>
                             </li>
                         </ul>
 
                         <!-- Botones de servicios externos -->
                         <div class="get-started-buttons d-flex align-items-center">
-                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
-                                get-started-btn crollto" class="get-started-btn">
+                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
+                                class="get-started-btn crollto">
                                 <div class="get-started-group font-color-bl">
                                     <img src="assets/img/MiTr-remove-removebg-preview.png" slt
                                         class=" img-btn-logonav img-fluid mb-1">
@@ -93,8 +93,7 @@
                                 </div>
                             </a>
 
-                            <a href="{{ url('/showlogin') }}" 
-                                class="get-started-btn scrollto btn-contact">
+                            <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
                                 <div class="get-started-group font-color-bl">
                                     <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
 
@@ -179,8 +178,8 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4"></div>
                 </div>
-        <!-- Portfolio item 2 modal popup-->
-         <p>{{$emprendedor->nombre}}</p>
+                <!-- Portfolio item 2 modal popup-->
+                <p>{{ $emprendedor->nombre }}</p>
                 <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
                     aria-hidden="true">
                     <div class="modal-dialog">
@@ -196,7 +195,8 @@
                                             <h2 class="text-uppercase"> {{ $emprendedor->nombre }}</h2>
                                             <!--   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
                                             <img class="img-fluid d-block mx-auto"
-                                                src="{{ asset('storage/' . $emprendedor->imagen) }}" alt="..." />
+                                                src="{{ asset('storage/' . $emprendedor->imagen) }}"
+                                                alt="..." />
                                             <p>{{ $emprendedor->descripcion }}</p>
                                             <ul class="list-inline">
                                                 <li>
@@ -206,8 +206,8 @@
                                                     <strong>Categoria:</strong>{{ $emprendedor->categoria }}
                                                 </li>
                                             </ul>
-                                            <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor" data-bs-dismiss="modal"
-                                                type="button">
+                                            <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
+                                                data-bs-dismiss="modal" type="button">
                                                 <a href="/emprendedor/{{ $emprendedor->id }}">
                                                     <i class="fas fa-xmark me-1"></i>
                                                     ver mas acerca de {{ $emprendedor->nombre }}
@@ -230,12 +230,22 @@
     @include('layouts.panelAdmin')
 
 
+    <a href="https://wa.me/4444444444?text=¡Hola contactanos a traves de nuestro whatsapp, muchas gracias, oficina de cultura."
+        class="whatsapp-float" target="_blank" rel="noopener">
+
+        <img class="whatsapp" src="assets/img/whatsapp.png">
+    </a>
+
+
+
+
+
+
     @include('emprendedor.footer')
 
 
 
-    <!-- Bootstrap core JS-->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <!-- Core theme JS-->
 
@@ -246,7 +256,6 @@
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 

@@ -334,7 +334,7 @@
 
                             </button>
 
-                            <p>Complete los campos obligatorios</p>
+
                         </div>
 
                     </form>
@@ -347,9 +347,17 @@
 
     </section>
 
+    @include('layouts.sectionredes')
+
 
     @include('layouts.panelAdmin')
 
+
+    <a href="https://wa.me/44444444444?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de cultura"
+        class="whatsapp-float" target="_blank" rel="noopener">
+
+        <img class="whatsapp" src="assets/img/whatsapp.png">
+    </a>
 
 
 
