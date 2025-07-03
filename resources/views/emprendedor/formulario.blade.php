@@ -135,6 +135,24 @@
                     puedas integrarte a esta valiosa propuesta.
 
                 </p>
+                {{-- ✅ Mensaje de éxito --}}
+                @if (session('success'))
+                    <div class="alert alert-success text-center mb-3">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                {{-- ✅ Errores generales --}}
+                @if ($errors->any())
+                    <div class="alert alert-danger text-start mb-3">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
             </div>
         </div>
 
@@ -142,13 +160,16 @@
 
             <div class="col-lg-6">
 
-                <form method="post" class="form" id="contactForm" action="{{ route('formulario.enviar') }}">
+                <form method="POST" class="form" id="contactForm" action="{{ route('formulario.enviar') }}">
                     <!-- Name input-->
                     @csrf
                     <div class="field-group">
 
                         <input id="name" name="first_name" type="text" required placeholder=""></input>
 
+                        @error('first_name')
+                            <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                         <label for="message">Nombre y Apellido</label>
                         <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                     </div>
@@ -159,7 +180,9 @@
 
                         <input id="email" name="email" type="email" required placeholder=""></input>
 
-
+                        @error('email')
+                            <div class="text-danger small">{{ $message }}</div>
+                        @enderror
 
 
 
@@ -175,7 +198,9 @@
 
                         <input type="tel" id="phone" name="tel" required placeholder=""></input>
 
-
+                        @error('tel')
+                            <div class="text-danger small">{{ $message }}</div>
+                        @enderror
 
 
                         <label for="message">Telefono</label>
@@ -187,7 +212,9 @@
 
                         <textarea id="descripcion" name="description" type="text" required placeholder=""></textarea>
 
-
+                        @error('description')
+                            <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                         <label for="message">Describa Brevemente Su Emprendimiento</label>
                         <p class="form-subtitulos">Escriba una descripcion a continuacion</p>
                     </div>
