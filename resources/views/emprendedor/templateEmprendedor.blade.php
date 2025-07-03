@@ -6,25 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>emprendedor</title>
+    <title>Emprendedor</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 
-
-
-
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-
-    <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
-
     <link href= "{{ asset('css/styles2.css') }}" rel="stylesheet" />
     <link href= "{{ asset('css/footer.css') }}" rel="stylesheet" />
-
-
+    <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
 </head>
 
 
@@ -36,12 +33,11 @@
                 <!-- Navbar principal -->
                 <nav class="navbar navbar-expand-lg navbar-light py-2" id="mainNav">
                     <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
-
                         <!-- Logo y marca -->
-                        <a class="navbar-brand d-flex align-items-center" href="#page-top">
+                        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                             <img src="assets/img/logo-muni-azul-claro-removebg-preview.png" alt="Logo Tres Arroyos"
                                 class="logo-img me-2">
-
+                            <span class="brand-text"></span>
                         </a>
 
                         <!-- Botones de toggle para móvil -->
@@ -66,8 +62,8 @@
 
                             <!-- Botones de servicios externos -->
                             <div class="get-started-buttons d-flex align-items-center">
-                                <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
-                                    get-started-btn crollto" class="get-started-btn">
+                                <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class="
+                                    get-started-btn crollto get-started-btn">
                                     <div class="get-started-group font-color-bl">
                                         <img src="assets/img/MiTr-remove-removebg-preview.png" slt
                                             class=" img-btn-logonav img-fluid mb-1">
@@ -266,7 +262,7 @@
                                 <br />
                                 <strong>Ciudad: {{$emprendimiento->direccion->ciudad}} - {{$emprendimiento->direccion->localidad}}</strong>
                                 <br />
-                                <strong>{{$emprendimiento->direccion->calle}} {{$emprendimiento->direccion->altura}}</strong> <!--((emprendedor- direccion)) -->
+                                <strong>Calle: {{$emprendimiento->direccion->calle}} al {{$emprendimiento->direccion->altura}}</strong> <!--((emprendedor- direccion)) -->
                             </em>
                         </p>
 
@@ -316,13 +312,13 @@
 
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/scripts2.js') }}"></script>
-
+    <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
 
-
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 

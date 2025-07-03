@@ -127,7 +127,7 @@ class administradorController extends Controller
                 Emprendedor::eliminarEmprendimiento($emprendimiento);
                 redes::eliminarEmprendimiento($redes);
                 direccion::eliminarEmprendimiento($direccion);
-                return redirect('/');
+                return redirect('/emprendedores')->with('success', '¡El emprendimiento ha sido eliminado!');
             }
         }
         //return redirect("/error", "Emprendimiento incorrecto, ingrese uno válido");

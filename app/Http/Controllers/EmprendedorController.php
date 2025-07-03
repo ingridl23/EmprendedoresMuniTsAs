@@ -21,6 +21,11 @@ class EmprendedorController extends Controller
         
     }
 
+    public function obtenerCategorias(){
+        $categorias=Emprendedor::obtenerCategorias();
+        return $categorias;
+    }
+
         /*Filtro de busqueda de emprendedores por nombre*/
     public function filterEmprendimientosByName(Request $request){
         $busqueda = $request->query('busqueda');

@@ -145,11 +145,49 @@
         }
 
         div.modal-body button.detalleEmprendedor{
+            padding: 0.6rem 1rem;
+            margin: 0.5rem;
+            font-size: 1rem;
+            background-color: #007bff;
             border: none;
+            color: #fff;
+            transition: background-color 0.3s;
+            width: 70%;
+        }
+        div.modal-body button.detalleEmprendedor a, button.detalleEmprendedor input{
+            color: white;
         }
         div.modal-body button.detalleEmprendedor:hover{
-           color: #076d81; 
+           background-color: #004186; 
         }
+        .swal2-confirm:hover{
+           background-color: #004186; 
+        }
+
+        div.modal-body button.botonEliminar:hover{
+            background-color: rgb(148, 0, 0);
+        }
+        .swal2-cancel:hover{
+            background-color: rgb(97, 0, 0);
+        }
+        .inputEliminar{
+            color: white;
+            background-color: transparent;
+            border-bottom: transparent;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0;
+        }
+        .containerBotonesEmprendedor{
+            display:block;
+        }
+
+        @media (min-width: 630px){
+            .containerBotonesEmprendedor{
+                display: flex;
+            }
+        }
+
         @media (min-width: 1200px) {
             h1,
             .h1 {
@@ -706,6 +744,7 @@
             .container {
                 max-width: 540px;
             }
+
         }
         
         @media (min-width: 768px) {

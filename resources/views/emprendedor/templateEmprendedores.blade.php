@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>emprendedores</title>
+    <title>Emprendedores</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome -->
@@ -16,13 +16,10 @@
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 
-
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
-
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
@@ -59,14 +56,14 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/formarparte') }}"">ser parte</a>
+                                <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
                             </li>
                         </ul>
 
                         <!-- Botones de servicios externos -->
                         <div class="get-started-buttons d-flex align-items-center">
-                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
-                                get-started-btn crollto" class="get-started-btn">
+                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class="
+                                get-started-btn crollto get-started-btn">
                                 <div class="get-started-group font-color-bl">
                                     <img src="assets/img/MiTr-remove-removebg-preview.png" slt
                                         class=" img-btn-logonav img-fluid mb-1">
@@ -164,7 +161,7 @@
                     <!--lasa redes sociales van en el otro template cuando se redirecciona a
                                      un emprendedor en especifico -->
                     <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal{{$emprendedor->id}}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -178,10 +175,8 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4"></div>
-                </div>
         <!-- Portfolio item 2 modal popup-->
-         <p>{{$emprendedor->nombre}}</p>
-                <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
+                <div class="portfolio-modal modal fade" id="portfolioModal{{$emprendedor->id}}" tabindex="-1" role="dialog"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -207,18 +202,36 @@
                                                 </li>
                                             </ul>
                                             <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor" data-bs-dismiss="modal"
-                                                type="button">
+                                            type="button">
                                                 <a href="/emprendedor/{{ $emprendedor->id }}">
-                                                    <i class="fas fa-xmark me-1"></i>
-                                                    ver mas acerca de {{ $emprendedor->nombre }}
+                                                    ver más acerca de {{ $emprendedor->nombre }}
                                                 </a>
                                             </button>
+                                            <div class="containerBotonesEmprendedor">
+                                                @if(Auth::check() && Auth::user()->hasRole('admin'))
+                                                    <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor" data-bs-dismiss="modal"
+                                                        type="button">
+                                                        <a href="/emprendedores/formEditarEmprendimiento/{{ $emprendedor->id }}">
+                                                            Editar emprendimiento
+                                                        </a>
+                                                    </button>
+                                                    <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar" data-bs-dismiss="modal"
+                                                        type="button">
+                                                        <form action="/emprendedor/{{$emprendedor->id}}" class="formEliminar" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <input type="submit" class="inputEliminar" value="Eliminar emprendimiento">
+                                                        </form>
+                                                    </button>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             @endforeach
         </div>
@@ -235,19 +248,28 @@
 
 
     <!-- Bootstrap core JS-->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>-->
+
+    @if(session('success'))
+        <script>
+            window.mensajeExito=@json(session('success'));
+        </script>
+    @endif
 
     <!-- Core theme JS-->
-
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/logicaform.js') }} "></script>
+    <script src="{{asset('js/alertaEliminar.js')}}"></script>
 
+    <!--Para alertas desde JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-
+    
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
-
+    
 </html>
