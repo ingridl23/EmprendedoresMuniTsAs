@@ -17,7 +17,7 @@ Route::get('/showlogin', [HomeController::class, 'showlogin'])->name("showlogin"
 
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
 
-
+Route::get('/emprendedor/categorias', [emprendedorController::class, "obtenerCategorias"]);
 
 //rutas del formulario de contacto
 Route::get('/formar/parte', [FormSerParteController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura

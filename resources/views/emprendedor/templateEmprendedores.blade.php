@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>emprendedores</title>
+    <title>Emprendedores</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome -->
@@ -16,13 +16,10 @@
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 
-
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
-
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
@@ -163,7 +160,8 @@
                     <!--lasa redes sociales van en el otro template cuando se redirecciona a
                                      un emprendedor en especifico -->
                     <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <a class="portfolio-link" data-bs-toggle="modal"
+                            href="#portfolioModal{{ $emprendedor->id }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -209,10 +207,32 @@
                                             <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
                                                 data-bs-dismiss="modal" type="button">
                                                 <a href="/emprendedor/{{ $emprendedor->id }}">
-                                                    <i class="fas fa-xmark me-1"></i>
-                                                    ver mas acerca de {{ $emprendedor->nombre }}
+                                                    ver más acerca de {{ $emprendedor->nombre }}
                                                 </a>
                                             </button>
+                                            <div class="containerBotonesEmprendedor">
+                                                @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                                    <button
+                                                        class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
+                                                        data-bs-dismiss="modal" type="button">
+                                                        <a
+                                                            href="/emprendedores/formEditarEmprendimiento/{{ $emprendedor->id }}">
+                                                            Editar emprendimiento
+                                                        </a>
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar"
+                                                        data-bs-dismiss="modal" type="button">
+                                                        <form action="/emprendedor/{{ $emprendedor->id }}"
+                                                            class="formEliminar" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <input type="submit" class="inputEliminar"
+                                                                value="Eliminar emprendimiento">
+                                                        </form>
+                                                    </button>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -220,7 +240,8 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+        </div>
+        @endforeach
         </div>
     </section>
     {{ $emprendedores->onEachSide(2)->links('pagination::bootstrap-4') }}
@@ -248,10 +269,13 @@
 
 
     <!-- Core theme JS-->
-
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/logicaform.js') }} "></script>
+    <script src="{{ asset('js/alertaEliminar.js') }}"></script>
+
+    <!--Para alertas desde JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

@@ -25,7 +25,9 @@ class Redes extends Model
     public static function editarEmprendimiento($redes){
         $redes->save();
     }
-
+    public static function eliminarEmprendimiento($redes){
+        $redes->delete();
+    }
     public static function crearRedes($instagram, $facebook, $whatsapp){
         $redes= redes::create([
             'instagram' => $instagram,

@@ -70,6 +70,10 @@ class Emprendedor extends Model
         return null;
     }
 
+    public static function obtenerCategorias(){
+        $categorias= Emprendedor::select(['categoria'])->distinct()->get();
+        return $categorias;
+    }
     public static function crearEmprendimiento($request, $path)
     {
         $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);  

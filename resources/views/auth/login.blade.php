@@ -149,11 +149,11 @@
                             <input id="password" type="password" name="password" required placeholder=""
                                 autocomplete="current-password">
                             <label for="password">Ingresar Contraseña</label>
-
-                            <span class="invalid-feedback d-block" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror-->
+                         <!--@error('email')
+                                    <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror-->
 
 
 
