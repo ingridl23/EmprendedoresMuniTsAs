@@ -7556,7 +7556,12 @@
     .min-vh-100 {
         min-height: 100vh !important;
     }
-    
+    div.container.d-flex.justify-content-center.align-items-center.min-vh-100{
+        margin-bottom: 8rem;
+        margin-top: 2rem;
+        max-width: none;
+        min-height: auto !important;
+    }
     .flex-fill {
         flex: 1 1 auto !important;
     }
@@ -11431,7 +11436,7 @@
     textarea:focus+label,
     textarea:not(:placeholder-shown)+label {
         top: -0.9rem;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         color: #53c9ff !important;
     }
     

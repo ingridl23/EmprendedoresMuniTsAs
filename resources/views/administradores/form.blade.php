@@ -49,22 +49,22 @@
     <div class="field-group">
         <label for="inputCity" class="direccionEmprendimiento">Ciudad</label>
         <select id="ciudad" name="ciudad" required placeholder="">
-            <option class="oculto"></option>
+            <option class="oculto" {{!isset($emprendimiento) ?  'selected' : ""}}></option>
             <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Tres Arroyos") ? 'selected' :""}}>Tres Arroyos</option>
-            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Tres Arroyos") ? 'selected': ""}}>Adolfo Gonzales Chaves</option>
-            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Tres Arroyos") ? 'selected':""}}>Benito Juarez</option>
+            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Adolfo Gonzales Chaves") ? 'selected': ""}}>Adolfo Gonzales Chaves</option>
+            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Benito Juarez") ? 'selected':""}}>Benito Juarez</option>
         </select>
     </div>
     <div class="field-group oculto localidadesDeLaCiudad">
          <label for="localidad" class="direccionEmprendimiento localidad">Localidad</label>
         <select id="localidadesDeLaCiudad" name="localidad" required placeholder="">
+            <option value="{{isset($emprendimiento) ? $emprendimiento->direccion->localidad : old('localidad')}}" class="oculto opcionValorCargado"></option>
         </select>
     </div>
 </div>
 <div class="alturaYCalle field-group">
     <div class="field-group">
-        <input type="text" name="calle" id="calle" required placeholder=""
-               value={{ isset($emprendimiento) ? $emprendimiento->direccion->calle : old('calle') }}>
+        <textarea name="calle" id="calle" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->direccion->calle : old('calle') }}</textarea>
         <label for="calle">Calle</label>
         <p class="form-subtitulos">Otorgue el nombre de la calle</p>
     </div>

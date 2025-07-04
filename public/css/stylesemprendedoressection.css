@@ -90,6 +90,8 @@
             color: white;
         }
         
+
+
         @media (prefers-reduced-motion: no-preference) {
              :root {
                 scroll-behavior: smooth;
@@ -181,7 +183,13 @@
         .containerBotonesEmprendedor{
             display:block;
         }
-
+        h3{
+            text-align: center;
+            margin-top: 5rem;
+        }
+        div.row{
+            margin-top: 4rem;
+        }
         @media (min-width: 630px){
             .containerBotonesEmprendedor{
                 display: flex;
@@ -696,8 +704,8 @@
         }
         
         .img-fluid {
-            max-width: 100%;
-            height: auto;
+            max-height: 100%;
+            width: 100%;
         }
         
         .img-thumbnail {
@@ -6352,6 +6360,8 @@
             position: relative;
             width: 100%;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
         }
         
         .carousel-inner::after {
@@ -7992,7 +8002,12 @@
         .min-vh-100 {
             min-height: 100vh !important;
         }
-        
+        div.container.d-flex.justify-content-center.align-items-center.min-vh-100{
+            margin-bottom: 8rem;
+            margin-top: 2rem;
+            max-width: none;
+            min-height:auto !important;
+        }
         .flex-fill {
             flex: 1 1 auto !important;
         }
@@ -8929,6 +8944,7 @@
         
         .rounded-4 {
             border-radius: var(--bs-border-radius-xl) !important;
+            width: 100%;
         }
         
         .rounded-5 {

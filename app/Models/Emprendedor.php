@@ -71,13 +71,15 @@ class Emprendedor extends Model
     }
 
     public static function obtenerCategorias(){
-        $categorias= Emprendedor::select(['categoria'])->distinct()->get();
+        $categorias= Emprendedor::all()->groupBy('categoria');
         return $categorias;
     }
+
     public static function crearEmprendimiento($request, $path)
     {
+
         $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);  
-        $idDireccion = direccion::crearDireccion($request->ciudad,$request->localidades, $request->calle,$request->altura);
+        $idDireccion = direccion::crearDireccion($request->ciudad,$request->localidad, $request->calle,$request->altura);
         $emprendimiento = Emprendedor::create([
             'nombre' => $request->nombre,
             'categoria' => $request->categoria,
