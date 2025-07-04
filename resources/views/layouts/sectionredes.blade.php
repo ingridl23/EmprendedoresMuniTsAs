@@ -1,30 +1,3 @@
-<style>
-    /*********************************section icons redes*************************************************************************/
-
-    .social-icons {
-        margin-top: 3rem;
-        display: flex;
-        justify-content: center;
-        gap: 8rem;
-        margin-bottom: 4rem;
-        transition: transform 0.3s ease;
-    }
-
-    .social-icons a:hover {
-        transform: scale(1.2);
-    }
-
-    .social-icons img {
-        width: 82px;
-        height: 82px;
-    }
-
-
-    #about2 {
-        margin-bottom: 20rem;
-    }
-</style>
-
 <section class="page-section custom-about" id="about2">
 
 
