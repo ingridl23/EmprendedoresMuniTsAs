@@ -245,7 +245,7 @@
     <br>
     <br>
     <br>
-    <a href="https://wa.me/44444444444?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de cultura"
+    <a href="https://wa.me/2983603748?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de cultura"
         class="whatsapp-float" target="_blank" rel="noopener">
 
         <img class="whatsapp" src="\EmprendedoresMuniTsAs\public\assets\img\whatsapp.png">

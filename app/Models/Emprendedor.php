@@ -42,18 +42,20 @@ class Emprendedor extends Model
         'direccion_id'
     ];
 
-    public function redes(): BelongsTo{
+    public function redes(): BelongsTo
+    {
         return $this->belongsTo(redes::class, 'redes_id', 'id');
     }
 
-    public function direccion(): BelongsTo{
+    public function direccion(): BelongsTo
+    {
         return $this->belongsTo(direccion::class, 'direccion_id', 'id');
     }
 
     public static function showEmprendimientos()
     {
         //$emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen', 'categoria'])->get();
-        $emprendimientos=emprendedores::all();
+        $emprendimientos = emprendedores::all();
         if (count($emprendimientos) > constants::VALORMIN) {
             return $emprendimientos;
         }
@@ -70,14 +72,15 @@ class Emprendedor extends Model
         return null;
     }
 
-    public static function obtenerCategorias(){
-        $categorias= Emprendedor::select(['categoria'])->distinct()->get();
+    public static function obtenerCategorias()
+    {
+        $categorias = Emprendedor::select(['categoria'])->distinct()->get();
         return $categorias;
     }
     public static function crearEmprendimiento($request, $path)
     {
-        $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);  
-        $idDireccion = direccion::crearDireccion($request->ciudad,$request->localidades, $request->calle,$request->altura);
+        $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);
+        $idDireccion = direccion::crearDireccion($request->ciudad, $request->localidades, $request->calle, $request->altura);
         $emprendimiento = Emprendedor::create([
             'nombre' => $request->nombre,
             'categoria' => $request->categoria,

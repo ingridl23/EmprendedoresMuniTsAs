@@ -1,15 +1,15 @@
 <div class="field-group">
-    <textarea name="nombre" id="nombre" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->nombre : old('nombre') }}</textarea>
+    <textarea name="first_name" id="nombre" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->nombre : old('nombre') }}</textarea>
     <label for="nombre">Nombre:</label>
     <p class="form-subtitulos">Otorgue nombre del emprendimiento</p>
 </div>
 <div class="field-group">
-    <textarea name="descripcion" id="descripcion" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->descripcion : old('descripcion') }}</textarea>
+    <textarea name="description" id="descripcion" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->descripcion : old('descripcion') }}</textarea>
     <label for="descripcion">Descripción:</label>
     <p class="form-subtitulos">Otorgue una descripción del emprendimiento</p>
 </div>
 <div class="field-group">
-    <input type="text" name="categoria" id="categoria" required placeholder=""
+    <input type="text" name="category" id="categoria" required placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->categoria : old('categoria') }}>
     <label for="categoria">Categoria:</label>
     <p class="form-subtitulos">Otorgue una categoria del emprendimiento</p>
@@ -20,7 +20,7 @@
         <img src="{{ asset('storage/' . $emprendimiento->imagen) }}" alt="Imagen de {{ $emprendimiento->nombre }}"
             class="imagenEmprendimientoFormulario">
     @endif
-    <input type="file" name="imagen" id="imagen">
+    <input type="file" name="image" id="imagen">
     <label for="imagen">Imagen</label>
     <p class="form-subtitulos">Cargue una imagen del emprendimiento</p>
 </div>
@@ -48,15 +48,21 @@
 <div>
     <div class="field-group">
         <label for="inputCity" class="direccionEmprendimiento">Ciudad</label>
-        <select id="ciudad" name="ciudad" required placeholder="">
+        <select id="ciudad" name="city" required placeholder="">
             <option class="oculto"></option>
-            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Tres Arroyos") ? 'selected' :""}}>Tres Arroyos</option>
-            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Tres Arroyos") ? 'selected': ""}}>Adolfo Gonzales Chaves</option>
-            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Tres Arroyos") ? 'selected':""}}>Benito Juarez</option>
+            <option
+                {{ isset($emprendimiento) && $emprendimiento->direccion->ciudad == 'Tres Arroyos' ? 'selected' : '' }}>
+                Tres Arroyos</option>
+            <option
+                {{ isset($emprendimiento) && $emprendimiento->direccion->ciudad == 'Tres Arroyos' ? 'selected' : '' }}>
+                Adolfo Gonzales Chaves</option>
+            <option
+                {{ isset($emprendimiento) && $emprendimiento->direccion->ciudad == 'Tres Arroyos' ? 'selected' : '' }}>
+                Benito Juarez</option>
         </select>
     </div>
     <div class="field-group oculto localidadesDeLaCiudad">
-         <label for="localidad" class="direccionEmprendimiento localidad">Localidad</label>
+        <label for="localidad" class="direccionEmprendimiento localidad">Localidad</label>
         <select id="localidadesDeLaCiudad" name="localidad" required placeholder="">
         </select>
     </div>
@@ -64,12 +70,12 @@
 <div class="alturaYCalle field-group">
     <div class="field-group">
         <input type="text" name="calle" id="calle" required placeholder=""
-               value={{ isset($emprendimiento) ? $emprendimiento->direccion->calle : old('calle') }}>
+            value={{ isset($emprendimiento) ? $emprendimiento->direccion->calle : old('calle') }}>
         <label for="calle">Calle</label>
         <p class="form-subtitulos">Otorgue el nombre de la calle</p>
     </div>
     <div class="field-group">
-        <input type="number" name="altura" id="altura" required placeholder="" min=1 
+        <input type="number" name="address" id="altura" required placeholder="" min=1
             value={{ isset($emprendimiento) ? $emprendimiento->direccion->altura : old('altura') }}>
         <label for="whatsapp">Altura:</label>
         <p class="form-subtitulos">Otorgue la altura de la calle</p>

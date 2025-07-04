@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\administradorController;
 use App\Http\Controllers\EmprendedorController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\EmprendedoresController;
 use App\Http\Controllers\FormSerParteController;
 
@@ -44,3 +45,6 @@ Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmpr
 Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmprendimiento"]);
 
 Auth::routes();
+
+//vista de passwords reset
+Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);

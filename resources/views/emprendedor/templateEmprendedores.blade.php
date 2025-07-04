@@ -251,7 +251,7 @@
     @include('layouts.panelAdmin')
 
 
-    <a href="https://wa.me/4444444444?text=¡Hola contactanos a traves de nuestro whatsapp, muchas gracias, oficina de cultura."
+    <a href="https://wa.me/2983603748?text=¡Hola contactanos a traves de nuestro whatsapp, muchas gracias, oficina de empleo."
         class="whatsapp-float" target="_blank" rel="noopener">
 
         <img class="whatsapp" src="assets/img/whatsapp.png">
