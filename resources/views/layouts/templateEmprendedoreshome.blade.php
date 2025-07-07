@@ -54,13 +54,16 @@
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 mb-5">Esta sección está dedicada a visibilizar y apoyar a todos los
+                    <p class="text-white-75 ">Esta sección está dedicada a visibilizar y apoyar a todos los
                         emprendedores que forman parte del ecosistema cultural del Municipio de Tres Arroyos.
-                        Aquí encontrarás historias, productos y proyectos que reflejan el talento, la identidad y la
-                        creatividad de nuestra comunidad.</p>
+                        Desde la oficina de empleo y capacitacion brindamos atención personalizada, acompañamiento
+                        permanente, orientación e información vinculada
+                        al mercado laboral local y a las diferentes ofertas de formación y capacitación gratuitas y
+                        aranceladas.</p>
 
-                    <p class="text-white-75 mb-5">Si formás parte de la Dirección de Cultura y tenés un emprendimiento,
-                        ¡este es tu lugar! </p>
+                    <p class="text-white-75 mb-5">Contamos con programas, beneficios e incentivos para contratar y
+                        capacitar a nuevo personal, además de brindar información útil para propietarios, referentes de
+                        empresas y áreas de Recursos Humanos. </p>
                     <a class="btn btn-primary btn-xl" href="#contact">Quiero Ser Parte</a>
 
                 </div>
@@ -82,13 +85,15 @@
                 <div class="col-lg-8 text-center">
                     <h2 class="text-white mt-0">¿Quiénes pueden participar?</h2>
                     <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">
+                    <p class="text-white-75 ">
 
 
-                        Emprendedores que formen parte de la Dirección de Cultura del Municipio.</li>
-                        Personas o colectivos que promuevan productos o servicios vinculados a la identidad local.
+                        Este programa forma parte de las acciones promovidas por el Municipio de Tres Arroyos,
+                        para el desarrollo local y el apoyo a emprendimientos que sean sustentables en el mediano y
+                        largo plazo y que aporten al crecimiento productivo de la región.
 
-                        Proyectos que reflejen valores culturales, artísticos o comunitarios.</li>
+                        Se tiene como objetivo general potenciar el desarrollo de las micro y pequeñas empresas, así
+                        como el apoyo a nuevos emprendimientos.
 
                     </p>
                     <a class="btn btn-light btn-xl" href="#services">Ver Mas</a>
@@ -116,18 +121,48 @@
                                                                                                                                                             </div>
                                                                                                                                                         -->
 
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 text-center seccion-tenes-emprendimiento">
+            <div class="row justify-content-center  align-baseline">
+                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
                     <div class="mt-5">
-                        <div class="mb-2"><i
-                                class="fa-solid fa-laptop fs-1 text-primary  style="color:#004d4d!important;"></i>
+                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
-                        <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
-                        <p class="text-muted mb-0">Si sos parte de la Dirección de Cultura, podés sumarte a esta
-                            iniciativa para difundir tu proyecto.</p>
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/empleador.png" class="divider">
+                        <h3 class="h4 mb-2">¿Sos empleador?</h3>
+                        <p class="text-muted mb-0">podrás asesorarte acerca de los programas de empleo vigente.</p>
                     </div>
                 </div>
+
+                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                        </div>
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/analitica.png" class="divider">
+                        <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
+                        <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes quieran
+                            iniciar un emprendimiento o reforzar uno existente.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                        </div>
+                        <br>
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/curriculum-vitae.png" class="divider">
+                        <h3 class="h4 mb-2">¿Te encontras en busqueda de empleo?</h3>
+
+                        <p class="text-muted mb-0">recibimos tu CV y llevamos adelante acciones para la búsqueda de
+                            empleo y la intermediación laboral.</p>
+                    </div>
+                </div>
+
+
+
             </div>
+
+
+
+
 
 
     </section>
@@ -205,7 +240,7 @@
 
 
     <!-- Call to action-->
-    <section class="page-section text-white" style="background-color: #d63333 !important;">
+    <section class="page-section text-white" style="background-color: #20c9b2 !important;">
         <div class="container px-4 px-lg-5 text-center">
             <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
             <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
@@ -226,10 +261,14 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
                     <img class="divider" src="assets//img/logocultura.png">
-                    <h2 class="mt-0"> Unite como emprendedor</h2>
+                    <h2 class="mt-0"> Unite a los programas vigentes</h2>
+                    </h2>
                     <p class="text-muted mb-5">
-                        Completá el formulario con tus datos y desde la Oficina de Cultura nos pondremos en
-                        contacto para que puedas integrarte a esta valiosa propuesta.
+                        Completá el formulario con tus datos y desde la Oficina de Empleo y capacitacion nos pondremos
+                        en
+                        contacto para
+                        que puedas integrarte a esta valiosa propuesta.
+
 
                     </p>
 

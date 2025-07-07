@@ -126,12 +126,12 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
                 <img class="divider" src="\EmprendedoresMuniTsAs\public\assets\img\logocultura.png">
-                <h2 class="mt-0"> Unite como emprendedor</h2>
+                <h2 class="mt-0"> Unite a los programas vigentes</h2>
 
                 <p class="text-muted mb-5">
-                    Completá el formulario con tus datos y desde la Oficina de Cultura nos pondremos en contacto para
-                    que
-                    puedas integrarte a esta valiosa propuesta.
+                    Completá el formulario con tus datos y desde la Oficina de Empleo y capacitacion nos pondremos en
+                    contacto para
+                    que puedas integrarte a esta valiosa propuesta.
 
                 </p>
                 {{-- ✅ Mensaje de éxito --}}

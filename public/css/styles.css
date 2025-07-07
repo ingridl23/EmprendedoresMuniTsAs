@@ -20,7 +20,7 @@
             --bs-orange: #f4623a;
             --bs-yellow: #ffc107;
             --bs-green: #198754;
-            --bs-teal: #20c997;
+            --bs-teal: #20c9b2;
             --bs-cyan: #0dcaf0;
             --bs-black: #000;
             --bs-white: #fff;
@@ -11175,7 +11175,12 @@
         /* primer seccion */
 
         .custom-about {
-            background-color: var(--bs-red);
+            background-color: var( --bs-teal);
+        }
+
+        .text-white-75 {
+            font-size: 22px;
+            font-weight: 500;
         }
         /* ======= ESTILOS ESPECÍFICOS DE SECCIÓN ======= */
         /* Logo cultura */
