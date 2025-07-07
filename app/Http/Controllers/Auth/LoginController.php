@@ -45,12 +45,19 @@ class LoginController extends Controller
 
 
 
-    public function login(Request $request){
-        // Validar entrada
+    public function login(Request $request)
+    {
+
+        if ($request->filled('oculto')) {
+            return back()->with("error", "formulario rechazado posible bot detectado"); // posible bot detectado
+        }
+        // Validar entradas
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
+            'email' => ['required',  "string",],
+            'password' => ['required', "min:8", "max:14"],
         ]);
+
+
 
         // Verificar si el usuario existe
         $user = User::where('email', $credentials['email'])->first();
@@ -58,6 +65,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             $user->assignRole('admin');
+            return back()->with('success', 'Logueado  correctamente.');
             return redirect('emprendedores/nuevoEmprendimiento');
         }
         return back()->withErrors([

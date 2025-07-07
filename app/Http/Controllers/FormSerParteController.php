@@ -43,6 +43,6 @@ class FormSerParteController extends Controller
         return back()->with('success', 'Formulario enviado correctamente.');
 
         //dd($request->input());
-        dd($request->all()); // Agregalo temporalmente
+        dd($request->all()); //
     }
 }

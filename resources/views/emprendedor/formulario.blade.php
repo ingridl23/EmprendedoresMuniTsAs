@@ -22,7 +22,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 
     <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
@@ -165,7 +164,8 @@
                     @csrf
                     <div class="field-group">
 
-                        <input id="name" name="first_name" type="text" required placeholder=""></input>
+                        <input id="name" name="first_name" type="text" required placeholder=""
+                            value="{{ old('first_name') }}"></input>
 
                         @error('first_name')
                             <div class="text-danger small">{{ $message }}</div>
@@ -178,7 +178,8 @@
 
                     <div class="field-group">
 
-                        <input id="email" name="email" type="email" required placeholder=""></input>
+                        <input id="email" name="email" type="email" required placeholder=""
+                            value="{{ old('email') }}"></input>
 
                         @error('email')
                             <div class="text-danger small">{{ $message }}</div>
@@ -196,7 +197,8 @@
 
                     <div class="field-group">
 
-                        <input type="tel" id="phone" name="tel" required placeholder=""></input>
+                        <input type="tel" id="phone" name="tel" required placeholder=""
+                            value="{{ old('tel') }}"></input>
 
                         @error('tel')
                             <div class="text-danger small">{{ $message }}</div>
@@ -210,7 +212,8 @@
                     <!-- input descripcion -->
                     <div class="field-group">
 
-                        <textarea id="descripcion" name="description" type="text" required placeholder=""></textarea>
+                        <textarea id="descripcion" name="description" type="text" required placeholder=""
+                            value="{{ old('description') }}"></textarea>
 
                         @error('description')
                             <div class="text-danger small">{{ $message }}</div>

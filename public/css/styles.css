@@ -11178,6 +11178,30 @@
             background-color: var(--bs-red);
         }
         /* ======= ESTILOS ESPECÍFICOS DE SECCIÓN ======= */
+        /* Logo cultura */
+
+        #imgcultura {
+            margin-top: 10rem;
+            width: 180px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.6s ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        #imgcultura:hover {
+            animation: spinY 1s ease-in-out;
+        }
+
+        @keyframes spinY {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
 
         .section-services {
             text-align: center;
@@ -11212,6 +11236,14 @@
             margin-top: 1.5rem;
             margin-left: 1.5rem;
             color: #6c757d;
+        }
+
+        .form-subtituloslogin {
+            text-align: center;
+            margin-bottom: 1.2rem;
+            margin-top: 1rem;
+            color: #6c757d;
+            font-size: 12px;
         }
 
         .field-group {
@@ -11282,6 +11314,40 @@
 
         .section-services {
             background-color: white !important;
+        }
+        /* Checkbox alineado */
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 1rem;
+            height: 1rem;
+            accent-color: #007bff;
+            margin: 0;
+        }
+
+        .checkbox-group label {
+            font-size: 0.95rem;
+            color: #222;
+            margin: 0;
+        }
+        /* Enlace "¿Olvidaste cómo ingresar?" */
+
+        a.btn-link {
+            color: #a59f9f;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            margin-top: 1rem;
+        }
+
+        a.btn-link:hover {
+            color: #e0e0e0;
         }
         /**********************************boton de whatsapp flotante *****************************************/
         /************estilos del boton de whatsapp********/

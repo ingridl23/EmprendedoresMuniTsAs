@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const formulario = document.querySelector(".form");
+    const buttonform = document.querySelector(".submit");
+
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+    });
+});
+
 /*document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.querySelector(".form");
     const submitBtn = formulario.querySelector(".submit");
@@ -68,7 +77,7 @@
             data: $form.serialize(),
             success(data, status, xhr) {
                 // Si Laravel devuelve un JSON de éxito o te redirige:
-                // puedes forzar la carga del panel admin:
+                // forzar la carga del panel admin:
                 window.location.href = "{{ route('administradores.form') }}";
             },
             error(xhr) {
@@ -79,7 +88,7 @@
                 };
                 Object.keys(errors).forEach(function (field) {
                     let msg = errors[field][0];
-                    // Añade aquí código para mostrar msg en tu modal
+
                     alert(msg);
                 });
             },

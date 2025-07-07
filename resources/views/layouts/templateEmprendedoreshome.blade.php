@@ -22,8 +22,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
@@ -263,7 +263,8 @@
                         @csrf
                         <div class="field-group">
 
-                            <input id="name" name="first_name" type="text" placeholder="" required></input>
+                            <input id="name" name="first_name" type="text" required placeholder=""
+                                value="{{ old('first_name') }}"></input>
 
                             @error('first_name')
                                 <div class="text-danger small">{{ $message }}</div>
@@ -278,7 +279,8 @@
 
                         <div class="field-group">
 
-                            <input id="email" name="email" type="email" placeholder="" required></input>
+                            <input id="email" name="email" type="email" required placeholder=""
+                                value="{{ old('email') }}"></input>
 
 
                             @error('email')
@@ -295,7 +297,8 @@
 
                         <div class="field-group">
 
-                            <input type="tel" id="phone" name="tel" placeholder="" required></input>
+                            <input type="tel" id="phone" name="tel" required placeholder=""
+                                value="{{ old('tel') }}"></input>
 
 
                             @error('tel')
@@ -309,7 +312,8 @@
                         <!-- input descripcion -->
                         <div class="field-group">
 
-                            <textarea id="descripcion" name="description" type="text" placeholder="" required></textarea>
+                            <textarea id="descripcion" name="description" type="text" required placeholder=""
+                                value="{{ old('description') }}"></textarea>
 
                             @error('description')
                                 <div class="text-danger small">{{ $message }}</div>
@@ -327,7 +331,7 @@
 
                         <!-- Submit Button-->
                         <div class=" d-grid  ">
-                            <button class=" submit btn btn-primary btn-xl" id="submitButton" type="submit">
+                            <button class="submit btn btn-primary btn-xl" id="submitButton" type="submit">
 
                                 <span class="btntext"> Enviar
                                     Peticion </span>
