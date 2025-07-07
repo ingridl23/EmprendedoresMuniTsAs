@@ -42,18 +42,20 @@ class Emprendedor extends Model
         'direccion_id'
     ];
 
-    public function redes(): BelongsTo{
+    public function redes(): BelongsTo
+    {
         return $this->belongsTo(redes::class, 'redes_id', 'id');
     }
 
-    public function direccion(): BelongsTo{
+    public function direccion(): BelongsTo
+    {
         return $this->belongsTo(direccion::class, 'direccion_id', 'id');
     }
 
     public static function showEmprendimientos()
     {
         //$emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen', 'categoria'])->get();
-        $emprendimientos=emprendedores::all();
+        $emprendimientos = emprendedores::all();
         if (count($emprendimientos) > constants::VALORMIN) {
             return $emprendimientos;
         }

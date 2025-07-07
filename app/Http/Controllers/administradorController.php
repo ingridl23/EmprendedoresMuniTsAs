@@ -45,11 +45,12 @@ class administradorController extends Controller
         ]);
     }
 
-    public function emprendedores(){
+    public function emprendedores()
+    {
         $emprendedores = Emprendedor::paginate(10);
         return view('emprendedor.index', compact('emprendedores'))
             ->with('i', (request()->input('page', 1) - 1) * $emprendedores->perPage());
-        
+
         // return view("emprendedor.index", compact("emprendedores"));
     }
 
@@ -84,16 +85,20 @@ class administradorController extends Controller
         $redes = redes::find($emprendimiento->redes_id);
         $direccion = direccion::find($emprendimiento->direccion_id);
         if ($redes != null && $emprendimiento != null) {
-            if ($redes->instagram != $request->input('instagram') || $redes->facebook != $request->input('facebook')
-                || $redes->whatsapp != $request->input('whatsapp')) {
+            if (
+                $redes->instagram != $request->input('instagram') || $redes->facebook != $request->input('facebook')
+                || $redes->whatsapp != $request->input('whatsapp')
+            ) {
                 $redes->instagram = $request->input('instagram');
                 $redes->facebook = $request->input('facebook');
                 $redes->whatsapp = $request->input('whatsapp');
             }
-            if ($direccion->ciudad != $request->input('ciudad') || $direccion->localidad !=$request->input('localidad') || $direccion->calle != $request->input('calle')
-                || $direccion->altura != $request->input('altura')) {
+            if (
+                $direccion->ciudad != $request->input('ciudad') || $direccion->localidad != $request->input('localidad') || $direccion->calle != $request->input('calle')
+                || $direccion->altura != $request->input('altura')
+            ) {
                 $direccion->ciudad = $request->input('ciudad');
-                $direccion->localidad=$request->input('localidad');
+                $direccion->localidad = $request->input('localidad');
                 $direccion->calle = $request->input('calle');
                 $direccion->altura = $request->input('altura');
             }

@@ -20,7 +20,6 @@ class FormSerParteController extends Controller
 
 
 
-    public function send() {}
 
     public function enviar(Request $request)
     {
@@ -32,12 +31,12 @@ class FormSerParteController extends Controller
 
             "first_name" => ["required", "string", "min:5", "max:110"],
             "email" => ["required", "email"],
-            "tel" => ["required", "digits_between:8,14"],
+            "tel" => ["required", "digits_between:8,11"],
             "description" => ["required", "string", "min:80", "max:250"]
 
         ]);
 
-        Mail::to('ingridmilagrosledesma@gmail.com')->send(new sendContactForm($request->all()));
+        Mail::to('ingrid.ledesma@tresarroyos.gov.ar')->send(new sendContactForm($request->all()));
 
 
 

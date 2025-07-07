@@ -1,26 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.querySelector(".form");
     const submitBtn = formulario.querySelector(".submit");
-    const errorMsg = formulario.querySelector(".error-msg");
 
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const nombreEmprendimiento = document.getElementById("nombre").value.trim();
-        const descripcionEmprendimiento = document.getElementById("descripcion").value.trim();
-        const categoriaEmprendimiento = document.getElementById("categoria").value.trim();
-        const imagenEmprendimiento = document.getElementById("imagen").value;
-        const whatsappEmprendimiento = document.getElementById("whatsapp").value.trim();
+        const nombreEmprendimiento = document
+            .getElementById("first_name")
+            .value.trim();
+        const descripcionEmprendimiento = document
+            .getElementById("description")
+            .value.trim();
+        const categoriaEmprendimiento = document
+            .getElementById("category")
+            .value.trim();
+        const imagenEmprendimiento = document.getElementById("image").value;
+        const whatsappEmprendimiento = document
+            .getElementById("whatsapp")
+            .value.trim();
         //imagenCargada referencia en, editar un emprendimiento, cuando el emprendimiento ya tiene una foto
         //y desea cambiar otro dato pero no la foto (el campo input estará vacio si no desea cambiarla, entonces se
         //muestra la imagen que ya estaba cargada.)
-        const imagenCargada=document.querySelector(".imagenEmprendimientoFormulario");
+        const imagenCargada = document.querySelector(
+            ".imagenEmprendimientoFormulario"
+        );
         const inputOculto = document.getElementById("oculto").value.trim();
         submitBtn.classList.remove("click", "error");
         errorMsg.classList.remove("show");
-    
-    //Ver para que no tenga que volver a recargar toda la página para la nuestra de errores
-    /*fetch(`/emprendedores/crearEmprendimiento`, {
+
+        //Ver para que no tenga que volver a recargar toda la página para la nuestra de errores
+        /*fetch(`/emprendedores/crearEmprendimiento`, {
             method: 'post'
         })
         .then((response) =>{
@@ -48,8 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
             console.warn("Posible bot detectado. Envío cancelado.");
             return; // Cancela el envío silenciosamente
         }
-        if (nombreEmprendimiento === "" || descripcionEmprendimiento === "" || categoriaEmprendimiento === ""
-            || (imagenEmprendimiento === "" && imagenCargada==null) || whatsappEmprendimiento === "") {
+        if (
+            nombreEmprendimiento === "" ||
+            descripcionEmprendimiento === "" ||
+            categoriaEmprendimiento === "" ||
+            (imagenEmprendimiento === "" && imagenCargada == null) ||
+            whatsappEmprendimiento === ""
+        ) {
             // Mostrar cruz roja y mensaje de error
             submitBtn.classList.add("error");
             errorMsg.classList.add("show");
@@ -75,17 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
         input.addEventListener("input", () => {
             input.classList.toggle("has-value", input.value.trim() !== "");
         });
-    });
-
-    /*logica para popup*/
-    document.querySelector(".btn-contact").addEventListener("click", (e) => {
-        e.preventDefault();
-        document.getElementById("overlay").classList.add("open");
-        document.getElementById("modal").classList.add("open");
-    });
-    document.getElementById("closeModal").addEventListener("click", () => {
-        document.getElementById("overlay").classList.remove("open");
-        document.getElementById("modal").classList.remove("open");
     });
 
     $("#Form").on("submit", function(e) {

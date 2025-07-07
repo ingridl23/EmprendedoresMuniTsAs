@@ -7,13 +7,13 @@
 </head>
 
 <body>
-    <h1>Nuevo mensaje de contacto</h1>
+    <h1>Nuevo mensaje de contacto desde el sitio emprendedores y artesanos tres arroyos</h1>
 
     <p><strong>Nombre:</strong> {{ $data['first_name'] }}</p>
     <p><strong>Email:</strong> {{ $data['email'] }}</p>
     <p><strong>Teléfono:</strong> {{ $data['tel'] ?? 'No provisto' }}</p>
 
-    <p><strong>Mensaje:</strong></p>
+    <p><strong>Mensaje del emprendedor:</strong></p>
     <p>{{ $data['description'] }}</p>
 
     <hr>

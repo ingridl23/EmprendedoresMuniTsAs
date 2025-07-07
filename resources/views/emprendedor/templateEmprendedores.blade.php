@@ -56,14 +56,14 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
+                                <a class="nav-link" href="{{ url('/formar/parte') }}"">ser parte</a>
                             </li>
                         </ul>
 
                         <!-- Botones de servicios externos -->
                         <div class="get-started-buttons d-flex align-items-center">
-                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class="
-                                get-started-btn crollto get-started-btn">
+                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
+                                class="get-started-btn crollto">
                                 <div class="get-started-group font-color-bl">
                                     <img src="assets/img/MiTr-remove-removebg-preview.png" slt
                                         class=" img-btn-logonav img-fluid mb-1">
@@ -90,8 +90,7 @@
                                 </div>
                             </a>
 
-                            <a href="{{ url('/showlogin') }}" 
-                                class="get-started-btn scrollto btn-contact">
+                            <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
                                 <div class="get-started-group font-color-bl">
                                     <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
 
@@ -254,18 +253,22 @@
     @include('layouts.panelAdmin')
 
 
+    <a href="https://wa.me/2983603748?text=¡Hola contactanos a traves de nuestro whatsapp, muchas gracias, oficina de empleo."
+        class="whatsapp-float" target="_blank" rel="noopener">
+
+        <img class="whatsapp" src="assets/img/whatsapp.png">
+    </a>
+
+
+
+
+
+
     @include('emprendedor.footer')
 
 
 
-    <!-- Bootstrap core JS-->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>-->
 
-    @if(session('success'))
-        <script>
-            window.mensajeExito=@json(session('success'));
-        </script>
-    @endif
 
     <!-- Core theme JS-->
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
@@ -275,12 +278,11 @@
 
     <!--Para alertas desde JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   
+
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-    
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
-    
+
 </html>

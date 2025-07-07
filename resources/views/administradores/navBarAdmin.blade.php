@@ -24,16 +24,17 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav mx-auto my-2 my-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">Presentación</a>
+                                <a class="nav-link" href="{{ url('/') }}">Pagina principal</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#services">Objetivo</a>
+                                <a class="nav-link""{{ url('/emprendedor/{id}') }}">Eliminar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{ url('/emprendedores/formEditarEmprendimiento/{id}') }}">Editar </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
                             </li>
                         </ul>
 
@@ -72,7 +73,7 @@
                                     <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
 
                                     </i>
-                                    <span class="btn-text">Panel<br>Admin</span>
+                                    <span class="btn-text">cerrar<br>sesion</span>
                                 </div>
                             </a>
                         </div>
