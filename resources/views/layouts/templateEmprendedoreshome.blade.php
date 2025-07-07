@@ -54,8 +54,7 @@
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 ">Esta sección está dedicada a visibilizar y apoyar a todos los
-                        emprendedores que forman parte del ecosistema cultural del Municipio de Tres Arroyos.
+                    <p class="text-white-75 ">
                         Desde la oficina de empleo y capacitacion brindamos atención personalizada, acompañamiento
                         permanente, orientación e información vinculada
                         al mercado laboral local y a las diferentes ofertas de formación y capacitación gratuitas y
@@ -83,6 +82,11 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 text-center">
+                    <p class="text-white-75 ">
+
+                        Esta sección está dedicada a visibilizar y apoyar a todos los
+                        emprendedores que forman parte del ecosistema cultural del Municipio de Tres Arroyos.
+                    </p>
                     <h2 class="text-white mt-0">¿Quiénes pueden participar?</h2>
                     <hr class="divider divider-light" />
                     <p class="text-white-75 ">
