@@ -15,15 +15,8 @@ class EmprendedorController extends Controller
 
     public function emprendedores()
     {
-        $emprendedores = Emprendedor::paginate(10);
-        return view('emprendedor.templateEmprendedores', compact('emprendedores'))
-            ->with('i', (request()->input('page', 1) - 1) * $emprendedores->perPage());
-        
-    }
-
-    public function obtenerCategorias(){
-        $categorias=Emprendedor::obtenerCategorias();
-        return $categorias;
+        $emprendedoresPorCategoria=Emprendedor::obtenerCategorias();
+        return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria'));   
     }
 
         /*Filtro de busqueda de emprendedores por nombre*/

@@ -30,4 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+
+    let contenedores=document.querySelectorAll(".contenedorCarrusel");
+    contenedores.forEach(contenedor => {
+        let primerHijo= contenedor.firstChild;
+        let hijo=primerHijo.nextSibling;
+        hijo.classList.add("active");
+    });
 });
+
