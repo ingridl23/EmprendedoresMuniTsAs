@@ -10,15 +10,15 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\EmprendedoresController;
 use App\Http\Controllers\FormSerParteController;
+use App\Http\Controllers\noticiasController;
 
+Route::get('/emprendedores/buscador', [EmprendedorController::class, 'filterEmprendimientosByName']);
 //rutas form admin
 Route::post('/login', [LoginController::class, 'login']); //invoca la logica del login admin
 Route::get('/showlogin', [HomeController::class, 'showlogin'])->name("showlogin"); //invoca la vista del login admin
 
 
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
-
-Route::get('/emprendedor/categorias', [emprendedorController::class, "obtenerCategorias"]);
 
 //rutas del formulario de contacto
 Route::get('/formar/parte', [FormSerParteController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura
@@ -28,6 +28,7 @@ Route::post('/formulario-enviar', [FormSerParteController::class, "enviar"])->na
 
 Route::get('/emprendedores', [EmprendedorController::class, "emprendedores"])->name("emprendedores"); //vista general para emprendedores
 
+Route::get('emprendedores/user', [EmprendedorController::class, "obtenerRol"]);
 
 // ruta para las secciones individuales del emprendedor
 Route::get('/emprendedor/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
@@ -48,3 +49,6 @@ Auth::routes();
 
 //vista de passwords reset
 Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
+
+Route::get("/noticias", [noticiasController::class, "showNoticias"]);
+Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);

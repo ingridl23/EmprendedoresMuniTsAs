@@ -55,6 +55,9 @@ div.alturaYCalle p.form-subtitulos{
     }
 }
 
+div.alturaYCalle div{
+    width: 40%;
+}
 
 /* label.direccionEmprendimiento::after {
     color: #53c9ff;

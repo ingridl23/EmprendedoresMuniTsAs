@@ -156,16 +156,18 @@
             transition: background-color 0.3s;
             width: 70%;
         }
-        div.modal-body button.detalleEmprendedor a, button.detalleEmprendedor input{
+        button.detalleEmprendedor a, button.detalleEmprendedor input{
             color: white;
         }
-        div.modal-body button.detalleEmprendedor:hover{
-           background-color: #004186; 
+        button.botonAgregarEmprendimiento, button.botonFiltro{
+            border: none;
+            font-size: 1rem;
+            width: auto;
         }
-        .swal2-confirm:hover{
-           background-color: #004186; 
+        button.botonAgregarEmprendimiento:hover, button.botonFiltro:hover, .swal2-confirm:hover, div.modal-body button.detalleEmprendedor:hover{
+            background-color: #004186; 
         }
-
+        
         div.modal-body button.botonEliminar:hover{
             background-color: rgb(148, 0, 0);
         }
@@ -190,6 +192,13 @@
         div.row{
             margin-top: 4rem;
         }
+
+        .filtro{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
         @media (min-width: 630px){
             .containerBotonesEmprendedor{
                 display: flex;
@@ -2168,9 +2177,9 @@
         .form-control:focus {
             color: #212529;
             background-color: #fff;
-            border-color: #ffe480;
+            border-color: #006de2;
             outline: 0;
-            box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
+            box-shadow: 0 0 0 0.25rem #60adff;
         }
         
         .form-control::-webkit-date-and-time-value {
@@ -12070,3 +12079,9 @@
             background-color: rgba(255, 255, 255, 0.98) !important;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
         }
+
+    div.mb-3{
+        align-items: center;
+        margin: 0 !important;
+    }
+

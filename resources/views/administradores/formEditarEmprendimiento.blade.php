@@ -23,7 +23,7 @@
         <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
     </head>
-    @include('emprendedor.navBarAdmin')
+    @include('administradores.navBarAdmin')
     <!-- End Header -->
 
     <div class="container px-4 px-lg-5 tituloNuevoEmprendimiento">
@@ -59,7 +59,7 @@
                         <span class="btntext" value="Guardar datos"> Editar emprendimiento </span>
 
                     </button>
-
+                <p class="error-msg">Complete los campos obligatorios</p>
                 </div>
             </form>
         </div>

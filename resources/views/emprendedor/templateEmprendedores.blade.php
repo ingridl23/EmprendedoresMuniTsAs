@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <meta name="csrf-token" content="{{csrf_token()}}" />
     <title>Emprendedores</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -155,15 +155,37 @@
                 <h1 class="section-subheading text-muted"> Conoce La propuesta de cada emprendedor</h1>
             </div>
             <br>
-            <div class="row">
+            <div class="filtro">
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="mb-3 row">
+                        <div class="form-floating col-auto">
+                            <input id="emprendedores-filter" class="form-control mr-sm-2" type="search" placeholder="Search"
+                                aria-label="Search">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary btn-xl my-2 my-sm-0 botonFiltro" type="submit">Buscar</button>
+                        </div>
+                    </div>
+                </form>
+                @if(Auth::check() && Auth::user()->hasRole('admin'))
+                <div>
+                    <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonAgregarEmprendimiento" data-bs-dismiss="modal" type="button">
+                        <a href="emprendedores/nuevoEmprendimiento">¡Agregar nuevo Emprendimiento!</a>
+                    </button>
+                </div>
+                @endif
+            </div>
+            <div id="emprendedores-container" class="emprendedores-container">
+            </div>
+            <div>
             @foreach ($emprendedoresPorCategoria as $categoria=>$emprendedores)
                 <h3>{{$categoria}}</h3>
                 <div class="container d-flex justify-content-center  align-items-center min-vh-100">
                     <div id="carrousel" class="shadow-wrapper p-2 rounded-4"> <!-- sombreado acá -->
-                        <div id="carouselExampleControls{{$categoria}}" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
-                            <div class="carousel-inner contenedorCarrusel">
-                            @foreach($emprendedores as $emprendedor)
-                                <div class="portfolio-item carousel-item">
+                        <div id="carousel-{{$categoria}}" class="carousel slide w-50 mx-auto" data-bs-ride="carousel" data-interval="1000">
+                            <div class="carousel-inner contenedorCarrusel" role="listbox">
+                            @foreach($emprendedores as $index=>$emprendedor)
+                                <div class="portfolio-item carousel-item {{$index===0 ? 'active':""}}">
                                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal{{$emprendedor->id}}">
                                         <div class="portfolio-hover">
                                             <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
@@ -232,16 +254,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselExampleControls{{$categoria}}" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleControls{{$categoria}}" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
                             @endforeach
                             </div>
+                            <a class="carousel-control-prev" href="#carousel-{{$categoria}}" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-{{$categoria}}" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
                     </div>
                 </div>

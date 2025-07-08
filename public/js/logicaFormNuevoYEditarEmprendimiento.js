@@ -1,33 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.querySelector(".form");
     const submitBtn = formulario.querySelector(".submit");
+    const inputOculto = document.getElementById("oculto").value.trim();
+    let errorMsg=document.querySelector(".error-msg");
 
+    submitBtn.classList.remove("click", "error");
+    errorMsg.classList.remove("show");
+    
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const nombreEmprendimiento = document
-            .getElementById("first_name")
-            .value.trim();
-        const descripcionEmprendimiento = document
-            .getElementById("description")
-            .value.trim();
-        const categoriaEmprendimiento = document
-            .getElementById("category")
-            .value.trim();
-        const imagenEmprendimiento = document.getElementById("image").value;
-        const whatsappEmprendimiento = document
-            .getElementById("whatsapp")
-            .value.trim();
+        let nombreEmprendimiento = document.getElementById("nombre").value.trim();
+        let descripcionEmprendimiento = document.getElementById("descripcion").value.trim();
+        let categoriaEmprendimiento = document.getElementById("categoria").value.trim();
+        let imagenEmprendimiento = document.getElementById("imagen").value;
+        let whatsappEmprendimiento = document.getElementById("whatsapp").value.trim();
+        let ciudadEmprendimiento = document.getElementById("ciudad").value.trim();
+        let localidadEmprendimiento = document.getElementById("localidadesDeLaCiudad").value.trim();
+        let calleEmprendimiento = document.getElementById("calle").value.trim();
+        let alturaEmprendimiento = document.getElementById("altura").value.trim();
+
         //imagenCargada referencia en, editar un emprendimiento, cuando el emprendimiento ya tiene una foto
         //y desea cambiar otro dato pero no la foto (el campo input estará vacio si no desea cambiarla, entonces se
         //muestra la imagen que ya estaba cargada.)
-        const imagenCargada = document.querySelector(
+        let imagenCargada = document.querySelector(
             ".imagenEmprendimientoFormulario"
         );
-        const inputOculto = document.getElementById("oculto").value.trim();
-        submitBtn.classList.remove("click", "error");
-        errorMsg.classList.remove("show");
-
         //Ver para que no tenga que volver a recargar toda la página para la nuestra de errores
         /*fetch(`/emprendedores/crearEmprendimiento`, {
             method: 'post'
@@ -57,16 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
             console.warn("Posible bot detectado. Envío cancelado.");
             return; // Cancela el envío silenciosamente
         }
-        if (
-            nombreEmprendimiento === "" ||
-            descripcionEmprendimiento === "" ||
-            categoriaEmprendimiento === "" ||
-            (imagenEmprendimiento === "" && imagenCargada == null) ||
-            whatsappEmprendimiento === ""
-        ) {
-            // Mostrar cruz roja y mensaje de error
-            submitBtn.classList.add("error");
-            errorMsg.classList.add("show");
+        if (nombreEmprendimiento === "" || descripcionEmprendimiento === "" ||
+            categoriaEmprendimiento === "" || (imagenEmprendimiento === "" && imagenCargada == null) ||
+            whatsappEmprendimiento === "" || ciudadEmprendimiento === "" || 
+            alturaEmprendimiento === "" || calleEmprendimiento === "" || localidadEmprendimiento === "") {
+                // Mostrar cruz roja y mensaje de error
+                submitBtn.classList.add("error");
+                errorMsg.classList.add("show");
         } else {
             // Mostrar tilde verde
             submitBtn.classList.add("click");

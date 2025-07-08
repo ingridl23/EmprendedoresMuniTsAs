@@ -48,12 +48,6 @@
             </div>
         </div>
         <div>
-            @if (count($errors) > 0)
-                @foreach ($errors->all() as $error)
-                    <br>
-                    {{ $error }}
-                @endforeach
-            @endif
 
             {{-- ✅ Mensaje de éxito --}}
             @if (session('success'))
@@ -85,7 +79,7 @@
                             <span class="btntext" value="Guardar datos"> Guardar emprendimiento </span>
 
                         </button>
-
+                         <p class="error-msg">Complete los campos obligatorios</p>
                     </div>
                 </form>
             </div>

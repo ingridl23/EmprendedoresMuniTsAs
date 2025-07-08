@@ -52,10 +52,9 @@ class Emprendedor extends Model
         return $this->belongsTo(direccion::class, 'direccion_id', 'id');
     }
 
-    public static function showEmprendimientos()
-    {
+    public static function showEmprendimientos(){
         //$emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen', 'categoria'])->get();
-        $emprendimientos = emprendedores::all();
+        $emprendimientos = Emprendedor::all();
         if (count($emprendimientos) > constants::VALORMIN) {
             return $emprendimientos;
         }

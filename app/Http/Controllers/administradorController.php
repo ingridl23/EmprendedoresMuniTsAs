@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\validacionNuevoEmprendimiento;
+use App\Http\Requests\validacionEmprendimiento;
 use App\Http\Requests\validacionEditarEmprendimiento;
 use App\Http\Controllers\EmprendedorController;
 use App\Http\Controllers\DireccionController;
@@ -59,7 +59,7 @@ class administradorController extends Controller
         return view('administradores.formNuevoEmprendimiento');
     }
 
-    public function crearEmprendimiento(validacionNuevoEmprendimiento $request)
+    public function crearEmprendimiento(validacionEmprendimiento $request)
     {
         $imagen = $request->file("imagen");
         $path = $imagen->store('img', 'public');

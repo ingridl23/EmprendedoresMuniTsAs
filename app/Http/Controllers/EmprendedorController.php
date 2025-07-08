@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Emprendedor;
 use App\Http\Requests\EmprendedorRequest;
 use App\constants;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class EmprendedorController
@@ -20,15 +22,14 @@ class EmprendedorController extends Controller
     }
 
         /*Filtro de busqueda de emprendedores por nombre*/
-    public function filterEmprendimientosByName(Request $request){
+     public function filterEmprendimientosByName(Request $request){
         $busqueda = $request->query('busqueda');
         $emprendimientos = Emprendedor::with('redes')
         ->where('nombre', 'LIKE', '%' . $busqueda . '%')
         // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
         ->get();
-        //return response()->json($emprendimientos);
+        return response()->json($emprendimientos);
     }
-
     public function showEmprendimientoId($id){
         if(is_numeric($id) && $id>constants::VALORMIN){
             $emprendimiento=Emprendedor::showEmprendimientoId($id);
@@ -41,6 +42,14 @@ class EmprendedorController extends Controller
 
     public function showFormCrearEmprendimiento(){
         return view('administradores.formNuevoEmprendimiento');
+    }
+
+    public function obtenerRol(){
+        $rol=false;
+        if(Auth::check() && Auth::user()->hasRole('admin')){
+            $rol=true;
+        }
+        return response()->json($rol);
     }
     
 }
