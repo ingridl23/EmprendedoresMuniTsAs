@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\EmprendedoresController;
 use App\Http\Controllers\FormSerParteController;
-
+use App\Http\Controllers\noticiasController;
 //rutas form admin
 Route::post('/login', [LoginController::class, 'login']); //invoca la logica del login admin
 Route::get('/showlogin', [HomeController::class, 'showlogin'])->name("showlogin"); //invoca la vista del login admin
@@ -48,3 +48,8 @@ Auth::routes();
 
 //vista de passwords reset
 Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
+
+//noticias
+
+Route::get("/noticias", [noticiasController::class, "showNoticias"]);
+Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);

@@ -1,12 +1,3 @@
-/*!
- * Start Bootstrap - Creative v7.0.7 (https://startbootstrap.com/theme/creative)
- * Copyright 2013-2023 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE)
- */
-//
-// Scripts
-//
-
 window.addEventListener("DOMContentLoaded", (event) => {
     // Navbar shrink function
     var navbarShrink = function() {
@@ -57,4 +48,22 @@ window.addEventListener("DOMContentLoaded", (event) => {
     new SimpleLightbox({
         elements: "#portfolio a.portfolio-box",
     });
+
+    // ) Intersection Observer para animaciones
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 }
+    );
+
+    document
+        .querySelectorAll(
+            ".section-services, .seccion-tenes-emprendimiento, .portfolio-box,.text-white"
+        )
+        .forEach((el) => observer.observe(el));
 });
