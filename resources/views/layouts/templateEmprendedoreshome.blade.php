@@ -60,10 +60,8 @@
                         al mercado laboral local y a las diferentes ofertas de formación y capacitación gratuitas y
                         aranceladas.</p>
 
-                    <p class="text-white-75 mb-5">Contamos con programas, beneficios e incentivos para contratar y
-                        capacitar a nuevo personal, además de brindar información útil para propietarios, referentes de
-                        empresas y áreas de Recursos Humanos. </p>
-                    <a class="btn btn-primary btn-xl" href="#contact">Quiero Ser Parte</a>
+
+                    <a class="btn btn-light btn-xl btn-xl" href="#contact">Quiero Ser Parte</a>
 
                 </div>
 
@@ -82,31 +80,33 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <p class="text-white-75 ">
+                    <p class="text-white-75 mb-5">Contamos con programas, beneficios e incentivos para contratar y
+                        capacitar a nuevo personal, además de brindar información útil para propietarios, referentes de
+                        empresas y áreas de Recursos Humanos. </p>
 
-                        Esta sección está dedicada a visibilizar y apoyar a todos los
-                        emprendedores que forman parte del ecosistema cultural del Municipio de Tres Arroyos.
-                    </p>
                     <h2 class="text-white mt-0">¿Quiénes pueden participar?</h2>
                     <hr class="divider divider-light" />
                     <p class="text-white-75 ">
 
 
-                        Este programa forma parte de las acciones promovidas por el Municipio de Tres Arroyos,
-                        para el desarrollo local y el apoyo a emprendimientos que sean sustentables en el mediano y
-                        largo plazo y que aporten al crecimiento productivo de la región.
+                    <details class="details btn btn-light">
+                        <p> Este programa forma parte de las acciones promovidas por el Municipio de Tres Arroyos,
+                            para el desarrollo local y el apoyo a emprendimientos que sean sustentables en el mediano y
+                            largo plazo y que aporten al crecimiento productivo de la región.
 
-                        Se tiene como objetivo general potenciar el desarrollo de las micro y pequeñas empresas, así
-                        como el apoyo a nuevos emprendimientos.
+                            Se tiene como objetivo general potenciar el desarrollo de las micro y pequeñas empresas, así
+                            como el apoyo a nuevos emprendimientos.
+                        </p>
 
+                    </details>
                     </p>
-                    <a class="btn btn-light btn-xl" href="#services">Ver Mas</a>
+
                 </div>
             </div>
         </div>
 
 
-
+        <!--  btn-xl-->
     </section>
     <!-- Services-->
     <section class="page-section section-services" id="services">
@@ -165,11 +165,18 @@
             </div>
 
 
-
-
-
-
     </section>
+
+
+    <br>
+    @include('layouts.ultimasnoticias')
+
+
+
+    <h2>aca va informacion de programas</h2>
+
+
+
     <!-- Portfolio-->
     <div id="portfolio">
         <div class="container-fluid p-0">
@@ -250,7 +257,6 @@
             <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
         </div>
     </section>
-
 
 
 
