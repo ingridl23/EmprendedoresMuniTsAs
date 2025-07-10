@@ -3,11 +3,13 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+
+
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\PermissionRegistrar;
 
-class RoleAndPermissionsSeeder extends Seeder
+class noticiaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,13 +22,10 @@ class RoleAndPermissionsSeeder extends Seeder
 
         // create permissions
         $permissions = [
-            'crear emprendimiento',
-            'editar emprendimiento',
-            'eliminar emprendimiento',
-            'ver emprendimiento'
-
-
-
+            'crear noticia',
+            'editar noticia',
+            'eliminar noticia',
+            'ver noticia'
 
         ];
 
