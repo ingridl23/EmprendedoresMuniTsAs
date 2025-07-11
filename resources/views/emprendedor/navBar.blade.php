@@ -67,14 +67,25 @@
                                     <span class="btn-text">Gobierno<br>Abierto</span>
                                 </div>
                             </a>
+                            @if(Auth::check() && Auth::user()->hasRole('admin'))
+                                <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
+                                    @csrf
+                                    <button type="submit">
+                                        <div class="get-started-group font-color-bl">
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                            <span class="btn-text">cerrar<br>sesion</span>
+                                        </div>
+                                    </button>
+                                </form>
+                            @else
                             <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
                                 <div class="get-started-group font-color-bl">
                                     <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-
                                     </i>
-                                    <span class="btn-text">Panel<br>Admin</span>
+                                        <span class="btn-text">Panel<br>Admin</span>
                                 </div>
                             </a>
+                            @endif
                         </div>
                     </div>
                 </div>

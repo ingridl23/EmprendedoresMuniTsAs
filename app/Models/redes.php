@@ -23,12 +23,25 @@ class Redes extends Model
         return $this->hasOne(Emprendedor::class, 'redes_id', 'id');
     }
     public static function editarEmprendimiento($redes){
+        $cadena="https";
+        if(!strpos($redes->instagram, $cadena)){
+            $redes->instagram = "https://instagram.com/{$redes->instagram}";
+        }
+        if(!strpos($redes->facebook, $cadena)){
+             $redes->facebook = "https://facebook.com/{$redes->facebook}";
+        }
         $redes->save();
     }
     public static function eliminarEmprendimiento($redes){
         $redes->delete();
     }
     public static function crearRedes($instagram, $facebook, $whatsapp){
+        if(isset($instagram)){
+            $instagram = "https://instagram.com/{$instagram}";
+        }
+        if(isset($facebook)){
+             $facebook = "https://facebook.com/{$facebook}";
+        }
         $redes= redes::create([
             'instagram' => $instagram,
             'facebook' => $facebook,

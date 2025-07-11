@@ -1,6 +1,16 @@
 "use strict"
 
 document.addEventListener('DOMContentLoaded', e => {
+    console.log(window.mensajeExito);
+    if(window.mensajeExito){
+        Swal.fire({
+            title: "Eliminado!",
+            text: window.mensajeExito,
+            icon: "success"
+        });
+    }
+
+
     asignarCartel();
     
     document.getElementById('emprendedores-filter').addEventListener("keyup", filtrarEmprendedor);
@@ -86,22 +96,18 @@ document.addEventListener('DOMContentLoaded', e => {
         if(results.length === 0){
               container.innerHTML += `<p> No se encontraron resultados</p>`;
         }
-        results.forEach(emprendimiento => {
-            console.log(admin);
+        results.forEach(function(emprendimiento, indice) {
+
             let card = document.createElement('div');
             card.className = 'card';
-            let img=document.createElement('img');
-            img.alt="Imagen de "+emprendimiento.nombre;
             let url="storage/"+emprendimiento.imagen;
-            img.classList.add("card-img-top");
-            img.src=url;
             let contenido = `
                 <div class="portfolio-item">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal${emprendimiento.id}">
                         <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="${img}" alt="..." />
+                        <img class="img-fluid" src="${url}" alt="${emprendimiento.nombre}" />
                     </a>
                                     <div class="portfolio-caption">
                                         <div class="portfolio-caption-heading">${emprendimiento.nombre}</div>
@@ -119,8 +125,8 @@ document.addEventListener('DOMContentLoaded', e => {
                                                         <div class="modal-body">
                                                             <h2 class="text-uppercase"> ${emprendimiento.nombre}</h2>
                                                             <img class="img-fluid d-block mx-auto"
-                                                                src=${img}
-                                                                alt="..." />
+                                                                src=${url}
+                                                                alt="${emprendimiento.nombre}" />
                                                             <p>${emprendimiento.descripcion}</p>
                                                             <ul class="list-inline">
                                                                 <li>
@@ -171,14 +177,6 @@ document.addEventListener('DOMContentLoaded', e => {
     }
 
     
-    if(window.mensajeExito){
-        Swal.fire({
-            title: "Eliminado!",
-            text: window.mensajeExito,
-            icon: "success"
-        });
-    }
-
     function asignarCartel(){
         let formularios=document.querySelectorAll(".formEliminar");
         formularios.forEach(formulario => {

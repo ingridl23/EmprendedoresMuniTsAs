@@ -90,14 +90,25 @@
                                 </div>
                             </a>
 
+                            @if(Auth::check() && Auth::user()->hasRole('admin'))
+                                <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
+                                    @csrf
+                                    <button type="submit">
+                                        <div class="get-started-group font-color-bl">
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                            <span class="btn-text">cerrar<br>sesion</span>
+                                        </div>
+                                    </button>
+                                </form>
+                            @else
                             <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
                                 <div class="get-started-group font-color-bl">
                                     <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-
                                     </i>
-                                    <span class="btn-text">Panel<br>Admin</span>
+                                        <span class="btn-text">Panel<br>Admin</span>
                                 </div>
                             </a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -157,7 +168,7 @@
             <br>
             <div class="filtro">
                 <form class="form-inline my-2 my-lg-0">
-                    <div class="mb-3 row">
+                    <div class="row">
                         <div class="form-floating col-auto">
                             <input id="emprendedores-filter" class="form-control mr-sm-2" type="search" placeholder="Search"
                                 aria-label="Search">
@@ -179,7 +190,7 @@
             </div>
             <div>
             @foreach ($emprendedoresPorCategoria as $categoria=>$emprendedores)
-                <h3>{{$categoria}}</h3>
+                <h3 class="tituloCategorias">{{$categoria}}</h3>
                 <div class="container d-flex justify-content-center  align-items-center min-vh-100">
                     <div id="carrousel" class="shadow-wrapper p-2 rounded-4"> <!-- sombreado acá -->
                         <div id="carousel-{{$categoria}}" class="carousel slide w-50 mx-auto" data-bs-ride="carousel" data-interval="1000">
@@ -213,7 +224,7 @@
                                                             <p>{{$emprendedor->descripcion}}</p>
                                                             <ul class="list-inline">
                                                                 <li>
-                                                                    <strong> Emprendedor</strong>
+                                                                    <strong>Emprendedor</strong>
                                                                 </li>
                                                                 <li>
                                                                     <strong>Categoria:</strong>{{$emprendedor->categoria}}
@@ -293,6 +304,14 @@
 
 
     <!-- Core theme JS-->
+
+
+    @if(session('success'))
+        <script>
+            window.mensajeExito=@json(session('success'));
+        </script>
+    @endif
+
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/logicaform.js') }} "></script>

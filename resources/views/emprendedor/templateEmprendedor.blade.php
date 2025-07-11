@@ -88,6 +88,25 @@
                                         <span class="btn-text">Gobierno<br>Abierto</span>
                                     </div>
                                 </a>
+                                @if(Auth::check() && Auth::user()->hasRole('admin'))
+                                <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
+                                    @csrf
+                                    <button type="submit">
+                                        <div class="get-started-group font-color-bl">
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                            <span class="btn-text">cerrar<br>sesion</span>
+                                        </div>
+                                    </button>
+                                </form>
+                                @else
+                                <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
+                                    <div class="get-started-group font-color-bl">
+                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+                                        </i>
+                                            <span class="btn-text">Panel<br>Admin</span>
+                                    </div>
+                                </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -233,16 +252,19 @@
                                 </em>
                                 <br />
                             <div class="social-links mt-3">
-
-                                <a href="{{$emprendimiento->redes->facebook}}" class="facebook"
-                                    target="_blank">
-                                    <!--link de facebook -->
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                                <a href="{{$emprendimiento->redes->instagram}}" class="instagram"
-                                    target="_blank">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
+                                @if(isset($emprendimiento->redes->facebook))
+                                    <a href="{{$emprendimiento->redes->facebook}}" class="facebook"
+                                        target="_blank">
+                                        <!--link de facebook -->
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                @endif
+                                @if(isset($emprendimiento->redes->instagram))
+                                    <a href="{{$emprendimiento->redes->instagram}}" class="instagram"
+                                        target="_blank">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                @endif
                                 <a class="whatsapp"
                                     href="https://api.whatsapp.com/send/?phone={{$emprendimiento->redes->whatsapp}}&text&type=phone_number&app_absent=0"
                                     target="_blank">

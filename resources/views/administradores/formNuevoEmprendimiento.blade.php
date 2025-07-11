@@ -47,26 +47,16 @@
                 </div>
             </div>
         </div>
-        <div>
-
-            {{-- ✅ Mensaje de éxito --}}
-            @if (session('success'))
-                <div class="alert alert-success text-center mb-3">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-            {{-- ✅ Errores generales --}}
-            @if ($errors->any())
-                <div class="alert alert-danger text-start mb-3">
-                    <ul class="mb-0">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-        </div>
+            
+        @if ($errors->any())
+            <div class="alert alert-danger text-start mb-3">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">

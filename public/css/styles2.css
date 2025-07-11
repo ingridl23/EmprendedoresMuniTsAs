@@ -152,6 +152,11 @@ h2,
     font-size: calc(1.325rem + 0.9vw);
 }
 
+form.cerrarSesion button{
+            background: none;
+            border: none;
+            color: white;
+}
 @media (min-width: 1200px) {
     h2,
     .h2 {
