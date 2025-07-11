@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\user;
 use App\Models\Emprendedor;
+use App\Models\Noticias;
 use App\Models\redes;
 use App\Models\direccion;
 use Illuminate\Support\Str;
@@ -41,6 +42,26 @@ class administradorController extends Controller
         $this->middleware('can:eliminar emprendimiento', [
             'only' => [
                 'eliminarEmprendimiento'
+            ]
+        ]);
+
+
+        //para noticias
+        $this->middleware('can:insertar noticia', [
+            'only' => [
+                'insertarNoticia'
+            ]
+        ]);
+
+        $this->middleware('can:editar noticia', [
+            'only' => [
+                'editarNoticia'
+            ]
+        ]);
+
+        $this->middleware('can:eliminar noticia', [
+            'only' => [
+                'eliminarNoticia'
             ]
         ]);
     }
@@ -146,5 +167,80 @@ class administradorController extends Controller
             }
         }
         //return redirect("/error", "Emprendimiento incorrecto, ingrese uno válido");
+    }
+
+
+
+
+    /**************************************** funciones del crud noticias*************************** */
+
+    // visualizar create
+
+    public function showFormCreateNoticia()
+    {
+        return view("administradores.formCrearNoticia");
+    }
+    //insertar noticia
+
+    protected function  createNews(validacionEmprendimiento $request)
+    {
+        $titulo = $request->input("titulo");
+        $descripcion = $request->textarea("descripcion");
+        $categoria = $request->options("categoria");
+        $imagen = $request->file("imagen");
+        $path = $imagen->store('img', 'public');
+        Noticias::createNews($request, $path);
+        return redirect('/noticias');
+    }
+
+    //visualizar update
+
+    public function showFormEditarNoticia()
+    {
+        return view("administradores.formEditarNoticia");
+    }
+    //editar noticia
+
+    protected function updateNews($id, validacionEditarEMprendimiento $request)
+    {
+
+
+        $noticia = Noticias::find($id);
+
+
+        if ($noticia != null) {
+
+            if ($request->file('imagen') != null) {
+                Storage::disk('public')->delete($noticia->imagen);
+                $imagen = $request->file("imagen");
+                $path = $imagen->store('img', 'public');
+                $noticia->imagen = $path;
+            }
+
+
+            $noticia->titulo = $request->input('titulo');
+            $noticia->descripcion = $request->input('descripcion');
+            $noticia->categoria = $request->input('categoria');
+
+            Noticias::updateNews($noticia);
+
+            return redirect('/noticias');
+        }
+    }
+
+
+
+    //eliminar noticia
+
+    protected function deleteNewsById($id)
+    {
+        $noticia = Noticias::find($id);
+        if ($noticia != null) {
+
+            Storage::disk('public')->delete($noticia->imagen);
+            Noticias::eliminarEmprendimiento($noticia);
+
+            return redirect('/noticias')->with('success', '¡La noticia ha sido eliminada!');
+        }
     }
 }

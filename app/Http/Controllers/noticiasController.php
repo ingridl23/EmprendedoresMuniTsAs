@@ -2,24 +2,63 @@
 
 namespace App\Http\Controllers;
 
+use App\constants;
+use App\Models\Noticias;
+
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Auth;
 
 class noticiasController extends Controller
 {
 
+
     public function showNoticias()
     {
-        return view("layouts.noticias");
+
+        $noticias = Noticias::paginate(10);
+        return view('layouts.noticias', compact('noticias'))
+            ->with('i', (request()->input('page', 1) - 1) * $noticias->perPage());
     }
 
 
     public function showNoticia($id)
     {
         if (is_numeric($id) && $id > constants::VALORMIN) {
-            $noticia = noticias::showNoticiasId($id);
+            $noticia = Noticias::showNoticiasId($id);
             if ($noticia != null) {
                 return view("layouts.noticias", compact('noticias'));
             }
         }
     }
+
+
+
+
+    /*Filtro de busqueda de noticias por titulo*/
+    public function filterNewByTittle(Request $request)
+    {
+        $busqueda = $request->query('busqueda');
+        $noticias = Noticias::with('id')
+            ->where('titulo', 'LIKE', '%' . $busqueda . '%')
+            // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
+            ->get();
+        return response()->json($noticias);
+    }
+
+
+    public function showFormCrearNoticia()
+    {
+        return view('administradores.formNuevaNoticia');
+    }
+
+
+    //este nose si va aca o solo en controlleradmin
+    /* public function obtenerRol()
+    {
+        $rol = false;
+        if (Auth::check() && Auth::user()->hasRole('admin')) {
+            $rol = true;
+        }
+        return response()->json($rol);
+    }*/
 }

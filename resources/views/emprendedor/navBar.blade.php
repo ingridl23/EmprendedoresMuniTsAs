@@ -27,7 +27,7 @@
                                 <a class="nav-link" href="#about">Presentación</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#services">Objetivo</a>
+                                <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>

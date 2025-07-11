@@ -57,7 +57,7 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#about">Volver al inicio</a>
+                                    <a class="nav-link" href="{{ url('/') }}">Volver al inicio</a>
                                 </li>
 
 
@@ -109,9 +109,137 @@
             </div>
         </header>
     </div>
+    <!--- ------------->
 
 
 
+
+    <div class="container-subtitulo-page">
+
+        <h1 class="subtitulo-page">Noticias</h1>
+    </div>
+
+
+
+    <div class="page-top-news">
+
+        <section aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Bolsa de empleo</a></li>
+                <li class="breadcrumb-item active"> <a href="#">Eventos</a></li>
+            </ol>
+        </section>
+
+        <div class="search">
+
+            <input class="inputSearch" type="text" value="" placeholder="buscar">
+            <button class="buttonSearch btn btn-secondary"> buscar </button>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <!-- aca todo esto deberia iterarse-->
+    <div class="container-fluid
+                p-0">
+        <div class="row g-0">
+
+            <div class="card mb-3">
+                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                        to
+                        additional content. This content is a little bit longer.</p>
+                    <div class="container-vermas">
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                ago</small></p>
+                        <button>ver mas</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                        to
+                        additional content. This content is a little bit longer.</p>
+                    <div class="container-vermas">
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                ago</small></p>
+                        <button>ver mas</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card mb-3">
+                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                        to
+                        additional content. This content is a little bit longer.</p>
+                    <div class="container-vermas">
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                ago</small></p>
+                        <button>ver mas</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card mb-3">
+                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                        to
+                        additional content. This content is a little bit longer.</p>
+                    <div class="container-vermas">
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                ago</small></p>
+                        <button>ver mas</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- barra de navegacion footer -->
+    @include('emprendedor.footer')
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>

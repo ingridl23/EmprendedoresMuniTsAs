@@ -1,0 +1,30 @@
+.page-top-news {
+    margin-top: 1rem;
+}
+
+.container-subtitulo-page {
+    margin-top: 5rem;
+}
+
+.search {
+    max-width: 550px;
+    display: flex;
+    align-items: baseline;
+}
+
+.subtitulo-page {
+    color: rgb(45, 102, 168);
+}
+
+.inputSearch {
+    margin-right: 1rem !important
+}
+
+
+/* Ajustes responsivos básicos */
+
+@media (max-width: 768px) {
+    .search {
+        max-width: 350px;
+    }
+}
