@@ -27,13 +27,6 @@
                                 <a class="nav-link" href="{{ url('/') }}">Pagina principal</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link""{{ url('/emprendedor/{id}') }}">Eliminar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="{{ url('/emprendedores/formEditarEmprendimiento/{id}') }}">Editar </a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                             </li>
                         </ul>
@@ -68,14 +61,15 @@
                                     <span class="btn-text">Gobierno<br>Abierto</span>
                                 </div>
                             </a>
-                            <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                <div class="get-started-group font-color-bl">
-                                    <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-
-                                    </i>
-                                    <span class="btn-text">cerrar<br>sesion</span>
-                                </div>
-                            </a>
+                                <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
+                                    @csrf
+                                    <button type="submit">
+                                        <div class="get-started-group font-color-bl">
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                            <span class="btn-text">cerrar<br>sesion</span>
+                                        </div>
+                                    </button>
+                                </form>
                         </div>
                     </div>
                 </div>

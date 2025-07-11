@@ -93,6 +93,8 @@ class administradorController extends Controller
         if (is_numeric($id) && $id > constants::VALORMIN) {
             $emprendimiento = Emprendedor::showEmprendimientoId($id);
             if ($emprendimiento != null) {
+                $emprendimiento->redes->instagram=$this->obtenerRedes($emprendimiento->redes->instagram);
+                $emprendimiento->redes->facebook=$this->obtenerRedes($emprendimiento->redes->facebook);
                 return view("administradores.formEditarEmprendimiento", compact('emprendimiento'));
             }
         };
@@ -100,18 +102,26 @@ class administradorController extends Controller
         return view("/error");
     }
 
+    public function obtenerRedes($redes){
+        $redes=rtrim($redes, '/');
+        $posicion=strrpos($redes, '/');
+        $usuarioNombre=substr($redes, $posicion+1);
+        return $usuarioNombre;
+    }
+
     public function editarEmprendimiento($id, validacionEditarEMprendimiento $request)
     {
         $emprendimiento = Emprendedor::find($id);
         $redes = redes::find($emprendimiento->redes_id);
+        $redes->instagram=$this->obtenerRedes($redes->instagram);
+        $redes->facebook=$this->obtenerRedes($redes->facebook);
         $direccion = direccion::find($emprendimiento->direccion_id);
         if ($redes != null && $emprendimiento != null) {
             if (
                 $redes->instagram != $request->input('instagram') || $redes->facebook != $request->input('facebook')
-                || $redes->whatsapp != $request->input('whatsapp')
-            ) {
-                $redes->instagram = $request->input('instagram');
-                $redes->facebook = $request->input('facebook');
+                || $redes->whatsapp != $request->input('whatsapp')) {
+                $redes->instagram = "https://instagram.com/{$request->input('instagram')}";
+                $redes->facebook = "https://facebook.com/{$request->input('facebook')}";
                 $redes->whatsapp = $request->input('whatsapp');
             }
             if (

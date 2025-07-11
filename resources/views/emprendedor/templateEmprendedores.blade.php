@@ -91,14 +91,26 @@
                                 </div>
                             </a>
 
-                            <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                <div class="get-started-group font-color-bl">
-                                    <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-
-                                    </i>
-                                    <span class="btn-text">Panel<br>Admin</span>
-                                </div>
-                            </a>
+                            @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                <form action="/logout" method="post"
+                                    class="get-started-btn scrollto btn-contact cerrarSesion">
+                                    @csrf
+                                    <button type="submit">
+                                        <div class="get-started-group font-color-bl">
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                            <span class="btn-text">cerrar<br>sesion</span>
+                                        </div>
+                                    </button>
+                                </form>
+                            @else
+                                <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
+                                    <div class="get-started-group font-color-bl">
+                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+                                        </i>
+                                        <span class="btn-text">Panel<br>Admin</span>
+                                    </div>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -159,7 +171,7 @@
             <br>
             <div class="filtro">
                 <form class="form-inline my-2 my-lg-0">
-                    <div class="mb-3 row">
+                    <div class="row">
                         <div class="form-floating col-auto">
                             <input id="emprendedores-filter" class="form-control mr-sm-2" type="search"
                                 placeholder="Search" aria-label="Search">
@@ -251,26 +263,39 @@
                                                                                 data-bs-dismiss="modal"
                                                                                 type="button">
                                                                                 <a
-                                                                                    href="/emprendedores/formEditarEmprendimiento/{{ $emprendedor->id }}">
-                                                                                    Editar emprendimiento
+                                                                                    href="/emprendedor/{{ $emprendedor->id }}">
+                                                                                    ver más acerca de
+                                                                                    {{ $emprendedor->nombre }}
                                                                                 </a>
                                                                             </button>
-                                                                            <button
-                                                                                class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar"
-                                                                                data-bs-dismiss="modal"
-                                                                                type="button">
-                                                                                <form
-                                                                                    action="/emprendedor/{{ $emprendedor->id }}"
-                                                                                    class="formEliminar"
-                                                                                    method="post">
-                                                                                    @csrf
-                                                                                    @method('DELETE')
-                                                                                    <input type="submit"
-                                                                                        class="inputEliminar"
-                                                                                        value="Eliminar emprendimiento">
-                                                                                </form>
-                                                                            </button>
-                                                                        @endif
+                                                                            <div class="containerBotonesEmprendedor">
+                                                                                @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                                                                    <button
+                                                                                        class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        type="button">
+                                                                                        <a
+                                                                                            href="/emprendedores/formEditarEmprendimiento/{{ $emprendedor->id }}">
+                                                                                            Editar emprendimiento
+                                                                                        </a>
+                                                                                    </button>
+                                                                                    <button
+                                                                                        class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        type="button">
+                                                                                        <form
+                                                                                            action="/emprendedor/{{ $emprendedor->id }}"
+                                                                                            class="formEliminar"
+                                                                                            method="post">
+                                                                                            @csrf
+                                                                                            @method('DELETE')
+                                                                                            <input type="submit"
+                                                                                                class="inputEliminar"
+                                                                                                value="Eliminar emprendimiento">
+                                                                                        </form>
+                                                                                    </button>
+                                                                                @endif
+                                                                            </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -278,7 +303,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                     @endforeach
                                 </div>
                                 <a class="carousel-control-prev" href="#carousel-{{ $categoria }}" role="button"
@@ -320,6 +344,14 @@
 
 
     <!-- Core theme JS-->
+
+
+    @if (session('success'))
+        <script>
+            window.mensajeExito = @json(session('success'));
+        </script>
+    @endif
+
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/logicaform.js') }} "></script>

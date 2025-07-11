@@ -86,6 +86,11 @@
             box-sizing: border-box;
         }
 
+        form.cerrarSesion button{
+            background: none;
+            border: none;
+            color: white;
+        }
         .tituloNuevoEmprendimiento {
             margin-top: 7rem;
         }
@@ -2545,8 +2550,6 @@
         .btn.active,
         .btn.show {
             color: var(--bs-btn-active-color);
-            background-color: var(--bs-btn-active-bg);
-            border-color: var(--bs-btn-active-border-color);
         }
 
         .btn-check:checked+.btn:focus-visible,
@@ -5744,7 +5747,6 @@
             position: relative;
             display: none;
             float: left;
-            width: 100%;
             margin-right: -100%;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
@@ -11239,7 +11241,7 @@
         }
 
         input,
-        textarea {
+        textarea, #emprendedores-filter {
             border: none;
             border-bottom: 2px solid var( --bs-green);
             color: #000;

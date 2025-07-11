@@ -38,15 +38,16 @@
             </div>
         </div>
     </div>
-    <div>
-
-        @if (count($errors) > 0)
+    @if (count($errors) > 0)
+    <div class="alert alert-danger text-start mb-3">
+        <ul class="mb-0">                   
             @foreach ($errors->all() as $error)
-                <br>
-                {{ $error }}
+            <li>{{ $error }}</li>
             @endforeach
-        @endif
+        </ul>
     </div>
+    @endif
+
     <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
         <div class="col-lg-6">
             <form action="/emprendedores/{{ $emprendimiento->id }}" method="POST" enctype="multipart/form-data"
@@ -59,7 +60,6 @@
                         <span class="btntext" value="Guardar datos"> Editar emprendimiento </span>
 
                     </button>
-                <p class="error-msg">Complete los campos obligatorios</p>
                 </div>
             </form>
         </div>
