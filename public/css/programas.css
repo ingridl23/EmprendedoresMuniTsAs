@@ -1,0 +1,32 @@
+.container-programas {
+    margin-top: 10rem !important;
+}
+
+.container-programas {
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3rem;
+}
+
+.programas {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.titulo1 {
+    color: gray;
+}
+
+.subtitulo1 {
+    color: rgb(90, 84, 84);
+}
+
+.subtitulo {
+    color: rgb(63, 60, 60);
+}
+
+.text-clubs {
+    font-family: "Arial", sans-serif;
+    font-weight: 600;
+    color: rgb(61, 61, 61);
+}
