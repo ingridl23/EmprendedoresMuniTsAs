@@ -42,7 +42,7 @@
                     <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="\EmprendedoresMuniTsAs\public\assets\img\logo-muni-azul-claro-removebg-preview.png"
+                            <img src="\EmprendedoresMuniTsAs\public\assets\img\oficinaempleodireccioncomercio-02.png"
                                 alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -125,7 +125,7 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
-                <img class="divider" src="\EmprendedoresMuniTsAs\public\assets\img\logocultura.png">
+                <img class="divider" src="\EmprendedoresMuniTsAs\public\assets\img\empleosinfondo.png">
                 <h2 class="mt-0"> Unite a los programas vigentes</h2>
 
                 <p class="text-muted mb-5">

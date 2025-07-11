@@ -50,16 +50,25 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Emprendedores Culturales De Tres Arroyos </h1>
+                    <h1 class="text-white font-weight-bold">Bienvenidos a la Oficina de Empleo y Capacitación de Tres
+                        Arroyos </h1>
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
-                        Desde la oficina de empleo y capacitacion brindamos atención personalizada, acompañamiento
-                        permanente, orientación e información vinculada
-                        al mercado laboral local y a las diferentes ofertas de formación y capacitación gratuitas y
-                        aranceladas.</p>
+                        Desde la Oficina de Empleo y Capacitación de Tres Arroyos trabajamos diariamente para acompañar
+                        a quienes buscan oportunidades laborales y
+                        a quienes desean mejorar sus habilidades a través de la formación.</p>
 
+                    <p class="text-white-75 ">
+                        Nuestro objetivo es ser el vínculo entre quienes buscan trabajo y las empresas que necesitan
+                        incorporar talento local, promoviendo la inclusión laboral,
+                        el desarrollo profesional y el crecimiento de nuestra comunidad.
+
+                    </p>
+
+                    <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
+                    <br>
 
                     <a class="btn btn-light btn-xl btn-xl" href="#contact">Quiero Ser Parte</a>
 
@@ -83,6 +92,11 @@
                     <p class="text-white-75 mb-5">Contamos con programas, beneficios e incentivos para contratar y
                         capacitar a nuevo personal, además de brindar información útil para propietarios, referentes de
                         empresas y áreas de Recursos Humanos. </p>
+
+                    <p class="text-white-75 mb-5">Te invitamos a recorrer nuestra página y a sumarte a esta red de
+                        oportunidades.
+
+                    </p>
 
                     <h2 class="text-white mt-0">¿Quiénes pueden participar?</h2>
                     <hr class="divider divider-light" />
@@ -132,7 +146,8 @@
                         </div>
                         <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/empleador.png" class="divider">
                         <h3 class="h4 mb-2">¿Sos empleador?</h3>
-                        <p class="text-muted mb-0">podrás asesorarte acerca de los programas de empleo vigente.</p>
+                        <p class="text-muted mb-0">podrás asesorarte acerca de los programas de empleo y capacitacion
+                            vigentes.</p>
                     </div>
                 </div>
 
@@ -169,11 +184,9 @@
 
 
     <br>
-    @include('layouts.ultimasnoticias')
 
 
-
-    <h2>aca va informacion de programas</h2>
+    <h1>aca va informacion de programa</h1>
 
 
 
@@ -251,7 +264,7 @@
 
 
     <!-- Call to action-->
-    <section class="page-section text-white" style="background-color: #20c9b2 !important;">
+    <section class="page-section text-white" style="background-color: #25e9a7 !important;">
         <div class="container px-4 px-lg-5 text-center">
             <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
             <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
@@ -270,7 +283,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
-                    <img class="divider" src="assets//img/logocultura.png">
+                    <img class="divider" src="assets//img/empleosinfondo.png">
                     <h2 class="mt-0"> Unite a los programas vigentes</h2>
                     </h2>
                     <p class="text-muted mb-5">

@@ -14,17 +14,18 @@
 
 
 
-                    <a href="https://www.instagram.com/cultura.tresarroyos/?hl=es" target="_blank">
+                    <a href="https://www.instagram.com/OFICINAEMPLEOTSAS/?hl=es" target="_blank">
                         <img src="\EmprendedoresMuniTsAs\public\assets\img\instagram.png" alt="Instagram"
                             width="32">
                     </a>
 
 
-                    <a href="https://www.facebook.com/3ArroyosCultura/?locale=es_LA" target="_blank">
+                    <a href="https://www.facebook.com/p/Oficina-de-empleo-tres-arroyos-100081742136169/"
+                        target="_blank">
                         <img src="\EmprendedoresMuniTsAs\public\assets\img\facebook.png" alt="Facebook" width="32">
                     </a>
 
-                    <a href="https://www.youtube.com/@culturatresarroyos/videos" target="_blank">
+                    <a href="https://www.youtube.com/@municipalidadtresarroyos" target="_blank">
                         <img src="\EmprendedoresMuniTsAs\public\assets\img\youtube.png" alt="youtube" width="32">
                     </a>
 
@@ -37,6 +38,7 @@
             </div>
             <div class="col-lg-8 text-center">
                 <h2 class="text-white mt-0"> Nos encotramos en 1810 Nº 475 </h2>
+                <h4 class="text-white mt-0">Horarios de atencion : De lunes a viernes de 7hs a 14hs </h4>
                 <hr class="divider divider-light" />
 
                 <div class="map-wrapper">

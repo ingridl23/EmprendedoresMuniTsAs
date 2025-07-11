@@ -20,6 +20,38 @@
     margin-right: 1rem !important
 }
 
+#img-lupa {
+    max-width: 25px;
+}
+
+.buttonSearch {
+    border-radius: 45%;
+    padding: 5px;
+    border: 2px solid white;
+}
+
+.buttonSearch:hover {
+    background-color: rgb(212, 203, 203);
+}
+
+.breadcrumb-item {
+    color: rgb(100, 93, 93) !important;
+}
+
+.breadcrumb-item:hover {
+    color: rgb(31, 141, 243) !important;
+}
+
+.card {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.container-vermas {
+    display: flex;
+    align-items: baseline;
+}
+
 
 /* Ajustes responsivos básicos */
 

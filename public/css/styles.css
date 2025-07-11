@@ -19,8 +19,8 @@
             --bs-red: #e02d2d;
             --bs-orange: #f4623a;
             --bs-yellow: #ffc107;
-            --bs-green: #198754;
-            --bs-teal: #20c9b2;
+            --bs-green: #36be7f;
+            --bs-teal: #25e9a7;
             --bs-cyan: #0dcaf0;
             --bs-black: #000;
             --bs-white: #fff;
@@ -11192,7 +11192,7 @@
         }
 
         .submit {
-            background-color: #0d6efd !important;
+            background-color: var( --bs-green) !important;
             border: #ccc solid 0.2rem;
             cursor: pointer;
             overflow: hidden;
@@ -11203,6 +11203,7 @@
             transform: scale(1.1);
             transition: transform 0.2s ease;
             border: lightblue solid 0.1rem;
+            background-color: var( --bs-teal)!important;
         }
 
         input.oculto {
@@ -11240,7 +11241,7 @@
         input,
         textarea {
             border: none;
-            border-bottom: 2px solid var(--bs-blue);
+            border-bottom: 2px solid var( --bs-green);
             color: #000;
             width: 100%;
             padding: 0.8rem 0.5rem 0.3rem;

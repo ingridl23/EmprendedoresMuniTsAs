@@ -41,7 +41,7 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/logo-muni-azul-claro-removebg-preview.png"
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/oficinaempleodireccioncomercio-02.png"
                                 alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -125,15 +125,16 @@
 
         <section aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Bolsa de empleo</a></li>
-                <li class="breadcrumb-item active"> <a href="#">Eventos</a></li>
+                <li><a class="breadcrumb-item" href="#">Bolsa de Empleo <span>/</span></a></li>
+                <li> <a class="breadcrumb-item " href="#">Eventos</a></li>
             </ol>
         </section>
 
         <div class="search">
 
             <input class="inputSearch" type="text" value="" placeholder="buscar">
-            <button class="buttonSearch btn btn-secondary"> buscar </button>
+            <button class="buttonSearch "> <img id= "img-lupa"src="/EMPRENDEDORESMUNITSAS/public/assets/img/lupa.png"
+                    title="lupa"></button>
         </div>
 
 
