@@ -128,56 +128,57 @@
             <h2 class="text-center mt-0">Apoyamos el talento local, visibilizamos el trabajo cultural</h2>
             <hr class="divider" />
 
-            <!--
-                                                                                                                                                        <div class="row gx-4 gx-lg-5">
-                                                                                                                                                            <div class="col-lg-3 col-md-6 text-center">
-                                                                                                                                                                <div class="mt-5">
-                                                                                                                                                                    <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                                                                                                                                                                    <h3 class="h4 mb-2">Sturdy Themes</h3>
-                                                                                                                                                                    <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
-                                                                                                                                                                </div>
-                                                                                                                                                            </div>
-                                                                                                                                                        -->
 
-            <div class="row justify-content-center  align-baseline">
-                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
-                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
-                        </div>
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/empleador.png" class="divider">
-                        <h3 class="h4 mb-2">¿Sos empleador?</h3>
-                        <p class="text-muted mb-0">podrás asesorarte acerca de los programas de empleo y capacitacion
-                            vigentes.</p>
+                        <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">Sturdy Themes</h3>
+                        <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
                     </div>
                 </div>
+                -->
 
-                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                <div class="row justify-content-center  align-baseline">
+                    <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                            </div>
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/empleador.png" class="divider">
+                            <h3 class="h4 mb-2">¿Sos empleador?</h3>
+                            <p class="text-muted mb-0">podrás asesorarte acerca de los programas de empleo y
+                                capacitacion
+                                vigentes.</p>
                         </div>
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/analitica.png" class="divider">
-                        <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
-                        <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes quieran
-                            iniciar un emprendimiento o reforzar uno existente.</p>
                     </div>
-                </div>
 
-                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                    <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                            </div>
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/analitica.png" class="divider">
+                            <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
+                            <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes quieran
+                                iniciar un emprendimiento o reforzar uno existente.</p>
                         </div>
-                        <br>
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/curriculum-vitae.png" class="divider">
-                        <h3 class="h4 mb-2">¿Te encontras en busqueda de empleo?</h3>
-
-                        <p class="text-muted mb-0">recibimos tu CV y llevamos adelante acciones para la búsqueda de
-                            empleo y la intermediación laboral.</p>
                     </div>
+
+                    <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                            </div>
+                            <br>
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/curriculum-vitae.png" class="divider">
+                            <h3 class="h4 mb-2">¿Te encontras en busqueda de empleo?</h3>
+
+                            <p class="text-muted mb-0">recibimos tu CV y llevamos adelante acciones para la búsqueda de
+                                empleo y la intermediación laboral.</p>
+                        </div>
+                    </div>
+
+
+
                 </div>
-
-
-
-            </div>
 
 
     </section>
@@ -188,88 +189,6 @@
 
     <h1>aca va informacion de programa</h1>
 
-
-
-    <!-- Portfolio-->
-    <div id="portfolio">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-
-                @yield('content')
-
-                <!--esto se va y solo quedaria el foreach para traer las 6 imagenes -->
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Emprendedor</div>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
-                        <div class="portfolio-box-caption p-3">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!-- Call to action-->
-    <section class="page-section text-white" style="background-color: #25e9a7 !important;">
-        <div class="container px-4 px-lg-5 text-center">
-            <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
-            <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
-        </div>
-    </section>
 
 
 
@@ -283,7 +202,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
-                    <img class="divider" src="assets//img/empleosinfondo.png">
+                    <img class="divider" src="assets/img/empleosinfondo.png">
                     <h2 class="mt-0"> Unite a los programas vigentes</h2>
                     </h2>
                     <p class="text-muted mb-5">

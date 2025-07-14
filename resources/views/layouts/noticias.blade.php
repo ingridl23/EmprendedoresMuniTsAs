@@ -146,8 +146,8 @@
 
     <!-- aca todo esto deberia iterarse-->
     <div class="container-fluid
-                p-0">
-        <div class="row g-0">
+
+        <div class="row container-card ">
 
             <div class="card mb-3">
                 <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
@@ -176,7 +176,7 @@
                     <div class="container-vermas">
                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
                                 ago</small></p>
-                        <button>ver mas</button>
+                        <button class="vermas">ver mas</button>
                     </div>
                 </div>
             </div>
@@ -193,7 +193,7 @@
                     <div class="container-vermas">
                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
                                 ago</small></p>
-                        <button>ver mas</button>
+                        <button class="vermas">ver mas</button>
                     </div>
                 </div>
             </div>
@@ -210,7 +210,7 @@
                     <div class="container-vermas">
                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
                                 ago</small></p>
-                        <button>ver mas</button>
+                        <button class="vermas">ver mas</button>
                     </div>
                 </div>
             </div>
