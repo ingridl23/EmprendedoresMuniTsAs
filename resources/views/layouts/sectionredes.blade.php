@@ -14,19 +14,18 @@
 
 
 
-                    <a href="https://www.instagram.com/OFICINAEMPLEOTSAS/?hl=es" target="_blank">
-                        <img src="\EmprendedoresMuniTsAs\public\assets\img\instagram.png" alt="Instagram"
+                    <a href="https://www.instagram.com/cultura.tresarroyos/?hl=es" target="_blank">
+                        <img src="{{asset('assets/img/instagram.png')}}" alt="Instagram"
                             width="32">
                     </a>
 
 
-                    <a href="https://www.facebook.com/p/Oficina-de-empleo-tres-arroyos-100081742136169/"
-                        target="_blank">
-                        <img src="\EmprendedoresMuniTsAs\public\assets\img\facebook.png" alt="Facebook" width="32">
+                    <a href="https://www.facebook.com/3ArroyosCultura/?locale=es_LA" target="_blank">
+                        <img src="{{asset('assets/img/facebook.png')}}" alt="Facebook" width="32">
                     </a>
 
-                    <a href="https://www.youtube.com/@municipalidadtresarroyos" target="_blank">
-                        <img src="\EmprendedoresMuniTsAs\public\assets\img\youtube.png" alt="youtube" width="32">
+                    <a href="https://www.youtube.com/@culturatresarroyos/videos" target="_blank">
+                        <img src="{{asset('assets/img/youtube.png')}}" alt="youtube" width="32">
                     </a>
 
                 </div>

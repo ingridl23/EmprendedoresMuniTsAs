@@ -18,12 +18,16 @@
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
 }
 
-
+i.servicio-icono, i.fas.fa-lock-open{
+        color: #31588a;
+    }
+.btn-text {
+        color: #4f5052;
+    }
 /* Navbar */
 
 #mainNav {
     background: white;
-    padding: 1rem 2rem;
     align-content: space-between;
 }
 
@@ -47,7 +51,10 @@
     color: #25afc3;
 }
 
-
+#mainNav{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
 /* Efecto underline en hover */
 
 #mainNav .navbar-nav .nav-link::after {
@@ -63,7 +70,7 @@
 }
 
 #mainNav .navbar-nav .nav-link:hover::after {
-    width: 80%;
+    width: 100%;
 }
 
 
@@ -189,13 +196,46 @@
     padding-top: 0.25rem;
 }
 
-
+nav ul li.nav-item.serParte{
+    padding: 0 0.5rem;
+    width: 100%;
+}
 /* ======= RESPONSIVE DESIGN ======= */
 
 
 /* Tablet */
 
-@media (max-width: 992px) {
+@media (min-width:992px) {
+    i.servicio-icono, i.fas.fa-lock-open{
+        color: #dfdfdf;
+    }
+    .btn-text {
+        color: #dfdfdf;
+    }
+    nav ul li.nav-item.serParte{
+        width: max-content;
+    }
+    #mainNav .navbar-nav .nav-link:hover::after {
+        width: 80%;
+    }
+    .logo-img {
+        max-height: 50px;
+    }
+}
+
+@media (min-width:1020px){
+    .logo-img {
+        max-height: 65px;
+    }
+}
+
+@media(min-width:1100px){
+    .logo-img {
+        max-height: 80px;
+    }
+}
+
+@media (max-width: 1000px) {
     .get-started-buttons {
         margin-top: 1rem;
         justify-content: center;
@@ -232,6 +272,7 @@
 /* Mobile */
 
 @media (max-width: 768px) {
+    
     #mainNav {
         padding: 0.25rem 0;
         background-color: #dee5ec;

@@ -17,7 +17,7 @@ select{
     width: 100%;
     border: none;
     padding: 0.3rem;
-    border-bottom: 2px solid #0262c9;
+    border-bottom: 2px solid #36be7f;
     background-color: transparent;
 }
 
@@ -58,6 +58,28 @@ div.alturaYCalle p.form-subtitulos{
 div.alturaYCalle div{
     width: 40%;
 }
+
+nav form{
+    margin-bottom: 0;
+}
+
+@media (max-width:992px) {
+    div.col-lg-6{
+        justify-content: center;
+        display: flex;
+    }
+
+    .form{
+        width: 60%;
+    }
+}
+
+.page-section {
+    padding: 2rem 0;
+}
+
+
+
 
 /* label.direccionEmprendimiento::after {
     color: #53c9ff;

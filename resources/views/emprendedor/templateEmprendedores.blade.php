@@ -26,7 +26,9 @@
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 </head>
 
-<!--=======Header=======-->
+<body id="page-top">
+
+    <!--=======Header=======-->
 <div class="custom-navbar-container">
     <header id="header" class="fixed-top header-scrolled">
         <div class="container-fluid px-4 container">
@@ -56,7 +58,7 @@
                                     href="{{ url('/') }}">Volver a Inicio</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item serParte">
                                 <a class="nav-link" href="{{ url('/formar/parte') }}"">ser parte</a>
                             </li>
                         </ul>
@@ -119,12 +121,6 @@
     </header>
 </div>
 <!-- End Header -->
-
-
-
-<body id="page-top">
-
-
 
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
@@ -248,54 +244,44 @@
                                                                             <strong>Categoria:</strong>{{ $emprendedor->categoria }}
                                                                         </li>
                                                                     </ul>
-                                                                    <button
-                                                                        class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
-                                                                        data-bs-dismiss="modal" type="button">
-                                                                        <a href="/emprendedor/{{ $emprendedor->id }}">
-                                                                            ver más acerca de
-                                                                            {{ $emprendedor->nombre }}
-                                                                        </a>
-                                                                    </button>
-                                                                    <div class="containerBotonesEmprendedor">
-                                                                        @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                                                            <button
-                                                                                class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
-                                                                                data-bs-dismiss="modal"
-                                                                                type="button">
-                                                                                <a
-                                                                                    href="/emprendedor/{{ $emprendedor->id }}">
-                                                                                    ver más acerca de
-                                                                                    {{ $emprendedor->nombre }}
-                                                                                </a>
-                                                                            </button>
-                                                                            <div class="containerBotonesEmprendedor">
-                                                                                @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                                                                    <button
-                                                                                        class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
-                                                                                        data-bs-dismiss="modal"
-                                                                                        type="button">
-                                                                                        <a
-                                                                                            href="/emprendedores/formEditarEmprendimiento/{{ $emprendedor->id }}">
-                                                                                            Editar emprendimiento
-                                                                                        </a>
-                                                                                    </button>
-                                                                                    <button
-                                                                                        class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar"
-                                                                                        data-bs-dismiss="modal"
-                                                                                        type="button">
-                                                                                        <form
-                                                                                            action="/emprendedor/{{ $emprendedor->id }}"
-                                                                                            class="formEliminar"
-                                                                                            method="post">
-                                                                                            @csrf
-                                                                                            @method('DELETE')
-                                                                                            <input type="submit"
-                                                                                                class="inputEliminar"
-                                                                                                value="Eliminar emprendimiento">
-                                                                                        </form>
-                                                                                    </button>
-                                                                                @endif
-                                                                            </div>
+                                                                        <button
+                                                                            class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
+                                                                             data-bs-dismiss="modal"
+                                                                            type="button">
+                                                                            <a
+                                                                                href="/emprendedor/{{ $emprendedor->id }}">
+                                                                                ver más acerca de
+                                                                                {{ $emprendedor->nombre }}
+                                                                            </a>
+                                                                        </button>
+                                                                        <div class="containerBotonesEmprendedor">
+                                                                            @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                                                                <button
+                                                                                    class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    type="button">
+                                                                                    <a
+                                                                                        href="/emprendedores/formEditarEmprendimiento/{{ $emprendedor->id }}">
+                                                                                        Editar emprendimiento
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button
+                                                                                    class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    type="button">
+                                                                                    <form
+                                                                                        action="/emprendedor/{{ $emprendedor->id }}"
+                                                                                        class="formEliminar"
+                                                                                        method="post">
+                                                                                        @csrf
+                                                                                        @method('DELETE')
+                                                                                        <input type="submit"
+                                                                                            class="inputEliminar"
+                                                                                            value="Eliminar emprendimiento">
+                                                                                    </form>
+                                                                                </button>
+                                                                            @endif
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>

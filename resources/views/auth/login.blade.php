@@ -45,7 +45,7 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="assets/img/logo-muni-azul-claro-removebg-preview.png" alt="Logo Tres Arroyos"
+                            <img src="{{asset('assets/img/oficinaempleodireccioncomercio-02.png')}}" alt="Logo Tres Arroyos"
                                 class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -118,8 +118,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
 
-                <img class="divider" src="\EmprendedoresMuniTsAs\public\assets\img\logocultura.png"alt=" Logo
-                    Cultura">
+                 <img class="divider" src="{{asset('assets/img/empleosinfondo.png')}}" alt="Logo Empleo">
                 <p class="text-muted mb-5"> Ingreso solo perfiles autorizados </p>
 
 
@@ -132,7 +131,7 @@
 
                 {{-- ✅ Errores generales --}}
                 @if ($errors->any())
-                    <div class="alert alert-danger text-start mb-3">
+                    <div class="text-center mb-3 alert alert-danger">
                         <ul class="mb-0">
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>

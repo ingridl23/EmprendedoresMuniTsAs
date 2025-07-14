@@ -107,6 +107,7 @@
             padding-top: 6rem;
         }
 
+
         @media (prefers-reduced-motion: no-preference) {
              :root {
                 scroll-behavior: smooth;
@@ -4476,7 +4477,7 @@
         }
 
         .alert {
-            --bs-alert-bg: transparent;
+            --bs-alert-bg: #F2D5DB;
             --bs-alert-padding-x: 1rem;
             --bs-alert-padding-y: 1rem;
             --bs-alert-margin-bottom: 1rem;
@@ -4492,7 +4493,17 @@
             border: var(--bs-alert-border);
             border-radius: var(--bs-alert-border-radius);
         }
+        div.containerError ul{
+            color: #731D2C;
+        }
 
+        div.containerError ul li{
+            list-style: none;
+        }
+        .containerError{
+            margin-left: auto;
+            margin-right: auto;
+        }
         .alert-heading {
             color: inherit;
         }
@@ -10967,14 +10978,14 @@
             }
             #mainNav .navbar-nav .nav-item .nav-link {
                 color: rgba(255, 255, 255, 0.7);
-                padding: 0 1rem;
+                padding: 0 0.8rem;
             }
             #mainNav .navbar-nav .nav-item .nav-link:hover {
                 color: #fff;
             }
-            #mainNav .navbar-nav .nav-item:last-child .nav-link {
+            /*#mainNav .navbar-nav .nav-item:last-child .nav-link {
                 padding-right: 0;
-            }
+            }*/
             #mainNav.navbar-shrink {
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
                 background-color: #fff;
@@ -10990,6 +11001,11 @@
             }
             #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
                 color: #f4623a;
+            }
+        }
+        @media(min-width:1100px){
+            nav div.container.px-4{
+                padding-left: 1.5rem !important;
             }
         }
         /******************************************************************************************/
@@ -11016,7 +11032,7 @@
         @media (min-width: 992px) {
             header.masthead {
                 height: 150vh;
-                min-height: 40rem;
+                min-height: 48rem;
                 padding-top: 4.5rem;
                 padding-bottom: 0;
             }
@@ -11027,6 +11043,9 @@
             header.masthead .h1 {
                 font-size: 3rem;
             }
+            nav div.container.px-4{
+                padding-left: 0.5rem !important;
+            }
         }
 
         @media (min-width: 1200px) {
@@ -11036,7 +11055,7 @@
             }
             header.masthead {
                 height: 170vh;
-                min-height: 60rem;
+                min-height: 52rem;
             }
         }
 
@@ -11363,3 +11382,13 @@
         .whatsapp {
             max-width: 55px;
         }
+
+        div.container-fluid nav.navbar.py-2 div.container{
+            max-width: 100%;
+        }
+
+    .asterisco{
+        color: red;
+        font-weight: 900;
+        font-size: larger;
+    }

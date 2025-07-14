@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>formulario</title>
+    <title>Contacto</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome -->
@@ -42,8 +42,8 @@
                     <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="\EmprendedoresMuniTsAs\public\assets\img\oficinaempleodireccioncomercio-02.png"
-                                alt="Logo Tres Arroyos" class="logo-img me-2">
+                            <img src="{{asset('assets/img/oficinaempleodireccioncomercio-02.png')}}"
+                                alt="Logo Oficina Empleo" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
                         <!-- Botones de toggle para móvil -->
@@ -56,7 +56,7 @@
                         <!-- Menú de navegación principal -->
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
-                                <li class="nav-item">
+                                <li class="nav-item serParte">
                                     <a class="nav-link" href="{{ url('/') }}"> Volver Al Inicio </a>
 
                                 <li class="nav-item">
@@ -70,7 +70,7 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
                                     get-started-btn crollto" class="get-started-btn">
                                     <div class="get-started-group font-color-bl">
-                                        <img src="\EmprendedoresMuniTsAs\public\assets\img\MiTr-remove-removebg-preview.png"
+                                        <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}"
                                             slt class=" img-btn-logonav img-fluid mb-1">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
@@ -134,11 +134,11 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
-                <img class="divider" src="\EmprendedoresMuniTsAs\public\assets\img\empleosinfondo.png">
+                <img class="divider" src="{{asset('assets/img/empleosinfondo.png')}}">
                 <h2 class="mt-0"> Unite a los programas vigentes</h2>
 
                 <p class="text-muted mb-5">
-                    Completá el formulario con tus datos y desde la Oficina de Empleo y capacitacion nos pondremos en
+                    Completá el formulario con tus datos y desde la Oficina de Empleo y Capacitación nos pondremos en
                     contacto para
                     que puedas integrarte a esta valiosa propuesta.
 
@@ -179,7 +179,7 @@
                         @error('first_name')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-                        <label for="message">Nombre y Apellido</label>
+                        <label for="message">Nombre y Apellido <span class="asterisco">*</span></label>
                         <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                     </div>
 
@@ -197,7 +197,7 @@
 
 
 
-                        <label for="message">Email</label>
+                        <label for="message">Email <span class="asterisco">*</span></label>
                         <p class="form-subtitulos">Registre un email que utilice frecuentemente</p>
                     </div>
 
@@ -214,8 +214,8 @@
                         @enderror
 
 
-                        <label for="message">Telefono</label>
-                        <p class="form-subtitulos">Otorgue un numero de telefono de uso frecuente</p>
+                        <label for="message">Teléfono<span class="asterisco">*</span></label>
+                        <p class="form-subtitulos">Otorgue un número de teléfono de uso frecuente</p>
                     </div>
 
                     <!-- input descripcion -->
@@ -227,8 +227,8 @@
                         @error('description')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-                        <label for="message">Describa Brevemente Su Emprendimiento</label>
-                        <p class="form-subtitulos">Escriba una descripcion a continuacion</p>
+                        <label for="message">Describa Brevemente Su Emprendimiento <span class="asterisco">*</span></label>
+                        <p class="form-subtitulos">Escriba una descripción a continuación</p>
                     </div>
 
                     <!-- input oculto -->
@@ -239,11 +239,8 @@
                     <!-- Submit Button-->
                     <div class=" d-grid  ">
                         <button class=" submit btn btn-primary btn-xl" id="submitButton" type="submit">
-
                             <span class="btntext"> Enviar
-                                Peticion </span>
-
-
+                                Petición </span>
                         </button>
 
 
@@ -260,7 +257,7 @@
     <a href="https://wa.me/2983603748?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de cultura"
         class="whatsapp-float" target="_blank" rel="noopener">
 
-        <img class="whatsapp" src="\EmprendedoresMuniTsAs\public\assets\img\whatsapp.png">
+        <img class="whatsapp" src="{{asset('assets/img/whatsapp.png')}}">
     </a>
 
 
