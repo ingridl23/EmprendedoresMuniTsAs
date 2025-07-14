@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', e => {
         if(results.length === 0){
               container.innerHTML += `<p> No se encontraron resultados</p>`;
         }
-        results.forEach(function(emprendimiento, indice) {
+        results.forEach(emprendimiento =>{
 
             let card = document.createElement('div');
             card.className = 'card';

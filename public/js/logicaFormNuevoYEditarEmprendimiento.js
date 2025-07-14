@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let errorMsg=document.querySelector(".error-msg");
 
     submitBtn.classList.remove("click", "error");
-    errorMsg.classList.remove("show");
+    //errorMsg.classList.remove("show");
     
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -86,30 +86,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    $("#Form").on("submit", function(e) {
-        e.preventDefault();
-        let $form = $(this);
-        $.ajax({
-            url: $form.attr("action"),
-            method: $form.attr("method"),
-            data: $form.serialize(),
-            success(data, status, xhr) {
-                // Si Laravel devuelve un JSON de éxito o te redirige:
-                // puedes forzar la carga del panel admin:
-                window.location.href = "{{ route('administradores.form') }}";
-            },
-            error(xhr) {
-                // Si hay validación / credenciales incorrectas,
-                // muestra los errores dentro del modal:
-                let errors = xhr.responseJSON.errors || {
-                    email: [xhr.responseJSON.message],
-                };
-                Object.keys(errors).forEach(function(field) {
-                    let msg = errors[field][0];
-                    // Añade aquí código para mostrar msg en tu modal
-                    alert(msg);
-                });
-            },
-        });
-    });
+    
 });

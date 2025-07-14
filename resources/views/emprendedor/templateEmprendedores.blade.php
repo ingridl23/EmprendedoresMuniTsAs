@@ -55,7 +55,7 @@
                                     href="{{ url('/') }}">Volver a Inicio</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item serParte">
                                 <a class="nav-link" href="{{ url('/formar/parte') }}"">ser parte</a>
                             </li>
                         </ul>

@@ -41,7 +41,7 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/logo-muni-azul-claro-removebg-preview.png"
+                            <img src="{{asset('assets/img/logo-muni-azul-claro-removebg-preview.png')}}"
                                 alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -70,7 +70,7 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
                                     <div class="get-started-group font-color-bl">
-                                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/MiTr-remove-removebg-preview.png"
+                                        <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}"
                                             slt class=" img-btn-logonav img-fluid mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
                                     </div>

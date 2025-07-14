@@ -14,7 +14,7 @@ class RenameColNameTableNoticias extends Migration
     public function up()
     {
         Schema::table('noticias', function (Blueprint $table) {
-            $table->renameColumn('nombre', 'titulo');
+            $table->renameColumn('titulo', 'nombre');
         });
     }
 

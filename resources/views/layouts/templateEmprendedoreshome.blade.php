@@ -113,24 +113,12 @@
         <div class="container px-4 px-lg-5">
             <h2 class="text-center mt-0">Apoyamos el talento local, visibilizamos el trabajo cultural</h2>
             <hr class="divider" />
-
-            <!--
-                                                                                                                                                        <div class="row gx-4 gx-lg-5">
-                                                                                                                                                            <div class="col-lg-3 col-md-6 text-center">
-                                                                                                                                                                <div class="mt-5">
-                                                                                                                                                                    <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                                                                                                                                                                    <h3 class="h4 mb-2">Sturdy Themes</h3>
-                                                                                                                                                                    <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
-                                                                                                                                                                </div>
-                                                                                                                                                            </div>
-                                                                                                                                                        -->
-
             <div class="row justify-content-center  align-baseline">
                 <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
                     <div class="mt-5">
                         <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/empleador.png" class="divider">
+                        <img src="{{asset('assets/img/empleador.png')}}" class="divider">
                         <h3 class="h4 mb-2">¿Sos empleador?</h3>
                         <p class="text-muted mb-0">podrás asesorarte acerca de los programas de empleo vigente.</p>
                     </div>
@@ -140,7 +128,7 @@
                     <div class="mt-5">
                         <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/analitica.png" class="divider">
+                        <img src="{{asset('assets/img/analitica.png')}}" class="divider">
                         <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
                         <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes quieran
                             iniciar un emprendimiento o reforzar uno existente.</p>
@@ -152,7 +140,7 @@
                         <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
                         <br>
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/curriculum-vitae.png" class="divider">
+                        <img src="{{asset('assets/img/curriculum-vitae.png')}}" class="divider">
                         <h3 class="h4 mb-2">¿Te encontras en busqueda de empleo?</h3>
 
                         <p class="text-muted mb-0">recibimos tu CV y llevamos adelante acciones para la búsqueda de
@@ -320,7 +308,7 @@
                             @enderror
 
 
-                            <label class="message" for="message">Nombre y Apellido</label>
+                            <label class="message" for="message">Nombre y Apellido<span class="asterisco">*</span></label>
                             <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                         </div>
 
@@ -337,7 +325,7 @@
                             @enderror
 
 
-                            <label class="message" for="message">Email</label>
+                            <label class="message" for="message">Email<span class="asterisco">*</span></label>
                             <p class="form-subtitulos">Registre un email que utilice frecuentemente</p>
                         </div>
 
@@ -354,8 +342,8 @@
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
 
-                            <label class="message" for="message">Telefono</label>
-                            <p class="form-subtitulos">Otorgue un numero de telefono de uso frecuente</p>
+                            <label class="message" for="message">Teléfono<span class="asterisco">*</span></label>
+                            <p class="form-subtitulos">Otorgue un número de teléfono de uso frecuente</p>
                         </div>
 
                         <!-- input descripcion -->
@@ -369,8 +357,8 @@
                             @enderror
 
 
-                            <label class="message" for="message">Describa brevemente su emprendimiento</label>
-                            <p class="form-subtitulos">Escriba una descripcion a continuacion</p>
+                            <label class="message" for="message">Describa brevemente su emprendimiento<span class="asterisco">*</span></label>
+                            <p class="form-subtitulos">Escriba una descripción a continuación</p>
                         </div>
 
                         <!-- input oculto -->
@@ -383,7 +371,7 @@
                             <button class="submit btn btn-primary btn-xl" id="submitButton" type="submit">
 
                                 <span class="btntext"> Enviar
-                                    Peticion </span>
+                                    Petición </span>
 
 
                             </button>

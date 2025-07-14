@@ -11841,7 +11841,7 @@
         }
         
         #mainNav .navbar-nav .nav-link:hover::after {
-            width: 80%;
+            width: 100%;
         }
         /* ======= LOGO Y MARCA ======= */
         

@@ -107,6 +107,7 @@
             padding-top: 6rem;
         }
 
+
         @media (prefers-reduced-motion: no-preference) {
              :root {
                 scroll-behavior: smooth;
@@ -10967,14 +10968,14 @@
             }
             #mainNav .navbar-nav .nav-item .nav-link {
                 color: rgba(255, 255, 255, 0.7);
-                padding: 0 1rem;
+                padding: 0 0.8rem;
             }
             #mainNav .navbar-nav .nav-item .nav-link:hover {
                 color: #fff;
             }
-            #mainNav .navbar-nav .nav-item:last-child .nav-link {
+            /*#mainNav .navbar-nav .nav-item:last-child .nav-link {
                 padding-right: 0;
-            }
+            }*/
             #mainNav.navbar-shrink {
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
                 background-color: #fff;
@@ -10990,6 +10991,11 @@
             }
             #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
                 color: #f4623a;
+            }
+        }
+        @media(min-width:1100px){
+            div.container.px-4{
+                padding-left: 1.5rem !important;
             }
         }
         /******************************************************************************************/
@@ -11026,6 +11032,9 @@
             header.masthead h1,
             header.masthead .h1 {
                 font-size: 3rem;
+            }
+            div.container.px-4{
+                padding-left: 0.5rem !important;
             }
         }
 
@@ -11362,3 +11371,13 @@
         .whatsapp {
             max-width: 55px;
         }
+
+        div.container-fluid nav.navbar.py-2 div.container{
+            max-width: 100%;
+        }
+
+    .asterisco{
+        color: red;
+        font-weight: 900;
+        font-size: larger;
+    }

@@ -8,7 +8,7 @@
 
                     <!-- Logo y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/logo-muni-azul-claro-removebg-preview.png"
+                        <img src="{{asset('assets/img/logo-muni-azul-claro-removebg-preview.png')}}"
                             alt="Logo Tres Arroyos" class="logo-img me-2">
                         <span class="brand-text"></span>
                     </a>
@@ -32,7 +32,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item serParte">
                                 <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
                             </li>
                         </ul>
@@ -43,7 +43,7 @@
                             <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                 class="get-started-btn crollto">
                                 <div class="get-started-group font-color-bl">
-                                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/MiTr-remove-removebg-preview.png"
+                                    <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}"
                                         slt class=" img-btn-logonav img-fluid mb-1" alt="Imagen municipalidad">
                                     <span class="btn-text">MiTresa</span>
                                 </div>
@@ -73,7 +73,7 @@
                                     <button type="submit">
                                         <div class="get-started-group font-color-bl">
                                             <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
-                                            <span class="btn-text">cerrar<br>sesion</span>
+                                            <span class="btn-text">cerrar<br>sesión</span>
                                         </div>
                                     </button>
                                 </form>

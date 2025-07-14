@@ -40,6 +40,12 @@
     color: #25afc3;
 }
 
+i.servicio-icono, i.fas.fa-lock-open{
+        color: #31588a;
+    }
+.btn-text {
+        color: #4f5052;
+    }
 
 /* Efecto underline en hover */
 
@@ -56,7 +62,7 @@
 }
 
 #mainNav .navbar-nav .nav-link:hover::after {
-    width: 80%;
+    width: 100%;
 }
 
 
@@ -182,7 +188,10 @@
     font-weight: 600 !important;
 }
 
-
+nav ul li.nav-item.serParte{
+    padding: 0 0.5rem;
+    min-width: fit-content;
+}
 /* ======= RESPONSIVE DESIGN ======= */
 
 
@@ -221,7 +230,11 @@
     }
 }
 
-
+@media (min-width:972px) {
+    #mainNav .navbar-nav .nav-link:hover::after {
+        width: 80%;
+    }
+}
 /* Mobile */
 
 @media (max-width: 768px) {

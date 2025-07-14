@@ -1,17 +1,17 @@
 <div class="field-group">
     <textarea name="nombre" id="nombre" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->nombre : old('nombre') }}</textarea>
-    <label for="nombre">Nombre</label>
+    <label for="nombre">Nombre <span class="asterisco">*</span></label>
     <p class="form-subtitulos">Otorgue nombre del emprendimiento</p>
 </div>
 <div class="field-group">
     <textarea name="descripcion" id="descripcion" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->descripcion : old('descripcion') }}</textarea>
-    <label for="descripcion">Descripción</label>
+    <label for="descripcion">Descripción <span class="asterisco">*</span></label>
     <p class="form-subtitulos">Otorgue una descripción del emprendimiento</p>
 </div>
 <div class="field-group">
     <input type="text" name="categoria" id="categoria" required placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->categoria : old('categoria') }}>
-    <label for="categoria">Categoria</label>
+    <label for="categoria">Categoria <span class="asterisco">*</span> </label>
     <p class="form-subtitulos">Otorgue una categoria del emprendimiento</p>
 </div>
 
@@ -21,7 +21,7 @@
             class="imagenEmprendimientoFormulario">
     @endif
     <input type="file" name="imagen" id="imagen">
-    <label for="imagen">Imagen</label>
+    <label for="imagen">Imagen <span class="asterisco">*</span></label>
     <p class="form-subtitulos">Cargue una imagen del emprendimiento</p>
 </div>
 
@@ -42,12 +42,12 @@
 <div class="field-group">
     <input type="number" name="whatsapp" id="whatsapp" required placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->redes->whatsapp : old('whatsapp') }}>
-    <label for="whatsapp">Número de WhatsApp</label>
+    <label for="whatsapp">Número de WhatsApp <span class="asterisco">*</span></label>
     <p class="form-subtitulos">Otorgue un número de WhatsApp del emprendimiento</p>
 </div>
 <div>
     <div class="field-group">
-        <label for="inputCity" class="direccionEmprendimiento">Ciudad</label>
+        <label for="inputCity" class="direccionEmprendimiento">Ciudad <span class="asterisco">*</span></label>
         <select id="ciudad" name="ciudad" required placeholder="">
             <option class="oculto" {{!isset($emprendimiento) ?  'selected' : ""}}></option>
             <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Tres Arroyos") ? 'selected' :""}}>Tres Arroyos</option>
@@ -56,7 +56,7 @@
         </select>
     </div>
     <div class="field-group oculto localidadesDeLaCiudad">
-        <label for="localidad" class="direccionEmprendimiento localidad">Localidad</label>
+        <label for="localidad" class="direccionEmprendimiento localidad">Localidad <span class="asterisco">*</span></label>
         <select id="localidadesDeLaCiudad" name="localidad" required placeholder="">
             <option value="{{isset($emprendimiento) ? $emprendimiento->direccion->localidad : old('localidad')}}" class="oculto opcionValorCargado"></option>
         </select>
@@ -69,13 +69,13 @@
         @else
           <input type="text" name="calle" id="calle" required placeholder="" value: old('calle')>
         @endif
-        <label for="calle">Calle</label>
+        <label for="calle">Calle <span class="asterisco">*</span></label>
         <p class="form-subtitulos">Otorgue el nombre de la calle</p>
     </div>
     <div class="field-group">
         <input type="number" name="altura" id="altura" required placeholder="" min=1
             value={{ isset($emprendimiento) ? $emprendimiento->direccion->altura : old('altura') }}>
-        <label for="altura">Altura</label>
+        <label for="altura">Altura <span class="asterisco">*</span></label>
         <p class="form-subtitulos">Otorgue la altura de la calle</p>
     </div>
 </div>

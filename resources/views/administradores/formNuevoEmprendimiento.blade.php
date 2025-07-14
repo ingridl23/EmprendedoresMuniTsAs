@@ -1,8 +1,7 @@
-<html>
-
-<body>
-
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+    
+ <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -32,6 +31,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
             rel="stylesheet" />
     </head>
+    <body id="page-top">
+
     @include('administradores.navBarAdmin')
     <!-- End Header -->
     <section class="page-section" id="contact" style="background-color: white">
@@ -67,9 +68,7 @@
                     <div class=" d-grid  ">
                         <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
                             <span class="btntext" value="Guardar datos"> Guardar emprendimiento </span>
-
                         </button>
-                         <p class="error-msg">Complete los campos obligatorios</p>
                     </div>
                 </form>
             </div>
@@ -80,15 +79,14 @@
     <!-- OVERLAY -->
     @include('layouts.panelAdmin')
     @include('emprendedor.footer')
-</body>
 
-</html>
-<!-- Bootstrap core JS-->
+
+
+    <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core theme JS-->
-<script src="{{ asset('js/scripts.js') }} "></script>
-<script src="{{ asset('js/scripts3.js') }}"></script>
+<script src="{{ asset('js/scripts3.js') }} "></script>
 <script src="{{ asset('js/logicaFormNuevoYEditarEmprendimiento.js') }}"></script>
 <script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>
 
@@ -96,3 +94,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+
+</html>

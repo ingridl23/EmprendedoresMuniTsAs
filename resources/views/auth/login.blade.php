@@ -118,7 +118,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
 
-                <img class="divider" src="\EmprendedoresMuniTsAs\public\assets\img\logocultura.png"alt=" Logo
+                <img class="divider" src="{{asset('assets/img/logocultura.png')}}"alt=" Logo
                     Cultura">
                 <p class="text-muted mb-5"> Ingreso solo perfiles autorizados </p>
 
