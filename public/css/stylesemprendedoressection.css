@@ -106,7 +106,6 @@
         div.modal-body button.detalleEmprendedor{
             margin: 0.5rem;
             font-size: 1rem;
-            background-color: #007bff;
             border: none;
             color: #fff;
             transition: background-color 0.3s;
@@ -123,7 +122,7 @@
             width: auto;
         }
         button.botonAgregarEmprendimiento:hover, button.botonFiltro:hover, .swal2-confirm:hover, div.modal-body button.detalleEmprendedor:hover{
-            background-color: #004186; 
+            background-color: #164e34; 
         }
 
         button.botonAgregarEmprendimiento:active, button.botonFiltro:active, .swal2-confirm:active, div.modal-body button.detalleEmprendedor:active{
@@ -226,6 +225,7 @@
         @media (min-width: 630px){
             .containerBotonesEmprendedor{
                 display: flex;
+                justify-content: center;
             }
         }
 
@@ -11751,7 +11751,7 @@
         
         .btn-vermas,
         .btn-xl {
-            background-color: #0a98b4;
+            background-color: #36be7f;
         }
         
         #vermas {
@@ -11803,13 +11803,12 @@
         /* Navbar */
         
         #mainNav {
-            padding: 1rem 2rem;
             align-content: space-between;
         }
         
         #mainNav .navbar-nav .nav-link {
             color: #6f7983 !important;
-            font-weight: 500;
+            font-weight: 700;
             font-size: 16px !important;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -11840,9 +11839,6 @@
             transform: translateX(-50%);
         }
         
-        #mainNav .navbar-nav .nav-link:hover::after {
-            width: 100%;
-        }
         /* ======= LOGO Y MARCA ======= */
         
         .navbar-brand {
@@ -11862,7 +11858,7 @@
         }
         
         .logo-img {
-            max-height: 40px;
+            max-height: 80px;
             width: auto;
             transition: transform 0.3s ease;
             margin-top: 0%;
@@ -12136,7 +12132,7 @@
 
         #emprendedores-filter{
             border: 1px solid grey;
-            border-bottom: 2px solid var(--bs-blue);
+            border-bottom: 2px solid #198754;
         }
 
         .filtro{

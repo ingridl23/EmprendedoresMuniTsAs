@@ -19,7 +19,9 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href= "{{ asset('css/styles2.css') }}" rel="stylesheet" />
+     <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styles2.css') }}" rel="stylesheet" />
     <link href= "{{ asset('css/footer.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
 </head>
@@ -27,15 +29,15 @@
 
 <body id="page-top">
     <!-- ======= Header ======= -->
-    <div class="custom-navbar-container">
-        <header id="header" class="fixed-top ">
-            <div class="container-fluid px-4 container">
-                <!-- Navbar principal -->
-                <nav class="navbar navbar-expand-lg navbar-light py-2" id="mainNav">
-                    <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
+<div class="custom-navbar-container">
+    <header id="header" class="fixed-top header-scrolled">
+        <div class="container-fluid px-4 container">
+            <!-- Navbar principal -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
+                <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{asset('assets/img/logo-muni-azul-claro-removebg-preview.png')}}" alt="Logo Tres Arroyos"
+                            <img src="{{asset('assets/img/oficinaempleodireccioncomercio-02.png')}}" alt="Logo Tres Arroyos"
                                 class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -57,6 +59,9 @@
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="#contacto ">Contacto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/emprendedores ">Emprendedores</a>
                                 </li>
                             </ul>
 

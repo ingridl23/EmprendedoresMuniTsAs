@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <meta name="csrf-token" content="{{csrf_token()}}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Emprendedores</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -19,13 +20,15 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 </head>
 
-<!--=======Header=======-->
+<body id="page-top">
+
+    <!--=======Header=======-->
 <div class="custom-navbar-container">
     <header id="header" class="fixed-top header-scrolled">
         <div class="container-fluid px-4 container">
@@ -35,7 +38,7 @@
 
                     <!-- Logo y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                        <img src="assets/img/logo-muni-azul-claro-removebg-preview.png" alt="Logo Tres Arroyos"
+                        <img src="assets/img/oficinaempleodireccioncomercio-02.png" alt="Logo Tres Arroyos"
                             class="logo-img me-2">
                         <span class="brand-text"></span>
                     </a>
@@ -90,8 +93,9 @@
                                 </div>
                             </a>
 
-                            @if(Auth::check() && Auth::user()->hasRole('admin'))
-                                <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
+                            @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                <form action="/logout" method="post"
+                                    class="get-started-btn scrollto btn-contact cerrarSesion">
                                     @csrf
                                     <button type="submit">
                                         <div class="get-started-group font-color-bl">
@@ -101,13 +105,13 @@
                                     </button>
                                 </form>
                             @else
-                            <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                <div class="get-started-group font-color-bl">
-                                    <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-                                    </i>
+                                <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
+                                    <div class="get-started-group font-color-bl">
+                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+                                        </i>
                                         <span class="btn-text">Panel<br>Admin</span>
-                                </div>
-                            </a>
+                                    </div>
+                                </a>
                             @endif
                         </div>
                     </div>
@@ -117,12 +121,6 @@
     </header>
 </div>
 <!-- End Header -->
-
-
-
-<body id="page-top">
-
-
 
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
@@ -137,9 +135,10 @@
                         Aquí encontrarás historias, productos y proyectos que reflejan el talento, la identidad y la
                         creatividad de nuestra comunidad.</p>
 
-                    <p class="text-white-75 mb-5">Si formás parte de la Dirección de Cultura y tenés un
+                    <p class="text-white-75 mb-5">Si formás parte de la direccion de empleo y capacitacion y tenés un
                         emprendimiento,
-                        ¡este es tu lugar! </p>
+                    </p>
+                    <h3 class="text-white-75 ">¡Este es tu lugar!</h3>
 
                 </div>
             </div>
@@ -170,115 +169,142 @@
                 <form class="form-inline my-2 my-lg-0">
                     <div class="row">
                         <div class="form-floating col-auto">
-                            <input id="emprendedores-filter" class="form-control mr-sm-2" type="search" placeholder="Search"
-                                aria-label="Search">
+                            <input id="emprendedores-filter" class="form-control mr-sm-2" type="search"
+                                placeholder="Search" aria-label="Search">
                         </div>
                         <div class="col-auto">
-                            <button class="btn btn-primary btn-xl my-2 my-sm-0 botonFiltro" type="submit">Buscar</button>
+                            <button class="btn btn-primary btn-xl my-2 my-sm-0 botonFiltro"
+                                type="submit">Buscar</button>
                         </div>
                     </div>
                 </form>
-                @if(Auth::check() && Auth::user()->hasRole('admin'))
-                <div>
-                    <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonAgregarEmprendimiento" data-bs-dismiss="modal" type="button">
-                        <a href="emprendedores/nuevoEmprendimiento">¡Agregar nuevo Emprendimiento!</a>
-                    </button>
-                </div>
+                @if (Auth::check() && Auth::user()->hasRole('admin'))
+                    <div>
+                        <button
+                            class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonAgregarEmprendimiento"
+                            data-bs-dismiss="modal" type="button">
+                            <a href="emprendedores/nuevoEmprendimiento">¡Agregar nuevo Emprendimiento!</a>
+                        </button>
+                    </div>
                 @endif
             </div>
             <div id="emprendedores-container" class="emprendedores-container">
             </div>
             <div>
-            @foreach ($emprendedoresPorCategoria as $categoria=>$emprendedores)
-                <h3 class="tituloCategorias">{{$categoria}}</h3>
-                <div class="container d-flex justify-content-center  align-items-center min-vh-100">
-                    <div id="carrousel" class="shadow-wrapper p-2 rounded-4"> <!-- sombreado acá -->
-                        <div id="carousel-{{$categoria}}" class="carousel slide w-50 mx-auto" data-bs-ride="carousel" data-interval="1000">
-                            <div class="carousel-inner contenedorCarrusel" role="listbox">
-                            @foreach($emprendedores as $index=>$emprendedor)
-                                <div class="portfolio-item carousel-item {{$index===0 ? 'active':""}}">
-                                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal{{$emprendedor->id}}">
-                                        <div class="portfolio-hover">
-                                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                        </div>
-                                        <img class="img-fluid" src="{{ asset('storage/' . $emprendedor->imagen) }}" alt="..." />
-                                    </a>
-                                    <div class="portfolio-caption">
-                                        <div class="portfolio-caption-heading">{{$emprendedor->nombre}}</div>
-                                        <div class="portfolio-caption-subheading text-muted">{{$emprendedor->categoria}}</div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-modal modal fade" id="portfolioModal{{$emprendedor->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" class="cierreEmprendedor" />
+                @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
+                    <h3>{{ $categoria }}</h3>
+                    <div class="container d-flex justify-content-center  align-items-center min-vh-100">
+                        <div id="carrousel" class="shadow-wrapper p-2 rounded-4"> <!-- sombreado acá -->
+                            <div id="carousel-{{ $categoria }}" class="carousel slide w-50 mx-auto"
+                                data-bs-ride="carousel" data-interval="1000">
+                                <div class="carousel-inner contenedorCarrusel" role="listbox">
+                                    @foreach ($emprendedores as $index => $emprendedor)
+                                        <div class="portfolio-item carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                            <a class="portfolio-link" data-bs-toggle="modal"
+                                                href="#portfolioModal{{ $emprendedor->id }}">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content"><i
+                                                            class="fas fa-plus fa-3x"></i></div>
+                                                </div>
+                                                <img class="img-fluid"
+                                                    src="{{ asset('storage/' . $emprendedor->imagen) }}"
+                                                    alt="..." />
+                                            </a>
+                                            <div class="portfolio-caption">
+                                                <div class="portfolio-caption-heading">{{ $emprendedor->nombre }}
+                                                </div>
+                                                <div class="portfolio-caption-subheading text-muted">
+                                                    {{ $emprendedor->categoria }}</div>
                                             </div>
-                                            <div class="container">
-                                                <div class="row justify-content-center">
-                                                    <div class="col-lg-8">
-                                                        <div class="modal-body">
-                                                            <h2 class="text-uppercase"> {{$emprendedor->nombre}}</h2>
-                                                            <img class="img-fluid d-block mx-auto"
-                                                                src="{{asset('storage/' .$emprendedor->imagen)}}"
-                                                                alt="..." />
-                                                            <p>{{$emprendedor->descripcion}}</p>
-                                                            <ul class="list-inline">
-                                                                <li>
-                                                                    <strong>Emprendedor</strong>
-                                                                </li>
-                                                                <li>
-                                                                    <strong>Categoria:</strong>{{$emprendedor->categoria}}
-                                                                </li>
-                                                            </ul>
-                                                            <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
-                                                                data-bs-dismiss="modal" type="button">
-                                                                <a href="/emprendedor/{{$emprendedor->id}}">
-                                                                    ver más acerca de {{$emprendedor->nombre}}
-                                                                </a>
-                                                            </button>
-                                                            <div class="containerBotonesEmprendedor">
-                                                                @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                                                    <button
-                                                                        class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
-                                                                        data-bs-dismiss="modal" type="button">
-                                                                        <a
-                                                                            href="/emprendedores/formEditarEmprendimiento/{{$emprendedor->id}}">
-                                                                            Editar emprendimiento
-                                                                        </a>
-                                                                    </button>
-                                                                    <button
-                                                                        class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar"
-                                                                        data-bs-dismiss="modal" type="button">
-                                                                        <form action="/emprendedor/{{$emprendedor->id}}" class="formEliminar" method="post">
-                                                                            @csrf
-                                                                            @method('DELETE')
-                                                                            <input type="submit" class="inputEliminar"
-                                                                                value="Eliminar emprendimiento">
-                                                                        </form>
-                                                                    </button>
-                                                                @endif
+                                        </div>
+                                        <div class="portfolio-modal modal fade"
+                                            id="portfolioModal{{ $emprendedor->id }}" tabindex="-1" role="dialog"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="close-modal" data-bs-dismiss="modal"><img
+                                                            src="assets/img/close-icon.svg" alt="Close modal"
+                                                            class="cierreEmprendedor" />
+                                                    </div>
+                                                    <div class="container">
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-lg-8">
+                                                                <div class="modal-body">
+                                                                    <h2 class="text-uppercase">
+                                                                        {{ $emprendedor->nombre }}</h2>
+                                                                    <img class="img-fluid d-block mx-auto"
+                                                                        src="{{ asset('storage/' . $emprendedor->imagen) }}"
+                                                                        alt="..." />
+                                                                    <p>{{ $emprendedor->descripcion }}</p>
+                                                                    <ul class="list-inline">
+                                                                        <li>
+                                                                            <strong> Emprendedor</strong>
+                                                                        </li>
+                                                                        <li>
+                                                                            <strong>Categoria:</strong>{{ $emprendedor->categoria }}
+                                                                        </li>
+                                                                    </ul>
+                                                                        <button
+                                                                            class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
+                                                                             data-bs-dismiss="modal"
+                                                                            type="button">
+                                                                            <a
+                                                                                href="/emprendedor/{{ $emprendedor->id }}">
+                                                                                ver más acerca de
+                                                                                {{ $emprendedor->nombre }}
+                                                                            </a>
+                                                                        </button>
+                                                                        <div class="containerBotonesEmprendedor">
+                                                                            @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                                                                <button
+                                                                                    class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    type="button">
+                                                                                    <a
+                                                                                        href="/emprendedores/formEditarEmprendimiento/{{ $emprendedor->id }}">
+                                                                                        Editar emprendimiento
+                                                                                    </a>
+                                                                                </button>
+                                                                                <button
+                                                                                    class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    type="button">
+                                                                                    <form
+                                                                                        action="/emprendedor/{{ $emprendedor->id }}"
+                                                                                        class="formEliminar"
+                                                                                        method="post">
+                                                                                        @csrf
+                                                                                        @method('DELETE')
+                                                                                        <input type="submit"
+                                                                                            class="inputEliminar"
+                                                                                            value="Eliminar emprendimiento">
+                                                                                    </form>
+                                                                                </button>
+                                                                            @endif
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
-                            @endforeach
+                                <a class="carousel-control-prev" href="#carousel-{{ $categoria }}" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-{{ $categoria }}" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
-                            <a class="carousel-control-prev" href="#carousel-{{$categoria}}" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carousel-{{$categoria}}" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
             </div>
         </div>
     </section>
@@ -306,16 +332,16 @@
     <!-- Core theme JS-->
 
 
-    @if(session('success'))
+    @if (session('success'))
         <script>
-            window.mensajeExito=@json(session('success'));
+            window.mensajeExito = @json(session('success'));
         </script>
     @endif
 
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/logicaform.js') }} "></script>
-    <script src="{{asset('js/emprendedores.js')}}"></script>
+    <script src="{{ asset('js/emprendedores.js') }}"></script>
 
     <!--Para alertas desde JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

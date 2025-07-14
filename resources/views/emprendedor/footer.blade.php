@@ -46,7 +46,7 @@
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
 
-                            <a class="email" href="mailto:reclamos@tresarroyos.gov.ar" target="_blank">
+                            <a class="email" href="mailto:oficina.empleo@tresarroyos.gov.ar" target="_blank">
                                 <i class="fa-solid fa-envelope"></i>
                             </a>
 

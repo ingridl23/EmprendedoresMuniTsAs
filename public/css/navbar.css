@@ -28,7 +28,6 @@ i.servicio-icono, i.fas.fa-lock-open{
 
 #mainNav {
     background: white;
-    padding: 1rem 0rem;
     align-content: space-between;
 }
 
@@ -52,6 +51,10 @@ i.servicio-icono, i.fas.fa-lock-open{
     color: #25afc3;
 }
 
+#mainNav{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
 /* Efecto underline en hover */
 
 #mainNav .navbar-nav .nav-link::after {
@@ -90,7 +93,7 @@ i.servicio-icono, i.fas.fa-lock-open{
 }
 
 .logo-img {
-    max-height: 40px;
+    max-height: 5rem;
     width: auto;
     transition: transform 0.3s ease;
     margin-top: 0%;
@@ -216,13 +219,19 @@ nav ul li.nav-item.serParte{
         width: 80%;
     }
     .logo-img {
-        max-height: 30px;
+        max-height: 50px;
+    }
+}
+
+@media (min-width:1020px){
+    .logo-img {
+        max-height: 65px;
     }
 }
 
 @media(min-width:1100px){
-        .logo-img {
-        max-height: 40px;
+    .logo-img {
+        max-height: 80px;
     }
 }
 
@@ -272,7 +281,10 @@ nav ul li.nav-item.serParte{
         font-size: 1.25rem;
     }
     .logo-img {
-        max-height: 35px;
+        max-height: 4rem;
+        width: auto;
+        transition: transform 0.3s ease;
+        margin-top: 0%;
     }
     .brand-text {
         font-size: 14px;

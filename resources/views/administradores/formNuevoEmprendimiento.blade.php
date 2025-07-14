@@ -50,8 +50,8 @@
         </div>
             
         @if ($errors->any())
-            <div class="alert alert-danger text-start mb-3">
-                <ul class="mb-0">
+            <div class="containerError">
+                <ul class="alert alert-danger text-center mb-3">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach

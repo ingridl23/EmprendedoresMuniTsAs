@@ -9,7 +9,7 @@
 
 
             <!-- presentacion de la seccion noticias-->
-            <section class="page-section text-white" style="background-color: #20c9b2 !important;">
+            <section class="page-section text-white" style="background-color: #25e9a7 !important;">
                 <div class="container px-4 px-lg-5 text-center">
                     <h2 class="mb-4">¡Ultimas Novedades En Programas Y Capacitaciones!</h2>
                     <a class="btn btn-light btn-xl" href="{{ url('/noticias') }}">Ver Más</a>

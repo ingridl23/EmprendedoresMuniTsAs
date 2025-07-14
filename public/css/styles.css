@@ -19,8 +19,8 @@
             --bs-red: #e02d2d;
             --bs-orange: #f4623a;
             --bs-yellow: #ffc107;
-            --bs-green: #198754;
-            --bs-teal: #20c9b2;
+            --bs-green: #36be7f;
+            --bs-teal: #25e9a7;
             --bs-cyan: #0dcaf0;
             --bs-black: #000;
             --bs-white: #fff;
@@ -4477,7 +4477,7 @@
         }
 
         .alert {
-            --bs-alert-bg: transparent;
+            --bs-alert-bg: #F2D5DB;
             --bs-alert-padding-x: 1rem;
             --bs-alert-padding-y: 1rem;
             --bs-alert-margin-bottom: 1rem;
@@ -4493,7 +4493,17 @@
             border: var(--bs-alert-border);
             border-radius: var(--bs-alert-border-radius);
         }
+        div.containerError ul{
+            color: #731D2C;
+        }
 
+        div.containerError ul li{
+            list-style: none;
+        }
+        .containerError{
+            margin-left: auto;
+            margin-right: auto;
+        }
         .alert-heading {
             color: inherit;
         }
@@ -10994,7 +11004,7 @@
             }
         }
         @media(min-width:1100px){
-            div.container.px-4{
+            nav div.container.px-4{
                 padding-left: 1.5rem !important;
             }
         }
@@ -11022,7 +11032,7 @@
         @media (min-width: 992px) {
             header.masthead {
                 height: 150vh;
-                min-height: 40rem;
+                min-height: 48rem;
                 padding-top: 4.5rem;
                 padding-bottom: 0;
             }
@@ -11033,7 +11043,7 @@
             header.masthead .h1 {
                 font-size: 3rem;
             }
-            div.container.px-4{
+            nav div.container.px-4{
                 padding-left: 0.5rem !important;
             }
         }
@@ -11045,7 +11055,7 @@
             }
             header.masthead {
                 height: 170vh;
-                min-height: 60rem;
+                min-height: 52rem;
             }
         }
 
@@ -11203,7 +11213,7 @@
         }
 
         .submit {
-            background-color: #0d6efd !important;
+            background-color: var( --bs-green) !important;
             border: #ccc solid 0.2rem;
             cursor: pointer;
             overflow: hidden;
@@ -11214,6 +11224,7 @@
             transform: scale(1.1);
             transition: transform 0.2s ease;
             border: lightblue solid 0.1rem;
+            background-color: var( --bs-teal)!important;
         }
 
         input.oculto {
@@ -11251,7 +11262,7 @@
         input,
         textarea, #emprendedores-filter {
             border: none;
-            border-bottom: 2px solid var(--bs-blue);
+            border-bottom: 2px solid var( --bs-green);
             color: #000;
             width: 100%;
             padding: 0.8rem 0.5rem 0.3rem;

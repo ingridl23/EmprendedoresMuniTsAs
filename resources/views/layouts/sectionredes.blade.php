@@ -37,6 +37,7 @@
             </div>
             <div class="col-lg-8 text-center">
                 <h2 class="text-white mt-0"> Nos encotramos en 1810 Nº 475 </h2>
+                <h4 class="text-white mt-0">Horarios de atencion : De lunes a viernes de 7hs a 14hs </h4>
                 <hr class="divider divider-light" />
 
                 <div class="map-wrapper">

@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', e => {
         Swal.fire({
             title: "Eliminado!",
             text: window.mensajeExito,
-            icon: "success"
+            icon: "success",
+            confirmButtonColor: "#36be7f"
         });
     }
 
@@ -187,7 +188,7 @@ document.addEventListener('DOMContentLoaded', e => {
                     text: "¡No se podrá revertir!",
                     icon: "warning",
                     showCancelButton: true,
-                    confirmButtonColor: "#007bff",
+                    confirmButtonColor: "#36be7f",
                     cancelButtonColor: "rgb(148, 0, 0)",
                     cancelButtonText: "Cancelar",
                     confirmButtonText: "Si, eliminar"

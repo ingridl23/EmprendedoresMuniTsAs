@@ -8,7 +8,7 @@
 
                     <!-- Logo y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                        <img src="{{asset('assets/img/logo-muni-azul-claro-removebg-preview.png')}}"
+                        <img src="{{asset('assets/img/oficinaempleodireccioncomercio-02.png')}}"
                             alt="Logo Tres Arroyos" class="logo-img me-2">
                         <span class="brand-text"></span>
                     </a>
@@ -24,7 +24,7 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav mx-auto my-2 my-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">Presentación</a>
+                                <a class="nav-link"href="{{ url('/programas') }}">Programas</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
