@@ -93,12 +93,16 @@
             <!--seccioon carrousel club de  emprendedores -->
             <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/1.jpg"
+                    <div class="carousel-item active" data-bs-interval="1000">
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/escuelaemprendedores.jpg"
                             class="img-fluid  d-block w-100" alt="...">
 
                     </div>
 
+                    <div class="carousel-item">
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/1.jpg"
+                            class="img-fluid d-block  w-100" alt="...">
+                    </div>
 
                     <div class="carousel-item">
                         <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/2.jpg"
@@ -476,6 +480,7 @@
                     relación
                     laboral formal,
                     compartiendo el costo de formación con el Estado.</p>
+
 
 
 
