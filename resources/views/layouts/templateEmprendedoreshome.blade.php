@@ -127,95 +127,58 @@
         <div class="container px-4 px-lg-5">
             <h2 class="text-center mt-0">Apoyamos el talento local, visibilizamos el trabajo cultural</h2>
             <hr class="divider" />
-<<<<<<< HEAD
 
 
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">Sturdy Themes</h3>
-                        <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
-=======
+
+
             <div class="row justify-content-center  align-baseline">
                 <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
                     <div class="mt-5">
                         <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
-                        <img src="{{asset('assets/img/empleador.png')}}" class="divider">
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/empleador.png" class="divider">
                         <h3 class="h4 mb-2">¿Sos empleador?</h3>
-                        <p class="text-muted mb-0">podrás asesorarte acerca de los programas de empleo y capacitacion
+                        <p class="text-muted mb-0">podrás asesorarte acerca de los programas de empleo y
+                            capacitacion
                             vigentes.</p>
->>>>>>> 50be95cb65598bcf6fdb3d64601500cc3319081a
                     </div>
                 </div>
-                -->
 
-                <div class="row justify-content-center  align-baseline">
-                    <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
-                            </div>
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/empleador.png" class="divider">
-                            <h3 class="h4 mb-2">¿Sos empleador?</h3>
-                            <p class="text-muted mb-0">podrás asesorarte acerca de los programas de empleo y
-                                capacitacion
-                                vigentes.</p>
+                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
-<<<<<<< HEAD
-=======
-                        <img src="{{asset('assets/img/analitica.png')}}" class="divider">
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/analitica.png" class="divider">
                         <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
                         <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes quieran
                             iniciar un emprendimiento o reforzar uno existente.</p>
->>>>>>> 50be95cb65598bcf6fdb3d64601500cc3319081a
                     </div>
+                </div>
 
-                    <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
-                            </div>
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/analitica.png" class="divider">
-                            <h3 class="h4 mb-2">¿Tenes un emprendimiento?</h3>
-                            <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes quieran
-                                iniciar un emprendimiento o reforzar uno existente.</p>
+                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
-<<<<<<< HEAD
-=======
                         <br>
-                        <img src="{{asset('assets/img/curriculum-vitae.png')}}" class="divider">
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/curriculum-vitae.png" class="divider">
                         <h3 class="h4 mb-2">¿Te encontras en busqueda de empleo?</h3>
 
                         <p class="text-muted mb-0">recibimos tu CV y llevamos adelante acciones para la búsqueda de
                             empleo y la intermediación laboral.</p>
->>>>>>> 50be95cb65598bcf6fdb3d64601500cc3319081a
                     </div>
-
-                    <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
-                            </div>
-                            <br>
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/curriculum-vitae.png" class="divider">
-                            <h3 class="h4 mb-2">¿Te encontras en busqueda de empleo?</h3>
-
-                            <p class="text-muted mb-0">recibimos tu CV y llevamos adelante acciones para la búsqueda de
-                                empleo y la intermediación laboral.</p>
-                        </div>
-                    </div>
-
-
-
                 </div>
+
+
+
+            </div>
 
 
     </section>
 
 
-    <br>
 
 
-    <h1>aca va informacion de programa</h1>
+    @include('layouts.programas')
 
 
 
@@ -280,7 +243,8 @@
                             @enderror
 
 
-                            <label class="message" for="message">Nombre y Apellido<span class="asterisco">*</span></label>
+                            <label class="message" for="message">Nombre y Apellido<span
+                                    class="asterisco">*</span></label>
                             <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                         </div>
 
@@ -329,7 +293,8 @@
                             @enderror
 
 
-                            <label class="message" for="message">Describa brevemente su emprendimiento<span class="asterisco">*</span></label>
+                            <label class="message" for="message">Describa brevemente su emprendimiento<span
+                                    class="asterisco">*</span></label>
                             <p class="form-subtitulos">Escriba una descripción a continuación</p>
                         </div>
 

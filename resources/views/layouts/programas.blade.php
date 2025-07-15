@@ -24,8 +24,8 @@
     <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/programas.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+
 
 
 </head>
@@ -53,8 +53,8 @@
 
             </p>
 
+            <h3 class="subtitulo">Objetivos y Acciones</h3>
             <ul>
-                <h3 class="subtitulo">Objetivos y Acciones</h3>
                 <li>Ampliar la base emprendedora mediante actividades de sensibilización y promoción para diversos
                     públicos.
                 </li>
@@ -70,8 +70,8 @@
             </ul>
 
 
+            <h3 class="subtitulo">Beneficios para los miembros</h3>
             <ul>
-                <h3 class="subtitulo">Beneficios para los miembros</h3>
                 <li>Participación en la Mesa de Emprendedores:
                     Reuniones periódicas con otros miembros activos para compartir ideas, planificar acciones y acceder
                     a
@@ -90,23 +90,29 @@
             </ul>
 
 
-            <!--seccioon carrousel clubs emprendedores -->
+            <!--seccioon carrousel club de  emprendedores -->
             <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedores/foto1.jpg"
-                            class="d-block w-100" alt="...">
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/1.jpg"
+                            class="img-fluid  d-block w-100" alt="...">
 
                     </div>
 
 
                     <div class="carousel-item">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedores/foto2.jpg"
-                            class="d-block w-100" alt="...">
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/2.jpg"
+                            class="img-fluid d-block  w-100" alt="...">
                     </div>
+
                     <div class="carousel-item">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedores/foto3.jpg"
-                            class="d-block w-100" alt="...">
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/3.jpg"
+                            class="img-fluid d-block w-100" alt="...">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/4.jpg"
+                            class="img-fluid d-block w-100" alt="...">
                     </div>
 
 
@@ -123,361 +129,402 @@
                 </button>
             </div>
 
-        </div>
-
-
-        <!-- pie de carrousel -->
-        <p class="text-clubs">
-            Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
-            emprendedurismo local, promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y
-            mejores oportunidades para quienes apuestan a crecer en nuestra comunidad.
-        </p>
-
-        <p class="text-clubs"> Contactanos y sumate a esta comunidad en acción.
-            ¿Querés ser parte del Club de Emprendedores?</p>
 
 
 
-
-
-
-        <!-- Portfolio-->
-        <div id="portfolio">
-            <div class="container-fluid p-0">
-                <div class="row g-0">
-
-
-
-                    <!--esto se va y solo quedaria el foreach para traer las 6 imagenes -->
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-                            <img class="img-fluid"
-                                src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/2.jpg"
-                                alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Emprendedor</div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
-                            <div class="portfolio-box-caption p-3">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-            <!-- Call to action-->
-            <section class="page-section text-white" style="background-color: #25e9a7 !important;">
-                <div class="container px-4 px-lg-5 text-center">
-                    <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
-                    <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
-                </div>
-            </section>
-        </div>
-
-
-
-
-
-
-
-
-
-
-        <div class="programas">
-            <h3 class="subtitulo">Escuela de Emprendedores</h3>
-            <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>
+            <!-- pie de carrousel -->
             <p class="text-clubs">
-                La Escuela de Emprendedores es un programa diseñado para formar, asesorar y acompañar a quienes
-                están
-                iniciando
-                o quieren profesionalizar su emprendimiento.
-
-                Esta iniciativa busca generar un espacio de intercambio, brindando herramientas prácticas para la
-                gestión de
-                proyectos, estrategias de negocio,
-                análisis de mercado y planificación financiera.
-
-
+                Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
+                emprendedurismo local, promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y
+                mejores oportunidades para quienes apuestan a crecer en nuestra comunidad.
             </p>
 
+            <p class="text-clubs"> Contactanos y sumate a esta comunidad en acción.
+                ¿Querés ser parte del Club de Emprendedores?</p>
 
-            <!--seccioon carrousel capacitaciones emprendedores -->
-            <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedorescapacitaciones/fotocap1.jpg"
-                            class="d-block w-100" alt="...">
+
+
+
+
+
+            <!-- Portfolio-->
+            <div id="portfolio">
+                <div class="container-fluid p-0">
+                    <div class="row g-0">
+
+
+
+                        <!--esto se va y solo quedaria el foreach para traer las 6 imagenes -->
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
+                                <img class="img-fluid"
+                                    src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/2.jpg"
+                                    alt="..." />
+                                <div class="portfolio-box-caption">
+                                    <div class="project-category text-white-50">Category</div>
+                                    <div class="project-name">Emprendedor</div>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
+                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
+                                <div class="portfolio-box-caption">
+                                    <div class="project-category text-white-50">Category</div>
+                                    <div class="project-name">Project Name</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
+                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
+                                <div class="portfolio-box-caption">
+                                    <div class="project-category text-white-50">Category</div>
+                                    <div class="project-name">Project Name</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
+                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
+                                <div class="portfolio-box-caption">
+                                    <div class="project-category text-white-50">Category</div>
+                                    <div class="project-name">Project Name</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
+                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
+                                <div class="portfolio-box-caption">
+                                    <div class="project-category text-white-50">Category</div>
+                                    <div class="project-name">Project Name</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
+                                <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
+                                <div class="portfolio-box-caption p-3">
+                                    <div class="project-category text-white-50">Category</div>
+                                    <div class="project-name">Project Name</div>
+                                </div>
+                            </a>
+                        </div>
 
                     </div>
-
-
-                    <div class="carousel-item">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedorescapacitaciones/fotocap2.jpeg"
-                            class="d-block w-100" alt="...">
-                    </div>
-
-
-
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+
+
+
+
+                <!-- Call to action-->
+                <section class="page-section text-white" style="background-color: #25e9a7 !important;">
+                    <div class="container px-4 px-lg-5 text-center">
+                        <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
+                        <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
+                    </div>
+                </section>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="programas">
+                <h3 class="subtitulo">Escuela de Emprendedores</h3>
+                <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>
+                <p class="text-clubs">
+                    La Escuela de Emprendedores es un programa diseñado para formar, asesorar y acompañar a quienes
+                    están
+                    iniciando
+                    o quieren profesionalizar su emprendimiento.
+
+                    Esta iniciativa busca generar un espacio de intercambio, brindando herramientas prácticas para la
+                    gestión de
+                    proyectos, estrategias de negocio,
+                    análisis de mercado y planificación financiera.
+
+
+                </p>
+
+
+                <!--seccioon carrousel capacitaciones emprendedores -->
+                <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="1000">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/capacitacionesemprendedoresadaptadas/1.jpg"
+                                class="d-block w-100" alt="...">
+
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/capacitacionesemprendedoresadaptadas/4.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/capacitacionesemprendedoresadaptadas/5.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+
+
+                <ul>
+                    <li>Dirigido a: Emprendedores locales en etapa inicial o de consolidación</li>
+                    <li>Objetivo: Crear un programa integral de formación emprendedora</li>
+                    <li>Modalidad: Cursos, talleres y asesoramiento técnico personalizado
+
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="programas">
+                <h2 class="subtitulo1">Feria Del Parque Cabañas</h2>
+                <h3 class="subtitulo">Impulsando el trabajo local y el comercio emprendedor</h3>
+                <p class="text-clubs">La Feria del Parque Cabañas es una propuesta organizada por el Club de
+                    Emprendedores,
+                    bajo
+                    la
+                    coordinación de la
+                    Oficina de Empleo y Capacitación de la Municipalidad de Tres Arroyos.
+
+                    Este espacio tiene como objetivo promover el trabajo autogestivo y la
+                    comercialización de productos realizados por emprendedores locales,
+                    en un entorno natural y accesible para toda la comunidad.</p>
+
+
+                <p class="text-clubs">
+
+                <ol>
+                    <li> 🗓 Días: Primer domingo de cada mes</li>
+                    <li>
+                        🕛 Horario: De 12:00 a 18:00 hs (sin excepción)</li>
+                    <li>
+                        📍 Lugar: Parque Cabañas, Tres Arroyos
+                    </li>
+
+
+
+                </ol>
+
+                </p>
+
+
+
+
+                <!--seccioon carrousel ferias de emprendedores al aire libre -->
+                <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="500">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/3.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/5.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/6.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/4.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/8.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/1.jpg"
+                                class="d-block w-100" alt="...">
+
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/2.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+
+
+
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/6.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/7.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/10.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/11.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/9.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/12.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/14.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/15.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/13.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+
+            </div>
+
+            <h2 class="subtitulo1">Programas De Empleo</h2>
+
+            <h3 class="subtitulo">Impulsamos la empleabilidad, la capacitación y la inserción laboral</h3>
+            <p class="text-clubs">Desde la Oficina de Empleo, articulamos con programas nacionales y municipales
+                para
+                brindar
+                oportunidades concretas de inserción laboral y
+                formación profesional.</p>
+
+
+            <div class="programas">
+
+                <h3 class="subtitulo">EPT – Entrenamiento para el Trabajo</h3>
+
+                <p class="text-clubs">Permite que las empresas entrenen aprendices en puestos reales, sin
+                    establecer
+                    relación
+                    laboral formal,
+                    compartiendo el costo de formación con el Estado.</p>
+
+
+
+                <ul>
+
+                    <li> Dirigido a: Personas desocupadas mayores de 18 años</li>
+
+                    <li> Beneficio: Posibilidad de contratación futura con incentivo económico (vía PIL)
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="programas">
+
+                <h3 class="subtitulo">PIL – Programa de Inserción Laboral</h3>
+                <p class="text-clubs">Promueve la contratación de personas con dificultades de empleabilidad
+                    mediante un subsidio para las empresas
+                    que cubre parte del salario del trabajador.</p>
+
+                <ul>
+                    <li>Beneficio: Reducción de carga salarial para las empresas</li>
+                    <li>Objetivo: Estimular la inserción laboral sostenida</li>
+                </ul>
+            </div>
+
+
+
+            <div class="programas">
+
+                <h3 class="subtitulo">PROMOVER – Inclusión Laboral para Personas con Discapacidad</h3>
+                <p class="text-clubs">Brinda acompañamiento personalizado a personas con discapacidad para que
+                    puedan
+                    acceder a
+                    empleos de calidad o desarrollar sus propios emprendimientos.</p>
+
+                <ul>
+                    <li>Apoyo integral: Orientación, formación y vinculación con el mundo laboral</li>
+                    <li>Enfoque: Autonomía, desarrollo y sostenibilidad</li>
+                </ul>
             </div>
 
         </div>
 
-
-        <ul>
-            <li>Dirigido a: Emprendedores locales en etapa inicial o de consolidación</li>
-            <li>Objetivo: Crear un programa integral de formación emprendedora</li>
-            <li>Modalidad: Cursos, talleres y asesoramiento técnico personalizado
-
-            </li>
-        </ul>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-    <div class="programas">
-        <h2 class="subtitulo1">Feria Del Parque Cabañas</h2>
-        <h3 class="subtitulo">Impulsando el trabajo local y el comercio emprendedor</h3>
-        <p class="text-clubs">La Feria del Parque Cabañas es una propuesta organizada por el Club de Emprendedores,
-            bajo
-            la
-            coordinación de la
-            Oficina de Empleo y Capacitación de la Municipalidad de Tres Arroyos.
-
-            Este espacio tiene como objetivo promover el trabajo autogestivo y la
-            comercialización de productos realizados por emprendedores locales,
-            en un entorno natural y accesible para toda la comunidad.</p>
-
-
-        <p class="text-clubs">
-
-        <ol>
-            <li> 🗓 Días: Primer domingo de cada mes</li>
-            <li>
-                🕛 Horario: De 12:00 a 18:00 hs (sin excepción)</li>
-            <li>
-                📍 Lugar: Parque Cabañas, Tres Arroyos
-            </li>
-
-
-
-        </ol>
-
-        </p>
-
-
-
-
-        <!--seccioon carrousel ferias de emprendedores al aire libre -->
-        <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="1000">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/foto11.webp"
-                        class="d-block w-100" alt="...">
-
-                </div>
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/foto13.webp"
-                        class="d-block w-100" alt="...">
-                </div>
-
-
-
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/foto7.webp"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/DSC_0494.JPG"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/foto10.webp"
-                        class="d-block w-100" alt="...">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/foto5.webp"
-                        class="d-block w-100" alt="...">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/foto6.webp"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/foto1.jpg"
-                        class="d-block w-100" alt="...">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/foto9.webp"
-                        class="d-block w-100" alt="...">
-                </div>
-
-
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/foto12.webp"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferias/DSC_0752.JPG"
-                        class="d-block w-100" alt="...">
-                </div>
-
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-    <h2 class="subtitulo1">Programas De Empleo</h2>
-
-    <h3 class="subtitulo">Impulsamos la empleabilidad, la capacitación y la inserción laboral</h3>
-    <p class="text-clubs">Desde la Oficina de Empleo, articulamos con programas nacionales y municipales para
-        brindar
-        oportunidades concretas de inserción laboral y
-        formación profesional.</p>
-
-
-    <div class="programas">
-
-        <h3 class="subtitulo">EPT – Entrenamiento para el Trabajo</h3>
-
-        <p class="text-clubs">Permite que las empresas entrenen aprendices en puestos reales, sin establecer
-            relación
-            laboral formal,
-            compartiendo el costo de formación con el Estado.</p>
-
-        <ul>
-
-            <li> Dirigido a: Personas desocupadas mayores de 18 años</li>
-
-            <li> Beneficio: Posibilidad de contratación futura con incentivo económico (vía PIL)
-
-            </li>
-        </ul>
-    </div>
-
-    <div class="programas">
-
-        <h3 class="subtitulo">PIL – Programa de Inserción Laboral</h3>
-        <p class="text-clubs">Promueve la contratación de personas con dificultades de empleabilidad
-            mediante un subsidio para las empresas
-            que cubre parte del salario del trabajador.</p>
-
-        <ul>
-            <li>Beneficio: Reducción de carga salarial para las empresas</li>
-            <li>Objetivo: Estimular la inserción laboral sostenida</li>
-        </ul>
-    </div>
-
-
-
-    <div class="programas">
-
-        <h3 class="subtitulo">PROMOVER – Inclusión Laboral para Personas con Discapacidad</h3>
-        <p class="text-clubs">Brinda acompañamiento personalizado a personas con discapacidad para que puedan
-            acceder a
-            empleos de calidad o desarrollar sus propios emprendimientos.</p>
-
-        <ul>
-            <li>Apoyo integral: Orientación, formación y vinculación con el mundo laboral</li>
-            <li>Enfoque: Autonomía, desarrollo y sostenibilidad</li>
-        </ul>
-    </div>
-    </div>
-
-    @include('emprendedor.footer')
-    <!-- Bootstrap core JS-->
-    <script src="{{ asset('js/scripts.js') }} "></script>
-    <!-- SimpleLightbox plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-    <!-- Core theme JS-->
+        <!-- Bootstrap core JS-->
+        <script src="{{ asset('js/scripts.js') }} "></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
 </body>
 
 </html>
