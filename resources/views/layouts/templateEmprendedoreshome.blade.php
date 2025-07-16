@@ -329,7 +329,7 @@
     @include('layouts.sectionredes')
 
 
-    @include('layouts.panelAdmin')
+
 
 
     <a href="https://wa.me/2983603748?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de empleo"

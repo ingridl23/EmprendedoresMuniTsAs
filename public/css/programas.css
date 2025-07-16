@@ -75,7 +75,8 @@
         padding-bottom: 2rem;
         background-color: #f9f9f9;
     }
-    /* media query para movil*/
+    /*****************************asignacion de animaciones de scroll programas ************************************************************/
+    /******************** media query para movil *********************************/
     
     @media (max-width: 768px) {
         .text-clubs,

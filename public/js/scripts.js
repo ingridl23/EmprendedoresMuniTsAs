@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll("#navbarResponsive .nav-link")
     );
-    
+
     responsiveNavItems.map(function(responsiveNavItem) {
         responsiveNavItem.addEventListener("click", () => {
             if (window.getComputedStyle(navbarToggler).display !== "none") {
@@ -50,7 +50,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
         elements: "#portfolio a.portfolio-box",
     });
 
-    // ) Intersection Observer para animaciones
+    // ) Intersection Observer para animaciones scroll
+
     const observer = new IntersectionObserver(
         (entries, obs) => {
             entries.forEach((entry) => {
@@ -68,3 +69,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
         )
         .forEach((el) => observer.observe(el));
 });
+//animacion hoja programas
