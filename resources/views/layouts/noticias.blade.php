@@ -70,8 +70,8 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
                                     <div class="get-started-group font-color-bl">
-                                        <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
-                                            class=" img-btn-logonav img-fluid mb-1" alt="Imagen municipalidad">
+                                        <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}"
+                                            slt class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>

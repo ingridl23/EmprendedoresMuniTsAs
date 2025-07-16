@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', e => {
             })
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 // document.getElementById("emprendedores-container").innerHTML += data
                 // console.log(html);
                 showContent(data, admin);
@@ -102,13 +103,14 @@ document.addEventListener('DOMContentLoaded', e => {
             let card = document.createElement('div');
             card.className = 'card';
             let url="storage/"+emprendimiento.imagen;
+            let urlTemporal="assets/img/bg-masthead.jpg";
             let contenido = `
                 <div class="portfolio-item">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal${emprendimiento.id}">
                         <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="${url}" alt="${emprendimiento.nombre}" />
+                        <img class="img-fluid" src="${urlTemporal}" alt="${emprendimiento.nombre}" />
                     </a>
                                     <div class="portfolio-caption">
                                         <div class="portfolio-caption-heading">${emprendimiento.nombre}</div>
@@ -118,14 +120,14 @@ document.addEventListener('DOMContentLoaded', e => {
                                 <div class="portfolio-modal modal fade" id="portfolioModal${emprendimiento.id}" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" class="cierreEmprendedor" />
+                                            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/iconos/close-icon.svg" alt="Close modal" class="cierreEmprendedor" />
                                             </div>
                                             <div class="container">
                                                 <div class="row justify-content-center">
                                                     <div class="col-lg-8">
                                                         <div class="modal-body">
                                                             <h2 class="text-uppercase"> ${emprendimiento.nombre}</h2>
-                                                            <img class="img-fluid d-block mx-auto"
+                                                            <img class="img-fluid d-block mx-auto img-modalEmprendedor"
                                                                 src=${url}
                                                                 alt="${emprendimiento.nombre}" />
                                                             <p>${emprendimiento.descripcion}</p>
@@ -172,8 +174,10 @@ document.addEventListener('DOMContentLoaded', e => {
             let form=crearForm(emprendimiento.id);
             card.innerHTML=contenido;
             container.appendChild(card);
-            document.querySelector(`.eliminar${emprendimiento.id}`).appendChild(form);
-            asignarCartel();
+            if(admin==true){
+                document.querySelector(`.eliminar${emprendimiento.id}`).appendChild(form);
+                asignarCartel();
+            }
         })
     }
 

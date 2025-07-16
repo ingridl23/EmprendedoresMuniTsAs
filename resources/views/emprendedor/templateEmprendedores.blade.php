@@ -59,7 +59,7 @@
                             </li>
 
                             <li class="nav-item serParte">
-                                <a class="nav-link" href="{{ url('/formar/parte') }}"">ser parte</a>
+                                <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
                             </li>
                         </ul>
 
@@ -69,7 +69,7 @@
                                 class="get-started-btn crollto">
                                 <div class="get-started-group font-color-bl">
                                     <img src="assets/img/MiTr-remove-removebg-preview.png" slt
-                                        class=" img-btn-logonav img-fluid mb-1">
+                                        class=" img-btn-logonav mb-1">
                                     <span class="btn-text">MiTresa</span>
                                 </div>
                             </a>
@@ -135,7 +135,7 @@
                         Aquí encontrarás historias, productos y proyectos que reflejan el talento, la identidad y la
                         creatividad de nuestra comunidad.</p>
 
-                    <p class="text-white-75 mb-5">Si formás parte de la direccion de empleo y capacitacion y tenés un
+                    <p class="text-white-75 mb-5">Si formás parte de la dirección de Empleo y Capacitación y tenés un
                         emprendimiento,
                     </p>
                     <h3 class="text-white-75 ">¡Este es tu lugar!</h3>
@@ -160,17 +160,17 @@
     <!--******************************************************************************************************* -->
     <!-- Portfolio Grid-->
     <section class="page-section bg-light" id="portfolio">
+        
         <div class="container">
             <div class="text-center">
                 <h1 class="section-subheading text-muted"> Conoce La propuesta de cada emprendedor</h1>
             </div>
             <br>
-            <div class="filtro">
+            <div class="{{(Auth::check() && Auth::user()->hasRole('admin')) ? 'filtroAdmin' : '' }}">
                 <form class="form-inline my-2 my-lg-0">
-                    <div class="row">
+                    <div class="filtro">
                         <div class="form-floating col-auto">
-                            <input id="emprendedores-filter" class="form-control mr-sm-2" type="search"
-                                placeholder="Search" aria-label="Search">
+                            <input id="emprendedores-filter" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
                         </div>
                         <div class="col-auto">
                             <button class="btn btn-primary btn-xl my-2 my-sm-0 botonFiltro"
@@ -179,7 +179,7 @@
                     </div>
                 </form>
                 @if (Auth::check() && Auth::user()->hasRole('admin'))
-                    <div>
+                    <div class="agregarEmprendimiento">
                         <button
                             class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonAgregarEmprendimiento"
                             data-bs-dismiss="modal" type="button">
@@ -194,9 +194,9 @@
                 @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
                     <h3>{{ $categoria }}</h3>
                     <div class="container d-flex justify-content-center  align-items-center min-vh-100">
-                        <div id="carrousel" class="shadow-wrapper p-2 rounded-4"> <!-- sombreado acá -->
+                        <div id="carrousel" class="shadow-wrapper p-2 rounded-4" data-interval="200000"> <!-- sombreado acá -->
                             <div id="carousel-{{ $categoria }}" class="carousel slide w-50 mx-auto"
-                                data-bs-ride="carousel" data-interval="1000">
+                                data-bs-ride="carousel">
                                 <div class="carousel-inner contenedorCarrusel" role="listbox">
                                     @foreach ($emprendedores as $index => $emprendedor)
                                         <div class="portfolio-item carousel-item {{ $index === 0 ? 'active' : '' }}">
@@ -207,8 +207,8 @@
                                                             class="fas fa-plus fa-3x"></i></div>
                                                 </div>
                                                 <img class="img-fluid"
-                                                    src="{{ asset('storage/' . $emprendedor->imagen) }}"
-                                                    alt="..." />
+                                                    src="{{ asset('assets/img/bg-masthead.jpg')}}"
+                                                    alt="{{ $emprendedor->nombre }}" />
                                             </a>
                                             <div class="portfolio-caption">
                                                 <div class="portfolio-caption-heading">{{ $emprendedor->nombre }}
@@ -223,7 +223,7 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="close-modal" data-bs-dismiss="modal"><img
-                                                            src="assets/img/close-icon.svg" alt="Close modal"
+                                                            src="assets/img/iconos/close-icon.svg" alt="Close modal"
                                                             class="cierreEmprendedor" />
                                                     </div>
                                                     <div class="container">
@@ -232,9 +232,9 @@
                                                                 <div class="modal-body">
                                                                     <h2 class="text-uppercase">
                                                                         {{ $emprendedor->nombre }}</h2>
-                                                                    <img class="img-fluid d-block mx-auto"
-                                                                        src="{{ asset('storage/' . $emprendedor->imagen) }}"
-                                                                        alt="..." />
+                                                                    <img class="img-fluid d-block mx-auto img-modalEmprendedor"
+                                                                        src="{{ asset('assets/img/bg-masthead.jpg')}}"
+                                                                        alt="{{ $emprendedor->nombre }}" />
                                                                     <p>{{ $emprendedor->descripcion }}</p>
                                                                     <ul class="list-inline">
                                                                         <li>
@@ -244,44 +244,31 @@
                                                                             <strong>Categoria:</strong>{{ $emprendedor->categoria }}
                                                                         </li>
                                                                     </ul>
-                                                                        <button
-                                                                            class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
-                                                                             data-bs-dismiss="modal"
-                                                                            type="button">
-                                                                            <a
-                                                                                href="/emprendedor/{{ $emprendedor->id }}">
-                                                                                ver más acerca de
-                                                                                {{ $emprendedor->nombre }}
+                                                                    <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
+                                                                            data-bs-dismiss="modal" type="button">
+                                                                            <a href="/emprendedor/{{ $emprendedor->id }}">
+                                                                                Ver más acerca de {{ $emprendedor->nombre }}
                                                                             </a>
-                                                                        </button>
-                                                                        <div class="containerBotonesEmprendedor">
-                                                                            @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                                                                <button
-                                                                                    class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
-                                                                                    data-bs-dismiss="modal"
-                                                                                    type="button">
-                                                                                    <a
-                                                                                        href="/emprendedores/formEditarEmprendimiento/{{ $emprendedor->id }}">
-                                                                                        Editar emprendimiento
-                                                                                    </a>
-                                                                                </button>
-                                                                                <button
-                                                                                    class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar"
-                                                                                    data-bs-dismiss="modal"
-                                                                                    type="button">
-                                                                                    <form
-                                                                                        action="/emprendedor/{{ $emprendedor->id }}"
-                                                                                        class="formEliminar"
-                                                                                        method="post">
+                                                                    </button>
+                                                                    <div class="containerBotonesEmprendedor">
+                                                                        @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                                                            <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
+                                                                                    data-bs-dismiss="modal" type="button">
+                                                                                <a href="/emprendedores/formEditarEmprendimiento/{{ $emprendedor->id }}">
+                                                                                    Editar emprendimiento
+                                                                                </a>
+                                                                            </button>
+                                                                            <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar"
+                                                                                data-bs-dismiss="modal" type="button">
+                                                                                <form
+                                                                                    action="/emprendedor/{{ $emprendedor->id }}"
+                                                                                    class="formEliminar" method="post">
                                                                                         @csrf
                                                                                         @method('DELETE')
-                                                                                        <input type="submit"
-                                                                                            class="inputEliminar"
-                                                                                            value="Eliminar emprendimiento">
-                                                                                    </form>
-                                                                                </button>
-                                                                            @endif
-                                                                        </div>
+                                                                                        <input type="submit" class="inputEliminar" value="Eliminar emprendimiento">
+                                                                                </form>
+                                                                            </button>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -289,6 +276,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                     @endforeach
                                 </div>
                                 <a class="carousel-control-prev" href="#carousel-{{ $categoria }}" role="button"
@@ -315,7 +303,7 @@
     <a href="https://wa.me/2983603748?text=¡Hola contactanos a traves de nuestro whatsapp, muchas gracias, oficina de empleo."
         class="whatsapp-float" target="_blank" rel="noopener">
 
-        <img class="whatsapp" src="assets/img/whatsapp.png">
+        <img class="whatsapp" src="assets/img/iconos/whatsapp.png">
     </a>
 
 
@@ -348,8 +336,12 @@
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--Carrusel-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

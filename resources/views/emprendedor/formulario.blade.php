@@ -33,13 +33,13 @@
 
 
 <body>
-    <!-- ======= Header ======= -->
     <div class="custom-navbar-container">
-        <header id="header" class="fixed-top header-scrolled">
-            <div class="container-fluid px-4 container">
-                <!-- Navbar principal -->
-                <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
-                    <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
+    <header id="header" class="fixed-top header-scrolled">
+        <div class="container-fluid px-4 container">
+            <!-- Navbar principal -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
+                <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
+
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                             <img src="{{asset('assets/img/oficinaempleodireccioncomercio-02.png')}}"
@@ -66,38 +66,38 @@
                             </ul>
 
                             <!-- Botones de servicios externos -->
-                            <div class="get-started-buttons d-flex align-items-center">
-                                <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
-                                    get-started-btn crollto" class="get-started-btn">
-                                    <div class="get-started-group font-color-bl">
-                                        <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}"
-                                            slt class=" img-btn-logonav img-fluid mb-1">
-                                        <span class="btn-text">MiTresa</span>
-                                    </div>
-                                </a>
+                        <div class="get-started-buttons d-flex align-items-center">
+                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
+                                class="get-started-btn crollto">
+                                <div class="get-started-group font-color-bl">
+                                    <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}" slt
+                                        class=" img-btn-logonav mb-1">
+                                    <span class="btn-text">MiTresa</span>
+                                </div>
+                            </a>
 
-                                <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
-                                    class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
-                                        <i class="fa-solid fa-laptop servicio-icono"
-                                            style="color: rgb(38, 92, 172)"></i>
-                                        <span class="btn-text">Autogestion</span>
+                            <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
+                                class="get-started-btn scrollto">
+                                <div class="get-started-group font-color-bl">
+                                    <i class="fa-solid fa-laptop servicio-icono"></i>
+                                    <span class="btn-text">Autogestion</span>
 
-                                    </div>
-                                </a>
+                                </div>
+                            </a>
 
-                                <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
-                                    class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
-                                        <i class="fas fa-lock-open  img-btn-logonav servicio-icono"
-                                            style="color: rgb(38, 92, 172)">
+                            <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
+                                class="get-started-btn scrollto">
+                                <div class="get-started-group font-color-bl">
+                                    <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 
-                                        </i>
-                                        <span class="btn-text">Gobierno<br>Abierto</span>
-                                    </div>
-                                </a>
-                            @if(Auth::check() && Auth::user()->hasRole('admin'))
-                                <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
+                                    </i>
+                                    <span class="btn-text">Gobierno<br>Abierto</span>
+                                </div>
+                            </a>
+
+                            @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                <form action="/logout" method="post"
+                                    class="get-started-btn scrollto btn-contact cerrarSesion">
                                     @csrf
                                     <button type="submit">
                                         <div class="get-started-group font-color-bl">
@@ -111,26 +111,42 @@
                                     <div class="get-started-group font-color-bl">
                                         <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
                                         </i>
-                                            <span class="btn-text">Panel<br>Admin</span>
+                                        <span class="btn-text">Panel<br>Admin</span>
                                     </div>
                                 </a>
                             @endif
-                            </div>
+                        </div>
                         </div>
                     </div>
                 </nav>
             </div>
         </header>
     </div>
-    <!-- fin de la seccion  -->
 
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Unite a los programas vigentes</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 ">
+                        Completá el formulario con tus datos y desde la Oficina de Empleo y Capacitación nos pondremos en
+                    contacto para
+                    que puedas integrarte a esta valiosa propuesta.</p>
+                    <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
     <br>
     <br>
     <br>
     <br>
-
-
-
+ 
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
@@ -257,7 +273,7 @@
     <a href="https://wa.me/2983603748?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de cultura"
         class="whatsapp-float" target="_blank" rel="noopener">
 
-        <img class="whatsapp" src="{{asset('assets/img/whatsapp.png')}}">
+        <img class="whatsapp" src="{{asset('assets/img/iconos/whatsapp.png')}}">
     </a>
 
 
