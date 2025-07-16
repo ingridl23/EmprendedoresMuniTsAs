@@ -163,13 +163,16 @@
                 </div>
 
 
+
+            </div>
+
+
     </section>
 
 
-    <br>
 
 
-    <h1>aca va informacion de programa</h1>
+    @include('layouts.programas')
 
 
 
@@ -232,7 +235,8 @@
                             @enderror
 
 
-                            <label class="message" for="message">Nombre y Apellido<span class="asterisco">*</span></label>
+                            <label class="message" for="message">Nombre y Apellido<span
+                                    class="asterisco">*</span></label>
                             <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                         </div>
 
@@ -281,7 +285,8 @@
                             @enderror
 
 
-                            <label class="message" for="message">Describa brevemente su emprendimiento<span class="asterisco">*</span></label>
+                            <label class="message" for="message">Describa brevemente su emprendimiento<span
+                                    class="asterisco">*</span></label>
                             <p class="form-subtitulos">Escriba una descripción a continuación</p>
                         </div>
 

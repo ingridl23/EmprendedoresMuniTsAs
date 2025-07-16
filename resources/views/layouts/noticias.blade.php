@@ -41,7 +41,7 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{asset('assets/img/oficinaempleodireccioncomercio-02.png')}}"
+                            <img src="{{ asset('assets/img/oficinaempleodireccioncomercio-02.png') }}"
                                 alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -145,7 +145,7 @@
 
 
     <!-- aca todo esto deberia iterarse-->
-    <div class="container-fluid
+    <div class="container-fluid">
 
         <div class="row container-card ">
 
