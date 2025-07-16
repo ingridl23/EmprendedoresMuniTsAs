@@ -71,7 +71,7 @@
                                     get-started-btn crollto get-started-btn">
                                     <div class="get-started-group font-color-bl">
                                         <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}" slt
-                                            class=" img-btn-logonav img-fluid mb-1">
+                                            class=" img-btn-logonav mb-1">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>

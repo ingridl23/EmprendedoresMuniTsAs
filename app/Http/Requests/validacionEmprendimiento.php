@@ -45,7 +45,7 @@ class validacionEmprendimiento  extends FormRequest
             'ciudad' => 'bail|required|string|min:1|max:100',
             'calle' => 'bail|required|string|min:1|max:100',
             'altura' => 'required|numeric|min:1',
-            "localidad" =>"required|string|min:9|max:25"
+            "localidad" =>"required|string"
         ];
 
         

@@ -73,7 +73,7 @@
                                     get-started-btn crollto" class="get-started-btn">
                                     <div class="get-started-group font-color-bl">
                                         <img src="assets/img/MiTr-remove-removebg-preview.png" slt
-                                            class=" img-btn-logonav img-fluid mb-1" alt="Imagen municipalidad">
+                                            class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
