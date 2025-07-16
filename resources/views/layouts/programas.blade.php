@@ -94,15 +94,13 @@
             <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="1000">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/escuelaemprendedores.jpg"
-                            class="img-fluid  d-block w-100" alt="...">
 
-                    </div>
-
-                    <div class="carousel-item">
                         <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/1.jpg"
                             class="img-fluid d-block  w-100" alt="...">
+
                     </div>
+
+
 
                     <div class="carousel-item">
                         <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/2.jpg"
@@ -254,8 +252,15 @@
 
 
             <div class="programas">
+
+                <img class="img-fluid imagen-escuela"
+                    src="/EMPRENDEDORESMUNITSAS/public/assets/img/logoescuelaemprendedores.png" alt="..." />
+
                 <h3 class="subtitulo">Escuela de Emprendedores</h3>
                 <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>
+
+
+
                 <p class="text-clubs">
                     La Escuela de Emprendedores es un programa diseñado para formar, asesorar y acompañar a quienes
                     están
@@ -275,11 +280,16 @@
                 <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="1000">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/capacitacionesemprendedoresadaptadas/1.jpg"
-                                class="d-block w-100" alt="...">
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/escuelaemprendedores.jpg"
+                                class="img-fluid  d-block w-100" alt="...">
 
                         </div>
 
+                        <div class="carousel-item">
+
+                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/capacitacionesemprendedoresadaptadas/1.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
 
                         <div class="carousel-item">
                             <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/capacitacionesemprendedoresadaptadas/4.jpg"

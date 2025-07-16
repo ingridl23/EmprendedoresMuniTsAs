@@ -57,6 +57,12 @@
         margin: 2rem auto 3rem auto;
     }
     
+    .imagen-escuela {
+        max-width: 685px;
+        margin: 0 auto;
+        padding: 3rem;
+    }
+    
     .carrousel img {
         width: 100%;
         height: auto;
@@ -87,6 +93,14 @@
             text-align: center;
             margin: 1rem;
             padding: 5px;
+        }
+        .imagen-escuela {
+            max-width: 395px;
+            max-height: 180px;
+            object-fit: cover;
+            border: 0;
+            padding: 2rem;
+            margin-bottom: 1rem;
         }
         .carrousel img {
             width: 100%;

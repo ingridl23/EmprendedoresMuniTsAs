@@ -150,78 +150,37 @@
 
         <div class="row container-card ">
 
-            <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
+
+
+
+
+            <p <small class="text-body-secondary  text-secundario">fecha de publicacion 01/01/2025</small></p>
+            <h2 class="noticiaTitulo">titulo noticia</h2>
+            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg"
+                class="img-noticia img-fluid" alt="...">
+            <div class="card-body">
+                <p class="card-text-noticia">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, quam, sunt
+                    recusandae libero dignissimos omnis nesciunt blanditiis fugit illo modi, rerum facilis laborum
+                    harum sequi quis id tempora vel odio..
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, earum ab neque dolores
+                    sapiente voluptatibus a provident distinctio at, impedit aspernatur suscipit tempora sequi illum?
+                    Cupiditate provident esse natus quisquam.
+
+                </p>
+
+                <p class="card-text-noticia">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quia
+                    praesentium id dolore atque eos
+                    quidem voluptate ad nulla mollitia vel saepe aliquam, blanditiis repellendus cumque officia?
+                    Consequuntur, ex delectus!</p>
+
             </div>
-
-            <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
         </div>
+
+
+
+
+
+
     </div>
 
 
