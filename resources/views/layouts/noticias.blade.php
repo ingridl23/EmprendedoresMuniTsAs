@@ -21,6 +21,8 @@
 
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+
+    <link href="{{ asset('css/navBar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/noticias.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
@@ -132,8 +134,7 @@
         <div class="search">
 
             <input class="inputSearch" type="text" value="" placeholder="buscar">
-            <button class="buttonSearch "> <img
-                    id= "img-lupa"src="/EMPRENDEDORESMUNITSAS/public/assets/img/iconos/lupa.png"
+            <button class="buttonSearch "> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}"
                     title="lupa"></button>
         </div>
 
@@ -150,7 +151,7 @@
         <div class="row container-card ">
 
             <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
+                <img src="{{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
                     alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -166,24 +167,7 @@
             </div>
 
             <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
+                <img src="{{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
                     alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -200,7 +184,24 @@
 
 
             <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
+                <img src=" {{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                        to
+                        additional content. This content is a little bit longer.</p>
+                    <div class="container-vermas">
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                ago</small></p>
+                        <button class="vermas">ver mas</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card mb-3">
+                <img src="{{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
                     alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>

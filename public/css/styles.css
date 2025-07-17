@@ -301,7 +301,7 @@
         }
         
         a:hover {
-             color: #3d4349;
+            color: #3d4349;
         }
         
         a:not([href]):not([class]),
@@ -671,8 +671,8 @@
             height: 300px;
             object-fit: cover;
         }
-
-        .img-modalEmprendedor{
+        
+        .img-modalEmprendedor {
             height: 450px;
             object-fit: contain;
         }
@@ -3412,11 +3412,11 @@
             text-decoration: none;
             transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
         }
-
-        div.containerLinksNavbar{
+        
+        div.containerLinksNavbar {
             width: 100%;
         }
-
+        
         @media (prefers-reduced-motion: reduce) {
             .nav-link {
                 transition: none;
@@ -11015,7 +11015,7 @@
             #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
                 color: #f4623a;
             }
-            div.containerLinksNavbar{
+            div.containerLinksNavbar {
                 width: auto;
             }
         }
@@ -11045,11 +11045,13 @@
         header.masthead .h1 {
             font-size: 2.25rem;
         }
-        @media(min-width:650px){
-            header.masthead.headerFormulario{
+        
+        @media(min-width:650px) {
+            header.masthead.headerFormulario {
                 min-height: 40rem;
             }
         }
+        
         @media (min-width: 992px) {
             header.masthead {
                 height: 150vh;
@@ -11057,7 +11059,7 @@
                 padding-top: 4.5rem;
                 padding-bottom: 0;
             }
-            header.headerHome{
+            header.headerHome {
                 min-height: 55rem;
             }
             header.masthead p {
@@ -11165,6 +11167,7 @@
         /* Logo cultura */
         
         #imgcultura {
+            /*no es el logo cultura es de oficina empleo*/
             margin-top: 10rem;
             width: 180px;
             height: auto;
@@ -11411,21 +11414,23 @@
         div.container-fluid nav.navbar.py-2 div.container {
             max-width: 100%;
         }
-
-    .asterisco{
-        color: red;
-        font-weight: 900;
-        font-size: larger;
-    }
-
-    p.textoNuevoEmprendimiento{
-        margin: 0;
-    }
-
-        p.textoNuevoEmprendimiento+p{
-        margin-top: 0.3rem;
-    }
-
-    section.section-new-entrepreneur{
-        padding: 0;
-    }
+        
+        .asterisco {
+            color: red;
+            font-weight: 900;
+            font-size: larger;
+        }
+        
+        p.textoNuevoEmprendimiento {
+            margin: 0;
+        }
+        
+        p.textoNuevoEmprendimiento+p {
+            margin-top: 0.3rem;
+        }
+        
+        section.section-new-entrepreneur {
+            padding: 0;
+        }
+        
+        .botonFiltro {}

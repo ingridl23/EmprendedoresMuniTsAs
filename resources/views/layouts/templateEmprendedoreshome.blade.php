@@ -21,7 +21,7 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
@@ -180,7 +180,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
-                    <img class="divider" src="assets/img/empleosinfondo.png">
+                    <img class="divider" src="{{ asset('assets/img/empleosinfondo.png') }}">
                     <h2 class="mt-0"> Unite a los programas vigentes</h2>
                     </h2>
                     <p class="text-muted mb-5">

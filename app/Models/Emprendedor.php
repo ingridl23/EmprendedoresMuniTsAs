@@ -52,7 +52,8 @@ class Emprendedor extends Model
         return $this->belongsTo(direccion::class, 'direccion_id', 'id');
     }
 
-    public static function showEmprendimientos(){
+    public static function showEmprendimientos()
+    {
         //$emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen', 'categoria'])->get();
         $emprendimientos = Emprendedor::all();
         if (count($emprendimientos) > constants::VALORMIN) {
@@ -71,15 +72,16 @@ class Emprendedor extends Model
         return null;
     }
 
-    public static function obtenerCategorias(){
-        $categorias= Emprendedor::all()->groupBy('categoria');
+    public static function obtenerCategorias()
+    {
+        $categorias = Emprendedor::all()->groupBy('categoria');
         return $categorias;
     }
 
     public static function crearEmprendimiento($request, $path)
     {
-        $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);  
-        $idDireccion = direccion::crearDireccion($request->ciudad,$request->localidad, $request->calle,$request->altura);
+        $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);
+        $idDireccion = direccion::crearDireccion($request->ciudad, $request->localidad, $request->calle, $request->altura);
         $emprendimiento = Emprendedor::create([
             'nombre' => $request->nombre,
             'categoria' => $request->categoria,
@@ -98,5 +100,10 @@ class Emprendedor extends Model
     public static function eliminarEmprendimiento($emprendimiento)
     {
         $emprendimiento->delete();
+    }
+
+    public static function ultimosEmprendedores($cantidad = 6)
+    {
+        return self::orderBy('created_at', 'desc')->take($cantidad)->get();
     }
 }

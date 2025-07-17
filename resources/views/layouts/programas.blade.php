@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="author" content="" />
     <title>programas-oficina-de-empleo</title>
     <!-- Favicon-->
@@ -21,10 +22,10 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/programas.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
 
 
@@ -133,7 +134,7 @@
     <!-- End Header -->
 
 
-    <div class=" container-programas ">
+    <div class="container-programas ">
 
         <h1 class="titulo1"> Conoce Los Programas Vigentes</h1>
 
@@ -195,7 +196,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="1000">
 
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/1.jpg"
+                        <img src="{{ asset('assets/img/clubemprendedoresadaptadas/1.jpg') }}"
                             class="img-fluid d-block  w-100" alt="...">
 
                     </div>
@@ -203,17 +204,17 @@
 
 
                     <div class="carousel-item">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/2.jpg"
+                        <img src="{{ asset('assets/img/clubemprendedoresadaptadas/2.jpg') }}"
                             class="img-fluid d-block  w-100" alt="...">
                     </div>
 
                     <div class="carousel-item">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/3.jpg"
+                        <img src="{{ asset('assets/img/clubemprendedoresadaptadas/3.jpg') }}"
                             class="img-fluid d-block w-100" alt="...">
                     </div>
 
                     <div class="carousel-item">
-                        <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/4.jpg"
+                        <img src="{{ asset('assets/img/clubemprendedoresadaptadas/4.jpg') }}"
                             class="img-fluid d-block w-100" alt="...">
                     </div>
 
@@ -234,7 +235,7 @@
 
 
 
-            <!-- pie de carrousel -->
+            <!-- pie de carousel -->
             <p class="text-clubs">
                 Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
                 emprendedurismo local, promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y
@@ -253,23 +254,23 @@
             <div id="portfolio">
                 <div class="container-fluid p-0">
                     <div class="row g-0">
-
-
-
-                        <!--esto se va y solo quedaria el foreach para traer las 6 imagenes -->
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-                                <img class="img-fluid"
-                                    src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/2.jpg"
-                                    alt="..." />
-                                <div class="portfolio-box-caption">
-                                    <div class="project-category text-white-50">Category</div>
-                                    <div class="project-name">Emprendedor</div>
+                        @if (isset($ultimosEmprendedores))
+                            @foreach ($ultimosEmprendedores as $emprendedor)
+                                <div class="col-lg-4 col-sm-6">
+                                    <a class="portfolio-box" href="#portfolioModal{{ $emprendedor->id }}"
+                                        title="{{ $emprendedor->nombre }}">
+                                        <img class="img-fluid" src="{{ asset('storage/' . $emprendedor->imagen) }}"
+                                            alt="{{ $emprendedor->nombre }}" />
+                                        <div class="portfolio-box-caption">
+                                            <div class="project-category text-white-50">{{ $emprendedor->categoria }}
+                                            </div>
+                                            <div class="project-name">{{ $emprendedor->nombre }}</div>
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-
-
+                            @endforeach
+                        @endif
+                        <!--
                         <div class="col-lg-4 col-sm-6">
                             <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
                                 <img class="img-fluid"
@@ -326,7 +327,7 @@
                                 </div>
                             </a>
                         </div>
-
+                    -->
                     </div>
                 </div>
 
@@ -353,8 +354,8 @@
 
             <div class="programas">
 
-                <img class="img-fluid imagen-escuela"
-                    src="/EMPRENDEDORESMUNITSAS/public/assets/img/logoescuelaemprendedores.png" alt="..." />
+                <img class="img-fluid imagen-escuela" src="{{ asset('assets/img/logoescuelaemprendedores.png') }}"
+                    alt="..." />
 
                 <h3 class="subtitulo">Escuela de Emprendedores</h3>
                 <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>
@@ -380,24 +381,24 @@
                 <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="1000">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/clubemprendedoresadaptadas/escuelaemprendedores.jpg"
+                            <img src="{{ asset('assets/img/clubemprendedoresadaptadas/escuelaemprendedores.jpg') }}"
                                 class="img-fluid  d-block w-100" alt="...">
 
                         </div>
 
                         <div class="carousel-item">
 
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/capacitacionesemprendedoresadaptadas/1.jpg"
+                            <img src="{{ asset('assets/img/capacitacionesemprendedoresadaptadas/1.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/capacitacionesemprendedoresadaptadas/4.jpg"
+                            <img src="{{ asset('assets/img/capacitacionesemprendedoresadaptadas/4.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/capacitacionesemprendedoresadaptadas/5.jpg"
+                            <img src="{{ asset('assets/img/capacitacionesemprendedoresadaptadas/5.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
@@ -475,91 +476,91 @@
                 <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="500">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/3.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/3.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/5.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/5.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/6.jpg"
-                                class="d-block w-100" alt="...">
-                        </div>
-
-
-
-                        <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/4.jpg"
-                                class="d-block w-100" alt="...">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/8.jpg"
-                                class="d-block w-100" alt="...">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/1.jpg"
-                                class="d-block w-100" alt="...">
-
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/2.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/6.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
 
 
-
-
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/6.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/4.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/7.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/8.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/10.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/1.jpg') }}"
+                                class="d-block w-100" alt="...">
+
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/2.jpg') }}"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+
+
+
+
+                        <div class="carousel-item">
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/6.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/11.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/7.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/9.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/10.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/12.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/11.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/14.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/9.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/15.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/12.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/emprendedoresferiaadaptadas/13.jpg"
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/14.jpg') }}"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/15.jpg') }}"
+                                class="d-block w-100" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/13.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
 
@@ -645,12 +646,12 @@
 
         </div>
 
+        @include('emprendedor.footer')
         <!-- Bootstrap core JS-->
         <script src="{{ asset('js/scripts.js') }} "></script>
         <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
 </body>
-@include('emprendedor.footer');
 
 </html>
