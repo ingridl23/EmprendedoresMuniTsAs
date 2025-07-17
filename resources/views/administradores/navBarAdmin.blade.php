@@ -36,7 +36,7 @@
                         <div class="get-started-buttons d-flex align-items-center">
                             <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                 class="get-started-btn crollto">
-                                <div class="get-started-group font-color-bl">
+                                <div class="get-started-group font-color-bl containerLinksExternos">
                                     <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}"
                                         slt class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                     <span class="btn-text">MiTresa</span>
@@ -45,7 +45,7 @@
 
                             <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                 class="get-started-btn scrollto">
-                                <div class="get-started-group font-color-bl">
+                                <div class="get-started-group font-color-bl containerLinksExternos">
                                     <i class="fa-solid fa-laptop  servicio-icono"></i>
                                     <span class="btn-text">Autogestion</span>
 
@@ -54,7 +54,7 @@
 
                             <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
                                 class="get-started-btn scrollto">
-                                <div class="get-started-group font-color-bl">
+                                <div class="get-started-group font-color-bl containerLinksExternos">
                                     <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 
                                     </i>
@@ -64,7 +64,7 @@
                             <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
                                     @csrf
                                     <button type="submit">
-                                        <div class="get-started-group font-color-bl">
+                                        <div class="get-started-group font-color-bl containerLinksExternos">
                                             <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
                                             <span class="btn-text">cerrar<br>sesion</span>
                                         </div>

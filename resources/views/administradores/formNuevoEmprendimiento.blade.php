@@ -34,31 +34,49 @@
     <body id="page-top">
 
     @include('administradores.navBarAdmin')
-    <!-- End Header -->
-    <section class="page-section" id="contact" style="background-color: white">
+
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Agrega un nuevo emprendimiento para que sea parte del Club de Emprendedores</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 ">
+                        Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el emprendedurismo local,
+                         promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y mejores oportunidades para quienes
+                         apuestan a crecer en nuestra comunidad.
+                    </p>
+                
+                    <br>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="page-section section-new-entrepreneur" id="contact" style="background-color: white">
         <div class="container px-4 px-lg-5 tituloNuevoEmprendimiento">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
-                    <h2 class="mt-0"> Agregar nuevo emprendimiento</h2>
+                    <h2 class="mt-0"> Cargar el emprendimiento para el Club de Emprendedores</h2>
                     <hr class="divider" />
-                    <p class="text-muted mb-5">
+                    <p class="text-muted textoNuevoEmprendimiento">
                         Completá el formulario con los datos del emprendimiento, envialos
+                    </p>
+                    <p class="text-muted mb-5">
                         ¡y ya se cargarán para poder ser vistos!
                     </p>
                 </div>
             </div>
         </div>
-            
-        @if ($errors->any())
-            <div class="containerError">
-                <ul class="alert alert-danger text-center mb-3">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
+              {{-- ✅ Mensaje de éxito --}}
+                @if (session('success'))
+                    <div class="alert alert-success text-center mb-3">
+                        {{ session('success') }}
+                    </div>
+                @endif
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <form action="/emprendedores/crearEmprendimiento" method="POST" enctype="multipart/form-data"
@@ -67,7 +85,7 @@
                     @include('administradores.form')
                     <div class=" d-grid  ">
                         <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
-                            <span class="btntext" value="Guardar datos"> Guardar emprendimiento </span>
+                            <span class="btntext" value="Guardar datos"> Agregar emprendimiento </span>
                         </button>
                     </div>
                 </form>
@@ -88,6 +106,7 @@
 <!-- Core theme JS-->
 <script src="{{ asset('js/scripts3.js') }} "></script>
 <script src="{{ asset('js/logicaFormNuevoYEditarEmprendimiento.js') }}"></script>
+<script src="{{ asset('js/navbar.js') }}"></script>
 <script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>
 
 <!-- SimpleLightbox plugin JS-->

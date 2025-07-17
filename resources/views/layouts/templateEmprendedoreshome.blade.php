@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>tres arroyos</title>
+    <title>Tres Arroyos</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
@@ -21,7 +21,7 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
@@ -46,7 +46,7 @@
 
 
     <!-- Masthead-->
-    <header class="masthead">
+    <header class="masthead headerHome">
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
@@ -66,16 +66,11 @@
                         el desarrollo profesional y el crecimiento de nuestra comunidad.
 
                     </p>
-
                     <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
                     <br>
-
                     <a class="btn btn-light btn-xl btn-xl" href="#contact">Quiero Ser Parte</a>
-
                 </div>
-
             </div>
-
         </div>
     </header>
 
@@ -169,16 +164,7 @@
 
     </section>
 
-
-
-
-    @include('layouts.programas')
-
-
-
-
-
-
+    <!--@include('layouts.programas')-- Se comenta porque da problemas de renderizacion entonces genera, como consecuencia, una navbar borroso >
 
 
     <!-- Contact-->
@@ -338,6 +324,7 @@
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/logicaform.js') }} "></script>
+    <script src="{{ asset('js/navbar.js') }} "></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

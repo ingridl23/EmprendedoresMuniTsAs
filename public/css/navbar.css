@@ -211,8 +211,7 @@ nav ul li.nav-item.serParte {
 /* Tablet */
 
 @media (min-width:992px) {
-    i.servicio-icono,
-    i.fas.fa-lock-open {
+    #header.header-scrolled .servicio-icono {
         color: #dfdfdf;
     }
     .btn-text {

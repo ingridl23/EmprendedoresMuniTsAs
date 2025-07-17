@@ -3413,6 +3413,10 @@
             transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
         }
 
+        div.containerLinksNavbar{
+            width: 100%;
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .nav-link {
                 transition: none;
@@ -11008,6 +11012,9 @@
             #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
                 color: #f4623a;
             }
+            div.containerLinksNavbar{
+                width: auto;
+            }
         }
         @media(min-width:1100px){
             nav div.container.px-4{
@@ -11034,13 +11041,20 @@
         header.masthead .h1 {
             font-size: 2.25rem;
         }
-
+        @media(min-width:650px){
+            header.masthead.headerFormulario{
+                min-height: 40rem;
+            }
+        }
         @media (min-width: 992px) {
             header.masthead {
                 height: 150vh;
                 min-height: 48rem;
                 padding-top: 4.5rem;
                 padding-bottom: 0;
+            }
+            header.headerHome{
+                min-height: 55rem;
             }
             header.masthead p {
                 font-size: 1.15rem;
@@ -11256,7 +11270,7 @@
 
         .field-group {
             position: relative;
-            margin-bottom: 4.2rem;
+            margin-bottom: 3rem;
             margin-top: 2rem;
         }
         /* INPUT Y TEXTAREA con diseño minimalista */
@@ -11397,4 +11411,16 @@
         color: red;
         font-weight: 900;
         font-size: larger;
+    }
+
+    p.textoNuevoEmprendimiento{
+        margin: 0;
+    }
+
+        p.textoNuevoEmprendimiento+p{
+        margin-top: 0.3rem;
+    }
+
+    section.section-new-entrepreneur{
+        padding: 0;
     }

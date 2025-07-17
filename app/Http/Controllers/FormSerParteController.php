@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validacionFormularioContacto;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\sendContactForm;
 
@@ -21,7 +22,7 @@ class FormSerParteController extends Controller
 
 
 
-    public function enviar(Request $request)
+    public function enviar(validacionFormularioContacto $request)
     {
 
         if ($request->filled('oculto')) {

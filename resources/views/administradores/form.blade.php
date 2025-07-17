@@ -1,17 +1,26 @@
 <div class="field-group">
     <textarea name="nombre" id="nombre" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->nombre : old('nombre') }}</textarea>
     <label for="nombre">Nombre <span class="asterisco">*</span></label>
+    @error('nombre')
+        <div class="text-danger small">{{ $message }}</div>
+    @enderror
     <p class="form-subtitulos">Otorgue nombre del emprendimiento</p>
 </div>
 <div class="field-group">
     <textarea name="descripcion" id="descripcion" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->descripcion : old('descripcion') }}</textarea>
     <label for="descripcion">Descripción <span class="asterisco">*</span></label>
+    @error('descripcion')
+        <div class="text-danger small">{{ $message }}</div>
+    @enderror
     <p class="form-subtitulos">Otorgue una descripción del emprendimiento</p>
 </div>
 <div class="field-group">
     <input type="text" name="categoria" id="categoria" required placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->categoria : old('categoria') }}>
     <label for="categoria">Categoria <span class="asterisco">*</span> </label>
+    @error('categoria')
+        <div class="text-danger small">{{ $message }}</div>
+    @enderror
     <p class="form-subtitulos">Otorgue una categoria del emprendimiento</p>
 </div>
 
@@ -22,6 +31,9 @@
     @endif
     <input type="file" name="imagen" id="imagen">
     <label for="imagen">Imagen <span class="asterisco">*</span></label>
+    @error('imagen')
+        <div class="text-danger small">{{ $message }}</div>
+    @enderror
     <p class="form-subtitulos">Cargue una imagen del emprendimiento</p>
 </div>
 
@@ -31,18 +43,27 @@
     <input type="text" name="facebook" id="facebook" placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->redes->facebook : old('facebook') }}>
     <label for="facebook">Facebook</label>
+    @error('facebook')
+        <div class="text-danger small">{{ $message }}</div>
+    @enderror
     <p class="form-subtitulos">Si tiene un facebook, ingrese su nombre de usuario</p>
 </div>
 <div class="field-group">
     <input type="text" name="instagram" id="instagram" placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->redes->instagram : old('instagram') }}>
     <label for="instagram">Instagram</label>
+    @error('instagram')
+        <div class="text-danger small">{{ $message }}</div>
+    @enderror
     <p class="form-subtitulos">Si tiene un Instagram, ingrese su nombre de usuario</p>
 </div>
 <div class="field-group">
     <input type="number" name="whatsapp" id="whatsapp" required placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->redes->whatsapp : old('whatsapp') }}>
     <label for="whatsapp">Número de WhatsApp <span class="asterisco">*</span></label>
+     @error('whatsapp')
+            <div class="text-danger small">{{ $message }}</div>
+    @enderror
     <p class="form-subtitulos">Otorgue un número de WhatsApp del emprendimiento</p>
 </div>
 <div>
@@ -54,12 +75,18 @@
             <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Adolfo Gonzales Chaves") ? 'selected': ""}}>Adolfo Gonzales Chaves</option>
             <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Benito Juarez") ? 'selected':""}}>Benito Juarez</option>
         </select>
+        @error('ciudad')
+            <div class="text-danger small">{{ $message }}</div>
+        @enderror
     </div>
     <div class="field-group oculto localidadesDeLaCiudad">
         <label for="localidad" class="direccionEmprendimiento localidad">Localidad <span class="asterisco">*</span></label>
         <select id="localidadesDeLaCiudad" name="localidad" required placeholder="">
             <option value="{{isset($emprendimiento) ? $emprendimiento->direccion->localidad : old('localidad')}}" class="oculto opcionValorCargado"></option>
         </select>
+        @error('localidad')
+            <div class="text-danger small">{{ $message }}</div>
+        @enderror
     </div>
 </div>
 <div class="alturaYCalle field-group">
@@ -70,12 +97,18 @@
           <input type="text" name="calle" id="calle" required placeholder="" value: old('calle')>
         @endif
         <label for="calle">Calle <span class="asterisco">*</span></label>
+        @error('calle')
+            <div class="text-danger small">{{ $message }}</div>
+        @enderror
         <p class="form-subtitulos">Otorgue el nombre de la calle</p>
     </div>
     <div class="field-group">
         <input type="number" name="altura" id="altura" required placeholder="" min=1
             value={{ isset($emprendimiento) ? $emprendimiento->direccion->altura : old('altura') }}>
         <label for="altura">Altura <span class="asterisco">*</span></label>
+        @error('altura')
+            <div class="text-danger small">{{ $message }}</div>
+        @enderror
         <p class="form-subtitulos">Otorgue la altura de la calle</p>
     </div>
 </div>

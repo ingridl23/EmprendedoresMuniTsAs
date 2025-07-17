@@ -78,7 +78,7 @@
 
                                 <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fa-solid fa-laptop servicio-icono"></i>
                                         <span class="btn-text">Autogestion</span>
 
@@ -86,7 +86,7 @@
                                 </a>
 
                                 <a href="/transparencia-fiscal" target="_blank" class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 
                                         </i>
@@ -97,7 +97,7 @@
                                 <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
                                     @csrf
                                     <button type="submit">
-                                        <div class="get-started-group font-color-bl">
+                                        <div class="get-started-group font-color-bl containerLinksExternos">
                                             <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
                                             <span class="btn-text">cerrar<br>sesion</span>
                                         </div>
@@ -105,7 +105,7 @@
                                 </form>
                                 @else
                                 <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
                                         </i>
                                             <span class="btn-text">Panel<br>Admin</span>
@@ -295,6 +295,7 @@
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/scripts2.js') }}"></script>
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

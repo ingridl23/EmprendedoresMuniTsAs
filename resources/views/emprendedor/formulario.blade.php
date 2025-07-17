@@ -28,9 +28,6 @@
 
 
 </head>
-<!-- header de la section del form -->
-
-
 
 <body>
     <div class="custom-navbar-container">
@@ -69,7 +66,7 @@
                         <div class="get-started-buttons d-flex align-items-center">
                             <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                 class="get-started-btn crollto">
-                                <div class="get-started-group font-color-bl">
+                                <div class="get-started-group font-color-bl containerLinksExternos">
                                     <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}" slt
                                         class=" img-btn-logonav mb-1">
                                     <span class="btn-text">MiTresa</span>
@@ -78,7 +75,7 @@
 
                             <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                 class="get-started-btn scrollto">
-                                <div class="get-started-group font-color-bl">
+                                <div class="get-started-group font-color-bl containerLinksExternos">
                                     <i class="fa-solid fa-laptop servicio-icono"></i>
                                     <span class="btn-text">Autogestion</span>
 
@@ -87,7 +84,7 @@
 
                             <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
                                 class="get-started-btn scrollto">
-                                <div class="get-started-group font-color-bl">
+                                <div class="get-started-group font-color-bl containerLinksExternos">
                                     <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 
                                     </i>
@@ -100,7 +97,7 @@
                                     class="get-started-btn scrollto btn-contact cerrarSesion">
                                     @csrf
                                     <button type="submit">
-                                        <div class="get-started-group font-color-bl">
+                                        <div class="get-started-group font-color-bl containerLinksExternos">
                                             <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
                                             <span class="btn-text">cerrar<br>sesion</span>
                                         </div>
@@ -108,7 +105,7 @@
                                 </form>
                             @else
                                 <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
                                         </i>
                                         <span class="btn-text">Panel<br>Admin</span>
@@ -123,7 +120,7 @@
         </header>
     </div>
 
-    <header class="masthead">
+    <header class="masthead headerFormulario">
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
@@ -151,29 +148,15 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
                 <img class="divider" src="{{asset('assets/img/empleosinfondo.png')}}">
-                <h2 class="mt-0"> Unite a los programas vigentes</h2>
+                <h2 class="mt-0"> ¡Es tu oportunidad de integrarte! </h2>
 
                 <p class="text-muted mb-5">
-                    Completá el formulario con tus datos y desde la Oficina de Empleo y Capacitación nos pondremos en
-                    contacto para
-                    que puedas integrarte a esta valiosa propuesta.
-
+                    Ingresá tus datos y desde la Oficina de Empleo y Capacitación te contactaremos para que puedas participar de esta importante iniciativa.
                 </p>
                 {{-- ✅ Mensaje de éxito --}}
                 @if (session('success'))
                     <div class="alert alert-success text-center mb-3">
                         {{ session('success') }}
-                    </div>
-                @endif
-
-                {{-- ✅ Errores generales --}}
-                @if ($errors->any())
-                    <div class="alert alert-danger text-start mb-3">
-                        <ul class="mb-0">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
                     </div>
                 @endif
 
@@ -188,14 +171,12 @@
                     <!-- Name input-->
                     @csrf
                     <div class="field-group">
-
-                        <input id="name" name="first_name" type="text" required placeholder=""
-                            value="{{ old('first_name') }}"></input>
-
-                        @error('first_name')
+                        <input id="name" name="nombre-apellido" type="text" required placeholder=""
+                            value="{{ old('nombre-apellido') }}"></input>
+                        @error('nombre-apellido')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-                        <label for="message">Nombre y Apellido <span class="asterisco">*</span></label>
+                        <label for="nombre-apellido">Nombre y Apellido <span class="asterisco">*</span></label>
                         <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
                     </div>
 
@@ -205,13 +186,9 @@
 
                         <input id="email" name="email" type="email" required placeholder=""
                             value="{{ old('email') }}"></input>
-
                         @error('email')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-
-
-
 
                         <label for="message">Email <span class="asterisco">*</span></label>
                         <p class="form-subtitulos">Registre un email que utilice frecuentemente</p>
@@ -221,29 +198,26 @@
                     <!--input telefono -->
 
                     <div class="field-group">
-
-                        <input type="tel" id="phone" name="tel" required placeholder=""
+                        <input type="telefono" id="phone" name="telefono" required placeholder=""
                             value="{{ old('tel') }}"></input>
 
-                        @error('tel')
+                        @error('telefono')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-
-
-                        <label for="message">Teléfono<span class="asterisco">*</span></label>
+                        <label for="telefono">Teléfono<span class="asterisco">*</span></label>
                         <p class="form-subtitulos">Otorgue un número de teléfono de uso frecuente</p>
                     </div>
 
                     <!-- input descripcion -->
                     <div class="field-group">
 
-                        <textarea id="descripcion" name="description" type="text" required placeholder=""
-                            value="{{ old('description') }}"></textarea>
+                        <textarea id="descripcion" name="descripcion" type="text" required placeholder=""
+                            value="{{ old('descripcion') }}"></textarea>
 
-                        @error('description')
+                        @error('descripcion')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-                        <label for="message">Describa Brevemente Su Emprendimiento <span class="asterisco">*</span></label>
+                        <label for="descripcion">Describa Brevemente Su Emprendimiento <span class="asterisco">*</span></label>
                         <p class="form-subtitulos">Escriba una descripción a continuación</p>
                     </div>
 
@@ -283,6 +257,7 @@
 
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
     <script src="{{ asset('js/scripts3.js') }}"></script>
 
 

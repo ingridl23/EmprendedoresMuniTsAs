@@ -71,7 +71,7 @@
                             <div class="get-started-buttons d-flex align-items-center">
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
                                     get-started-btn crollto" class="get-started-btn">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <img src="assets/img/MiTr-remove-removebg-preview.png" slt
                                             class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
@@ -80,7 +80,7 @@
 
                                 <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fa-solid fa-laptop servicio-icono"></i>
                                         <span class="btn-text">Autogestion</span>
 
@@ -89,7 +89,7 @@
 
                                 <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 
                                         </i>
@@ -223,6 +223,7 @@
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scriptsnavlogin.js') }} "></script>
     <script src="{{ asset('js/scripts3.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
 
 
 

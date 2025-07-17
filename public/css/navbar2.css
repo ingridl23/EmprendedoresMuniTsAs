@@ -40,12 +40,8 @@
     color: #25afc3;
 }
 
-i.servicio-icono, i.fas.fa-lock-open{
-        color: #31588a;
-    }
-.btn-text {
-        color: #4f5052;
-    }
+
+
 
 /* Efecto underline en hover */
 
@@ -179,19 +175,10 @@ i.servicio-icono, i.fas.fa-lock-open{
     display: block;
 }
 
-.btn-text {
-    font-size: 9px;
-    line-height: 1.1;
-    text-transform: capitalize;
-    padding-top: 0.25rem;
-    font-family: "open sans", Arial !important;
-    font-weight: 600 !important;
-}
-
 nav ul li.nav-item.serParte{
-    padding: 0 0.5rem;
     min-width: fit-content;
 }
+
 /* ======= RESPONSIVE DESIGN ======= */
 
 
@@ -221,24 +208,13 @@ nav ul li.nav-item.serParte{
         background: rgba(255, 255, 255, 0.95);
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
-    .servicio-icono {
-        font-size: 26px;
-        color: #dfdfdf;
-    }
-    #header.header-scrolled .servicio-icono {
-        color: #25afc3;
-    }
+
 }
 
 @media (min-width:992px) {
-    i.servicio-icono, i.fas.fa-lock-open{
-        color: #dfdfdf;
-    }
-    .btn-text {
-        color: #dfdfdf;
-    }
     nav ul li.nav-item.serParte{
         width: max-content;
+         padding: 0 0.5rem;
     }
     #mainNav .navbar-nav .nav-link:hover::after {
         width: 80%;
@@ -361,15 +337,44 @@ html {
     scroll-behavior: smooth;
 }
 
-.servicio-icono {
+i.servicio-icono {
+    color: #31588a;
+}
+
+.btn-text {
+    color: #4f5052;
+}
+
+i.servicio-icono {
     color: #dfdfdf;
     transition: color 0.3s ease;
 }
 
-#header.header-scrolled .servicio-icono {
+.btn-text {
+    font-size: 9px;
+    line-height: 1.1;
+    text-transform: capitalize;
+    padding-top: 0.25rem;
+    font-family: "open sans", Arial !important;
+    font-weight: 600 !important;
+    color: #dfdfdf;
+}
+
+i.servicio-icono.colorNuevoIcono{
     color: #31588a;
 }
 
-#header.header-scrolled .btn-text {
+span.btn-text.colorNuevoTexto{
     color: #4f5052;
 }
+
+
+@media(max-width: 992px){
+    i.servicio-icono, i.fas.fa-lock-open{
+        color: #31588a;
+    }
+    .btn-text {
+        color: #4f5052;
+    }
+}
+
