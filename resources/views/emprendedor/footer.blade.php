@@ -19,8 +19,7 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-info">
-                        <img
-                            class="logomuni"src="{{asset('assets/img/logo-muni-azul-claro-removebg-preview.png')}}">
+                        <img class="logomuni"src="{{ asset('assets/img/logo-muni-azul-claro-removebg-preview.png') }}">
                         <br>
                         Av. Rivadavia 1 - Tres Arroyos <br>
                         <strong>Tel:</strong> (02983) 439200 <br> <strong>Consultas frecuentes:</strong> (02983)
@@ -55,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6 footer-links">
+                <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Links mas visitados</h4>
                     <ul>
                         <li><i class="flechita bx bx-chevron-right"></i> <a
@@ -73,7 +72,7 @@
 
                         <li><i class="flechita bx bx-chevron-right"></i> <a
                                 href=https://resultados.ibta.com.ar/shift/lis/ibta/elis/s01.iu.web.Login.cls?config=HOSPITAL"
-                                target="_blank">Laboratorios-resultados</a></li>
+                                target="_blank">Laboratorios resultados</a></li>
 
 
 
@@ -108,7 +107,7 @@
                                     href="https://docs.google.com/forms/d/e/1FAIpQLSdBlTfCFQKjt6NCLKJsBUvWyJdQc_odUCCUd-gMFKZ5zGr9RQ/viewform?pli=1">Gestion
                                     playas 2024/2025</a></li>
                         </ul>
-                        <div class=" footer-newsletter">
+                        <div class="footer-newsletter">
                             <h4>Suscribite a nuestro canal de difusion</h4>
 
                             <div class="canal-difusion pb-4">

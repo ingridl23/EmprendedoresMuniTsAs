@@ -17,7 +17,7 @@ Route::get('/emprendedores/buscador', [EmprendedorController::class, 'filterEmpr
 //rutas form admin
 Route::post('/login', [LoginController::class, 'login']); //invoca la logica del login admin
 Route::get('/showlogin', [HomeController::class, 'showlogin'])->name("showlogin"); //invoca la vista del login admin
-Route::post('/logout',[LoginController::class,'logout'])->name("logout"); //Cierra la sesión
+Route::post('/logout', [LoginController::class, 'logout'])->name("logout"); //Cierra la sesión
 
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
 
@@ -51,10 +51,10 @@ Auth::routes();
 //vista de passwords reset
 Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
 
-//noticias
+//rutas noticias
 
 Route::get("/noticias", [noticiasController::class, "showNoticias"]);
-Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
-
+//Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
+Route::get("/noticia", [noticiasController::class, "showNoticia"]); // ruta temporal para poder editar el template
 //programas
 Route::get("/programas", [ProgramasController::class, "showProgramas"]);

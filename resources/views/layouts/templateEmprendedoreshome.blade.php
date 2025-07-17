@@ -127,44 +127,51 @@
                     <div class="mt-5">
                         <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
-                        <img src="{{asset('assets/img/iconos/empleador.png')}}" class="divider">
+                        <img src="{{ asset('assets/img/iconos/empleador.png') }}" class="divider">
                         <h3 class="h4 mb-2">¿Sos empleador?</h3>
                         <p class="text-muted mb-0">Podrás asesorarte acerca de los programas de empleo y capacitación
                             vigentes.</p>
                     </div>
                 </div>
-                    <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
-                            </div>
-                            <img src="{{asset('assets/img/iconos/analitica.png')}}" class="divider">
-                            <h3 class="h4 mb-2">¿Tenés un emprendimiento?</h3>
-                            <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes quieran
-                                iniciar un emprendimiento o reforzar uno existente.</p>
+                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
-                            </div>
-                            <br>
-                            <img src="{{asset('assets/img/iconos/curriculum-vitae.png')}}" class="divider">
-                            <h3 class="h4 mb-2">¿Te encontras en búsqueda de empleo?</h3>
-
-                            <p class="text-muted mb-0">Recibimos tu CV y llevamos adelante acciones para la búsqueda de
-                                empleo y la intermediación laboral.</p>
-                        </div>
+                        <img src="{{ asset('assets/img/iconos/analitica.png') }}" class="divider">
+                        <h3 class="h4 mb-2">¿Tenés un emprendimiento?</h3>
+                        <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes quieran
+                            iniciar un emprendimiento o reforzar uno existente.</p>
                     </div>
                 </div>
+                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                        </div>
+                        <br>
+                        <img src="{{ asset('assets/img/iconos/curriculum-vitae.png') }}" class="divider">
+                        <h3 class="h4 mb-2">¿Te encontras en búsqueda de empleo?</h3>
 
-
-
+                        <p class="text-muted mb-0">Recibimos tu CV y llevamos adelante acciones para la búsqueda de
+                            empleo y la intermediación laboral.</p>
+                    </div>
+                </div>
             </div>
+
+
+
+        </div>
 
 
     </section>
 
-    <!--@include('layouts.programas')-- Se comenta porque da problemas de renderizacion entonces genera, como consecuencia, una navbar borroso >
+
+
+    @include('layouts.componentProgramas');
+
+
+
+
+
 
 
     <!-- Contact-->
@@ -307,7 +314,7 @@
     @include('layouts.sectionredes')
 
 
-    @include('layouts.panelAdmin')
+
 
 
     <a href="https://wa.me/2983603748?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de empleo"
