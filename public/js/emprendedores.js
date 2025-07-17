@@ -103,14 +103,13 @@ document.addEventListener('DOMContentLoaded', e => {
             let card = document.createElement('div');
             card.className = 'card';
             let url="storage/"+emprendimiento.imagen;
-            let urlTemporal="assets/img/bg-masthead.jpg";
             let contenido = `
                 <div class="portfolio-item">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal${emprendimiento.id}">
                         <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="${urlTemporal}" alt="${emprendimiento.nombre}" />
+                        <img class="img-fluid" src="${url}" alt="${emprendimiento.nombre}" />
                     </a>
                                     <div class="portfolio-caption">
                                         <div class="portfolio-caption-heading">${emprendimiento.nombre}</div>

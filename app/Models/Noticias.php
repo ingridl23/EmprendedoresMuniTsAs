@@ -19,27 +19,21 @@ use Database\Factories\NoticiasFactory;
  *  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Noticias extends Model
-{
+class Noticias extends Model{
     protected $perPage = 10;
     protected $table = "noticias";
 
-
     protected static function newFactory()
     {
-
         return NoticiasFactory::new();
     }
-
-
-
     use HasFactory;
+
     protected $fillable = [
-        'id',
         'titulo',
         'descripcion',
         'categoria',
-        'imagen',
+        'imagen'
     ];
 
 
@@ -54,7 +48,7 @@ class Noticias extends Model
 
     public static function showNoticiasId($id)
     {
-        $noticia = Noticias::with(['id'])->where('noticias.id', $id)->get();
+        $noticia = Noticias::where('noticias.id', $id)->get();
         if (count($noticia) > constants::VALORMIN) {
             $noticia = $noticia[0];
             return $noticia;

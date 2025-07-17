@@ -22,6 +22,7 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/noticias.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 </head>
@@ -68,7 +69,7 @@
                             <div class="get-started-buttons d-flex align-items-center">
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
                                             class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
@@ -77,7 +78,7 @@
 
                                 <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fa-solid fa-laptop  servicio-icono"></i>
                                         <span class="btn-text">Autogestion</span>
 
@@ -86,21 +87,33 @@
 
                                 <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 
                                         </i>
                                         <span class="btn-text">Gobierno<br>Abierto</span>
                                     </div>
                                 </a>
+                            @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                <form action="/logout" method="post"
+                                    class="get-started-btn scrollto btn-contact cerrarSesion">
+                                    @csrf
+                                    <button type="submit">
+                                        <div class="get-started-group font-color-bl containerLinksExternos">
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                            <span class="btn-text">cerrar<br>sesion</span>
+                                        </div>
+                                    </button>
+                                </form>
+                            @else
                                 <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-
                                         </i>
                                         <span class="btn-text">Panel<br>Admin</span>
                                     </div>
                                 </a>
+                            @endif
                             </div>
                         </div>
                     </div>
@@ -133,7 +146,7 @@
 
             <input class="inputSearch" type="text" value="" placeholder="buscar">
             <button class="buttonSearch "> <img
-                    id= "img-lupa"src="/EMPRENDEDORESMUNITSAS/public/assets/img/iconos/lupa.png"
+                    id= "img-lupa"src="{{asset('assets/img/iconos/lupa.png')}}"
                     title="lupa"></button>
         </div>
 
@@ -148,79 +161,25 @@
     <div class="container-fluid">
 
         <div class="row container-card ">
-
+            @foreach($noticias as $noticia)
             <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
+                <img src="{{ asset('storage/' . $noticia->imagen)}}" class="card-img-top1"
                     alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title">{{$noticia->titulo}}</h5>
+                    <p class="card-text">{{$noticia->categoria}}</p>
                     <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
+                        <p class="card-text"><small class="text-body-secondary">Última actualización hace {{$noticia->updated_at->diffForHumans()}}</small></p>
+                        <a href="/noticia/{{$noticia->id}}">
+                            <button class="vermas">Ver más</button>
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card mb-3">
-                <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
+            @endforeach
         </div>
+
+         {{ $noticias->onEachSide(2)->links('pagination::bootstrap-4')}}
     </div>
 
 
@@ -241,6 +200,9 @@
 
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
+
+    <!--Para cambio de color del navbar-->
+    <script src="{{ asset('js/navbar.js') }} "></script>
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>

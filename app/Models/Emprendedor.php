@@ -99,4 +99,9 @@ class Emprendedor extends Model
     {
         $emprendimiento->delete();
     }
+
+    public static function traerAleatoriamenteSeis(){
+        $emprendimientos=Emprendedor::select('nombre','categoria','imagen')->inRandomOrder()->limit(6)->get();
+        return $emprendimientos;
+    } 
 }

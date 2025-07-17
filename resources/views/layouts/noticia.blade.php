@@ -69,7 +69,7 @@
                             <div class="get-started-buttons d-flex align-items-center">
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
                                             class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
@@ -78,7 +78,7 @@
 
                                 <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fa-solid fa-laptop  servicio-icono"></i>
                                         <span class="btn-text">Autogestion</span>
 
@@ -87,21 +87,33 @@
 
                                 <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 
                                         </i>
                                         <span class="btn-text">Gobierno<br>Abierto</span>
                                     </div>
                                 </a>
+                            @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                <form action="/logout" method="post"
+                                    class="get-started-btn scrollto btn-contact cerrarSesion">
+                                    @csrf
+                                    <button type="submit">
+                                        <div class="get-started-group font-color-bl containerLinksExternos">
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                            <span class="btn-text">cerrar<br>sesion</span>
+                                        </div>
+                                    </button>
+                                </form>
+                            @else
                                 <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-
                                         </i>
                                         <span class="btn-text">Panel<br>Admin</span>
                                     </div>
                                 </a>
+                            @endif
                             </div>
                         </div>
                     </div>
@@ -129,17 +141,6 @@
                 <li> <a class="breadcrumb-item " href="#">Eventos</a></li>
             </ol>
         </section>
-
-        <div class="search">
-
-            <input class="inputSearch" type="text" value="" placeholder="buscar">
-            <button class="buttonSearch "> <img
-                    id= "img-lupa"src="/EMPRENDEDORESMUNITSAS/public/assets/img/iconos/lupa.png"
-                    title="lupa"></button>
-        </div>
-
-
-
     </div>
 
 
@@ -154,17 +155,12 @@
 
 
 
-            <p <small class="text-body-secondary  text-secundario">fecha de publicacion 01/01/2025</small></p>
-            <h2 class="noticiaTitulo">titulo noticia</h2>
-            <img src="/EMPRENDEDORESMUNITSAS/public/assets/img/portfolio/thumbnails/1.jpg"
-                class="img-noticia img-fluid" alt="...">
+            <p <small class="text-body-secondary  text-secundario">Fecha de publicación: {{$noticia->created_at->format('Y-m-d')}}</small></p>
+            <h2 class="noticiaTitulo">{{$noticia->titulo}}</h2>
+            <img src="{{asset('storage/'.$noticia->imagen)}}"
+                class="img-noticia img-fluid" alt="Imagen de la noticia: {{$noticia->titulo}}">
             <div class="card-body">
-                <p class="card-text-noticia">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, quam, sunt
-                    recusandae libero dignissimos omnis nesciunt blanditiis fugit illo modi, rerum facilis laborum
-                    harum sequi quis id tempora vel odio..
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, earum ab neque dolores
-                    sapiente voluptatibus a provident distinctio at, impedit aspernatur suscipit tempora sequi illum?
-                    Cupiditate provident esse natus quisquam.
+                <p class="card-text-noticia">{{$noticia->descripcion}}
 
                 </p>
 
@@ -172,7 +168,6 @@
                     praesentium id dolore atque eos
                     quidem voluptate ad nulla mollitia vel saepe aliquam, blanditiis repellendus cumque officia?
                     Consequuntur, ex delectus!</p>
-
             </div>
         </div>
 
@@ -183,27 +178,12 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
+    <script src="{{ asset('js/navbar.js') }} "></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->

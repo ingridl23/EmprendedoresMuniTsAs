@@ -85,10 +85,9 @@
     </div>
     @include('layouts.panelAdmin')
     @include('emprendedor.footer')
-</body>
 
-</html>
-<!-- Bootstrap core JS-->
+
+    <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core theme JS-->
@@ -102,3 +101,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</html>
+

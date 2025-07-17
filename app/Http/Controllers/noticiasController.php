@@ -21,23 +21,14 @@ class noticiasController extends Controller
     }
 
 
-    // public function showNoticia($id)
-    // {
-    //  if (is_numeric($id) && $id > constants::VALORMIN) {
-    //     $noticia = Noticias::showNoticiasId($id);
-    //   if ($noticia != null) {
-    //  return view("layouts.noticia", compact('noticias'));
-
-    //  }
-
-    // }
-    // }
-
-    public function showNoticia()
-    {
-        return view("layouts.noticia");
+    public function showNoticia($id){
+        if (is_numeric($id) && $id > constants::VALORMIN) {
+            $noticia = Noticias::showNoticiasId($id);
+            if ($noticia != null) {
+                return view("layouts.noticia", compact('noticia'));
+            }
+        }
     }
-
 
     /*Filtro de busqueda de noticias por titulo*/
     public function filterNewByTittle(Request $request)
