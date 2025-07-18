@@ -72,7 +72,7 @@
 
 
                 <div class="carousel-item">
-                    <img src="{{ asset('/assets/img/clubemprendedoresadaptadas/2.jpg') }}"
+                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/2.jpg') }}"
                         class="img-fluid d-block  w-100" alt="...">
                 </div>
 

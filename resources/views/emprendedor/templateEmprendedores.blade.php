@@ -142,10 +142,6 @@
                         Aquí encontrarás historias, productos y proyectos que reflejan el talento, la identidad y la
                         creatividad de nuestra comunidad.</p>
 
-                    <p class="text-white-75 mb-5">Si formás parte de la dirección de Empleo y Capacitación y tenés un
-                        emprendimiento,
-                    </p>
-                    <h3 class="text-white-75 ">¡Este es tu lugar!</h3>
 
                 </div>
             </div>

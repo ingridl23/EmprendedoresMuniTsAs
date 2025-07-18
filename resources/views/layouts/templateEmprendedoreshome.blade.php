@@ -114,13 +114,13 @@
         </div>
 
 
-        <!--  btn-xl-->
+
     </section>
     <!-- Services-->
     <section class="page-section section-services" id="services">
         <div class="container px-4 px-lg-5">
             <h2 class="text-center mt-0">Apoyamos el talento local, visibilizamos el trabajo cultural</h2>
-            <hr class="divider" />
+
             <div class="row justify-content-center  align-baseline">
                 <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
                     <div class="mt-5">
