@@ -42,7 +42,7 @@ class Noticias extends Model
         'imagen',
     ];
 
-
+    /*
     public static function showNoticias()
     {
         $noticias = Noticias::all();
@@ -51,23 +51,31 @@ class Noticias extends Model
         }
         return null;
     }
-
-    public static function showNoticiasId($id)
+*/
+    public static function getUltimasNoticias($cantidad = 10)
     {
-        $noticia = Noticias::with(['id'])->where('noticias.id', $id)->get();
-        if (count($noticia) > constants::VALORMIN) {
-            $noticia = $noticia[0];
-            return $noticia;
-        }
-        return null;
+        return Noticias::orderBy('created_at', 'desc')
+            ->paginate($cantidad);
     }
 
 
-    public static function obtenerCategoriasNoticias()
+
+
+    public static function obtenerCategoriasNoticias($cantidad = 10)
     {
-        $categorias = Noticias::all()->groupBy('categoria');
-        return $categorias;
+
+        return Noticias::with(['categoria']) // relacion
+            ->orderBy('created_at', 'desc')
+            ->take($cantidad)
+            ->get();
     }
+
+
+
+
+
+
+
 
     public static function crearNoticia($request, $path)
     {

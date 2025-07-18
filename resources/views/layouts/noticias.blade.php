@@ -148,83 +148,88 @@
     <!-- aca todo esto deberia iterarse-->
     <div class="container-fluid">
 
-        <div class="row container-card ">
+        @foreach ($noticias as $noticia)
+            <div class="row container-card ">
 
-            <div class="card mb-3">
-                <img src="{{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
+                <!-- Mostrar cada noticia -->
+
+
+                <div class="card mb-3">
+                    <img src="{{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
+                        alt={{ $noticia->titulo }}>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $noticia->titulo }}</h5>
+                        <p class="card-text">{{ $noticia->descripcion }}</p>
+                        <div class="container-vermas">
+                            <p class="card-text"><small class="text-body-secondary">fecha de publicacion:
+                                    {{ $noticia->updated }}</small></p>
+                            <button class="vermas"><a href="{{ $noticia->id }}">ver mas</a></button>
+                        </div>
                     </div>
                 </div>
+                <!--
+                    <div class="card mb-3">
+                        <img src="" class="card-img-top1"
+                        alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                                to
+                                additional content. This content is a little bit longer.</p>
+                                <div class="container-vermas">
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                        ago</small></p>
+                                        <button class="vermas">ver mas</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card mb-3">
+                                <img src=" " class="card-img-top1"
+                                alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                                        to
+                                        additional content. This content is a little bit longer.</p>
+                                        <div class="container-vermas">
+                                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                ago</small></p>
+                                                <button class="vermas">ver mas</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="card mb-3">
+                                        <img src="" class="card-img-top1"
+                                        alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                                                to
+                                                additional content. This content is a little bit longer.</p>
+                                                <div class="container-vermas">
+                                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                        ago</small></p>
+                                                        <button class="vermas">ver mas</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        -->
+
+
+
             </div>
-
-            <div class="card mb-3">
-                <img src="{{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card mb-3">
-                <img src=" {{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card mb-3">
-                <img src="{{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
-                    alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                        to
-                        additional content. This content is a little bit longer.</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                ago</small></p>
-                        <button class="vermas">ver mas</button>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-        </div>
+        @endforeach
     </div>
+    <!--  Botones de paginación -->
 
-
+    <div class="paginacion">
+        {{ $noticias->links() }}
+    </div>
 
 
 
