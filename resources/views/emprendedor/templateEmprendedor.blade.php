@@ -37,7 +37,7 @@
                     <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{ asset('assets/img/oficinaempleodireccioncomercio-02.png') }}"
+                            <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
                                 alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -78,8 +78,8 @@
                                     class="
                                     get-started-btn crollto get-started-btn">
                                     <div class="get-started-group font-color-bl">
-                                        <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
-                                            class=" img-btn-logonav mb-1">
+                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
+                                            slt class=" img-btn-logonav mb-1">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
@@ -158,7 +158,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -168,7 +168,7 @@
             <!-- Card 2 -->
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -178,7 +178,7 @@
             <!-- Card 3 -->
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -191,7 +191,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>

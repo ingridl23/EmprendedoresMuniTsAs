@@ -7,8 +7,8 @@
 
                     <!-- Logo y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                        <img src="assets/img/oficinaempleodireccioncomercio-02.png" alt="Logo Tres Arroyos"
-                            class="logo-img me-2">
+                        <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
+                            alt="Logo Tres Arroyos" class="logo-img me-2">
                         <span class="brand-text"></span>
                     </a>
 
@@ -19,7 +19,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                                        <!-- Menú de navegación principal -->
+                    <!-- Menú de navegación principal -->
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav mx-auto my-2 my-lg-0">
                             <li class="nav-item">
@@ -41,7 +41,7 @@
                             <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                 class="get-started-btn crollto">
                                 <div class="get-started-group font-color-bl containerLinksExternos">
-                                    <img src="assets/img/MiTr-remove-removebg-preview.png" slt
+                                    <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}" slt
                                         class=" img-btn-logonav mb-1">
                                     <span class="btn-text">MiTresa</span>
                                 </div>

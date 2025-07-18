@@ -164,7 +164,7 @@
 
         <div class="programas">
 
-            <img class="img-fluid imagen-escuela" src="{{ asset('assets/img/logoescuelaemprendedores.png') }}"
+            <img class="img-fluid imagen-escuela" src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
                 alt="Logo de Escuela de Emprendedores" />
 
             <h3 class="subtitulo">Escuela de Emprendedores</h3>

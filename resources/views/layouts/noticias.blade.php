@@ -43,7 +43,7 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{ asset('assets/img/oficinaempleodireccioncomercio-02.png') }}"
+                            <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
                                 alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -82,8 +82,8 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
                                     <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
-                                            class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
+                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
+                                            slt class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
@@ -145,7 +145,8 @@
         <div class="search">
 
             <input class="inputSearch" id="noticias-filter" type="text" value="" placeholder="buscar">
-            <button class="buttonSearch botonFiltro"> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
+            <button class="buttonSearch botonFiltro"> <img
+                    id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
         </div>
 
         <div id="noticias-container"></div>

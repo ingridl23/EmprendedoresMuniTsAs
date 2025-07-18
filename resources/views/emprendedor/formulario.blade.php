@@ -29,9 +29,12 @@
 
 </head>
 
-<body>
+<body id="page-top">
+
+    <!-- ======= Header ======= -->
     <div class="custom-navbar-container">
         <header id="header" class="fixed-top header-scrolled">
+
             <div class="container-fluid px-4 container">
                 <!-- Navbar principal -->
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
@@ -39,7 +42,7 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{ asset('assets/img/oficinaempleodireccioncomercio-02.png') }}"
+                            <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
                                 alt="Logo Oficina Empleo" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -74,8 +77,8 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
                                     <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
-                                            class=" img-btn-logonav mb-1">
+                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
+                                            slt class=" img-btn-logonav mb-1">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
@@ -132,7 +135,7 @@
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">Unite a los programas vigentes</h1>
-                    <hr class="divider" />
+
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
@@ -148,14 +151,11 @@
         </div>
     </header>
     <br>
-    <br>
-    <br>
-    <br>
 
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
-                <img class="divider" src="{{ asset('assets/img/empleosinfondo.png') }}">
+                <img class="divider" src="{{ asset('assets/img/iconos/empleosinfondo.png') }}">
                 <h2 class="mt-0"> ¡Es tu oportunidad de integrarte! </h2>
 
                 <p class="text-muted mb-5">

@@ -179,7 +179,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
-                    <img class="divider" src="{{ asset('assets/img/empleosinfondo.png') }}">
+                    <img class="divider" src="{{ asset('assets/img/iconos/empleosinfondo.png') }}">
                     <h2 class="mt-0"> Unite a los programas vigentes</h2>
                     </h2>
                     <p class="text-muted mb-5">
