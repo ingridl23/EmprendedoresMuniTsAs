@@ -54,8 +54,14 @@ class Noticias extends Model
     }
 
 
-
-
+    public static function showNoticiasId($id)
+    {
+        $noticia = Noticias::where('noticias.id', $id)->get();
+        if (count($noticia) > constants::VALORMIN) {
+            $noticia = $noticia[0];
+            return $noticia;
+        }
+    }
     public static function obtenerCategoriasNoticias($cantidad = 10)
     {
 

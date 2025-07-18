@@ -53,7 +53,7 @@ Auth::routes();
 Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
 
 //rutas noticias
-
+Route::get('/noticias/buscador', [noticiasController::class, 'filterNoticiasByTittle']);
 Route::get("/noticias", [noticiasController::class, "showNoticias"]);
 //Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
 Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]); // ruta temporal para poder editar el template

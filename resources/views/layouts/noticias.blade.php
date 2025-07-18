@@ -144,11 +144,11 @@
 
         <div class="search">
 
-            <input class="inputSearch" type="text" value="" placeholder="buscar">
-            <button class="buttonSearch "> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}"
-                    title="lupa"></button>
+            <input class="inputSearch" id="noticias-filter" type="text" value="" placeholder="buscar">
+            <button class="buttonSearch botonFiltro"> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
         </div>
 
+        <div id="noticias-container"></div>
 
 
     </div>
@@ -172,9 +172,9 @@
                         <h5 class="card-title">{{ $noticia->titulo }}</h5>
                         <p class="card-text">{{ $noticia->descripcion }}</p>
                         <div class="container-vermas">
-                            <p class="card-text"><small class="text-body-secondary">ultima actualizacion :
-                                    {{ $noticia->updated }}</small></p>
-                            <button class="vermas"><a href="{{ $noticia->id }}">ver mas</a></button>
+                            <p class="card-text"><small class="text-body-secondary">Última actualización :
+                                    {{ $noticia->updated_at }}</small></p>
+                            <button class="vermas"><a href="noticias/{{ $noticia->id }}">Ver más</a></button>
                         </div>
                     </div>
                 </div>
@@ -204,6 +204,7 @@
 
     <!--Para cambio de color del navbar-->
     <script src="{{ asset('js/navbar.js') }} "></script>
+    <script src="{{ asset('js/buscarNoticias.js') }} "></script>
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
