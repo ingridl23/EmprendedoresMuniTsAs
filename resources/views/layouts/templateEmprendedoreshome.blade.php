@@ -52,7 +52,6 @@
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">Bienvenidos a la Oficina de Empleo y Capacitación de Tres
                         Arroyos </h1>
-                    <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
