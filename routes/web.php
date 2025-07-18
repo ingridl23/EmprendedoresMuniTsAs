@@ -55,8 +55,8 @@ Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
 //rutas noticias
 
 Route::get("/noticias", [noticiasController::class, "showNoticias"]);
-Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
-//Route::get("/noticia", [noticiasController::class, "showNoticia"]); // ruta temporal para poder editar el template
+//Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
+Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]); // ruta temporal para poder editar el template
 //programas
 Route::get("/programas", [ProgramasController::class, "showProgramas"]);
 // ruta para la iteracion de ultimos emprendedores añadidos

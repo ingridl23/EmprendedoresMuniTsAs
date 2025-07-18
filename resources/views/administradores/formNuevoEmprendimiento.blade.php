@@ -76,6 +76,10 @@
                     <div class="alert alert-success text-center mb-3">
                         {{ session('success') }}
                     </div>
+                @else
+                    <div class="alert alert-success text-center mb-3">
+                        {{ session('success') }}
+                    </div>
                 @endif
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">

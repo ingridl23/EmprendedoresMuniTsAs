@@ -24,6 +24,7 @@
 
     <link href="{{ asset('css/navBar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/noticias.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 </head>
@@ -70,7 +71,7 @@
                             <div class="get-started-buttons d-flex align-items-center">
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
                                             class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
@@ -79,7 +80,7 @@
 
                                 <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fa-solid fa-laptop  servicio-icono"></i>
                                         <span class="btn-text">Autogestion</span>
 
@@ -88,7 +89,7 @@
 
                                 <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
                                         <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 
                                         </i>
@@ -167,68 +168,11 @@
                         </div>
                     </div>
                 </div>
-                <!--
-                    <div class="card mb-3">
-                        <img src="" class="card-img-top1"
-                        alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                                to
-                                additional content. This content is a little bit longer.</p>
-                                <div class="container-vermas">
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                        ago</small></p>
-                                        <button class="vermas">ver mas</button>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="card mb-3">
-                                <img src=" " class="card-img-top1"
-                                alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                                        to
-                                        additional content. This content is a little bit longer.</p>
-                                        <div class="container-vermas">
-                                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                                ago</small></p>
-                                                <button class="vermas">ver mas</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="card mb-3">
-                                        <img src="" class="card-img-top1"
-                                        alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                                                to
-                                                additional content. This content is a little bit longer.</p>
-                                                <div class="container-vermas">
-                                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
-                                                        ago</small></p>
-                                                        <button class="vermas">ver mas</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        -->
-
-
-
             </div>
         @endforeach
     </div>
-    <!--  Botones de paginación -->
 
-    <div class="paginacion">
-        {{ $noticias->links() }}
+    {{ $noticias->onEachSide(2)->links('pagination::bootstrap-4') }}
     </div>
 
 
@@ -247,6 +191,9 @@
 
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
+
+    <!--Para cambio de color del navbar-->
+    <script src="{{ asset('js/navbar.js') }} "></script>
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>

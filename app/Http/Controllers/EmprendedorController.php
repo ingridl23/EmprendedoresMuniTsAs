@@ -30,6 +30,7 @@ class EmprendedorController extends Controller
         ->get();
         return response()->json($emprendimientos);
     }
+    
     public function showEmprendimientoId($id){
         if(is_numeric($id) && $id>constants::VALORMIN){
             $emprendimiento=Emprendedor::showEmprendimientoId($id);

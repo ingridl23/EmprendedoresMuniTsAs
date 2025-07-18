@@ -24,22 +24,17 @@ class Noticias extends Model
     protected $perPage = 10;
     protected $table = "noticias";
 
-
     protected static function newFactory()
     {
-
         return NoticiasFactory::new();
     }
-
-
-
     use HasFactory;
+
     protected $fillable = [
-        'id',
         'titulo',
         'descripcion',
         'categoria',
-        'imagen',
+        'imagen'
     ];
 
     /*

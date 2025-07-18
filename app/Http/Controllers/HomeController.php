@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Http\Controllers\EmprendedorController;
 use App\Models\Emprendedor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -17,9 +15,9 @@ class HomeController extends Controller
     }*/
 
     public function index()
-    {
-
-        return view('layouts.templateEmprendedoreshome');
+    {   
+        $emprendimientos=Emprendedor::traerAleatoriamenteSeis();
+        return view('layouts.templateEmprendedoreshome',compact('emprendimientos'));
     }
 
 

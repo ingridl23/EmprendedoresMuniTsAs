@@ -14,6 +14,6 @@ class EmprendedorSeeder extends Seeder
      */
     public function run()
     {
-         Emprendedor::factory()->count(50)->create();
+         Emprendedor::factory()->count(20)->create();
     }
 }

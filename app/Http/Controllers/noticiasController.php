@@ -26,7 +26,7 @@ class noticiasController extends Controller
         if (is_numeric($id) && $id > constants::VALORMIN) {
             $noticia = Noticias::showNoticiasId($id);
             if ($noticia != null) {
-                return view("layouts.noticia", compact('noticias'));
+                return view("layouts.noticia", compact('noticia'));
             }
         }
     }

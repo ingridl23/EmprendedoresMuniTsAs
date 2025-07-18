@@ -207,7 +207,7 @@
                                                             class="fas fa-plus fa-3x"></i></div>
                                                 </div>
                                                 <img class="img-fluid"
-                                                    src="{{ asset('assets/img/bg-masthead.jpg') }}"
+                                                    src="{{ asset('storage/' . $emprendedor->imagen)}}"
                                                     alt="{{ $emprendedor->nombre }}" />
                                             </a>
                                             <div class="portfolio-caption">
@@ -233,7 +233,7 @@
                                                                     <h2 class="text-uppercase">
                                                                         {{ $emprendedor->nombre }}</h2>
                                                                     <img class="img-fluid d-block mx-auto img-modalEmprendedor"
-                                                                        src="{{ asset('assets/img/bg-masthead.jpg') }}"
+                                                                        src="{{ asset('storage/' . $emprendedor->imagen)}}"
                                                                         alt="{{ $emprendedor->nombre }}" />
                                                                     <p>{{ $emprendedor->descripcion }}</p>
                                                                     <ul class="list-inline">
@@ -292,12 +292,12 @@
                                 <a class="carousel-control-prev" href="#carousel-{{ $categoria }}" role="button"
                                     data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
+                                    <span class="sr-only">Anterior</span>
                                 </a>
                                 <a class="carousel-control-next" href="#carousel-{{ $categoria }}" role="button"
                                     data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
+                                    <span class="sr-only">Siguiente</span>
                                 </a>
                             </div>
                         </div>
