@@ -31,11 +31,10 @@ class noticiasController extends Controller
     }
 
     /*Filtro de busqueda de noticias por titulo*/
-    public function filterNewByTittle(Request $request)
+    public function filterNoticiasByTittle(Request $request)
     {
         $busqueda = $request->query('busqueda');
-        $noticias = Noticias::with('id')
-            ->where('titulo', 'LIKE', '%' . $busqueda . '%')
+        $noticias = Noticias::where('titulo', 'LIKE', '%' . $busqueda . '%')
             // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
             ->get();
         return response()->json($noticias);

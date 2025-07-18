@@ -146,10 +146,11 @@
 
         <div class="search">
 
-            <input class="inputSearch" type="text" value="" placeholder="buscar">
-            <button class="buttonSearch "> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
+            <input class="inputSearch" id="noticias-filter" type="text" value="" placeholder="buscar">
+            <button class="buttonSearch botonFiltro"> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
         </div>
 
+        <div id="noticias-container"></div>
 
 
     </div>
@@ -165,7 +166,7 @@
             <div class="card mb-3">
                 <img src="{{ asset('storage/' . $noticia->imagen)}}" class="card-img-top1"
                     alt="...">
-                <div class="card-body">
+                <div class="card-body cuerpoNoticia">
                     <h5 class="card-title">{{$noticia->titulo}}</h5>
                     <p class="card-text">{{$noticia->categoria}}</p>
                     <div class="container-vermas">
@@ -203,6 +204,7 @@
 
     <!--Para cambio de color del navbar-->
     <script src="{{ asset('js/navbar.js') }} "></script>
+    <script src="{{ asset('js/buscarNoticias.js') }} "></script>
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
