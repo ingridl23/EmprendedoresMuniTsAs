@@ -22,9 +22,9 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 
-    <link href="{{ asset('css/navBar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+
     <link href="{{ asset('css/noticias.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 </head>
@@ -60,6 +60,16 @@
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/') }}">Volver al inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"href="{{ url('/programas') }}">Programas</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
+                                </li>
+                                <li class="nav-item serParte">
+                                    <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
                                 </li>
 
 

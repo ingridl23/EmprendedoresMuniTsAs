@@ -18,7 +18,7 @@
 
 
 
-    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
@@ -45,8 +45,8 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{asset('assets/img/oficinaempleodireccioncomercio-02.png')}}" alt="Logo Tres Arroyos"
-                                class="logo-img me-2">
+                            <img src="{{ asset('assets/img/oficinaempleodireccioncomercio-02.png') }}"
+                                alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
 
@@ -118,7 +118,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
 
-                 <img class="divider" src="{{asset('assets/img/empleosinfondo.png')}}" alt="Logo Empleo">
+                <img class="divider" src="{{ asset('assets/img/empleosinfondo.png') }}" alt="Logo Empleo">
                 <p class="text-muted mb-5"> Ingreso solo perfiles autorizados </p>
 
 

@@ -63,6 +63,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
                                 </li>
+
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                                 </li>
@@ -136,11 +138,12 @@
     @include('layouts.componentProgramas')
 
     @include('emprendedor.footer');
-      
-      <!-- Bootstrap core JS-->
-        <script src="{{ asset('js/scripts.js') }} "></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-        <!-- Core theme JS-->
+
+    <!-- Bootstrap core JS-->
+    <script src="{{ asset('js/scripts.js') }} "></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
 </body>
+
 </html>
