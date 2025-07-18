@@ -37,10 +37,8 @@
 
 #mainNav .navbar-nav .nav-link:hover,
 #mainNav .navbar-nav .nav-link:focus {
-    color: #25afc3;
+    color: #25c394;
 }
-
-
 
 
 /* Efecto underline en hover */
@@ -52,7 +50,7 @@
     height: 2px;
     bottom: 0;
     left: 50%;
-    background-color: #25afc3;
+    background-color: #36c09d;
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
@@ -77,7 +75,7 @@
 }
 
 .navbar-brand:hover {
-    color: #25afc3 !important;
+    color: #25c39c !important;
 }
 
 .logo-img {
@@ -154,7 +152,7 @@
 }
 
 .get-started-btn:hover {
-    background: #25afc3;
+    background: #28d49b;
     color: #f9fcff;
     box-shadow: 0 4px 15px rgba(240, 231, 213, 0.4);
     /* Eliminar movimiento vertical
@@ -175,9 +173,10 @@
     display: block;
 }
 
-nav ul li.nav-item.serParte{
+nav ul li.nav-item.serParte {
     min-width: fit-content;
 }
+
 
 /* ======= RESPONSIVE DESIGN ======= */
 
@@ -208,13 +207,12 @@ nav ul li.nav-item.serParte{
         background: rgba(255, 255, 255, 0.95);
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
-
 }
 
 @media (min-width:992px) {
-    nav ul li.nav-item.serParte{
+    nav ul li.nav-item.serParte {
         width: max-content;
-         padding: 0 0.5rem;
+        padding: 0 0.5rem;
     }
     #mainNav .navbar-nav .nav-link:hover::after {
         width: 80%;
@@ -223,6 +221,8 @@ nav ul li.nav-item.serParte{
         max-height: 80px;
     }
 }
+
+
 /* Mobile */
 
 @media (max-width: 768px) {
@@ -287,7 +287,7 @@ nav ul li.nav-item.serParte{
         /*  border-bottom: 1px solid rgba(52, 58, 64, 0.1);*/
     }
     #mainNav .navbar-nav .nav-link:hover {
-        background-color: #25afc3;
+        background-color: #36c09d;
     }
     #mainNav .navbar-nav .nav-link:last-child {
         border-bottom: none;
@@ -305,7 +305,7 @@ nav ul li.nav-item.serParte{
         color: #dfdfdf;
     }
     #header.header-scrolled .servicio-icono {
-        color: #25afc3;
+        color: #28d49b;
     }
 }
 
@@ -338,7 +338,7 @@ html {
 }
 
 i.servicio-icono {
-    color: #31588a;
+    color: #38a38c;
 }
 
 .btn-text {
@@ -360,21 +360,20 @@ i.servicio-icono {
     color: #dfdfdf;
 }
 
-i.servicio-icono.colorNuevoIcono{
+i.servicio-icono.colorNuevoIcono {
     color: #31588a;
 }
 
-span.btn-text.colorNuevoTexto{
+span.btn-text.colorNuevoTexto {
     color: #4f5052;
 }
 
-
-@media(max-width: 992px){
-    i.servicio-icono, i.fas.fa-lock-open{
+@media(max-width: 992px) {
+    i.servicio-icono,
+    i.fas.fa-lock-open {
         color: #31588a;
     }
     .btn-text {
         color: #4f5052;
     }
 }
-

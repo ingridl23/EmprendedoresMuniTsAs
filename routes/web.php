@@ -14,10 +14,11 @@ use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\ProgramasController;
 
 Route::get('/emprendedores/buscador', [EmprendedorController::class, 'filterEmprendimientosByName']);
+Route::post('/logout', [LoginController::class, 'logout']); //Cierra la sesión
 //rutas form admin
 Route::post('/login', [LoginController::class, 'login']); //invoca la logica del login admin
 Route::get('/showlogin', [HomeController::class, 'showlogin'])->name("showlogin"); //invoca la vista del login admin
-Route::post('/logout', [LoginController::class, 'logout'])->name("logout"); //Cierra la sesión
+
 
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
 
@@ -55,6 +56,9 @@ Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
 
 Route::get("/noticias", [noticiasController::class, "showNoticias"]);
 //Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
-Route::get("/noticia/{id}", [noticiasController::class, "showNoticia"]); // ruta temporal para poder editar el template
+Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]); // ruta temporal para poder editar el template
 //programas
 Route::get("/programas", [ProgramasController::class, "showProgramas"]);
+// ruta para la iteracion de ultimos emprendedores añadidos
+Route::get('/programas/emprendedor', [programasController::class, "showEmprendedores"]);
+Route::get('/ultimosemprendedores', [HomeController::class, "showUltimosEmprendedores"]);

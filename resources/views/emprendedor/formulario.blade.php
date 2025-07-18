@@ -21,7 +21,7 @@
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 
-    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
@@ -31,15 +31,15 @@
 
 <body>
     <div class="custom-navbar-container">
-    <header id="header" class="fixed-top header-scrolled">
-        <div class="container-fluid px-4 container">
-            <!-- Navbar principal -->
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
-                <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
+        <header id="header" class="fixed-top header-scrolled">
+            <div class="container-fluid px-4 container">
+                <!-- Navbar principal -->
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
+                    <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{asset('assets/img/oficinaempleodireccioncomercio-02.png')}}"
+                            <img src="{{ asset('assets/img/oficinaempleodireccioncomercio-02.png') }}"
                                 alt="Logo Oficina Empleo" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -63,56 +63,56 @@
                             </ul>
 
                             <!-- Botones de servicios externos -->
-                        <div class="get-started-buttons d-flex align-items-center">
-                            <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
-                                class="get-started-btn crollto">
-                                <div class="get-started-group font-color-bl containerLinksExternos">
-                                    <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}" slt
-                                        class=" img-btn-logonav mb-1">
-                                    <span class="btn-text">MiTresa</span>
-                                </div>
-                            </a>
-
-                            <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
-                                class="get-started-btn scrollto">
-                                <div class="get-started-group font-color-bl containerLinksExternos">
-                                    <i class="fa-solid fa-laptop servicio-icono"></i>
-                                    <span class="btn-text">Autogestion</span>
-
-                                </div>
-                            </a>
-
-                            <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
-                                class="get-started-btn scrollto">
-                                <div class="get-started-group font-color-bl containerLinksExternos">
-                                    <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
-
-                                    </i>
-                                    <span class="btn-text">Gobierno<br>Abierto</span>
-                                </div>
-                            </a>
-
-                            @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                <form action="/logout" method="post"
-                                    class="get-started-btn scrollto btn-contact cerrarSesion">
-                                    @csrf
-                                    <button type="submit">
-                                        <div class="get-started-group font-color-bl containerLinksExternos">
-                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
-                                            <span class="btn-text">cerrar<br>sesion</span>
-                                        </div>
-                                    </button>
-                                </form>
-                            @else
-                                <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
+                            <div class="get-started-buttons d-flex align-items-center">
+                                <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
+                                    class="get-started-btn crollto">
                                     <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-                                        </i>
-                                        <span class="btn-text">Panel<br>Admin</span>
+                                        <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
+                                            class=" img-btn-logonav mb-1">
+                                        <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
-                            @endif
-                        </div>
+
+                                <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
+                                    class="get-started-btn scrollto">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
+                                        <i class="fa-solid fa-laptop servicio-icono"></i>
+                                        <span class="btn-text">Autogestion</span>
+
+                                    </div>
+                                </a>
+
+                                <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
+                                    class="get-started-btn scrollto">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
+                                        <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
+
+                                        </i>
+                                        <span class="btn-text">Gobierno<br>Abierto</span>
+                                    </div>
+                                </a>
+
+                                @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                    <form action="/logout" method="post"
+                                        class="get-started-btn scrollto btn-contact cerrarSesion">
+                                        @csrf
+                                        <button type="submit">
+                                            <div class="get-started-group font-color-bl containerLinksExternos">
+                                                <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                                <span class="btn-text">cerrar<br>sesion</span>
+                                            </div>
+                                        </button>
+                                    </form>
+                                @else
+                                    <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
+                                        <div class="get-started-group font-color-bl containerLinksExternos">
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+                                            </i>
+                                            <span class="btn-text">Panel<br>Admin</span>
+                                        </div>
+                                    </a>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -129,9 +129,10 @@
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
-                        Completá el formulario con tus datos y desde la Oficina de Empleo y Capacitación nos pondremos en
-                    contacto para
-                    que puedas integrarte a esta valiosa propuesta.</p>
+                        Completá el formulario con tus datos y desde la Oficina de Empleo y Capacitación nos pondremos
+                        en
+                        contacto para
+                        que puedas integrarte a esta valiosa propuesta.</p>
                     <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
                 </div>
 
@@ -143,15 +144,16 @@
     <br>
     <br>
     <br>
- 
+
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
-                <img class="divider" src="{{asset('assets/img/empleosinfondo.png')}}">
+                <img class="divider" src="{{ asset('assets/img/empleosinfondo.png') }}">
                 <h2 class="mt-0"> ¡Es tu oportunidad de integrarte! </h2>
 
                 <p class="text-muted mb-5">
-                    Ingresá tus datos y desde la Oficina de Empleo y Capacitación te contactaremos para que puedas participar de esta importante iniciativa.
+                    Ingresá tus datos y desde la Oficina de Empleo y Capacitación te contactaremos para que puedas
+                    participar de esta importante iniciativa.
                 </p>
                 {{-- ✅ Mensaje de éxito --}}
                 @if (session('success'))
@@ -217,7 +219,8 @@
                         @error('descripcion')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-                        <label for="descripcion">Describa Brevemente Su Emprendimiento <span class="asterisco">*</span></label>
+                        <label for="descripcion">Describa Brevemente Su Emprendimiento <span
+                                class="asterisco">*</span></label>
                         <p class="form-subtitulos">Escriba una descripción a continuación</p>
                     </div>
 
@@ -247,7 +250,7 @@
     <a href="https://wa.me/2983603748?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de cultura"
         class="whatsapp-float" target="_blank" rel="noopener">
 
-        <img class="whatsapp" src="{{asset('assets/img/iconos/whatsapp.png')}}">
+        <img class="whatsapp" src="{{ asset('assets/img/iconos/whatsapp.png') }}">
     </a>
 
 

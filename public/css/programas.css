@@ -31,18 +31,18 @@
         color: rgb(61, 61, 61);
     }
     
-    ol>li {
+    .programas ol>li {
         list-style: none;
         padding-bottom: 8px;
     }
     
-    .subtitulo,
-    .subtitulo1,
-    .titulo1,
-    .text-clubs,
-    ul,
-    ol,
-    h4 {
+    .container-programas .subtitulo,
+    .container-programas .subtitulo1,
+    .container-programas .titulo1,
+    .conteiner-programas .text-clubs,
+    .container-programas .programas ul,
+    .container-programas .programas ol,
+    .container-programas .programas h4 {
         margin: 3rem;
     }
     /* Estilo para evitar que el carrousel se superponga */

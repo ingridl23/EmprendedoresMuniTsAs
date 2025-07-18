@@ -16,8 +16,9 @@
 }
 
 i.servicio-icono,
-i.fas.fa-lock-open {
-    color: #43bea4;
+i.fas.fa-lock-open,
+i.img-btn-logonav {
+    color: #38a38c;
 }
 
 .btn-text {
@@ -49,7 +50,7 @@ i.fas.fa-lock-open {
 
 #mainNav .navbar-nav .nav-link:hover,
 #mainNav .navbar-nav .nav-link:focus {
-    color: #25afc3;
+    color: #25c394;
 }
 
 #mainNav {
@@ -67,7 +68,7 @@ i.fas.fa-lock-open {
     height: 2px;
     bottom: 0;
     left: 50%;
-    background-color: #25afc3;
+    background-color: #36c09d;
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
@@ -92,7 +93,7 @@ i.fas.fa-lock-open {
 }
 
 .navbar-brand:hover {
-    color: #25afc3 !important;
+    color: #25c39c !important;
 }
 
 .logo-img {
@@ -169,7 +170,7 @@ i.fas.fa-lock-open {
 }
 
 .get-started-btn:hover {
-    background: #25afc3;
+    background: #28d49b;
     color: #f9fcff;
     box-shadow: 0 4px 15px rgba(240, 231, 213, 0.4);
     /* Eliminar movimiento vertical
@@ -269,7 +270,7 @@ nav ul li.nav-item.serParte {
         color: #dfdfdf;
     }
     #header.header-scrolled .servicio-icono {
-        color: #25afc3;
+        color: #28d49b;
     }
 }
 
@@ -309,6 +310,13 @@ nav ul li.nav-item.serParte {
         flex-direction: row;
         padding: 10px;
     }
+    .get-started-btn:hover {
+        background: #28d49b;
+        color: #f9fcff;
+        box-shadow: 0 4px 15px rgba(240, 231, 213, 0.4);
+        /* Eliminar movimiento vertical
+    transform: translateY(-2px);*/
+    }
     .get-started-btn:first-child {
         border-radius: 8px 8px 0 0;
     }
@@ -337,7 +345,7 @@ nav ul li.nav-item.serParte {
         text-align: left;
     }
     #mainNav .navbar-nav .nav-link:hover {
-        background-color: #25afc3;
+        background-color: #25c39c;
     }
     #mainNav .navbar-nav .nav-link:last-child {
         border-bottom: none;
@@ -355,7 +363,7 @@ nav ul li.nav-item.serParte {
         color: #dfdfdf;
     }
     #header.header-scrolled .servicio-icono {
-        color: #25afc3;
+        color: #48dac6;
     }
 }
 
@@ -393,7 +401,7 @@ html {
 }
 
 #header.header-scrolled .servicio-icono {
-    color: #31588a;
+    color: #48dac6;
 }
 
 #header.header-scrolled .btn-text {

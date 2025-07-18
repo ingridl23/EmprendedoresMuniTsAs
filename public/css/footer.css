@@ -37,7 +37,7 @@ body {
 --------------------------------------------------------------*/
 
 #footer {
-    padding: 0 0 30px 0;
+    padding: 0 0 30px 0 !important;
     color: #010101;
     background-color: #000000;
     font-size: 14px;
@@ -46,7 +46,7 @@ body {
 #footer .footer-top {
     background: whitesmoke;
     border-bottom: 1px solid #222222;
-    padding: 60px 0 30px 0;
+    padding: 60px 0 30px 0 !important;
 }
 
 #footer .footer-top .footer-info {
@@ -55,7 +55,7 @@ body {
 
 #footer .footer-top .footer-info h3 {
     font-size: 28px;
-    margin: 0 0 20px 0;
+    margin: 0 0 20px 0 !important;
     padding: 2px 0 2px 0;
     line-height: 1;
     font-weight: 700;
@@ -80,7 +80,7 @@ body {
     color: #fff;
     line-height: 1;
     padding: 8px 0;
-    margin-right: 4px;
+    margin-right: 4px !important;
     border-radius: 4px;
     text-align: center;
     width: 36px;
@@ -103,7 +103,7 @@ body {
 }
 
 #footer .footer-top .footer-links {
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
 }
 
 #footer .footer-top .footer-links ul {
@@ -113,14 +113,14 @@ body {
 }
 
 #footer .footer-top .footer-links ul i {
-    padding-right: 2px;
+    padding-right: 2px !important;
     color: #ffc451;
     font-size: 18px;
     line-height: 1;
 }
 
 #footer .footer-top .footer-links ul li {
-    padding: 10px 0;
+    padding: 10px 0 !important;
     display: flex;
     align-items: center;
 }
@@ -203,8 +203,8 @@ a {
 html,
 body {
     height: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 

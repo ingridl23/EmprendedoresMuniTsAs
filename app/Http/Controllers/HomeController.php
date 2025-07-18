@@ -25,4 +25,11 @@ class HomeController extends Controller
     {
         return view("auth.login");
     }
+
+    public function showUltimosEmprendedores()
+    {
+        $ultimosEmprendedores = Emprendedor::ultimosEmprendedores(); // método nuevo
+        return view('layouts.templateEmprendedoresHome', compact('ultimosEmprendedores'));
+        dd(Emprendedor::ultimosEmprendedores());
+    }
 }

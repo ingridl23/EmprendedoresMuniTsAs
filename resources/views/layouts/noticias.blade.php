@@ -21,6 +21,8 @@
 
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+
+    <link href="{{ asset('css/navBar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/noticias.css') }}" rel="stylesheet" />
@@ -145,9 +147,7 @@
         <div class="search">
 
             <input class="inputSearch" type="text" value="" placeholder="buscar">
-            <button class="buttonSearch "> <img
-                    id= "img-lupa"src="{{asset('assets/img/iconos/lupa.png')}}"
-                    title="lupa"></button>
+            <button class="buttonSearch "> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
         </div>
 
 
@@ -170,7 +170,7 @@
                     <p class="card-text">{{$noticia->categoria}}</p>
                     <div class="container-vermas">
                         <p class="card-text"><small class="text-body-secondary">Última actualización hace {{$noticia->updated_at->diffForHumans()}}</small></p>
-                        <a href="/noticia/{{$noticia->id}}">
+                        <a href="/noticias/{{$noticia->id}}">
                             <button class="vermas">Ver más</button>
                         </a>
                     </div>
