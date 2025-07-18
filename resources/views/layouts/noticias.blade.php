@@ -156,13 +156,13 @@
 
 
                 <div class="card mb-3">
-                    <img src="{{ asset('assets/img/portfolio/thumbnails/1.jpg') }}" class="card-img-top1"
+                    <img src="{{ asset('storage/' . $noticia->imagen) }}" class="card-img-top1"
                         alt={{ $noticia->titulo }}>
                     <div class="card-body">
                         <h5 class="card-title">{{ $noticia->titulo }}</h5>
                         <p class="card-text">{{ $noticia->descripcion }}</p>
                         <div class="container-vermas">
-                            <p class="card-text"><small class="text-body-secondary">fecha de publicacion:
+                            <p class="card-text"><small class="text-body-secondary">ultima actualizacion :
                                     {{ $noticia->updated }}</small></p>
                             <button class="vermas"><a href="{{ $noticia->id }}">ver mas</a></button>
                         </div>
