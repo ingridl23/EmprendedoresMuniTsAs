@@ -15,13 +15,14 @@ class noticiasController extends Controller
     public function showNoticias()
     {
 
-        $noticias = Noticias::paginate(10);
+        $noticias = Noticias::getUltimasNoticias();
         return view('layouts.noticias', compact('noticias'))
             ->with('i', (request()->input('page', 1) - 1) * $noticias->perPage());
     }
 
 
-    public function showNoticia($id){
+    public function showNoticia($id)
+    {
         if (is_numeric($id) && $id > constants::VALORMIN) {
             $noticia = Noticias::showNoticiasId($id);
             if ($noticia != null) {
@@ -29,6 +30,8 @@ class noticiasController extends Controller
             }
         }
     }
+
+
 
     /*Filtro de busqueda de noticias por titulo*/
     public function filterNoticiasByTittle(Request $request)
@@ -45,15 +48,4 @@ class noticiasController extends Controller
     {
         return view('administradores.formNuevaNoticia');
     }
-
-
-    //este nose si va aca o solo en controlleradmin
-    /* public function obtenerRol()
-    {
-        $rol = false;
-        if (Auth::check() && Auth::user()->hasRole('admin')) {
-            $rol = true;
-        }
-        return response()->json($rol);
-    }*/
 }

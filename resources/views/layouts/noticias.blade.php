@@ -96,26 +96,14 @@
                                         <span class="btn-text">Gobierno<br>Abierto</span>
                                     </div>
                                 </a>
-                            @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                <form action="/logout" method="post"
-                                    class="get-started-btn scrollto btn-contact cerrarSesion">
-                                    @csrf
-                                    <button type="submit">
-                                        <div class="get-started-group font-color-bl containerLinksExternos">
-                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
-                                            <span class="btn-text">cerrar<br>sesion</span>
-                                        </div>
-                                    </button>
-                                </form>
-                            @else
                                 <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
+                                    <div class="get-started-group font-color-bl">
                                         <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+
                                         </i>
                                         <span class="btn-text">Panel<br>Admin</span>
                                     </div>
                                 </a>
-                            @endif
                             </div>
                         </div>
                     </div>
@@ -161,29 +149,31 @@
     <!-- aca todo esto deberia iterarse-->
     <div class="container-fluid">
 
-        <div class="row container-card ">
-            @foreach($noticias as $noticia)
-            <div class="card mb-3">
-                <img src="{{ asset('storage/' . $noticia->imagen)}}" class="card-img-top1"
-                    alt="...">
-                <div class="card-body cuerpoNoticia">
-                    <h5 class="card-title">{{$noticia->titulo}}</h5>
-                    <p class="card-text">{{$noticia->categoria}}</p>
-                    <div class="container-vermas">
-                        <p class="card-text"><small class="text-body-secondary">Última actualización hace {{$noticia->updated_at->diffForHumans()}}</small></p>
-                        <a href="/noticias/{{$noticia->id}}">
-                            <button class="vermas">Ver más</button>
-                        </a>
+        @foreach ($noticias as $noticia)
+            <div class="row container-card ">
+
+                <!-- Mostrar cada noticia -->
+
+
+                <div class="card mb-3">
+                    <img src="{{ asset('storage/' . $noticia->imagen) }}" class="card-img-top1"
+                        alt={{ $noticia->titulo }}>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $noticia->titulo }}</h5>
+                        <p class="card-text">{{ $noticia->descripcion }}</p>
+                        <div class="container-vermas">
+                            <p class="card-text"><small class="text-body-secondary">Última actualización :
+                                    {{ $noticia->updated_at }}</small></p>
+                            <button class="vermas"><a href="noticias/{{ $noticia->id }}">Ver más</a></button>
+                        </div>
                     </div>
                 </div>
             </div>
-            @endforeach
-        </div>
-
-         {{ $noticias->onEachSide(2)->links('pagination::bootstrap-4')}}
+        @endforeach
     </div>
 
-
+    {{ $noticias->onEachSide(2)->links('pagination::bootstrap-4') }}
+    </div>
 
 
 

@@ -19,7 +19,8 @@ use Database\Factories\NoticiasFactory;
  *  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Noticias extends Model{
+class Noticias extends Model
+{
     protected $perPage = 10;
     protected $table = "noticias";
 
@@ -36,7 +37,7 @@ class Noticias extends Model{
         'imagen'
     ];
 
-
+    /*
     public static function showNoticias()
     {
         $noticias = Noticias::all();
@@ -45,6 +46,13 @@ class Noticias extends Model{
         }
         return null;
     }
+*/
+    public static function getUltimasNoticias($cantidad = 10)
+    {
+        return Noticias::orderBy('created_at', 'desc')
+            ->paginate($cantidad);
+    }
+
 
     public static function showNoticiasId($id)
     {
@@ -53,15 +61,22 @@ class Noticias extends Model{
             $noticia = $noticia[0];
             return $noticia;
         }
-        return null;
     }
-
-
-    public static function obtenerCategoriasNoticias()
+    public static function obtenerCategoriasNoticias($cantidad = 10)
     {
-        $categorias = Noticias::all()->groupBy('categoria');
-        return $categorias;
+
+        return Noticias::with(['categoria']) // relacion
+            ->orderBy('created_at', 'desc')
+            ->take($cantidad)
+            ->get();
     }
+
+
+
+
+
+
+
 
     public static function crearNoticia($request, $path)
     {
