@@ -61,11 +61,11 @@
             </div>
         </div>
     </div>
-    {{-- ✅ Mensaje de éxito --}}
-    @if (session('success'))
-        <div class="alert alert-success text-center mb-3">
-            {{ session('success') }}
-        </div>
+
+     @if ($errors->any())
+            <div class="alert alert-danger text-center mb-3">
+                <p class="mensajeError">Necesita completar correctamente todos los campos.</p>
+            </div>
     @endif
 
     <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
@@ -95,7 +95,6 @@
 
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts3.js') }}"></script>
-    <script src="{{ asset('js/logicaFormNuevoYEditarEmprendimiento.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>

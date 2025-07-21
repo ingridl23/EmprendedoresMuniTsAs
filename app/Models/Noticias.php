@@ -77,12 +77,12 @@ class Noticias extends Model
         ]);
     }
 
-    public static function editarNoticia($noticia)
+    public static function editNoticia($noticia)
     {
         $noticia->save();
     }
 
-    public static function eliminarNoticia($noticia)
+    public static function deleteNoticia($noticia)
     {
         $noticia->delete();
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\validacionEmprendimiento;
 use App\Http\Requests\validacionEditarEmprendimiento;
 use App\Http\Requests\validacionNoticia;
+use App\Http\Requests\validacionEditarNoticia;
 use App\Http\Controllers\EmprendedorController;
 use App\Http\Controllers\DireccionController;
 use Illuminate\Support\Facades\Validator;
@@ -57,13 +58,14 @@ class administradorController extends Controller
 
         $this->middleware('can:editar noticia', [
             'only' => [
-                'editarNoticia'
+                'showFormEditNoticia',
+                'editNoticia',
             ]
         ]);
 
         $this->middleware('can:eliminar noticia', [
             'only' => [
-                'eliminarNoticia'
+                'deleteNoticia'
             ]
         ]);
     }
@@ -194,21 +196,17 @@ class administradorController extends Controller
         return redirect('/noticias');
     }
 
-    //visualizar update
-
-    public function showFormEditarNoticia()
+    //Direcciona para la vista que contiene el formulario con los datos de la noticia
+    public function showFormEditNoticia($id)
     {
-        return view("administradores.formEditarNoticia");
+        $noticia=Noticias::showNoticiasId($id);
+        return view("administradores.noticias.formEditarNoticia", compact("noticia"));
     }
     //editar noticia
 
-    protected function updateNews($id, validacionEditarEmprendimiento $request)
+    protected function editNoticia($id, validacionEditarNoticia $request)
     {
-
-
         $noticia = Noticias::find($id);
-
-
         if ($noticia != null) {
 
             if ($request->file('imagen') != null) {
@@ -223,7 +221,7 @@ class administradorController extends Controller
             $noticia->descripcion = $request->input('descripcion');
             $noticia->categoria = $request->input('categoria');
 
-            Noticias::updateNews($noticia);
+            Noticias::editNoticia($noticia);
 
             return redirect('/noticias');
         }
@@ -233,14 +231,12 @@ class administradorController extends Controller
 
     //eliminar noticia
 
-    protected function deleteNewsById($id)
+    protected function deleteNoticia($id)
     {
         $noticia = Noticias::find($id);
         if ($noticia != null) {
-
             Storage::disk('public')->delete($noticia->imagen);
-            Noticias::eliminarEmprendimiento($noticia);
-
+            Noticias::deleteNoticia($noticia);
             return redirect('/noticias')->with('success', '¡La noticia ha sido eliminada!');
         }
     }

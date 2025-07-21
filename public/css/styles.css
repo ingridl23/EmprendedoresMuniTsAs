@@ -11431,3 +11431,8 @@
         section.section-new-entrepreneur {
             padding: 0;
         }
+
+.mensajeError{
+    color: #bf2121;
+    margin: 0;
+}
