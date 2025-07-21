@@ -152,6 +152,25 @@ div.card-body.cuerpoNoticia{
     display: block;
     max-width: unset;
 }
+
+/*Estilo botones*/
+.agregarNoticia{
+        background-color: #36be7f;
+}
+
+.agregarNoticia a{
+    color: white;
+}
+
+.agregarNoticia:hover{
+    background-color: #164e34; 
+}
+
+.agregarNoticia:active{
+    background-color: #0c2c1d;
+    transform: scale(0.95);
+}
+
 @media(min-width: 830px){
     #noticias-container div{
         width: 40%;
