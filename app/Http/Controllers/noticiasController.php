@@ -46,7 +46,6 @@ class noticiasController extends Controller
 
     public function showFormCrearNoticia()
     {
-        return view('administradores.formNuevaNoticia');
+        return view('administradores/noticias.formNuevaNoticia');
     }
-
 }
