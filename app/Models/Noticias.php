@@ -37,16 +37,7 @@ class Noticias extends Model
         'imagen'
     ];
 
-    /*
-    public static function showNoticias()
-    {
-        $noticias = Noticias::all();
-        if (count($noticias) > constants::VALORMIN) {
-            return $noticias;
-        }
-        return null;
-    }
-*/
+
     public static function getUltimasNoticias($cantidad = 10)
     {
         return Noticias::orderBy('created_at', 'desc')

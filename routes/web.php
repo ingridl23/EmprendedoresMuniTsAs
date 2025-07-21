@@ -38,7 +38,7 @@ Route::get('emprendedores/user', [EmprendedorController::class, "obtenerRol"]); 
 
 Route::get('/emprendedor/{id}', [EmprendedorController::class, "showEmprendimientoId"]);// ruta para las secciones individuales del emprendedor
 
-// agregar para admin
+//  para admin
 Route::get('/emprendedores/acciones', [administradorController::class, "emprendedores"]);
 
 //RUTAS EMPRENDEDORES ADMIN

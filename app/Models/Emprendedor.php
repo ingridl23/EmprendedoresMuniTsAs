@@ -102,13 +102,14 @@ class Emprendedor extends Model
         $emprendimiento->delete();
     }
 
-    public static function traerAleatoriamenteSeis(){
-        $emprendimientos=Emprendedor::select('nombre','categoria','imagen')->inRandomOrder()->limit(6)->get();
+    public static function traerAleatoriamenteSeis()
+    {
+        $emprendimientos = Emprendedor::select('nombre', 'categoria', 'imagen')->inRandomOrder()->limit(6)->get();
         return $emprendimientos;
     }
-    
+
     public static function ultimosEmprendedores($cantidad = 6)
     {
-        return self::orderBy('created_at', 'desc')->take($cantidad)->get();
+        return Emprendedor::orderBy('created_at', 'desc')->paginate($cantidad);
     }
 }
