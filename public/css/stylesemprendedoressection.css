@@ -126,7 +126,7 @@
         }
 
         button.botonAgregarEmprendimiento:active, button.botonFiltro:active, .swal2-confirm:active, div.modal-body button.detalleEmprendedor:active{
-            background-color: #001c3a;
+            background-color: #0c2c1d;
             transform: scale(0.95);
         }
 
@@ -12148,11 +12148,6 @@
         align-items: center;
         margin: 0 !important;
     }
-
-        #emprendedores-filter{
-            border: 1px solid grey;
-            border-bottom: 2px solid #198754;
-        }
 
         .filtro{
             display: flex;

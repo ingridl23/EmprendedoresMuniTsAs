@@ -166,14 +166,13 @@
             </div>
             <br>
             <div class="{{ Auth::check() && Auth::user()->hasRole('admin') ? 'filtroAdmin' : '' }}">
-                <form class="form-inline my-2 my-lg-0">
+                <form class="form-inline formFiltro my-2 my-lg-0">
                     <div class="filtro">
                         <div class="field-group">
-                            <input type="search" placeholder="Buscar por nombre" aria-label="Search">
+                            <input type="search" id="emprendedores-filter" placeholder="Buscar por nombre" aria-label="Search">
                         </div>
                         <div class="col-auto">
-                            <button class="btn btn-primary btn-xl my-2 my-sm-0 botonFiltro"
-                                type="submit">Buscar</button>
+                            <button class="btn btn-primary btn-xl my-2 my-sm-0 botonFiltro">Buscar</button>
                         </div>
                     </div>
                 </form>

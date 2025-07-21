@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\validacionEmprendimiento;
 use App\Http\Requests\validacionEditarEmprendimiento;
+use App\Http\Requests\validacionNoticia;
 use App\Http\Controllers\EmprendedorController;
 use App\Http\Controllers\DireccionController;
 use Illuminate\Support\Facades\Validator;
@@ -47,9 +48,10 @@ class administradorController extends Controller
 
 
         //para noticias
-        $this->middleware('can:insertar noticia', [
+        $this->middleware('can:crear noticia', [
             'only' => [
-                'insertarNoticia'
+                'createNoticia',
+                'showFormCreateNoticia'
             ]
         ]);
 
@@ -176,22 +178,19 @@ class administradorController extends Controller
 
     /**************************************** funciones del crud noticias*************************** */
 
-    // visualizar create
+    // visualizar plantilla con el formulario para cargar los datos
 
     public function showFormCreateNoticia()
     {
-        return view("administradores.formCrearNoticia");
+        return view("administradores.noticias.formCrearNoticia");
     }
-    //insertar noticia
 
-    protected function  createNews(validacionEmprendimiento $request)
+    //Carga la noticia, con los datos enviados desde el formulario, en la BBDD
+    public function createNoticia(validacionNoticia $request)
     {
-        $titulo = $request->input("titulo");
-        $descripcion = $request->textarea("descripcion");
-        $categoria = $request->options("categoria");
         $imagen = $request->file("imagen");
         $path = $imagen->store('img', 'public');
-        Noticias::createNews($request, $path);
+        Noticias::createNoticia($request, $path);
         return redirect('/noticias');
     }
 

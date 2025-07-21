@@ -70,7 +70,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             $user->assignRole('admin');
             return back()->with('success', 'Logueado  correctamente.');
-            return redirect('emprendedores/nuevoEmprendimiento');
+            return redirect('/showLogin');
         }
         return back()->withErrors([
             'error' => 'Credenciales incorrectas Login.',

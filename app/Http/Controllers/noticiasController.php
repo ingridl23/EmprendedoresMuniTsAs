@@ -48,4 +48,5 @@ class noticiasController extends Controller
     {
         return view('administradores.formNuevaNoticia');
     }
+
 }

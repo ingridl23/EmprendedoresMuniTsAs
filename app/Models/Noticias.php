@@ -73,22 +73,16 @@ class Noticias extends Model
 
 
 
-
-
-
-
-
-    public static function crearNoticia($request, $path)
+    public static function createNoticia($request, $path)
     {
-
+        
         $noticia = Noticias::create([
-            'id' => $request->id,
-            //timestamps?
             'titulo' => $request->titulo,
             'categoria' => $request->categoria,
             'descripcion' => $request->descripcion,
             'imagen' => $path,
-
+            'created_at'=>date('m-d-Y G:i:s'),
+            'updated_at'=>date('m-d-Y G:i:s'),
         ]);
     }
 

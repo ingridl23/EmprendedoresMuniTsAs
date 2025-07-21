@@ -1,7 +1,6 @@
 "use strict"
 
 document.addEventListener('DOMContentLoaded', e => {
-    console.log(window.mensajeExito);
     if(window.mensajeExito){
         Swal.fire({
             title: "Eliminado!",
@@ -10,13 +9,12 @@ document.addEventListener('DOMContentLoaded', e => {
             confirmButtonColor: "#36be7f"
         });
     }
-
-
     asignarCartel();
     
     document.getElementById('emprendedores-filter').addEventListener("keyup", filtrarEmprendedor);
     document.getElementById('emprendedores-filter').addEventListener("blur", limpiarContenedor);
-    document.querySelector(".botonFiltro").addEventListener("click", function(e) {
+    document.querySelector(".formFiltro").addEventListener("click", e =>{
+        console.log("aca");
         e.preventDefault();
     });
     let admin=false;
