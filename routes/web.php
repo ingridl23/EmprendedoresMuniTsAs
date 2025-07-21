@@ -27,7 +27,7 @@ Route::get('/formar/parte', [FormSerParteController::class, "formarparte"]); // 
 Route::post('/formulario-enviar', [FormSerParteController::class, "enviar"])->name("formulario.enviar"); //ruta que envia  la regla post del formulario
 
 
-
+//emprendedores
 Route::get('/emprendedores', [EmprendedorController::class, "emprendedores"])->name("emprendedores"); //vista general para emprendedores
 
 Route::get('emprendedores/user', [EmprendedorController::class, "obtenerRol"]);
@@ -35,13 +35,12 @@ Route::get('emprendedores/user', [EmprendedorController::class, "obtenerRol"]);
 // ruta para las secciones individuales del emprendedor
 Route::get('/emprendedor/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
 
-// agregar para admin
+//  para admin
 Route::get('/emprendedores/acciones', [administradorController::class, "emprendedores"]);
 
 Route::get('/emprendedores/nuevoEmprendimiento', [administradorController::class, "showFormCrearEmprendimiento"]);
 Route::post('/emprendedores/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"]);
 
-//Route::get('/emprendedores/{id}', [EmprendedorController::class, "showEmprendimientoId"]);
 Route::get('/emprendedores/formEditarEmprendimiento/{id}', [administradorController::class, "showFormEditarEmprendimiento"]);
 Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmprendimiento"]);
 
@@ -55,10 +54,10 @@ Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
 //rutas noticias
 Route::get('/noticias/buscador', [noticiasController::class, 'filterNoticiasByTittle']);
 Route::get("/noticias", [noticiasController::class, "showNoticias"]);
-//Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
-Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]); // ruta temporal para poder editar el template
+
+Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
 //programas
 Route::get("/programas", [ProgramasController::class, "showProgramas"]);
 // ruta para la iteracion de ultimos emprendedores añadidos
 Route::get('/programas/emprendedor', [programasController::class, "showEmprendedores"]);
-Route::get('/ultimosemprendedores', [HomeController::class, "showUltimosEmprendedores"]);
+Route::get('/ultimosemprendedores', [EmprendedorController::class, "EmprendedoresRecientes"]);
