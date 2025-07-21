@@ -40,7 +40,7 @@ class EmprendedorController extends Controller
                 return view("emprendedor.templateEmprendedor", compact('emprendimiento'));
             }
         }
-        //return view("errors.mensaje")->with('mensaje', "No se encuentra cargado ningún emprendimiento");;
+        //return view("errors.mensaje")->with('mensaje', "No se encuentra cargado ningún emprendimiento");
     }
 
     public function showFormCrearEmprendimiento()
@@ -55,16 +55,5 @@ class EmprendedorController extends Controller
             $rol = true;
         }
         return response()->json($rol);
-    }
-
-
-    //traer ultimos 6 emprendedores
-
-
-    public function EmprendedoresRecientes()
-    {
-        $emprendedores = Emprendedor::ultimosEmprendedores();
-        return view('layouts.componentProgramas', compact('emprendedores'))
-            ->with('i', (request()->input('page', 1) - 1) * $emprendedores->perPage());
     }
 }

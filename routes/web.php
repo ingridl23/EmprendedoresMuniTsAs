@@ -37,9 +37,9 @@ Route::post('/formulario-enviar', [FormSerParteController::class, "enviar"])->na
 Route::get('/emprendedores/buscador', [EmprendedorController::class, 'filterEmprendimientosByName']); //Filtro para emprendedores por nombre
 Route::get('/emprendedores', [EmprendedorController::class, "emprendedores"])->name("emprendedores"); //vista general para emprendedores
 Route::get('emprendedores/user', [EmprendedorController::class, "obtenerRol"]); //Se usa en JS para obtener el rol y saber si es admin o no para mostrar contenido generado en JS
-                                                                                //(hay botones solo disponibles para admin por eso es necesario obtener el rol)
+//(hay botones solo disponibles para admin)
 
-Route::get('/emprendedor/{id}', [EmprendedorController::class, "showEmprendimientoId"]);// ruta para las secciones individuales del emprendedor
+Route::get('/emprendedor/{id}', [EmprendedorController::class, "showEmprendimientoId"]); // ruta para las secciones individuales del emprendedor
 
 //  para admin
 Route::get('/emprendedores/acciones', [administradorController::class, "emprendedores"]);
@@ -48,25 +48,17 @@ Route::get('/emprendedores/acciones', [administradorController::class, "emprende
 Route::get('/emprendedores/nuevoEmprendimiento', [administradorController::class, "showFormCrearEmprendimiento"]); //Muestra form para cargar nuevo emprendimiento
 Route::post('/emprendedores/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"]); //Carga el nuevo emprendimiento
 Route::get('/emprendedores/formEditarEmprendimiento/{id}', [administradorController::class, "showFormEditarEmprendimiento"]); //Muestra form para editar emprendimiento
-Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmprendimiento"]); //Edita un emprendimiento en especifico por su ID. 
+Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmprendimiento"]); //Edita un emprendimiento en especifico por su ID.
 Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmprendimiento"]); //Elimina un emprendimiento por su ID
 
+
+//rutas admin y roles
 Auth::routes();
 
 //vista de passwords reset
 Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
 
 
-//RUTAS NOTICIAS
-Route::get('/noticias/buscador', [noticiasController::class, 'filterNoticiasByTittle']); //ruta para el filtro de noticias por titulo
-Route::get("/noticias", [noticiasController::class, "showNoticias"]); //Muestra todas las noticiasd
-Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]); // ruta donde se muestra una noticia especifica por su ID
-
-
-
-//RUTAS PROGRAMAS
-Route::get("/programas", [ProgramasController::class, "showProgramas"]);
-// ruta para la iteracion de ultimos emprendedores añadidos
-Route::get('/programas/emprendedor', [programasController::class, "showEmprendedores"]);
-Route::get('/ultimosemprendedores', [HomeController::class, "showUltimosEmprendedores"]);
-
+Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
+//programas
+Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('programas');;
