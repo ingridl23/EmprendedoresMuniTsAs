@@ -139,10 +139,7 @@
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
-                        Completá el formulario con tus datos y desde la Oficina de Empleo y Capacitación nos pondremos
-                        en
-                        contacto para
-                        que puedas integrarte a esta valiosa propuesta.</p>
+
                     <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
                 </div>
 
@@ -156,11 +153,13 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
                 <img class="divider" src="{{ asset('assets/img/iconos/empleosinfondo.png') }}">
-                <h2 class="mt-0"> ¡Es tu oportunidad de integrarte! </h2>
+                <h2 class="mt-0"> ¡Unite a los programas vigentes! </h2>
 
                 <p class="text-muted mb-5">
-                    Ingresá tus datos y desde la Oficina de Empleo y Capacitación te contactaremos para que puedas
-                    participar de esta importante iniciativa.
+                    Completá el formulario con tus datos y desde la Oficina de Empleo y Capacitación nos pondremos
+                    en
+                    contacto para
+                    que puedas integrarte a esta valiosa propuesta.
                 </p>
                 {{-- ✅ Mensaje de éxito --}}
                 @if (session('success'))
