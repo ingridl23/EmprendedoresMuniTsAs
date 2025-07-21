@@ -20,10 +20,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/styles2.css') }}" rel="stylesheet" />
     <link href= "{{ asset('css/footer.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
 </head>
 
 
@@ -260,44 +260,75 @@
                         </p>
 
 
-                        <div class="contactoemprendedor" id="contacto">
 
-                            <p class="mb-0">
-                                <em>
-                                    <h3><em>Medios de Contacto</em></h3>
-
-                                    <br />
-                                    <strong> contactate con el emprendedor aqui </strong>
-                                </em>
-                                <br />
-                            <div class="social-links mt-3">
-                                @if (isset($emprendimiento->redes->facebook))
-                                    <a href="{{ $emprendimiento->redes->facebook }}" class="facebook"
-                                        target="_blank">
-                                        <!--link de facebook -->
-                                        <i class="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                @endif
-                                @if (isset($emprendimiento->redes->instagram))
-                                    <a href="{{ $emprendimiento->redes->instagram }}" class="instagram"
-                                        target="_blank">
-                                        <i class="fa-brands fa-instagram"></i>
-                                    </a>
-                                @endif
-                                <a class="whatsapp"
-                                    href="https://api.whatsapp.com/send/?phone={{ $emprendimiento->redes->whatsapp }}&text&type=phone_number&app_absent=0"
-                                    target="_blank">
-                                    <i class="fa-brands fa-whatsapp"></i>
-                                </a>
-                            </div>
-                            </p>
-                        </div>
 
                     </div>
+                    </p>
                 </div>
+
             </div>
         </div>
+        </div>
+        </div>
     </section>
+
+    <section class="page-section custom-about" id="about2">
+
+
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0"> ¡Formas de Contacto!</h2>
+                    <hr class="divider divider-light" />
+
+
+                    <div class="social-icons">
+
+                        @if (isset($emprendimiento->redes->facebook))
+                            <a href="{{ $emprendimiento->redes->facebook }}" class="facebook" target="_blank">
+                                <!--link de facebook -->
+                                <img src="{{ asset('assets/img/iconos/facebook.png') }}" alt="Facebook"
+                                    width="32">
+
+                            </a>
+                        @endif
+
+                        @if (isset($emprendimiento->redes->instagram))
+                            <a href="{{ $emprendimiento->redes->instagram }}" class="instagram" target="_blank">
+
+
+                                <img src="{{ asset('assets/img/iconos/instagram.png') }}" alt="Instagram"
+                                    width="32">
+                            </a>
+                        @endif
+
+                        @if (isset($emprendimiento->redes->whatsapp))
+                            <a class="whatsapp"
+                                href="https://api.whatsapp.com/send/?phone={{ $emprendimiento->redes->whatsapp }}&text&type=phone_number&app_absent=0"
+                                target="_blank">
+                                <img src="{{ asset('assets/img/iconos/whatsapp.png') }}" alt="Instagram"
+                                    width="32">
+                            </a>
+                        @endif
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+
+
+
+    </section>
+
+
     <br>
     <br>
     <br>

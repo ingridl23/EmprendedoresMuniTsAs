@@ -106,26 +106,26 @@
                                         <span class="btn-text">Gobierno<br>Abierto</span>
                                     </div>
                                 </a>
-                            @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                <form action="/logout" method="post"
-                                    class="get-started-btn scrollto btn-contact cerrarSesion">
-                                    @csrf
-                                    <button type="submit">
+                                @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                    <form action="/logout" method="post"
+                                        class="get-started-btn scrollto btn-contact cerrarSesion">
+                                        @csrf
+                                        <button type="submit">
+                                            <div class="get-started-group font-color-bl containerLinksExternos">
+                                                <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                                <span class="btn-text">cerrar<br>sesion</span>
+                                            </div>
+                                        </button>
+                                    </form>
+                                @else
+                                    <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
                                         <div class="get-started-group font-color-bl containerLinksExternos">
-                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
-                                            <span class="btn-text">cerrar<br>sesion</span>
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+                                            </i>
+                                            <span class="btn-text">Panel<br>Admin</span>
                                         </div>
-                                    </button>
-                                </form>
-                            @else
-                                <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-                                        </i>
-                                        <span class="btn-text">Panel<br>Admin</span>
-                                    </div>
-                                </a>
-                            @endif
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -154,19 +154,19 @@
             </ol>
         </section>
 
+        @if (Auth::check() && Auth::user()->hasRole('admin'))
+            <div class="search">
+                <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
+                    <a href="noticias/nuevaNoticia">Agregar noticia</a>
+                </button>
+            </div>
+        @endif
         <div class="search">
 
             <input class="inputSearch" id="noticias-filter" type="text" value="" placeholder="buscar">
             <button class="buttonSearch botonFiltro"> <img
                     id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
         </div>
-        @if(Auth::check() && Auth::user()->hasRole('admin'))
-         <div class="search">
-            <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
-                <a href="noticias/nuevaNoticia">Nueva noticia</a>
-            </button>
-        </div>
-        @endif
 
         <div id="noticias-container"></div>
 

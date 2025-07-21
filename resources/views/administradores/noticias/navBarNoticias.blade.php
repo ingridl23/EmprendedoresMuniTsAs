@@ -8,7 +8,7 @@
 
                     <!-- Logo y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                        <img src="{{asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png')}}"
+                        <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
                             alt="Logo Tres Arroyos" class="logo-img me-2">
                         <span class="brand-text"></span>
                     </a>
@@ -27,7 +27,12 @@
                                 <a class="nav-link" href="{{ url('/') }}">Pagina principal</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
+                                <a class="nav-link" href="{{ url('/Programas') }}">Programas</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/Emprendedores') }}">Emprendedores</a>
+
                             </li>
                         </ul>
 
@@ -37,8 +42,8 @@
                             <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                 class="get-started-btn crollto">
                                 <div class="get-started-group font-color-bl containerLinksExternos">
-                                    <img src="{{asset('assets/img/iconos/MiTr-remove-removebg-preview.png')}}"
-                                        slt class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
+                                    <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}" slt
+                                        class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                     <span class="btn-text">MiTresa</span>
                                 </div>
                             </a>
@@ -61,15 +66,16 @@
                                     <span class="btn-text">Gobierno<br>Abierto</span>
                                 </div>
                             </a>
-                            <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
-                                    @csrf
-                                    <button type="submit">
-                                        <div class="get-started-group font-color-bl containerLinksExternos">
-                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
-                                            <span class="btn-text">cerrar<br>sesion</span>
-                                        </div>
-                                    </button>
-                                </form>
+                            <form action="/logout" method="post"
+                                class="get-started-btn scrollto btn-contact cerrarSesion">
+                                @csrf
+                                <button type="submit">
+                                    <div class="get-started-group font-color-bl containerLinksExternos">
+                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                        <span class="btn-text">cerrar<br>sesion</span>
+                                    </div>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

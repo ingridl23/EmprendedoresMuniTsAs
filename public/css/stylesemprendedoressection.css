@@ -136,8 +136,11 @@
         div.modal-body button.detalleEmprendedor:hover {
             background-color: #164e34;
         }
-
-        button.botonAgregarEmprendimiento:active, button.botonFiltro:active, .swal2-confirm:active, div.modal-body button.detalleEmprendedor:active{
+        
+        button.botonAgregarEmprendimiento:active,
+        button.botonFiltro:active,
+        .swal2-confirm:active,
+        div.modal-body button.detalleEmprendedor:active {
             background-color: #0c2c1d;
             transform: scale(0.95);
         }
@@ -11869,47 +11872,19 @@
             background-color: rgba(255, 255, 255, 0.98) !important;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
         }
-
-    div.mb-3{
-        align-items: center;
-        margin: 0 !important;
-    }
-
-        .filtro{
+        
+        div.mb-3 {
+            align-items: center;
+            margin: 0 !important;
+        }
+        
+        .filtro {
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-    #emprendedores-filter {
-        border: 1px solid grey;
-        border-bottom: 2px solid #198754;
-    }
-        @media (max-width:800px) {
-            div.filtroAdmin {
-                display: block;
-            }
-            .agregarEmprendimiento {
-                margin-left: auto;
-                margin-right: auto;
-                width: 60%;
-            }
-            div.agregarEmprendimiento button {
-                width: 100%;
-            }
-        }
-        
-        @media (max-width:600px) {
-            .agregarEmprendimiento {
-                width: 85%;
-            }
-        }
-        
-        @media (min-width: 1000px) {
-            div.filtroAdmin form {
-                width: 50%;
-            }
-            .agregarEmprendimiento {
-                margin-left: 0;
-            }
+        #emprendedores-filter {
+            border: 1px solid grey;
+            border-bottom: 2px solid #198754;
         }

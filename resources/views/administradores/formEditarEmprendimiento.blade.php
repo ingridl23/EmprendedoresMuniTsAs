@@ -17,7 +17,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
             rel="stylesheet" />
-        <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
@@ -62,10 +62,10 @@
         </div>
     </div>
 
-     @if ($errors->any())
-            <div class="alert alert-danger text-center mb-3">
-                <p class="mensajeError">Necesita completar correctamente todos los campos.</p>
-            </div>
+    @if ($errors->any())
+        <div class="alert alert-danger text-center mb-3">
+            <p class="mensajeError">Necesita completar correctamente todos los campos.</p>
+        </div>
     @endif
 
     <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
