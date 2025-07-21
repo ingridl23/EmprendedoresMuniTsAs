@@ -348,6 +348,7 @@
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/logicaform.js') }} "></script>
+    <script src="{{ asset('js/cartelEliminar.js') }} "></script>
     <script src="{{ asset('js/emprendedores.js') }}"></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
 

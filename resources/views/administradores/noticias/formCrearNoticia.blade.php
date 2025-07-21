@@ -70,6 +70,11 @@
                 </div>
             </div>
         </div>
+         @if ($errors->any())
+            <div class="alert alert-danger text-center mb-3">
+                <p class="mensajeError">Necesita completar correctamente todos los campos.</p>
+            </div>
+        @endif
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <form action="/noticias/cargarNuevaNoticia" method="POST" enctype="multipart/form-data"

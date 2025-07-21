@@ -15,7 +15,10 @@ use App\Http\Controllers\ProgramasController;
 
 //RUTAS NOTICIAS ADMIN
 Route::post("/noticias/cargarNuevaNoticia", [administradorController::class, "createNoticia"]);
-Route::get('/noticias/nuevaNoticia', [administradorController::class, "showFormCreateNoticia"]); //Muestra formulario para cargar una nueva noticia
+Route::get('/noticias/nuevaNoticia',[administradorController::class, "showFormCreateNoticia"]); //Muestra formulario para cargar una nueva noticia
+Route::get('/noticias/formEditarNoticia/{id}',[administradorController::class, "showFormEditNoticia"]); //Muestra formulario para editar los datos de una noticia
+Route::PATCH('/noticias/{id}',[administradorController::class, "EditNoticia"]); //Edita la noticia con los datos que llegan del formulario
+Route::DELETE('/noticias/{id}',[administradorController::class, "deleteNoticia"]); //Elimina la noticia segun el id único que tenga.
 
 //RUTAS LOGIN
 Route::post('/logout', [LoginController::class, 'logout']); //Cierra la sesión

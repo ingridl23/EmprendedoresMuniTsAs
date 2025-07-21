@@ -41,7 +41,7 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{ asset('assets/img/oficinaempleodireccioncomercio-02.png') }}"
+                            <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
                                 alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -70,7 +70,7 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
                                     <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
+                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}" slt
                                             class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
@@ -143,8 +143,19 @@
         </section>
     </div>
 
-
-
+    @if(Auth::check() && Auth::user()->hasRole('admin'))
+        <div class="search">
+            <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
+                <a href="/noticias/formEditarNoticia/{{$noticia->id}}">Editar noticia</a>
+            </button>
+        </div>
+        <form action="/noticias/{{$noticia->id}}" class="formEliminar" method="post" >
+            @csrf
+            @method('DELETE')
+            <input type="submit" value="Eliminar noticia">
+        </form>
+    @endif
+ 
 
     <!-- aca todo esto deberia iterarse-->
     <div class="container-fluid">
@@ -181,14 +192,24 @@
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
 
+    @if (session('success'))
+        <script>
+            window.mensajeExito = @json(session('success'));
+        </script>
+    @endif
+
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
+    <script src="{{ asset('js/cartelEliminar.js') }} "></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--Para alertas desde JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

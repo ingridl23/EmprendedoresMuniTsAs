@@ -106,7 +106,7 @@
                                         <span class="btn-text">Gobierno<br>Abierto</span>
                                     </div>
                                 </a>
-                                                            @if (Auth::check() && Auth::user()->hasRole('admin'))
+                            @if (Auth::check() && Auth::user()->hasRole('admin'))
                                 <form action="/logout" method="post"
                                     class="get-started-btn scrollto btn-contact cerrarSesion">
                                     @csrf
@@ -190,7 +190,7 @@
                         alt={{ $noticia->titulo }}>
                     <div class="card-body">
                         <h5 class="card-title">{{ $noticia->titulo }}</h5>
-                        <p class="card-text">{{ $noticia->descripcion }}</p>
+                        <p class="card-text">{{ $noticia->categoria }}</p>
                         <div class="container-vermas">
                             <p class="card-text"><small class="text-body-secondary">Última actualización :
                                     {{ $noticia->updated_at }}</small></p>
