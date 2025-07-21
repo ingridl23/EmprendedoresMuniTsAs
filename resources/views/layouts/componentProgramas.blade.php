@@ -72,7 +72,7 @@
 
 
                 <div class="carousel-item">
-                    <img src="{{ asset('/assets/img/clubemprendedoresadaptadas/2.jpg') }}"
+                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/2.jpg') }}"
                         class="img-fluid d-block  w-100" alt="...">
                 </div>
 
@@ -123,20 +123,19 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
 
-                    @foreach($emprendimientos as $emprendedor)
-
-                    <!--esto se va y solo quedaria el foreach para traer las 6 imagenes -->
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="{{ asset('storage/' . $emprendedor->imagen)}}" title="{{$emprendedor->nombre}}">
-                            <img class="img-fluid"
-                                src="{{ asset('storage/' . $emprendedor->imagen)}}"
-                                alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">{{$emprendedor->categoria}}</div>
-                                <div class="project-name">{{$emprendedor->nombre}}</div>
-                            </div>
-                        </a>
-                    </div>
+                    @foreach ($emprendimientos as $emprendedor)
+                        <!--esto se va y solo quedaria el foreach para traer las 6 imagenes -->
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{{ asset('storage/' . $emprendedor->imagen) }}"
+                                title="{{ $emprendedor->nombre }}">
+                                <img class="img-fluid" src="{{ asset('storage/' . $emprendedor->imagen) }}"
+                                    alt="..." />
+                                <div class="portfolio-box-caption">
+                                    <div class="project-category text-white-50">{{ $emprendedor->categoria }}</div>
+                                    <div class="project-name">{{ $emprendedor->nombre }}</div>
+                                </div>
+                            </a>
+                        </div>
                     @endforeach
 
                 </div>
@@ -165,8 +164,8 @@
 
         <div class="programas">
 
-            <img class="img-fluid imagen-escuela"
-                src="{{asset('assets/img/logoescuelaemprendedores.png')}}" alt="Logo de Escuela de Emprendedores" />
+            <img class="img-fluid imagen-escuela" src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
+                alt="Logo de Escuela de Emprendedores" />
 
             <h3 class="subtitulo">Escuela de Emprendedores</h3>
             <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>
@@ -192,42 +191,42 @@
             <div id="carouselCapacitacionEmprendedores" class="carousel slide carrousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="1000">
-                        <img src="{{asset('assets/img/clubemprendedoresadaptadas/escuelaemprendedores.jpg')}}"
+                        <img src="{{ asset('assets/img/clubemprendedoresadaptadas/escuelaemprendedores.jpg') }}"
                             class="img-fluid  d-block w-100" alt="...">
 
                     </div>
 
                     <div class="carousel-item">
 
-                        <img src="{{asset('assets/img/capacitacionesemprendedoresadaptadas/1.jpg')}}"
+                        <img src="{{ asset('assets/img/capacitacionesemprendedoresadaptadas/1.jpg') }}"
                             class="d-block w-100" alt="...">
                     </div>
 
                     <div class="carousel-item">
-                        <img src="{{asset('/assets/img/capacitacionesemprendedoresadaptadas/4.jpg')}}"
+                        <img src="{{ asset('assets/img/capacitacionesemprendedoresadaptadas/4.jpg') }}"
                             class="d-block w-100" alt="...">
                     </div>
 
                     <div class="carousel-item">
-                        <img src="{{asset('/assets/img/capacitacionesemprendedoresadaptadas/5.jpg')}}"
+                        <img src="{{ asset('assets/img/capacitacionesemprendedoresadaptadas/5.jpg') }}"
                             class="d-block w-100" alt="...">
                     </div>
 
 
 
                 </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCapacitacionEmprendedores"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCapacitacionEmprendedores"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                    
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCapacitacionEmprendedores"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselCapacitacionEmprendedores" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            </div>
 
 
 
@@ -287,11 +286,11 @@
             <!--seccioon carrousel ferias de emprendedores al aire libre -->
             <div id="carouselFeriasEmprendedores" class="carousel slide carrousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    @for($i=1; $i <= count(scandir('assets/img/emprendedoresferiaadaptadas/'))-2; $i++)
-                    <div class="carousel-item {{$i === 1 ? 'active':''}}" data-bs-interval="5000">
-                        <img src="{{asset('assets/img/emprendedoresferiaadaptadas/'.$i.'.jpg')}}"
-                            class="d-block w-100" alt="Imagen de emprendedores al aire libre">
-                    </div>
+                    @for ($i = 1; $i <= count(scandir('assets/img/emprendedoresferiaadaptadas/')) - 2; $i++)
+                        <div class="carousel-item {{ $i === 1 ? 'active' : '' }}" data-bs-interval="5000">
+                            <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/' . $i . '.jpg') }}"
+                                class="d-block w-100" alt="Imagen de emprendedores al aire libre">
+                        </div>
                     @endfor
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselFeriasEmprendedores"

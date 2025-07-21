@@ -23,9 +23,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/programas.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/programas.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
 
 
@@ -42,7 +42,7 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{ asset('assets/img/oficinaempleodireccioncomercio-02.png') }}"
+                            <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
                                 alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -63,6 +63,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
                                 </li>
+
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                                 </li>
@@ -77,8 +79,8 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
                                     <div class="get-started-group font-color-bl">
-                                        <img src="{{ asset('assets/img/MiTr-remove-removebg-preview.png') }}" slt
-                                            class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
+                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
+                                            slt class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
@@ -135,12 +137,13 @@
 
     @include('layouts.componentProgramas')
 
-    @include('emprendedor.footer');
-      
-      <!-- Bootstrap core JS-->
-        <script src="{{ asset('js/scripts.js') }} "></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-        <!-- Core theme JS-->
+    @include('emprendedor.footer')
+
+    <!-- Bootstrap core JS-->
+    <script src="{{ asset('js/scripts.js') }} "></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
 </body>
+
 </html>

@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <!-- Google fonts-->
+    <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-     <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles2.css') }}" rel="stylesheet" />
     <link href= "{{ asset('css/footer.css') }}" rel="stylesheet" />
@@ -29,16 +29,16 @@
 
 <body id="page-top">
     <!-- ======= Header ======= -->
-<div class="custom-navbar-container">
-    <header id="header" class="fixed-top header-scrolled">
-        <div class="container-fluid px-4 container">
-            <!-- Navbar principal -->
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
-                <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
+    <div class="custom-navbar-container">
+        <header id="header" class="fixed-top header-scrolled">
+            <div class="container-fluid px-4 container">
+                <!-- Navbar principal -->
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
+                    <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{asset('assets/img/oficinaempleodireccioncomercio-02.png')}}" alt="Logo Tres Arroyos"
-                                class="logo-img me-2">
+                            <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
+                                alt="Logo Tres Arroyos" class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
 
@@ -54,24 +54,32 @@
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#productos">Productos</a>
+                                    <a class="nav-link"href="{{ url('/') }}">Inicio</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#contacto ">Contacto</a>
+                                    <a class="nav-link"href="{{ url('/programas') }}">Programas</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
+                                </li>
+
+                                <li class="nav-item">
                                     <a class="nav-link" href="/emprendedores ">Emprendedores</a>
+                                </li>
+                                <li class="nav-item serParte">
+                                    <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
                                 </li>
                             </ul>
 
                             <!-- Botones de servicios externos -->
                             <div class="get-started-buttons d-flex align-items-center">
-                                <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class="
+                                <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
+                                    class="
                                     get-started-btn crollto get-started-btn">
                                     <div class="get-started-group font-color-bl">
-                                        <img src="{{asset('assets/img/MiTr-remove-removebg-preview.png')}}" slt
-                                            class=" img-btn-logonav mb-1">
+                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
+                                            slt class=" img-btn-logonav mb-1">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
@@ -93,24 +101,25 @@
                                         <span class="btn-text">Gobierno<br>Abierto</span>
                                     </div>
                                 </a>
-                                @if(Auth::check() && Auth::user()->hasRole('admin'))
-                                <form action="/logout" method="post" class="get-started-btn scrollto btn-contact cerrarSesion">
-                                    @csrf
-                                    <button type="submit">
-                                        <div class="get-started-group font-color-bl containerLinksExternos">
-                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
-                                            <span class="btn-text">cerrar<br>sesion</span>
-                                        </div>
-                                    </button>
-                                </form>
+                                @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                    <form action="/logout" method="post"
+                                        class="get-started-btn scrollto btn-contact cerrarSesion">
+                                        @csrf
+                                        <button type="submit">
+                                            <div class="get-started-group font-color-bl containerLinksExternos">
+                                                <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                                <span class="btn-text">cerrar<br>sesion</span>
+                                            </div>
+                                        </button>
+                                    </form>
                                 @else
-                                <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-                                        </i>
+                                    <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
+                                        <div class="get-started-group font-color-bl containerLinksExternos">
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+                                            </i>
                                             <span class="btn-text">Panel<br>Admin</span>
-                                    </div>
-                                </a>
+                                        </div>
+                                    </a>
                                 @endif
                             </div>
                         </div>
@@ -126,11 +135,13 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">{{$emprendimiento->nombre}} </h1> <!--((emprendedor-nombre)) -->
+                    <h1 class="text-white font-weight-bold">{{ $emprendimiento->nombre }} </h1>
+                    <!--((emprendedor-nombre)) -->
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 mb-5">{{$emprendimiento->descripcion}}</p> <!--((emprendedor -descripcion)) -->
+                    <p class="text-white-75 mb-5">{{ $emprendimiento->descripcion }}</p>
+                    <!--((emprendedor -descripcion)) -->
 
 
                 </div>
@@ -147,7 +158,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -157,7 +168,7 @@
             <!-- Card 2 -->
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -167,7 +178,7 @@
             <!-- Card 3 -->
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -180,7 +191,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -239,9 +250,12 @@
                             <em>
                                 Encontranos en
                                 <br />
-                                <strong>Ciudad: {{$emprendimiento->direccion->ciudad}} - {{$emprendimiento->direccion->localidad}}</strong>
+                                <strong>Ciudad: {{ $emprendimiento->direccion->ciudad }} -
+                                    {{ $emprendimiento->direccion->localidad }}</strong>
                                 <br />
-                                <strong>Calle: {{$emprendimiento->direccion->calle}} al {{$emprendimiento->direccion->altura}}</strong> <!--((emprendedor- direccion)) -->
+                                <strong>Calle: {{ $emprendimiento->direccion->calle }} al
+                                    {{ $emprendimiento->direccion->altura }}</strong>
+                                <!--((emprendedor- direccion)) -->
                             </em>
                         </p>
 
@@ -257,21 +271,21 @@
                                 </em>
                                 <br />
                             <div class="social-links mt-3">
-                                @if(isset($emprendimiento->redes->facebook))
-                                    <a href="{{$emprendimiento->redes->facebook}}" class="facebook"
+                                @if (isset($emprendimiento->redes->facebook))
+                                    <a href="{{ $emprendimiento->redes->facebook }}" class="facebook"
                                         target="_blank">
                                         <!--link de facebook -->
                                         <i class="fa-brands fa-facebook-f"></i>
                                     </a>
                                 @endif
-                                @if(isset($emprendimiento->redes->instagram))
-                                    <a href="{{$emprendimiento->redes->instagram}}" class="instagram"
+                                @if (isset($emprendimiento->redes->instagram))
+                                    <a href="{{ $emprendimiento->redes->instagram }}" class="instagram"
                                         target="_blank">
                                         <i class="fa-brands fa-instagram"></i>
                                     </a>
                                 @endif
                                 <a class="whatsapp"
-                                    href="https://api.whatsapp.com/send/?phone={{$emprendimiento->redes->whatsapp}}&text&type=phone_number&app_absent=0"
+                                    href="https://api.whatsapp.com/send/?phone={{ $emprendimiento->redes->whatsapp }}&text&type=phone_number&app_absent=0"
                                     target="_blank">
                                     <i class="fa-brands fa-whatsapp"></i>
                                 </a>

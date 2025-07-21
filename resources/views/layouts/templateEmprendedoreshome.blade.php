@@ -52,7 +52,6 @@
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">Bienvenidos a la Oficina de Empleo y Capacitación de Tres
                         Arroyos </h1>
-                    <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
@@ -115,13 +114,13 @@
         </div>
 
 
-        <!--  btn-xl-->
+
     </section>
     <!-- Services-->
     <section class="page-section section-services" id="services">
         <div class="container px-4 px-lg-5">
             <h2 class="text-center mt-0">Apoyamos el talento local, visibilizamos el trabajo cultural</h2>
-            <hr class="divider" />
+
             <div class="row justify-content-center  align-baseline">
                 <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
                     <div class="mt-5">
@@ -180,7 +179,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
-                    <img class="divider" src="{{ asset('assets/img/empleosinfondo.png') }}">
+                    <img class="divider" src="{{ asset('assets/img/iconos/empleosinfondo.png') }}">
                     <h2 class="mt-0"> Unite a los programas vigentes</h2>
                     </h2>
                     <p class="text-muted mb-5">

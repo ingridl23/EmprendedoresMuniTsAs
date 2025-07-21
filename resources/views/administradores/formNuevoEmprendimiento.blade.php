@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    
- <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Nuevo emprendimiento</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-            integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
-        <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
-        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-        <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
-        <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-            integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Nuevo emprendimiento</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-        <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
-            rel="stylesheet" />
-    </head>
-    <body id="page-top">
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
 
     @include('administradores.navBarAdmin')
 
@@ -39,16 +39,19 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Agrega un nuevo emprendimiento para que sea parte del Club de Emprendedores</h1>
+                    <h1 class="text-white font-weight-bold">Agrega un nuevo emprendimiento para que sea parte del Club
+                        de Emprendedores</h1>
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
-                        Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el emprendedurismo local,
-                         promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y mejores oportunidades para quienes
-                         apuestan a crecer en nuestra comunidad.
+                        Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
+                        emprendedurismo local,
+                        promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y mejores
+                        oportunidades para quienes
+                        apuestan a crecer en nuestra comunidad.
                     </p>
-                
+
                     <br>
                 </div>
             </div>
@@ -71,16 +74,16 @@
                 </div>
             </div>
         </div>
-              {{-- ✅ Mensaje de éxito --}}
-                @if (session('success'))
-                    <div class="alert alert-success text-center mb-3">
-                        {{ session('success') }}
-                    </div>
-                @else
-                    <div class="alert alert-success text-center mb-3">
-                        {{ session('success') }}
-                    </div>
-                @endif
+        {{-- ✅ Mensaje de éxito --}}
+        @if (session('success'))
+            <div class="alert alert-success text-center mb-3">
+                {{ session('success') }}
+            </div>
+        @else
+            <div class="alert alert-success text-center mb-3">
+                {{ session('success') }}
+            </div>
+        @endif
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <form action="/emprendedores/crearEmprendimiento" method="POST" enctype="multipart/form-data"
@@ -105,18 +108,18 @@
 
 
     <!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core theme JS-->
-<script src="{{ asset('js/scripts3.js') }} "></script>
-<script src="{{ asset('js/logicaFormNuevoYEditarEmprendimiento.js') }}"></script>
-<script src="{{ asset('js/navbar.js') }}"></script>
-<script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>
+    <!-- Core theme JS-->
+    <script src="{{ asset('js/scripts3.js') }} "></script>
+    <script src="{{ asset('js/logicaFormNuevoYEditarEmprendimiento.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
+    <script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>
 
-<!-- SimpleLightbox plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
 

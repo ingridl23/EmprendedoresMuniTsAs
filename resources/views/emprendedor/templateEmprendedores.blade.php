@@ -21,6 +21,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/noticias.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 </head>
@@ -37,7 +38,7 @@
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="assets/img/oficinaempleodireccioncomercio-02.png" alt="Logo Tres Arroyos"
+                            <img src="assets/img/iconos/oficinaempleodireccioncomercio-02.png" alt="Logo Tres Arroyos"
                                 class="logo-img me-2">
                             <span class="brand-text"></span>
                         </a>
@@ -52,9 +53,16 @@
                         <!-- Menú de navegación principal -->
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
+
                                 <li class="nav-item">
-                                    <a class="nav-link navbar-brand " id="emprendedorestext"
-                                        href="{{ url('/') }}">Volver a Inicio</a>
+                                    <a class="nav-link"href="{{ url('/') }}">Volver a Inicio</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link"href="{{ url('/programas') }}">Programas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
                                 </li>
 
                                 <li class="nav-item serParte">
@@ -67,8 +75,8 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
                                     <div class="get-started-group font-color-bl">
-                                        <img src="assets/img/MiTr-remove-removebg-preview.png" slt
-                                            class=" img-btn-logonav mb-1">
+                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
+                                            slt class=" img-btn-logonav mb-1">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
@@ -126,7 +134,7 @@
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">Emprendedores Culturales De Tres Arroyos </h1>
-                    <hr class="divider" />
+
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 mb-5">Esta sección está dedicada a visibilizar y apoyar a todos los
@@ -134,10 +142,6 @@
                         Aquí encontrarás historias, productos y proyectos que reflejan el talento, la identidad y la
                         creatividad de nuestra comunidad.</p>
 
-                    <p class="text-white-75 mb-5">Si formás parte de la dirección de Empleo y Capacitación y tenés un
-                        emprendimiento,
-                    </p>
-                    <h3 class="text-white-75 ">¡Este es tu lugar!</h3>
 
                 </div>
             </div>
@@ -165,6 +169,12 @@
                 <h1 class="section-subheading text-muted"> Conoce La propuesta de cada emprendedor</h1>
             </div>
             <br>
+            <div class="search">
+
+                <input class="inputSearch" type="text" value="" placeholder="buscar">
+                <button class="buttonSearch "> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}"
+                        title="lupa"></button>
+            </div>
             <div class="{{ Auth::check() && Auth::user()->hasRole('admin') ? 'filtroAdmin' : '' }}">
                 <form class="form-inline formFiltro my-2 my-lg-0">
                     <div class="filtro">
@@ -206,7 +216,7 @@
                                                             class="fas fa-plus fa-3x"></i></div>
                                                 </div>
                                                 <img class="img-fluid"
-                                                    src="{{ asset('storage/' . $emprendedor->imagen)}}"
+                                                    src="{{ asset('storage/' . $emprendedor->imagen) }}"
                                                     alt="{{ $emprendedor->nombre }}" />
                                             </a>
                                             <div class="portfolio-caption">
@@ -232,7 +242,7 @@
                                                                     <h2 class="text-uppercase">
                                                                         {{ $emprendedor->nombre }}</h2>
                                                                     <img class="img-fluid d-block mx-auto img-modalEmprendedor"
-                                                                        src="{{ asset('storage/' . $emprendedor->imagen)}}"
+                                                                        src="{{ asset('storage/' . $emprendedor->imagen) }}"
                                                                         alt="{{ $emprendedor->nombre }}" />
                                                                     <p>{{ $emprendedor->descripcion }}</p>
                                                                     <ul class="list-inline">
