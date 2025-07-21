@@ -82,6 +82,8 @@ class administradorController extends Controller
 
     public function crearEmprendimiento(validacionEmprendimiento $request)
     {
+
+        $data = $request->validated();
         $imagen = $request->file("imagen");
         $path = $imagen->store('img', 'public');
         Emprendedor::crearEmprendimiento($request, $path);

@@ -108,8 +108,10 @@ class Emprendedor extends Model
         return $emprendimientos;
     }
 
+    //traer ultimos 6 emprendedores
     public static function ultimosEmprendedores($cantidad = 6)
     {
-        return Emprendedor::orderBy('created_at', 'desc')->paginate($cantidad);
+        return Emprendedor::orderBy('created_at', 'desc')->limit($cantidad)
+            ->get();
     }
 }

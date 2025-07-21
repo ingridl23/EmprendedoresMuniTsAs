@@ -3,49 +3,45 @@
 namespace Database\Factories;
 
 use App\Models\Emprendedor;
-use App\Models\Redes;
-use App\Models\direccion;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Faker\Factory as FakerFactory;
-use Faker\Generator as Faker;
-use Smknstd\FakerPicsumImages\FakerPicsumImagesProvider;
-
 
 class EmprendedorFactory extends Factory
 {
-     protected $model = Emprendedor::class;
+    protected $model = Emprendedor::class;
 
     public function definition()
     {
-        $faker = app(\Faker\Generator::class);
-            // Añadí el proveedor Picsum
-        $faker->addProvider(new FakerPicsumImagesProvider($faker));
-        // Definí la carpeta donde guardarás las imágenes
-        $dir = storage_path('app/public/img/pruebaEmprendedor');
+        // 1) Carpeta donde guardamos las imágenes
+        $dir = storage_path('app/public/assets/img/emprendimientos');
+        if (! is_dir($dir)) {
+            mkdir($dir, 0755, true);
+        }
 
-            // Asegurate de que exista:
-            if (!is_dir($dir)) {
-                mkdir($dir, 0755, true);
-            }
+        // 2) Generamos la imagen con Faker (built‑in)
+        //    Parám posicionales: (ruta, ancho, alto)
+        $filePath = $this->faker->image($dir, 640, 480);
 
-            // Generá y guardá una imagen de 640×480
-            $filePath = $faker->image(dir: $dir, width: 640, height: 480);
+        // 3) Convertimos ruta absoluta a relativa
+        $relative = str_replace(storage_path('app/public/'), '', $filePath);
 
-            // Luego guardás el _path_ relativo en la DB
-            $relative = str_replace(storage_path('app/public/'), '', $filePath);
-       
-        $redes = redes::factory()->create(); 
-        $direccion=direccion::factory()->create();
-         return [
-            'nombre' => $this->faker->company,
-            'descripcion' => $this->faker->paragraph,
-            'categoria' => $this->faker->randomElement(['Gastronomía', 'Indumentaria', 'Tecnología', 'Servicios']),
-            'redes_id' => rand(1, 10),
-            'redes_id' => $redes->id,
-            'direccion_id'=>$direccion->id,
-            'imagen' => $relative,
-            'created_at' => now(),
-            'updated_at' => now(),
+        // 4) Creamos registros de redes y dirección
+        $redes      = \App\Models\Redes::factory()->create();
+        $direccion  = \App\Models\Direccion::factory()->create();
+
+        return [
+            'nombre'       => $this->faker->company(),
+            'descripcion'  => $this->faker->paragraph(),
+            'categoria'    => $this->faker->randomElement([
+                'Gastronomía',
+                'Indumentaria',
+                'Tecnología',
+                'Servicios'
+            ]),
+            'redes_id'     => $redes->id,
+            'direccion_id' => $direccion->id,
+            'imagen'       => $relative,
+            'created_at'   => now(),
+            'updated_at'   => now(),
         ];
     }
 }

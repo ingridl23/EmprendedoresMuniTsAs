@@ -30,6 +30,10 @@ Route::post('/formulario-enviar', [FormSerParteController::class, "enviar"])->na
 //emprendedores
 Route::get('/emprendedores', [EmprendedorController::class, "emprendedores"])->name("emprendedores"); //vista general para emprendedores
 
+
+
+
+
 Route::get('emprendedores/user', [EmprendedorController::class, "obtenerRol"]);
 
 // ruta para las secciones individuales del emprendedor
@@ -46,6 +50,8 @@ Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmpr
 
 Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmprendimiento"]);
 
+
+//rutas admin y roles
 Auth::routes();
 
 //vista de passwords reset
@@ -57,7 +63,4 @@ Route::get("/noticias", [noticiasController::class, "showNoticias"]);
 
 Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
 //programas
-Route::get("/programas", [ProgramasController::class, "showProgramas"]);
-// ruta para la iteracion de ultimos emprendedores añadidos
-Route::get('/programas/emprendedor', [programasController::class, "showEmprendedores"]);
-Route::get('/ultimosemprendedores', [EmprendedorController::class, "EmprendedoresRecientes"]);
+Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('programas');;

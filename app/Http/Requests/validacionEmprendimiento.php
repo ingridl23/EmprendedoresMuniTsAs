@@ -2,6 +2,7 @@
 
 
 namespace App\Http\Requests;
+
 use Illuminate\Http\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -18,37 +19,31 @@ class validacionEmprendimiento  extends FormRequest
         return true;
     }
 
-    public function store(Request $request){
-         if ($request->filled('oculto')) {
-            return back()->with("error", "formulario rechazado posible bot detectado"); // posible bot detectado
-        }
-
-        $this->validate($request, $this->rules());
-        return back()->with('success', ' Se agrega un emprendedor correctamente.');
-    }
 
     /**
      * Get the validation rules that apply to the request.
      *
      * @return array
      */
-    public function rules(){
+    public function rules()
+    {
 
         return [
             'nombre' => 'bail|required|string|min:3|max:100',
             'descripcion' => 'bail|required|string|min:1',
             'categoria' => 'bail|required|string|min:1|max:60',
-            'imagen' => 'bail|required|image|mimes:jpeg,jpg,png,webp',
+
+            'imagen'      => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'facebook' => 'nullable|string|min:1|max:100',
             'instagram' => 'nullable|string|min:1|max:100',
             'whatsapp' => 'numeric|digits_between:8,11',
             'ciudad' => 'bail|required|string|min:1|max:100',
             'calle' => 'bail|required|string|min:1|max:100',
             'altura' => 'required|numeric|min:1',
-            "localidad" =>"required|string"
+            "localidad" => "required|string"
         ];
 
-        
+
         //  Mail::to('ingridmilagrosledesma@gmail.com')->send(new sendContactForm($request->all()));
     }
     public function messages()
@@ -62,7 +57,7 @@ class validacionEmprendimiento  extends FormRequest
             'descripcion.string' => 'Debe ingresar una descripcion valida',
             'imagen.mimes' => 'El formato de la imagen debe de ser en: jpeg,jpg,png,webp',
             'whatsapp.numeric' => 'Debe ingresar un número de teléfono',
-            
+
             'ciudad' => 'Es necesario agregar la ciudad donde se encuentra el emprendimiento',
             'localidad' => 'Es necesario agregar la localidad donde se encuentra el emprendimiento',
             'calle' => 'Es necesario agregar la calle donde se encuentra el emprendimiento',

@@ -8,16 +8,15 @@ use Illuminate\Http\Request;
 
 class ProgramasController extends Controller
 {
-    public function showProgramas()
-    {
-        $emprendimientos = Emprendedor::traerAleatoriamenteSeis();
-        return view('layouts.programas', compact('emprendimientos'));
-    }
 
-    public function showEmprendedores()
+    public function ShowPrograma()
     {
-        $ultimosEmprendedores = Emprendedor::ultimosEmprendedores(); // método nuevo
-        return view('layouts.programas', compact('ultimosEmprendedores'));
-        dd(Emprendedor::ultimosEmprendedores());
+        // return view("layouts.programas");
+        // 1.1) Traigo los últimos 6 emprendedores
+        $ultimos = Emprendedor::ultimosEmprendedores();
+        //  dd($ultimos->pluck('nombre')->toArray());
+
+        // 1.2) Le paso $ultimos a la vista programas
+        return view('layouts.programas', compact('ultimos'));
     }
 }
