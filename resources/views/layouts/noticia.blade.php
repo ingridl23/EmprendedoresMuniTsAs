@@ -21,9 +21,9 @@
 
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-    <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/noticias.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/noticiaIndividual.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 </head>
 
@@ -57,10 +57,21 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/') }}">Volver al inicio</a>
+                                    <a class="nav-link" href="{{ url('/') }}">Inicio</a>
                                 </li>
 
-
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/programas') }}">Programas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('formar/parte') }}">ser parte</a>
+                                </li>
                             </ul>
 
 
@@ -70,8 +81,8 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
                                     class="get-started-btn crollto">
                                     <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}" slt
-                                            class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
+                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
+                                            slt class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
@@ -94,26 +105,26 @@
                                         <span class="btn-text">Gobierno<br>Abierto</span>
                                     </div>
                                 </a>
-                            @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                <form action="/logout" method="post"
-                                    class="get-started-btn scrollto btn-contact cerrarSesion">
-                                    @csrf
-                                    <button type="submit">
+                                @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                    <form action="/logout" method="post"
+                                        class="get-started-btn scrollto btn-contact cerrarSesion">
+                                        @csrf
+                                        <button type="submit">
+                                            <div class="get-started-group font-color-bl containerLinksExternos">
+                                                <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                                <span class="btn-text">cerrar<br>sesion</span>
+                                            </div>
+                                        </button>
+                                    </form>
+                                @else
+                                    <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
                                         <div class="get-started-group font-color-bl containerLinksExternos">
-                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
-                                            <span class="btn-text">cerrar<br>sesion</span>
+                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+                                            </i>
+                                            <span class="btn-text">Panel<br>Admin</span>
                                         </div>
-                                    </button>
-                                </form>
-                            @else
-                                <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-                                        </i>
-                                        <span class="btn-text">Panel<br>Admin</span>
-                                    </div>
-                                </a>
-                            @endif
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -143,19 +154,20 @@
         </section>
     </div>
 
-    @if(Auth::check() && Auth::user()->hasRole('admin'))
+    @if (Auth::check() && Auth::user()->hasRole('admin'))
         <div class="search">
             <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
-                <a href="/noticias/formEditarNoticia/{{$noticia->id}}">Editar noticia</a>
+                <a href="/noticias/formEditarNoticia/{{ $noticia->id }}">Editar noticia</a>
             </button>
         </div>
-        <form action="/noticias/{{$noticia->id}}" class="formEliminar" method="post" >
+        <br>
+        <form action="/noticias/{{ $noticia->id }}" class="formEliminar" method="post">
             @csrf
             @method('DELETE')
-            <input type="submit" value="Eliminar noticia">
+            <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">Eliminar noticia</button>
         </form>
     @endif
- 
+
 
     <!-- aca todo esto deberia iterarse-->
     <div class="container-fluid">
@@ -166,12 +178,13 @@
 
 
 
-            <p <small class="text-body-secondary  text-secundario">Fecha de publicación: {{$noticia->created_at->format('Y-m-d')}}</small></p>
-            <h2 class="noticiaTitulo">{{$noticia->titulo}}</h2>
-            <img src="{{asset('storage/'.$noticia->imagen)}}"
-                class="img-noticia img-fluid" alt="Imagen de la noticia: {{$noticia->titulo}}">
+            <p <small class="text-body-secondary  text-secundario">Fecha de publicación:
+                {{ $noticia->created_at->format('Y-m-d') }}</small></p>
+            <h2 class="noticiaTitulo">{{ $noticia->titulo }}</h2>
+            <img src="{{ asset('storage/' . $noticia->imagen) }}" class="img-noticia img-fluid "
+                alt="Imagen de la noticia: {{ $noticia->titulo }}">
             <div class="card-body">
-                <p class="card-text-noticia">{{$noticia->descripcion}}
+                <p class="card-text-noticia">{{ $noticia->descripcion }}
 
                 </p>
 

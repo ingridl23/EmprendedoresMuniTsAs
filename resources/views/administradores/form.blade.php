@@ -14,14 +14,37 @@
     @enderror
     <p class="form-subtitulos">Otorgue una descripción del emprendimiento</p>
 </div>
+<label for="descripcion">Seleccionar Categoria<span class="asterisco">*</span></label>
 <div class="field-group">
-    <input type="text" name="categoria" id="categoria" required placeholder=""
-        value={{ isset($emprendimiento) ? $emprendimiento->categoria : old('categoria') }}>
-    <label for="categoria">Categoria <span class="asterisco">*</span> </label>
+    <select name="categoria" id="categoria" required>
+        <option value="" disabled
+            {{ !old('categoria') && (!isset($emprendimiento) || !$emprendimiento->categoria) ? 'selected' : '' }}>
+            Seleccione una categoría
+        </option>
+        <option value="Artesanía"
+            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Artesanía') || old('categoria') == 'Artesanía' ? 'selected' : '' }}>
+            Artesanía</option>
+        <option value="Gastronomía"
+            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Gastronomía') || old('categoria') == 'Gastronomía' ? 'selected' : '' }}>
+            Gastronomía</option>
+        <option value="Servicios"
+            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Servicios') || old('categoria') == 'Servicios' ? 'selected' : '' }}>
+            Servicios</option>
+        <option value="Indumentaria"
+            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Indumentaria') || old('categoria') == 'Indumentaria' ? 'selected' : '' }}>
+            Indumentaria</option>
+
+        <option value="Tecnologia"
+            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Indumentaria') || old('categoria') == 'Indumentaria' ? 'selected' : '' }}>
+            Indumentaria</option>
+    </select>
+
+
     @error('categoria')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
-    <p class="form-subtitulos">Otorgue una categoria del emprendimiento</p>
+
+    <p class="form-subtitulos">Otorgue una categoría del emprendimiento</p>
 </div>
 
 <div class="field-group" id="imagenFormulario">
@@ -61,8 +84,8 @@
     <input type="number" name="whatsapp" id="whatsapp" required placeholder=""
         value={{ isset($emprendimiento) ? $emprendimiento->redes->whatsapp : old('whatsapp') }}>
     <label for="whatsapp">Número de WhatsApp <span class="asterisco">*</span></label>
-     @error('whatsapp')
-            <div class="text-danger small">{{ $message }}</div>
+    @error('whatsapp')
+        <div class="text-danger small">{{ $message }}</div>
     @enderror
     <p class="form-subtitulos">Otorgue un número de WhatsApp del emprendimiento</p>
 </div>
@@ -70,19 +93,27 @@
     <div class="field-group">
         <label for="inputCity" class="direccionEmprendimiento">Ciudad <span class="asterisco">*</span></label>
         <select id="ciudad" name="ciudad" required placeholder="">
-            <option class="oculto" {{!isset($emprendimiento) ?  'selected' : ""}}></option>
-            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Tres Arroyos") ? 'selected' :""}}>Tres Arroyos</option>
-            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Adolfo Gonzales Chaves") ? 'selected': ""}}>Adolfo Gonzales Chaves</option>
-            <option {{(isset($emprendimiento) && $emprendimiento->direccion->ciudad=="Benito Juarez") ? 'selected':""}}>Benito Juarez</option>
+            <option class="oculto" {{ !isset($emprendimiento) ? 'selected' : '' }}></option>
+            <option
+                {{ isset($emprendimiento) && $emprendimiento->direccion->ciudad == 'Tres Arroyos' ? 'selected' : '' }}>
+                Tres Arroyos</option>
+            <option
+                {{ isset($emprendimiento) && $emprendimiento->direccion->ciudad == 'Adolfo Gonzales Chaves' ? 'selected' : '' }}>
+                Adolfo Gonzales Chaves</option>
+            <option
+                {{ isset($emprendimiento) && $emprendimiento->direccion->ciudad == 'Benito Juarez' ? 'selected' : '' }}>
+                Benito Juarez</option>
         </select>
         @error('ciudad')
             <div class="text-danger small">{{ $message }}</div>
         @enderror
     </div>
     <div class="field-group oculto localidadesDeLaCiudad">
-        <label for="localidad" class="direccionEmprendimiento localidad">Localidad <span class="asterisco">*</span></label>
+        <label for="localidad" class="direccionEmprendimiento localidad">Localidad <span
+                class="asterisco">*</span></label>
         <select id="localidadesDeLaCiudad" name="localidad" required placeholder="">
-            <option value="{{isset($emprendimiento) ? $emprendimiento->direccion->localidad : old('localidad')}}" class="oculto opcionValorCargado"></option>
+            <option value="{{ isset($emprendimiento) ? $emprendimiento->direccion->localidad : old('localidad') }}"
+                class="oculto opcionValorCargado"></option>
         </select>
         @error('localidad')
             <div class="text-danger small">{{ $message }}</div>
@@ -91,10 +122,10 @@
 </div>
 <div class="alturaYCalle field-group">
     <div class="field-group">
-         @if (isset($emprendimiento->direccion->calle))
-          <textarea name="calle" id="calle" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->direccion->calle : old('calle') }}</textarea>
+        @if (isset($emprendimiento->direccion->calle))
+            <textarea name="calle" id="calle" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->direccion->calle : old('calle') }}</textarea>
         @else
-          <input type="text" name="calle" id="calle" required placeholder="" value: old('calle')>
+            <input type="text" name="calle" id="calle" required placeholder="" value: old('calle')>
         @endif
         <label for="calle">Calle <span class="asterisco">*</span></label>
         @error('calle')

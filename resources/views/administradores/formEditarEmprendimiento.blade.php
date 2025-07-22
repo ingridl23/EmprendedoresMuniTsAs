@@ -17,7 +17,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
             rel="stylesheet" />
-        <link href="{{ asset('css/navbar2.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/form.css') }}" rel="stylesheet" />

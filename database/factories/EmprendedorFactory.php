@@ -32,10 +32,12 @@ class EmprendedorFactory extends Factory
             'nombre'       => $this->faker->company(),
             'descripcion'  => $this->faker->paragraph(),
             'categoria'    => $this->faker->randomElement([
-                'Gastronomía',
+                'Gastronomia',
                 'Indumentaria',
-                'Tecnología',
-                'Servicios'
+                'Tecnologia',
+                'Servicios',
+                'Artesania'
+
             ]),
             'redes_id'     => $redes->id,
             'direccion_id' => $direccion->id,
