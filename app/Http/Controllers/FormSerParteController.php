@@ -37,13 +37,13 @@ class FormSerParteController extends Controller
 
         ]);
 
-        Mail::to('ingrid.ledesma@tresarroyos.gov.ar')->send(new sendContactForm($request->all()));
+        Mail::to('OFICINA.EMPLEO@TRESARROYOS.GOV.AR')->send(new sendContactForm($request->all()));
 
 
 
         return back()->with('success', 'Formulario enviado correctamente.');
 
         //dd($request->input());
-        dd($request->all()); //
+        //dd($request->all());
     }
 }

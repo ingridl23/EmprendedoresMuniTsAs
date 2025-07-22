@@ -188,10 +188,7 @@
 
                 </p>
 
-                <p class="card-text-noticia">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quia
-                    praesentium id dolore atque eos
-                    quidem voluptate ad nulla mollitia vel saepe aliquam, blanditiis repellendus cumque officia?
-                    Consequuntur, ex delectus!</p>
+
             </div>
         </div>
 

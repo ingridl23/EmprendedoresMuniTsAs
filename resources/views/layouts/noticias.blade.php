@@ -192,8 +192,8 @@
                         <h5 class="card-title">{{ $noticia->titulo }}</h5>
                         <p class="card-text">{{ $noticia->categoria }}</p>
                         <div class="container-vermas">
-                            <p class="card-text"><small class="text-body-secondary">Última actualización :
-                                    {{ $noticia->updated_at }}</small></p>
+                            <p class="card-text"><small class="text-body-secondary">Última Actualización :
+                                    {{ $noticia->created_at->format('Y-m-d') }}</small></p>
                             <button class="vermas"><a href="noticias/{{ $noticia->id }}">Ver más</a></button>
                         </div>
                     </div>

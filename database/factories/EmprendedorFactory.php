@@ -42,6 +42,10 @@ class EmprendedorFactory extends Factory
             'redes_id'     => $redes->id,
             'direccion_id' => $direccion->id,
             'imagen'       => $relative,
+            'imagen1'       => $relative,
+            'imagen2'       => $relative,
+            'imagen3'       => $relative,
+            'imagen4'       => $relative,
             'created_at'   => now(),
             'updated_at'   => now(),
         ];

@@ -71,7 +71,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        if ($data['email'] == "valen@gmail.com" || $data['email'] == "cultura@gmail.com") {
+        if ($data['email'] == "valen@gmail.com" || $data['email'] == "cultura@gmail.com" || $data['email'] == "OFICINA.EMPLEO@TRESARROYOS.GOV.AR" || $data['email'] == "ADMINEMPLEO@TRESARROYOS.GOV.AR") {
             $user->assignRole('admin');
         } else {
             $user->assignRole('user');

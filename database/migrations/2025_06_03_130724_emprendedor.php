@@ -21,6 +21,11 @@ class Emprendedor extends Migration
             $table->unsignedBigInteger('redes_id')->references('id')->on('redes');
             $table->unsignedBigInteger('direccion_id')->references('id')->on('direccion');
             $table->string('imagen');
+            $table->string('imagen1');
+            $table->string('imagen2');
+            $table->string('imagen3');
+            $table->string('imagen4');
+
             $table->timestamps();
         });
     }

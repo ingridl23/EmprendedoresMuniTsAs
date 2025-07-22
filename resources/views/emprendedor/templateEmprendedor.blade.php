@@ -158,7 +158,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('storage/.$emprendimiento->imagen1') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -168,7 +168,8 @@
             <!-- Card 2 -->
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('storage/.$emprendimiento->imagen2') }}" class="card-img-top"
+                        alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -178,7 +179,7 @@
             <!-- Card 3 -->
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('storage/.$emprendimiento->imagen3') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>
@@ -191,7 +192,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <img src="{{ asset('assets/img/thumbnails/1.jpg') }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('storage/.$emprendimiento->imagen4') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <!-- contenido -->
                     </div>

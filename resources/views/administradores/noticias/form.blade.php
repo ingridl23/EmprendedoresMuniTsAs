@@ -14,23 +14,41 @@
     @enderror
     <p class="form-subtitulos">Otorgue la descripción de la noticia</p>
 </div>
+
+
+
+<label for="descripcion">Seleccionar Categoria<span class="asterisco">*</span></label>
 <div class="field-group">
-    <input type="text" name="categoria" id="categoria" required placeholder=""
-        value={{ isset($noticia) ? $noticia->categoria : old('categoria') }}>
-    <label for="categoria">Categoria <span class="asterisco">*</span> </label>
-    @error('categoria')
-        <div class="text-danger small">{{ $message }}</div>
-    @enderror
-    <p class="form-subtitulos">Otorgue la categoria de la noticia</p>
+    <select name="categoria" id="categoria" required>
+        <option value="" disabled
+            {{ !old('categoria') && (!isset($noticia) || !$noticia->categoria) ? 'selected' : '' }}>
+            Seleccione una categoría
+        </option>
+        <option value="Empleo"
+            {{ (isset($noticia) && $noticia->categoria == 'Bolsa') || old('categoria') == 'Bolsa' ? 'selected' : '' }}>
+            Bolsa De Empleo</option>
+        <option value="Evento"
+            {{ (isset($noticia) && $noticia->categoria == 'Evento') || old('categoria') == 'Evento' ? 'selected' : '' }}>
+            Evento</option>
+
+
+
+        @error('categoria')
+            <div class="text-danger small">{{ $message }}</div>
+        @enderror
+
+        <p class="form-subtitulos">Seleccione la categoria a la que pertenece la noticia</p>
 </div>
+
+
 
 <div class="field-group" id="imagenFormulario">
     @if (isset($noticia->imagen))
         <img src="{{ asset('storage/' . $noticia->imagen) }}" alt="Imagen de {{ $noticia->titulo }}"
             class="imagenEmprendimientoFormulario">
     @endif
-    <input type="file" name="imagen" id="imagen">
     <label for="imagen">Imagen <span class="asterisco">*</span></label>
+    <input type="file" name="imagen" id="imagen">
     @error('imagen')
         <div class="text-danger small">{{ $message }}</div>
     @enderror

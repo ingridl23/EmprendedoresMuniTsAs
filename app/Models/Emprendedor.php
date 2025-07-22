@@ -17,6 +17,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property $categoria
  * @property $redes_id
  * @property $imagen
+ *  @property $imagen1
+ *  @property $imagen2
+ *  @property $imagen3
+ *  @property $imagen4
+ *
  * @property $created_at
  * @property $updated_at
  *
@@ -38,6 +43,10 @@ class Emprendedor extends Model
         'descripcion',
         'categoria',
         'imagen',
+        'imagen1',
+        'imagen2',
+        'imagen3',
+        'imagen4',
         'redes_id',
         'direccion_id'
     ];
@@ -87,6 +96,10 @@ class Emprendedor extends Model
             'categoria' => $request->categoria,
             'descripcion' => $request->descripcion,
             'imagen' => $path,
+            'imagen1' => $path,
+            'imagen2' => $path,
+            'imagen3' => $path,
+            'imagen4' => $path,
             'redes_id' => $idRedes,
             'direccion_id' => $idDireccion,
         ]);
