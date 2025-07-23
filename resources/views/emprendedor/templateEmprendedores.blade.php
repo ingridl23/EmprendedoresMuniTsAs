@@ -64,7 +64,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
                                 </li>
-
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Categorias
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
+                                        <a class="dropdown-item" href="#link{{$categoria}}">{{$categoria}}</a>
+                                    @endforeach
+                                    </div>
+                                </li>
                                 <li class="nav-item serParte">
                                     <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
                                 </li>
@@ -171,14 +180,14 @@
             <br>
             @if (Auth::check() && Auth::user()->hasRole('admin'))
                 <div class="search">
-                    <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
+                    <button class="btn btn-primary btn-xl text-uppercase botonAgregarEmprendimiento">
                         <a href="emprendedores/nuevoEmprendimiento">Agregar Emprendimiento</a>
                     </button>
                 </div>
             @endif
             <div class="search {{ Auth::check() && Auth::user()->hasRole('admin') ? 'filtroAdmin' : '' }}   ">
 
-                <input class="inputSearch" id="noticias-filter" type="text" value="" placeholder="buscar">
+                <input class="inputSearch" id="emprendedores-filter" type="text" value="" placeholder="buscar">
                 <button class="buttonSearch botonFiltro"> <img
                         id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
 
@@ -190,6 +199,7 @@
         </div>
         <div>
             @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
+            <div id="link{{$categoria}}"></div>
                 <h3>{{ $categoria }}</h3>
                 <div class="container d-flex justify-content-center  align-items-center min-vh-100">
                     <div id="carrousel" class="shadow-wrapper p-2 rounded-4" data-interval="200000">
@@ -334,8 +344,8 @@
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/logicaform.js') }} "></script>
-    <script src="{{ asset('js/cartelEliminar.js') }} "></script>
-    <script src="{{ asset('js/emprendedores.js') }}"></script>
+    <script type="module" src="{{ asset('js/cartelEliminar.js') }} "></script>
+    <script type="module" src="{{ asset('js/emprendedores.js') }}"></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
 
     <!--Para alertas desde JS-->

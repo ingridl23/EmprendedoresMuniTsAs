@@ -6,8 +6,6 @@ use App\Http\Requests\validacionEmprendimiento;
 use App\Http\Requests\validacionEditarEmprendimiento;
 use App\Http\Requests\validacionNoticia;
 use App\Http\Requests\validacionEditarNoticia;
-use App\Http\Controllers\EmprendedorController;
-use App\Http\Controllers\DireccionController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\user;
@@ -18,6 +16,7 @@ use App\Models\direccion;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\constants;
+
 
 class administradorController extends Controller
 {
@@ -81,18 +80,20 @@ class administradorController extends Controller
 
     public function showFormCrearEmprendimiento()
     {
-        return view('administradores.formNuevoEmprendimiento');
+        $categorias=Emprendedor::obtenerCategorias();
+        return view('administradores.formNuevoEmprendimiento',compact('categorias'));
     }
 
     public function crearEmprendimiento(validacionEmprendimiento $request)
     {
-
         $data = $request->validated();
         $imagen = $request->file("imagen");
         $path = $imagen->store('img', 'public');
         Emprendedor::crearEmprendimiento($request, $path);
         return redirect('/emprendedores');
     }
+
+
 
     public function showFormEditarEmprendimiento($id)
     {
@@ -101,7 +102,8 @@ class administradorController extends Controller
             if ($emprendimiento != null) {
                 $emprendimiento->redes->instagram = $this->obtenerRedes($emprendimiento->redes->instagram);
                 $emprendimiento->redes->facebook = $this->obtenerRedes($emprendimiento->redes->facebook);
-                return view("administradores.formEditarEmprendimiento", compact('emprendimiento'));
+                $categorias=Emprendedor::obtenerCategorias();
+                return view("administradores.formEditarEmprendimiento", compact('emprendimiento','categorias'));
             }
         };
 
@@ -148,8 +150,8 @@ class administradorController extends Controller
                 $emprendimiento->imagen = $path;
             }
             $emprendimiento->nombre = $request->input('nombre');
-            $emprendimiento->descripcion = $request->input('descripcion');
-            $emprendimiento->categoria = $request->input('categoria');
+            $emprendimiento->descripcion = Str::ucfirst($request->input('descripcion'));
+            $emprendimiento->categoria = Str::ucfirst($request->input('categoria'));
 
             Emprendedor::editarEmprendimiento($emprendimiento);
             redes::editarEmprendimiento($redes);

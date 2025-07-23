@@ -1,6 +1,6 @@
 "use strict"
 
-document.addEventListener("DOMContentLoaded", function(){
+
     if(window.mensajeExito){
         Swal.fire({
             title: "Eliminado!",
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     asignarCartel();
 
-    function asignarCartel(){
+     function asignarCartel(){
         let formularios=document.querySelectorAll(".formEliminar");
         formularios.forEach(formulario => {
             formulario.addEventListener("submit", (e) => {
@@ -32,5 +32,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 });
             });
         });
-    }
-})
+    };
+
+ export{asignarCartel};

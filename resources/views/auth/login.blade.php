@@ -72,7 +72,7 @@
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class"
                                     get-started-btn crollto" class="get-started-btn">
                                     <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <img src="{{ asset('assets/img/iconosMiTr-remove-removebg-preview.png') }}" slt
+                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}" slt
                                             class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
                                     </div>

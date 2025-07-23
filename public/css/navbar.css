@@ -108,7 +108,15 @@
     font-size: 1.25rem;
     color: #dfdfdf;
 }
+#mainNav .navbar-nav li.nav-item a.dropdown-item:active{
+    background-color: #0c2c1d;
+}
 
+#mainNav .navbar-nav li.nav-item a.dropdown-toggle::after{
+    margin: 0 0 -0.3rem 0;
+    background-color: transparent;
+    color: #36c09d;
+}
 
 /* ======= BOTONES DE SERVICIOS EXTERNOS ======= */
 
@@ -193,7 +201,6 @@
 }
 
 nav ul li.nav-item.serParte {
-    padding: 0 0.5rem;
     width: 100%;
 }
 
@@ -209,6 +216,7 @@ nav ul li.nav-item.serParte {
     }
     nav ul li.nav-item.serParte {
         width: max-content;
+        padding: 0 0.5rem;
     }
     #mainNav .navbar-nav .nav-link:hover::after {
         width: 80%;

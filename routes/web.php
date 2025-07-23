@@ -13,6 +13,7 @@ use App\Http\Controllers\FormSerParteController;
 use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\ProgramasController;
 
+
 //RUTAS NOTICIAS ADMIN
 Route::post("/noticias/cargarNuevaNoticia", [administradorController::class, "createNoticia"]);
 Route::get('/noticias/nuevaNoticia',[administradorController::class, "showFormCreateNoticia"]); //Muestra formulario para cargar una nueva noticia
@@ -58,7 +59,7 @@ Auth::routes();
 //vista de passwords reset
 Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
 
-Route::get("/noticias/", [noticiasController::class, "showNoticias"]);
+Route::get("/noticias", [noticiasController::class, "showNoticias"]);
 Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
 //programas
 Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('programas');;

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\constants;
 use Database\Factories\NoticiasFactory;
+use Illuminate\Support\Str;
 
 
 /**
@@ -69,8 +70,8 @@ class Noticias extends Model
         
         $noticia = Noticias::create([
             'titulo' => $request->titulo,
-            'categoria' => $request->categoria,
-            'descripcion' => $request->descripcion,
+            'categoria' => Str::ucfirst($request->categoria),
+            'descripcion' => Str::ucfirst($request->descripcion),
             'imagen' => $path,
             'created_at'=>date('m-d-Y G:i:s'),
             'updated_at'=>date('m-d-Y G:i:s'),
