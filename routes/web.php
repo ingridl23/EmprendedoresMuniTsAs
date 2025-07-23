@@ -14,6 +14,10 @@ use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\ProgramasController;
 
 
+Route::get('/noticias/buscadorTitulo', [noticiasController::class, 'filterNoticiasByTittle']); //Filtro para noticias por titulo
+Route::get('/noticias/buscadorCategoria', [noticiasController::class, 'filterNoticiasByCategory']); //Filtro para noticias por categoria
+Route::get('/noticias/buscadorFecha', [noticiasController::class, 'filterNoticiasByDate']); //Filtro para noticias por fecha
+
 //RUTAS NOTICIAS ADMIN
 Route::post("/noticias/cargarNuevaNoticia", [administradorController::class, "createNoticia"]);
 Route::get('/noticias/nuevaNoticia',[administradorController::class, "showFormCreateNoticia"]); //Muestra formulario para cargar una nueva noticia
@@ -61,5 +65,7 @@ Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
 
 Route::get("/noticias", [noticiasController::class, "showNoticias"]);
 Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
+
+
 //programas
 Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('programas');;
