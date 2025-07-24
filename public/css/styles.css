@@ -11431,8 +11431,21 @@
         section.section-new-entrepreneur {
             padding: 0;
         }
-
-.mensajeError{
-    color: #bf2121;
-    margin: 0;
-}
+        
+        .mensajeError {
+            color: #bf2121;
+            margin: 0;
+        }
+        /*estilos delas imagenes del emprendedor  para pantalla individual*/
+        
+        .galeriaImagenes {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: auto;
+        }
+        
+        .galeriaImagenes img {
+            /*  max-width: 550px;*/
+            border-radius: 8px;
+        }

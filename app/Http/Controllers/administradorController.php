@@ -84,15 +84,44 @@ class administradorController extends Controller
         return view('administradores.formNuevoEmprendimiento');
     }
 
+
+
     public function crearEmprendimiento(validacionEmprendimiento $request)
     {
-
         $data = $request->validated();
-        $imagen = $request->file("imagen");
-        $path = $imagen->store('img', 'public');
-        Emprendedor::crearEmprendimiento($request, $path);
-        return redirect('/emprendedores');
+
+        $idRedes = redes::crearRedes(
+            $request->instagram,
+            $request->facebook,
+            $request->whatsapp
+        );
+
+        $idDireccion = direccion::crearDireccion(
+            $request->ciudad,
+            $request->localidad,
+            $request->calle,
+            $request->altura
+        );
+
+        $emprendimiento = Emprendedor::create([
+            'nombre' => $data['nombre'],
+            'categoria' => $data['categoria'],
+            'descripcion' => $data['descripcion'],
+            'redes_id' => $idRedes,
+            'direccion_id' => $idDireccion,
+        ]);
+
+        if ($request->hasFile('imagenes')) {
+            foreach ($request->file('imagenes') as $imagen) {
+                $path = $imagen->store('img', 'public');
+                $emprendimiento->imagenes()->create(['url' => $path]);
+            }
+        }
+
+
+        return redirect('/emprendedores')->with('success', 'Emprendimiento creado con éxito.');
     }
+
 
     public function showFormEditarEmprendimiento($id)
     {
@@ -201,7 +230,7 @@ class administradorController extends Controller
     //Direcciona para la vista que contiene el formulario con los datos de la noticia
     public function showFormEditNoticia($id)
     {
-        $noticia=Noticias::showNoticiasId($id);
+        $noticia = Noticias::showNoticiasId($id);
         return view("administradores.noticias.formEditarNoticia", compact("noticia"));
     }
     //editar noticia

@@ -33,7 +33,8 @@ class validacionEmprendimiento  extends FormRequest
             'descripcion' => 'bail|required|string|min:1',
             'categoria' => 'bail|required|string|min:1|max:60',
 
-            'imagen'      => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'imagenes' => 'required|array|max:5',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'facebook' => 'nullable|string|min:1|max:100',
             'instagram' => 'nullable|string|min:1|max:100',
             'whatsapp' => 'numeric|digits_between:8,11',
@@ -42,9 +43,6 @@ class validacionEmprendimiento  extends FormRequest
             'altura' => 'required|numeric|min:1',
             "localidad" => "required|string"
         ];
-
-
-        //  Mail::to('ingridmilagrosledesma@gmail.com')->send(new sendContactForm($request->all()));
     }
     public function messages()
     {

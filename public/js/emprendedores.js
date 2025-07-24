@@ -1,96 +1,108 @@
-"use strict"
+"use strict";
 
-document.addEventListener('DOMContentLoaded', e => {
-    document.getElementById('emprendedores-filter').addEventListener("keyup", filtrarEmprendedor);
-    document.getElementById('emprendedores-filter').addEventListener("blur", limpiarContenedor);
-    document.querySelector(".formFiltro").addEventListener("click", e =>{
+document.addEventListener("DOMContentLoaded", (e) => {
+    document
+        .getElementById("emprendedores-filter")
+        .addEventListener("keyup", filtrarEmprendedor);
+    document
+        .getElementById("emprendedores-filter")
+        .addEventListener("blur", limpiarContenedor);
+    document.querySelector(".formFiltro").addEventListener("click", (e) => {
         console.log("aca");
         e.preventDefault();
     });
-    let admin=false;
+    let admin = false;
 
-    function limpiarContenedor(){
-        if(document.getElementById('emprendedores-filter').value==""){
+    function limpiarContenedor() {
+        if (document.getElementById("emprendedores-filter").value == "") {
             let container = document.getElementById("emprendedores-container");
             container.innerHTML = "";
         }
     }
 
-    function filtrarEmprendedor(){
+    function filtrarEmprendedor() {
         estaLogueado();
-        if(document.getElementById('emprendedores-filter').value!=""){
-            let search = document.getElementById('emprendedores-filter').value;
+        if (document.getElementById("emprendedores-filter").value != "") {
+            let search = document.getElementById("emprendedores-filter").value;
             fetch(`emprendedores/buscador?busqueda=${search}`, {
-                method: 'get'
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                // document.getElementById("emprendedores-container").innerHTML += data
-                // console.log(html);
-                showContent(data, admin);
-            })
-            .catch(error => console.log(error))
-        }
-        else{
+                    method: "get",
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    // document.getElementById("emprendedores-container").innerHTML += data
+                    // console.log(html);
+                    showContent(data, admin);
+                })
+                .catch((error) => console.log(error));
+        } else {
             let container = document.getElementById("emprendedores-container");
             container.innerHTML = "";
         }
     }
-    async function estaLogueado(){
+    async function estaLogueado() {
         try {
-            const response=await fetch(`emprendedores/user`);
-            if(response.ok){
-                const data= await response.json();
-                admin=data;
-            }
-            else{
-                console.error('Error al verificar el estado del login: ',response.status);
+            const response = await fetch(`emprendedores/user`);
+            if (response.ok) {
+                const data = await response.json();
+                admin = data;
+            } else {
+                console.error(
+                    "Error al verificar el estado del login: ",
+                    response.status
+                );
             }
         } catch (error) {
-            console.error('Error en la solicitud:', error);
+            console.error("Error en la solicitud:", error);
         }
     }
-    
-    function crearForm(id){
-       
-        let form=document.createElement('form');
-        form.method='POST';
-        form.action=`/emprendedor/${id}`;
-        form.classList.add("formEliminar");
-        
-        const csrf = document.createElement('input');
-        csrf.type= 'hidden';
-        csrf.name='_token';
-        csrf.value=document.querySelector('meta[name=csrf-token]').getAttribute('content');
-        
-        const method = document.createElement('input');
-        method.type= 'hidden';
-        method.name='_method';
-        method.value='DELETE';
 
-        const input= document.createElement('input');
-        input.type="submit";
-        input.value="Eliminar emprendimiento";
+    function crearForm(id) {
+        let form = document.createElement("form");
+        form.method = "POST";
+        form.action = `/emprendedor/${id}`;
+        form.classList.add("formEliminar");
+
+        const csrf = document.createElement("input");
+        csrf.type = "hidden";
+        csrf.name = "_token";
+        csrf.value = document
+            .querySelector("meta[name=csrf-token]")
+            .getAttribute("content");
+
+        const method = document.createElement("input");
+        method.type = "hidden";
+        method.name = "_method";
+        method.value = "DELETE";
+
+        const input = document.createElement("input");
+        input.type = "submit";
+        input.value = "Eliminar emprendimiento";
         input.classList.add("inputEliminar");
-        
+
         form.appendChild(csrf);
         form.appendChild(method);
         form.appendChild(input);
         return form;
     }
 
-    function showContent(results){
+    function showContent(results) {
         let container = document.getElementById("emprendedores-container");
         container.innerHTML = "";
-        if(results.length === 0){
-              container.innerHTML += `<p> No se encontraron resultados</p>`;
+        if (results.length === 0) {
+            container.innerHTML += `<p> No se encontraron resultados</p>`;
         }
-        results.forEach(emprendimiento =>{
+        results.forEach((emprendimiento) => {
+            let card = document.createElement("div");
+            card.className = "card";
+            if (emprendimiento.imagenes && emprendimiento.imagenes.length > 0) {
+                let url = "storage/" + emprendimiento.imagenes[0].url;
+                // usar `url` en tu HTML
+            } else {
+                // Mostrar imagen por defecto si no hay ninguna
+                let url = "assets/img/default.jpg";
+            }
 
-            let card = document.createElement('div');
-            card.className = 'card';
-            let url="storage/"+emprendimiento.imagen;
             let contenido = `
                 <div class="portfolio-item">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal${emprendimiento.id}">
@@ -132,9 +144,9 @@ document.addEventListener('DOMContentLoaded', e => {
                                                                     ver más acerca de ${emprendimiento.nombre}
                                                                 </a>
                                                             </button>
-                                                            <div class="containerBotonesEmprendedor">`
-            if(admin==true){
-                contenido+=                                         `<button
+                                                            <div class="containerBotonesEmprendedor">`;
+            if (admin == true) {
+                contenido += `<button
                                                                         class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
                                                                         data-bs-dismiss="modal" type="button">
                                                                         <a
@@ -145,10 +157,11 @@ document.addEventListener('DOMContentLoaded', e => {
                                                                     <button
                                                                         class="btn btn-primary btn-xl text-uppercase detalleEmprendedor botonEliminar eliminar${emprendimiento.id}"
                                                                         data-bs-dismiss="modal" type="button">
-                                                                        
+
                                                                     </button>
-            `};
-            contenido+=`
+            `;
+            }
+            contenido += `
                                                             </div>
                                                         </div>
                                                     </div>
@@ -158,17 +171,15 @@ document.addEventListener('DOMContentLoaded', e => {
                                     </div>
                                 </div>
                 </div>`;
-            let form=crearForm(emprendimiento.id);
-            card.innerHTML=contenido;
+            let form = crearForm(emprendimiento.id);
+            card.innerHTML = contenido;
             container.appendChild(card);
-            if(admin==true){
-                document.querySelector(`.eliminar${emprendimiento.id}`).appendChild(form);
+            if (admin == true) {
+                document
+                    .querySelector(`.eliminar${emprendimiento.id}`)
+                    .appendChild(form);
                 asignarCartel();
             }
-        })
+        });
     }
-
-    
-    
-    
 });

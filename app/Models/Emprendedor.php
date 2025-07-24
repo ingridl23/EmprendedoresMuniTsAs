@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\constants;
 use Database\Factories\EmprendedorFactory;
+use Database\Factories\imagenFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Imagen;
 
 /**
  * Class Emprendedor
@@ -16,12 +18,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property $descripcion
  * @property $categoria
  * @property $redes_id
- * @property $imagen
- *  @property $imagen1
- *  @property $imagen2
- *  @property $imagen3
- *  @property $imagen4
- *
+
  * @property $created_at
  * @property $updated_at
  *
@@ -38,15 +35,13 @@ class Emprendedor extends Model
         return EmprendedorFactory::new();
     }
     use HasFactory;
+
+
+
     protected $fillable = [
         'nombre',
         'descripcion',
         'categoria',
-        'imagen',
-        'imagen1',
-        'imagen2',
-        'imagen3',
-        'imagen4',
         'redes_id',
         'direccion_id'
     ];
@@ -81,28 +76,48 @@ class Emprendedor extends Model
         return null;
     }
 
+
+    ////////////////////////////////////////////
+    public function imagenes()
+    {
+        return $this->hasMany(Imagen::class);
+    }
+
+
+    /////////////////////////////////////////////
     public static function obtenerCategorias()
     {
         $categorias = Emprendedor::all()->groupBy('categoria');
         return $categorias;
     }
-
-    public static function crearEmprendimiento($request, $path)
+    /////////////////////////////////////////////
+    public  static function crearEmprendimiento($request, $path)
     {
         $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);
+
         $idDireccion = direccion::crearDireccion($request->ciudad, $request->localidad, $request->calle, $request->altura);
+
         $emprendimiento = Emprendedor::create([
+
             'nombre' => $request->nombre,
             'categoria' => $request->categoria,
             'descripcion' => $request->descripcion,
-            'imagen' => $path,
-            'imagen1' => $path,
-            'imagen2' => $path,
-            'imagen3' => $path,
-            'imagen4' => $path,
+
             'redes_id' => $idRedes,
             'direccion_id' => $idDireccion,
         ]);
+
+        //  Guardar las imágenes (vienen en el form)
+        if ($request->hasFile('imagenes')) {
+            foreach ($request->file('imagenes') as $archivo) {
+                $path = $archivo->store('img', 'public'); // guarda en /app/public/storage/img/
+                $emprendimiento->imagenes()->create([
+                    'url' => $path
+                ]);
+            }
+        }
+
+        return $emprendimiento;
     }
 
     public static function editarEmprendimiento($emprendimiento)
@@ -117,14 +132,18 @@ class Emprendedor extends Model
 
     public static function traerAleatoriamenteSeis()
     {
-        $emprendimientos = Emprendedor::select('nombre', 'categoria', 'imagen')->inRandomOrder()->limit(6)->get();
-        return $emprendimientos;
+        return Emprendedor::with('imagenes') // traer las imágenes asociadas
+            ->inRandomOrder()
+            ->limit(6)
+            ->get();
     }
 
     //traer ultimos 6 emprendedores
     public static function ultimosEmprendedores($cantidad = 6)
     {
-        return Emprendedor::orderBy('created_at', 'desc')->limit($cantidad)
+        return Emprendedor::with('imagenes') //  esto trae las imágenes relacionadas
+            ->orderBy('created_at', 'desc')
+            ->limit($cantidad)
             ->get();
     }
 }
