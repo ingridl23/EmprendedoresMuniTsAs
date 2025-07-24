@@ -38,3 +38,62 @@ El sistema tiene como finalidad **visibilizar, registrar y gestionar los emprend
     git clone https://github.com/ingridl23/EmprendedoresMuniTsAs.git
     cd EmprendedoresMuniTsAs
     ```
+
+2. Instalar dependencias de laravel y Frontend
+
+    ```bash
+    composer install
+    npm install && npm run dev
+    ```
+
+3. Configurar el entorno
+
+```bash
+ cp .env.example .env
+```
+
+4.Generar la clave de aplicacion y generar la base de datos
+
+```bash
+php artisan key:generate
+php artisan migrate --seed
+```
+
+5.Levantar el Servidor
+
+```bash
+php artisan serve
+```
+
+## 📂 Estructura general
+
+pgsql
+Copiar
+Editar
+├── app/
+├── database/
+├── public/
+├── resources/
+│ ├── views/
+│ ├── css/
+│ └── js/
+├── routes/
+│ └── web.php
+├── .env
+└── README.md
+
+## 📚 Créditos
+
+### Desarrollado por:
+
+_Ingrid Ledesma – Pasante en la Municipalidad de Tres Arroyos_
+
+_Valentina Castillo - Pasante en la Municipalidad de Tres Arroyos_
+
+###Acompañamiento por personal de la Oficina de Empleo y Capacitaciones
+
+###Carrera: TUDAI (Desarrollo de Aplicaciones Informáticas) – UNICEN
+
+## ⚖️ Licencia
+
+_Proyecto de uso institucional. Su distribución, copia o modificación está sujeta a autorización de la Municipalidad de Tres Arroyos y sus autores._
