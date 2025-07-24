@@ -67,17 +67,39 @@ php artisan serve
 
 ## 📂 Estructura general
 
+```
 ├── app/
+   |_______http/
+     |__ Controllers
+     |__ Middleware
+     |__ Requests
+   |_______Mail/
+   |_______Models/
+     |__direccion
+     |__Emprendedor
+     |__Imagen
+     |__noticias
+     |__redes
+     |__User
+   |______Providers/
+   |______View/
+     |__Components
+|__boostrap/
+|__config/
 ├── database/
+|__node_modules/
 ├── public/
 ├── resources/
 │ ├── views/
 │ ├── css/
 │ └── js/
+| |__ lang/
+| |__ sass/
 ├── routes/
 │ └── web.php
 ├── .env
 └── README.md
+```
 
 ## 📚 Créditos
 
