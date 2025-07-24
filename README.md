@@ -67,9 +67,6 @@ php artisan serve
 
 ## 📂 Estructura general
 
-pgsql
-Copiar
-Editar
 ├── app/
 ├── database/
 ├── public/
@@ -90,9 +87,9 @@ _Ingrid Ledesma – Pasante en la Municipalidad de Tres Arroyos_
 
 _Valentina Castillo - Pasante en la Municipalidad de Tres Arroyos_
 
-###Acompañamiento por personal de la Oficina de Empleo y Capacitaciones
+### Acompañamiento por personal de la Oficina de Empleo y Capacitaciones
 
-###Carrera: TUDAI (Desarrollo de Aplicaciones Informáticas) – UNICEN
+### Carrera: TUDAI (Desarrollo de Aplicaciones Informáticas) – UNICEN
 
 ## ⚖️ Licencia
 
