@@ -42,8 +42,25 @@ class noticiasController extends Controller
             ->get();
         return response()->json($noticias);
     }
+    /*Filtro de busqueda de noticias por categoria*/
+    public function filterNoticiasByCategory(Request $request)
+    {
+        $busqueda = $request->query('busqueda');
+        $noticias = Noticias::where('categoria', 'LIKE', '%' . $busqueda . '%')
+            // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
+            ->get();
+        return response()->json($noticias);
+    }
 
-
+    /*Filtro de busqueda de noticias por fecha*/
+    public function filterNoticiasByDate(Request $request)
+    {
+        $busqueda = $request->query('busqueda');
+        $noticias = Noticias::where('created_at', 'LIKE', '%' . $busqueda . '%')
+            // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
+            ->get();
+        return response()->json($noticias);
+    }
     public function showFormCrearNoticia()
     {
         return view('administradores/noticias.formNuevaNoticia');

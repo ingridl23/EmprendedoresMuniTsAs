@@ -1,4 +1,6 @@
 "use strict";
+import { asignarCartel } from "./cartelEliminar.js";
+let admin = false;
 
 document.addEventListener("DOMContentLoaded", (e) => {
     document
@@ -11,7 +13,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
         console.log("aca");
         e.preventDefault();
     });
-    let admin = false;
 
     function limpiarContenedor() {
         if (document.getElementById("emprendedores-filter").value == "") {
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                     console.log(data);
                     // document.getElementById("emprendedores-container").innerHTML += data
                     // console.log(html);
-                    showContent(data, admin);
+                    showContent(data);
                 })
                 .catch((error) => console.log(error));
         } else {

@@ -27,7 +27,6 @@ class NoticiasFactory extends Factory
         return [
             'titulo'       => $this->faker->company(),
             'categoria'    => $this->faker->randomElement([
-
                 'Bolsa',
                 'Evento'
             ]),

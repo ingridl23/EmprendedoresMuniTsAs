@@ -1,28 +1,47 @@
 "use scrict"
 document.addEventListener('DOMContentLoaded', e=>{
-    document.getElementById('noticias-filter').addEventListener("keyup", filtrarEmprendedor);
-    document.getElementById('noticias-filter').addEventListener("blur", limpiarContenedor);
+    /*document.getElementById('filterTitulo').addEventListener("keyup", filtrarEmprendedor);
+    document.getElementById('filterTitulo').addEventListener("blur", limpiarContenedor);
     document.querySelector(".botonFiltro").addEventListener("click", function(e) {
         e.preventDefault();
     });
     let admin=false;
+    */
+    let busqueda=null;
+    let inputs=document.querySelectorAll(".inputFiltrosNoticias");
+    inputs.forEach(input => {
+        busqueda=input.id;
+        input.addEventListener("keyup", filtrarEmprendedor);
+        input.addEventListener("change", filtrarEmprendedor);
+        input.addEventListener("blur", limpiarContenedor);
+
+    });
+
+    let botones=document.querySelectorAll(".botonFiltro");
+    botones.forEach(boton=>{
+        boton.addEventListener("click", function(e) {
+            e.preventDefault();
+        });
+    });
+    
 
     function limpiarContenedor(){
-        if(document.getElementById('noticias-filter').value==""){
+        if(document.getElementById(`${this.id}`).value==""){
             let container = document.getElementById("noticias-container");
             container.innerHTML = "";
         }
     }
 
     function filtrarEmprendedor(){
-        if(document.getElementById('noticias-filter').value!=""){
-            let search = document.getElementById('noticias-filter').value;
-            fetch(`noticias/buscador?busqueda=${search}`, {
+        console.log(document.getElementById(`${this.id}`));
+        if(document.getElementById(`${this.id}`).value!=""){
+            let search = document.getElementById(`${this.id}`).value;
+            fetch(`noticias/buscador${this.id}?busqueda=${search}`, {
                 method: 'get'
             })
             .then(response => response.json())
             .then(data => {
-                showContent(data, admin);
+                showContent(data);
             })
             .catch(error => console.log(error))
         }
@@ -32,6 +51,7 @@ document.addEventListener('DOMContentLoaded', e=>{
         }
     }
 
+    
      function showContent(results){
         let container = document.getElementById("noticias-container");
         container.innerHTML = "";
@@ -39,8 +59,10 @@ document.addEventListener('DOMContentLoaded', e=>{
               container.innerHTML += `<p> No se encontraron resultados</p>`;
         }
         results.forEach(noticia =>{
-            let fecha = new Date(noticia.updated_at);
-            let soloFecha = fecha.toISOString().split('T')[0];
+            let fechaCreado = new Date(noticia.created_at);
+            let soloFechaCreado = fechaCreado.toISOString().split('T')[0];
+            let fechaActualizado = new Date(noticia.updated_at);
+            let soloFechaActualizado = fechaActualizado.toISOString().split('T')[0];
             let card = document.createElement('div');
             let url="storage/"+noticia.imagen;
             let contenido = `
@@ -51,7 +73,8 @@ document.addEventListener('DOMContentLoaded', e=>{
                         <h5 class="card-title">${noticia.titulo}</h5>
                         <p class="card-text">${noticia.categoria}</p>
                         <div class="container-vermas">
-                            <p class="card-text actualizacionFecha"><small class="text-body-secondary">Última actualización: ${soloFecha}</small></p>
+                            <p class="card-text actualizacionFecha"><small class="text-body-secondary">Publicación : ${soloFechaCreado}</small></p>
+                            <p class="card-text actualizacionFecha"><small class="text-body-secondary">Última actualización: ${soloFechaActualizado}</small></p>
                             <a href="/noticias/${noticia.id}">
                                 <button class="vermas">Ver más</button>
                             </a>

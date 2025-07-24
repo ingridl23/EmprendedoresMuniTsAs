@@ -21,22 +21,11 @@
             {{ !old('categoria') && (!isset($emprendimiento) || !$emprendimiento->categoria) ? 'selected' : '' }}>
             Seleccione una categoría
         </option>
+        @foreach($categorias as $categoria => $datos)
         <option value="Artesanía"
-            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Artesanía') || old('categoria') == 'Artesanía' ? 'selected' : '' }}>
-            Artesanía</option>
-        <option value="Gastronomía"
-            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Gastronomía') || old('categoria') == 'Gastronomía' ? 'selected' : '' }}>
-            Gastronomía</option>
-        <option value="Servicios"
-            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Servicios') || old('categoria') == 'Servicios' ? 'selected' : '' }}>
-            Servicios</option>
-        <option value="Indumentaria"
-            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Indumentaria') || old('categoria') == 'Indumentaria' ? 'selected' : '' }}>
-            Indumentaria</option>
-
-        <option value="Tecnologia"
-            {{ (isset($emprendimiento) && $emprendimiento->categoria == 'Tecnologia') || old('categoria') == 'Indumentaria' ? 'selected' : '' }}>
-            Tecnologia</option>
+            {{ (isset($emprendimiento) && $emprendimiento->categoria == $categoria) || old('categoria') == $categoria ? 'selected' : '' }}>
+            {{$categoria}}</option>
+        @endforeach
     </select>
 
 
@@ -56,10 +45,6 @@
     @enderror
     <p class="form-subtitulos">Subir maximo 5 imágenes del emprendimiento</p>
 </div>
-
-
-
-
 
 
 
