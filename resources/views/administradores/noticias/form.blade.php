@@ -6,8 +6,9 @@
     @enderror
     <p class="form-subtitulos">Otorgue el titulo de la noticia</p>
 </div>
+
 <div class="field-group">
-    <textarea name="descripcion" id="descripcion" required placeholder="">{{ isset($noticia) ? $noticia->descripcion : old('descripcion') }}</textarea>
+    <textarea name="descripcion" id="descripcion" required placeholder="" >{{ isset($noticia) ? $noticia->descripcion : old('descripcion') }}</textarea>
     <label for="descripcion">Descripción <span class="asterisco">*</span></label>
     @error('descripcion')
         <div class="text-danger small">{{ $message }}</div>
@@ -15,24 +16,19 @@
     <p class="form-subtitulos">Otorgue la descripción de la noticia</p>
 </div>
 
-
-
 <label for="descripcion">Seleccionar Categoria<span class="asterisco">*</span></label>
-<div class="field-group">
-    <select name="categoria" id="categoria" required>
-        <option value="" disabled
+<div class="field-group seleccionarCategoria">
+    <select name="categoria" id="categoria" required placeholder="">
+        <option value="Seleccione una categoria" disabled
             {{ !old('categoria') && (!isset($noticia) || !$noticia->categoria) ? 'selected' : '' }}>
             Seleccione una categoría
         </option>
-        <option value="Empleo"
-            {{ (isset($noticia) && $noticia->categoria == 'Bolsa') || old('categoria') == 'Bolsa' ? 'selected' : '' }}>
-            Bolsa De Empleo</option>
-        <option value="Evento"
-            {{ (isset($noticia) && $noticia->categoria == 'Evento') || old('categoria') == 'Evento' ? 'selected' : '' }}>
-            Evento</option>
-
-
-
+         @foreach($categorias as $categoria=>$datos)
+        <option value="{{$categoria}}"
+            {{ (isset($noticia) && $noticia->categoria == $categoria) || old('categoria') == $categoria ? 'selected' : '' }}>
+            {{$categoria}}</option>
+        @endforeach
+    </select>
         @error('categoria')
             <div class="text-danger small">{{ $message }}</div>
         @enderror
@@ -47,8 +43,8 @@
         <img src="{{ asset('storage/' . $noticia->imagen) }}" alt="Imagen de {{ $noticia->titulo }}"
             class="imagenEmprendimientoFormulario">
     @endif
-    <label for="imagen">Imagen <span class="asterisco">*</span></label>
     <input type="file" name="imagen" id="imagen">
+    <label for="imagen">Imagen <span class="asterisco">*</span></label>
     @error('imagen')
         <div class="text-danger small">{{ $message }}</div>
     @enderror

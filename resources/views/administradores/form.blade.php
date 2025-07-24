@@ -7,7 +7,7 @@
     <p class="form-subtitulos">Otorgue nombre del emprendimiento</p>
 </div>
 <div class="field-group">
-    <textarea name="descripcion" id="descripcion" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->descripcion : old('descripcion') }}</textarea>
+    <textarea name="descripcion" id="descripcion" required placeholder="" wordwrap="hard">{{ isset($emprendimiento) ? $emprendimiento->descripcion : old('descripcion') }}</textarea>
     <label for="descripcion">Descripción <span class="asterisco">*</span></label>
     @error('descripcion')
         <div class="text-danger small">{{ $message }}</div>
@@ -22,7 +22,7 @@
             Seleccione una categoría
         </option>
         @foreach($categorias as $categoria => $datos)
-        <option value="Artesanía"
+        <option value="{{$categoria}}"
             {{ (isset($emprendimiento) && $emprendimiento->categoria == $categoria) || old('categoria') == $categoria ? 'selected' : '' }}>
             {{$categoria}}</option>
         @endforeach

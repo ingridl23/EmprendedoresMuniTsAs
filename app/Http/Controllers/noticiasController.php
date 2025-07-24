@@ -31,8 +31,6 @@ class noticiasController extends Controller
         }
     }
 
-
-
     /*Filtro de busqueda de noticias por titulo*/
     public function filterNoticiasByTittle(Request $request)
     {

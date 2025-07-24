@@ -21,8 +21,8 @@
     <!-- Core theme CSS includes Bootstrap)-->
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/noticias.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 </head>
 
@@ -63,16 +63,6 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Categorias
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
-                                        <a class="dropdown-item" href="#link{{$categoria}}">{{$categoria}}</a>
-                                    @endforeach
-                                    </div>
                                 </li>
                                 <li class="nav-item serParte">
                                     <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
@@ -185,22 +175,42 @@
                     </button>
                 </div>
             @endif
-            <div class="search {{ Auth::check() && Auth::user()->hasRole('admin') ? 'filtroAdmin' : '' }}   ">
-
-                <input class="inputSearch" id="emprendedores-filter" type="text" value="" placeholder="buscar">
-                <button class="buttonSearch botonFiltro"> <img
-                        id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
-
+        </div>
+        <h3 class="tituloFiltroNoticias">Filtrar emprendedores según:</h3>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed desplegarFiltro" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Tìtulo
+                </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="search accordion-body">
+                        <input class="inputSearch inputFiltrosEmprendedores" id="emprendedores-filter" type="text" value="" placeholder="Buscar por nombre">
+                        <button class="buttonSearch botonFiltro"> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
+                    </div>
+                </div>
             </div>
-
-
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed desplegarFiltro" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Categoria
+                </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="search accordion-body accordionCategoria">
+                        @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
+                            <a class="linkCategoria" href="#link{{$categoria}}">{{$categoria}}</a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="emprendedores-container" class="emprendedores-container">
         </div>
-        <div>
+        <div class="seccionCarrusel">
             @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
-            <div id="link{{$categoria}}"></div>
-                <h3>{{ $categoria }}</h3>
+                <h3 id="link{{$categoria}}">{{ $categoria }}</h3>
                 <div class="container d-flex justify-content-center  align-items-center min-vh-100">
                     <div id="carrousel" class="shadow-wrapper p-2 rounded-4" data-interval="200000">
                         <!-- sombreado acá -->
@@ -243,7 +253,7 @@
                                                                 <img class="img-fluid d-block mx-auto img-modalEmprendedor"
                                                                     src="{{ asset('storage/' . $emprendedor->imagen) }}"
                                                                     alt="{{ $emprendedor->nombre }}" />
-                                                                <p>{{ $emprendedor->descripcion }}</p>
+                                                                <p>{!!nl2br($emprendedor->descripcion)!!}</p>
                                                                 <ul class="list-inline">
                                                                     <li>
                                                                         <strong> Emprendedor</strong>

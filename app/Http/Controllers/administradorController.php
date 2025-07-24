@@ -186,9 +186,17 @@ class administradorController extends Controller
 
     // visualizar plantilla con el formulario para cargar los datos
 
+    
+    public function obtenerCategorias(){
+        $Categorias=Noticias::obtenerCategorias();
+        return $Categorias;
+    }
+
+    //Muestra la vista del formulario para cargar los datos para la nueva noticia
     public function showFormCreateNoticia()
     {
-        return view("administradores.noticias.formCrearNoticia");
+        $categorias=$this->obtenerCategorias();
+        return view("administradores.noticias.formCrearNoticia", compact("categorias"));
     }
 
     //Carga la noticia, con los datos enviados desde el formulario, en la BBDD
@@ -196,6 +204,7 @@ class administradorController extends Controller
     {
         $imagen = $request->file("imagen");
         $path = $imagen->store('img', 'public');
+        $request->descripcion=nl2br($request->descripcion);
         Noticias::createNoticia($request, $path);
         return redirect('/noticias');
     }
@@ -203,11 +212,12 @@ class administradorController extends Controller
     //Direcciona para la vista que contiene el formulario con los datos de la noticia
     public function showFormEditNoticia($id)
     {
+        $categorias=$this->obtenerCategorias();
         $noticia=Noticias::showNoticiasId($id);
-        return view("administradores.noticias.formEditarNoticia", compact("noticia"));
+        return view("administradores.noticias.formEditarNoticia", compact("noticia","categorias"));
     }
-    //editar noticia
 
+    //editar noticia
     protected function editNoticia($id, validacionEditarNoticia $request)
     {
         $noticia = Noticias::find($id);
@@ -224,7 +234,6 @@ class administradorController extends Controller
             $noticia->titulo = $request->input('titulo');
             $noticia->descripcion = $request->input('descripcion');
             $noticia->categoria = $request->input('categoria');
-
             Noticias::editNoticia($noticia);
 
             return redirect('/noticias');

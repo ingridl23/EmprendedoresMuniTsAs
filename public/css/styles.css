@@ -2579,8 +2579,8 @@
         
         .btn-primary {
             --bs-btn-color: #fff;
-            --bs-btn-bg: #f4623a;
-            --bs-btn-border-color: #f4623a;
+            --bs-btn-bg: #36be7f;
+            --bs-btn-border-color: #36be7f;
             --bs-btn-hover-color: #fff;
             --bs-btn-hover-bg: #cf5331;
             --bs-btn-hover-border-color: #c34e2e;
@@ -4184,8 +4184,8 @@
             --bs-accordion-btn-icon-transform: rotate(-180deg);
             --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
             --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-            --bs-accordion-btn-focus-border-color: #fab19d;
-            --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(244, 98, 58, 0.25);
+            --bs-accordion-btn-focus-border-color: #a9fbd5;
+            --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #a9fbd5;
             --bs-accordion-body-padding-x: 1.25rem;
             --bs-accordion-body-padding-y: 1rem;
             --bs-accordion-active-color: #ffffff;
@@ -4208,6 +4208,20 @@
             transition: var(--bs-accordion-transition);
         }
         
+        div.accordion-item h2 button.desplegarFiltro{
+                padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+        }
+
+        div.accordionCategoria{
+            display: block;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        div.accordionCategoria a{
+            text-align: center;
+            padding:0.5rem;
+        }
         @media (prefers-reduced-motion: reduce) {
             .accordion-button {
                 transition: none;
@@ -4290,7 +4304,7 @@
         }
         
         .accordion-body {
-            padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
+            padding: var(--bs-accordion-body-padding-y) 2rem;
         }
         
         .accordion-flush .accordion-collapse {
@@ -4358,7 +4372,7 @@
             --bs-pagination-color: var(--bs-link-color);
             --bs-pagination-bg: #fff;
             --bs-pagination-border-width: 1px;
-            --bs-pagination-border-color: #dee2e6;
+            --bs-pagination-border-color: #69ddf5;
             --bs-pagination-border-radius: 0.375rem;
             --bs-pagination-hover-color: var(--bs-link-hover-color);
             --bs-pagination-hover-bg: #e9ecef;
@@ -4371,7 +4385,7 @@
             --bs-pagination-active-border-color: #f4623a;
             --bs-pagination-disabled-color: #6c757d;
             --bs-pagination-disabled-bg: #fff;
-            --bs-pagination-disabled-border-color: #dee2e6;
+            --bs-pagination-disabled-border-color: #69ddf5;
             display: flex;
             padding-left: 0;
             list-style: none;
@@ -4382,7 +4396,7 @@
             display: block;
             padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
             font-size: var(--bs-pagination-font-size);
-            color: var(--bs-pagination-color);
+            color: #3f3f3f;
             text-decoration: none;
             background-color: var(--bs-pagination-bg);
             border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
@@ -4397,25 +4411,25 @@
         
         .page-link:hover {
             z-index: 2;
-            color: var(--bs-pagination-hover-color);
+            color: #239989;
             background-color: var(--bs-pagination-hover-bg);
             border-color: var(--bs-pagination-hover-border-color);
         }
         
         .page-link:focus {
             z-index: 3;
-            color: var(--bs-pagination-focus-color);
-            background-color: var(--bs-pagination-focus-bg);
+            color:#28b6a3;
+            background-color: #bfebe3;
             outline: 0;
-            box-shadow: var(--bs-pagination-focus-box-shadow);
+            box-shadow: #bfebe3;
         }
         
         .page-link.active,
         .active>.page-link {
             z-index: 3;
             color: var(--bs-pagination-active-color);
-            background-color: var(--bs-pagination-active-bg);
-            border-color: var(--bs-pagination-active-border-color);
+            background-color: #48dac6;
+            border-color: #48dac6;
         }
         
         .page-link.disabled,
@@ -11437,11 +11451,20 @@
 @media(min-width: 992px){
     #accordionExample{
         display: flex;
-        width: 100%;
+    }
+
+    div.accordion-item h2#headingTwo button.desplegarFiltro{
+        border-top: solid 1px #239989;
     }
 
     #accordionExample div.accordion-item{
         width: -webkit-fill-available;
+    }
+    div.accordion-item{
+        --bs-accordion-border-radius: 0rem;
+        --bs-accordion-inner-border-radius: 0rem;
+        border-top-left-radius: 0rem;
+        border-top-right-radius: 0rem;
     }
 }
 
@@ -11451,4 +11474,18 @@
 
 .accordion-item{
     height: fit-content;
+}
+div#accordionExample{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.navegacionPags{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.field-group.seleccionarCategoria{
+    margin-top: 0.6rem;
 }

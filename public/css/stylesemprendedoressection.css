@@ -144,7 +144,46 @@
             background-color: #0c2c1d;
             transform: scale(0.95);
         }
-        
+
+        div.seccionCarrusel{
+            margin-top: 6rem;
+        }
+
+
+    /*Estilo del filtro Categoria en emprendedores*/
+    a.linkCategoria  {
+        color: #6f7983;
+        font-weight: 600;
+        display: block;
+        width: 100%;
+        position: relative;
+        font-size: 14px !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 0.75rem 1.25rem;
+        transition: all 0.3s ease;
+    }
+
+    a.linkCategoria::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0; 
+        height: 2px;
+        left: 50%;
+        background-color: #36c09d;
+        transition: all 0.5s ease; 
+        transform: translateX(-50%);
+    }
+
+    a.linkCategoria:hover::after {
+    width: 100%;
+    }
+
+    a.linkCategoria:hover{
+        color:#0e0f0f;
+    }
+
         @media (prefers-reduced-motion: no-preference) {
              :root {
                 scroll-behavior: smooth;

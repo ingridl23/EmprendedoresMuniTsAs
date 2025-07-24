@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', e => {
                                                             <img class="img-fluid d-block mx-auto img-modalEmprendedor"
                                                                 src=${url}
                                                                 alt="${emprendimiento.nombre}" />
-                                                            <p>${emprendimiento.descripcion}</p>
+                                                            <p>${nl2br(emprendimiento.descripcion)}</p>
                                                             <ul class="list-inline">
                                                                 <li>
                                                                     <strong> Emprendedor</strong>
@@ -169,7 +169,13 @@ document.addEventListener('DOMContentLoaded', e => {
         })
     }
 
-    
+    function nl2br(str, is_xhtml) {
+        if (typeof str === 'undefined' || str === null) {
+            return '';
+        }
+        const breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+        return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+    }
     
     
 });
