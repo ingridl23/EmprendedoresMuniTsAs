@@ -194,10 +194,7 @@
                 <button class="buttonSearch botonFiltro">
                     <img id="img-lupa" src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa">
                 </button>
-                <input class="inputSearch" id="emprendedores-filter" type="text" value=""
-                    placeholder="buscar">
-                <button class="buttonSearch botonFiltro"> <img
-                        id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
+
 
             </div>
         </div>
