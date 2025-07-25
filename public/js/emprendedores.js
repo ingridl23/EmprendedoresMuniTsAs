@@ -3,15 +3,13 @@ import { asignarCartel } from "./cartelEliminar.js";
 let admin = false;
 
 document.addEventListener("DOMContentLoaded", (e) => {
-    document
-        .getElementById("emprendedores-filter")
-        .addEventListener("keyup", filtrarEmprendedor);
-    document
-        .getElementById("emprendedores-filter")
-        .addEventListener("blur", limpiarContenedor);
-    document.querySelector(".formFiltro").addEventListener("click", (e) => {
-        console.log("aca");
+    document.getElementById("emprendedores-filter").addEventListener("keyup", filtrarEmprendedor);
+    document.getElementById("emprendedores-filter").addEventListener("blur", limpiarContenedor);
+
+    document.querySelector(".botonFiltro").addEventListener("click", (e) => {
         e.preventDefault();
+        filtrarEmprendedor();
+        
     });
 
     function limpiarContenedor() {
@@ -96,12 +94,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         results.forEach((emprendimiento) => {
             let card = document.createElement("div");
             card.className = "card";
+            let url="";
             if (emprendimiento.imagenes && emprendimiento.imagenes.length > 0) {
-                let url = "storage/" + emprendimiento.imagenes[0].url;
+                url = "storage/" + emprendimiento.imagenes[0].url;
                 // usar `url` en tu HTML
             } else {
                 // Mostrar imagen por defecto si no hay ninguna
-                let url = "assets/img/default.jpg";
+                url = "assets/img/default.jpg";
             }
 
             let contenido = `

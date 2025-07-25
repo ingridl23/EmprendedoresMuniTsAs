@@ -11,32 +11,41 @@ document.addEventListener('DOMContentLoaded', e=>{
     let inputs=document.querySelectorAll(".inputFiltrosNoticias");
     inputs.forEach(input => {
         busqueda=input.id;
-        input.addEventListener("keyup", filtrarEmprendedor);
-        input.addEventListener("change", filtrarEmprendedor);
-        input.addEventListener("blur", limpiarContenedor);
+        input.addEventListener("keyup", function(){
+            filtrarEmprendedor(this.id);
+        });
+        input.addEventListener("change", function(){
+            filtrarEmprendedor(this.id);
+        });
+        input.addEventListener("blur", function(){
+            limpiarContenedor(this.id);
+        });
 
     });
 
     let botones=document.querySelectorAll(".botonFiltro");
     botones.forEach(boton=>{
         boton.addEventListener("click", function(e) {
+            let input=boton.previousElementSibling;
+            let id=input.id;
+            filtrarEmprendedor(id)
             e.preventDefault();
         });
     });
     
 
-    function limpiarContenedor(){
-        if(document.getElementById(`${this.id}`).value==""){
+    function limpiarContenedor(id){
+        if(document.getElementById(`${id}`).value==""){
             let container = document.getElementById("noticias-container");
             container.innerHTML = "";
         }
     }
 
-    function filtrarEmprendedor(){
-        console.log(document.getElementById(`${this.id}`));
-        if(document.getElementById(`${this.id}`).value!=""){
-            let search = document.getElementById(`${this.id}`).value;
-            fetch(`noticias/buscador${this.id}?busqueda=${search}`, {
+
+    function filtrarEmprendedor(id){
+        if(document.getElementById(`${id}`).value!=""){
+            let search = document.getElementById(`${id}`).value;
+            fetch(`noticias/buscador${id}?busqueda=${search}`, {
                 method: 'get'
             })
             .then(response => response.json())
