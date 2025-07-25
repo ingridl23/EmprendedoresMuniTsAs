@@ -63,6 +63,11 @@ class Noticias extends Model
             ->get();
     }
 
+    public static function obtenerCategorias(){
+        $categorias=Noticias::all()->groupBy("categoria");
+        return $categorias;
+    }
+
 
 
     public static function createNoticia($request, $path)

@@ -20,7 +20,7 @@ class EmprendedorController extends Controller
         $emprendedoresPorCategoria = Emprendedor::obtenerCategorias();
         $emprendedores = Emprendedor::with('imagenes')->get();
         //  return response()->json($emprendedores);
-        return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria'));
+        return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria', 'emprendedores'));
     }
 
     /*Filtro de busqueda de emprendedores por nombre*/

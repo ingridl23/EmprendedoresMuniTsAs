@@ -47,4 +47,6 @@ class Imagen extends Model
     {
         return $this->belongsTo(Emprendedor::class, 'emprendedor_id');
     }
+
+
 }

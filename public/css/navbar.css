@@ -50,7 +50,6 @@
     padding-bottom: 0 !important;
 }
 
-
 /* Efecto underline en hover */
 
 #mainNav .navbar-nav .nav-link::after {
@@ -341,7 +340,7 @@ nav ul li.nav-item.serParte {
     #mainNav .navbar-nav .nav-link:hover {
         /*  background-color: #25c39c;*/
     }
-    #mainNav .navbar-nav .nav-link:last-child {
+    #mainNav .navbar-nav .nav-link:last-child{
         border-bottom: none;
     }
     #header {

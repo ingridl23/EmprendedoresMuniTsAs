@@ -56,6 +56,12 @@ class Emprendedor extends Model
         return $this->belongsTo(direccion::class, 'direccion_id', 'id');
     }
 
+        ////////////////////////////////////////////
+    public function imagenes()
+    {
+        return $this->hasMany(Imagen::class);
+    }
+
     public static function showEmprendimientos()
     {
         //$emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen', 'categoria'])->get();
@@ -76,12 +82,6 @@ class Emprendedor extends Model
         return null;
     }
 
-
-    ////////////////////////////////////////////
-    public function imagenes()
-    {
-        return $this->hasMany(Imagen::class);
-    }
 
 
     /////////////////////////////////////////////
@@ -129,6 +129,7 @@ class Emprendedor extends Model
     {
         $emprendimiento->delete();
     }
+
 
     public static function traerAleatoriamenteSeis()
     {

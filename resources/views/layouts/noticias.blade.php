@@ -205,7 +205,7 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 
          <div id="noticias-container"></div>
 
@@ -236,8 +236,10 @@
             </div>
         @endforeach
     </div>
+    <div class="navegacionPags">
+        {{ $noticias->onEachSide(2)->links('pagination::bootstrap-4') }}
+    </div>
 
-    {{ $noticias->onEachSide(2)->links('pagination::bootstrap-4') }}
     </div>
 
 

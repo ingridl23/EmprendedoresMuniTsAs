@@ -184,8 +184,7 @@
             <img src="{{ asset('storage/' . $noticia->imagen) }}" class="img-noticia img-fluid "
                 alt="Imagen de la noticia: {{ $noticia->titulo }}">
             <div class="card-body">
-                <p class="card-text-noticia">{{ $noticia->descripcion }}
-
+                <p class="card-text-noticia">{!!nl2br($noticia->descripcion)!!}
                 </p>
 
 

@@ -132,7 +132,7 @@
                                         title="{{ $emprendedor->nombre }}">
                                         <img class="img-fluid"
                                             src="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
-                                            alt={{ $emprendedor->nombre }} />
+                                            alt={{ $emprendedor->nombre }} /> 
                                 @endif
                                 <div class="portfolio-box-caption">
                                     <div class="project-category text-white-50">{{ $emprendedor->categoria }}</div>

@@ -16,10 +16,10 @@ class imagenFactory extends Factory
     public function definition()
     {
 
-        $path = $this->faker->image('storage/app/public/imagenes', 640, 480, null, false);
+        $path = $this->faker->image(public_path('img'), 640, 480, null, false);
 
         return [
-            'ruta' => 'imagenes/' . $path,
+            'url' => 'imagenes/' . $path,
             'emprendedor_id' => Emprendedor::factory(),
         ];
     }
