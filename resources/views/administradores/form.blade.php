@@ -21,10 +21,10 @@
             {{ !old('categoria') && (!isset($emprendimiento) || !$emprendimiento->categoria) ? 'selected' : '' }}>
             Seleccione una categoría
         </option>
-        @foreach($categorias as $categoria => $datos)
-        <option value="{{$categoria}}"
-            {{ (isset($emprendimiento) && $emprendimiento->categoria == $categoria) || old('categoria') == $categoria ? 'selected' : '' }}>
-            {{$categoria}}</option>
+        @foreach ($categorias as $categoria => $datos)
+            <option value="{{ $categoria }}"
+                {{ (isset($emprendimiento) && $emprendimiento->categoria == $categoria) || old('categoria') == $categoria ? 'selected' : '' }}>
+                {{ $categoria }}</option>
         @endforeach
     </select>
 
@@ -82,8 +82,8 @@
 <div>
     <div class="field-group">
         <label for="inputCity" class="direccionEmprendimiento">Ciudad <span class="asterisco">*</span></label>
-        <select id="ciudad" name="ciudad" required placeholder="">
-            <option class="oculto" {{ !isset($emprendimiento) ? 'selected' : '' }}></option>
+        <select id="ciudad" class="localidadesDeLaCiudad" name="ciudad" required placeholder="">
+            <option class="oculto " {{ !isset($emprendimiento) ? 'selected' : '' }}></option>
             <option
                 {{ isset($emprendimiento) && $emprendimiento->direccion->ciudad == 'Tres Arroyos' ? 'selected' : '' }}>
                 Tres Arroyos</option>
@@ -98,7 +98,7 @@
             <div class="text-danger small">{{ $message }}</div>
         @enderror
     </div>
-    <div class="field-group oculto localidadesDeLaCiudad">
+    <div class="field-group localidadesDeLaCiudad">
         <label for="localidad" class="direccionEmprendimiento localidad">Localidad <span
                 class="asterisco">*</span></label>
         <select id="localidadesDeLaCiudad" name="localidad" required placeholder="">
