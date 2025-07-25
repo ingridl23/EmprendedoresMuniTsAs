@@ -15,15 +15,10 @@
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
-
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
-
-
 
 </head>
 
@@ -107,14 +102,23 @@
         </header>
     </div>
 
+    <header class="masthead autorizacion">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Bienvenido/a – Acceso para usuarios autorizados</h1>
 
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container px-4 px-lg-5">
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Esta sección es solo para personas con acceso autorizado. 
+                        Si ya tenés usuario y contraseña, podés iniciar sesión tranquilamente. Si no contás con acceso y creés que deberías tenerlo, 
+                        comunicate con el administrador del sistema.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container px-4 px-lg-5 contenedorTexto">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
 
@@ -197,7 +201,7 @@
                         </button>
                     </div>
 
-                    {{-- Olvidaste contraseña --}}
+                    <!--{{-- Olvidaste contraseña --}}
                     @if (Route::has('password.request'))
                         <div class="text-center">
                             <a class="btn btn-link p-0" href="{{ route('password.request') }}">
@@ -205,7 +209,7 @@
                             </a>
                         </div>
                     @endif
-
+                    -->
 
                 </form>
             </div>

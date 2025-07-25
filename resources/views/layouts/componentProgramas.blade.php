@@ -4,25 +4,86 @@
 
 <div class=" container-programas ">
 
-    <h1 class="titulo1"> Conoce Los Programas Vigentes</h1>
+    <h1 class="text-center mt-0"> Conoce Los Programas Vigentes</h1>
 
-    <h2 class="subtitulo1">Programas Para Emprendedores</h2>
+    <h2 class="subtitulo1 subtituloProgramas">Programas Para Emprendedores</h2>
+
+    <div class="contenedorProgramas">
+        <div class="linkProgramas">
+            <div class="div-numero">
+                <div class="numero">1</div>
+            </div>
+            <a href="#clubDeEmprendedores">Club de emprendedores</a>
+        </div>
+        <div class="linkProgramas">
+            <div class="div-numero">
+                <div class="numero">2</div>
+            </div>
+            <a href="#escuelaDeEmprendedores">Escuela de emprendedores</a>
+        </div>
+    </div>
 
     <div class="programas">
-        <h3 class="subtitulo">Club De Emprendedores</h3>
+        <h3 class="subtitulo tituloClubEmprendedores">Club De Emprendedores</h3>
 
-        <p class="text-clubs">
+        <p class="text-clubs" id="clubDeEmprendedores">
             El Club de Emprendedores es una iniciativa de la Oficina de Empleo y Capacitación de Tres Arroyos que
             funciona como un espacio de encuentro, acompañamiento y crecimiento para emprendedores y PyMEs locales.
 
             Este club ofrece un ámbito físico de reuniones periódicas entre sus miembros, donde se generan vínculos
             entre los distintos actores del ecosistema productivo local y se fomenta la conexión con instituciones
             municipales, provinciales y nacionales.
-
-
         </p>
 
-        <h3 class="subtitulo">Objetivos y Acciones</h3>
+        <!--seccioon carrousel club de  emprendedores -->
+        <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="1000">
+                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/1.jpg') }}"
+                        class="img-fluid d-block  w-100" alt="...">
+
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/2.jpg') }}"
+                        class="img-fluid d-block  w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/3.jpg') }}"
+                        class="img-fluid d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/4.jpg') }}"
+                        class="img-fluid d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+                <!-- pie de carrousel -->
+        <p class="text-clubs">
+            Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
+            emprendedurismo local, promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y
+            mejores oportunidades para quienes apuestan a crecer en nuestra comunidad.
+        </p>
+
+        <p class="text-clubs"> Contactanos y sumate a esta comunidad en acción.
+            ¿Querés ser parte del Club de Emprendedores?</p>
+
+
+
+
+    <div class="detallesClub">
+        <div class="contenedorTituloDetalles">
+            <h3>Objetivos y Acciones</h3>
+        </div>
         <ul>
             <li>Ampliar la base emprendedora mediante actividades de sensibilización y promoción para diversos
                 públicos.
@@ -37,9 +98,12 @@
             <li> Informar, planificar y organizar eventos que involucren al sector emprendedor local, con aval y
                 acompañamiento del Municipio.</li>
         </ul>
-
-
-        <h3 class="subtitulo">Beneficios para los miembros</h3>
+    </div>
+        
+    <div class="detallesClub beneficiosDetallesClub">
+         <div class="contenedorTituloDetalles">
+            <h3>Beneficios para los miembros</h3>
+        </div>
         <ul>
             <li>Participación en la Mesa de Emprendedores:
                 Reuniones periódicas con otros miembros activos para compartir ideas, planificar acciones y acceder
@@ -57,65 +121,8 @@
                 Orientación y acompañamiento para registrar productos de manera legal y cumplir con los requisitos
                 sanitarios y normativos.</li>
         </ul>
-
-
-        <!--seccioon carrousel club de  emprendedores -->
-        <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="1000">
-
-                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/1.jpg') }}"
-                        class="img-fluid d-block  w-100" alt="...">
-
-                </div>
-
-
-
-                <div class="carousel-item">
-                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/2.jpg') }}"
-                        class="img-fluid d-block  w-100" alt="...">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/3.jpg') }}"
-                        class="img-fluid d-block w-100" alt="...">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="{{ asset('assets/img/clubemprendedoresadaptadas/4.jpg') }}"
-                        class="img-fluid d-block w-100" alt="...">
-                </div>
-
-
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-
-
-
-        <!-- pie de carrousel -->
-        <p class="text-clubs">
-            Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
-            emprendedurismo local, promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y
-            mejores oportunidades para quienes apuestan a crecer en nuestra comunidad.
-        </p>
-
-        <p class="text-clubs"> Contactanos y sumate a esta comunidad en acción.
-            ¿Querés ser parte del Club de Emprendedores?</p>
-
-
-
-
+       
+    </div>
 
 
         <!-- seccion vista previa ultimos emprendedores-->
@@ -150,7 +157,7 @@
 
 
         <!-- Call to action-->
-        <section class="page-section text-white" style="background-color: #25e9a7 !important;">
+        <section class="page-section text-white" id="SeccionFotosEmprendedores" >
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
                 <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
@@ -169,7 +176,7 @@
 
     <div class="programas">
 
-        <img class="img-fluid imagen-escuela" src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
+        <img class="img-fluid imagen-escuela" id="escuelaDeEmprendedores" src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
             alt="Logo de Escuela de Emprendedores" />
 
         <h3 class="subtitulo">Escuela de Emprendedores</h3>
