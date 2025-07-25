@@ -18,7 +18,9 @@ class EmprendedorController extends Controller
     public function emprendedores()
     {
         $emprendedoresPorCategoria = Emprendedor::obtenerCategorias();
-        return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria'));
+        $emprendedores = Emprendedor::with('imagenes')->get();
+        //  return response()->json($emprendedores);
+        return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria', 'emprendedores'));
     }
 
     /*Filtro de busqueda de emprendedores por nombre*/
@@ -35,6 +37,7 @@ class EmprendedorController extends Controller
     public function showEmprendimientoId($id)
     {
         if (is_numeric($id) && $id > constants::VALORMIN) {
+            // $emprendimiento = Emprendedor::find($id);
             $emprendimiento = Emprendedor::showEmprendimientoId($id);
             if ($emprendimiento != null) {
                 return view("emprendedor.templateEmprendedor", compact('emprendimiento'));
@@ -43,10 +46,13 @@ class EmprendedorController extends Controller
         //return view("errors.mensaje")->with('mensaje', "No se encuentra cargado ningún emprendimiento");
     }
 
+
     public function showFormCrearEmprendimiento()
     {
         return view('administradores.formNuevoEmprendimiento');
     }
+
+
 
     public function obtenerRol()
     {

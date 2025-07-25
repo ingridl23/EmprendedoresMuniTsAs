@@ -51,7 +51,7 @@
 
 .card {
     margin: 3rem !important;
-    max-width: 500px;
+    max-width: 1000px;
     padding: 1rem;
 }
 
@@ -119,6 +119,7 @@
     object-position: top;
     width: 70%;
     height: 70%;
+    margin: auto;
 }
 
 #noticias-container {

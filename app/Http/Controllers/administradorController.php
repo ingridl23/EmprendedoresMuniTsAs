@@ -80,18 +80,48 @@ class administradorController extends Controller
 
     public function showFormCrearEmprendimiento()
     {
-        $categorias=Emprendedor::obtenerCategorias();
-        return view('administradores.formNuevoEmprendimiento',compact('categorias'));
+        $categorias = Emprendedor::obtenerCategorias();
+        return view('administradores.formNuevoEmprendimiento', compact('categorias'));
     }
+
+
 
     public function crearEmprendimiento(validacionEmprendimiento $request)
     {
         $data = $request->validated();
-        $imagen = $request->file("imagen");
-        $path = $imagen->store('img', 'public');
-        Emprendedor::crearEmprendimiento($request, $path);
-        return redirect('/emprendedores');
+
+        $idRedes = redes::crearRedes(
+            $request->instagram,
+            $request->facebook,
+            $request->whatsapp
+        );
+
+        $idDireccion = direccion::crearDireccion(
+            $request->ciudad,
+            $request->localidad,
+            $request->calle,
+            $request->altura
+        );
+
+        $emprendimiento = Emprendedor::create([
+            'nombre' => $data['nombre'],
+            'categoria' => $data['categoria'],
+            'descripcion' => $data['descripcion'],
+            'redes_id' => $idRedes,
+            'direccion_id' => $idDireccion,
+        ]);
+
+        if ($request->hasFile('imagenes')) {
+            foreach ($request->file('imagenes') as $imagen) {
+                $path = $imagen->store('img', 'public');
+                $emprendimiento->imagenes()->create(['url' => $path]);
+            }
+        }
+
+
+        return redirect('/emprendedores')->with('success', 'Emprendimiento creado con éxito.');
     }
+
 
 
 
@@ -102,8 +132,8 @@ class administradorController extends Controller
             if ($emprendimiento != null) {
                 $emprendimiento->redes->instagram = $this->obtenerRedes($emprendimiento->redes->instagram);
                 $emprendimiento->redes->facebook = $this->obtenerRedes($emprendimiento->redes->facebook);
-                $categorias=Emprendedor::obtenerCategorias();
-                return view("administradores.formEditarEmprendimiento", compact('emprendimiento','categorias'));
+                $categorias = Emprendedor::obtenerCategorias();
+                return view("administradores.formEditarEmprendimiento", compact('emprendimiento', 'categorias'));
             }
         };
 

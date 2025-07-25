@@ -17,8 +17,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        $emprendimientos = Emprendedor::traerAleatoriamenteSeis();
-        return view('layouts.templateEmprendedoreshome', compact('emprendimientos'));
+        $ultimos = Emprendedor::traerAleatoriamenteSeis();
+        return view('layouts.templateEmprendedoreshome', compact('ultimos'));
     }
 
 

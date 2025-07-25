@@ -170,15 +170,15 @@
 
 
     <!-- aca todo esto deberia iterarse-->
-    <div class="container-fluid">
+    <div id="#noticias-container">
 
-        <div class="row container-card ">
-
-
+        <div class=" card   container-card ">
 
 
 
-            <p <small class="text-body-secondary  text-secundario">Fecha de publicación:
+
+
+            <p <small class=" text-body-secondary">Fecha de publicación:
                 {{ $noticia->created_at->format('Y-m-d') }}</small></p>
             <h2 class="noticiaTitulo">{{ $noticia->titulo }}</h2>
             <img src="{{ asset('storage/' . $noticia->imagen) }}" class="img-noticia img-fluid "
@@ -190,10 +190,6 @@
 
             </div>
         </div>
-
-
-
-
 
 
     </div>

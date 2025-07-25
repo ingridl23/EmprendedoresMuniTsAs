@@ -153,52 +153,21 @@
 
     <!-- Card 1 --> <!--aca iria el content para traer iteradas las cards -->
     <div id="productos" class="container">
-        <div class="row">
+        <div>
 
+            @if ($emprendimiento->imagenes->isNotEmpty())
+                <div class=" galeriaImagenes col-md-8">
+                    @foreach ($emprendimiento->imagenes as $imagen)
+                        <img src="{{ asset('storage/' . $imagen->url) }}" class=" img-fluid"
+                            alt="Imagen de {{ $emprendimiento->nombre }}">
+                    @endforeach
 
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <img src="{{ asset('storage/.$emprendimiento->imagen1') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <!-- contenido -->
-                    </div>
                 </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <img src="{{ asset('storage/.$emprendimiento->imagen2') }}" class="card-img-top"
-                        alt="...">
-                    <div class="card-body">
-                        <!-- contenido -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <img src="{{ asset('storage/.$emprendimiento->imagen3') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <!-- contenido -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Agregár más desde la base de datos -->
-
-            <!--card 4 -->
-
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <img src="{{ asset('storage/.$emprendimiento->imagen4') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <!-- contenido -->
-                    </div>
-                </div>
-            </div>
+            @else
+                <p>No hay imágenes disponibles para este emprendimiento.</p>
+            @endif
         </div>
+
     </div>
 
 

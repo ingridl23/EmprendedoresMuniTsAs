@@ -1,2 +1,3 @@
-# EmprendedoresMuniTsAs
-En proceso de desarrollo  de un sitio web  para la oficina de empleo y capacitacion del municipio de tres arroyos. El cual consiste en  un apartado que brinda informacion acerca de los programas vigentes para la comunidad y  para emprendedores que formen parte de los  mismos. Como tambien poder ser patrocinados por la oficina de cultura de la ciudad. Con el objetivo de brindar visibilidad a emprendedores y artesanos que pertenezcan a dicha direccion y pymes o empresas en busqueda de creacion de equipos de trabajo.
+#_SITIO WEB PARA OFICNA DE EMPLEO Y CAPACITACION DEL MUNICIPIO DE TRES ARROYOS_
+
+![Texto alternativo](EmprendedoresMuniTsAs\public\assets\img\iconos\logo-muni-azul-claro-removebg-preview.pngn)

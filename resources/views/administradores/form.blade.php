@@ -33,78 +33,17 @@
         <div class="text-danger small">{{ $message }}</div>
     @enderror
 
-    <p class="form-subtitulos">Otorgue una categoría del emprendimiento</p>
-</div>
-
-<div class="field-group" id="imagenFormulario">
-    @if (isset($emprendimiento->imagen))
-        <img src="{{ asset('storage/' . $emprendimiento->imagen) }}" alt="Imagen de {{ $emprendimiento->nombre }}"
-            class="imagenEmprendimientoFormulario">
-    @endif
-    <input type="file" name="imagen" id="imagen">
-    <label for="imagen">Imagen <span class="asterisco">*</span></label>
-    @error('imagen')
-        <div class="text-danger small">{{ $message }}</div>
-    @enderror
-    <p class="form-subtitulos">Cargar imagen principal del emprendimiento</p>
+    <p class="form-subtitulos">seleccionar la categoría del emprendimiento</p>
 </div>
 
 
-
-<div class="field-group" id="imagenFormulario">
-    @if (isset($emprendimiento->imagen1))
-        <img src="{{ asset('storage/' . $emprendimiento->imagen1) }}" alt="Imagen de {{ $emprendimiento->nombre }}"
-            class="imagenEmprendimientoFormulario">
-    @endif
-    <input type="file" name="imagen" id="imagen">
-    <label for="imagen">Imagen <span class="asterisco">*</span></label>
-    @error('imagen')
+<div class="field-group" id="imagenesFormulario">
+    <input type="file" name="imagenes[]" id="imagenes" multiple accept="image/*">
+    <label for="imagenes">Cargar Imágenes <span class="asterisco">*</span></label>
+    @error('imagenes')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
-    <p class="form-subtitulos">Cargar imagen 1 del emprendimiento</p>
-</div>
-
-
-<div class="field-group" id="imagenFormulario">
-    @if (isset($emprendimiento->imagen2))
-        <img src="{{ asset('storage/' . $emprendimiento->imagen2) }}" alt="Imagen de {{ $emprendimiento->nombre }}"
-            class="imagenEmprendimientoFormulario">
-    @endif
-    <input type="file" name="imagen" id="imagen">
-    <label for="imagen">Imagen <span class="asterisco">*</span></label>
-    @error('imagen')
-        <div class="text-danger small">{{ $message }}</div>
-    @enderror
-    <p class="form-subtitulos">Cargar imagen 2 del emprendimiento</p>
-</div>
-
-
-<div class="field-group" id="imagenFormulario">
-    @if (isset($emprendimiento->imagen3))
-        <img src="{{ asset('storage/' . $emprendimiento->imagen3) }}" alt="Imagen de {{ $emprendimiento->nombre }}"
-            class="imagenEmprendimientoFormulario">
-    @endif
-    <input type="file" name="imagen" id="imagen">
-    <label for="imagen">Imagen <span class="asterisco">*</span></label>
-    @error('imagen')
-        <div class="text-danger small">{{ $message }}</div>
-    @enderror
-    <p class="form-subtitulos">Cargar imagen 3 del emprendimiento</p>
-</div>
-
-
-
-<div class="field-group" id="imagenFormulario">
-    @if (isset($emprendimiento->imagen4))
-        <img src="{{ asset('storage/' . $emprendimiento->imagen4) }}" alt="Imagen de {{ $emprendimiento->nombre }}"
-            class="imagenEmprendimientoFormulario">
-    @endif
-    <input type="file" name="imagen" id="imagen">
-    <label for="imagen">Imagen <span class="asterisco">*</span></label>
-    @error('imagen')
-        <div class="text-danger small">{{ $message }}</div>
-    @enderror
-    <p class="form-subtitulos">Cargar imagen 4 del emprendimiento</p>
+    <p class="form-subtitulos">Subir maximo 5 imágenes del emprendimiento</p>
 </div>
 
 

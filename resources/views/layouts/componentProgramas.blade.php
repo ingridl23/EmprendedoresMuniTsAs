@@ -126,14 +126,18 @@
 
                         @foreach ($ultimos as $emprendedor)
                             <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="{{ asset('storage/' . $emprendedor->imagen) }}"
-                                    title="{{ $emprendedor->nombre }}">
-                                    <img class="img-fluid" src="{{ asset('storage/' . $emprendedor->imagen) }}"
-                                        alt={{ $emprendedor->nombre }} />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">{{ $emprendedor->categoria }}</div>
-                                        <div class="project-name">{{ $emprendedor->nombre }}</div>
-                                    </div>
+                                @if ($emprendedor->imagenes->isNotEmpty())
+                                    <a class="portfolio-box"
+                                        href="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
+                                        title="{{ $emprendedor->nombre }}">
+                                        <img class="img-fluid"
+                                            src="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
+                                            alt={{ $emprendedor->nombre }} /> 
+                                @endif
+                                <div class="portfolio-box-caption">
+                                    <div class="project-category text-white-50">{{ $emprendedor->categoria }}</div>
+                                    <div class="project-name">{{ $emprendedor->nombre }}</div>
+                                </div>
                                 </a>
                             </div>
                         @endforeach

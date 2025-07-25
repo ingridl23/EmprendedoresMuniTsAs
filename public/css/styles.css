@@ -4277,7 +4277,7 @@
             border: var(--bs-accordion-border-width) solid #239989;
         }
         
-        @media(max-width:992px){
+        @media(max-width:992px) {
             .accordion-item:first-of-type {
                 border-top-left-radius: var(--bs-accordion-border-radius);
                 border-top-right-radius: var(--bs-accordion-border-radius);
