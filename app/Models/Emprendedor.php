@@ -56,7 +56,7 @@ class Emprendedor extends Model
         return $this->belongsTo(direccion::class, 'direccion_id', 'id');
     }
 
-        ////////////////////////////////////////////
+    ////////////////////////////////////////////
     public function imagenes()
     {
         return $this->hasMany(Imagen::class);
@@ -140,11 +140,11 @@ class Emprendedor extends Model
     }
 
     //traer ultimos 6 emprendedores
-    public static function ultimosEmprendedores($cantidad = 6)
+    /*  public static function ultimosEmprendedores($cantidad = 6)
     {
         return Emprendedor::with('imagenes') //  esto trae las imágenes relacionadas
             ->orderBy('created_at', 'desc')
             ->limit($cantidad)
             ->get();
-    }
+    }*/
 }
