@@ -8,8 +8,6 @@ use Illuminate\Queue\SerializesModels;
 
 class sendContactForm extends Mailable
 {
-
-
     public $data;
 
     public function __construct($data)
