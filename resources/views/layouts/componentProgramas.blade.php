@@ -269,7 +269,7 @@
             en un entorno natural y accesible para toda la comunidad.</p>
 
 
-        <p class="text-clubs">
+
 
         <ol>
             <li> 🗓 Días: Primer domingo de cada mes</li>
@@ -283,7 +283,7 @@
 
         </ol>
 
-        </p>
+
 
 
 
