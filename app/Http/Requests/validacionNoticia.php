@@ -2,6 +2,7 @@
 
 
 namespace App\Http\Requests;
+
 use Illuminate\Http\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -18,13 +19,14 @@ class validacionNoticia  extends FormRequest
         return true;
     }
 
-    public function store(Request $request){
-         if ($request->filled('oculto')) {
-            return back()->with("error", "formulario rechazado posible bot detectado"); // posible bot detectado
+    public function store(Request $request)
+    {
+        if ($request->filled('oculto')) {
+            return back()->with("error", "formulario rechazado "); // posible bot detectado
         }
 
         $this->validate($request, $this->rules());
-        return back()->with('success', ' Se agrega un emprendedor correctamente.');
+        return back()->with('success', ' Se agrega una noticia correctamente.');
     }
 
     /**
@@ -32,7 +34,8 @@ class validacionNoticia  extends FormRequest
      *
      * @return array
      */
-    public function rules(){
+    public function rules()
+    {
 
         return [
             'titulo' => 'bail|required|string|min:3|max:100',
@@ -40,9 +43,6 @@ class validacionNoticia  extends FormRequest
             'categoria' => 'bail|required|string|min:1|max:60',
             'imagen' => 'bail|required|image|mimes:jpeg,jpg,png,webp'
         ];
-
-        
-        //  Mail::to('ingridmilagrosledesma@gmail.com')->send(new sendContactForm($request->all()));
     }
     public function messages()
     {

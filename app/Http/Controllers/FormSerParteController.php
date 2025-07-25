@@ -26,7 +26,7 @@ class FormSerParteController extends Controller
     {
 
         if ($request->filled('oculto')) {
-            return back()->with("error", "formulario rechazado posible bot detectado"); // posible bot detectado
+            return back()->with("error", "formulario rechazado "); // posible bot detectado
         }
         $validated = $request->validate([
 
