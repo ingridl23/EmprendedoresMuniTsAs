@@ -19,8 +19,13 @@
     
     .subtitulo1 {
         color: rgb(90, 84, 84);
+        text-align: center;
     }
     
+    h4{
+        text-align: center;
+    }
+
     .subtitulo {
         color: rgb(63, 60, 60);
     }
@@ -29,7 +34,6 @@
         font-family: "Arial", sans-serif;
         font-weight: 600;
         color: rgb(61, 61, 61);
-        padding: 3rem;
     }
     
     .programas ol>li {
@@ -40,7 +44,6 @@
     .container-programas .subtitulo,
     .container-programas .titulo1,
     .conteiner-programas .text-clubs,
-    .container-programas .programas ul,
     .container-programas .programas ol,
     .container-programas .programas h4 {
         margin: 2rem;
@@ -85,7 +88,6 @@
     h2.subtituloProgramas{
         text-align: center;
         margin: 1.5rem;
-        margin-bottom: 4rem;
     }
 
     #clubDeEmprendedores{
@@ -113,6 +115,10 @@
         margin: 2rem 0rem;
     }
 
+    div.contenedorListaProgramas div.programas{
+        margin: 2rem 0rem;
+    }
+
     div.contenedorTituloDetalles h3{
         text-transform: uppercase;
         text-align: center;
@@ -126,6 +132,65 @@
         color: rgb(228, 228, 228);
         padding: 0rem 1rem;
     }
+
+    h3 + p.text-clubs{
+            margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    }
+    /*Estilo diferentes ofertas de programas de empleo*/
+
+    .contenedorListaProgramas div.programas ul{
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+
+    .contenedorListaProgramas div.programas h3{
+        /*background-color: #0e776c;*/
+        background-color: #2cc4b4;
+        padding: 2rem 0.5rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        color: #f9f9f9;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    div.programas.row{
+        background-color: #f3f3f3;
+        margin: 0rem 1rem;
+        border: black solid 0.15rem;
+        border-radius: 1.2rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%;
+    }
+
+    /*Estilo programas*/
+    @media(min-width:1000px){
+         div.contenedorListaProgramas{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        position: relative;
+    }
+
+    .contenedorListaProgramas div.programas{
+        display: inline-grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 1rem;
+    }
+
+    div.contenedorListaProgramas div.programas{
+        margin: 0rem 1rem;
+    }
+
+
+    }
+   
+
 
     @media(max-width:900px){
         .detallesClub{

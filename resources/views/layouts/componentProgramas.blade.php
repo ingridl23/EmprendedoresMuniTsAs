@@ -21,6 +21,18 @@
             </div>
             <a href="#escuelaDeEmprendedores">Escuela de emprendedores</a>
         </div>
+         <div class="linkProgramas">
+            <div class="div-numero">
+                <div class="numero">3</div>
+            </div>
+            <a href="#feriaParqueCabanias">Feria Parque Cabañas</a>
+        </div>
+         <div class="linkProgramas">
+            <div class="div-numero">
+                <div class="numero">4</div>
+            </div>
+            <a href="#programasDeEmpleo">Programas de empleo</a>
+        </div>
     </div>
 
     <div class="programas">
@@ -179,7 +191,7 @@
         <img class="img-fluid imagen-escuela" id="escuelaDeEmprendedores" src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
             alt="Logo de Escuela de Emprendedores" />
 
-        <h3 class="subtitulo">Escuela de Emprendedores</h3>
+        <h2 class="subtitulo1 subtituloProgramas">Escuela de Emprendedores</h2>
         <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>
 
 
@@ -262,8 +274,8 @@
 
 
     <div class="programas">
-        <h2 class="subtitulo1">Feria Del Parque Cabañas</h2>
-        <h3 class="subtitulo">Impulsando el trabajo local y el comercio emprendedor</h3>
+        <h2 class="subtitulo1" id="feriaParqueCabanias">Feria Del Parque Cabañas</h2>
+        <h4>Impulsando el trabajo local y el comercio emprendedor</h4>
         <p class="text-clubs">La Feria del Parque Cabañas es una propuesta organizada por el Club de
             Emprendedores,
             bajo
@@ -320,67 +332,47 @@
 
     </div>
 
-    <h2 class="subtitulo1">Programas De Empleo</h2>
+    <h2 class="subtitulo1" id="programasDeEmpleo">Programas De Empleo</h2>
+    <h4>Impulsamos la empleabilidad, la capacitación y la inserción laboral</h4>
+    <p class="text-clubs">Desde la Oficina de Empleo, articulamos con programas nacionales y municipales para
+        brindar oportunidades concretas de inserción laboral y formación profesional.</p>
 
-    <h3 class="subtitulo">Impulsamos la empleabilidad, la capacitación y la inserción laboral</h3>
-    <p class="text-clubs">Desde la Oficina de Empleo, articulamos con programas nacionales y municipales
-        para
-        brindar
-        oportunidades concretas de inserción laboral y
-        formación profesional.</p>
+    <div class="contenedorListaProgramas">
+        <div class="programas row">
+            <h3 class="col">EPT – Entrenamiento para el Trabajo</h3>
+            <p class="text-clubs">Permite que las empresas entrenen aprendices en puestos reales, sin
+                establecer
+                relación
+                laboral formal,
+                compartiendo el costo de formación con el Estado.</p>
+            <ul>
+                <li> Dirigido a: Personas desocupadas mayores de 18 años</li>
+                <li> Beneficio: Posibilidad de contratación futura con incentivo económico (vía PIL)
+                </li>
+            </ul>
+        </div>
+        <div class="programas row">
+            <h3 class="col">PIL – Programa de Inserción Laboral</h3>
+            <p class="text-clubs">Promueve la contratación de personas con dificultades de empleabilidad
+                mediante un subsidio para las empresas
+                que cubre parte del salario del trabajador.</p>
+            <ul>
+                <li>Beneficio: Reducción de carga salarial para las empresas</li>
+                <li>Objetivo: Estimular la inserción laboral sostenida</li>
+            </ul>
+        </div>
+        <div class="programas row">
+            <h3 class="col">PROMOVER – Inclusión Laboral para Personas con Discapacidad</h3>
+            <p class="text-clubs">Brinda acompañamiento personalizado a personas con discapacidad para que
+                puedan
+                acceder a
+                empleos de calidad o desarrollar sus propios emprendimientos.</p>
 
-
-    <div class="programas">
-
-        <h3 class="subtitulo">EPT – Entrenamiento para el Trabajo</h3>
-
-        <p class="text-clubs">Permite que las empresas entrenen aprendices en puestos reales, sin
-            establecer
-            relación
-            laboral formal,
-            compartiendo el costo de formación con el Estado.</p>
-
-
-
-
-        <ul>
-
-            <li> Dirigido a: Personas desocupadas mayores de 18 años</li>
-
-            <li> Beneficio: Posibilidad de contratación futura con incentivo económico (vía PIL)
-
-            </li>
-        </ul>
+            <ul>
+                <li>Apoyo integral: Orientación, formación y vinculación con el mundo laboral</li>
+                <li>Enfoque: Autonomía, desarrollo y sostenibilidad</li>
+            </ul>
+        </div>
     </div>
-
-    <div class="programas">
-
-        <h3 class="subtitulo">PIL – Programa de Inserción Laboral</h3>
-        <p class="text-clubs">Promueve la contratación de personas con dificultades de empleabilidad
-            mediante un subsidio para las empresas
-            que cubre parte del salario del trabajador.</p>
-
-        <ul>
-            <li>Beneficio: Reducción de carga salarial para las empresas</li>
-            <li>Objetivo: Estimular la inserción laboral sostenida</li>
-        </ul>
-    </div>
-
-
-
-    <div class="programas">
-
-        <h3 class="subtitulo">PROMOVER – Inclusión Laboral para Personas con Discapacidad</h3>
-        <p class="text-clubs">Brinda acompañamiento personalizado a personas con discapacidad para que
-            puedan
-            acceder a
-            empleos de calidad o desarrollar sus propios emprendimientos.</p>
-
-        <ul>
-            <li>Apoyo integral: Orientación, formación y vinculación con el mundo laboral</li>
-            <li>Enfoque: Autonomía, desarrollo y sostenibilidad</li>
-        </ul>
-    </div>
-
 </div>
 </div>
