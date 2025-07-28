@@ -13,7 +13,7 @@ class ProgramasController extends Controller
     {
         // return view("layouts.programas");
         // 1.1) Traigo los últimos 6 emprendedores
-        $ultimos = Emprendedor::ultimosEmprendedores();
+        $ultimos = Emprendedor::traerAleatoriamenteSeis();
         //  dd($ultimos->pluck('nombre')->toArray());
 
         // 1.2) Le paso $ultimos a la vista programas
