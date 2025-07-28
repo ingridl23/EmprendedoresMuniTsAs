@@ -27,18 +27,21 @@ class Horario extends Model
         return $this->belongsTo(Emprendedor::class, 'horarios_id', 'id');
     }
 
-    public static function crearHorario($datos)
+
+    public static function crearHorario($dia, $hora_apertura, $hora_cierre, $participa_feria, $cerrado, $emprendedor_id)
     {
-        // Validar campos obligatorios
-        return self::create([
-            'dia' => $datos['dia'],
-            'hora_de_apertura' => $datos['hora_de_apertura'],
-            'hora_de_cierre' => $datos['hora_de_cierre'],
-            'participa_feria' => $datos['participa_feria'] ?? false,
-            'cerrado' => $datos['cerrado'] ?? false,
-            'emprendedor_id' => $datos['emprendedor_id'],
-        ]);
+        $horario = new Horario();
+        $horario->dia = $dia;
+        $horario->hora_apertura = $hora_apertura;
+        $horario->hora_cierre = $hora_cierre;
+        $horario->participa_feria = $participa_feria;
+        $horario->cerrado = $cerrado;
+        $horario->emprendedor_id = $emprendedor_id;
+        $horario->save();
+
+        return $horario->id;
     }
+
 
     public static function editarHorarios(Horario $horario, $datos)
     {

@@ -20,6 +20,8 @@ class Emprendedor extends Migration
             $table->string('categoria');
             $table->foreignId('redes_id')->constrained('redes')->onDelete('cascade');
             $table->foreignId('direccion_id')->constrained('direccion')->onDelete('cascade');
+            $table->foreignId('horario_id')->constrained('horario')->onDelete('cascade');
+
 
             $table->timestamps();
         });

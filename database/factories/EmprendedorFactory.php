@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Emprendedor;
 use App\Models\Redes;
 use App\Models\Direccion;
+use App\Models\Horario;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class EmprendedorFactory extends Factory
@@ -25,6 +26,7 @@ class EmprendedorFactory extends Factory
             ]),
             'redes_id'     => Redes::factory(),
             'direccion_id' => Direccion::factory(),
+            'horario_id' => Horario::factory(),
         ];
     }
 }

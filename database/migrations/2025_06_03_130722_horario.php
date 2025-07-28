@@ -30,8 +30,7 @@ class Horario extends Migration
             // Cerrado ese día
             $table->boolean('cerrado')->default(false);
 
-            // Relación con emprendedor
-            $table->foreignId('emprendedor_id')->constrained('emprendedor')->onDelete('cascade');
+
 
             $table->timestamps();
         });

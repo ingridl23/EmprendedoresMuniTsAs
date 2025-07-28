@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use App\constants;
 use Database\Factories\EmprendedorFactory;
 use Database\Factories\imagenFactory;
+use Database\Factories\HorarioFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Imagen;
+use App\Models\Horario;
 
 /**
  * Class Emprendedor
@@ -18,7 +20,7 @@ use App\Models\Imagen;
  * @property $descripcion
  * @property $categoria
  * @property $redes_id
-
+ * @property $horario_id
  * @property $created_at
  * @property $updated_at
  *
@@ -43,7 +45,8 @@ class Emprendedor extends Model
         'descripcion',
         'categoria',
         'redes_id',
-        'direccion_id'
+        'direccion_id',
+        'horario_id'
     ];
 
     public function redes(): BelongsTo
@@ -78,7 +81,7 @@ class Emprendedor extends Model
 
     public static function showEmprendimientoId($id)
     {
-        $emprendimiento = Emprendedor::with(['redes', 'direccion'])->where('emprendedor.id', $id)->get();
+        $emprendimiento = Emprendedor::with(['redes', 'direccion', 'horario_id '])->where('emprendedor.id', $id)->get();
         if (count($emprendimiento) > constants::VALORMIN) {
             $emprendimiento = $emprendimiento[0];
             return $emprendimiento;
@@ -109,8 +112,17 @@ class Emprendedor extends Model
 
             'redes_id' => $idRedes,
             'direccion_id' => $idDireccion,
-        ]);
 
+        ]);
+        // Luego creamos el horario con el ID del emprendedor
+        horario::crearHorario(
+            $request->dia,
+            $request->hora_de_apertura,
+            $request->hora_de_cierre,
+            $request->participa_feria,
+            $request->cerrado,
+            $emprendimiento->id
+        );
         //  Guardar las imágenes (vienen en el form)
         if ($request->hasFile('imagenes')) {
             foreach ($request->file('imagenes') as $archivo) {
