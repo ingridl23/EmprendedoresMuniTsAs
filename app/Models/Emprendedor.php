@@ -56,6 +56,10 @@ class Emprendedor extends Model
         return $this->belongsTo(direccion::class, 'direccion_id', 'id');
     }
 
+    public function horarios()
+    {
+        return $this->hasMany(Horario::class);
+    }
     ////////////////////////////////////////////
     public function imagenes()
     {
@@ -138,6 +142,8 @@ class Emprendedor extends Model
             ->limit(6)
             ->get();
     }
+
+
 
     //traer ultimos 6 emprendedores
     /*  public static function ultimosEmprendedores($cantidad = 6)

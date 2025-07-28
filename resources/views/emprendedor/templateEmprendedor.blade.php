@@ -22,6 +22,9 @@
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
 
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+
+
+
     <link href= "{{ asset('css/footer.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
 </head>
@@ -185,37 +188,26 @@
                             <span class="section-heading-upper">Horarios De Atencion </span>
 
                         </h2>
-                        <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-                            <li class="list-unstyled-item list-hours-item d-flex">
-                                Sunday
-                                <span class="ms-auto">Cerrado</span>
-                            </li>
-                            <li class="list-unstyled-item list-hours-item d-flex">
-                                Monday
-                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                <!--((emprendedor-- horainicio))  ((emprendedor-- horafin))-->
-                            </li>
-                            <li class="list-unstyled-item list-hours-item d-flex">
-                                Tuesday
-                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                            </li>
-                            <li class="list-unstyled-item list-hours-item d-flex">
-                                Wednesday
-                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                            </li>
-                            <li class="list-unstyled-item list-hours-item d-flex">
-                                Thursday
-                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                            </li>
-                            <li class="list-unstyled-item list-hours-item d-flex">
-                                Friday
-                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                            </li>
-                            <li class="list-unstyled-item list-hours-item d-flex">
-                                Saturday
-                                <span class="ms-auto">9:00 AM to 5:00 PM</span>
-                            </li>
-                        </ul>
+                        @foreach ($emprendimiento->horarios as $horario)
+                            <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                    <strong>{{ $horario->dia }}:</strong>
+
+                                    <!--((emprendedor-- horainicio))  ((emprendedor-- horafin))-->
+                                    @if ($horario->cerrado)
+                                        Cerrado
+                                    @else
+                                        <span class="ms-auto"> {{ $horario->hora_apertura }} -
+                                            {{ $horario->hora_cierre }}</span>
+                                        @if ($horario->participa_feria)
+                                            (Participa en feria parque cabañas primer domingo de cada mes)
+                                        @endif
+                                    @endif
+                                </li>
+
+                            </ul>
+                        @endforeach
                         <p class="address mb-5">
                             <em>
                                 Encontranos en

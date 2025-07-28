@@ -54,9 +54,9 @@
                 <h2 class="mt-0"> Modificar Información del Emprendimiento</h2>
                 <hr class="divider" />
                 <p class="text-muted mb-5">
-                    Esta funcionalidad es útil para corregir errores,
-                    incorporar cambios en la actividad del emprendimiento o mantener consistencia de sus datos.
-                    Asegurate de revisar los campos antes de guardar los cambios.
+                    Corregir datos cargados,
+                    incorporar cambios en la actividad del emprendimiento .
+                    ¡Asegurar de revisar los campos antes de guardar los cambios!
                 </p>
             </div>
         </div>

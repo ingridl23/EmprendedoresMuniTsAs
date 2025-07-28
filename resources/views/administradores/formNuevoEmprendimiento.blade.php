@@ -39,8 +39,7 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Agrega un nuevo emprendimiento para que sea parte del Club
-                        de Emprendedores</h1>
+                    <h1 class="text-white font-weight-bold">Agregar un nuevo emprendedor </h1>
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
@@ -63,13 +62,13 @@
         <div class="container px-4 px-lg-5 tituloNuevoEmprendimiento">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
-                    <h2 class="mt-0"> Cargar el emprendimiento para el Club de Emprendedores</h2>
+                    <h2 class="mt-0"> Cargar un emprendimiento</h2>
                     <hr class="divider" />
                     <p class="text-muted textoNuevoEmprendimiento">
-                        Completá el formulario con los datos del emprendimiento, envialos
+                        Completár el formulario con los datos del emprendimiento,para agregar al sitio
                     </p>
                     <p class="text-muted mb-5">
-                        ¡y ya se cargarán para poder ser vistos!
+
                     </p>
                 </div>
             </div>
@@ -86,7 +85,7 @@
                     @csrf
                     @include('administradores.form')
                     <div class=" d-grid  ">
-                        <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
+                        <button cler vistosass="btn btn-primary btn-xl submit" id="submitButton" type="submit">
                             <span class="btntext" value="Guardar datos"> Agregar emprendimiento </span>
                         </button>
                     </div>

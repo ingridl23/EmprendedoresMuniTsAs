@@ -1,19 +1,21 @@
-label.direccionEmprendimiento{
+label.direccionEmprendimiento {
     display: block;
     position: relative;
     pointer-events: none;
     transition: 0.2s ease all;
     margin-bottom: 0.5rem;
 }
+
 .imagenEmprendimientoFormulario {
     margin-top: 1rem;
 }
+
 #imagenFormulario label {
     font-size: 1rem;
     color: #000 !important;
 }
 
-select{
+select {
     width: 100%;
     border: none;
     padding: 0.3rem;
@@ -25,51 +27,53 @@ select:hover {
     background-color: rgba(109, 109, 109, 0.2);
 }
 
-label.seleccionLocalidad{
+label.seleccionLocalidad {
     font-size: 0.85rem;
     color: #53c9ff;
 }
 
-.oculto{
+.oculto {
     display: none;
 }
 
-div.mostrar{
+div.mostrar {
     display: block;
     animation: 0.5s linear 0s mostrarDiv;
-    animation-direction:unset;
+    animation-direction: unset;
 }
-.alturaYCalle{
+
+.alturaYCalle {
     display: flex;
     justify-content: space-between;
 }
-div.alturaYCalle p.form-subtitulos{
+
+div.alturaYCalle p.form-subtitulos {
     margin-left: 0;
 }
+
 @keyframes mostrarDiv {
-    0%{
+    0% {
         width: 0%;
     }
-    100%{
+    100% {
         width: 100%;
     }
 }
 
-div.alturaYCalle div{
+div.alturaYCalle div {
     width: 40%;
 }
 
-nav form{
+nav form {
     margin-bottom: 0;
 }
 
 @media (max-width:992px) {
-    div.col-lg-6{
+    div.col-lg-6 {
         justify-content: center;
         display: flex;
     }
-
-    .form{
+    .form {
         width: 60%;
     }
 }
@@ -78,9 +82,13 @@ nav form{
     padding: 2rem 0;
 }
 
+.cerrado-checkbox {
+    display: flex;
+    align-items: center;
+    /* Mejor que baseline */
+    gap: 4px;
+    /* Espacio entre checkbox y texto */
+    margin-top: 3px;
+}
 
-
-
-/* label.direccionEmprendimiento::after {
-    color: #53c9ff;
-  }*/
+.checkbox {}

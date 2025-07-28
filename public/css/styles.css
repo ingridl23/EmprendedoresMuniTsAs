@@ -4209,20 +4209,22 @@
             transition: var(--bs-accordion-transition);
         }
         
-        div.accordion-item h2 button.desplegarFiltro{
-                padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+        div.accordion-item h2 button.desplegarFiltro {
+            padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
         }
-
-        div.accordionCategoria{
+        
+        div.accordionCategoria {
             display: block;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
-        div.accordionCategoria a{
+        
+        div.accordionCategoria a {
             text-align: center;
-            padding:0.5rem;
+            padding: 0.5rem;
         }
+        
         @media (prefers-reduced-motion: reduce) {
             .accordion-button {
                 transition: none;
@@ -4419,7 +4421,7 @@
         
         .page-link:focus {
             z-index: 3;
-            color:#28b6a3;
+            color: #28b6a3;
             background-color: #bfebe3;
             outline: 0;
             box-shadow: #bfebe3;
@@ -11056,13 +11058,15 @@
         header.masthead .h1 {
             font-size: 2.25rem;
         }
-        header.masthead.autorizacion{
+        
+        header.masthead.autorizacion {
             min-height: 35rem;
         }
-        div.contenedorTexto{
+        
+        div.contenedorTexto {
             margin-top: 3rem;
         }
-
+        
         @media(min-width:650px) {
             header.masthead.headerFormulario {
                 min-height: 40rem;
@@ -11448,51 +11452,62 @@
         section.section-new-entrepreneur {
             padding: 0;
         }
-
-.mensajeError{
-    color: #bf2121;
-    margin: 0;
-}
-
-
-@media(min-width: 992px){
-    #accordionExample{
-        display: flex;
-    }
-
-    div.accordion-item h2#headingTwo button.desplegarFiltro{
-        border-top: solid 1px #239989;
-    }
-
-    #accordionExample div.accordion-item{
-        width: -webkit-fill-available;
-    }
-    div.accordion-item{
-        --bs-accordion-border-radius: 0rem;
-        --bs-accordion-inner-border-radius: 0rem;
-        border-top-left-radius: 0rem;
-        border-top-right-radius: 0rem;
-    }
-}
-
-.tituloFiltroNoticias{
-    margin: 2rem 0 1.5rem 2rem;
-}
-
-.accordion-item{
-    height: fit-content;
-}
-div#accordionExample{
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-.navegacionPags{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-div.field-group.seleccionarCategoria{
-    margin-top: 0.6rem;
-}
+        
+        .mensajeError {
+            color: #bf2121;
+            margin: 0;
+        }
+        
+        @media(min-width: 992px) {
+            #accordionExample {
+                display: flex;
+            }
+            div.accordion-item h2#headingTwo button.desplegarFiltro {
+                border-top: solid 1px #239989;
+            }
+            #accordionExample div.accordion-item {
+                width: -webkit-fill-available;
+            }
+            div.accordion-item {
+                --bs-accordion-border-radius: 0rem;
+                --bs-accordion-inner-border-radius: 0rem;
+                border-top-left-radius: 0rem;
+                border-top-right-radius: 0rem;
+            }
+        }
+        
+        .tituloFiltroNoticias {
+            margin: 2rem 0 1.5rem 2rem;
+        }
+        
+        .accordion-item {
+            height: fit-content;
+        }
+        
+        div#accordionExample {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        
+        .navegacionPags {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        div.field-group.seleccionarCategoria {
+            margin-top: 0.6rem;
+        }
+        /*estilos delas imagenes del emprendedor  para pantalla individual*/
+        
+        .galeriaImagenes {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: auto;
+        }
+        
+        .galeriaImagenes img {
+            /*  max-width: 550px;*/
+            border-radius: 8px;
+        }
