@@ -19,15 +19,7 @@ class validacionFormularioContacto  extends FormRequest
         return true;
     }
 
-    public function store(Request $request)
-    {
-        if ($request->filled('oculto')) {
-            return back()->with("error", "formulario rechazado "); // posible bot detectado
-        }
 
-        $this->validate($request, $this->rules());
-        return back()->with('success', ' Enviado exitosamente');
-    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -38,25 +30,26 @@ class validacionFormularioContacto  extends FormRequest
     {
 
         return [
-            'nombre-apellido' => 'bail|required|string|min:3|max:100',
+            'first_name' => 'bail|required|string|min:3|max:100',
             'email' => 'required|email|max:255',
-            'descripcion' => 'bail|required|string|min:20|max:300',
-            'telefono' => 'numeric|digits_between:8,11'
+            'description' => 'bail|required|string|min:20|max:300',
+            'tel' => 'numeric|digits_between:8,11',
+            'oculto' => 'nullable|string' // para el campo oculto
         ];
     }
     public function messages()
     {
         return [
-            'nombre-apellido.required' => 'El nombre es necesario',
-            'descripcion.required' => 'La descripcion es necesaria',
-            'nombre-apellido.string' => 'Debe ingresar un nombre valido',
-            'descripcion.string' => 'Debe ingresar una descripcion valida',
-            'descripcion.min' => 'Debe ingresar más de 20 caracteres',
-            'nombre-apellido.min' => 'Debe ingresar más de una letra',
-            'nombre-apellido.max' => 'No se puede ingresar más de 100 caracteres',
-            'descripcion.max' => 'No se puede ingresar más de 300 caracteres',
-            'telefono.numeric' => 'Debe ingresar un número de teléfono',
-            'telefono.digits_between' => 'El numero de telefono debe de tener entre 8 y 11 digitos',
+            'first_name.required' => 'El nombre es necesario',
+            'description.required' => 'La descripcion es necesaria',
+            'first_name.string' => 'Debe ingresar un nombre valido',
+            'description.string' => 'Debe ingresar una descripcion valida',
+            'description.min' => 'Debe ingresar más de 20 caracteres',
+            'first_name.min' => 'Debe ingresar más de una letra',
+            'first_name.max' => 'No se puede ingresar más de 100 caracteres',
+            'description.max' => 'No se puede ingresar más de 300 caracteres',
+            'tel.numeric' => 'Debe ingresar un número de teléfono',
+            'tel.digits_between' => 'El numero de telefono debe de tener entre 8 y 11 digitos',
             'email.required' => 'El campo email es obligatorio.',
             'email.email' => 'El formato del email es inválido.',
             'email.max' => 'El email no puede tener más de 255 caracteres.',

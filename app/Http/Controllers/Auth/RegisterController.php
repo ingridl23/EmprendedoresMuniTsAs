@@ -80,4 +80,8 @@ class RegisterController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
         return $user;
     }
+    protected function showRegister()
+    {
+        return view("auth.register");
+    }
 }

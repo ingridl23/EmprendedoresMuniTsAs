@@ -134,7 +134,7 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Unite a los programas vigentes</h1>
+                    <h1 class="text-white font-weight-bold">Formulario De Contacto</h1>
 
                 </div>
                 <div class="col-lg-8 align-self-baseline">
@@ -179,13 +179,13 @@
                     <!-- Name input-->
                     @csrf
                     <div class="field-group">
-                        <input id="name" name="nombre-apellido" type="text" required placeholder=""
+                        <input id="name" name="first_name" type="text" required placeholder=""
                             value="{{ old('nombre-apellido') }}"></input>
                         @error('nombre-apellido')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
                         <label for="nombre-apellido">Nombre y Apellido <span class="asterisco">*</span></label>
-                        <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
+                        <p class="form-subtitulos">Otorgar al menos un nombre y un apellido</p>
                     </div>
 
                     <!--input email-->
@@ -199,33 +199,33 @@
                         @enderror
 
                         <label for="message">Email <span class="asterisco">*</span></label>
-                        <p class="form-subtitulos">Registre un email que utilice frecuentemente</p>
+                        <p class="form-subtitulos">Otorgar un email que utilice frecuentemente</p>
                     </div>
 
 
                     <!--input telefono -->
 
                     <div class="field-group">
-                        <input type="telefono" id="phone" name="telefono" required placeholder=""
+                        <input type="telefono" id="phone" name="tel" required placeholder=""
                             value="{{ old('tel') }}"></input>
 
                         @error('telefono')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
                         <label for="telefono">Teléfono<span class="asterisco">*</span></label>
-                        <p class="form-subtitulos">Otorgue un número de teléfono de uso frecuente</p>
+                        <p class="form-subtitulos">Otorgar un número de teléfono de uso frecuente</p>
                     </div>
 
                     <!-- input descripcion -->
                     <div class="field-group">
 
-                        <textarea id="descripcion" name="descripcion" type="text" required placeholder=""
-                            value="{{ old('descripcion') }}"></textarea>
+                        <textarea id="descripcion" name="description" type="text" required placeholder=""
+                            value="{{ old('description') }}"></textarea>
 
                         @error('descripcion')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-                        <label for="descripcion">Describa Brevemente Su Emprendimiento <span
+                        <label for="descripcion">Describir Brevemente Su Emprendimiento <span
                                 class="asterisco">*</span></label>
                         <p class="form-subtitulos">Escriba una descripción a continuación</p>
                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Http\Requests\validacionFormularioContacto;
 use Illuminate\Support\Facades\Mail;
@@ -21,9 +22,9 @@ class FormSerParteController extends Controller
 
 
 
-
     public function enviar(validacionFormularioContacto $request)
     {
+
 
         if ($request->filled('oculto')) {
             return back()->with("error", "formulario rechazado "); // posible bot detectado
@@ -36,12 +37,14 @@ class FormSerParteController extends Controller
             "description" => ["required", "string", "min:80", "max:250"]
 
         ]);
+        try {
+            Mail::to('empleo@tresarroyos.gov.ar')->send(new sendContactForm($request->all()));
+            return back()->with('success', 'Formulario enviado correctamente.');
+        } catch (\Exception $e) {
+            Log::error('Error al enviar el formulario: ' . $e->getMessage());
+            return back()->with('error', 'Ocurrió un error al enviar el formulario.');
+        }
 
-        Mail::to('OFICINA.EMPLEO@TRESARROYOS.GOV.AR')->send(new sendContactForm($request->all()));
-
-
-
-        return back()->with('success', 'Formulario enviado correctamente.');
 
         //dd($request->input());
         //dd($request->all());
