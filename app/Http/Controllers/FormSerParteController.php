@@ -44,9 +44,5 @@ class FormSerParteController extends Controller
             Log::error('Error al enviar el formulario: ' . $e->getMessage());
             return back()->with('error', 'Ocurrió un error al enviar el formulario.');
         }
-
-
-        //dd($request->input());
-        //dd($request->all());
     }
 }
