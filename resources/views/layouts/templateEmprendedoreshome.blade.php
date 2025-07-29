@@ -329,7 +329,7 @@
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
-    <script src="{{ asset('js/logicaform.js') }} "></script>
+
     <script src="{{ asset('js/navbar.js') }} "></script>
 
     <!-- SimpleLightbox plugin JS-->
