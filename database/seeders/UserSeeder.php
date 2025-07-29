@@ -17,16 +17,17 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = User::create([
-            'name' => 'cultura',
-            'email' => 'cultura@gmail.com',
-            'password' => Hash::make('2025Muni'),
+            'name' => 'oficinaEmpleo',
+            'email' => 'oficina.empleo@tresarroyos.gov.ar',
+            'password' => Hash::make('#w.J+p2yS8_4'),
         ]);
         $user->assignRole('admin');
 
-         $user = User::create([
-            'name' => 'emprendedores',
-            'email' => 'emprendedores@gmail.com',
-            'password' => Hash::make('2025Muni'),
+
+        $user = User::create([
+            'name' => 'adminEmpleo',
+            'email' => 'adminempleo@tresarroyos.gov.ar',
+            'password' => Hash::make('AdminE016'),
         ]);
         $user->assignRole('admin');
     }
