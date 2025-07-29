@@ -38,7 +38,7 @@ class FormSerParteController extends Controller
 
         ]);
         try {
-            Mail::to('empleo@tresarroyos.gov.ar')->send(new sendContactForm($request->all()));
+            Mail::to('oficina.empleo@tresarroyos.gov.ar')->send(new sendContactForm($request->all()));
             return back()->with('success', 'Formulario enviado correctamente.');
         } catch (\Exception $e) {
             Log::error('Error al enviar el formulario: ' . $e->getMessage());
