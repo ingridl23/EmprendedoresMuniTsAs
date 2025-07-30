@@ -63,23 +63,32 @@ class Noticias extends Model
             ->get();
     }
 
-    public static function obtenerCategorias(){
-        $categorias=Noticias::all()->groupBy("categoria");
+    public static function obtenerNoticiasCategorias()
+    {
+        $categorias = Noticias::all()->groupBy("categoria");
         return $categorias;
     }
 
+    public static function obtenerCategorias()
+    {
+        return [
+            'Bolsa De Empleo',
+            'Evento',
+
+        ];
+    }
 
 
     public static function createNoticia($request, $path)
     {
-        
+
         $noticia = Noticias::create([
             'titulo' => $request->titulo,
             'categoria' => Str::ucfirst($request->categoria),
             'descripcion' => Str::ucfirst($request->descripcion),
             'imagen' => $path,
-            'created_at'=>date('m-d-Y G:i:s'),
-            'updated_at'=>date('m-d-Y G:i:s'),
+            'created_at' => date('m-d-Y G:i:s'),
+            'updated_at' => date('m-d-Y G:i:s'),
         ]);
     }
 

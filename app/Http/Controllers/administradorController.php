@@ -81,7 +81,7 @@ class administradorController extends Controller
 
     public function showFormCrearEmprendimiento()
     {
-        $categorias = Emprendedor::obtenerCategorias();
+        $categorias = Emprendedor::obtenerCategoriasEmprendedoresAgrupados();
         return view('administradores.formNuevoEmprendimiento', compact('categorias'));
     }
 
@@ -241,12 +241,13 @@ class administradorController extends Controller
 
     // visualizar plantilla con el formulario para cargar los datos
 
-
-    public function obtenerCategoriasNoticias()
+    public function obtenerCategorias()
     {
-        $Categorias = Noticias::obtenerCategorias();
-        return $Categorias;
+        $categorias = Noticias::obtenerCategorias();
+        return $categorias;
     }
+
+
 
     //Muestra la vista del formulario para cargar los datos para la nueva noticia
     public function showFormCreateNoticia()
@@ -255,15 +256,22 @@ class administradorController extends Controller
         return view("administradores.noticias.formCrearNoticia", compact("categorias"));
     }
 
+
+
+
+
     //Carga la noticia, con los datos enviados desde el formulario, en la BBDD
     public function createNoticia(validacionNoticia $request)
     {
         $imagen = $request->file("imagen");
         $path = $imagen->store('img', 'public');
-        $request->$descripcion->nl2br($request->descripcion);
+
+        $descripcion = nl2br($request->descripcion);
+
         Noticias::createNoticia($request, $path);
         return redirect('/noticias');
     }
+
 
     //Direcciona para la vista que contiene el formulario con los datos de la noticia
     public function showFormEditNoticia($id)
