@@ -48,6 +48,7 @@
     .container-programas .programas h4 {
         margin: 2rem;
     }
+
     /* Estilo para evitar que el carrousel se superponga */
     
     .carrousel {
@@ -77,6 +78,7 @@
     .img-trabajo {
         justify-items: center;
     }
+
     /* Asegura que el portafolio comience separado visualmente */
     
     #portfolio {
@@ -100,6 +102,7 @@
 
     .detallesClub{
         display: flex;
+        padding-top: 2rem;
     }
 
     .detallesClub ul{
@@ -186,8 +189,6 @@
     div.contenedorListaProgramas div.programas{
         margin: 0rem 1rem;
     }
-
-
     }
    
 
@@ -215,92 +216,178 @@
         background-color: #2cc4b4;
     }
 
-    /*ESTILOS PARA LOS LINKS INTERNOS DE PROGRAMAS: CLUB DE EMPRENDEDORES Y ESCUELA DE EMPRENDEDORES*/
-    .contenedorProgramas{
+    /*Estilo para el carrusel de links internos de los programas que se ofrecen*/
+   button.flechaIzquierda, button.flechaDerecha{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 40px;
+        font-size: 1.5rem;
+        opacity: 0.7;
+   }
+
+    button.flechaIzquierda{
+        left: 0;
+    }
+   button.flechaDerecha{
+        right: 0%;
+   }
+    
+   .carousel-horizontal{
+        scroll-snap-type: x mandatory;
+        gap: 1rem;padding: 1rem 0;
+        scroll-behavior: smooth;
+   }
+
+   .item{
+        scroll-snap-align: center;
+       width: auto;
+        padding: 2rem;
+        background-color: #2cc4b4;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
-        position: relative;
-    }
-    .div-numero {
-        position: relative;
-        margin-bottom: 1rem;
-        z-index: 1;
-    }
-    .numero{
-        position: absolute;
-        top: -10px;
-        left: 44%; 
+        justify-content: center;
+        font-size: 2rem;
+        border-radius: 10px;
+        transition: background-color 0.20s ease-in-out;
+   }
+
+    .item:hover{
         background-color: #066b7f;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 90%; 
-        width: auto;
-        height: auto;
+   }
+   .item a{
+    color: #f3f3f3;
+   }
+
+
+    div.carouselLinks, div.carousel-links-item, div.carousel-links-inner{
+        display: flex;
+    }
+    div.carouselLinks{
+        position: relative;
     }
 
-    .linkProgramas{
-         text-align: center;
-         width: 30%;
+    div.carousel-links-inner{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
     }
 
-    .linkProgramas a, div.numero{
-        font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 0.85rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: rgb(228, 228, 228);
+
+    div.carousel-links-item{
+        position: relative;
+        float: left;
+        width: 100%;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease-in-out;
     }
 
-    .linkProgramas a{
-        display: inline-block;
+    div.carouselLinks .carousel-links-inner{
+        display: flex;
+    }
+
+    div.carouselLinks .carousel-links-item{
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(95%/1);
+    }
+
+    div.carousel-links-item.visible{
+        display: block;
+    }
+
+    @media screen and (min-width:420px) {
+        div.carouselLinks .carousel-links-item{
+            flex: 0 0 calc(98%/2);
+        }
+    }
+
+    @media screen and (min-width:650px) {
+        div.carouselLinks .carousel-links-item{
+            flex: 0 0 calc(98%/3);
+        }
+    }
+
+
+        @media screen and (min-width:1200px) {
+
+        div.carouselLinks .carousel-links-item{
+            flex: 0 0 calc(95%/4);
+        }
+
+         div.carouselLinks .carousel-links-inner{
+            justify-content: center;
+        }
+
+
+        a.control-prev, a.control-next{
+            display: none;
+        }
+    }
+
+    div.carouselLinks .carousel-item{
+        margin-right: 0;
+       width: -webkit-fill-available;
+    }
+    div.carouselLinks .carousel-inner{
+        padding: 1em;
+        
+    }
+
+    div.carouselLinks .card{
+        margin: 0 .5em;
+        border-radius: 1rem;
+        box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, .18);
         background-color: #2cc4b4;
-        padding:2rem 1rem;
-        border-radius: 0.50rem;
-        transition: transform 0.15s ease-in-out;
     }
 
-    .linkProgramas a:active{
-        transform: scale(0.85);
+    div.card-body h5.card-title{
+        color: #0b3f49;
     }
 
-    .linkProgramas a:hover{
-        background-color: #05b4ac;
+    div.card-body a{
+        color: #e1e1e1;
+    }
+    .control-prev, .control-next{
+        width: 6vh;
+        height: 6vh;
+        background-color: #e1e1e1;
+        border-radius: 50%;
+        opacity: .5;
     }
 
-
-    @media(max-width:450px){
-        .numero{
-            width: auto;
-            left: 43%;
-            top: -25px;
-            padding: 10px 20px;
-        }
+    .control-prev, .control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5); /* semitransparente */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        z-index: 10;
+        transition: background-color 0.3s ease;
     }
 
-    @media(max-width: 700px){
-        .contenedorProgramas{
-            display: block;
-            width: 100%;
-            margin-right: auto;
-            margin-left: auto;
-        }
+    .control-prev:hover, .control-next:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
 
-        .linkProgramas{
-            width: 100%;
-        }
+    .control-prev{
+        left: 0.5rem;
+    }
 
-        .numero{
-            width: auto;
-            left: 45%;
-            top: -25px;
-            padding: 10px 20px;
-        }
+    .control-next {
+        right: 0.5rem;
+    }
 
-        .div-numero{
-            margin-bottom: 3rem;
-        }
-
+    .custom-carousel-control svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: white;
     }
     /*****************************asignacion de animaciones de scroll programas ************************************************************/
     /******************** media query para movil *********************************/
