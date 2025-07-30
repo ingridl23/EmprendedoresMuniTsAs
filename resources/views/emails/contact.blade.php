@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <h1>Nuevo mensaje de contacto desde el sitio emprendedores y artesanos tres arroyos</h1>
+    <h1>Nuevo mensaje de contacto desde el sitio oficina de empleo y capacitacion tres arroyos</h1>
 
     <p><strong>Nombre:</strong> {{ $data['first_name'] }}</p>
     <p><strong>Email:</strong> {{ $data['email'] }}</p>

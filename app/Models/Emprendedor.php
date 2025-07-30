@@ -117,8 +117,8 @@ class Emprendedor extends Model
         // Luego creamos el horario con el ID del emprendedor
         horario::crearHorario(
             $request->dia,
-            $request->hora_de_apertura,
-            $request->hora_de_cierre,
+            $request->hora_apertura,
+            $request->hora_cierre,
             $request->participa_feria,
             $request->cerrado,
             $emprendimiento->id
