@@ -17,7 +17,7 @@ class EmprendedorController extends Controller
 
     public function emprendedores()
     {
-        $emprendedoresPorCategoria = Emprendedor::obtenerCategorias();
+        $emprendedoresPorCategoria = Emprendedor::obtenerCategoriasEmprendedoresAgrupados();
         $emprendedores = Emprendedor::with('imagenes')->get();
         //  return response()->json($emprendedores);
         return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria', 'emprendedores'));

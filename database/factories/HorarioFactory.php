@@ -26,8 +26,7 @@ class HorarioFactory extends Factory
                 'Sábado',
                 'Domingo'
             ]),
-            'hora_de_apertura' => $horaApertura,
-            'hora_de_cierre' => $horaCierre,
+
             'participa_feria' => $this->faker->boolean(),
             'cerrado' => $this->faker->boolean(),
 

@@ -51,7 +51,7 @@ Route::get('/emprendedores/acciones', [administradorController::class, "emprende
 
 //RUTAS EMPRENDEDORES ADMIN
 Route::get('/emprendedores/nuevoEmprendimiento', [administradorController::class, "showFormCrearEmprendimiento"]); //Muestra form para cargar nuevo emprendimiento
-Route::post('/emprendedores/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"]); //Carga el nuevo emprendimiento
+Route::post('/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"])->name('form.crear'); //Carga el nuevo emprendimiento
 Route::get('/emprendedores/formEditarEmprendimiento/{id}', [administradorController::class, "showFormEditarEmprendimiento"]); //Muestra form para editar emprendimiento
 Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmprendimiento"]); //Edita un emprendimiento en especifico por su ID.
 Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmprendimiento"]); //Elimina un emprendimiento por su ID

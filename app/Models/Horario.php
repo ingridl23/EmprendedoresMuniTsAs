@@ -15,29 +15,33 @@ class Horario extends Model
 
     protected $fillable = [
         'dia',
-        'hora_de_apertura',
-        'hora_de_cierre',
+        'hora_apertura',
+        'hora_cierre',
         'participa_feria',
         'cerrado',
+        'emprendedor_id',
     ];
 
 
     public function AsociarEmprendedor()
     {
-        return $this->belongsTo(Emprendedor::class, 'horarios_id', 'id');
+        return $this->belongsTo(Emprendedor::class, 'emprendedor_id');
     }
 
 
     public static function crearHorario($dia, $hora_apertura, $hora_cierre, $participa_feria, $cerrado, $emprendedor_id)
     {
-        $horario = new Horario();
-        $horario->dia = $dia;
-        $horario->hora_apertura = $hora_apertura;
-        $horario->hora_cierre = $hora_cierre;
-        $horario->participa_feria = $participa_feria;
-        $horario->cerrado = $cerrado;
-        $horario->emprendedor_id = $emprendedor_id;
-        $horario->save();
+        $horario =  Horario::create([
+
+            'dia' => $dia,
+            'hora_apertura' => $hora_apertura,
+            'hora_cierre' => $hora_cierre,
+            'participa_feria' => $participa_feria,
+            'cerrado' => $cerrado,
+            'emprendedor_id' => $emprendedor_id,
+
+        ]);
+
 
         return $horario->id;
     }
