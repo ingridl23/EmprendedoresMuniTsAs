@@ -69,4 +69,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
         )
         .forEach((el) => observer.observe(el));
 });
+
+
+
+
+
+
+
+
+
+
+
 //animacion hoja programas

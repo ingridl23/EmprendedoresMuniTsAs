@@ -8,32 +8,76 @@
 
     <h2 class="subtitulo1 subtituloProgramas">Programas Para Emprendedores</h2>
 
-    <div class="contenedorProgramas">
-        <div class="linkProgramas">
-            <div class="div-numero">
-                <div class="numero">1</div>
+    <div id="carouselLinks" class="carouselLinks">
+        <div class="carousel-links-inner">
+            <div class="carousel-links-item visible">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Programa 1</h5>
+                        <a href="#clubDeEmprendedores" class="card-link">Club de emprendedores</a>
+                    </div>
+                </div>
             </div>
-            <a href="#clubDeEmprendedores">Club de emprendedores</a>
-        </div>
-        <div class="linkProgramas">
-            <div class="div-numero">
-                <div class="numero">2</div>
+            <div class="carousel-links-item">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Programa 2</h5>
+                        <a href="#escuelaDeEmprendedores" class="card-link">Escuela de emprendedores</a>
+                    </div>
+                </div>
+                
             </div>
-            <a href="#escuelaDeEmprendedores">Escuela de emprendedores</a>
-        </div>
-         <div class="linkProgramas">
-            <div class="div-numero">
-                <div class="numero">3</div>
+            <div class="carousel-links-item">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Programa 3</h5>
+                        <a href="#feriaParqueCabanias" class="card-link">Feria Parque Cabañas</a>
+                    </div>
+                </div>
             </div>
-            <a href="#feriaParqueCabanias">Feria Parque Cabañas</a>
-        </div>
-         <div class="linkProgramas">
-            <div class="div-numero">
-                <div class="numero">4</div>
+            <div class="carousel-links-item">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Programa 4</h5>
+                        <a href="#programasDeEmpleo" class="card-link">Programas de empleo</a>
+                    </div>
+                </div>
+                
             </div>
-            <a href="#programasDeEmpleo">Programas de empleo</a>
         </div>
+        <a class="control-prev" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="control-next" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
+
+    <!--<div id="carouselExampleInterval" class="carruselConFlechas position-relative">
+        <button class="flechaIzquierda btn btn-light">
+            <
+        </button>
+            <div class="carousel-horizontal d-flex overflow-auto px-3">
+                <div class="item flex-shrink-0 ">
+                    <a href="#clubDeEmprendedores">Club de emprendedores</a>
+                </div>
+                <div class="item flex-shrink-0">
+                    <a href="#escuelaDeEmprendedores">Escuela de emprendedores</a>
+                </div>
+                <div class="item flex-shrink-0">
+                    <a href="#feriaParqueCabanias">Feria Parque Cabañas</a>
+                </div>
+                <div class="item flex-shrink-0">
+                    <a href="#programasDeEmpleo">Programas de empleo</a>
+                </div>
+            </div>
+            <button class="flechaDerecha btn btn-light">
+                >
+            </button>
+    </div>-->
+
 
     <div class="programas">
         <h3 class="subtitulo tituloClubEmprendedores">Club De Emprendedores</h3>
@@ -47,7 +91,7 @@
             municipales, provinciales y nacionales.
         </p>
 
-        <!--seccioon carrousel club de  emprendedores -->
+         <!--seccioon carrousel club de  emprendedores -->
         <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="1000">
@@ -79,7 +123,8 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-                <!-- pie de carrousel -->
+            pie de carrousel -->
+       
         <p class="text-clubs">
             Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
             emprendedurismo local, promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y

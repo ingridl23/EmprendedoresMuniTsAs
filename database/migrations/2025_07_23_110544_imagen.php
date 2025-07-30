@@ -17,10 +17,7 @@ class Imagen extends Migration
             'imagenes',
             function (Blueprint $table) {
                 $table->increments('img_id');
-
-
                 $table->foreignId('emprendedor_id')->constrained('emprendedor')->onDelete('cascade');
-
                 $table->string('url')->nullable();
                 $table->timestamps();
             }

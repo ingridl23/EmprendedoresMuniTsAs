@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Database\Factories\imagenFactory;
+use App\Models\Emprendedor;
 
 /**
  * Class Emprendedor
@@ -29,7 +30,7 @@ class Imagen extends Model
 
     protected static function newFactory()
     {
-        return imagenFactory::new();
+        return ImagenFactory::new();
     }
     use HasFactory;
 

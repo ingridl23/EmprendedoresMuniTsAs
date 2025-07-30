@@ -4,12 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Emprendedor;
 use App\Models\Imagen;
-
 use Illuminate\Database\Seeder;
-use App\Http\Requests\EmprendedorRequest;
-use App\constants;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ImagenSeeder extends Seeder
 {

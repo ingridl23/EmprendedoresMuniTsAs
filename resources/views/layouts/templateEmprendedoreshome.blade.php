@@ -327,16 +327,27 @@
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
 
+     <!--JQuery para el manejo de link internos en Programas-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
 
     <script src="{{ asset('js/navbar.js') }} "></script>
+    <script src="{{ asset('js/carruselProgramasLinks.js') }} "></script>
+
+   
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--Carrusel-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 
