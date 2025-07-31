@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
 
         ]);
         $this->call([
-            ImagenSeeder::class,
+            ImagenesSeeder::class,
         ]);
-        $this->call(ImagenSeeder::class);
+        $this->call(ImagenesSeeder::class);
         $this->call(noticiaSeeder::class);
         $this->call(RedesSeeder::class);
     }

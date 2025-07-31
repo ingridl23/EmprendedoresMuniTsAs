@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="author" content="" />
-    <title>programas-oficina-de-empleo</title>
+    <title>Programas</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
@@ -130,6 +130,27 @@
             </div>
         </header>
     </div>
+
+        <header class="masthead headerProgramas">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Programas para Emprendedores en Tres Arroyos</h1>
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 ">
+                        Desde la Oficina de Empleo y Capacitación de Tres Arroyos impulsamos iniciativas que acompañan a emprendedores en cada etapa de su desarrollo.
+                        Actualmente contamos con cuatro programas activos: el Club de Emprendedores, la Escuela de Emprendedores,
+                        la Feria Parque Cabañas y diversas propuestas de empleo que fortalecen el ecosistema emprendedor local.</p>
+
+                    <p class="text-white-75 ">
+                        Nuestro objetivo es brindar herramientas, formación y espacios de visibilidad para quienes apuestan a crecer con su propio proyecto.
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </header>
 
 
 

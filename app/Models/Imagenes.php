@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Database\Factories\imagenFactory;
+use Database\Factories\imagenesFactory;
 use App\Models\Emprendedor;
 
 /**
@@ -21,7 +21,7 @@ use App\Models\Emprendedor;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Imagen extends Model
+class Imagenes extends Model
 {
 
 
@@ -30,7 +30,7 @@ class Imagen extends Model
 
     protected static function newFactory()
     {
-        return ImagenFactory::new();
+        return ImagenesFactory::new();
     }
     use HasFactory;
 

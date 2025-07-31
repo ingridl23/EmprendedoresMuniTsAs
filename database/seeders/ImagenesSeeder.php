@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Emprendedor;
-use App\Models\Imagen;
+use App\Models\Imagenes;
 use Illuminate\Database\Seeder;
 
-class ImagenSeeder extends Seeder
+class ImagenesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,7 @@ class ImagenSeeder extends Seeder
     {
         //
         Emprendedor::factory()
-            ->has(Imagen::factory()->count(5)) // 5 imágenes por emprendedor
+            ->has(Imagenes::factory()->count(5)) // 5 imágenes por emprendedor
             ->count(10)
             ->create();
     }

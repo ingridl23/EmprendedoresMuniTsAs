@@ -3,13 +3,13 @@
 namespace Database\Factories;
 
 use App\Models\Emprendedor;
-use App\Models\Imagen;
+use App\Models\Imagenes;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ImagenFactory extends Factory
+class ImagenesFactory extends Factory
 {
-     protected $model = Imagen::class;
+     protected $model = Imagenes::class;
     /**
      * Define the model's default state.
      *
