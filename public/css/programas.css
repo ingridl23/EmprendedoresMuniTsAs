@@ -484,6 +484,17 @@
         height: 1.5rem;
         fill: white;
     }
+
+
+    .imagen-escuela{
+        display: block;
+    }
+
+    .seccionEscuelaDeEmprendedores{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
     /*****************************asignacion de animaciones de scroll programas ************************************************************/
     /******************** media query para movil *********************************/
     
@@ -499,7 +510,7 @@
         }
         .imagen-escuela {
             max-width: 395px;
-            max-height: 180px;
+            max-height: fit-content;
             object-fit: cover;
             border: 0;
             padding: 2rem;
@@ -529,4 +540,52 @@
             padding: 3px;
             margin-top: 1rem;
         }
+    }
+
+    @media(min-width: 760px){
+        .section-lead {
+            height: 120px;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            border-left: 4px solid #b70913;
+            padding-left: 20px;
+        }
+
+        .seccionEscuelaDeEmprendedores{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .seccionEscuelaDeEmprendedores h2.subtituloProgramas{
+            margin: 0;
+        }
+
+        .imagen-escuela{
+            max-width: 50%;
+            margin: 0;
+        }
+    }
+
+    @media(min-width: 992px){
+        header.masthead.headerProgramas {
+            height: 150vh;
+            min-height: 46rem;
+        }
+
+    }
+
+    @media (min-width: 1100px){
+        .section-lead{
+            width: 40%;
+        }
+
+        .imagen-escuela{
+            max-width: 30%;
+        }
+
     }

@@ -26,7 +26,6 @@ class EmprendedorFactory extends Factory
             ]),
             'redes_id'     => Redes::factory(),
             'direccion_id' => Direccion::factory(),
-            'horario_id' => Horario::factory(),
         ];
     }
 }

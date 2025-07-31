@@ -209,19 +209,15 @@
 
     <div class="programas">
 
-        <!--<img class="img-fluid imagen-escuela"
-            src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
-            alt="Logo de Escuela de Emprendedores" />-->
-
-        <img class="img-fluid imagen-escuela" id="escuelaDeEmprendedores"
+        <div class="seccionEscuelaDeEmprendedores">
+            <img class="imagen-escuela" id="escuelaDeEmprendedores"
             src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
             alt="Logo de Escuela de Emprendedores" />
-
-
-        <h2 id="escuelaDeEmprendedores" class="subtitulo1 subtituloProgramas">Escuela de Emprendedores</h2>
+            <div class="section-lead">
+                 <h2 id="escuelaDeEmprendedores" class="subtitulo1 subtituloProgramas">Escuela de Emprendedores</h2>
+            </div>
+        </div>
         <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>
-
-
 
         <p class="text-clubs">
             La Escuela de Emprendedores es un programa diseñado para formar, asesorar y acompañar a quienes

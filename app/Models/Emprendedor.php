@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\constants;
 use Database\Factories\EmprendedorFactory;
-use Database\Factories\imagenFactory;
+use Database\Factories\imagenesFactory;
 use Database\Factories\HorarioFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use App\Models\Imagen;
+use App\Models\Imagenes;
 use App\Models\Horario;
 
 /**
@@ -46,7 +46,6 @@ class Emprendedor extends Model
         'categoria',
         'redes_id',
         'direccion_id',
-        'horario_id'
     ];
 
     public function redes(): BelongsTo
@@ -66,7 +65,7 @@ class Emprendedor extends Model
     ////////////////////////////////////////////
     public function imagenes()
     {
-        return $this->hasMany(Imagen::class);
+        return $this->hasMany(Imagenes::class);
     }
 
     public static function showEmprendimientos()
