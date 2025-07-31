@@ -139,8 +139,12 @@
 
     @include('emprendedor.footer')
 
+         <!--JQuery para el manejo de link internos en Programas-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
+    <script src="{{ asset('js/carruselProgramasLinks.js') }} "></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->

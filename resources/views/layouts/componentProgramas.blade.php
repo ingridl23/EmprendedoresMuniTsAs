@@ -55,32 +55,8 @@
         </a>
     </div>
 
-    <!--<div id="carouselExampleInterval" class="carruselConFlechas position-relative">
-        <button class="flechaIzquierda btn btn-light">
-            <
-        </button>
-            <div class="carousel-horizontal d-flex overflow-auto px-3">
-                <div class="item flex-shrink-0 ">
-                    <a href="#clubDeEmprendedores">Club de emprendedores</a>
-                </div>
-                <div class="item flex-shrink-0">
-                    <a href="#escuelaDeEmprendedores">Escuela de emprendedores</a>
-                </div>
-                <div class="item flex-shrink-0">
-                    <a href="#feriaParqueCabanias">Feria Parque Cabañas</a>
-                </div>
-                <div class="item flex-shrink-0">
-                    <a href="#programasDeEmpleo">Programas de empleo</a>
-                </div>
-            </div>
-            <button class="flechaDerecha btn btn-light">
-                >
-            </button>
-    </div>-->
-
-
     <div class="programas">
-        <h3 class="subtitulo tituloClubEmprendedores">Club De Emprendedores</h3>
+        <h3 class="subtitulo1 tituloClubEmprendedores">Club de Emprendedores</h3>
 
         <p class="text-clubs" id="clubDeEmprendedores">
             El Club de Emprendedores es una iniciativa de la Oficina de Empleo y Capacitación de Tres Arroyos que
@@ -123,8 +99,12 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+<<<<<<< HEAD
+       
+=======
 
 
+>>>>>>> fc8b1ecf29e821d65f56c8f7ec32589a56656462
         <p class="text-clubs">
             Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
             emprendedurismo local, promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y
@@ -141,45 +121,45 @@
             <div class="contenedorTituloDetalles">
                 <h3>Objetivos y Acciones</h3>
             </div>
-            <ul>
-                <li>Ampliar la base emprendedora mediante actividades de sensibilización y promoción para diversos
-                    públicos.
-                </li>
-                <li>Identificar emprendimientos de alto impacto para potenciar el desarrollo económico y social del
-                    distrito.</li>
-                <li>Proveer apoyo estratégico con herramientas, capacitaciones, redes de contacto y asistencia técnica,
-                    articulando con instituciones si es necesario.</li>
-                <li>Acompañar y orientar a personas con ideas o proyectos en marcha, ofreciendo una escucha activa y
-                    guía
-                    clara para fortalecer sus iniciativas.</li>
-                <li> Informar, planificar y organizar eventos que involucren al sector emprendedor local, con aval y
-                    acompañamiento del Municipio.</li>
-            </ul>
+        <ul class="estiloLista">
+            <li>Ampliar la base emprendedora mediante actividades de sensibilización y promoción para diversos
+                públicos.
+            </li>
+            <li>Identificar emprendimientos de alto impacto para potenciar el desarrollo económico y social del
+                distrito.</li>
+            <li>Proveer apoyo estratégico con herramientas, capacitaciones, redes de contacto y asistencia técnica,
+                articulando con instituciones si es necesario.</li>
+            <li>Acompañar y orientar a personas con ideas o proyectos en marcha, ofreciendo una escucha activa y
+                guía
+                clara para fortalecer sus iniciativas.</li>
+            <li> Informar, planificar y organizar eventos que involucren al sector emprendedor local, con aval y
+                acompañamiento del Municipio.</li>
+        </ul>
+    </div>
+        
+    <div class="detallesClub beneficiosDetallesClub">
+         <div class="contenedorTituloDetalles">
+            <h3>Beneficios para los miembros</h3>
         </div>
-
-        <div class="detallesClub beneficiosDetallesClub">
-            <div class="contenedorTituloDetalles">
-                <h3>Beneficios para los miembros</h3>
-            </div>
-            <ul>
-                <li>Participación en la Mesa de Emprendedores:
-                    Reuniones periódicas con otros miembros activos para compartir ideas, planificar acciones y acceder
-                    a
-                    información relevante.</li>
-                <li>Acceso y planificación de Ferias de Emprendedores:
-                    Oportunidad de formar parte de la organización y exposición en ferias locales para dar visibilidad a
-                    los
-                    proyectos.</li>
-                <li>Asesoramiento en habilitación comercial:
-                    Contacto directo con autoridades municipales para gestionar correctamente la habilitación de
-                    comercios.
-                </li>
-                <li>Asesoramiento en registro de productos alimenticios:
-                    Orientación y acompañamiento para registrar productos de manera legal y cumplir con los requisitos
-                    sanitarios y normativos.</li>
-            </ul>
-
-        </div>
+        <ul class="estiloLista">
+            <li>Participación en la Mesa de Emprendedores:
+                Reuniones periódicas con otros miembros activos para compartir ideas, planificar acciones y acceder
+                a
+                información relevante.</li>
+            <li>Acceso y planificación de Ferias de Emprendedores:
+                Oportunidad de formar parte de la organización y exposición en ferias locales para dar visibilidad a
+                los
+                proyectos.</li>
+            <li>Asesoramiento en habilitación comercial:
+                Contacto directo con autoridades municipales para gestionar correctamente la habilitación de
+                comercios.
+            </li>
+            <li>Asesoramiento en registro de productos alimenticios:
+                Orientación y acompañamiento para registrar productos de manera legal y cumplir con los requisitos
+                sanitarios y normativos.</li>
+        </ul>
+       
+    </div>
 
 
         <!-- seccion vista previa ultimos emprendedores-->
@@ -233,11 +213,16 @@
 
     <div class="programas">
 
+<<<<<<< HEAD
+        <!--<img class="img-fluid imagen-escuela"  src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
+            alt="Logo de Escuela de Emprendedores" />-->
+=======
         <img class="img-fluid imagen-escuela" id="escuelaDeEmprendedores"
             src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
             alt="Logo de Escuela de Emprendedores" />
+>>>>>>> fc8b1ecf29e821d65f56c8f7ec32589a56656462
 
-        <h2 class="subtitulo1 subtituloProgramas">Escuela de Emprendedores</h2>
+        <h2 id="escuelaDeEmprendedores" class="subtitulo1 subtituloProgramas">Escuela de Emprendedores</h2>
         <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>
 
 
@@ -300,11 +285,33 @@
 
 
 
-        <ul>
-            <li>Dirigido a: Emprendedores locales en etapa inicial o de consolidación</li>
-            <li>Objetivo: Crear un programa integral de formación emprendedora</li>
-            <li>Modalidad: Cursos, talleres y asesoramiento técnico personalizado
-
+        <ul class="detallesDesarrolloLista">
+            <li>
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header card-header-img"><img src="{{ asset('assets/img/iconos/programas/persona.webp') }}" alt=""></div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Dirigido a:</h5>
+                        <p class="card-text">Emprendedores locales en etapa inicial o de consolidación</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header card-header-img"><img src="{{ asset('assets/img/iconos/programas/objetivo.webp') }}" alt=""></div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Objetivo:</h5>
+                        <p class="card-text"> Crear un programa integral de formación emprendedora</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header card-header-img"><img src="{{ asset('assets/img/iconos/programas/modalidad.webp') }}" alt=""></div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Modalidad:</h5>
+                        <p class="card-text"> Cursos, talleres y asesoramiento técnico personalizado</p>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
@@ -336,16 +343,34 @@
 
 
 
-        <ol>
-            <li> 🗓 Días: Primer domingo de cada mes</li>
+        <ol class="detallesDesarrolloLista">
             <li>
-                🕛 Horario: De 12:00 a 18:00 hs (sin excepción)</li>
-            <li>
-                📍 Lugar: Parque Cabañas, Tres Arroyos
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header card-header-img"><img src="{{ asset('assets/img/iconos/programas/dias.webp') }}" alt=""></div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Días:</h5>
+                        <p class="card-text">Primer domingo de cada mes</p>
+                    </div>
+                </div>
             </li>
-
-
-
+            <li>
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header card-header-img"><img src="{{ asset('assets/img/iconos/programas/horarios.webp') }}" alt=""></div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Horario:</h5>
+                        <p class="card-text">De 12:00 a 18:00 hs (sin excepción)</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header card-header-img"><img src="{{ asset('assets/img/iconos/programas/lugar.webp') }}" alt=""></div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Lugar:</h5>
+                        <p class="card-text">Parque Cabañas, Tres Arroyos</p>
+                    </div>
+                </div>
+            </li>
         </ol>
 
 
