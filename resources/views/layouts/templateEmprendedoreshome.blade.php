@@ -15,6 +15,7 @@
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 
@@ -229,7 +230,7 @@
 
                             <label class="message" for="message">Nombre y Apellido<span
                                     class="asterisco">*</span></label>
-                            <p class="form-subtitulos">Otorgue al menos un nombre y un apellido</p>
+                            <p class="form-subtitulos">Otorgar al menos un nombre y un apellido</p>
                         </div>
 
                         <!--inpt email-->
@@ -246,7 +247,7 @@
 
 
                             <label class="message" for="message">Email<span class="asterisco">*</span></label>
-                            <p class="form-subtitulos">Registre un email que utilice frecuentemente</p>
+                            <p class="form-subtitulos">Otorgar un email de uso frecuente</p>
                         </div>
 
 
@@ -263,7 +264,7 @@
                             @enderror
 
                             <label class="message" for="message">Teléfono<span class="asterisco">*</span></label>
-                            <p class="form-subtitulos">Otorgue un número de teléfono de uso frecuente</p>
+                            <p class="form-subtitulos">Otorgar un número de teléfono </p>
                         </div>
 
                         <!-- input descripcion -->
@@ -277,9 +278,10 @@
                             @enderror
 
 
-                            <label class="message" for="message">Describa brevemente su emprendimiento<span
+                            <label class="message" for="message">Describir brevemente el emprendimiento<span
                                     class="asterisco">*</span></label>
-                            <p class="form-subtitulos">Escriba una descripción a continuación</p>
+                            <p class="form-subtitulos">Escribir una descripción respecto al negocio o emprendimiento
+                            </p>
                         </div>
 
                         <!-- input oculto -->
@@ -292,7 +294,7 @@
                             <button class="submit btn btn-primary btn-xl" id="submitButton" type="submit">
 
                                 <span class="btntext"> Enviar
-                                    Petición </span>
+                                    Formulario </span>
 
 
                             </button>
@@ -327,8 +329,9 @@
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
 
-     <!--JQuery para el manejo de link internos en Programas-->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--JQuery para el manejo de link internos en Programas-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
@@ -336,7 +339,7 @@
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/carruselProgramasLinks.js') }} "></script>
 
-   
+
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

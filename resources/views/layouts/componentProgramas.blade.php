@@ -25,7 +25,7 @@
                         <a href="#escuelaDeEmprendedores" class="card-link">Escuela de emprendedores</a>
                     </div>
                 </div>
-                
+
             </div>
             <div class="carousel-links-item">
                 <div class="card">
@@ -42,7 +42,7 @@
                         <a href="#programasDeEmpleo" class="card-link">Programas de empleo</a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <a class="control-prev" role="button" data-slide="prev">
@@ -67,7 +67,7 @@
             municipales, provinciales y nacionales.
         </p>
 
-         <!--seccioon carrousel club de  emprendedores -->
+        <!--seccioon carrousel club de  emprendedores -->
         <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="1000">
@@ -99,7 +99,12 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+<<<<<<< HEAD
        
+=======
+
+
+>>>>>>> fc8b1ecf29e821d65f56c8f7ec32589a56656462
         <p class="text-clubs">
             Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
             emprendedurismo local, promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y
@@ -112,10 +117,10 @@
 
 
 
-    <div class="detallesClub">
-        <div class="contenedorTituloDetalles">
-            <h3>Objetivos y Acciones</h3>
-        </div>
+        <div class="detallesClub">
+            <div class="contenedorTituloDetalles">
+                <h3>Objetivos y Acciones</h3>
+            </div>
         <ul class="estiloLista">
             <li>Ampliar la base emprendedora mediante actividades de sensibilización y promoción para diversos
                 públicos.
@@ -171,7 +176,7 @@
                                         title="{{ $emprendedor->nombre }}">
                                         <img class="img-fluid"
                                             src="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
-                                            alt={{ $emprendedor->nombre }} /> 
+                                            alt={{ $emprendedor->nombre }} />
                                 @endif
                                 <div class="portfolio-box-caption">
                                     <div class="project-category text-white-50">{{ $emprendedor->categoria }}</div>
@@ -189,7 +194,7 @@
 
 
         <!-- Call to action-->
-        <section class="page-section text-white" id="SeccionFotosEmprendedores" >
+        <section class="page-section text-white" id="SeccionFotosEmprendedores">
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
                 <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
@@ -208,8 +213,14 @@
 
     <div class="programas">
 
+<<<<<<< HEAD
         <!--<img class="img-fluid imagen-escuela"  src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
             alt="Logo de Escuela de Emprendedores" />-->
+=======
+        <img class="img-fluid imagen-escuela" id="escuelaDeEmprendedores"
+            src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
+            alt="Logo de Escuela de Emprendedores" />
+>>>>>>> fc8b1ecf29e821d65f56c8f7ec32589a56656462
 
         <h2 id="escuelaDeEmprendedores" class="subtitulo1 subtituloProgramas">Escuela de Emprendedores</h2>
         <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>

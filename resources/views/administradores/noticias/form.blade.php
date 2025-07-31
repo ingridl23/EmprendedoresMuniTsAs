@@ -8,7 +8,7 @@
 </div>
 
 <div class="field-group">
-    <textarea name="descripcion" id="descripcion" required placeholder="" >{{ isset($noticia) ? $noticia->descripcion : old('descripcion') }}</textarea>
+    <textarea name="descripcion" id="descripcion" required placeholder="">{{ isset($noticia) ? $noticia->descripcion : old('descripcion') }}</textarea>
     <label for="descripcion">Descripción <span class="asterisco">*</span></label>
     @error('descripcion')
         <div class="text-danger small">{{ $message }}</div>
@@ -17,23 +17,21 @@
 </div>
 
 <label for="descripcion">Seleccionar Categoria<span class="asterisco">*</span></label>
-<div class="field-group seleccionarCategoria">
-    <select name="categoria" id="categoria" required placeholder="">
-        <option value="Seleccione una categoria" disabled
-            {{ !old('categoria') && (!isset($noticia) || !$noticia->categoria) ? 'selected' : '' }}>
-            Seleccione una categoría
-        </option>
-         @foreach($categorias as $categoria=>$datos)
-        <option value="{{$categoria}}"
-            {{ (isset($noticia) && $noticia->categoria == $categoria) || old('categoria') == $categoria ? 'selected' : '' }}>
-            {{$categoria}}</option>
+<div class="field-group ">
+    <select name="categoria" id="categoria" required>
+
+
+        @foreach ($categorias as $categoria)
+            <option class="opcionesCategoria" value="{{ $categoria }}"
+                {{ (isset($noticia) && $noticia->categoria == $categoria) || old('categoria') == $categoria ? 'selected' : '' }}>
+                {{ $categoria }}</option>
         @endforeach
     </select>
-        @error('categoria')
-            <div class="text-danger small">{{ $message }}</div>
-        @enderror
+    @error('categoria')
+        <div class="text-danger small">{{ $message }}</div>
+    @enderror
 
-        <p class="form-subtitulos">Seleccione la categoria a la que pertenece la noticia</p>
+    <p class="form-subtitulos">Seleccione la categoria a la que pertenece la noticia</p>
 </div>
 
 

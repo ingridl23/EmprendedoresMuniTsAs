@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mostrarOpcionesSegunCiudad(campoCiudad.value);
     }
 
-    campoCiudad.addEventListener("change", function() {
+    campoCiudad.addEventListener("change", function () {
         const valor = this.value;
         mostrarOpcionesSegunCiudad(valor);
     });
@@ -62,12 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function generarOptions(TresArroyos) {
         campoLocalidad.innerHTML = "";
-        TresArroyos.forEach(function(localidad) {
+        TresArroyos.forEach(function (localidad) {
             let card = document.createElement("option");
             card.selected =
-                opcionCargada != undefined && opcionCargada == localidad ?
-                "selected" :
-                "";
+                opcionCargada != undefined && opcionCargada == localidad
+                    ? "selected"
+                    : "";
             card.innerHTML = `${localidad}`;
             campoLocalidad.appendChild(card);
         });
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Evento al cambiar ciudad
-    campoCiudad.addEventListener("change", function() {
+    campoCiudad.addEventListener("change", function () {
         mostrarLocalidades(this.value);
     });
 

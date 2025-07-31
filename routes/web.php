@@ -20,6 +20,7 @@ Route::get('/noticias/buscadorFecha', [noticiasController::class, 'filterNoticia
 
 //RUTAS NOTICIAS ADMIN
 Route::post("/noticias/cargarNuevaNoticia", [administradorController::class, "createNoticia"]);
+//Route::get('/noticias/nuevaNoticia', [NoticiasController::class, 'obtenerCategorias']);
 Route::get('/noticias/nuevaNoticia', [administradorController::class, "showFormCreateNoticia"]); //Muestra formulario para cargar una nueva noticia
 Route::get('/noticias/formEditarNoticia/{id}', [administradorController::class, "showFormEditNoticia"]); //Muestra formulario para editar los datos de una noticia
 Route::PATCH('/noticias/{id}', [administradorController::class, "EditNoticia"]); //Edita la noticia con los datos que llegan del formulario
@@ -51,7 +52,7 @@ Route::get('/emprendedores/acciones', [administradorController::class, "emprende
 
 //RUTAS EMPRENDEDORES ADMIN
 Route::get('/emprendedores/nuevoEmprendimiento', [administradorController::class, "showFormCrearEmprendimiento"]); //Muestra form para cargar nuevo emprendimiento
-Route::post('/emprendedores/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"]); //Carga el nuevo emprendimiento
+Route::post('/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"])->name('form.crear'); //Carga el nuevo emprendimiento
 Route::get('/emprendedores/formEditarEmprendimiento/{id}', [administradorController::class, "showFormEditarEmprendimiento"]); //Muestra form para editar emprendimiento
 Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmprendimiento"]); //Edita un emprendimiento en especifico por su ID.
 Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmprendimiento"]); //Elimina un emprendimiento por su ID

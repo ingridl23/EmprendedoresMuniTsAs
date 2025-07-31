@@ -140,9 +140,9 @@
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">{{ $emprendimiento->nombre }} </h1>
                     <!--((emprendedor-nombre)) -->
-                    <hr class="divider" />
+                    <hr class="divider text-white" />
                 </div>
-                <div class="col-lg-8 align-self-baseline">
+                <div class="align-self-baseline">
                     <p class="text-white-75 mb-5">{{ $emprendimiento->descripcion }}</p>
                     <!--((emprendedor -descripcion)) -->
 
@@ -196,17 +196,19 @@
 
                                     <!--((emprendedor-- horainicio))  ((emprendedor-- horafin))-->
                                     @if ($horario->cerrado)
-                                        Cerrado
+                                        <span class="ms-auto"> Cerrado </span>
                                     @else
-                                        <span class="ms-auto"> {{ $horario->hora_apertura }} -
-                                            {{ $horario->hora_cierre }}</span>
+                                        <span class="ms-auto"> desde {{ $horario->hora_apertura }}hs -
+                                            hasta {{ $horario->hora_cierre }}hs</span>
                                         @if ($horario->participa_feria)
-                                            (Participa en feria parque cabañas primer domingo de cada mes)
-                                        @endif
-                                    @endif
+                                <li> Participa en feria parque cabañas primer domingo de cada
+                                    mes
                                 </li>
+                        @endif
+                        @endif
+                        </li>
 
-                            </ul>
+                        </ul>
                         @endforeach
                         <p class="address mb-5">
                             <em>
@@ -215,7 +217,7 @@
                                 <strong>Ciudad: {{ $emprendimiento->direccion->ciudad }} -
                                     {{ $emprendimiento->direccion->localidad }}</strong>
                                 <br />
-                                <strong>Calle: {{ $emprendimiento->direccion->calle }} al
+                                <strong>Calle: {{ $emprendimiento->direccion->calle }} n°
                                     {{ $emprendimiento->direccion->altura }}</strong>
                                 <!--((emprendedor- direccion)) -->
                             </em>

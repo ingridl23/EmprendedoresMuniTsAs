@@ -80,12 +80,12 @@
         @endif
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
-                <form action="/emprendedores/crearEmprendimiento" method="POST" enctype="multipart/form-data"
-                    class="form" id="contactForm">
+                <form method="POST" action="{{ route('form.crear') }}" enctype="multipart/form-data" class="form"
+                    id="contactForm">
                     @csrf
                     @include('administradores.form')
                     <div class=" d-grid  ">
-                        <button cler vistosass="btn btn-primary btn-xl submit" id="submitButton" type="submit">
+                        <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
                             <span class="btntext" value="Guardar datos"> Agregar emprendimiento </span>
                         </button>
                     </div>

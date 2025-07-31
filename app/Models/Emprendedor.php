@@ -81,7 +81,7 @@ class Emprendedor extends Model
 
     public static function showEmprendimientoId($id)
     {
-        $emprendimiento = Emprendedor::with(['redes', 'direccion', 'horario_id '])->where('emprendedor.id', $id)->get();
+        $emprendimiento = Emprendedor::with(['redes', 'direccion'])->where('emprendedor.id', $id)->get();
         if (count($emprendimiento) > constants::VALORMIN) {
             $emprendimiento = $emprendimiento[0];
             return $emprendimiento;
@@ -92,49 +92,24 @@ class Emprendedor extends Model
 
 
     /////////////////////////////////////////////
-    public static function obtenerCategorias()
+    public static function obtenerCategoriasEmprendedoresAgrupados()
     {
         $categorias = Emprendedor::all()->groupBy('categoria');
         return $categorias;
     }
-    /////////////////////////////////////////////
-    public  static function crearEmprendimiento($request, $path)
+    public static function obtenerCategorias()
     {
-        $idRedes = redes::crearRedes($request->instagram, $request->facebook, $request->whatsapp);
-
-        $idDireccion = direccion::crearDireccion($request->ciudad, $request->localidad, $request->calle, $request->altura);
-
-        $emprendimiento = Emprendedor::create([
-
-            'nombre' => $request->nombre,
-            'categoria' => $request->categoria,
-            'descripcion' => $request->descripcion,
-
-            'redes_id' => $idRedes,
-            'direccion_id' => $idDireccion,
-
-        ]);
-        // Luego creamos el horario con el ID del emprendedor
-        horario::crearHorario(
-            $request->dia,
-            $request->hora_apertura,
-            $request->hora_cierre,
-            $request->participa_feria,
-            $request->cerrado,
-            $emprendimiento->id
-        );
-        //  Guardar las imágenes (vienen en el form)
-        if ($request->hasFile('imagenes')) {
-            foreach ($request->file('imagenes') as $archivo) {
-                $path = $archivo->store('img', 'public'); // guarda en /app/public/storage/img/
-                $emprendimiento->imagenes()->create([
-                    'url' => $path
-                ]);
-            }
-        }
-
-        return $emprendimiento;
+        return [
+            'Gastronomía',
+            'Indumentaria',
+            'Tecnología',
+            'Servicios',
+            'Artesanía',
+        ];
     }
+
+    /////////////////////////////////////////////
+
 
     public static function editarEmprendimiento($emprendimiento)
     {

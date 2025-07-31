@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\user;
 use App\Models\Emprendedor;
+use App\Models\Horario;
 use App\Models\Noticias;
 use App\Models\redes;
 use App\Models\direccion;
@@ -80,7 +81,7 @@ class administradorController extends Controller
 
     public function showFormCrearEmprendimiento()
     {
-        $categorias = Emprendedor::obtenerCategorias();
+        $categorias = Emprendedor::obtenerCategoriasEmprendedoresAgrupados();
         return view('administradores.formNuevoEmprendimiento', compact('categorias'));
     }
 
@@ -103,6 +104,8 @@ class administradorController extends Controller
             $request->altura
         );
 
+
+
         $emprendimiento = Emprendedor::create([
             'nombre' => $data['nombre'],
             'categoria' => $data['categoria'],
@@ -110,6 +113,28 @@ class administradorController extends Controller
             'redes_id' => $idRedes,
             'direccion_id' => $idDireccion,
         ]);
+
+        foreach ($request->horarios as $dia => $datos) {
+            $hora_apertura = $datos['hora_de_apertura'] ?? null;
+            $hora_cierre = $datos['hora_de_cierre'] ?? null;
+            $participa_feria = isset($datos['participa_feria']) ? 1 : 0;
+            $cerrado = isset($datos['cerrado']) ? 1 : 0;
+
+            // Evitar guardar si no hay datos relevantes
+            if ($hora_apertura || $hora_cierre || $participa_feria || $cerrado) {
+                $horario = Horario::create([
+                    'dia' => $dia,
+                    'hora_apertura' => $hora_apertura,
+                    'hora_cierre' => $hora_cierre,
+                    'participa_feria' => $participa_feria,
+                    'cerrado' => $cerrado,
+                    'emprendedor_id'  => $emprendimiento->id
+                ]);
+                // Vincular el horario al emprendedor
+                $emprendimiento->horarios()->save($horario);
+            }
+        }
+
 
         if ($request->hasFile('imagenes')) {
             foreach ($request->file('imagenes') as $imagen) {
@@ -181,7 +206,7 @@ class administradorController extends Controller
             }
             $emprendimiento->nombre = $request->input('nombre');
             $emprendimiento->descripcion = Str::ucfirst($request->input('descripcion'));
-            $emprendimiento->categoria = Str::ucfirst($request->input('categoria'));
+            $emprendimiento->categoria = Str::ucfirst($request->select('categoria'));
 
             Emprendedor::editarEmprendimiento($emprendimiento);
             redes::editarEmprendimiento($redes);
@@ -216,35 +241,44 @@ class administradorController extends Controller
 
     // visualizar plantilla con el formulario para cargar los datos
 
-    
-    public function obtenerCategorias(){
-        $Categorias=Noticias::obtenerCategorias();
-        return $Categorias;
+    public function obtenerCategorias()
+    {
+        $categorias = Noticias::obtenerCategorias();
+        return $categorias;
     }
+
+
 
     //Muestra la vista del formulario para cargar los datos para la nueva noticia
     public function showFormCreateNoticia()
     {
-        $categorias=$this->obtenerCategorias();
+        $categorias = $this->obtenerCategorias();
         return view("administradores.noticias.formCrearNoticia", compact("categorias"));
     }
+
+
+
+
 
     //Carga la noticia, con los datos enviados desde el formulario, en la BBDD
     public function createNoticia(validacionNoticia $request)
     {
         $imagen = $request->file("imagen");
         $path = $imagen->store('img', 'public');
-        $request->descripcion=nl2br($request->descripcion);
+
+        $descripcion = nl2br($request->descripcion);
+
         Noticias::createNoticia($request, $path);
         return redirect('/noticias');
     }
 
+
     //Direcciona para la vista que contiene el formulario con los datos de la noticia
     public function showFormEditNoticia($id)
     {
-        $categorias=$this->obtenerCategorias();
-        $noticia=Noticias::showNoticiasId($id);
-        return view("administradores.noticias.formEditarNoticia", compact("noticia","categorias"));
+        $categorias = $this->obtenerCategorias();
+        $noticia = Noticias::showNoticiasId($id);
+        return view("administradores.noticias.formEditarNoticia", compact("noticia", "categorias"));
     }
 
     //editar noticia
