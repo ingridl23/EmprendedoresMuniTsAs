@@ -68,16 +68,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
             ".section-services, .seccion-tenes-emprendimiento, .portfolio-box,.text-white"
         )
         .forEach((el) => observer.observe(el));
+
+    /*   window.addEventListener("load", () => {
+        document
+            .querySelectorAll(
+                ".section-services, .seccion-tenes-emprendimiento, .portfolio-box, .text-white"
+            )
+            .forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add("visible");
+                }
+            });
+    });*/
 });
-
-
-
-
-
-
-
-
-
-
-
-//animacion hoja programas

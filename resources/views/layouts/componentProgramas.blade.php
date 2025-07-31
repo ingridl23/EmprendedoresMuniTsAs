@@ -25,7 +25,7 @@
                         <a href="#escuelaDeEmprendedores" class="card-link">Escuela de emprendedores</a>
                     </div>
                 </div>
-                
+
             </div>
             <div class="carousel-links-item">
                 <div class="card">
@@ -42,7 +42,7 @@
                         <a href="#programasDeEmpleo" class="card-link">Programas de empleo</a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <a class="control-prev" role="button" data-slide="prev">
@@ -91,7 +91,7 @@
             municipales, provinciales y nacionales.
         </p>
 
-         <!--seccioon carrousel club de  emprendedores -->
+        <!--seccioon carrousel club de  emprendedores -->
         <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="1000">
@@ -123,8 +123,8 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-            pie de carrousel -->
-       
+
+
         <p class="text-clubs">
             Desde la Oficina de Empleo y Capacitación reafirmamos nuestro compromiso de impulsar el
             emprendedurismo local, promoviendo espacios colaborativos, construyendo redes de apoyo y generando más y
@@ -137,49 +137,49 @@
 
 
 
-    <div class="detallesClub">
-        <div class="contenedorTituloDetalles">
-            <h3>Objetivos y Acciones</h3>
+        <div class="detallesClub">
+            <div class="contenedorTituloDetalles">
+                <h3>Objetivos y Acciones</h3>
+            </div>
+            <ul>
+                <li>Ampliar la base emprendedora mediante actividades de sensibilización y promoción para diversos
+                    públicos.
+                </li>
+                <li>Identificar emprendimientos de alto impacto para potenciar el desarrollo económico y social del
+                    distrito.</li>
+                <li>Proveer apoyo estratégico con herramientas, capacitaciones, redes de contacto y asistencia técnica,
+                    articulando con instituciones si es necesario.</li>
+                <li>Acompañar y orientar a personas con ideas o proyectos en marcha, ofreciendo una escucha activa y
+                    guía
+                    clara para fortalecer sus iniciativas.</li>
+                <li> Informar, planificar y organizar eventos que involucren al sector emprendedor local, con aval y
+                    acompañamiento del Municipio.</li>
+            </ul>
         </div>
-        <ul>
-            <li>Ampliar la base emprendedora mediante actividades de sensibilización y promoción para diversos
-                públicos.
-            </li>
-            <li>Identificar emprendimientos de alto impacto para potenciar el desarrollo económico y social del
-                distrito.</li>
-            <li>Proveer apoyo estratégico con herramientas, capacitaciones, redes de contacto y asistencia técnica,
-                articulando con instituciones si es necesario.</li>
-            <li>Acompañar y orientar a personas con ideas o proyectos en marcha, ofreciendo una escucha activa y
-                guía
-                clara para fortalecer sus iniciativas.</li>
-            <li> Informar, planificar y organizar eventos que involucren al sector emprendedor local, con aval y
-                acompañamiento del Municipio.</li>
-        </ul>
-    </div>
-        
-    <div class="detallesClub beneficiosDetallesClub">
-         <div class="contenedorTituloDetalles">
-            <h3>Beneficios para los miembros</h3>
+
+        <div class="detallesClub beneficiosDetallesClub">
+            <div class="contenedorTituloDetalles">
+                <h3>Beneficios para los miembros</h3>
+            </div>
+            <ul>
+                <li>Participación en la Mesa de Emprendedores:
+                    Reuniones periódicas con otros miembros activos para compartir ideas, planificar acciones y acceder
+                    a
+                    información relevante.</li>
+                <li>Acceso y planificación de Ferias de Emprendedores:
+                    Oportunidad de formar parte de la organización y exposición en ferias locales para dar visibilidad a
+                    los
+                    proyectos.</li>
+                <li>Asesoramiento en habilitación comercial:
+                    Contacto directo con autoridades municipales para gestionar correctamente la habilitación de
+                    comercios.
+                </li>
+                <li>Asesoramiento en registro de productos alimenticios:
+                    Orientación y acompañamiento para registrar productos de manera legal y cumplir con los requisitos
+                    sanitarios y normativos.</li>
+            </ul>
+
         </div>
-        <ul>
-            <li>Participación en la Mesa de Emprendedores:
-                Reuniones periódicas con otros miembros activos para compartir ideas, planificar acciones y acceder
-                a
-                información relevante.</li>
-            <li>Acceso y planificación de Ferias de Emprendedores:
-                Oportunidad de formar parte de la organización y exposición en ferias locales para dar visibilidad a
-                los
-                proyectos.</li>
-            <li>Asesoramiento en habilitación comercial:
-                Contacto directo con autoridades municipales para gestionar correctamente la habilitación de
-                comercios.
-            </li>
-            <li>Asesoramiento en registro de productos alimenticios:
-                Orientación y acompañamiento para registrar productos de manera legal y cumplir con los requisitos
-                sanitarios y normativos.</li>
-        </ul>
-       
-    </div>
 
 
         <!-- seccion vista previa ultimos emprendedores-->
@@ -196,7 +196,7 @@
                                         title="{{ $emprendedor->nombre }}">
                                         <img class="img-fluid"
                                             src="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
-                                            alt={{ $emprendedor->nombre }} /> 
+                                            alt={{ $emprendedor->nombre }} />
                                 @endif
                                 <div class="portfolio-box-caption">
                                     <div class="project-category text-white-50">{{ $emprendedor->categoria }}</div>
@@ -214,7 +214,7 @@
 
 
         <!-- Call to action-->
-        <section class="page-section text-white" id="SeccionFotosEmprendedores" >
+        <section class="page-section text-white" id="SeccionFotosEmprendedores">
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
                 <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
@@ -233,7 +233,8 @@
 
     <div class="programas">
 
-        <img class="img-fluid imagen-escuela" id="escuelaDeEmprendedores" src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
+        <img class="img-fluid imagen-escuela" id="escuelaDeEmprendedores"
+            src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
             alt="Logo de Escuela de Emprendedores" />
 
         <h2 class="subtitulo1 subtituloProgramas">Escuela de Emprendedores</h2>
