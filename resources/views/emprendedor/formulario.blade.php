@@ -199,7 +199,7 @@
                         @enderror
 
                         <label for="message">Email <span class="asterisco">*</span></label>
-                        <p class="form-subtitulos">Otorgar un email que utilice frecuentemente</p>
+                        <p class="form-subtitulos">Otorgar un email de uso frecuente</p>
                     </div>
 
 
@@ -213,7 +213,7 @@
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
                         <label for="telefono">Teléfono<span class="asterisco">*</span></label>
-                        <p class="form-subtitulos">Otorgar un número de teléfono de uso frecuente</p>
+                        <p class="form-subtitulos">Otorgar un número de teléfono </p>
                     </div>
 
                     <!-- input descripcion -->
@@ -225,9 +225,9 @@
                         @error('descripcion')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-                        <label for="descripcion">Describir Brevemente Su Emprendimiento <span
+                        <label for="descripcion">Describir brevemente el emprendimiento <span
                                 class="asterisco">*</span></label>
-                        <p class="form-subtitulos">Escriba una descripción a continuación</p>
+                        <p class="form-subtitulos">Escribir una descripción respecto al negocio o emprendimiento</p>
                     </div>
 
                     <!-- input oculto -->
@@ -239,7 +239,7 @@
                     <div class=" d-grid  ">
                         <button class=" submit btn btn-primary btn-xl" id="submitButton" type="submit">
                             <span class="btntext"> Enviar
-                                Petición </span>
+                                Formulario </span>
                         </button>
 
 
