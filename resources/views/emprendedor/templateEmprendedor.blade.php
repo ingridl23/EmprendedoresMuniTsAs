@@ -143,7 +143,7 @@
                     <hr class="divider text-white" />
                 </div>
                 <div class="align-self-baseline">
-                    <p class="text-white-75 mb-5">{{ $emprendimiento->descripcion }}</p>
+                    <p class="text-white-75 ">{{ $emprendimiento->descripcion }}</p>
                     <!--((emprendedor -descripcion)) -->
 
 
