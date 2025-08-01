@@ -101,6 +101,17 @@ php artisan serve
 └── README.md
 ```
 
+### Dimensión determinada de las imagenes
+
+Cada imagen tendrá como máximo de ancho : 1920px y de alto:1080px.
+Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muestra de estas en la vista.
+
+-   PHP <= 8.1
+-   Composer
+-   Node.js + npm
+-   MySQL o MariaDB
+-   Laragon / XAMPP / WAMP
+
 ## 📚 Créditos
 
 ### Desarrollado por:
