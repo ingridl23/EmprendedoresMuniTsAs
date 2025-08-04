@@ -76,6 +76,15 @@ nav form {
     .form {
         width: 60%;
     }
+    .group-subconjuntos {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .group-subconjuntos .opcion-radio {
+        margin: 0;
+        padding: 0.5rem;
+    }
 }
 
 .page-section {
@@ -92,3 +101,65 @@ nav form {
 }
 
 .checkbox {}
+
+
+/********************************************************************************/
+
+.asterisco {
+    color: red;
+    font-weight: 900;
+    font-size: larger;
+}
+
+p.textoNuevoEmprendimiento {
+    margin: 0;
+}
+
+p.textoNuevoEmprendimiento+p {
+    margin-top: 0.3rem;
+}
+
+section.section-new-entrepreneur {
+    padding: 0;
+}
+
+.mensajeError {
+    color: #bf2121;
+    margin: 0;
+}
+
+
+/*
+.group-subconjuntos {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.group-subconjuntos .opcion-radio {
+    gap: 3px;
+    padding: 5px;
+    margin: 3rem;
+    text-align: center;
+}
+*/
+
+.group-subconjuntos {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.group-subconjuntos .opcion-radio {
+    padding: 5px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.parrafo {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 8rem;
+}

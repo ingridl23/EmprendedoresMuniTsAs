@@ -25,6 +25,7 @@
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
@@ -181,72 +182,72 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
                     <img class="divider" src="{{ asset('assets/img/iconos/empleosinfondo.png') }}">
-                    <h2 class="mt-0"> Unite a los programas vigentes</h2>
-                    </h2>
+                    <h2 class="mt-0"> ¡Unite a los programas vigentes o Contactanos! </h2>
+
                     <p class="text-muted mb-5">
                         Completá el formulario con tus datos y desde la Oficina de Empleo y Capacitación nos pondremos
                         en
                         contacto para
-                        que puedas integrarte a esta valiosa propuesta.
+                        que puedas integrarte a las propuestas laborales vigentes
                     </p>
-
                     {{-- ✅ Mensaje de éxito --}}
                     @if (session('success'))
                         <div class="alert alert-success text-center mb-3">
                             {{ session('success') }}
                         </div>
                     @endif
-
-                    {{-- ✅ Errores generales --}}
-                    @if ($errors->any())
-                        <div class="alert alert-danger text-start mb-3">
-                            <ul class="mb-0">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                    @if (session('error'))
+                        <div class="alert alert-danger text-center mb-3">
+                            {{ session('error') }}
                         </div>
                     @endif
+
+
                 </div>
             </div>
 
-
-            <div class="row gx-4 gx-lg-5 justify-content-center mb-5" id="page-top">
+            <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
 
                 <div class="col-lg-6">
 
-                    <form method="POST" class="form" id="contactForm" action="{{ route('formulario.enviar') }}">
+                    <form method="POST" class="form" id="contactForm" action="{{ route('formulario.enviar') }}"
+                        enctype="multipart/form-data">
                         <!-- Name input-->
                         @csrf
                         <div class="field-group">
-
                             <input id="name" name="first_name" type="text" required placeholder=""
                                 value="{{ old('first_name') }}"></input>
-
                             @error('first_name')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
-
-
-                            <label class="message" for="message">Nombre y Apellido<span
-                                    class="asterisco">*</span></label>
+                            <label for="nombre-apellido">Nombre y Apellido <span class="asterisco">*</span></label>
                             <p class="form-subtitulos">Otorgar al menos un nombre y un apellido</p>
                         </div>
+                        <!-- asunto input-->
+                        <div class="field-group">
+                            <input id="asunto" name="asunto" type="text" required placeholder=""
+                                value="{{ old('asunto') }}"></input>
+                            @error('asunto')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+                            <label for="asunto">Asunto<span class="asterisco">*</span></label>
+                            <p class="form-subtitulos">Otorgar asunto del email</p>
+                        </div>
 
-                        <!--inpt email-->
+
+
+
+                        <!--input email-->
 
                         <div class="field-group">
 
                             <input id="email" name="email" type="email" required placeholder=""
                                 value="{{ old('email') }}"></input>
-
-
                             @error('email')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
 
-
-                            <label class="message" for="message">Email<span class="asterisco">*</span></label>
+                            <label for="message">Email <span class="asterisco">*</span></label>
                             <p class="form-subtitulos">Otorgar un email de uso frecuente</p>
                         </div>
 
@@ -254,49 +255,91 @@
                         <!--input telefono -->
 
                         <div class="field-group">
-
-                            <input type="tel" id="phone" name="tel" required placeholder=""
+                            <input type="telefono" id="phone" name="tel" required placeholder=""
                                 value="{{ old('tel') }}"></input>
-
 
                             @error('tel')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
-
-                            <label class="message" for="message">Teléfono<span class="asterisco">*</span></label>
+                            <label for="telefono">Teléfono<span class="asterisco">*</span></label>
                             <p class="form-subtitulos">Otorgar un número de teléfono </p>
                         </div>
 
-                        <!-- input descripcion -->
-                        <div class="field-group">
 
-                            <textarea id="descripcion" name="description" type="text" required placeholder=""
-                                value="{{ old('description') }}"></textarea>
+
+
+
+
+
+
+                        <!-- opciones tipo radio para empresa, emprendedor o búsqueda de empleo -->
+                        <label for="subconjuntos">Seleccionar grupo <span class="asterisco">*</span></label>
+                        <div class="field-group  group-subconjuntos">
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="esEmpresa" name="subconjuntos" value="empresa" required>
+                                <h6>Soy una empresa</h6>
+                            </div>
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="esEmprendedor" name="subconjuntos" value="emprendedor"
+                                    placeholder="">
+                                <h6>Soy un emprendedor</h6>
+                            </div>
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="buscaEmpleo" name="subconjuntos"
+                                    value="busqueda de empleo">
+                                <h6>Busco empleo</h6>
+                            </div>
+
+                            @error('subconjuntos')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="parrafo">
+                            <p class="form-subtitulos">Seleccionar una opción</p>
+                        </div>
+
+                        <!-- campo para descripción, solo visible si es empresa o emprendedor -->
+                        <div id="campo-descripcion" class="field-group" style="display: none;">
+                            <textarea id="descripcion" name="description" required placeholder="">{{ old('description') }}</textarea>
 
                             @error('description')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
 
-
-                            <label class="message" for="message">Describir brevemente el emprendimiento<span
+                            <label for="descripcion">Describir brevemente el emprendimiemto o empresa <span
                                     class="asterisco">*</span></label>
                             <p class="form-subtitulos">Escribir una descripción respecto al negocio o emprendimiento
                             </p>
                         </div>
 
-                        <!-- input oculto -->
+                        <!-- campo para cargar CV, visible solo si busca empleo -->
+                        <div id="campo-cv" class="field-group" style="display: none;">
+                            <input type="file" id="cv" name="cv" accept=".pdf">
+                            <label for="cv">Cargar currículum vitae <span class="asterisco">*</span></label>
+
+                            @error('cv')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <p class="form-subtitulos">Subir currículum vitae en formato PDF</p>
+                        </div>
+
+
+
+
+                        <!-- input oculto de control -->
 
                         <input type="text" id="oculto" name="oculto" class="oculto" autocomplete="off"
                             value="">
 
                         <!-- Submit Button-->
                         <div class=" d-grid  ">
-                            <button class="submit btn btn-primary btn-xl" id="submitButton" type="submit">
-
+                            <button class=" submit btn btn-primary btn-xl" id="submitButton" type="submit">
                                 <span class="btntext"> Enviar
                                     Formulario </span>
-
-
                             </button>
 
 
@@ -305,6 +348,7 @@
                     </form>
                 </div>
             </div>
+
 
         </div>
 
@@ -338,7 +382,7 @@
 
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/carruselProgramasLinks.js') }} "></script>
-
+    <script src="{{ asset('js/validacionSubconjuntos.js') }}"></script>
 
 
     <!-- SimpleLightbox plugin JS-->

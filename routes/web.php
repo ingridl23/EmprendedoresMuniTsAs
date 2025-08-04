@@ -36,7 +36,7 @@ Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedore
 
 //rutas del formulario de contacto
 Route::get('/formar/parte', [FormSerParteController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura
-Route::post('/formulario-enviar', [FormSerParteController::class, 'enviar'])->name('formulario.enviar'); //ruta que envia  la regla post del formulario
+Route::post('/formulario/enviar', [FormSerParteController::class, 'enviar'])->name('formulario.enviar'); //ruta que envia  la regla post del formulario
 
 
 //RUTAS EMPRENDEDORES

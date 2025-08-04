@@ -11235,31 +11235,31 @@
                     opacity: 1;
                     transform: translateY(0);
                 }
-                
+
                 .seccion-tenes-emprendimiento.visible {
                     opacity: 1;
                     transform: translateY(0);
                 }
-                
+
                 .portfolio-box.visible {
                     opacity: 1;
                     transform: translateY(0);
                 }*/
                 /******asignacion de transiciones para animacion de scroll home ******/
-                /* 
+                /*
                 .section-services {
                     text-align: center;
                     transform: translateY(20px);
                     transition: opacity 0.6s ease-out, transform 0.9s ease-out;
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                 }
-                
+
                 .seccion-tenes-emprendimiento {
                     transform: translateY(20px);
                     transition: opacity 0.6s ease-out, transform 0.9s ease-out;
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                 }
-                
+
                 .portfolio-box {
                     transform: translateY(20px);
                     transition: opacity 0.6s ease-out, transform 0.9s ease-out;
@@ -11444,29 +11444,6 @@
                 
                 div.container-fluid nav.navbar.py-2 div.container {
                     max-width: 100%;
-                }
-                
-                .asterisco {
-                    color: red;
-                    font-weight: 900;
-                    font-size: larger;
-                }
-                
-                p.textoNuevoEmprendimiento {
-                    margin: 0;
-                }
-                
-                p.textoNuevoEmprendimiento+p {
-                    margin-top: 0.3rem;
-                }
-                
-                section.section-new-entrepreneur {
-                    padding: 0;
-                }
-                
-                .mensajeError {
-                    color: #bf2121;
-                    margin: 0;
                 }
                 
                 @media(min-width: 992px) {

@@ -34,7 +34,7 @@ class validacionEmprendimiento  extends FormRequest
             'categoria' => 'bail|required|string|min:1|max:60',
 
             'imagenes' => 'required|array|max:5',
-            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|dimensions:max_width=1920,max_height=1080',
             'facebook' => 'nullable|string|min:1|max:100',
             'instagram' => 'nullable|string|min:1|max:100',
             'whatsapp' => 'numeric|digits_between:8,11',
