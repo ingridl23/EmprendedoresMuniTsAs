@@ -12,7 +12,8 @@ use App\Http\Controllers\EmprendedoresController;
 use App\Http\Controllers\FormSerParteController;
 use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\ProgramasController;
-
+use App\Exports\EmpleosExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 Route::get('/noticias/buscadorTitulo', [noticiasController::class, 'filterNoticiasByTittle']); //Filtro para noticias por titulo
 Route::get('/noticias/buscadorCategoria', [noticiasController::class, 'filterNoticiasByCategory']); //Filtro para noticias por categoria
@@ -70,3 +71,10 @@ Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
 
 //programas
 Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('programas');;
+
+
+//para exportar excel de busqueda de empleo sector administrativo
+
+Route::get('/exportar-empleos', function () {
+    return Excel::download(new EmpleosExport, 'busquedas_de_empleo.xlsx');
+});

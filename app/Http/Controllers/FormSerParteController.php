@@ -33,6 +33,26 @@ class FormSerParteController extends Controller
         }
 
         try {
+
+            //  Si eligió “búsqueda de empleo”, guardamos los datos y el CV
+            if ($request->subconjuntos === 'busqueda de empleo') {
+                $cvPath = $request->file('cv')->store('cvs', 'public');
+
+                // Asegurate de tener el modelo Empleo y la migración correspondiente
+                \App\Models\Empleo::create([
+                    'nombre' => $request->nombre,
+                    'asunto' => $request->asunto,
+                    'email' => $request->email,
+                    'telefono' => $request->telefono,
+                    'cv_path' => $cvPath,
+                ]);
+            }
+
+
+
+
+
+
             $data = $request->except('cv'); // todos los datos menos el archivo
             $data['cv'] = $request->file('cv'); // agregás el archivo (UploadedFile)
             Mail::to('oficina.empleo@tresarroyos.gov.ar')->send(new sendContactForm($data));
