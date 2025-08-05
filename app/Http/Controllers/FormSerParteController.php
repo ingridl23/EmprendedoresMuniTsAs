@@ -41,8 +41,10 @@ class FormSerParteController extends Controller
                 // Asegurate de tener el modelo Empleo y la migración correspondiente
                 \App\Models\Empleo::create([
                     'nombre' => $request->nombre,
+                    'edad' => $request->edad,
                     'asunto' => $request->asunto,
                     'email' => $request->email,
+                    'descripcionLaboral' => $request->descripcionLaboral,
                     'telefono' => $request->telefono,
                     'cv_path' => $cvPath,
                 ]);

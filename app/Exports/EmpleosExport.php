@@ -14,11 +14,11 @@ class EmpleosExport implements FromCollection, WithHeadings
      */
     public function collection()
     {
-        return Empleo::select('id', 'nombre', 'asunto', 'email', 'telefono', 'cv_path', 'created_at')->get();
+        return Empleo::select('id', 'nombre', 'edad', 'asunto', 'email', 'telefono', 'descripcion_laboral', 'cv_path', 'created_at')->get();
     }
 
     public function headings(): array
     {
-        return ['ID', 'Nombre', 'Asunto', 'Email', 'Teléfono', 'CV (ruta)', 'Fecha de envío'];
+        return ['ID', 'Nombre', 'Edad', 'Asunto', 'Email', 'Teléfono', 'Descripcion_laboral', 'CV (ruta)', 'Fecha de envío'];
     }
 }

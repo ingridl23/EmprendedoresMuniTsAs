@@ -272,32 +272,343 @@
                         <p class="form-subtitulos">Seleccionar una opción</p>
                     </div>
 
-                    <!-- campo para descripción, solo visible si es empresa o emprendedor -->
-                    <div id="campo-descripcion" class="field-group" style="display: none;">
+                    <!-- campo para descripción,  visible para los tres grupos -->
+                    <div id="campo-descripcion" class="field-group">
                         <textarea id="descripcion" name="description" required placeholder="">{{ old('description') }}</textarea>
 
                         @error('description')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
 
-                        <label for="descripcion">Describir brevemente el emprendimiemto o empresa <span
-                                class="asterisco">*</span></label>
-                        <p class="form-subtitulos">Escribir una descripción respecto al negocio o emprendimiento</p>
-                    </div>
-
-                    <!-- campo para cargar CV, visible solo si busca empleo -->
-                    <div id="campo-cv" class="field-group" style="display: none;">
-                        <input type="file" id="cv" name="cv" accept=".pdf">
-                        <label for="cv">Cargar currículum vitae <span class="asterisco">*</span></label>
-
-                        @error('cv')
-                            <div class="text-danger small">{{ $message }}</div>
-                        @enderror
-
-                        <p class="form-subtitulos">Subir currículum vitae en formato PDF</p>
+                        <label for="descripcion">Dar una <strong>breve</strong> descripcion sobre la experiencia
+                            laboral o consulta <span class="asterisco">*</span></label>
+                        <p class="form-subtitulos">Otorgue una breve descripción respecto al negocio o experiencia</p>
                     </div>
 
 
+                    <!-- grupo empresa-->
+                    <!-- campo para el nombre de la empresa,  visible para solo empresa -->
+                    <div id="grupo-empresa" style="display: none;">
+
+                        <div class="field-group">
+
+                            <textarea id="nombre-empresa" name="nombre-empresa" required placeholder="">{{ old('nombre-empresa') }}</textarea>
+
+                            @error('nombre-empresa')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <label for="nombre-empresa">Ingresar el nombre de la empresa <span
+                                    class="asterisco">*</span></label>
+                            <p class="form-subtitulos">Otorgar el nombre de la empresa</p>
+                        </div>
+
+                    </div>
+
+                    <!--GRUPO EMPRENDEDOR -->
+
+                    <!-- opciones tipo radio visible para  emprendedor-->
+                    <div id="grupo-emprendedor" style="display: none;">
+
+                        <label for="club_emprendedor">Club De Emprendedores
+                            <span class="asterisco">*</span></label>
+
+
+                        <div class="field-group  group-subconjuntos">
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="club-si" name="club_emprendedor" value="inscripto"
+                                    required>
+                                <h6>Ya soy parte del club</h6>
+                            </div>
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="club-no" name="club_emprendedor" value="noinscripto"
+                                    placeholder="">
+                                <h6>Quiero ser parte del club</h6>
+                            </div>
+
+
+                            @error('subconjuntos')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+                            <div class="parrafo">
+                                <p class="form-subtitulos">Seleccionar una opción</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- GRUPO BUSQUEDA DE EMPLEO-->
+
+                    <div id="grupo-empleo" style="display: none;">
+
+                        <!-- campo para ingresar la edad, visible solo si busca empleo -->
+                        <div class="field-group">
+                            <input type="number" id="edad" name="edad">
+                            <label for="edad">Ingresar Edad <span class="asterisco">*</span></label>
+
+                            @error('edad')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <p class="form-subtitulos">Ingrese su edad</p>
+                        </div>
+
+
+                        <!-- campo para ingresar el dni, visible solo si busca empleo -->
+                        <div class="field-group">
+                            <input type="number" id="dni" name="dni">
+                            <label for="dni">Ingresar DNI <span class="asterisco">*</span></label>
+
+                            @error('dni')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <p class="form-subtitulos">Ingrese su dni sin espacios ni puntos</p>
+                        </div>
+
+
+
+                        <!-- campo para ingresar la ciudad y localidad , visible solo si busca empleo -->
+
+                        <div class="field-group">
+                            <label for="ciudad" class="direccionEmprendimiento">Ciudad <span
+                                    class="asterisco">*</span></label>
+
+                            <select id="ciudad" class="ciudad-select" name="ciudad" required>
+                                <option class="oculto " {{ !isset($emprendimiento) ? 'selected' : '' }}></option>
+                                <option
+                                    {{ old('ciudad', $emprendimiento->direccion->ciudad ?? '') == 'Tres Arroyos' ? 'selected' : '' }}>
+                                    Tres Arroyos
+                                </option>
+                                <option
+                                    {{ old('ciudad', $emprendimiento->direccion->ciudad ?? '') == 'Adolfo Gonzales Chaves' ? 'selected' : '' }}>
+                                    Adolfo Gonzales Chaves
+                                </option>
+                                <option
+                                    {{ old('ciudad', $emprendimiento->direccion->ciudad ?? '') == 'Benito Juarez' ? 'selected' : '' }}>
+                                    Benito Juarez
+                                </option>
+                            </select>
+                            @error('ciudad')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <!--localidades grupo-->
+                        <div class="field-group">
+                            <label for="localidad" class="direccionEmprendimiento localidad">Localidad <span
+                                    class="asterisco">*</span></label>
+                            <select id="localidadesDeLaCiudad" name="localidad" required>
+                                <option value="" disabled selected>Seleccione una localidad</option>
+                                @if (old('localidad') || isset($emprendimiento))
+                                    <option
+                                        value="{{ old('localidad', $emprendimiento->direccion->localidad ?? '') }}"
+                                        selected hidden>
+                                        {{ old('localidad', $emprendimiento->direccion->localidad ?? '') }}
+                                    </option>
+                                @endif
+                            </select>
+                            @error('localidad')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+
+                        <!-- opciones tipo radio visible para  solo si busca empleo-->
+                        <label style="display: none;" for="formacion">Formacion Alcanzada <span
+                                class="asterisco grupo-empleo">*</span></label>
+                        <div class="field-group  group-subconjuntos">
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="formacion-primario" name="formacion" value="primario"
+                                    required>
+                                <h6>Primario completo</h6>
+                            </div>
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="formacion-primario" name="formacion" value="secundario"
+                                    placeholder="">
+                                <h6>Secundario completo</h6>
+                            </div>
+                            <div class="opcion-radio">
+                                <input type="radio" id="formacion-primario" name="formacion" value="terciario"
+                                    placeholder="">
+                                <h6>terciario completo</h6>
+                            </div>
+                            <div class="opcion-radio">
+                                <input type="radio" id="formacion-primario" name="formacion" value="curso"
+                                    placeholder="">
+                                <h6>Curso/s completo/s</h6>
+                            </div>
+                            @error('formacion')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="parrafo">
+                            <p class="form-subtitulos">Seleccionar una opción</p>
+                        </div>
+                        <!-- campo para nombre del curso realizado, visible solo si busca empleo -->
+                        <div id="campo-nombre-curso" style="display: none;">
+                            <div class="field-group">
+                                <textarea id="nombre-curso" name="nombre-curso" required placeholder="">{{ old('nombre-curso') }}</textarea>
+
+                                @error('nombre-curso')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
+
+                                <label for="nombre-curso">Nombre del curso laboral que finalizó
+                                    <span class="asterisco">*</span></label>
+                                <p class="form-subtitulos">Otorgar nombre/s del título/s de sus estudios</p>
+                            </div>
+                        </div>
+
+                        <!-- campo para la referencia laboral,  visible para solo si busca empleo -->
+                        <div class="field-group">
+                            <textarea id="referencia-laboral" name="referencia-laboral" required placeholder="">{{ old('referencia-laboral') }}</textarea>
+
+                            @error('referencia-laboral')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <label for="nombre-curso">Referencia laboral
+                                <span class="asterisco">*</span></label>
+                            <p class="form-subtitulos">Otorgar nombre/s del negocio o empresa en el que trabajó</p>
+                        </div>
+
+
+                        <!-- campo para la referencia laboral rubro ,  visible para solo si busca empleo -->
+                        <div class="field-group">
+                            <input type="text" id="referencia-rubro" name="referencia-rubro" required
+                                placeholder="">{{ old('referencia-rubro') }}</input>
+
+                            @error('referencia-rubro')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <label for="referencia-rubro">Referencia rubro
+                                <span class="asterisco">*</span></label>
+                            <p class="form-subtitulos">Otorgar nombre/s del rubro en el que trabajó</p>
+                        </div>
+
+
+                        <!-- campo para la referencia laboral actividad realizada ,  visible para solo si busca empleo -->
+                        <div class="field-group">
+                            <input type="text" id="referencia-actividad" name="referencia-actividad" required
+                                placeholder="">{{ old('referencia-actividad') }}</textarea>
+
+                            @error('referencia-actividad')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <label for="referencia-actividad">Referencia de actividad
+                                <span class="asterisco">*</span></label>
+                            <p class="form-subtitulos">Otorgar actividad/es realizada/s en el lugar donde trabajó</p>
+                        </div>
+
+
+
+                        <!-- campo para la referencia del nombre del contratista   ,  visible para solo si busca empleo -->
+                        <div class="field-group">
+                            <input type="text" id="contratista" name="contratista" required
+                                placeholder="">{{ old('contratista') }}</input>
+
+                            @error('contratista')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <label for="contratista">Nombre de la persona de referencia
+                                <span class="asterisco">*</span></label>
+                            <p class="form-subtitulos">Otorgar nombre del contratista del lugar donde trabajó</p>
+                        </div>
+
+
+
+
+                        <!-- campo para la referencia telefonica,  visible para solo si busca empleo -->
+                        <div class="field-group">
+                            <input type="number" id="referencia-telefonica" name="referencia-telefonica" required
+                                placeholder="">{{ old('referencia-telefonica') }}</input>
+
+                            @error('referencia-telefonica')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <label for="nombre-telefonica">Referencia telefonica
+                                <span class="asterisco">*</span></label>
+                            <p class="form-subtitulos">Otorgar nombre/s del negocio o empresa en el que trabajó</p>
+                        </div>
+
+
+                        <!-- opciones tipo radio  si posee certificado de discapacidad, visible para  solo si busca empleo-->
+                        <labelfor="cud">¿ Posee CUD? <span class="asterisco">*</span></label>
+                        <div class="field-group  group-subconjuntos">
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="cud-true" name="cud" value="true" required>
+                                <h6>poseo CUD</h6>
+                            </div>
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="cud-false" name="cud" value="false" placeholder="">
+                                <h6>No poseo CUD</h6>
+                            </div>
+                            <div class="opcion-radio">
+
+                                @error('cud')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="parrafo">
+                            <p class="form-subtitulos">Seleccionar si posee certificado unico de discapacidad
+                            </p>
+                        </div>
+
+                        <!-- opciones tipo radio  si  trabaja en dependencia, visible para  solo si busca empleo-->
+                        <label for="dependencia">¿ Trabaja en relacion de
+                            dependencia?<span class="asterisco">*</span></label>
+                        <div class="field-group  group-subconjuntos">
+
+                            <div class="opcion-radio">
+                                <input type="radio"id="dependencia-true" name="dependencia" value="true"
+                                    required>
+                                <h6>Si,en relacion de dependencia</h6>
+                            </div>
+
+                            <div class="opcion-radio">
+                                <input type="radio" id="dependencia-false" name="dependencia" value="false"
+                                    placeholder="">
+                                <h6>No, de forma independiente</h6>
+                            </div>
+                            <div class="opcion-radio">
+
+                                @error('dependencia')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                        </div>
+                        <div class="parrafo">
+                            <p class="form-subtitulos">Seleccionar una opcion</p>
+                        </div>
+
+
+
+                        <!-- campo para cargar CV, visible solo si busca empleo -->
+                        <div class="field-group">
+                            <input type="file" id="cv" name="cv" accept=".pdf">
+                            <label for="cv">Cargar currículum vitae <span class="asterisco">*</span></label>
+
+                            @error('cv')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+
+                            <p class="form-subtitulos">Subir currículum vitae en formato PDF</p>
+                        </div>
+
+                    </div> <!--cierre div de grupo busqueda empleo -->
 
 
                     <!-- input oculto de control -->

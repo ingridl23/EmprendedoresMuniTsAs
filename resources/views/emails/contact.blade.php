@@ -10,6 +10,9 @@
     <h1>Nuevo mensaje de contacto desde el sitio oficina de empleo y capacitación Tres Arroyos</h1>
 
     <p><strong>Nombre:</strong> {{ $data['first_name'] }}</p>
+
+
+
     <p><strong>Email:</strong> {{ $data['email'] }}</p>
     <p><strong>Teléfono:</strong> {{ $data['tel'] ?? 'No provisto' }}</p>
 
@@ -22,8 +25,11 @@
         <p><strong>Mensaje del emprendedor:</strong></p>
         <p>{{ $data['description'] }}</p>
     @elseif ($data['subconjuntos'] === 'busqueda de empleo')
-        <p><strong>Mensaje del postulante:</strong></p>
+        <p><strong>Mensaje del Postulante:</strong></p>
         <p>{{ $data['description'] }}</p>
+        @if (isset($data['edad']))
+            <p><strong>Edad del Solicitante :</strong>{{ $data['edad'] }}</p>
+        @endif
     @else
         <p><strong>Mensaje:</strong></p>
         <p>{{ $data['description'] }}</p>
