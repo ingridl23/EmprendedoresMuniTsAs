@@ -161,7 +161,7 @@
             @if ($emprendimiento->imagenes->isNotEmpty())
                 <div class=" galeriaImagenes col-md-8">
                     @foreach ($emprendimiento->imagenes as $imagen)
-                        <img src="{{ asset('storage/' . $imagen->url) }}" class=" img-fluid"
+                        <img src="{{$imagen['url']}}" class=" img-fluid"
                             alt="Imagen de {{ $emprendimiento->nombre }}">
                     @endforeach
 

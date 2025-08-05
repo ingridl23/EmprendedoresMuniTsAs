@@ -1,9 +1,11 @@
 "use strict";
 
 if (window.mensajeExito) {
+    console.log(window.mensajeExito);
+    console.log(window.mensajeExito.titulo);
     Swal.fire({
-        title: "Agregado!",
-        text: window.mensajeExito,
+        title: window.mensajeExito.titulo,
+        text: window.mensajeExito.detalle,
         icon: "success",
         confirmButtonColor: "#36be7f",
     });

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52686fa6fe79e283d8d5159bf54b2123",
+    "content-hash": "e4c60d3a668ba25b9dc6a3e04fc082fd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -190,6 +190,204 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
+        },
+        {
+            "name": "cloudinary-labs/cloudinary-laravel",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cloudinary-community/cloudinary-laravel.git",
+                "reference": "7ff75be942a52ea5ecbb2d3c5450fc205b096ebc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cloudinary-community/cloudinary-laravel/zipball/7ff75be942a52ea5ecbb2d3c5450fc205b096ebc",
+                "reference": "7ff75be942a52ea5ecbb2d3c5450fc205b096ebc",
+                "shasum": ""
+            },
+            "require": {
+                "cloudinary/cloudinary_php": "^2.0",
+                "ext-json": "*",
+                "illuminate/support": "~6|~7|~8|^9.0",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.1",
+                "orchestra/testbench": "~4|~5|~6|^7.0",
+                "phpunit/phpunit": "^8.0|^9.5.10",
+                "sempro/phpunit-pretty-print": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Cloudinary": "CloudinaryLabs\\CloudinaryLaravel\\Facades\\Cloudinary"
+                    },
+                    "providers": [
+                        "CloudinaryLabs\\CloudinaryLaravel\\CloudinaryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Support/helpers.php"
+                ],
+                "psr-4": {
+                    "CloudinaryLabs\\CloudinaryLaravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Prosper Otemuyiwa",
+                    "email": "prosperotemuyiwa@gmail.com",
+                    "homepage": "https://github.com/unicodeveloper"
+                }
+            ],
+            "description": "A Laravel Cloudinary Package",
+            "homepage": "https://github.com/cloudinary-labs/cloudinary-laravel",
+            "keywords": [
+                "File Transformations",
+                "Media management",
+                "cloudinary",
+                "cloudinary-laravel",
+                "file uploads",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/cloudinary-community/cloudinary-laravel/issues",
+                "source": "https://github.com/cloudinary-community/cloudinary-laravel/tree/2.0.0"
+            },
+            "time": "2022-06-02T11:49:18+00:00"
+        },
+        {
+            "name": "cloudinary/cloudinary_php",
+            "version": "2.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cloudinary/cloudinary_php.git",
+                "reference": "5967558bbf5d88e851ebd554559e850ac45b9236"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/5967558bbf5d88e851ebd554559e850ac45b9236",
+                "reference": "5967558bbf5d88e851ebd554559e850ac45b9236",
+                "shasum": ""
+            },
+            "require": {
+                "cloudinary/transformation-builder-sdk": "^1",
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.5.8|^7.4.5",
+                "guzzlehttp/promises": "^1.5.3|^2.0",
+                "guzzlehttp/psr7": "^1.9.1|^2.5",
+                "monolog/monolog": "^1|^2|^3",
+                "php": ">=5.6.0",
+                "psr/log": "^1|^2|^3"
+            },
+            "require-dev": {
+                "consolidation/robo": "~1",
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "ext-zip": "*",
+                "friendsofphp/php-cs-fixer": "*",
+                "phpmd/phpmd": "*",
+                "squizlabs/php_codesniffer": "3.*",
+                "symfony/phpunit-bridge": "^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cloudinary",
+                    "homepage": "https://github.com/cloudinary/cloudinary_php/graphs/contributors"
+                }
+            ],
+            "description": "Cloudinary PHP SDK",
+            "homepage": "https://github.com/cloudinary/cloudinary_php",
+            "keywords": [
+                "cdn",
+                "cloud",
+                "cloudinary",
+                "image management",
+                "sdk"
+            ],
+            "support": {
+                "email": "info@cloudinary.com",
+                "issues": "https://github.com/cloudinary/cloudinary_php/issues",
+                "source": "https://github.com/cloudinary/cloudinary_php/tree/2.14.0"
+            },
+            "time": "2024-05-07T15:14:12+00:00"
+        },
+        {
+            "name": "cloudinary/transformation-builder-sdk",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cloudinary/php-transformation-builder-sdk.git",
+                "reference": "8c225472e96291a7af23ddf8947bdf31baac403e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cloudinary/php-transformation-builder-sdk/zipball/8c225472e96291a7af23ddf8947bdf31baac403e",
+                "reference": "8c225472e96291a7af23ddf8947bdf31baac403e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "consolidation/robo": "~1",
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "ext-zip": "*",
+                "friendsofphp/php-cs-fixer": "*",
+                "phpmd/phpmd": "*",
+                "squizlabs/php_codesniffer": "3.*",
+                "symfony/phpunit-bridge": "^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cloudinary",
+                    "homepage": "https://github.com/cloudinary/php-transformation-builder-sdk/graphs/contributors"
+                }
+            ],
+            "description": "Cloudinary PHP Transformation Builder SDK",
+            "homepage": "https://github.com/cloudinary/php-transformation-builder-sdk",
+            "keywords": [
+                "cdn",
+                "cloud",
+                "cloudinary",
+                "image management",
+                "sdk"
+            ],
+            "support": {
+                "email": "info@cloudinary.com",
+                "issues": "https://github.com/cloudinary/php-transformation-builder-sdk/issues",
+                "source": "https://github.com/cloudinary/php-transformation-builder-sdk/tree/1.5.0"
+            },
+            "time": "2024-05-27T12:26:00+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2042,6 +2240,57 @@
             "time": "2022-10-04T09:16:37+00:00"
         },
         {
+            "name": "league/flysystem-webdav",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-webdav.git",
+                "reference": "1b82edf84844aa17b60839d1d5bf8ff39099fe2f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-webdav/zipball/1b82edf84844aa17b60839d1d5bf8ff39099fe2f",
+                "reference": "1b82edf84844aa17b60839d1d5bf8ff39099fe2f",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "~1.0",
+                "php": ">=5.4.0",
+                "sabre/dav": "~2.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\WebDAV\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Flysystem adapter for WebDAV",
+            "support": {
+                "issues": "https://github.com/thephpleague/flysystem-webdav/issues",
+                "source": "https://github.com/thephpleague/flysystem-webdav/tree/1.0.0"
+            },
+            "time": "2015-01-21T22:20:23+00:00"
+        },
+        {
             "name": "league/mime-type-detection",
             "version": "1.16.0",
             "source": {
@@ -3418,6 +3667,268 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "sabre/dav",
+            "version": "2.1.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabre-io/dav.git",
+                "reference": "fa10928802aea9b3136519640aa3c3c59e9e1084"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabre-io/dav/zipball/fa10928802aea9b3136519640aa3c3c59e9e1084",
+                "reference": "fa10928802aea9b3136519640aa3c3c59e9e1084",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-date": "*",
+                "ext-dom": "*",
+                "ext-iconv": "*",
+                "ext-libxml": "*",
+                "ext-mbstring": "*",
+                "ext-pcre": "*",
+                "ext-simplexml": "*",
+                "ext-spl": "*",
+                "php": ">=5.4.1",
+                "sabre/event": "^2.0.0",
+                "sabre/http": "^3.0.0",
+                "sabre/vobject": "^3.3.4"
+            },
+            "require-dev": {
+                "evert/phpdoc-md": "~0.1.0",
+                "phpunit/phpunit": "~4.2",
+                "squizlabs/php_codesniffer": "~1.5.3"
+            },
+            "suggest": {
+                "ext-curl": "*",
+                "ext-pdo": "*"
+            },
+            "bin": [
+                "bin/sabredav",
+                "bin/naturalselection"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sabre\\DAV\\": "lib/DAV/",
+                    "Sabre\\CalDAV\\": "lib/CalDAV/",
+                    "Sabre\\DAVACL\\": "lib/DAVACL/",
+                    "Sabre\\CardDAV\\": "lib/CardDAV/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Evert Pot",
+                    "email": "me@evertpot.com",
+                    "homepage": "http://evertpot.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "WebDAV Framework for PHP",
+            "homepage": "http://sabre.io/",
+            "keywords": [
+                "CalDAV",
+                "CardDAV",
+                "WebDAV",
+                "framework",
+                "iCalendar"
+            ],
+            "support": {
+                "forum": "https://groups.google.com/group/sabredav-discuss",
+                "issues": "https://github.com/sabre-io/dav/issues",
+                "source": "https://github.com/fruux/sabre-dav"
+            },
+            "time": "2016-10-07T03:29:06+00:00"
+        },
+        {
+            "name": "sabre/event",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabre-io/event.git",
+                "reference": "337b6f5e10ea6e0b21e22c7e5788dd3883ae73ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabre-io/event/zipball/337b6f5e10ea6e0b21e22c7e5788dd3883ae73ff",
+                "reference": "337b6f5e10ea6e0b21e22c7e5788dd3883ae73ff",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*",
+                "sabre/cs": "~0.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sabre\\Event\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Evert Pot",
+                    "email": "me@evertpot.com",
+                    "homepage": "http://evertpot.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "sabre/event is a library for lightweight event-based programming",
+            "homepage": "http://sabre.io/event/",
+            "keywords": [
+                "EventEmitter",
+                "events",
+                "hooks",
+                "plugin",
+                "promise",
+                "signal"
+            ],
+            "support": {
+                "forum": "https://groups.google.com/group/sabredav-discuss",
+                "issues": "https://github.com/sabre-io/event/issues",
+                "source": "https://github.com/fruux/sabre-event"
+            },
+            "time": "2015-05-19T10:24:22+00:00"
+        },
+        {
+            "name": "sabre/http",
+            "version": "3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabre-io/http.git",
+                "reference": "6b06c03376219b3d608e1f878514ec105ed1b577"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabre-io/http/zipball/6b06c03376219b3d608e1f878514ec105ed1b577",
+                "reference": "6b06c03376219b3d608e1f878514ec105ed1b577",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.4",
+                "sabre/event": ">=1.0.0,<3.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.3",
+                "squizlabs/php_codesniffer": "~1.5.3"
+            },
+            "suggest": {
+                "ext-curl": " to make http requests with the Client class"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sabre\\HTTP\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Evert Pot",
+                    "email": "me@evertpot.com",
+                    "homepage": "http://evertpot.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The sabre/http library provides utilities for dealing with http requests and responses. ",
+            "homepage": "https://github.com/fruux/sabre-http",
+            "keywords": [
+                "http"
+            ],
+            "support": {
+                "forum": "https://groups.google.com/group/sabredav-discuss",
+                "issues": "https://github.com/sabre-io/http/issues",
+                "source": "https://github.com/fruux/sabre-http"
+            },
+            "time": "2015-05-11T15:25:57+00:00"
+        },
+        {
+            "name": "sabre/vobject",
+            "version": "3.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabre-io/vobject.git",
+                "reference": "129d80533a9ec0d9cacfb50b51180c34edb6874c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabre-io/vobject/zipball/129d80533a9ec0d9cacfb50b51180c34edb6874c",
+                "reference": "129d80533a9ec0d9cacfb50b51180c34edb6874c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "bin": [
+                "bin/vobject",
+                "bin/generate_vcards"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sabre\\VObject\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Evert Pot",
+                    "email": "me@evertpot.com",
+                    "homepage": "http://evertpot.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dominik Tobschall",
+                    "email": "dominik@fruux.com",
+                    "homepage": "http://tobschall.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The VObject library for PHP allows you to easily parse and manipulate iCalendar and vCard objects",
+            "homepage": "http://sabre.io/vobject/",
+            "keywords": [
+                "VObject",
+                "iCalendar",
+                "jCal",
+                "jCard",
+                "vCard"
+            ],
+            "support": {
+                "forum": "https://groups.google.com/group/sabredav-discuss",
+                "issues": "https://github.com/sabre-io/vobject/issues",
+                "source": "https://github.com/fruux/sabre-vobject"
+            },
+            "time": "2016-10-07T03:20:40+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -8380,12 +8891,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags":  [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.3|^8.0"
     },
-    "platform-dev":  [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

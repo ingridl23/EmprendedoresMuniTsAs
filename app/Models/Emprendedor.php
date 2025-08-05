@@ -93,9 +93,16 @@ class Emprendedor extends Model
     /////////////////////////////////////////////
     public static function obtenerCategoriasEmprendedoresAgrupados()
     {
+        
         $categorias = Emprendedor::all()->groupBy('categoria');
         return $categorias;
     }
+
+    public static function obtenerCategoriasEmprendedores(){
+        $categorias = Emprendedor::select("categoria")->groupBy("categoria")->get();
+        return $categorias;
+    }
+
     public static function obtenerCategorias()
     {
         return [

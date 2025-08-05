@@ -37,6 +37,7 @@ class Imagenes extends Model
     protected $fillable = [
         'img_id',
         'url',
+        'public_id',
         'emprendedor_id',
 
 
@@ -49,5 +50,10 @@ class Imagenes extends Model
         return $this->belongsTo(Emprendedor::class, 'emprendedor_id');
     }
 
+
+    public static function find($id_emprendedor){
+        $imagenes=Imagenes::where("emprendedor_id", $id_emprendedor)->get();
+        return $imagenes;
+    }
 
 }

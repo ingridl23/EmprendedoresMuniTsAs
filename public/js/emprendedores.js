@@ -95,8 +95,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
             let card = document.createElement("div");
             card.className = "card";
             let url="";
+            console.log(emprendimiento);
             if (emprendimiento.imagenes && emprendimiento.imagenes.length > 0) {
-                url = "storage/" + emprendimiento.imagenes[0].url;
+                url = emprendimiento.imagenes[0].url;
                 // usar `url` en tu HTML
             } else {
                 // Mostrar imagen por defecto si no hay ninguna

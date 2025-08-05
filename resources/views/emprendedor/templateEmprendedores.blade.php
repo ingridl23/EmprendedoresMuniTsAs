@@ -236,7 +236,7 @@
                                             </div>
                                             @if ($emprendedor->imagenes->isNotEmpty())
                                                 <img class="img-fluid"
-                                                    src="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
+                                                    src="{{ $emprendedor->imagenes->first()['url'] }}"
                                                     alt="{{ $emprendedor->nombre }}" />
                                             @endif
                                         </a>
@@ -263,7 +263,7 @@
                                                                 </h2>
                                                                 @if ($emprendedor->imagenes->isNotEmpty())
                                                                     <img class="img-fluid d-block mx-auto img-modalEmprendedor"
-                                                                        src="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
+                                                                        src="{{ $emprendedor->imagenes->first()['url'] }}"
                                                                         alt="{{ $emprendedor->nombre }}" />
                                                                 @endif
                                                                 <p>{!! nl2br($emprendedor->descripcion) !!}</p>

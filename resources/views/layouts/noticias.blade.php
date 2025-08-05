@@ -136,24 +136,28 @@
     </div>
     <!--- ------------->
 
+    <header class="masthead headerNoticias">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold subtitulo-page">Noticias y Novedades</h1>
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 ">
+                       Enterate de las últimas novedades de la Oficina de Empleo y Capacitación de Tres Arroyos. 
+                       En esta sección publicamos noticias sobre eventos, ferias, capacitaciones, charlas y también oportunidades laborales disponibles en la ciudad.
+                        </p>
 
-
-
-    <div class="container-subtitulo-page">
-
-        <h1 class="subtitulo-page">Noticias</h1>
-    </div>
-
-
+                    <p class="text-white-75 ">
+                        Un espacio para mantenerte informado y aprovechar todo lo que tenemos para ofrecerte como emprendedor o buscador de empleo.
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <div class="page-top-news">
-        <section aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li><a class="breadcrumb-item" href="#">Bolsa de Empleo <span>/</span></a></li>
-                <li> <a class="breadcrumb-item " href="#">Eventos</a></li>
-            </ol>
-        </section>
-
         @if (Auth::check() && Auth::user()->hasRole('admin'))
             <div class="search">
                 <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
@@ -164,7 +168,7 @@
 
     </div>
 
-    <h3 class="tituloFiltroNoticias">Filtrar noticias según:</h3>
+    <h3 class="tituloFiltroNoticias subtitulo-page">Filtrar noticias según:</h3>
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">

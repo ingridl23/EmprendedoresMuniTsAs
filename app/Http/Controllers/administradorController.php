@@ -14,10 +14,11 @@ use App\Models\Horario;
 use App\Models\Noticias;
 use App\Models\redes;
 use App\Models\direccion;
+use App\Models\Imagenes;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\constants;
-
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class administradorController extends Controller
 {
@@ -81,7 +82,7 @@ class administradorController extends Controller
 
     public function showFormCrearEmprendimiento()
     {
-        $categorias = Emprendedor::obtenerCategoriasEmprendedoresAgrupados();
+        $categorias = Emprendedor::obtenerCategoriasEmprendedores();
         return view('administradores.formNuevoEmprendimiento', compact('categorias'));
     }
 
@@ -138,13 +139,21 @@ class administradorController extends Controller
 
         if ($request->hasFile('imagenes')) {
             foreach ($request->file('imagenes') as $imagen) {
-                $path = $imagen->store('img', 'public');
-                $emprendimiento->imagenes()->create(['url' => $path]);
+                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath());
+                $emprendimiento->imagenes()->create([
+                    'url' => $uploadedFileUrl->getSecurePath(),
+                    'public_id' => $uploadedFileUrl->getPublicId(),
+                ]);
             }
         }
 
+        $mensajes =[
+                'titulo'=>'¡Creado!',
+                'detalle' =>'Emprendimiento creado con éxito.'
+        ];
 
-        return redirect('/emprendedores')->with('success', 'Emprendimiento creado con éxito.');
+
+        return redirect('/emprendedores')->with('success', $mensajes);
     }
 
 
@@ -157,7 +166,7 @@ class administradorController extends Controller
             if ($emprendimiento != null) {
                 $emprendimiento->redes->instagram = $this->obtenerRedes($emprendimiento->redes->instagram);
                 $emprendimiento->redes->facebook = $this->obtenerRedes($emprendimiento->redes->facebook);
-                $categorias = Emprendedor::obtenerCategorias();
+                $categorias = Emprendedor::obtenerCategoriasEmprendedores();
                 return view("administradores.formEditarEmprendimiento", compact('emprendimiento', 'categorias'));
             }
         };
@@ -199,10 +208,18 @@ class administradorController extends Controller
                 $direccion->altura = $request->input('altura');
             }
             if ($request->file('imagen') != null) {
+                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath());
                 Storage::disk('public')->delete($emprendimiento->imagen);
                 $imagen = $request->file("imagen");
                 $path = $imagen->store('img', 'public');
                 $emprendimiento->imagen = $path;
+                
+                $publicId = $uploadedFileUrl->getPublicId();
+                $path = $imagen->store('img', 'public');
+                $emprendimiento->imagenes()->create([
+                    'url' => $uploadedFileUrl->getSecurePath(),
+                    'publicID' => $publicId,
+                ]);
             }
             $emprendimiento->nombre = $request->input('nombre');
             $emprendimiento->descripcion = Str::ucfirst($request->input('descripcion'));
@@ -223,12 +240,21 @@ class administradorController extends Controller
         if ($emprendimiento != null) {
             $redes = redes::find($emprendimiento->redes_id);
             $direccion = direccion::find($emprendimiento->direccion_id);
-            if ($redes != null && $direccion) {
+            $imagenes = imagenes::find($emprendimiento->id);
+            if ($redes != null && $direccion != null ) {
+                foreach ($imagenes as $imagen) {
+                    Cloudinary::uploadApi()->destroy($imagen->public_id);
+                }
                 Storage::disk('public')->delete($emprendimiento->imagen);
                 Emprendedor::eliminarEmprendimiento($emprendimiento);
                 redes::eliminarEmprendimiento($redes);
                 direccion::eliminarEmprendimiento($direccion);
-                return redirect('/emprendedores')->with('success', '¡El emprendimiento ha sido eliminado!');
+                $mensajes =[
+                    'titulo'=>'¡Eliminado!',
+                'detalle' =>'Emprendimiento eliminado con éxito.'
+                ];
+                
+                return redirect('/emprendedores')->with('success', $mensajes);
             }
         }
         //return redirect("/error", "Emprendimiento incorrecto, ingrese uno válido");
@@ -312,7 +338,12 @@ class administradorController extends Controller
     {
         $noticia = Noticias::find($id);
         if ($noticia != null) {
-            Storage::disk('public')->delete($noticia->imagen);
+            try {
+                Cloudinary::destroy($publicId);
+               
+            } catch (\Exception $e) {
+                return response()->json(['message' => 'Error al eliminar la imagen: ' . $e->getMessage()], 500);
+            }
             Noticias::deleteNoticia($noticia);
             return redirect('/noticias')->with('success', '¡La noticia ha sido eliminada!');
         }
