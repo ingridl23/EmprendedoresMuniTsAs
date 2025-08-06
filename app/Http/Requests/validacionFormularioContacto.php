@@ -37,6 +37,8 @@ class validacionFormularioContacto  extends FormRequest
             'asunto' => 'required|string|max:100',
             'ciudad' => 'required',
             'localidad' => 'required',
+
+            //agregar rules aca
         ];
 
         $subconjunto = $this->input('subconjuntos');
