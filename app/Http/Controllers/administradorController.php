@@ -139,7 +139,9 @@ class administradorController extends Controller
 
         if ($request->hasFile('imagenes')) {
             foreach ($request->file('imagenes') as $imagen) {
-                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath());
+                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
+                    'folder' => 'emprendedores'  
+                ]);
                 $emprendimiento->imagenes()->create([
                     'url' => $uploadedFileUrl->getSecurePath(),
                     'public_id' => $uploadedFileUrl->getPublicId(),
@@ -167,7 +169,8 @@ class administradorController extends Controller
                 $emprendimiento->redes->instagram = $this->obtenerRedes($emprendimiento->redes->instagram);
                 $emprendimiento->redes->facebook = $this->obtenerRedes($emprendimiento->redes->facebook);
                 $categorias = Emprendedor::obtenerCategoriasEmprendedores();
-                return view("administradores.formEditarEmprendimiento", compact('emprendimiento', 'categorias'));
+                 $imagenes = imagenes::find($emprendimiento->id);
+                return view("administradores.formEditarEmprendimiento", compact('emprendimiento', 'categorias', 'imagenes'));
             }
         };
 
@@ -181,6 +184,7 @@ class administradorController extends Controller
         $usuarioNombre = substr($redes, $posicion + 1);
         return $usuarioNombre;
     }
+
 
     public function editarEmprendimiento($id, validacionEditarEMprendimiento $request)
     {
@@ -207,6 +211,19 @@ class administradorController extends Controller
                 $direccion->calle = $request->input('calle');
                 $direccion->altura = $request->input('altura');
             }
+
+            if ($request->hasFile('imagenes') != null) {
+                foreach ($request->file('imagenes') as $imagen) {
+                    $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
+                        'folder' => 'emprendedores'  
+                    ]);
+                    $emprendimiento->imagenes()->create([
+                        'url' => $uploadedFileUrl->getSecurePath(),
+                        'public_id' => $uploadedFileUrl->getPublicId(),
+                    ]);
+                }
+            }
+
             if ($request->file('imagen') != null) {
                 $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath());
                 Storage::disk('public')->delete($emprendimiento->imagen);
@@ -306,13 +323,12 @@ class administradorController extends Controller
         $noticia = Noticias::showNoticiasId($id);
         return view("administradores.noticias.formEditarNoticia", compact("noticia", "categorias"));
     }
-
     //editar noticia
     protected function editNoticia($id, validacionEditarNoticia $request)
     {
         $noticia = Noticias::find($id);
         if ($noticia != null) {
-
+            
             if ($request->file('imagen') != null) {
                 Storage::disk('public')->delete($noticia->imagen);
                 $imagen = $request->file("imagen");

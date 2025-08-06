@@ -40,8 +40,7 @@
     @error('imagenes')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
-    <div id="previousImagen">
-
+    <div id="previousImagen" data-mostrar="{{isset($imagenes) ? 'true' : 'false'}}" data-array='{{ json_encode($imagenes) }}'>
     </div>
     <p class="form-subtitulos">Subir maximo 5 imágenes del emprendimiento</p>
 </div>

@@ -54,12 +54,17 @@ div.alturaYCalle p.form-subtitulos {
 div#previousImagen{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-#previousImagen img{
-    width: 50%;
+.position{
+    position: relative;
+    width: 40%;
+}
+
+#previousImagen .imgEmprendimiento{
+    width: 100%;
     margin: 0.4rem;
     height: fit-content;
     border-image: 1rem solid black;
@@ -69,6 +74,32 @@ div#previousImagen{
     box-shadow: 5px 4px 8px rgb(0 0 0 / 20%);
 }
 
+#previousImagen button.cierreEmprendedor {
+    width: 30px;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    top: 0.8rem;
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+}
+
+button.cierreEmprendedor img:hover{
+    opacity: 0.5;
+}
+
+button.cierreEmprendedor img{
+    width: 100%;
+    height: auto;
+}
+
+div.contenedorImgs{
+    display: block;
+    position: relative;
+    margin: 1rem;
+    width: 20%;
+}
 @keyframes mostrarDiv {
     0% {
         width: 0%;

@@ -22,6 +22,8 @@
         <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+
+        
     </head>
     @include('administradores.navBarAdmin')
 
