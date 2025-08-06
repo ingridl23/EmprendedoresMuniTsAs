@@ -18,7 +18,19 @@ use Illuminate\Database\Eloquent\Model;
  * @property $asunto
  * @property $email
  * @property $telefono
- * @property $descripcionLaboral
+ * @property $dni
+ * @property $ciudad
+ * @property $localidad
+ * @property $formacion
+ * @property $nombre_curso
+ * @property $description
+ *  @property $referencia_laboral
+ *  @property $referencia_rubro
+ *  @property $referencia_actividad
+ *  @property $contratista
+ *  @property $referencia_telefonica
+ * @property $cud
+ * @property $dependencia
  * @property $cv_path
  * @property $created_at
  * @property $updated_at
@@ -45,25 +57,33 @@ class Empleo extends Model
         'asunto',
         'email',
         'telefono',
+        'dni',
+        'ciudad',
+        'localidad',
+        'formacion',
+        'nombre_curso',
+        'description',
+        'referencia_laboral',
+        'referencia_rubro',
+        'referencia_actividad',
+        'contratista',
+        'referencia_telefonica',
+        'cud',
+        'dependencia',
         'cv_path',
-        'descripcion'
     ];
 
     //traer todos los desempleados sin filtrar directamente todos
-    public static function showBuscadoresDeEmpleo()
+    /*  public static function showBuscadoresDeEmpleo()
     {
 
-        $desempleados = Empleo::all();
-        if (count($desempleados) > constants::VALORMIN) {
-            return $desempleados;
-        }
-        return null;
+        $desempleados = self::all();
+        return $desempleados->isNotEmpty() ? $desempleados : null;
     }
 
     //traer los ultimos 50 desempleados anotados con la edad ingresada
-    public static function traerUltimosDesempleados($edad)
+    public static function traerUltimosDesempleadosEdad($edad)
     {
-        $desempleados =  Empleo::groupBy($edad)->limit(50)->get();
-        return $desempleados;
-    }
+        return self::where('edad', $edad)->latest()->limit(50)->get();
+    }*/
 }

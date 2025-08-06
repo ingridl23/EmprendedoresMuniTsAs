@@ -162,17 +162,7 @@
                     contacto para
                     que puedas integrarte a las propuestas laborales vigentes
                 </p>
-                {{-- ✅ Mensaje de éxito --}}
-                @if (session('success'))
-                    <div class="alert alert-success text-center mb-3">
-                        {{ session('success') }}
-                    </div>
-                @endif
-                @if (session('error'))
-                    <div class="alert alert-danger text-center mb-3">
-                        {{ session('error') }}
-                    </div>
-                @endif
+
 
 
             </div>
@@ -292,9 +282,9 @@
 
                         <div class="field-group">
 
-                            <textarea id="nombre-empresa" name="nombre-empresa" required placeholder="">{{ old('nombre-empresa') }}</textarea>
+                            <textarea id="nombre_empresa" name="nombre_empresa" required placeholder="">{{ old('nombre_empresa') }}</textarea>
 
-                            @error('nombre-empresa')
+                            @error('nombre_empresa')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
 
@@ -452,9 +442,9 @@
                         <!-- campo para nombre del curso realizado, visible solo si busca empleo -->
                         <div id="campo-nombre-curso" style="display: none;">
                             <div class="field-group">
-                                <textarea id="nombre-curso" name="nombre-curso" required placeholder="">{{ old('nombre-curso') }}</textarea>
+                                <textarea id="nombre_curso" name="nombre_curso" required placeholder="">{{ old('nombre_curso') }}</textarea>
 
-                                @error('nombre-curso')
+                                @error('nombre_curso')
                                     <div class="text-danger small">{{ $message }}</div>
                                 @enderror
 
@@ -466,13 +456,13 @@
 
                         <!-- campo para la referencia laboral,  visible para solo si busca empleo -->
                         <div class="field-group">
-                            <textarea id="referencia-laboral" name="referencia-laboral" required placeholder="">{{ old('referencia-laboral') }}</textarea>
+                            <textarea id="referencia-laboral" name="referencia_laboral" required placeholder="">{{ old('referencia_laboral') }}</textarea>
 
-                            @error('referencia-laboral')
+                            @error('referencia_laboral')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
 
-                            <label for="nombre-curso">Referencia laboral
+                            <label for="nombre_curso">Referencia laboral
                                 <span class="asterisco">*</span></label>
                             <p class="form-subtitulos">Otorgar nombre/s del negocio o empresa en el que trabajó</p>
                         </div>
@@ -480,7 +470,7 @@
 
                         <!-- campo para la referencia laboral rubro ,  visible para solo si busca empleo -->
                         <div class="field-group">
-                            <input type="text" id="referencia-rubro" name="referencia-rubro" required
+                            <input type="text" id="referencia-rubro" name="referencia_rubro" required
                                 placeholder="">{{ old('referencia-rubro') }}</input>
 
                             @error('referencia-rubro')
@@ -495,7 +485,7 @@
 
                         <!-- campo para la referencia laboral actividad realizada ,  visible para solo si busca empleo -->
                         <div class="field-group">
-                            <input type="text" id="referencia-actividad" name="referencia-actividad" required
+                            <input type="text" id="referencia-actividad" name="referencia_actividad" required
                                 placeholder="">{{ old('referencia-actividad') }}</textarea>
 
                             @error('referencia-actividad')
@@ -528,7 +518,7 @@
 
                         <!-- campo para la referencia telefonica,  visible para solo si busca empleo -->
                         <div class="field-group">
-                            <input type="number" id="referencia-telefonica" name="referencia-telefonica" required
+                            <input type="number" id="referencia-telefonica" name="referencia_telefonica" required
                                 placeholder="">{{ old('referencia-telefonica') }}</input>
 
                             @error('referencia-telefonica')
@@ -626,6 +616,17 @@
 
                     </div>
 
+                    {{-- ✅ Mensaje de éxito --}}
+                    @if (session('success'))
+                        <div class="alert alert-success text-center mb-3">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger text-center mb-3">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                 </form>
             </div>
         </div>

@@ -12,6 +12,7 @@ use App\Http\Controllers\EmprendedoresController;
 use App\Http\Controllers\FormSerParteController;
 use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\ProgramasController;
+use App\Http\Controllers\EmpleosController;
 use App\Exports\EmpleosExport;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -74,7 +75,5 @@ Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('pr
 
 
 //para exportar excel de busqueda de empleo sector administrativo
-
-Route::get('/exportar-empleos', function () {
-    return Excel::download(new EmpleosExport, 'busquedas_de_empleo.xlsx');
-});
+Route::get("/solicitantes", [EmpleosController::class, "showForm"]);
+Route::get('/empleos/export', [EmpleosController::class, 'export'])->name('empleos.export');

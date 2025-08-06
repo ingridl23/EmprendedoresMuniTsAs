@@ -7,42 +7,52 @@
 </head>
 
 <body>
-    <h1>Nuevo mensaje de contacto desde el sitio oficina de empleo y capacitación Tres Arroyos</h1>
+    <h1>Nuevo mensaje desde el sitio Oficina de Empleo y Capacitación - Tres Arroyos</h1>
 
     <p><strong>Nombre:</strong> {{ $data['first_name'] }}</p>
-
-
-
     <p><strong>Email:</strong> {{ $data['email'] }}</p>
     <p><strong>Teléfono:</strong> {{ $data['tel'] ?? 'No provisto' }}</p>
-
-    <p><strong>Grupo Seleccionado:</strong> {{ ucfirst($data['subconjuntos']) }}</p>
+    <p><strong>Asunto:</strong> {{ $data['asunto'] ?? 'No especificado' }}</p>
+    <p><strong>Grupo seleccionado:</strong> {{ ucfirst($data['subconjuntos']) }}</p>
 
     @if ($data['subconjuntos'] === 'empresa')
-        <p><strong>Mensaje del representante de la empresa:</strong></p>
-        <p>{{ $data['description'] }}</p>
+        <hr>
+        <h3>Datos de Empresa</h3>
+        <p><strong>Nombre de empresa:</strong> {{ $data['nombre_empresa'] ?? 'No provisto' }}</p>
+        <p><strong>Consulta:</strong><br>{{ $data['description'] }}</p>
     @elseif ($data['subconjuntos'] === 'emprendedor')
-        <p><strong>Mensaje del emprendedor:</strong></p>
-        <p>{{ $data['description'] }}</p>
+        <hr>
+        <h3>Datos de Emprendedor</h3>
+        <p><strong>¿Inscripto al Club de Emprendedores?:</strong> {{ $data['club_emprendedor'] ?? 'No respondido' }}</p>
+        <p><strong>Consulta:</strong><br>{{ $data['description'] }}</p>
     @elseif ($data['subconjuntos'] === 'busqueda de empleo')
-        <p><strong>Mensaje del Postulante:</strong></p>
-        <p>{{ $data['description'] }}</p>
-        @if (isset($data['edad']))
-            <p><strong>Edad del Solicitante :</strong>{{ $data['edad'] }}</p>
-        @endif
-    @else
-        <p><strong>Mensaje:</strong></p>
-        <p>{{ $data['description'] }}</p>
-    @endif
-    @if (isset($data['cv']))
-        <p><strong>CV cargado:</strong> Sí</p>
-    @else
-        <p><strong>CV cargado:</strong> No carga cv </p>
-    @endif
+        <hr>
+        <h3>Datos de quien busca empleo</h3>
+        <p><strong>Edad:</strong> {{ $data['edad'] ?? 'No informada' }}</p>
+        <p><strong>DNI:</strong> {{ $data['dni'] ?? 'No informado' }}</p>
+        <p><strong>Ciudad:</strong> {{ $data['ciudad'] ?? 'No informada' }}</p>
+        <p><strong>Localidad:</strong> {{ $data['localidadesDeLaCiudad'] ?? 'No informada' }}</p>
+        <p><strong>Formación alcanzada:</strong> {{ $data['formacion'] ?? 'No especificada' }}</p>
 
+        @if (isset($data['formacion']) && $data['formacion'] === 'curso')
+            <p><strong>Nombre del curso:</strong> {{ $data['nombre_curso'] ?? 'No informado' }}</p>
+        @endif
+
+        <p><strong>¿Posee CUD?:</strong> {{ $data['cud'] ?? 'No especificado' }}</p>
+        <p><strong>¿Trabaja en relación de dependencia?:</strong> {{ $data['dependencia'] ?? 'No especificado' }}</p>
+
+        <h4>Referencias Laborales</h4>
+        <p><strong>Rubro:</strong> {{ $data['referencia_rubro'] ?? 'No informado' }}</p>
+        <p><strong>Actividad realizada:</strong> {{ $data['referencia_actividad'] ?? 'No informado' }}</p>
+        <p><strong>Nombre del contratista:</strong> {{ $data['contratista'] ?? 'No informado' }}</p>
+        <p><strong>Teléfono del contratista:</strong> {{ $data['referencia_telefonica'] ?? 'No informado' }}</p>
+
+        <p><strong>Mensaje/Consulta:</strong><br>{{ $data['description'] }}</p>
+
+        <p><strong>CV cargado:</strong> {{ isset($data['cv']) ? 'Sí' : 'No' }}</p>
+    @endif
 
     <hr>
-
     <p>Gracias,<br>{{ config('app.name') }}</p>
 </body>
 

@@ -12,13 +12,113 @@ class EmpleosExport implements FromCollection, WithHeadings
     /**
      * @return \Illuminate\Support\Collection
      */
+    protected $filtros;
+
+    public function __construct(array $filtros = [])
+    {
+        $this->filtros = $filtros;
+    }
+
     public function collection()
     {
-        return Empleo::select('id', 'nombre', 'edad', 'asunto', 'email', 'telefono', 'descripcion_laboral', 'cv_path', 'created_at')->get();
+        $query = Empleo::select(
+            'id',
+            'nombre',
+            'asunto',
+            'email',
+            'telefono',
+            'edad',
+            'dni',
+            'ciudad',
+            'localidad',
+            'formacion',
+            'nombre_curso',
+            'description',
+            'referencia_laboral',
+            'referencia_rubro',
+            'referencia_actividad',
+            'contratista',
+            'referencia_telefonica',
+            'cud',
+            'dependencia',
+            'created_at'
+        );
+        //filtrar por ciudad
+        if (isset($this->filtros['ciudad'])) {
+            $query->where('ciudad', $this->filtros['ciudad']);
+        }
+        //filtrar por edad
+        if (isset($this->filtros['edad'])) {
+            $query->where('edad', $this->filtros['edad']);
+        }
+        //filtrar por fecha
+        if (isset($this->filtros['created_at'])) {
+            $query->whereDate('created_at', $this->filtros['created_at']);
+        }
+        //filtrar por si posee cud era boolean
+        if (isset($this->filtros['cud'])) {
+            $query->where('cud', $this->filtros['cud']);
+        }
+        //filtrar por dni
+        if (isset($this->filtros['dni'])) {
+            $query->where('dni', $this->filtros['dni']);
+        }
+        //filtrar por nombre
+        if (isset($this->filtros['nombre'])) {
+            $query->where('nombre', 'like', '%' . $this->filtros['nombre'] . '%');
+        }
+
+        return $query->get();
     }
 
     public function headings(): array
     {
-        return ['ID', 'Nombre', 'Edad', 'Asunto', 'Email', 'Teléfono', 'Descripcion_laboral', 'CV (ruta)', 'Fecha de envío'];
+        return [
+            'ID',
+            'Nombre',
+            'Asunto',
+            'Email',
+            'Teléfono',
+            'Edad',
+            'DNI',
+            'Ciudad',
+            'Localidad',
+            'Formación',
+            'Nombre del Curso',
+            'Descripción Laboral',
+            'Referencia Laboral',
+            'Rubro de Referencia',
+            'Actividad Referida',
+            'Contratista',
+            'Teléfono de Referencia',
+            'Posee CUD',
+            'Tiene Dependencia',
+            'Fecha de Envío',
+        ];
+    }
+
+    public function map($empleo): array
+    {
+        return [
+            $empleo->id,
+            $empleo->nombre,
+            $empleo->email,
+            $empleo->telefono,
+            $empleo->edad,
+            $empleo->dni,
+            $empleo->ciudad,
+            $empleo->localidad,
+            $empleo->formacion,
+            $empleo->nombre_curso,
+            $empleo->description,
+            $empleo->referencia_laboral,
+            $empleo->referencia_rubro,
+            $empleo->referencia_actividad,
+            $empleo->contratista,
+            $empleo->referencia_telefonica,
+            $empleo->cud ? 'Sí' : 'No',
+            $empleo->dependencia ? 'Sí' : 'No',
+            $empleo->created_at->format('Y-m-d'),
+        ];
     }
 }

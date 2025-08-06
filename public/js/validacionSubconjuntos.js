@@ -14,18 +14,27 @@ document.addEventListener("DOMContentLoaded", () => {
         'input[name="formacion"]'
     );
     const nombreCursoField = document.getElementById("campo-nombre-curso");
-    const nombreCursoInput = document.getElementById("nombre-curso");
+    const nombreCursoInput = document.getElementById("nombre_curso");
 
     // Campos ciudad/localidad
     const ciudadInput = document.getElementById("ciudad");
     const localidadSelect = document.getElementById("localidadesDeLaCiudad");
 
+    document.querySelector("form").addEventListener("submit", function(e) {
+        console.log("Formulario se está enviando...");
+    });
+
     function actualizarCampos() {
         const seleccionado = Array.from(radios).find((r) => r.checked);
 
-        grupoEmpresa.style.display = "none";
-        grupoEmprendedor.style.display = "none";
-        grupoDesempleado.style.display = "none";
+        // Oculta todos los grupos y quita required a todos los campos internos
+        [grupoEmpresa, grupoEmprendedor, grupoDesempleado].forEach((grupo) => {
+            grupo.style.display = "none";
+            const campos = grupo.querySelectorAll("input, select, textarea");
+            campos.forEach((campo) => {
+                campo.required = false;
+            });
+        });
 
         if (!seleccionado) return;
 
@@ -33,10 +42,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (valor === "empresa") {
             grupoEmpresa.style.display = "block";
+            grupoEmpresa
+                .querySelectorAll("input, select, textarea")
+                .forEach((c) => {
+                    if (!c.disabled) c.required = true;
+                });
         } else if (valor === "emprendedor") {
             grupoEmprendedor.style.display = "block";
+            grupoEmprendedor
+                .querySelectorAll("input, select, textarea")
+                .forEach((c) => {
+                    if (!c.disabled) c.required = true;
+                });
         } else if (valor === "busqueda de empleo") {
             grupoDesempleado.style.display = "block";
+            grupoDesempleado
+                .querySelectorAll("input, select, textarea")
+                .forEach((c) => {
+                    if (!c.disabled) c.required = true;
+                });
+
+            // Asegurar el campo de curso según selección
+            actualizarCurso();
         }
     }
 

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\validacionFormularioContacto;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\sendContactForm;
-
+use App\Models\Empleo;
 
 class FormSerParteController extends Controller
 {
@@ -33,21 +33,39 @@ class FormSerParteController extends Controller
         }
 
         try {
+            $cvPath = null;
 
-            //  Si eligió “búsqueda de empleo”, guardamos los datos y el CV
             if ($request->subconjuntos === 'busqueda de empleo') {
-                $cvPath = $request->file('cv')->store('cvs', 'public');
 
-                // Asegurate de tener el modelo Empleo y la migración correspondiente
-                \App\Models\Empleo::create([
+                if (!$request->hasFile('cv')) {
+                    return back()->with('error', 'Debe subir su currículum.');
+                }
+
+                $cvPath = $request->file('cv')->store('cvs', 'public');
+                //  tener el modelo Empleo y la migración correspondiente antes
+                $empleoData = [
                     'nombre' => $request->nombre,
-                    'edad' => $request->edad,
                     'asunto' => $request->asunto,
                     'email' => $request->email,
-                    'descripcionLaboral' => $request->descripcionLaboral,
                     'telefono' => $request->telefono,
+                    'edad' => $request->edad,
+                    'dni' => $request->dni,
+                    'ciudad' => $request->ciudad,
+                    'localidad' => $request->localidad,
+                    'formacion' => $request->formacion,
+                    'nombre_curso' => $request->nombre_curso,
+                    'description' => $request->description,
+                    'referencia_laboral' => $request->referencia_laboral,
+                    'referencia_rubro' => $request->referencia_rubro,
+                    'referencia_actividad' => $request->referencia_actividad,
+                    'contratista' => $request->contratista,
+                    'referencia_telefonica' => $request->referencia_telefonica,
+                    'cud' => $request->cud,
+                    'dependencia' => $request->dependencia,
                     'cv_path' => $cvPath,
-                ]);
+
+                ];
+                Empleo::create($empleoData);
             }
 
 

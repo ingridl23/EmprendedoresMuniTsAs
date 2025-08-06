@@ -54,18 +54,18 @@ class validacionFormularioContacto  extends FormRequest
                 'edad' => 'required|numeric|between:10,15',
                 'dni' => 'required|numeric|min:100000',
                 'formacion' => 'required',
-                'referencia-laboral' => 'required|string',
-                'referencia-rubro' => 'required|string',
-                'referencia-actividad' => 'required|string',
+                'referencia_laboral' => 'required|string',
+                'referencia_rubro' => 'required|string',
+                'referencia_actividad' => 'required|string',
                 'contratista' => 'required|string',
-                'referencia-telefonica' => 'required|numeric|digits_between:8,11',
+                'referencia_telefonica' => 'required|numeric|digits_between:8,11',
                 'cud' => 'required|string',
                 'dependencia' => 'required|string',
             ];
 
             // Si formación es "curso", se requiere nombre del curso
             if ($this->input('formacion') === 'curso') {
-                $rules['nombre-curso'] = 'required|string';
+                $rules['nombre_curso'] = 'required|string';
             }
         }
 
@@ -114,15 +114,15 @@ class validacionFormularioContacto  extends FormRequest
             'dni.min' => 'El DNI debe tener al menos 6 cifras.',
 
             'formacion.required' => 'Debe indicar su nivel de formación.',
-            'nombre-curso.required' => 'Debe indicar el nombre del curso.',
+            'nombre_curso.required' => 'Debe indicar el nombre del curso.',
 
-            'referencia-laboral.required' => 'Debe completar la referencia laboral.',
-            'referencia-rubro.required' => 'Debe completar el rubro.',
-            'referencia-actividad.required' => 'Debe completar la actividad.',
+            'referencia_laboral.required' => 'Debe completar la referencia laboral.',
+            'referencia_rubro.required' => 'Debe completar el rubro.',
+            'referencia_actividad.required' => 'Debe completar la actividad.',
             'contratista.required' => 'Debe completar el campo contratista.',
-            'referencia-telefonica.required' => 'Debe ingresar un teléfono de referencia.',
-            'referencia-telefonica.numeric' => 'El teléfono debe ser numérico.',
-            'referencia-telefonica.digits_between' => 'Debe tener entre 8 y 11 dígitos.',
+            'referencia_telefonica.required' => 'Debe ingresar un teléfono de referencia.',
+            'referencia_telefonica.numeric' => 'El teléfono debe ser numérico.',
+            'referencia_telefonica.digits_between' => 'Debe tener entre 8 y 11 dígitos.',
             'cud.required' => 'Debe completar el campo CUD.',
             'dependencia.required' => 'Debe completar el campo dependencia.',
         ];
