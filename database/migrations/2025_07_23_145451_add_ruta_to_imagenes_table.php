@@ -14,7 +14,7 @@ class AddRutaToImagenesTable extends Migration
     public function up()
     {
         Schema::table('imagenes', function (Blueprint $table) {
-            $table->string('ruta')->after('img_id'); // o después de otra columna si querés
+            $table->string('ruta')->after('id'); // o después de otra columna si querés
         });
     }
 

@@ -16,7 +16,7 @@ class Imagen extends Migration
         Schema::create(
             'imagenes',
             function (Blueprint $table) {
-                $table->increments('img_id');
+                $table->id();
                 $table->foreignId('emprendedor_id')->constrained('emprendedor')->onDelete('cascade');
                 $table->string('url')->nullable();
                 $table->string('public_id')->nullable();

@@ -1,14 +1,14 @@
 "use script"
 
-document.addEventListener("DOMContentLoaded", function(){
-
+document.addEventListener("DOMContentLoaded", ()=>{
+    let formEditar=document.querySelector("#editarForm");
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
     let contenedor = document.getElementById('previousImagen');
     let mostrarElems = contenedor.dataset.mostrar == 'true';
-    let input = document.getElementById('imagenes');
+     let input = document.getElementById('imagenes');
     const MAX = 5;
 
     let imagenesTotales = []; //Total de imgs (tanto backend como las que se cargan)
-
     const imagenesJSON = JSON.parse(contenedor.dataset.array || '[]'); // array de imágenes existentes desde el backend (editar emprendimiento)
     if (mostrarElems) {
         imagenesJSON.forEach((img) => {
@@ -17,12 +17,49 @@ document.addEventListener("DOMContentLoaded", function(){
             nombre: img.name,
             url: img.url,
             public_id: img.public_id,
-            id:img.img_id
+            id:img.id
         });
         });
     }
 
 
+
+    
+    formEditar.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        let id=formEditar.dataset.id;
+        let formData = new FormData();
+
+        imagenesTotales.forEach(img => {
+            console.log(img)
+            if(img.tipo == 'nuevo'){
+                console.log(img);
+                formData.append('imagenes[]', img.file); // archivos reales
+            }
+        });
+
+        formData.append('imagenes_conservar', JSON.stringify(imagenesTotales));
+        console.log(formData);
+
+        //Sirve para visualizar en consola los datos guardados en formData
+        for (let [key, value] of formData.entries()) {
+            console.log(`${key}:`, value instanceof File ? value.name : value);
+        }
+
+        fetch(`/emprendedores/editarImgs/${id}`, {
+            method: 'post',
+            body: formData,
+            headers: {'X-CSRF-TOKEN': csrfToken},
+        })
+        .then((response) => response.json())
+        .then((data) => {
+                console.log(data);
+            //document.querySelector(".editarForm").submit();
+        })
+        .catch((error) => console.log(error));
+    })
+
+    
     // Mostrar al iniciar
     modificarVista();
 
@@ -30,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function(){
     input.addEventListener('change', ()=>{
         const nuevosArchivos = Array.from(input.files);
         const espacioDisponible = MAX - imagenesTotales.length;
-        console.log(espacioDisponible);
         if (espacioDisponible <= 0) {
         alert(`Solo se permiten ${MAX} imágenes en total.`);
         input.value = "";
@@ -54,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function(){
     //Para cuando se agrega nuevas imgs y mostrar la vista
     function modificarVista(){
          contenedor.innerHTML="";
-
         const dt = new DataTransfer();
        
         imagenesTotales.forEach((file, index) =>{
@@ -96,5 +131,4 @@ document.addEventListener("DOMContentLoaded", function(){
         });
         input.files = dt.files;
     };
-
 })

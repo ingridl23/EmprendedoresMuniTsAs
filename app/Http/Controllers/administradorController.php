@@ -39,7 +39,8 @@ class administradorController extends Controller
         $this->middleware('can:editar emprendimiento', [
             'only' => [
                 'editarEmprendimiento',
-                'showFormEditarEmprendimiento'
+                'showFormEditarEmprendimiento',
+                'editarImagenesEmprendimiento'
             ]
         ]);
         $this->middleware('can:eliminar emprendimiento', [
@@ -185,10 +186,47 @@ class administradorController extends Controller
         return $usuarioNombre;
     }
 
+    public function editarImagenesEmprendimiento($id, Request $request){
+        $emprendimiento = Emprendedor::find($id);
+        $imagenesBD= imagenes::find($emprendimiento->id);
+        $imagenesRequest=$request->file("imagenes");
+        
+        $imagenesConservarJson = $request->input('imagenes_conservar');
+        $imagenesConservar = json_decode($imagenesConservarJson, true); // true para array asociativo
+        $idsConservar = collect($imagenesConservar)->pluck('id')->filter()->toArray();
 
-    public function editarEmprendimiento($id, validacionEditarEMprendimiento $request)
+        if(count($imagenesBD)>0){
+            foreach ($imagenesBD as $imagen) {
+                if(!in_array($imagen->id, $idsConservar)){
+                    Cloudinary::uploadApi()->destroy($imagen->public_id);
+                    imagenes::eliminarImagen($imagen);
+                }
+            }
+        }
+        if($imagenesRequest != null){
+            if(count($imagenesBD)<5 && (count($imagenesRequest)+count($imagenesBD))<=5){
+                foreach ($imagenesRequest as $imagen) {
+                    $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
+                        'folder' => 'emprendedores'  
+                    ]);
+                    $emprendimiento->imagenes()->create([
+                        'url' => $uploadedFileUrl->getSecurePath(),
+                        'public_id' => $uploadedFileUrl->getPublicId(),
+                    ]);
+                }
+         }
+         else{
+            return response()->json("Super la cantidad permitida");
+         }
+        }
+        
+        return response()->json($emprendimiento->imagenes());
+    }
+
+    public function editarEmprendimiento($id, validacionEditarEmprendimiento $request)
     {
         $emprendimiento = Emprendedor::find($id);
+
         $redes = redes::find($emprendimiento->redes_id);
         $redes->instagram = $this->obtenerRedes($redes->instagram);
         $redes->facebook = $this->obtenerRedes($redes->facebook);
@@ -212,35 +250,9 @@ class administradorController extends Controller
                 $direccion->altura = $request->input('altura');
             }
 
-            if ($request->hasFile('imagenes') != null) {
-                foreach ($request->file('imagenes') as $imagen) {
-                    $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
-                        'folder' => 'emprendedores'  
-                    ]);
-                    $emprendimiento->imagenes()->create([
-                        'url' => $uploadedFileUrl->getSecurePath(),
-                        'public_id' => $uploadedFileUrl->getPublicId(),
-                    ]);
-                }
-            }
-
-            if ($request->file('imagen') != null) {
-                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath());
-                Storage::disk('public')->delete($emprendimiento->imagen);
-                $imagen = $request->file("imagen");
-                $path = $imagen->store('img', 'public');
-                $emprendimiento->imagen = $path;
-                
-                $publicId = $uploadedFileUrl->getPublicId();
-                $path = $imagen->store('img', 'public');
-                $emprendimiento->imagenes()->create([
-                    'url' => $uploadedFileUrl->getSecurePath(),
-                    'publicID' => $publicId,
-                ]);
-            }
             $emprendimiento->nombre = $request->input('nombre');
             $emprendimiento->descripcion = Str::ucfirst($request->input('descripcion'));
-            $emprendimiento->categoria = Str::ucfirst($request->select('categoria'));
+            $emprendimiento->categoria = Str::ucfirst($request->input('categoria'));
 
             Emprendedor::editarEmprendimiento($emprendimiento);
             redes::editarEmprendimiento($redes);
@@ -261,8 +273,8 @@ class administradorController extends Controller
             if ($redes != null && $direccion != null ) {
                 foreach ($imagenes as $imagen) {
                     Cloudinary::uploadApi()->destroy($imagen->public_id);
+                    Imagenes::eliminarImagen($imagen);
                 }
-                Storage::disk('public')->delete($emprendimiento->imagen);
                 Emprendedor::eliminarEmprendimiento($emprendimiento);
                 redes::eliminarEmprendimiento($redes);
                 direccion::eliminarEmprendimiento($direccion);
