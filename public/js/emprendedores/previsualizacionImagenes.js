@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let mostrarElems = contenedor.dataset.mostrar == 'true';
     let input = document.getElementById('imagenes');
     const MAX = 5;
+    let dtCopia = new DataTransfer();
 
     let imagenesTotales = []; //Total de imgs (tanto backend como las que se cargan)
 
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log(espacioDisponible);
         if (espacioDisponible <= 0) {
         alert(`Solo se permiten ${MAX} imágenes en total.`);
-        input.value = "";
+        input.files = dtCopia;
         return;
         }
         const archivosPermitidos = nuevosArchivos.slice(0, espacioDisponible);
@@ -95,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function(){
             
         });
         input.files = dt.files;
+        dtCopia=dt.files;
     };
 
 })

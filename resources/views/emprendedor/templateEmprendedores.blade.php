@@ -366,8 +366,8 @@
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
 
-    <script type="module" src="{{ asset('js/cartelEliminar.js') }} "></script>
-    <script type="module" src="{{ asset('js/emprendedores.js') }}"></script>
+    <script type="module" src="{{ asset('js/emprendedores/cartelEliminar.js') }} "></script>
+    <script type="module" src="{{ asset('js/emprendedores/emprendedores.js') }}"></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
 
     <!--Para alertas desde JS-->
