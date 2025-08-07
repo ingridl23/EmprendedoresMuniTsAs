@@ -19,19 +19,19 @@
         <hr>
         <h3>Datos de Empresa</h3>
         <p><strong>Nombre de empresa:</strong> {{ $data['nombre_empresa'] ?? 'No provisto' }}</p>
-        <p><strong>Consulta:</strong><br>{{ $data['description'] }}</p>
+        <p><strong>Consulta:</strong><br>{!! nl2br(e($data['description'])) !!}</p>
     @elseif ($data['subconjuntos'] === 'emprendedor')
         <hr>
         <h3>Datos de Emprendedor</h3>
         <p><strong>¿Inscripto al Club de Emprendedores?:</strong> {{ $data['club_emprendedor'] ?? 'No respondido' }}</p>
-        <p><strong>Consulta:</strong><br>{{ $data['description'] }}</p>
+        <p><strong>Consulta:</strong><br>{!! nl2br(e($data['description'])) !!}</p>
     @elseif ($data['subconjuntos'] === 'busqueda de empleo')
         <hr>
         <h3>Datos de quien busca empleo</h3>
         <p><strong>Edad:</strong> {{ $data['edad'] ?? 'No informada' }}</p>
         <p><strong>DNI:</strong> {{ $data['dni'] ?? 'No informado' }}</p>
         <p><strong>Ciudad:</strong> {{ $data['ciudad'] ?? 'No informada' }}</p>
-        <p><strong>Localidad:</strong> {{ $data['localidadesDeLaCiudad'] ?? 'No informada' }}</p>
+        <p><strong>Localidad:</strong> {{ $data['localidad'] ?? 'No informada' }}</p>
         <p><strong>Formación alcanzada:</strong> {{ $data['formacion'] ?? 'No especificada' }}</p>
 
         @if (isset($data['formacion']) && $data['formacion'] === 'curso')
@@ -47,9 +47,9 @@
         <p><strong>Nombre del contratista:</strong> {{ $data['contratista'] ?? 'No informado' }}</p>
         <p><strong>Teléfono del contratista:</strong> {{ $data['referencia_telefonica'] ?? 'No informado' }}</p>
 
-        <p><strong>Mensaje/Consulta:</strong><br>{{ $data['description'] }}</p>
+        <p><strong>Mensaje/Consulta:</strong><br>{!! nl2br(e($data['description'])) !!}</p>
 
-        <p><strong>CV cargado:</strong> {{ isset($data['cv']) ? 'Sí' : 'No' }}</p>
+        <p><strong>CV cargado:</strong> {{ isset($data['cv']) && $data['cv'] ? 'Sí' : 'No' }}</p>
     @endif
 
     <hr>

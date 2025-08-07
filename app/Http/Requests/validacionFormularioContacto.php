@@ -30,15 +30,15 @@ class validacionFormularioContacto  extends FormRequest
     {
         $rules = [
             'first_name' => 'bail|required|string|min:3|max:100',
+            'asunto' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'tel' => 'nullable|numeric|digits_between:8,11',
-            'oculto' => 'nullable|string',
-            'subconjuntos' => 'required',
-            'asunto' => 'required|string|max:100',
             'ciudad' => 'required',
             'localidad' => 'required',
+            'oculto' => 'nullable|string',
+            'subconjuntos' => 'required',
 
-            //agregar rules aca
+
         ];
 
         $subconjunto = $this->input('subconjuntos');
@@ -53,8 +53,8 @@ class validacionFormularioContacto  extends FormRequest
             $rules += [
                 'description' => 'required|string|min:20|max:300',
                 'cv' => 'required|file|mimes:pdf|max:2048',
-                'edad' => 'required|numeric|between:10,15',
-                'dni' => 'required|numeric|min:100000',
+                'edad' => 'required|numeric|between:18,50',
+                'dni' => 'required|digits_between:6,8',
                 'formacion' => 'required',
                 'referencia_laboral' => 'required|string',
                 'referencia_rubro' => 'required|string',

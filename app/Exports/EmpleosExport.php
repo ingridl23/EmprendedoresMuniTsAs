@@ -4,10 +4,13 @@ namespace App\Exports;
 
 
 use App\Models\Empleo;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\FromCollection;
 
-class EmpleosExport implements FromCollection, WithHeadings
+
+class EmpleosExport implements FromCollection, WithHeadings, WithMapping
+
 {
     /**
      * @return \Illuminate\Support\Collection
@@ -41,8 +44,10 @@ class EmpleosExport implements FromCollection, WithHeadings
             'referencia_telefonica',
             'cud',
             'dependencia',
+            'cv_path',
             'created_at'
         );
+
         //filtrar por ciudad
         if (isset($this->filtros['ciudad'])) {
             $query->where('ciudad', $this->filtros['ciudad']);
@@ -85,14 +90,15 @@ class EmpleosExport implements FromCollection, WithHeadings
             'Localidad',
             'Formación',
             'Nombre del Curso',
-            'Descripción Laboral',
+            'Descripción',
             'Referencia Laboral',
             'Rubro de Referencia',
             'Actividad Referida',
             'Contratista',
             'Teléfono de Referencia',
             'Posee CUD',
-            'Tiene Dependencia',
+            'Relación de Dependencia',
+            'CV (ruta)',
             'Fecha de Envío',
         ];
     }
@@ -102,6 +108,7 @@ class EmpleosExport implements FromCollection, WithHeadings
         return [
             $empleo->id,
             $empleo->nombre,
+            $empleo->asunto,
             $empleo->email,
             $empleo->telefono,
             $empleo->edad,
@@ -118,6 +125,7 @@ class EmpleosExport implements FromCollection, WithHeadings
             $empleo->referencia_telefonica,
             $empleo->cud ? 'Sí' : 'No',
             $empleo->dependencia ? 'Sí' : 'No',
+            $empleo->cv_path,
             $empleo->created_at->format('Y-m-d'),
         ];
     }

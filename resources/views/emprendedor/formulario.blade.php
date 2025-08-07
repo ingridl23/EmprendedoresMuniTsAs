@@ -171,7 +171,17 @@
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
 
             <div class="col-lg-6">
-
+                {{-- ✅ Mensaje de éxito --}}
+                @if (session('success'))
+                    <div class="alert alert-success text-center mb-3">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger text-center mb-3">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <form method="POST" class="form" id="contactForm" action="{{ route('formulario.enviar') }}"
                     enctype="multipart/form-data">
                     <!-- Name input-->
@@ -239,18 +249,20 @@
                     <div class="field-group  group-subconjuntos">
 
                         <div class="opcion-radio">
-                            <input type="radio" id="esEmpresa" name="subconjuntos" value="empresa" required>
+                            <input type="radio" id="esEmpresa" name="subconjuntos" value="empresa"
+                                {{ old('subconjuntos') == 'empresa' ? 'checked' : '' }} required>
                             <h6>Soy una empresa</h6>
                         </div>
 
                         <div class="opcion-radio">
                             <input type="radio" id="esEmprendedor" name="subconjuntos" value="emprendedor"
-                                placeholder="">
+                                {{ old('subconjuntos') == 'emprendedor' ? 'checked' : '' }}>
                             <h6>Soy un emprendedor</h6>
                         </div>
 
                         <div class="opcion-radio">
-                            <input type="radio" id="buscaEmpleo" name="subconjuntos" value="busqueda de empleo">
+                            <input type="radio" id="buscaEmpleo" name="subconjuntos" value="busqueda de empleo"
+                                {{ old('subconjuntos') == 'busqueda de empleo' ? 'checked' : '' }}>
                             <h6>Busco empleo</h6>
                         </div>
 
@@ -308,18 +320,18 @@
 
                             <div class="opcion-radio">
                                 <input type="radio" id="club-si" name="club_emprendedor" value="inscripto"
-                                    required>
+                                    required {{ old('club_emprendedor') == 'inscripto' ? 'checked' : '' }}>
                                 <h6>Ya soy parte del club</h6>
                             </div>
 
                             <div class="opcion-radio">
                                 <input type="radio" id="club-no" name="club_emprendedor" value="noinscripto"
-                                    placeholder="">
+                                    required {{ old('club_emprendedor') == 'noinscripto' ? 'checked' : '' }}>
                                 <h6>Quiero ser parte del club</h6>
                             </div>
 
 
-                            @error('subconjuntos')
+                            @error('club_emprendedor')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
                             <div class="parrafo">
@@ -413,23 +425,23 @@
 
                             <div class="opcion-radio">
                                 <input type="radio" id="formacion-primario" name="formacion" value="primario"
-                                    required>
+                                    required {{ old('formacion') == 'primario' ? 'checked' : '' }}>
                                 <h6>Primario completo</h6>
                             </div>
 
                             <div class="opcion-radio">
                                 <input type="radio" id="formacion-primario" name="formacion" value="secundario"
-                                    placeholder="">
+                                    required {{ old('formacion') == 'secundario' ? 'checked' : '' }}>
                                 <h6>Secundario completo</h6>
                             </div>
                             <div class="opcion-radio">
                                 <input type="radio" id="formacion-primario" name="formacion" value="terciario"
-                                    placeholder="">
+                                    required {{ old('formacion') == 'terciario' ? 'checked' : '' }}>
                                 <h6>terciario completo</h6>
                             </div>
                             <div class="opcion-radio">
                                 <input type="radio" id="formacion-primario" name="formacion" value="curso"
-                                    placeholder="">
+                                    required {{ old('formacion') == 'curso' ? 'checked' : '' }}>
                                 <h6>Curso/s completo/s</h6>
                             </div>
                             @error('formacion')
@@ -536,12 +548,14 @@
                         <div class="field-group  group-subconjuntos">
 
                             <div class="opcion-radio">
-                                <input type="radio" id="cud-true" name="cud" value="true" required>
+                                <input type="radio" id="cud-true" name="cud" value="true"
+                                    {{ old('cud') == 'true' ? 'checked' : '' }} required>
                                 <h6>poseo CUD</h6>
                             </div>
 
                             <div class="opcion-radio">
-                                <input type="radio" id="cud-false" name="cud" value="false" placeholder="">
+                                <input type="radio" id="cud-false" name="cud" value="false" placeholder=""
+                                    {{ old('cud') == 'false' ? 'checked' : '' }}required>
                                 <h6>No poseo CUD</h6>
                             </div>
                             <div class="opcion-radio">
@@ -563,13 +577,13 @@
 
                             <div class="opcion-radio">
                                 <input type="radio"id="dependencia-true" name="dependencia" value="true"
-                                    required>
+                                    {{ old('dependencia') == 'true' ? 'checked' : '' }} required>
                                 <h6>Si,en relacion de dependencia</h6>
                             </div>
 
                             <div class="opcion-radio">
                                 <input type="radio" id="dependencia-false" name="dependencia" value="false"
-                                    placeholder="">
+                                    placeholder="" {{ old('dependencia') == 'false' ? 'checked' : '' }}required>
                                 <h6>No, de forma independiente</h6>
                             </div>
                             <div class="opcion-radio">
@@ -616,17 +630,7 @@
 
                     </div>
 
-                    {{-- ✅ Mensaje de éxito --}}
-                    @if (session('success'))
-                        <div class="alert alert-success text-center mb-3">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                    @if (session('error'))
-                        <div class="alert alert-danger text-center mb-3">
-                            {{ session('error') }}
-                        </div>
-                    @endif
+
                 </form>
             </div>
         </div>

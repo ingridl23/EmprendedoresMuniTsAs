@@ -14,10 +14,10 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $nombre
- * @property $edad
  * @property $asunto
  * @property $email
  * @property $telefono
+ * @property $edad
  * @property $dni
  * @property $ciudad
  * @property $localidad
@@ -53,10 +53,10 @@ class Empleo extends Model
 
     protected $fillable = [
         'nombre',
-        'edad',
         'asunto',
         'email',
         'telefono',
+        'edad',
         'dni',
         'ciudad',
         'localidad',
@@ -71,19 +71,6 @@ class Empleo extends Model
         'cud',
         'dependencia',
         'cv_path',
+        'created_at'
     ];
-
-    //traer todos los desempleados sin filtrar directamente todos
-    /*  public static function showBuscadoresDeEmpleo()
-    {
-
-        $desempleados = self::all();
-        return $desempleados->isNotEmpty() ? $desempleados : null;
-    }
-
-    //traer los ultimos 50 desempleados anotados con la edad ingresada
-    public static function traerUltimosDesempleadosEdad($edad)
-    {
-        return self::where('edad', $edad)->latest()->limit(50)->get();
-    }*/
 }

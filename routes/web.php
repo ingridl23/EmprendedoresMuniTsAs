@@ -37,7 +37,7 @@ Route::get('/showlogin', [HomeController::class, 'showlogin'])->name("showlogin"
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
 
 //rutas del formulario de contacto
-Route::get('/formar/parte', [FormSerParteController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura
+Route::get('/formar/parte', [FormSerParteController::class, "formarparte"]); // redireccionamiento al formulario
 Route::post('/formulario/enviar', [FormSerParteController::class, 'enviar'])->name('formulario.enviar'); //ruta que envia  la regla post del formulario
 
 
