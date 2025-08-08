@@ -37,15 +37,13 @@
 
 
 <div class="field-group" id="imagenFormulario">
-    @if (isset($noticia->imagen))
-        <img src="{{ asset('storage/' . $noticia->imagen) }}" alt="Imagen de {{ $noticia->titulo }}"
-            class="imagenEmprendimientoFormulario">
-    @endif
     <input type="file" name="imagen" id="imagen">
     <label for="imagen">Imagen <span class="asterisco">*</span></label>
     @error('imagen')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
+    <div id="previousImagen" data-mostrar="{{isset($noticia->imagen) ? 'true' : 'false'}}" data-array="{{isset($noticia->imagen) ? json_encode($noticia->imagen) : 'false' }}">
+    </div>
     <p class="form-subtitulos">Cargue una imagen de la noticia</p>
 </div>
 

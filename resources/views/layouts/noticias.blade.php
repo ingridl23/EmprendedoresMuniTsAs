@@ -223,7 +223,7 @@
 
 
                 <div class="card mb-3">
-                    <img src="{{ asset('storage/' . $noticia->imagen) }}" class="card-img-top1"
+                    <img src="{{ $noticia->imagen }}" class="card-img-top1"
                         alt={{ $noticia->titulo }}>
                     <div class="card-body">
                         <h5 class="card-title">{{ $noticia->titulo }}</h5>
@@ -263,9 +263,25 @@
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
 
+     @if (session('success'))
+        <script>
+            window.mensajeExito = @json(session('success'));
+        </script>
+    @endif
+
+    @if(session('error'))
+        <script>
+            window.mensajeError = @json(session('error'));
+        </script>
+    @endif
+
     <!--Para cambio de color del navbar-->
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/buscarNoticias.js') }} "></script>
+    <script src="{{ asset('js/noticias/cartelesNoticias.js') }} "></script>
+
+    <!--Para alertas desde JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>

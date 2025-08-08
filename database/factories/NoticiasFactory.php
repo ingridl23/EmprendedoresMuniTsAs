@@ -32,6 +32,7 @@ class NoticiasFactory extends Factory
             ]),
             'descripcion'  => $this->faker->paragraph(),
             'imagen'       => $relative,
+            'imagen_public_id' => $this->faker->numerify('############'),
             'created_at'   => now(),
             'updated_at'   => now(),
         ];

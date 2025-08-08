@@ -315,16 +315,50 @@ class administradorController extends Controller
 
 
 
-    //Carga la noticia, con los datos enviados desde el formulario, en la BBDD
+    //Carga la noticia, con los datos enviados desde el formulario, con carteles ante los posibles casos de error o de confirmacion
     public function createNoticia(validacionNoticia $request)
     {
-        $imagen = $request->file("imagen");
-        $path = $imagen->store('img', 'public');
+        if ($request->hasFile('imagen')) {
+            try {
+                $imagen = $request->file('imagen');
+                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
+                    'folder' => 'noticias'  
+                ]);
+                $path=$uploadedFileUrl->getSecurePath();
+                $imagen_public_id =  $uploadedFileUrl->getPublicId();
+            }
+            catch (\Exception $e) {
+                $mensajes =[
+                    'titulo'=>'¡Error!',
+                    'detalle' =>'Ha sucedido un error al crear la noticia, intente nuevamente.'
+                ];
+                return redirect('/noticias')->with('error', $mensajes);
+            }
+        }
+        else{
+            $mensajes =[
+                    'titulo'=>'¡Error!',
+                    'detalle' =>'Ha sucedido un error en la carga de la imagen, intente nuevamente..'
+                ];
+                return redirect('/noticias')->with('error', $mensajes);
+        }
 
         $descripcion = nl2br($request->descripcion);
-
-        Noticias::createNoticia($request, $path);
-        return redirect('/noticias');
+        $creado = Noticias::createNoticia($request, $path, $imagen_public_id);
+        if($creado && $creado != null){
+            $mensajes =[
+                'titulo'=>'Creado!',
+                'detalle' =>'La noticia ha sido creada con éxito.'
+            ];
+            return redirect('/noticias')->with('success', $mensajes); 
+        }
+        else{
+            $mensajes =[
+                'titulo'=>'Error!',
+                'detalle' =>'Ha sucedido un error al crear la noticia, intente nuevamente.'
+            ];
+            return redirect('/noticias')->with('error', $mensajes); 
+        }
     }
 
 
@@ -340,19 +374,21 @@ class administradorController extends Controller
     {
         $noticia = Noticias::find($id);
         if ($noticia != null) {
-            
-            if ($request->file('imagen') != null) {
-                Storage::disk('public')->delete($noticia->imagen);
-                $imagen = $request->file("imagen");
-                $path = $imagen->store('img', 'public');
-                $noticia->imagen = $path;
-            }
 
+            if ($request->hasFile('imagen') != null) {
+                $imagen = $request->hasFile('imagen');
+                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
+                    'folder' => 'noticias'  
+                ]);
+                $noticia->imagen=$uploadedFileUrl->getSecurePath();
+                $noticia->imagen_public_id =  $uploadedFileUrl->getPublicId();
+            }
 
             $noticia->titulo = $request->input('titulo');
             $noticia->descripcion = $request->input('descripcion');
             $noticia->categoria = $request->input('categoria');
             Noticias::editNoticia($noticia);
+
 
             return redirect('/noticias');
         }
@@ -362,18 +398,42 @@ class administradorController extends Controller
 
     //eliminar noticia
 
-    protected function deleteNoticia($id)
-    {
+    protected function deleteNoticia($id){
         $noticia = Noticias::find($id);
         if ($noticia != null) {
             try {
-                Cloudinary::destroy($publicId);
-               
-            } catch (\Exception $e) {
-                return response()->json(['message' => 'Error al eliminar la imagen: ' . $e->getMessage()], 500);
+                Cloudinary::uploadApi()->destroy($noticia->imagen_public_id);   
             }
-            Noticias::deleteNoticia($noticia);
-            return redirect('/noticias')->with('success', '¡La noticia ha sido eliminada!');
+            catch (\Exception $e) {
+                $mensajes =[
+                    'titulo'=>'¡Error!',
+                    'detalle' =>'Ha sucedido un error al eliminar la imagen, intente nuevamente.'
+                ];
+                return redirect('/noticias')->with('error', $mensajes);
+            }
+            $eliminado= Noticias::deleteNoticia($noticia);
+            if($eliminado && $eliminado != null){
+                $mensajes =[
+                    'titulo'=>'¡Eliminado!',
+                    'detalle' =>'La noticia ha sido eliminada con éxito.'
+                ];
+                return redirect('/noticias')->with('success', $mensajes); 
+            }
+            else{
+                $mensajes =[
+                    'titulo'=>'Error!',
+                    'detalle' =>'Ha sucedido un error al eliminar el emprendimiento, intente nuevamente.'
+                ];
+                return redirect('/noticias')->with('error', $mensajes); 
+            }
+            
+        }
+        else{
+            $mensajes =[
+                    'titulo'=>'¡Error!',
+                    'detalle' =>'No se ha encontrado la noticia que se desea eliminar.'
+                ];
+                return redirect('/noticias')->with('error', $mensajes); 
         }
     }
 }

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Nuevo emprendimiento</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <title>Editar emprendimiento</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome -->
@@ -80,7 +81,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <form action="/noticias/{{ $noticia->id }}" method="POST" enctype="multipart/form-data"
-                    class="form">
+                    class="form" id="editarForm" data-id="{{$noticia->id}}>
                     @csrf
                     {{ method_field('PATCH') }}
                     @include('administradores.noticias.form')
@@ -101,6 +102,8 @@
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts3.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }}"></script>
+
+    <script src="{{ asset('js/noticias/envioImagenesNoticias.js') }}"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

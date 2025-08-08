@@ -1,8 +1,6 @@
 "use strict";
 
 if (window.mensajeExito) {
-    console.log(window.mensajeExito);
-    console.log(window.mensajeExito.titulo);
     Swal.fire({
         title: window.mensajeExito.titulo,
         text: window.mensajeExito.detalle,
