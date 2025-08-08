@@ -81,7 +81,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <form action="/noticias/{{ $noticia->id }}" method="POST" enctype="multipart/form-data"
-                    class="form" id="editarForm" data-id="{{$noticia->id}}>
+                    class="form" id="editarForm" data-id="{{$noticia->id}}">
                     @csrf
                     {{ method_field('PATCH') }}
                     @include('administradores.noticias.form')
@@ -104,6 +104,9 @@
     <script src="{{ asset('js/navbar.js') }}"></script>
 
     <script src="{{ asset('js/noticias/envioImagenesNoticias.js') }}"></script>
+
+        <!--Para las alertas en JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

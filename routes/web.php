@@ -13,6 +13,7 @@ use App\Http\Controllers\FormSerParteController;
 use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\ProgramasController;
 
+Route::post('/noticias/editarImgs/{id}', [administradorController::class, 'editarImgsNoticias']);
 
 Route::get('/noticias/buscadorTitulo', [noticiasController::class, 'filterNoticiasByTittle']); //Filtro para noticias por titulo
 Route::get('/noticias/buscadorCategoria', [noticiasController::class, 'filterNoticiasByCategory']); //Filtro para noticias por categoria
@@ -25,6 +26,7 @@ Route::get('/noticias/nuevaNoticia', [administradorController::class, "showFormC
 Route::get('/noticias/formEditarNoticia/{id}', [administradorController::class, "showFormEditNoticia"]); //Muestra formulario para editar los datos de una noticia
 Route::PATCH('/noticias/{id}', [administradorController::class, "EditNoticia"]); //Edita la noticia con los datos que llegan del formulario
 Route::DELETE('/noticias/{id}', [administradorController::class, "deleteNoticia"]); //Elimina la noticia segun el id único que tenga.
+
 
 //RUTAS LOGIN
 Route::post('/logout', [LoginController::class, 'logout']); //Cierra la sesión

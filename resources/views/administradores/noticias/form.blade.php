@@ -42,7 +42,7 @@
     @error('imagen')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
-    <div id="previousImagen" data-mostrar="{{isset($noticia->imagen) ? 'true' : 'false'}}" data-array="{{isset($noticia->imagen) ? json_encode($noticia->imagen) : 'false' }}">
+    <div id="previousImagen" data-mostrar="{{isset($noticia->imagen) ? 'true' : 'false'}}" data-array="{{isset($noticia->imagen) ? json_encode(['url' => $noticia->imagen, 'public_id' => $noticia->imagen_public_id]) : 'false' }}">
     </div>
     <p class="form-subtitulos">Cargue una imagen de la noticia</p>
 </div>

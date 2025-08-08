@@ -369,28 +369,53 @@ class administradorController extends Controller
         $noticia = Noticias::showNoticiasId($id);
         return view("administradores.noticias.formEditarNoticia", compact("noticia", "categorias"));
     }
+
+
+    //Obtener valor de adentro de $imagenRequest para poder comparar
+    protected function editarImgsNoticias($id, Request $request){
+        
+        /*$noticia = Noticias::find($id)*/;
+        $imagenRequest=$request->file("imagen");
+        if ($imagenRequest != null) {
+            return response()->json(['error' => $imagenRequest], 404);
+        }
+       
+        /*if($imagenRequest != "undefined"){
+            if(!in_array($noticia->imagen_public_id, $idsConservar)){
+                Cloudinary::uploadApi()->destroy($noticia->imagen_public_id);
+                $uploadedFileUrl = Cloudinary::upload($imagenRequest->getRealPath(), [
+                    'folder' => 'emprendedores'  
+                ]);
+                $noticiaEditImg = Noticias::editarImagen($noticia, $noticia->imagen, $noticia->imagen_public_id);
+            }
+        }*/
+        else{
+             $mensajes =[
+                    'titulo'=>'¡Error!',
+                    'detalle' =>'Se necesita tener una imagen para poder editar la noticia.'
+                ];
+                return response()->json(['error' => $imagenRequest], 400);
+        }
+        
+    }
+
     //editar noticia
     protected function editNoticia($id, validacionEditarNoticia $request)
     {
         $noticia = Noticias::find($id);
         if ($noticia != null) {
-
-            if ($request->hasFile('imagen') != null) {
-                $imagen = $request->hasFile('imagen');
-                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
-                    'folder' => 'noticias'  
-                ]);
-                $noticia->imagen=$uploadedFileUrl->getSecurePath();
-                $noticia->imagen_public_id =  $uploadedFileUrl->getPublicId();
-            }
-
             $noticia->titulo = $request->input('titulo');
             $noticia->descripcion = $request->input('descripcion');
             $noticia->categoria = $request->input('categoria');
             Noticias::editNoticia($noticia);
-
-
             return redirect('/noticias');
+        }
+        else{
+             $mensajes =[
+                    'titulo'=>'¡Error!',
+                    'detalle' =>'No se ha encontrado la noticia que se desea editar.'
+                ];
+                return redirect('/noticias')->with('error', $mensajes); 
         }
     }
 

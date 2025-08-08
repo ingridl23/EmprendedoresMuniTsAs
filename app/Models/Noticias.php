@@ -104,4 +104,15 @@ class Noticias extends Model
         $eliminado=$noticia->delete();
         return $eliminado;
     }
+
+    public static function editarImagen($noticia, $url, $imagen_public_id){
+        $noticia->imagen = $url;
+        $imagen->imagen_public_id = $imagen_public_id;
+        $noticiaEdit = $noticia->save();
+        /*$noticia = $noticia->update([
+            'imagen' => $url,
+            'imagen_public_id' => $imagen_public_id,
+        ]);*/
+        return $noticiaEdit;
+    }
 }

@@ -6,18 +6,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let contenedor = document.getElementById('previousImagen');
     let mostrarElems = contenedor.dataset.mostrar == 'true';
      let input = document.getElementById('imagen');
-    const MAX = 5;
+    const MAX = 1;
+    let dtCopia = new DataTransfer();
 
     let imagenesTotales = []; //Total de imgs (tanto backend como las que se cargan)
     const imagenesJSON = JSON.parse(contenedor.dataset.array || '[]'); // array de imágenes existentes desde el backend (editar emprendimiento)
-    console.log(imagenesJSON);
     if (mostrarElems) {
         imagenesTotales.push({
             tipo: 'precargada',
-            nombre: imagenesJSON.name,
             url: imagenesJSON.url,
             public_id: imagenesJSON.public_id,
-            id:imagenesJSON.id
         });
     }
 
@@ -28,24 +26,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
         e.preventDefault();
         let id=formEditar.dataset.id;
         let formData = new FormData();
-
-        imagenesTotales.forEach(img => {
-            console.log(img)
-            if(img.tipo == 'nuevo'){
-                console.log(img);
-                formData.append('imagenes[]', img.file); // archivos reales
-            }
-        });
-
-        formData.append('imagenes_conservar', JSON.stringify(imagenesTotales));
-        console.log(formData);
-
+       
+        input.files = dtCopia;
+        let file=imagenesTotales[0];
+        formData.append('imagen', file.file); // archivos reales
         //Sirve para visualizar en consola los datos guardados en formData
         for (let [key, value] of formData.entries()) {
             console.log(`${key}:`, value instanceof File ? value.name : value);
         }
+        console.log(id);
 
-        fetch(`/emprendedores/editarImgs/${id}`, {
+        fetch(`/noticias/editarImgs/${id}`, {
             method: 'post',
             body: formData,
             headers: {'X-CSRF-TOKEN': csrfToken},
@@ -98,19 +89,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
     function modificarVista(){
          contenedor.innerHTML="";
         const dt = new DataTransfer();
-       
-        imagenesTotales.forEach((file, index) =>{
-            const url = file.tipo === 'nuevo'
-                ? URL.createObjectURL(file.file)
-                : file.url;
-
+       let file=imagenesTotales[0];
+       if(file != undefined){
+            const url= file.tipo === 'nuevo' ? URL.createObjectURL(file.file) : file.url;
             let wrap = document.createElement("div");
             wrap.classList.add("position");
-            wrap.dataset.index = index;
+            wrap.dataset.index = 0;
 
             let img = document.createElement("img");
             img.src= url;
-            img.alt = file.name;
             img.classList.add("imgEmprendimiento");
 
             let boton = document.createElement("button");
@@ -123,7 +110,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             boton.appendChild(imgCierre);
 
             boton.addEventListener('click', () =>{
-               imagenesTotales.splice(index, 1);
+               imagenesTotales.splice(0, 1);
                 modificarVista();
             })
 
@@ -134,8 +121,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
             if (file.tipo === 'nuevo') {
                 dt.items.add(file.file);
             }
-            
-        });
+       }
         input.files = dt.files;
+        dtCopia=dt.files;
+            
     };
 })
