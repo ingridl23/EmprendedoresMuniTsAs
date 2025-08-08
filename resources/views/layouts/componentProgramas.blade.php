@@ -405,47 +405,147 @@
 
     </div>
 
-    <h2 class="subtitulo1" id="programasDeEmpleo">Programas De Empleo</h2>
-    <h4>Impulsamos la empleabilidad, la capacitación y la inserción laboral</h4>
-    <p class="text-clubs">Desde la Oficina de Empleo, articulamos con programas nacionales y municipales para
-        brindar oportunidades concretas de inserción laboral y formación profesional.</p>
 
-    <div class="contenedorListaProgramas">
-        <div class="programas row">
-            <h3 class="col">EPT – Entrenamiento para el Trabajo</h3>
-            <p class="text-clubs">Permite que las empresas entrenen aprendices en puestos reales, sin
-                establecer
-                relación
-                laboral formal,
-                compartiendo el costo de formación con el Estado.</p>
-            <ul>
-                <li> Dirigido a: Personas desocupadas mayores de 18 años</li>
-                <li> Beneficio: Posibilidad de contratación futura con incentivo económico (vía PIL)
-                </li>
-            </ul>
-        </div>
-        <div class="programas row">
-            <h3 class="col">PIL – Programa de Inserción Laboral</h3>
-            <p class="text-clubs">Promueve la contratación de personas con dificultades de empleabilidad
-                mediante un subsidio para las empresas
-                que cubre parte del salario del trabajador.</p>
-            <ul>
-                <li>Beneficio: Reducción de carga salarial para las empresas</li>
-                <li>Objetivo: Estimular la inserción laboral sostenida</li>
-            </ul>
-        </div>
-        <div class="programas row">
-            <h3 class="col">PROMOVER – Inclusión Laboral para Personas con Discapacidad</h3>
-            <p class="text-clubs">Brinda acompañamiento personalizado a personas con discapacidad para que
-                puedan
-                acceder a
-                empleos de calidad o desarrollar sus propios emprendimientos.</p>
-
-            <ul>
-                <li>Apoyo integral: Orientación, formación y vinculación con el mundo laboral</li>
-                <li>Enfoque: Autonomía, desarrollo y sostenibilidad</li>
-            </ul>
-        </div>
-    </div>
 </div>
+
+
+
+
+
+
+<!-- seccion programas nuevo -->
+<h2 class="subtitulo1" id="programasDeEmpleo">Programas De Empleo</h2>
+<h4>Impulsamos la empleabilidad, la capacitación y la inserción laboral</h4>
+<p class="text-clubs">Desde la Oficina de Empleo, articulamos con programas nacionales y municipales para
+    brindar oportunidades concretas de inserción laboral y formación profesional.</p>
+
+<h2 class="subtitulo1" id="programasDeEmpleo">EPT – Entrenamiento para el Trabajo</h2>
+<p class="text-clubs">Permite que las empresas entrenen aprendices en puestos reales, sin
+    establecer
+    relación
+    laboral formal,
+    compartiendo el costo de formación con el Estado.</p>
+
+
+<div class="detallesClub">
+    <div class="contenedorTituloDetalles">
+        <h3> Requisitos para empresas</h3>
+    </div>
+    <ul class="estiloLista">
+
+        <li> Brindar una cobertura de riesgos del trabajo y una cobertura de salud que garantice el Programa
+            Médico Obligatorio a los/as participantes. </li>
+        <li>Abonar parte de la ayuda económica que reciben los aprendices (excepto las microempresas).
+        </li>
+        <li>Brindar la infraestructura, equipamiento, insumos y herramientas.
+        </li>
+        <li>Informar a los participantes todos los derechos, obligaciones y requisitos derivados de su
+            participación en las acciones que componen el proyecto.
+        </li>
+        Garantizar a los participantes un contexto de aprendizaje libre de violencia de género y acoso.</li>
+
+        <li>
+            Pueden presentar proyectos todas las empresas y cooperativas cualquiera sea su tamaño y actividad,
+            siempre que no hayan realizado despidos masivos en los 6 meses anteriores a la presentación del
+            proyecto de entrenamiento, cumplan con las obligaciones de la Seguridad Social de sus empleados/as y
+            no tengan sanciones registradas en el REPSAL.
+        </li>
+
+
+
+    </ul>
+</div>
+
+<div class="detallesClub beneficiosDetallesClub">
+    <div class="contenedorTituloDetalles">
+        <h3 class="col">Trabajadores:</h3>
+    </div>
+    <ul class="estiloLista">
+        <li>Tener entre 18 y 24 años</li>
+        <li>Tener el secundario completo</li>
+        <li>No haber trabajado en relación de dependencia en los últimos 3 meses</li>
+        <li>Podrán inscribirse a través del Portal Empleo. Una vez registrados en el portal, deberán registrar
+            su historia laboral y, luego, postularse a una oferta de Entrenamiento para el Trabajo</li>
+    </ul>
+
+</div>
+<h2 class="subtitulo1" id="programasDeEmpleo">PIL – Programa de Inserción Laboral</h2>
+<p class="text-clubs">Promueve la contratación de personas con dificultades de empleabilidad
+    mediante un subsidio para las empresas
+    que cubre parte del salario del trabajador.</p>
+
+
+<div class="detallesClub">
+    <div class="contenedorTituloDetalles">
+        <h3 class="col">Beneficios </h3>
+    </div>
+    <ul class="estiloLista">
+        <li>Beneficio: Reducción de carga salarial para las empresas</li>
+        <li>Objetivo: Estimular la inserción laboral sostenida</li>
+    </ul>
+</div>
+
+
+
+
+<div class="detallesClub">
+    <div class="contenedorTituloDetalles">
+        <h3 class="col">Requisitos empresas <h3>
+    </div>
+    <ul class="estiloLista">
+        <li>Beneficio: Reducción de carga salarial para las empresas</li>
+        <li>Objetivo: Estimular la inserción laboral sostenida</li>
+    </ul>
+</div>
+
+
+<h2 class="subtitulo1" id="programasDeEmpleo">
+    PROMOVER – Inclusión Laboral para Personas con Discapacidad</h2>
+<p class="text-clubs">Brinda acompañamiento personalizado a personas con discapacidad para que
+    puedan
+    acceder a
+    empleos de calidad o desarrollar sus propios emprendimientos.</p>
+
+
+
+
+<div class="detallesClub">
+    <div class="contenedorTituloDetalles">
+        <h3 class="col">Beneficios </h3>
+    </div>
+    <ul class="estiloLista">
+        <li>Apoyo integral: Orientación, formación y vinculación con el mundo laboral</li>
+        <li>Enfoque: Autonomía, desarrollo y sostenibilidad</li>
+        <li> DURACION 12 MESES </li>
+
+    </ul>
+</div>
+
+
+<div class="detallesClub">
+    <div class="contenedorTituloDetalles">
+
+        <h3> Requisitos para empresas : </h3>
+    </div>
+
+
+    <ul class="estiloLista">
+        <li>No figurar en Registro Público de Empleadores con Sanciones Laborales (REPSAL)
+
+        </li>
+    </ul>
+
+</div>
+
+<div class="detallesClub">
+    <div class="contenedorTituloDetalles">
+
+        <h3 class="col"> Requisitos para trabajadores </h3>
+    </div>
+
+
+    <ul class="estiloLista">
+        <li>Trabajadores desocupados mayores de 18 años </li>
+
+    </ul>
 </div>

@@ -51,8 +51,8 @@
     <div class="container px-4 px-lg-5 tituloNuevoEmprendimiento">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
-                <h2 class="mt-0"> Descargar Información De Solicitanteso</h2>
-                <hr class="divider" />
+                <h2 class="mt-0"> Descargar Información De Solicitantes</h2>
+
                 <p class="text-muted mb-5">
 
                 </p>
@@ -70,32 +70,44 @@
         <div class="col-lg-6">
 
             <form method="GET" action="{{ route('empleos.export') }}">
-                <label for="ciudad">Ciudad:</label>
-                <input type="text" name="ciudad" id="ciudad" value="{{ request('ciudad') }}">
 
-                <label for="edad">Edad:</label>
-                <input type="number" name="edad" id="edad" value="{{ request('edad') }}">
+                <div class="field-group">
+                    <input type="text" name="ciudad" id="ciudad" value="{{ request('ciudad') }}">
+                    <label for="ciudad">Ciudad:</label>
+                </div>
 
-                <label for="created_at">Fecha de creación:</label>
-                <input type="date" name="created_at" id="created_at" value="{{ request('created_at') }}">
+                <div class="field-group">
+                    <input type="number" name="edad" id="edad" value="{{ request('edad') }}">
+                    <label for="edad">Edad:</label>
+                </div>
+
+                <div class="field-group">
+                    <input type="date" name="created_at" id="created_at" value="{{ request('created_at') }}">
+                    <label for="created_at">Fecha de creación:</label>
+                </div>
 
                 <label for="cud">Posee CUD:</label>
-                <select name="cud" id="cud">
-                    <option value="">-- Seleccionar --</option>
-                    <option value="1" {{ request('cud') === '1' ? 'selected' : '' }}>Sí</option>
-                    <option value="0" {{ request('cud') === '0' ? 'selected' : '' }}>No</option>
-                </select>
+                <div class="field-group">
+                    <select name="cud" id="cud">
+                        <option value="">-- Seleccionar --</option>
+                        <option value="1" {{ request('cud') === '1' ? 'selected' : '' }}>Sí</option>
+                        <option value="0" {{ request('cud') === '0' ? 'selected' : '' }}>No</option>
+                    </select>
+                </div>
 
-                <label for="dni">DNI:</label>
-                <input type="text" name="dni" id="dni" value="{{ request('dni') }}">
+                <div class="field-group">
+                    <input type="text" name="dni" id="dni" value="{{ request('dni') }}">
+                    <label for="dni">DNI:</label>
+                </div>
 
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" value="{{ request('nombre') }}">
-
+                <div class="field-group">
+                    <input type="text" name="nombre" id="nombre" value="{{ request('nombre') }}">
+                    <label for="nombre">Nombre:</label>
+                </div>
 
                 <div class=" d-grid  ">
                     <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
-                        <span class="btntext" value="Guardar datos"> Descargar Datos </span>
+                        <span class="btntext""> Descargar Datos </span>
 
                     </button>
                 </div>
