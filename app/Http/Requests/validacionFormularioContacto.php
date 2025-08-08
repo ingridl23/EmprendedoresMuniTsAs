@@ -33,8 +33,7 @@ class validacionFormularioContacto  extends FormRequest
             'asunto' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'tel' => 'nullable|numeric|digits_between:8,11',
-            'ciudad' => 'required',
-            'localidad' => 'required',
+            'description' => 'bail|required|string|min:20|max:300',
             'oculto' => 'nullable|string',
             'subconjuntos' => 'required',
 
@@ -42,19 +41,60 @@ class validacionFormularioContacto  extends FormRequest
         ];
 
         $subconjunto = $this->input('subconjuntos');
+        if ($subconjunto === 'empresa') {
 
+            $rules['nombre_empresa'] = 'bail|required|string|max:255';
+        }
+
+        if ($subconjunto === 'emprendedor') {
+
+            $rules['club_emprendedor'] = 'required';
+        }
+
+        if ($subconjunto === 'busqueda de empleo') {
+
+            $rules += [
+                'edad' => 'required|numeric|between:18,35',
+                'dni' => 'required|digits_between:6,8',
+                'ciudad' => 'bail|required|string|min:1|max:100',
+                "localidad" => "required|string",
+                'formacion' => 'required',
+                'referencia_laboral' => 'required|string',
+                'referencia_rubro' => 'required|string',
+                'referencia_actividad' => 'required|string',
+                'contratista' => 'required|string',
+                'referencia_telefonica' => 'required|numeric|digits_between:8,11',
+                'cud' => 'required|string',
+                'dependencia' => 'required|string',
+                'cv' => 'required|file|mimes:pdf|max:2048',
+            ];
+            // Si formación es "curso", se requiere nombre del curso
+            if ($this->input('formacion') === 'curso') {
+                $rules['nombre_curso'] = 'required|string';
+            }
+        }
+        return $rules;
+    }
+
+
+
+
+    //  $subconjunto = $this->input('subconjuntos');
+    /*
         // Comunes a todos menos "busqueda de empleo"
         if ($subconjunto === 'empresa' || $subconjunto === 'emprendedor') {
             $rules['description'] = 'required|string|min:20|max:300';
         }
-
-        // Si es búsqueda de empleo, se piden más campos
-        if ($subconjunto === 'busqueda de empleo') {
+*/
+    // Si es búsqueda de empleo, se piden más campos
+    /*     if ($subconjunto === 'busqueda de empleo') {
             $rules += [
-                'description' => 'required|string|min:20|max:300',
-                'cv' => 'required|file|mimes:pdf|max:2048',
                 'edad' => 'required|numeric|between:18,50',
                 'dni' => 'required|digits_between:6,8',
+                'ciudad' => 'required',
+                'localidad' => 'required',
+                'description' => 'required|string|min:20|max:300',
+                'cv' => 'required|file|mimes:pdf|max:2048',
                 'formacion' => 'required',
                 'referencia_laboral' => 'required|string',
                 'referencia_rubro' => 'required|string',
@@ -74,7 +114,7 @@ class validacionFormularioContacto  extends FormRequest
         return $rules;
     }
 
-
+*/
 
 
 
@@ -109,7 +149,7 @@ class validacionFormularioContacto  extends FormRequest
 
             'edad.required' => 'Debe indicar su edad.',
             'edad.numeric' => 'La edad debe ser un número.',
-            'edad.between' => 'La edad debe estar entre 10 y 15 años.',
+            'edad.between' => 'La edad debe estar entre 18 y 35 años.',
 
             'dni.required' => 'Debe ingresar su DNI.',
             'dni.numeric' => 'El DNI debe ser numérico.',
@@ -127,6 +167,7 @@ class validacionFormularioContacto  extends FormRequest
             'referencia_telefonica.digits_between' => 'Debe tener entre 8 y 11 dígitos.',
             'cud.required' => 'Debe completar el campo CUD.',
             'dependencia.required' => 'Debe completar el campo dependencia.',
+            'club_emprendedor.required' => 'Debe seleccionar una opcion.',
         ];
     }
 }
