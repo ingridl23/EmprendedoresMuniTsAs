@@ -74,6 +74,8 @@
                             </ul>
 
 
+
+
                             <!-- Botones de servicios externos -->
                             <div class="get-started-buttons d-flex align-items-center">
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
@@ -137,10 +139,17 @@
 
     @include('layouts.componentProgramas')
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     @include('emprendedor.footer')
 
-         <!--JQuery para el manejo de link internos en Programas-->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--JQuery para el manejo de link internos en Programas-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>

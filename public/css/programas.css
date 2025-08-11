@@ -11,10 +11,12 @@
     .programas {
         padding-top: 2rem;
         padding-bottom: 2rem;
+        margin: 1rem;
     }
     
     .titulo1 {
-        color: gray;
+        color: rgb(68, 68, 68);
+        padding-bottom: 2rem;
     }
     
     .subtitulo1 {
@@ -23,12 +25,23 @@
         font-size: 42px;
     }
     
-    h4{
+    .subtitulo2 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin-top: 4rem;
+    }
+    
+    h4 {
         text-align: center;
     }
-
+    
     .subtitulo {
         color: rgb(63, 60, 60);
+    }
+    
+    .subtitulo2 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     
     .text-clubs {
@@ -36,6 +49,9 @@
         font-size: larger;
         font-weight: normal;
         color: rgb(61, 61, 61);
+        text-align: center;
+        margin: 3rem;
+        margin-bottom: 3rem;
     }
     
     .programas ol>li {
@@ -45,12 +61,10 @@
     
     .container-programas .subtitulo,
     .container-programas .titulo1,
-    .conteiner-programas .text-clubs,
     .container-programas .programas ol,
     .container-programas .programas h4 {
         margin: 2rem;
     }
-
     /* Estilo para evitar que el carrousel se superponga */
     
     .carrousel {
@@ -60,12 +74,13 @@
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         max-width: 1000px;
-        margin: 2rem auto 3rem auto;
+        margin: 2rem 5rem 3rem auto;
     }
     
     .imagen-escuela {
         max-width: 685px;
-        margin: 0 auto;
+        margin-left: 25%;
+        margin-right: 50%;
         padding: 3rem;
     }
     
@@ -80,7 +95,6 @@
     .img-trabajo {
         justify-items: center;
     }
-
     /* Asegura que el portafolio comience separado visualmente */
     
     #portfolio {
@@ -88,42 +102,38 @@
         padding-bottom: 2rem;
         background-color: #f9f9f9;
     }
-
-    h2.subtituloProgramas{
-        text-align: center;
-        margin: 1.5rem;
-    }
-
-    #clubDeEmprendedores{
+    
+    #clubDeEmprendedores {
         margin-left: 2rem;
         padding: 0%;
     }
-    .container-programas h3.tituloClubEmprendedores{
+    
+    .container-programas h3.tituloClubEmprendedores {
         margin: 3rem 3rem 2rem 1rem;
     }
-
-    .detallesClub{
+    
+    .detallesClub {
         display: flex;
         padding-top: 2rem;
     }
-
-    .detallesClub ul{
-        list-style:circle;
+    
+    .detallesClub ul {
+        list-style: circle;
     }
-
-    .detallesClub ul li{
+    
+    .detallesClub ul li {
         padding: 0.2rem;
     }
-
-    div.contenedorTituloDetalles{
+    
+    div.contenedorTituloDetalles {
         display: flex;
     }
-
-    div.contenedorListaProgramas div.programas{
+    
+    div.contenedorListaProgramas div.programas {
         margin: 2rem 0rem;
     }
-
-    div.contenedorTituloDetalles h3{
+    
+    div.contenedorTituloDetalles h3 {
         width: 100%;
         text-transform: uppercase;
         text-align: center;
@@ -137,20 +147,19 @@
         color: rgb(228, 228, 228);
         padding: 0rem 1rem;
     }
-
-    h3 + p.text-clubs{
-            margin-top: 1rem;
-    margin-bottom: 2rem;
-
+    
+    h3+p.text-clubs {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
     /*Estilo diferentes ofertas de programas de empleo*/
-
-    .contenedorListaProgramas div.programas ul{
+    
+    .contenedorListaProgramas div.programas ul {
         padding-right: calc(var(--bs-gutter-x) * 0.5);
         padding-left: calc(var(--bs-gutter-x) * 0.5);
     }
-
-    .contenedorListaProgramas div.programas h3{
+    
+    .contenedorListaProgramas div.programas h3 {
         /*background-color: #0e776c;*/
         background-color: #2cc4b4;
         padding: 2rem 0.5rem;
@@ -161,8 +170,8 @@
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
     }
-
-    div.programas.row{
+    
+    div.programas.row {
         background-color: #f3f3f3;
         margin: 0rem 1rem;
         border: black solid 0.15rem;
@@ -171,36 +180,47 @@
         padding-bottom: 0;
         width: 100%;
     }
-
     /*Estilo programas*/
-    @media(min-width:1000px){
-         div.contenedorListaProgramas{
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-evenly;
-        position: relative;
+    
+    @media(min-width:1000px) {
+        div.contenedorListaProgramas {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            position: relative;
+        }
+        .contenedorListaProgramas div.programas {
+            display: inline-grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 1rem;
+        }
+        div.contenedorListaProgramas div.programas {
+            margin: 0rem 1rem;
+        }
+        .beneficiosDetallesClub {
+            flex-direction: row-reverse;
+        }
+        .detallesClub {
+            padding-top: 6rem;
+        }
+        div.contenedorTituloDetalles {
+            width: 40%;
+        }
+        .detallesClub {
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+            margin-bottom: 5rem !important;
+        }
     }
-
-    .contenedorListaProgramas div.programas{
-        display: inline-grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-gap: 1rem;
-    }
-
-    div.contenedorListaProgramas div.programas{
-        margin: 0rem 1rem;
-    }
-    }
-
-    div.programas p.text-clubs{
+    
+    div.programas p.text-clubs {
         margin: 0%;
         padding: 1rem;
     }
-   
-/*LISTAS*/
-
-    ul.estiloLista{
+    /*LISTAS*/
+    
+    ul.estiloLista {
         background-color: #e1e1e1;
         width: 60%;
         list-style: none;
@@ -209,324 +229,282 @@
         margin-bottom: 0;
         border-radius: 1rem;
     }
-
-    ul.estiloLista li{
+    
+    ul.estiloLista li {
         position: relative;
         padding-left: 1.5em;
         margin-bottom: 0.5em;
     }
-
-    div.beneficiosDetallesClub ul.estiloLista{
+    
+    div.beneficiosDetallesClub ul.estiloLista {
         margin-left: 0;
         margin-right: 1%;
     }
-    ul.estiloLista li::before{
+    
+    ul.estiloLista li::before {
         content: "";
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-left: 10px solid #066b7f; /* Flecha apuntando a la derecha */
-      margin-right: 5px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 10px solid #066b7f;
+        /* Flecha apuntando a la derecha */
+        margin-right: 5px;
     }
-
-    .detallesDesarrolloLista{
+    
+    .detallesDesarrolloLista {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
     }
-
-    .detallesDesarrolloLista li{
+    
+    .detallesDesarrolloLista li {
         margin: 0rem 1rem;
         height: -webkit-fill-available;
     }
-
-
-/******/
-
-.card-header-img img{
-    width: 15%;
-    height: auto;
-}
-
-.card-header-img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-    @media(max-width:900px){
-        .detallesClub{
+    /******/
+    
+    .card-header-img img {
+        width: 15%;
+        height: auto;
+    }
+    
+    .card-header-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    @media(max-width:1000px) {
+        .detallesClub {
             display: block;
         }
-        div.contenedorTituloDetalles{
+        div.contenedorTituloDetalles {
             display: block;
             margin: 2rem 0rem;
         }
-        div.contenedorTituloDetalles h3{
+        div.contenedorTituloDetalles h3 {
             display: block;
             padding: 1rem 0rem;
         }
-        ul.estiloLista{
+        ul.estiloLista {
             width: 100%;
         }
-        h2.subtitulo1, h3.subtitulo1{
+        h2.subtitulo1,
+        h3.subtitulo1 {
             padding: 0;
             font-size: 35px;
         }
-
-        .container-programas div.programas h4, .container-programas h3.tituloClubEmprendedores{
+        .container-programas div.programas h4,
+        .container-programas h3.tituloClubEmprendedores {
             margin: 1rem 0rem;
         }
-
-        #clubDeEmprendedores{
+        #clubDeEmprendedores {
             margin-left: 0;
         }
-    }
-
-    @media(min-width: 900px){
-        .beneficiosDetallesClub{
-            flex-direction: row-reverse;
+        section.page-section.text-white#SeccionFotosEmprendedores {
+            background-color: #2cc4b4;
         }
-        .detallesClub{
-            padding-top: 6rem ;
+        /*Estilo para el carrusel de links internos de los programas que se ofrecen*/
+        button.flechaIzquierda,
+        button.flechaDerecha {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 40px;
+            font-size: 1.5rem;
+            opacity: 0.7;
         }
-
-        div.contenedorTituloDetalles{
-            width: 40%;
+        button.flechaIzquierda {
+            left: 0;
         }
-    }
-
-    section.page-section.text-white#SeccionFotosEmprendedores{
-        background-color: #2cc4b4;
-    }
-
-    /*Estilo para el carrusel de links internos de los programas que se ofrecen*/
-   button.flechaIzquierda, button.flechaDerecha{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        width: 40px;
-        font-size: 1.5rem;
-        opacity: 0.7;
-   }
-
-    button.flechaIzquierda{
-        left: 0;
-    }
-   button.flechaDerecha{
-        right: 0%;
-   }
-    
-   .carousel-horizontal{
-        scroll-snap-type: x mandatory;
-        gap: 1rem;padding: 1rem 0;
-        scroll-behavior: smooth;
-   }
-
-   .item{
-        scroll-snap-align: center;
-       width: auto;
-        padding: 2rem;
-        background-color: #2cc4b4;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        border-radius: 10px;
-        transition: background-color 0.20s ease-in-out;
-   }
-
-    .item:hover{
-        background-color: #066b7f;
-   }
-   .item a{
-    color: #f3f3f3;
-   }
-
-
-    div.carouselLinks, div.carousel-links-item, div.carousel-links-inner{
-        display: flex;
-    }
-    div.carouselLinks{
-        position: relative;
-    }
-
-    div.carousel-links-inner{
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-    }
-
-
-    div.carousel-links-item{
-        position: relative;
-        float: left;
-        width: 100%;
-        backface-visibility: hidden;
-        transition: transform 0.6s ease-in-out;
-    }
-
-    div.carouselLinks .carousel-links-inner{
-        display: flex;
-    }
-
-    div.carouselLinks .carousel-links-item{
-        display: block;
-        margin-right: 0;
-        flex: 0 0 calc(95%/1);
-    }
-
-    div.carousel-links-item.visible{
-        display: block;
-    }
-
-    @media screen and (min-width:420px) {
-        div.carouselLinks .carousel-links-item{
-            flex: 0 0 calc(98%/2);
+        button.flechaDerecha {
+            right: 0%;
         }
-    }
-
-    @media screen and (min-width:650px) {
-        div.carouselLinks .carousel-links-item{
-            flex: 0 0 calc(98%/3);
+        .carousel-horizontal {
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding: 1rem 0;
+            scroll-behavior: smooth;
         }
-    }
-
-
-        @media screen and (min-width:1200px) {
-
-        div.carouselLinks .carousel-links-item{
-            flex: 0 0 calc(95%/4);
-        }
-
-         div.carouselLinks .carousel-links-inner{
+        .item {
+            scroll-snap-align: center;
+            width: auto;
+            padding: 2rem;
+            background-color: #2cc4b4;
+            display: flex;
+            align-items: center;
             justify-content: center;
+            font-size: 2rem;
+            border-radius: 10px;
+            transition: background-color 0.20s ease-in-out;
         }
-
-
-        a.control-prev, a.control-next{
-            display: none;
+        .item:hover {
+            background-color: #066b7f;
         }
-    }
-
-    div.carouselLinks .carousel-item{
-        margin-right: 0;
-       width: -webkit-fill-available;
-    }
-    div.carouselLinks .carousel-inner{
-        padding: 1em;
-        
-    }
-
-    div.carouselLinks .card{
-        margin: 0 .5em;
-        border-radius: 1rem;
-        box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, .18);
-        background-color: #2cc4b4;
-        transition: background-color 0.3s ease;
-    }
-
-    div.carouselLinks .card:hover{
-        background-color: #066b7f;
-    }
-
-    div.card-body h5.card-title{
-        color: #0b3f49;
-    }
-
-    div.card-body a{
-        color: #e1e1e1;
-        font-weight: 600;
-        font-size: 17px;
-    }
-    .control-prev, .control-next{
-        width: 6vh;
-        height: 6vh;
-        background-color: #e1e1e1;
-        border-radius: 50%;
-        opacity: .5;
-    }
-
-    .control-prev, .control-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5); /* semitransparente */
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        cursor: pointer;
-        z-index: 10;
-        transition: background-color 0.3s ease;
-    }
-
-    .control-prev:hover, .control-next:hover {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .control-prev{
-        left: 0.5rem;
-    }
-
-    .control-next {
-        right: 0.5rem;
-    }
-
-    .custom-carousel-control svg {
-        width: 1.5rem;
-        height: 1.5rem;
-        fill: white;
-    }
-    /*****************************asignacion de animaciones de scroll programas ************************************************************/
-    /******************** media query para movil *********************************/
-    
-    @media (max-width: 768px) {
-        .text-clubs,
-        .subtitulo,
-        .subtitulo1,
-        .titulo1,
-        h4 {
-            text-align: center;
-            margin: 1rem;
-            padding: 4px;
+        .item a {
+            color: #f3f3f3;
+        }
+        div.carouselLinks,
+        div.carousel-links-item,
+        div.carousel-links-inner {
+            display: flex;
+        }
+        div.carouselLinks {
+            position: relative;
+        }
+        div.carousel-links-inner {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        div.carousel-links-item {
+            position: relative;
+            float: left;
+            width: 100%;
+            backface-visibility: hidden;
+            transition: transform 0.6s ease-in-out;
+        }
+        div.carouselLinks .carousel-links-inner {
+            display: flex;
+        }
+        div.carouselLinks .carousel-links-item {
+            display: block;
+            margin-right: 0;
+            flex: 0 0 calc(95%/1);
+        }
+        div.carousel-links-item.visible {
+            display: block;
+        }
+        @media screen and (min-width:420px) {
+            div.carouselLinks .carousel-links-item {
+                flex: 0 0 calc(98%/2);
+            }
+        }
+        @media screen and (min-width:650px) {
+            div.carouselLinks .carousel-links-item {
+                flex: 0 0 calc(98%/3);
+            }
+        }
+        @media screen and (min-width:1200px) {
+            div.carouselLinks .carousel-links-item {
+                flex: 0 0 calc(95%/4);
+            }
+            div.carouselLinks .carousel-links-inner {
+                justify-content: center;
+            }
+            a.control-prev,
+            a.control-next {
+                display: none;
+            }
+        }
+        div.carouselLinks .carousel-item {
+            margin-right: 0;
+            width: -webkit-fill-available;
+        }
+        div.carouselLinks .carousel-inner {
+            padding: 1em;
+        }
+        div.carouselLinks .card {
+            margin: 0 .5em;
+            border-radius: 1rem;
+            box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, .18);
+            background-color: #2cc4b4;
+            transition: background-color 0.3s ease;
+        }
+        div.carouselLinks .card:hover {
+            background-color: #066b7f;
+        }
+        div.card-body h5.card-title {
+            color: #0b3f49;
+        }
+        div.card-body a {
+            color: #e1e1e1;
+            font-weight: 600;
+            font-size: 17px;
+        }
+        .control-prev,
+        .control-next {
+            width: 6vh;
+            height: 6vh;
+            background-color: #e1e1e1;
+            border-radius: 50%;
+            opacity: .5;
+        }
+        .control-prev,
+        .control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            /* semitransparente */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+        .control-prev:hover,
+        .control-next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .control-prev {
+            left: 0.5rem;
+        }
+        .control-next {
+            right: 0.5rem;
+        }
+        .custom-carousel-control svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: white;
+        }
+        /*****************************asignacion de animaciones de scroll programas ************************************************************/
+        /******************** media query para movil *********************************/
+        @media (max-width: 768px) {
+            .text-clubs,
+            .subtitulo,
+            .subtitulo1,
+            .titulo1,
+            h4 {
+                text-align: center;
+                margin: 1rem;
+                padding: 4px;
+            }
+            .carrousel img {
+                width: 100%;
+                height: 190px;
+                object-fit: cover;
+            }
+            .carrousel {
+                margin: 1rem auto;
+                max-width: 100%;
+                border-radius: 8px;
+            }
+            ul,
+            li {
+                text-align: left;
+                margin: 0;
+                padding: 5px;
+                margin-top: 1rem;
+            }
+            ol,
+            li {
+                text-align: left;
+                margin: 0;
+                padding: 3px;
+                margin-top: 1rem;
+            }
         }
         .imagen-escuela {
-            max-width: 395px;
-            max-height: 180px;
-            object-fit: cover;
-            border: 0;
-            padding: 2rem;
-            margin-bottom: 1rem;
-        }
-        .carrousel img {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-        }
-        .carrousel {
-            margin: 1rem auto;
-            max-width: 100%;
-            border-radius: 8px;
-        }
-        ul,
-        li {
-            text-align: left;
-            margin: 0;
-            padding: 5px;
-            margin-top: 1rem;
-        }
-        ol,
-        li {
-            text-align: left;
-            margin: 0;
-            padding: 3px;
-            margin-top: 1rem;
+            margin-left: 3%;
+            margin-right: 20%;
+            object-fit: contain;
         }
     }

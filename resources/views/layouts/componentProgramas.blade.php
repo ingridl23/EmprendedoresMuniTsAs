@@ -4,9 +4,9 @@
 
 <div class=" container-programas ">
 
-    <h1 class="text-center mt-0"> Conoce Los Programas Vigentes</h1>
+    <h1 class="text-center mt-0 titulo1"> Conoce Los Programas Vigentes</h1>
 
-    <h2 class="subtitulo1 subtituloProgramas">Programas Para Emprendedores</h2>
+
 
     <div id="carouselLinks" class="carouselLinks">
         <div class="carousel-links-inner">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-links-item">
+            <div class="carousel-links-item visible">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Programa 2</h5>
@@ -27,7 +27,7 @@
                 </div>
 
             </div>
-            <div class="carousel-links-item">
+            <div class="carousel-links-item visible">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Programa 3</h5>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-links-item">
+            <div class="carousel-links-item visible">
                 <div class="card w-100">
                     <div class="card-body">
                         <h5 class="card-title">Programa 4</h5>
@@ -56,16 +56,13 @@
     </div>
 
     <div class="programas">
-        <h3 class="subtitulo1 tituloClubEmprendedores">Club de Emprendedores</h3>
+        <h3 class="subtitulo1" id="clubDeEmprendedores">Club de Emprendedores</h3>
 
-        <p class="text-clubs" id="clubDeEmprendedores">
-            El Club de Emprendedores es una iniciativa de la Oficina de Empleo y Capacitación de Tres Arroyos que
-            funciona como un espacio de encuentro, acompañamiento y crecimiento para emprendedores y PyMEs locales.
-
-            Este club ofrece un ámbito físico de reuniones periódicas entre sus miembros, donde se generan vínculos
-            entre los distintos actores del ecosistema productivo local y se fomenta la conexión con instituciones
-            municipales, provinciales y nacionales.
-        </p>
+        <p class="text-clubs">El Club de Emprendedores es una iniciativa de la Oficina de Empleo y Capacitación de Tres
+            Arroyos que funciona como un espacio de encuentro, acompañamiento y crecimiento para emprendedores y PyMEs
+            locales. Este club ofrece un ámbito físico de reuniones periódicas entre sus miembros, donde se generan
+            vínculos entre los distintos actores del ecosistema productivo local y se fomenta la conexión con
+            instituciones municipales, provinciales y nacionales. </p>
 
         <!--seccioon carrousel club de  emprendedores -->
         <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
@@ -192,7 +189,7 @@
         <!-- Call to action-->
         <section class="page-section text-white" id="SeccionFotosEmprendedores">
             <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">¡Conocé a nuestros emprendedores que ya son parte!</h2>
+                <h2 class="mb-4">¡Conocé a los emprendedores que ya son parte!</h2>
                 <a class="btn btn-light btn-xl" href="{{ url('/emprendedores') }}">Ver Más</a>
             </div>
         </section>
@@ -209,9 +206,7 @@
 
     <div class="programas">
 
-        <!--<img class="img-fluid imagen-escuela"
-            src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
-            alt="Logo de Escuela de Emprendedores" />-->
+
 
         <img class="img-fluid imagen-escuela" id="escuelaDeEmprendedores"
             src="{{ asset('assets/img/iconos/logoescuelaemprendedores.png') }}"
@@ -283,7 +278,7 @@
 
         <ul class="detallesDesarrolloLista">
             <li>
-                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card border-dark mb-3" style="max-width: 18rem; margin-top: 3rem;">
                     <div class="card-header card-header-img"><img
                             src="{{ asset('assets/img/iconos/programas/persona.webp') }}" alt=""></div>
                     <div class="card-body text-dark">
@@ -414,12 +409,12 @@
 
 
 <!-- seccion programas nuevo -->
-<h2 class="subtitulo1" id="programasDeEmpleo">Programas De Empleo</h2>
+<h1 class="subtitulo1">Programas De Empleo</h1>
 <h4>Impulsamos la empleabilidad, la capacitación y la inserción laboral</h4>
 <p class="text-clubs">Desde la Oficina de Empleo, articulamos con programas nacionales y municipales para
     brindar oportunidades concretas de inserción laboral y formación profesional.</p>
 
-<h2 class="subtitulo1" id="programasDeEmpleo">EPT – Entrenamiento para el Trabajo</h2>
+<h2 class="subtitulo2" id="programasDeEmpleo">EPT – Entrenamiento para el Trabajo</h2>
 <p class="text-clubs">Permite que las empresas entrenen aprendices en puestos reales, sin
     establecer
     relación
@@ -429,7 +424,7 @@
 
 <div class="detallesClub">
     <div class="contenedorTituloDetalles">
-        <h3> Requisitos para empresas</h3>
+        <h3 class="col"> Requisitos para empresas </h3>
     </div>
     <ul class="estiloLista">
 
@@ -458,7 +453,7 @@
 
 <div class="detallesClub beneficiosDetallesClub">
     <div class="contenedorTituloDetalles">
-        <h3 class="col">Trabajadores:</h3>
+        <h3 class="col">Trabajadores</h3>
     </div>
     <ul class="estiloLista">
         <li>Tener entre 18 y 24 años</li>
@@ -469,7 +464,7 @@
     </ul>
 
 </div>
-<h2 class="subtitulo1" id="programasDeEmpleo">PIL – Programa de Inserción Laboral</h2>
+<h2 class="subtitulo2">PIL – Programa de Inserción Laboral</h2>
 <p class="text-clubs">Promueve la contratación de personas con dificultades de empleabilidad
     mediante un subsidio para las empresas
     que cubre parte del salario del trabajador.</p>
@@ -483,6 +478,10 @@
         <li>Beneficio: Reducción de carga salarial para las empresas</li>
         <li>Objetivo: Estimular la inserción laboral sostenida</li>
     </ul>
+
+
+
+
 </div>
 
 
@@ -490,7 +489,7 @@
 
 <div class="detallesClub">
     <div class="contenedorTituloDetalles">
-        <h3 class="col">Requisitos empresas <h3>
+        <h3 class="col">Requisitos para empresas </h3>
     </div>
     <ul class="estiloLista">
         <li>Beneficio: Reducción de carga salarial para las empresas</li>
@@ -499,7 +498,7 @@
 </div>
 
 
-<h2 class="subtitulo1" id="programasDeEmpleo">
+<h2 class="subtitulo2" id="programasDeEmpleo">
     PROMOVER – Inclusión Laboral para Personas con Discapacidad</h2>
 <p class="text-clubs">Brinda acompañamiento personalizado a personas con discapacidad para que
     puedan
@@ -525,7 +524,7 @@
 <div class="detallesClub">
     <div class="contenedorTituloDetalles">
 
-        <h3> Requisitos para empresas : </h3>
+        <h3> Requisitos para empresas</h3>
     </div>
 
 
