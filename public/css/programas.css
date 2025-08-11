@@ -5,13 +5,12 @@
     .container-programas {
         align-items: center;
         flex-wrap: wrap;
-        margin: 2rem;
     }
     
     .programas {
         padding-top: 2rem;
         padding-bottom: 2rem;
-        margin: 1rem;
+        margin: 2rem;
     }
     
     .titulo1 {
@@ -42,6 +41,7 @@
     .subtitulo2 {
         padding-top: 2rem;
         padding-bottom: 2rem;
+        text-align: center;
     }
     
     .text-clubs {

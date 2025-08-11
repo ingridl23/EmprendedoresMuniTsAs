@@ -278,7 +278,7 @@
 
         <ul class="detallesDesarrolloLista">
             <li>
-                <div class="card border-dark mb-3" style="max-width: 18rem; margin-top: 3rem;">
+                <div class="card border-dark mb-3" style="max-width:18rem; ">
                     <div class="card-header card-header-img"><img
                             src="{{ asset('assets/img/iconos/programas/persona.webp') }}" alt=""></div>
                     <div class="card-body text-dark">
