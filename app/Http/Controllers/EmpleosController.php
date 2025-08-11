@@ -125,26 +125,4 @@ class EmpleosController extends Controller
             return Excel::download(new EmpleosExport($empleos), 'solicitantes.xlsx');
         }
     }
-
-
-
-
-
-
-
-
-    /* public function export(Request $request)
-    {
-        try {
-            $filtros = $request->only(['ciudad', 'edad', 'created_at', 'cud', 'dni', 'nombre']);
-
-            return Excel::download(
-                new EmpleosExport($filtros),
-                'solicitantes.xlsx',
-                ExcelFormat::XLSX
-            );
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
-    }*/
 }
