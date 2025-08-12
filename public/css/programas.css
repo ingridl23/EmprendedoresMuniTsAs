@@ -28,6 +28,7 @@
         padding-top: 2rem;
         padding-bottom: 2rem;
         margin-top: 4rem;
+        text-align: center;
     }
     
     h4 {
@@ -36,12 +37,6 @@
     
     .subtitulo {
         color: rgb(63, 60, 60);
-    }
-    
-    .subtitulo2 {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        text-align: center;
     }
     
     .text-clubs {
@@ -74,7 +69,7 @@
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         max-width: 1000px;
-        margin: 2rem 5rem 3rem auto;
+        margin: 2rem auto 3rem auto;
     }
     
     .imagen-escuela {

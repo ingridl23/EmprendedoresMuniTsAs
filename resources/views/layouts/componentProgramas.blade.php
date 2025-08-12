@@ -2,7 +2,7 @@
     <link href="{{ asset('css/programas.css') }}" rel="stylesheet" />
 </head>
 
-<div class=" container-programas ">
+<div class="container-programas">
 
     <h1 class="text-center mt-0 titulo1"> Conoce Los Programas Vigentes</h1>
 
@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-links-item visible">
+            <div class="carousel-links-item visible ">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Programa 2</h5>
@@ -27,7 +27,7 @@
                 </div>
 
             </div>
-            <div class="carousel-links-item visible">
+            <div class="carousel-links-item visible ">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Programa 3</h5>
@@ -64,7 +64,7 @@
             vínculos entre los distintos actores del ecosistema productivo local y se fomenta la conexión con
             instituciones municipales, provinciales y nacionales. </p>
 
-        <!--seccioon carrousel club de  emprendedores -->
+        <!--seccion carrousel club de  emprendedores -->
         <div id="carouselExampleInterval" class="carousel slide carrousel" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="1000">
@@ -375,7 +375,7 @@
 
 
 
-        <!--seccioon carrousel ferias de emprendedores al aire libre -->
+        <!--seccion carrousel ferias de emprendedores al aire libre -->
         <div id="carouselFeriasEmprendedores" class="carousel slide carrousel" data-bs-ride="carousel">
             <div class="carousel-inner">
                 @for ($i = 1; $i <= count(scandir('assets/img/emprendedoresferiaadaptadas/')) - 2; $i++)

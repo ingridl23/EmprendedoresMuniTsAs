@@ -12,10 +12,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let currentIndex = 0;
 
+    /**pantalla de escritorio */
+
+    if (window.matchMedia("(min-width: 1200px)").matches) {
+        // Mostrar todas las cards lado a lado
+        let scrollPosition = 0;
+        items.forEach((itemFor) => {
+            itemFor.classList.remove("visible");
+        });
+    }
     /**
      * Pantalla más grande
      * Se muestran 3 cards al mismo tiempo entonces, faltaba la posibilidad de que, al tocar el botón de Next, muestre la última card con el link interno al programa
      */
+
     if (
         window.matchMedia("(min-width:650px) and (max-width: 1200px)").matches
     ) {
