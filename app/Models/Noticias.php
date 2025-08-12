@@ -64,12 +64,18 @@ class Noticias extends Model
             ->get();
     }
 
+    
     public static function obtenerNoticiasCategorias()
     {
         $categorias = Noticias::all()->groupBy("categoria");
         return $categorias;
     }
 
+     /**
+     * Obtiene las categorias cargadas 
+     * 
+     * @return Array, Categorias cargadas
+     */
     public static function obtenerCategorias()
     {
         return [
@@ -107,7 +113,7 @@ class Noticias extends Model
 
     public static function editarImagen($noticia, $url, $imagen_public_id){
         $noticia->imagen = $url;
-        $imagen->imagen_public_id = $imagen_public_id;
+        $noticia->imagen_public_id = $imagen_public_id;
         $noticiaEdit = $noticia->save();
         /*$noticia = $noticia->update([
             'imagen' => $url,

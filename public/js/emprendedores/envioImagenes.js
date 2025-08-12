@@ -30,33 +30,54 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let id=formEditar.dataset.id;
         let formData = new FormData();
 
-        imagenesTotales.forEach(img => {
-            console.log(img)
-            if(img.tipo == 'nuevo'){
-                console.log(img);
-                formData.append('imagenes[]', img.file); // archivos reales
+        if(imagenesTotales.length > 0){
+            imagenesTotales.forEach(img => {
+                console.log(img)
+                if(img.tipo == 'nuevo'){
+                    console.log(img);
+                    formData.append('imagenes[]', img.file); // archivos reales
+                }
+            });
+
+            formData.append('imagenes_conservar', JSON.stringify(imagenesTotales));
+            console.log(formData);
+
+            //Sirve para visualizar en consola los datos guardados en formData
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}:`, value instanceof File ? value.name : value);
             }
-        });
 
-        formData.append('imagenes_conservar', JSON.stringify(imagenesTotales));
-        console.log(formData);
-
-        //Sirve para visualizar en consola los datos guardados en formData
-        for (let [key, value] of formData.entries()) {
-            console.log(`${key}:`, value instanceof File ? value.name : value);
+            fetch(`/emprendedores/editarImgs/${id}`, {
+                method: 'post',
+                body: formData,
+                headers: {'X-CSRF-TOKEN': csrfToken},
+            })
+            .then(async (response) =>{
+                const data = await response.json();
+                if (!response.ok) {
+                    const redirectUrl = data.redirect 
+                        + '?status=' + encodeURIComponent(data.status) 
+                        + '&message=' + encodeURIComponent(JSON.stringify(data.message));
+                    window.location.href = redirectUrl;
+                    return;
+                }
+                return data;
+            })
+            .then((data) => {
+                    console.log(data);
+                    document.querySelector("#editarForm").submit();
+            })
+            .catch((error) => console.log(error));
         }
-
-        fetch(`/emprendedores/editarImgs/${id}`, {
-            method: 'post',
-            body: formData,
-            headers: {'X-CSRF-TOKEN': csrfToken},
-        })
-        .then((response) => response.json())
-        .then((data) => {
-                console.log(data);
-            //document.querySelector(".editarForm").submit();
-        })
-        .catch((error) => console.log(error));
+        else{
+            Swal.fire({
+                title: "Error",
+                text: "Se necesita tener cargado al menos una imagen del emprendimiento.",
+                icon: "error",
+                confirmButtonColor: "#36be7f",
+            });
+        }
+        
     })
 
     
@@ -68,7 +89,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const nuevosArchivos = Array.from(input.files);
         const espacioDisponible = MAX - imagenesTotales.length;
         if (espacioDisponible <= 0) {
-        alert(`Solo se permiten ${MAX} imágenes en total.`);
+             Swal.fire({
+                title: "Error",
+                text: `Solo se permiten ${MAX} imágenes en total.`,
+                icon: "error",
+                confirmButtonColor: "#36be7f",
+            });
         input.value = "";
         return;
         }

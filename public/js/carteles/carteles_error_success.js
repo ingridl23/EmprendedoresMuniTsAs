@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         });
     }
 
-    console.log(window.mensajeError);
+
     if (window.mensajeError) {
         Swal.fire({
             title: window.mensajeError.titulo,

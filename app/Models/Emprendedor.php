@@ -119,7 +119,8 @@ class Emprendedor extends Model
 
     public static function editarEmprendimiento($emprendimiento)
     {
-        $emprendimiento->save();
+        $emprendimientoEdit = $emprendimiento->save();
+        return $emprendimientoEdit;
     }
 
     public static function eliminarEmprendimiento($emprendimiento)

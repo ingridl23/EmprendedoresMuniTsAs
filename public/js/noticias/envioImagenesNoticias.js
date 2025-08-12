@@ -28,25 +28,45 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let formData = new FormData();
        
         input.files = dtCopia;
+
+        if(imagenesTotales.length > 0){
         let file=imagenesTotales[0];
         formData.append('imagen', file.file); // archivos reales
         //Sirve para visualizar en consola los datos guardados en formData
-        for (let [key, value] of formData.entries()) {
+        /*for (let [key, value] of formData.entries()) {
             console.log(`${key}:`, value instanceof File ? value.name : value);
-        }
-        console.log(id);
-
+        }*/
         fetch(`/noticias/editarImgs/${id}`, {
             method: 'post',
             body: formData,
             headers: {'X-CSRF-TOKEN': csrfToken},
         })
-        .then((response) => response.json())
+        .then(async (response) =>{
+            const data = await response.json();
+            if (!response.ok) {
+                const redirectUrl = data.redirect 
+                    + '?status=' + encodeURIComponent(data.status) 
+                    + '&message=' + encodeURIComponent(JSON.stringify(data.message));
+                window.location.href = redirectUrl;
+                return;
+            }
+            return data;
+        })
         .then((data) => {
                 console.log(data);
-            //document.querySelector(".editarForm").submit();
+                document.querySelector("#editarForm").submit();
         })
         .catch((error) => console.log(error));
+        }
+        else{
+            Swal.fire({
+                title: "Error",
+                text: "Se necesita tener cargado una imagen de la noticia.",
+                icon: "error",
+                confirmButtonColor: "#36be7f",
+            });
+        }
+        
     })
 
     

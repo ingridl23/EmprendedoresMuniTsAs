@@ -275,10 +275,12 @@
         </script>
     @endif
 
+    
+
     <!--Para cambio de color del navbar-->
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/buscarNoticias.js') }} "></script>
-    <script src="{{ asset('js/noticias/cartelesNoticias.js') }} "></script>
+    <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
 
     <!--Para alertas desde JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

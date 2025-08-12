@@ -111,6 +111,9 @@
     <script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
     <script src="{{ asset('js/emprendedores/formOptionClose.js') }} "></script>
         <script src="{{asset('js/emprendedores/previsualizacionImagenes.js')}}"></script>
+
+                <!--Para las alertas en JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 

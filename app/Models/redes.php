@@ -30,7 +30,8 @@ class Redes extends Model
         if(!strpos($redes->facebook, $cadena)){
              $redes->facebook = "https://facebook.com/{$redes->facebook}";
         }
-        $redes->save();
+        $redesEdit = $redes->save();
+        return $redesEdit;
     }
     public static function eliminarEmprendimiento($redes){
         $redes->delete();
