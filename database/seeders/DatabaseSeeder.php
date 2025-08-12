@@ -18,17 +18,17 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call([
             //RedesSeeder::class,
-            EmprendedorSeeder::class,
+            // EmprendedorSeeder::class,
 
         ]);
-        $this->call([
-            ImagenSeeder::class,
-        ]);
-        $this->call(ImagenSeeder::class);
-        $this->call(noticiaSeeder::class);
-        $this->call(RedesSeeder::class);
-        $this->call([
-            EmpleosSeeder::class,
-        ]);
+        //  $this->call([
+        //   ImagenSeeder::class,
+        // ]);
+        // $this->call(ImagenSeeder::class);
+        // $this->call(noticiaSeeder::class);
+        // $this->call(RedesSeeder::class);
+        // $this->call([
+        //EmpleosSeeder::class,
+        //]);
     }
 }
