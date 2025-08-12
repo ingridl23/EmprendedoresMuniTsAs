@@ -44,6 +44,7 @@ class direccion extends Model
 
     public static function eliminarEmprendimiento($direccion)
     {
-        $direccion->delete();
+        $direccionEliminar = $direccion->delete();
+        return $direccionEliminar;
     }
 }

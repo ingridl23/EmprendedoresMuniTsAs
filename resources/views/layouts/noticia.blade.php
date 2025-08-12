@@ -25,6 +25,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/noticiaIndividual.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 </head>
 
 
@@ -194,6 +195,10 @@
 
     </div>
 
+    <div class="contenedor_loader">
+       <div class="loader"></div>
+    </div>
+
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
 
@@ -207,6 +212,7 @@
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/carteles/cartelEliminar.js') }} "></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->

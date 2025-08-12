@@ -19,6 +19,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+     <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -34,7 +35,7 @@
 
 <body id="page-top">
 
-    @include('administradores.navBarAdmin')
+    @include('administradores.emprendedores.navBarAdmin')
 
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
@@ -84,7 +85,7 @@
                 <form method="POST" action="{{ route('form.crear') }}" enctype="multipart/form-data" class="form"
                     id="contactForm">
                     @csrf
-                    @include('administradores.form')
+                    @include('administradores.emprendedores.form')
                     <div class=" d-grid  ">
                         <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
                             <span class="btntext" value="Guardar datos"> Agregar emprendimiento </span>
@@ -100,7 +101,9 @@
     @include('layouts.panelAdmin')
     @include('emprendedor.footer')
 
-
+    <div class="contenedor_loader">
+        <div class="loader"></div>
+    </div>
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -110,7 +113,8 @@
     <script src="{{ asset('js/navbar.js') }}"></script>
     <script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
     <script src="{{ asset('js/emprendedores/formOptionClose.js') }} "></script>
-        <script src="{{asset('js/emprendedores/previsualizacionImagenes.js')}}"></script>
+    <script src="{{asset('js/emprendedores/previsualizacionImagenes.js')}}"></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
 
                 <!--Para las alertas en JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

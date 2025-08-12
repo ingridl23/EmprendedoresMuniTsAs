@@ -1,5 +1,5 @@
 "use strict";
-import { asignarCartel } from "./cartelEliminar.js";
+import { asignarCartel } from "../carteles/cartelEliminar.js";
 let admin = false;
 
 document.addEventListener("DOMContentLoaded", (e) => {
@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
-                    // document.getElementById("emprendedores-container").innerHTML += data
-                    // console.log(html);
                     showContent(data);
                 })
                 .catch((error) => console.log(error));

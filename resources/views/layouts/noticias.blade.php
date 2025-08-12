@@ -199,7 +199,7 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Fecha
+                Fecha de publicación
             </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -279,7 +279,7 @@
 
     <!--Para cambio de color del navbar-->
     <script src="{{ asset('js/navbar.js') }} "></script>
-    <script src="{{ asset('js/buscarNoticias.js') }} "></script>
+    <script src="{{ asset('js/noticias/buscarNoticias.js') }} "></script>
     <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
 
     <!--Para alertas desde JS-->

@@ -34,7 +34,8 @@ class Redes extends Model
         return $redesEdit;
     }
     public static function eliminarEmprendimiento($redes){
-        $redes->delete();
+        $redesEliminar = $redes->delete();
+        return $redesEliminar;
     }
     public static function crearRedes($instagram, $facebook, $whatsapp){
         if(isset($instagram)){

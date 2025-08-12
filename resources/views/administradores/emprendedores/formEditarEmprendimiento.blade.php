@@ -23,10 +23,11 @@
         <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 
         
     </head>
-    @include('administradores.navBarAdmin')
+    @include('administradores.emprendedores.navBarAdmin')
 
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
@@ -77,7 +78,7 @@
                     class="form" id="editarForm" data-id="{{$emprendimiento->id}}">
                     @csrf
                     {{ method_field('PATCH') }}
-                    @include('administradores.form')
+                    @include('administradores.emprendedores.form')
                     <div class=" d-grid  ">
                         <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
                             <span class="btntext" value="Guardar datos"> Editar emprendimiento </span>
@@ -90,7 +91,9 @@
     @include('layouts.panelAdmin')
     @include('emprendedor.footer')
 
-
+    <div class="contenedor_loader">
+       <div class="loader"></div>
+    </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -100,6 +103,7 @@
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
     <script src="{{asset('js/emprendedores/envioImagenes.js')}}"></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
 
             <!--Para las alertas en JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

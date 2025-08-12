@@ -24,6 +24,7 @@
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -345,7 +346,9 @@
 
 
 
-
+    <div class="contenedor_loader">
+       <div class="loader"></div>
+    </div>
 
 
     @include('emprendedor.footer')
@@ -357,11 +360,18 @@
     <!-- Core theme JS-->
 
 
-    @if (session('success'))
+     @if (session('success'))
         <script>
             window.mensajeExito = @json(session('success'));
         </script>
     @endif
+
+    @if(session('error'))
+        <script>
+            window.mensajeError = @json(session('error'));
+        </script>
+    @endif
+
 
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
@@ -370,6 +380,7 @@
     <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
     <script type="module" src="{{ asset('js/emprendedores/emprendedores.js') }}"></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
 
     <!--Para alertas desde JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

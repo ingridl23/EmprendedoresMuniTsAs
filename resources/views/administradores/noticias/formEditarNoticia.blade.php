@@ -19,6 +19,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -94,6 +95,9 @@
             </div>
         </div>
     </section>
+    <div class="contenedor_loader">
+        <div class="loader"></div>
+    </div>
     @include('emprendedor.footer')
 
     <script>
@@ -117,6 +121,7 @@
     <script src="{{ asset('js/scripts3.js') }} "></script>
     
     <script src="{{ asset('js/navbar.js') }}"></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
     <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
     <script src="{{ asset('js/noticias/envioImagenesNoticias.js') }}"></script>
 

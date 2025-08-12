@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let input = document.getElementById('imagenes');
     const MAX = 5;
     let dtCopia = new DataTransfer();
+    let contenedorLoader = document.querySelector(".contenedor_loader");
 
     let imagenesTotales = []; //Total de imgs (tanto backend como las que se cargan)
 
@@ -23,6 +24,10 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     }
 
+    document.querySelector(".form").addEventListener("submit", ()=>{
+         contenedorLoader.style.opacity = 1; 
+        contenedorLoader.style.visibility = 'visible'; 
+    })
 
     // Mostrar al iniciar
     modificarVista();
@@ -33,9 +38,14 @@ document.addEventListener("DOMContentLoaded", function(){
         const espacioDisponible = MAX - imagenesTotales.length;
         console.log(espacioDisponible);
         if (espacioDisponible <= 0) {
-        alert(`Solo se permiten ${MAX} imágenes en total.`);
-        input.files = dtCopia;
-        return;
+            Swal.fire({
+                title: "Error",
+                text: `Solo se permiten ${MAX} imágenes en total.`,
+                icon: "error",
+                confirmButtonColor: "#36be7f",
+            });
+            input.files = dtCopia;
+            return;
         }
         const archivosPermitidos = nuevosArchivos.slice(0, espacioDisponible);
         archivosPermitidos.forEach((file) => {

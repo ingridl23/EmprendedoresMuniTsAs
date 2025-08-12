@@ -125,7 +125,8 @@ class Emprendedor extends Model
 
     public static function eliminarEmprendimiento($emprendimiento)
     {
-        $emprendimiento->delete();
+        $emprendimientoEliminar = $emprendimiento->delete();
+        return $emprendimientoEliminar;
     }
 
 

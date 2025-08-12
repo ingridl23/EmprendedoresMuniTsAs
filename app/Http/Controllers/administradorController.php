@@ -85,7 +85,7 @@ class administradorController extends Controller
     public function showFormCrearEmprendimiento()
     {
         $categorias = Emprendedor::obtenerCategoriasEmprendedores();
-        return view('administradores.formNuevoEmprendimiento', compact('categorias'));
+        return view('administradores.emprendedores.formNuevoEmprendimiento', compact('categorias'));
     }
 
 
@@ -184,7 +184,7 @@ class administradorController extends Controller
                 $emprendimiento->redes->facebook = $this->obtenerRedes($emprendimiento->redes->facebook);
                 $categorias = Emprendedor::obtenerCategoriasEmprendedores();
                  $imagenes = imagenes::find($emprendimiento->id);
-                return view("administradores.formEditarEmprendimiento", compact('emprendimiento', 'categorias', 'imagenes'));
+                return view("administradores.emprendedores.formEditarEmprendimiento", compact('emprendimiento', 'categorias', 'imagenes'));
             }
         };
 
@@ -602,7 +602,7 @@ class administradorController extends Controller
             }
             else{
                 $mensajes =[
-                    'titulo'=>'Error!',
+                    'titulo'=>'¡Error!',
                     'detalle' =>'Ha sucedido un error al eliminar el emprendimiento, intente nuevamente.'
                 ];
                 return redirect('/noticias')->with('error', $mensajes); 

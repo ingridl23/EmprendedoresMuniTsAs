@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
     let contenedor = document.getElementById('previousImagen');
     let mostrarElems = contenedor.dataset.mostrar == 'true';
-     let input = document.getElementById('imagenes');
+    let input = document.getElementById('imagenes');
     const MAX = 5;
+    let dtCopia = new DataTransfer();
+    let contenedorLoader = document.querySelector(".contenedor_loader");
 
     let imagenesTotales = []; //Total de imgs (tanto backend como las que se cargan)
     const imagenesJSON = JSON.parse(contenedor.dataset.array || '[]'); // array de imágenes existentes desde el backend (editar emprendimiento)
@@ -22,7 +24,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         });
     }
 
-
+    document.querySelector(".form").addEventListener("submit", ()=>{
+        contenedorLoader.style.opacity = 1; 
+        contenedorLoader.style.visibility = 'visible'; 
+    })
 
     
     formEditar.addEventListener('submit', (e)=>{
@@ -32,9 +37,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
         if(imagenesTotales.length > 0){
             imagenesTotales.forEach(img => {
-                console.log(img)
                 if(img.tipo == 'nuevo'){
-                    console.log(img);
                     formData.append('imagenes[]', img.file); // archivos reales
                 }
             });
@@ -95,7 +98,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 icon: "error",
                 confirmButtonColor: "#36be7f",
             });
-        input.value = "";
+        input.value = dtCopia;
+        console.log(dtCopia);
+        
         return;
         }
         const archivosPermitidos = nuevosArchivos.slice(0, espacioDisponible);
@@ -108,7 +113,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         });
         });
 
-        input.value = "";
         modificarVista();
     });
 
@@ -156,5 +160,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
             
         });
         input.files = dt.files;
+        dtCopia=dt.files;
     };
 })

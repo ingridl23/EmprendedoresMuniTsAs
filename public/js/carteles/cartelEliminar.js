@@ -1,7 +1,8 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", ()=>{
+
     asignarCartel();
+    let contenedorLoader = document.querySelector(".contenedor_loader");
 
     function asignarCartel() {
         let formularios = document.querySelectorAll(".formEliminar");
@@ -19,12 +20,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
                     confirmButtonText: "Si, eliminar",
                 }).then((result) => {
                     if (result.isConfirmed) {
+                        contenedorLoader.style.opacity = 1; 
+                        contenedorLoader.style.visibility = 'visible'; 
                         formulario.submit();
                     }
                 });
             });
         });
     }
-})
 
 
+export { asignarCartel };
