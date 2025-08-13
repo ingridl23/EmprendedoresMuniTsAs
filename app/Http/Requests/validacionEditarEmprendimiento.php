@@ -15,17 +15,17 @@ class validacionEditarEmprendimiento extends validacionEmprendimiento
     public function rules()
     {
         return [
-            'nombre'=>'bail|required|string|min:1|max:100',
-            'descripcion'=>'bail|required|string|min:1',
-            'categoria'=>'bail|required|string|min:1|max:60',
-            'imagen'=>'image|mimes:jpeg,jpg,png',
-            'facebook'=>'nullable|string|min:1|max:100',
-            'instagram'=>'nullable|string|min:1|max:100',
-            'whatsapp'=>'integer|digits_between:8,11|min:1',
-            'ciudad'=>'bail|required|string|min:1|max:100',
-            'localidad'=>'bail|required|string',
-            'calle'=>'bail|required|string|min:1|max:100',
-            'altura'=>'required|integer|min:1',
+            'nombre' => 'bail|required|string|min:1|max:100',
+            'descripcion' => 'bail|required|string|min:1',
+            'categoria' => 'bail|required|string|min:1|max:60',
+            'imagen' => 'image|mimes:jpeg,jpg,png',
+            'facebook' => 'nullable|string|min:1|max:100',
+            'instagram' => 'nullable|string|min:1|max:100',
+            'whatsapp' => 'integer|digits_between:8,11|min:1',
+            'ciudad' => 'bail|required|string|min:1|max:100',
+            'localidad' => 'bail|required|string',
+            'calle' => 'bail|required|string|min:1|max:100',
+            'altura' => 'required|integer|min:1',
         ];
     }
 }

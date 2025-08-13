@@ -1,6 +1,6 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     /*MANEJO DE CARRUSEL DE LINKS INTERNOS*/
 
     const carousel = document.querySelector(".carouselLinks");
@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /**pantalla de escritorio */
 
-    if (window.matchMedia("(min-width: 1200px)").matches) {
+    if (
+        window.matchMedia("(min-width:1200px) and (max-width: 5000px)").matches
+    ) {
         // Mostrar todas las cards lado a lado
         let scrollPosition = 0;
         items.forEach((itemFor) => {
@@ -41,12 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
             let cardWith = item.clientWidth; /*211px*/
             scrollPosition = scrollPosition + cardWith;
             if (scrollPosition == cardWith) {
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPosition },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPosition },
                     600
                 );
             } else {
                 scrollPosition = 0;
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPosition },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPosition },
                     600
                 );
             }
@@ -59,11 +63,13 @@ document.addEventListener("DOMContentLoaded", function() {
             scrollPosition = scrollPosition - cardWith;
             if (scrollPosition < 0) {
                 scrollPosition = cardWith;
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPosition },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPosition },
                     600
                 );
             } else {
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPosition },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPosition },
                     600
                 );
             }
@@ -88,12 +94,14 @@ document.addEventListener("DOMContentLoaded", function() {
             let cardWith = item.clientWidth;
             scrollPositionGrande = scrollPositionGrande + cardWith;
             if (scrollPositionGrande <= cardWith * 2) {
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPositionGrande },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPositionGrande },
                     600
                 );
             } else {
                 scrollPositionGrande = 0;
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPositionGrande },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPositionGrande },
                     600
                 );
             }
@@ -106,11 +114,13 @@ document.addEventListener("DOMContentLoaded", function() {
             scrollPositionGrande = scrollPositionGrande - cardWith;
             if (scrollPositionGrande < 0) {
                 scrollPositionGrande = cardWith * 2;
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPositionGrande },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPositionGrande },
                     600
                 );
             } else {
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPositionGrande },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPositionGrande },
                     600
                 );
             }
@@ -135,12 +145,14 @@ document.addEventListener("DOMContentLoaded", function() {
             let cardWith = item.clientWidth;
             scrollPositionChico = scrollPositionChico + cardWith;
             if (scrollPositionChico <= cardWith * 3) {
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPositionChico },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPositionChico },
                     600
                 );
             } else {
                 scrollPositionChico = 0;
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPositionChico },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPositionChico },
                     600
                 );
             }
@@ -153,11 +165,13 @@ document.addEventListener("DOMContentLoaded", function() {
             scrollPositionChico = scrollPositionChico - cardWith;
             if (scrollPositionChico < 0) {
                 scrollPositionChico = cardWith * 3;
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPositionChico },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPositionChico },
                     600
                 );
             } else {
-                $(".carousel-links-inner").animate({ scrollLeft: scrollPositionChico },
+                $(".carousel-links-inner").animate(
+                    { scrollLeft: scrollPositionChico },
                     600
                 );
             }
