@@ -3,7 +3,14 @@
 ![Texto alternativo](\EmprendedoresMuniTsAs\public\assets\img\iconos\logo-muni-azul-claro-removebg-preview.png)
 
 ## Tabla de contenidos
-[Objetivo](#Objetivo)
+- [Objetivo](#objetivo)
+-   [Tecnologías utilizadas](#tecnologias-utilizadas)
+-   [Requisitos previos](#requisitos-previos)
+-   [Instalación y ejecución](#instalacion-y-ejecucion)
+-   [Estructura general](#estructura-general)
+-   [Rutas](#rutas)
+-   [Créditos](#creditos)
+
 
 ## 📌 Objetivo
 
@@ -104,7 +111,7 @@ php artisan serve
 └── README.md
 ```
 
-### Dimensión determinada de las imagenes
+## Dimensión determinada de las imagenes
 
 Cada imagen tendrá como máximo de ancho : 1920px y de alto:1080px.
 Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muestra de estas en la vista.
