@@ -105,7 +105,7 @@ php artisan serve
 ```
 ### Estructura de la base de datos
 
-![Diagrama de base de datos](URL-de-la-imagen)
+![Diagrama de base de datos](./docs/sitioOficinaEMpleo.png)
 
 ## Dimensión determinada de las imagenes
 
