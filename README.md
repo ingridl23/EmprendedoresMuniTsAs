@@ -3,13 +3,12 @@
 ![Texto alternativo](\EmprendedoresMuniTsAs\public\assets\img\iconos\logo-muni-azul-claro-removebg-preview.png)
 
 ## Tabla de contenidos
-- [Objetivo](#objetivo)
--   [Tecnologías utilizadas](#tecnologias-utilizadas)
--   [Requisitos previos](#requisitos-previos)
--   [Instalación y ejecución](#instalacion-y-ejecucion)
+-   [Objetivo](#objetivo)
+-   [Tecnologías utilizadas](#tecnologías-utilizadas)
+-   [Instalación y ejecución](#instalación-y-ejecución)
 -   [Estructura general](#estructura-general)
 -   [Rutas](#rutas)
--   [Créditos](#creditos)
+-   [Créditos](#créditos)
 
 
 ## 📌 Objetivo
