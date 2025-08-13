@@ -451,7 +451,7 @@
 
 <div class="detallesClub beneficiosDetallesClub">
     <div class="contenedorTituloDetalles">
-        <h3 class="col">Trabajadores</h3>
+        <h3 class="col">Requisitos para trabajadores</h3>
     </div>
     <ul class="estiloLista">
         <li>Tener entre 18 y 24 años</li>
@@ -485,7 +485,7 @@
 
 
 
-<div class="detallesClub">
+<div class="detallesClub  beneficiosDetallesClub">
     <div class="contenedorTituloDetalles">
         <h3 class="col">Requisitos para empresas </h3>
     </div>
@@ -519,7 +519,7 @@
 </div>
 
 
-<div class="detallesClub">
+<div class="detallesClub  beneficiosDetallesClub">
     <div class="contenedorTituloDetalles">
 
         <h3> Requisitos para empresas</h3>
