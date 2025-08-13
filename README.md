@@ -3,10 +3,10 @@
 ![Texto alternativo](\EmprendedoresMuniTsAs\public\assets\img\iconos\logo-muni-azul-claro-removebg-preview.png)
 
 ## Tabla de contenidos
--   [Objetivo](#objetivo)
--   [Tecnologías utilizadas](#tecnologías-utilizadas)
+-   [Objetivo](#📌-objetivo)
+-   [Tecnologías utilizadas](#🧰-tecnologías-utilizadas)
 -   [Instalación y ejecución](#instalación-y-ejecución)
--   [Estructura general](#estructura-general)
+-   [Estructura general](#📂-estructura-general)
 -   [Rutas](#rutas)
 -   [Créditos](#créditos)
 
@@ -230,7 +230,7 @@ Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muest
 |        | GET|HEAD | solicitantes                                |                   | App\Http\Controllers\EmpleosController@showForm                           | web                                                          |
 +--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+--------------------------------------------------------------+
 ```
-## 📚 Créditos
+## Créditos
 
 ### Desarrollado por:
 
