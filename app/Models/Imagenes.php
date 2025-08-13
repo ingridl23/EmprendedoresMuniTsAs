@@ -35,8 +35,9 @@ class Imagenes extends Model
     use HasFactory;
 
     protected $fillable = [
-        'img_id',
+        'id',
         'url',
+        'public_id',
         'emprendedor_id',
 
 
@@ -49,5 +50,19 @@ class Imagenes extends Model
         return $this->belongsTo(Emprendedor::class, 'emprendedor_id');
     }
 
+
+    public static function find($id_emprendedor){
+        $imagenes=Imagenes::where("emprendedor_id", $id_emprendedor)->get();
+        return $imagenes;
+    }
+
+        public static function buscar($id_emprendedor){
+        $imagenes=Imagenes::where("emprendedor_id", $id_emprendedor)->get();
+        return $imagenes;
+    }
+
+    public static function eliminarImagen(Imagenes $imagen){
+        $imagen->delete();
+    }
 
 }

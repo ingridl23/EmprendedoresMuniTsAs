@@ -35,7 +35,8 @@ class Noticias extends Model
         'titulo',
         'descripcion',
         'categoria',
-        'imagen'
+        'imagen',
+        'imagen_public_id'
     ];
 
 
@@ -63,12 +64,18 @@ class Noticias extends Model
             ->get();
     }
 
+    
     public static function obtenerNoticiasCategorias()
     {
         $categorias = Noticias::all()->groupBy("categoria");
         return $categorias;
     }
 
+     /**
+     * Obtiene las categorias cargadas 
+     * 
+     * @return Array, Categorias cargadas
+     */
     public static function obtenerCategorias()
     {
         return [
@@ -79,17 +86,18 @@ class Noticias extends Model
     }
 
 
-    public static function createNoticia($request, $path)
+    public static function createNoticia($request, $path, $imagen_public_id)
     {
-
         $noticia = Noticias::create([
             'titulo' => $request->titulo,
             'categoria' => Str::ucfirst($request->categoria),
             'descripcion' => Str::ucfirst($request->descripcion),
             'imagen' => $path,
+            'imagen_public_id' => $imagen_public_id,
             'created_at' => date('m-d-Y G:i:s'),
             'updated_at' => date('m-d-Y G:i:s'),
         ]);
+        return $noticia;
     }
 
     public static function editNoticia($noticia)
@@ -99,6 +107,18 @@ class Noticias extends Model
 
     public static function deleteNoticia($noticia)
     {
-        $noticia->delete();
+        $eliminado=$noticia->delete();
+        return $eliminado;
+    }
+
+    public static function editarImagen($noticia, $url, $imagen_public_id){
+        $noticia->imagen = $url;
+        $noticia->imagen_public_id = $imagen_public_id;
+        $noticiaEdit = $noticia->save();
+        /*$noticia = $noticia->update([
+            'imagen' => $url,
+            'imagen_public_id' => $imagen_public_id,
+        ]);*/
+        return $noticiaEdit;
     }
 }

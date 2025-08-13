@@ -1,5 +1,5 @@
 "use strict";
-import { asignarCartel } from "./cartelEliminar.js";
+import { asignarCartel } from "../carteles/cartelEliminar.js";
 let admin = false;
 
 document.addEventListener("DOMContentLoaded", (e) => {
@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
-                    // document.getElementById("emprendedores-container").innerHTML += data
-                    // console.log(html);
                     showContent(data);
                 })
                 .catch((error) => console.log(error));
@@ -95,8 +93,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
             let card = document.createElement("div");
             card.className = "card";
             let url="";
+            console.log(emprendimiento);
             if (emprendimiento.imagenes && emprendimiento.imagenes.length > 0) {
-                url = "storage/" + emprendimiento.imagenes[0].url;
+                url = emprendimiento.imagenes[0].url;
                 // usar `url` en tu HTML
             } else {
                 // Mostrar imagen por defecto si no hay ninguna

@@ -136,24 +136,28 @@
     </div>
     <!--- ------------->
 
+    <header class="masthead headerNoticias">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold subtitulo-page">Noticias y Novedades</h1>
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 ">
+                       Enterate de las últimas novedades de la Oficina de Empleo y Capacitación de Tres Arroyos. 
+                       En esta sección publicamos noticias sobre eventos, ferias, capacitaciones, charlas y también oportunidades laborales disponibles en la ciudad.
+                        </p>
 
-
-
-    <div class="container-subtitulo-page">
-
-        <h1 class="subtitulo-page">Noticias</h1>
-    </div>
-
-
+                    <p class="text-white-75 ">
+                        Un espacio para mantenerte informado y aprovechar todo lo que tenemos para ofrecerte como emprendedor o buscador de empleo.
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <div class="page-top-news">
-        <section aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li><a class="breadcrumb-item" href="#">Bolsa de Empleo <span>/</span></a></li>
-                <li> <a class="breadcrumb-item " href="#">Eventos</a></li>
-            </ol>
-        </section>
-
         @if (Auth::check() && Auth::user()->hasRole('admin'))
             <div class="search">
                 <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
@@ -164,7 +168,7 @@
 
     </div>
 
-    <h3 class="tituloFiltroNoticias">Filtrar noticias según:</h3>
+    <h3 class="tituloFiltroNoticias subtitulo-page">Filtrar noticias según:</h3>
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
@@ -195,7 +199,7 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Fecha
+                Fecha de publicación
             </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -219,7 +223,7 @@
 
 
                 <div class="card mb-3">
-                    <img src="{{ asset('storage/' . $noticia->imagen) }}" class="card-img-top1"
+                    <img src="{{ $noticia->imagen }}" class="card-img-top1"
                         alt={{ $noticia->titulo }}>
                     <div class="card-body">
                         <h5 class="card-title">{{ $noticia->titulo }}</h5>
@@ -259,9 +263,27 @@
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
 
+     @if (session('success'))
+        <script>
+            window.mensajeExito = @json(session('success'));
+        </script>
+    @endif
+
+    @if(session('error'))
+        <script>
+            window.mensajeError = @json(session('error'));
+        </script>
+    @endif
+
+    
+
     <!--Para cambio de color del navbar-->
     <script src="{{ asset('js/navbar.js') }} "></script>
-    <script src="{{ asset('js/buscarNoticias.js') }} "></script>
+    <script src="{{ asset('js/noticias/buscarNoticias.js') }} "></script>
+    <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
+
+    <!--Para alertas desde JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>

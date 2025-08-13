@@ -27,7 +27,7 @@ class EmprendedorController extends Controller
     public function filterEmprendimientosByName(Request $request)
     {
         $busqueda = $request->query('busqueda');
-        $emprendimientos = Emprendedor::with('redes')
+        $emprendimientos = Emprendedor::with(['redes', 'imagenes'])
             ->where('nombre', 'LIKE', '%' . $busqueda . '%')
             // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
             ->get();

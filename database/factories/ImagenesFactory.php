@@ -22,6 +22,7 @@ class ImagenesFactory extends Factory
 
         return [
             'url' => 'imagenes/' . $path,
+            'public_id' =>$this->faker->numerify('##########'),
             'emprendedor_id' => Emprendedor::factory(),
         ];
     }

@@ -17,14 +17,11 @@
 <label for="descripcion">Seleccionar Categoria<span class="asterisco">*</span></label>
 <div class="field-group">
 
-
     <select name="categoria" class="categoria" required>
-
-
-        @foreach ($categorias as $categoria)
-            <option class="opcionesCategoria" value="{{ $categoria }}"
-                {{ (isset($emprendimiento) && $emprendimiento->categoria == $categoria) || old('categoria') == $categoria ? 'selected' : '' }}>
-                {{ $categoria }}</option>
+        @foreach ($categorias as $item)
+            <option class="opcionesCategoria" value="{{ $item['categoria'] }}"
+                {{ (isset($emprendimiento) && $emprendimiento->categoria == $item['categoria']) || old('categoria') == $item['categoria'] ? 'selected' : '' }}>
+                {{ $item['categoria'] }}</option>
         @endforeach
     </select>
 
@@ -43,6 +40,8 @@
     @error('imagenes')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
+    <div id="previousImagen" data-mostrar="{{isset($imagenes) ? 'true' : 'false'}}" data-array="{{isset($imagenes) ? json_encode($imagenes) : 'false' }}">
+    </div>
     <p class="form-subtitulos">Subir maximo 5 imágenes del emprendimiento</p>
 </div>
 

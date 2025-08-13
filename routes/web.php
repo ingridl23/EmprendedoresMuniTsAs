@@ -16,6 +16,8 @@ use App\Http\Controllers\EmpleosController;
 use App\Exports\EmpleosExport;
 use Maatwebsite\Excel\Facades\Excel;
 
+Route::post('/noticias/editarImgs/{id}', [administradorController::class, 'editarImgsNoticias']);
+
 Route::get('/noticias/buscadorTitulo', [noticiasController::class, 'filterNoticiasByTittle']); //Filtro para noticias por titulo
 Route::get('/noticias/buscadorCategoria', [noticiasController::class, 'filterNoticiasByCategory']); //Filtro para noticias por categoria
 Route::get('/noticias/buscadorFecha', [noticiasController::class, 'filterNoticiasByDate']); //Filtro para noticias por fecha
@@ -27,6 +29,7 @@ Route::get('/noticias/nuevaNoticia', [administradorController::class, "showFormC
 Route::get('/noticias/formEditarNoticia/{id}', [administradorController::class, "showFormEditNoticia"]); //Muestra formulario para editar los datos de una noticia
 Route::PATCH('/noticias/{id}', [administradorController::class, "EditNoticia"]); //Edita la noticia con los datos que llegan del formulario
 Route::DELETE('/noticias/{id}', [administradorController::class, "deleteNoticia"]); //Elimina la noticia segun el id único que tenga.
+
 
 //RUTAS LOGIN
 Route::post('/logout', [LoginController::class, 'logout']); //Cierra la sesión
@@ -57,6 +60,7 @@ Route::get('/emprendedores/nuevoEmprendimiento', [administradorController::class
 Route::post('/crearEmprendimiento', [administradorController::class, "crearEmprendimiento"])->name('form.crear'); //Carga el nuevo emprendimiento
 Route::get('/emprendedores/formEditarEmprendimiento/{id}', [administradorController::class, "showFormEditarEmprendimiento"]); //Muestra form para editar emprendimiento
 Route::patch('/emprendedores/{id}', [administradorController::class, "editarEmprendimiento"]); //Edita un emprendimiento en especifico por su ID.
+Route::post('/emprendedores/editarImgs/{id}', [administradorController::class, "editarImagenesEmprendimiento"]); //Edita las imgs del emprendimiento
 Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmprendimiento"]); //Elimina un emprendimiento por su ID
 
 

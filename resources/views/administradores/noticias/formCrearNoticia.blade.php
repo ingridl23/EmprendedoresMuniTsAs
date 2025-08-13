@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Nuevo emprendimiento</title>
+    <title>Nueva noticia</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome -->
@@ -18,6 +18,7 @@
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -91,6 +92,9 @@
             </div>
         </div>
     </section>
+    <div class="contenedor_loader">
+        <div class="loader"></div>
+    </div>
     @include('emprendedor.footer')
 
 
@@ -99,6 +103,11 @@
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts3.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }}"></script>
+    <script src="{{ asset('js/noticias/previsualizacionImagenesNoticias.js') }}"></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
+
+    <!--Para las alertas en JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

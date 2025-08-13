@@ -24,6 +24,7 @@
     <link href="{{ asset('css/stylesemprendedoressection.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -236,7 +237,7 @@
                                             </div>
                                             @if ($emprendedor->imagenes->isNotEmpty())
                                                 <img class="img-fluid"
-                                                    src="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
+                                                    src="{{ $emprendedor->imagenes->first()['url'] }}"
                                                     alt="{{ $emprendedor->nombre }}" />
                                             @endif
                                         </a>
@@ -263,7 +264,7 @@
                                                                 </h2>
                                                                 @if ($emprendedor->imagenes->isNotEmpty())
                                                                     <img class="img-fluid d-block mx-auto img-modalEmprendedor"
-                                                                        src="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
+                                                                        src="{{ $emprendedor->imagenes->first()['url'] }}"
                                                                         alt="{{ $emprendedor->nombre }}" />
                                                                 @endif
                                                                 <p>{!! nl2br($emprendedor->descripcion) !!}</p>
@@ -345,7 +346,9 @@
 
 
 
-
+    <div class="contenedor_loader">
+       <div class="loader"></div>
+    </div>
 
 
     @include('emprendedor.footer')
@@ -357,18 +360,27 @@
     <!-- Core theme JS-->
 
 
-    @if (session('success'))
+     @if (session('success'))
         <script>
             window.mensajeExito = @json(session('success'));
         </script>
     @endif
 
+    @if(session('error'))
+        <script>
+            window.mensajeError = @json(session('error'));
+        </script>
+    @endif
+
+
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
 
-    <script type="module" src="{{ asset('js/cartelEliminar.js') }} "></script>
-    <script type="module" src="{{ asset('js/emprendedores.js') }}"></script>
+    <script type="module" src="{{ asset('js/carteles/cartelEliminar.js') }} "></script>
+    <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
+    <script type="module" src="{{ asset('js/emprendedores/emprendedores.js') }}"></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
 
     <!--Para alertas desde JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

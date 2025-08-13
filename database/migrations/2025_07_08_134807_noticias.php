@@ -25,6 +25,7 @@ class Noticias extends Migration
             $table->text('descripcion');
             $table->string('categoria');
             $table->string('imagen');
+            $table->string('imagen_public_id');
         });
     }
 

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Nuevo emprendimiento</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <title>Editar emprendimiento</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome -->
@@ -18,6 +19,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -80,7 +82,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <form action="/noticias/{{ $noticia->id }}" method="POST" enctype="multipart/form-data"
-                    class="form">
+                    class="form" id="editarForm" data-id="{{$noticia->id}}">
                     @csrf
                     {{ method_field('PATCH') }}
                     @include('administradores.noticias.form')
@@ -93,14 +95,38 @@
             </div>
         </div>
     </section>
+    <div class="contenedor_loader">
+        <div class="loader"></div>
+    </div>
     @include('emprendedor.footer')
 
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const messageParam = params.get('message');
+
+    if (messageParam) {
+        try {
+            window.mensajeError = JSON.parse(messageParam);
+            // Ahora podés usar window.mensajeError.titulo y .detalle
+        } catch (e) {
+            console.error('Error parsing mensajeError JSON:', e);
+            window.mensajeError = { titulo: 'Error', detalle: messageParam };
+        }
+    }
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts3.js') }} "></script>
+    
     <script src="{{ asset('js/navbar.js') }}"></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
+    <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
+    <script src="{{ asset('js/noticias/envioImagenesNoticias.js') }}"></script>
+
+        <!--Para las alertas en JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

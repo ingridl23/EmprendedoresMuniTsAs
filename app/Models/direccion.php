@@ -38,11 +38,13 @@ class direccion extends Model
 
     public static function editarEmprendimiento($direccion)
     {
-        $direccion->save();
+        $direccionEdit= $direccion->save();
+        return $direccionEdit;
     }
 
     public static function eliminarEmprendimiento($direccion)
     {
-        $direccion->delete();
+        $direccionEliminar = $direccion->delete();
+        return $direccionEliminar;
     }
 }

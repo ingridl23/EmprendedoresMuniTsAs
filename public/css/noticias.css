@@ -197,6 +197,15 @@ div.card-body.cuerpoNoticia {
     }
 }
 
+@media(min-width:992px){
+    header.masthead.headerNoticias{
+        min-height: 35rem;
+    }
+
+    h3.tituloFiltroNoticias{
+        font-size: 2.2rem;
+    }
+}
 
 /* Ajustes responsivos básicos moviles  */
 

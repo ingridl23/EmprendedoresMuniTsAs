@@ -24,14 +24,14 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav mx-auto my-2 my-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}">Pagina principal</a>
+                                <a class="nav-link" href="{{ url('/') }}">Página principal</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/Programas') }}">Programas</a>
+                                <a class="nav-link" href="{{ url('/programas') }}">Programas</a>
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/Emprendedores') }}">Emprendedores</a>
+                                <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
 
                             </li>
                         </ul>

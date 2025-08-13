@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>Editar emprendimiento</title>
 
         <!-- Favicon-->
@@ -22,8 +23,11 @@
         <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
+
+        
     </head>
-    @include('administradores.navBarAdmin')
+    @include('administradores.emprendedores.navBarAdmin')
 
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
@@ -47,49 +51,49 @@
             </div>
         </div>
     </header>
-
-    <div class="container px-4 px-lg-5 tituloNuevoEmprendimiento">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-8 col-xl-6 text-center">
-                <h2 class="mt-0"> Modificar Información del Emprendimiento</h2>
-                <hr class="divider" />
-                <p class="text-muted mb-5">
-                    Corregir datos cargados,
-                    incorporar cambios en la actividad del emprendimiento .
-                    ¡Asegurar de revisar los campos antes de guardar los cambios!
-                </p>
+    <section class="page-section section-new-entrepreneur" id="contact" style="background-color: white">
+        <div class="container px-4 px-lg-5 tituloNuevoEmprendimiento">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6 text-center">
+                    <h2 class="mt-0"> Modificar Información del Emprendimiento</h2>
+                    <hr class="divider" />
+                    <p class="text-muted mb-5">
+                        Corregir datos cargados,
+                        incorporar cambios en la actividad del emprendimiento .
+                        ¡Asegurar de revisar los campos antes de guardar los cambios!
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    @if ($errors->any())
-        <div class="alert alert-danger text-center mb-3">
-            <p class="mensajeError">Necesita completar correctamente todos los campos.</p>
+        @if ($errors->any())
+            <div class="alert alert-danger text-center mb-3">
+                <p class="mensajeError">Necesita completar correctamente todos los campos.</p>
+            </div>
+        @endif
+
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+            <div class="col-lg-6">
+                <form action="/emprendedores/{{ $emprendimiento->id }}" method="POST" enctype="multipart/form-data"
+                    class="form" id="editarForm" data-id="{{$emprendimiento->id}}">
+                    @csrf
+                    {{ method_field('PATCH') }}
+                    @include('administradores.emprendedores.form')
+                    <div class=" d-grid  ">
+                        <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
+                            <span class="btntext" value="Guardar datos"> Editar emprendimiento </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-    @endif
-
-    <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-        <div class="col-lg-6">
-            <form action="/emprendedores/{{ $emprendimiento->id }}" method="POST" enctype="multipart/form-data"
-                class="form" id="contactForm">
-                @csrf
-                {{ method_field('PATCH') }}
-                @include('administradores.form')
-                <div class=" d-grid  ">
-                    <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
-                        <span class="btntext" value="Guardar datos"> Editar emprendimiento </span>
-
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div>
-    </div>
+</section>
     @include('layouts.panelAdmin')
     @include('emprendedor.footer')
 
-
+    <div class="contenedor_loader">
+       <div class="loader"></div>
+    </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -97,7 +101,12 @@
     <script src="{{ asset('js/scripts3.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
-    <script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>
+    <script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
+    <script src="{{asset('js/emprendedores/envioImagenes.js')}}"></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
+
+            <!--Para las alertas en JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
