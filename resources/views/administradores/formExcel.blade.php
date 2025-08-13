@@ -23,7 +23,7 @@
         <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
     </head>
-    @include('administradores.navBarAdmin')
+    @include('administradores.emprendedores.navBarAdmin')
 
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
