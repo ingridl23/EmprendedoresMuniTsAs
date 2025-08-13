@@ -3,7 +3,7 @@
 ![Texto alternativo](\EmprendedoresMuniTsAs\public\assets\img\iconos\logo-muni-azul-claro-removebg-preview.png)
 
 ## Tabla de contenidos
--   [Objetivo](#📌-objetivo)
+-   [Objetivo](#objetivo)
 -   [Tecnologías utilizadas](#🧰-tecnologías-utilizadas)
 -   [Instalación y ejecución](#instalación-y-ejecución)
 -   [Estructura general](#📂-estructura-general)
@@ -11,7 +11,7 @@
 -   [Créditos](#créditos)
 
 
-## 📌 Objetivo
+## Objetivo 📌 
 
 El sistema tiene como finalidad **visibilizar, registrar y gestionar los emprendimientos locales** y las propuestas de capacitación para la comunidad. Permite:
 
@@ -29,7 +29,7 @@ El sistema tiene como finalidad **visibilizar, registrar y gestionar los emprend
 -   **Control de versiones:** Git y GitHub
 -   **Servidor local:** Laragon
 
-## 🚀 Instalación y ejecución
+## Instalación y ejecución 🚀 
 
 ### Requisitos previos
 
