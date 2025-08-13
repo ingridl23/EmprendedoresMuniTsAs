@@ -3,7 +3,7 @@
 ![Texto alternativo](\EmprendedoresMuniTsAs\public\assets\img\iconos\logo-muni-azul-claro-removebg-preview.png)
 
 ## Tabla de contenidos
-[Objetivo](Objetivo)
+[Objetivo](#Objetivo)
 
 ## 📌 Objetivo
 
@@ -111,18 +111,17 @@ Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muest
 
 ## Rutas
 ```
-+--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+--------------------------------------------------------------+
-| Domain | Method   | URI                                         | Name              | Action
-                                   | Middleware                                                   |
-+--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+--------------------------------------------------------------+
-|        | GET|HEAD | /                                           |                   | App\Http\Controllers\HomeController@index                                 | web                                                          |
-|        | GET|HEAD | api/user                                    |                   | Closure
-                                   | api                                                          |
-|        |          |                                             |                   |
++--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+-----------------------
+| Method   | URI          | Middleware                   | Name              | Action
++--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+-----------------------
+| GET|HEAD | /                                           |                   | App\Http\Controllers\HomeController@index                                 | web                                                          |
+| GET|HEAD | api/user        | api                            |                   | Closure
+                                                                                             |
+|          |                                             |                   |
                                    | App\Http\Middleware\Authenticate:sanctum                     |
-|        | POST     | crearEmprendimiento                         | form.crear        | App\Http\Controllers\administradorController@crearEmprendimiento          | web                                                          |
-|        |          |                                             |                   |
-                                   | App\Http\Middleware\Authenticate                             |
+| POST     | crearEmprendimiento                         | form.crear        | App\Http\Controllers\administradorController@crearEmprendimiento          | web                            
+|          |                                             |                   |
+                                   | App\Http\Middleware\Authenticate        |
 |        |          |                                             |                   |
                                    | Illuminate\Auth\Middleware\Authorize:crear emprendimiento    |
 |        | GET|HEAD | empleos/export                              | empleos.export    | App\Http\Controllers\EmpleosController@export                             | web                                                          |
