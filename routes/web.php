@@ -12,7 +12,9 @@ use App\Http\Controllers\EmprendedoresController;
 use App\Http\Controllers\FormSerParteController;
 use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\ProgramasController;
-
+use App\Http\Controllers\EmpleosController;
+use App\Exports\EmpleosExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 Route::get('/noticias/buscadorTitulo', [noticiasController::class, 'filterNoticiasByTittle']); //Filtro para noticias por titulo
 Route::get('/noticias/buscadorCategoria', [noticiasController::class, 'filterNoticiasByCategory']); //Filtro para noticias por categoria
@@ -35,8 +37,8 @@ Route::get('/showlogin', [HomeController::class, 'showlogin'])->name("showlogin"
 Route::get('/', [HomeController::class, "index"]); //home del sitio emprendedores general, este seria nuestro index
 
 //rutas del formulario de contacto
-Route::get('/formar/parte', [FormSerParteController::class, "formarparte"]); // redireccionamiento al formulario para solicitar hablar con alguien de cultura
-Route::post('/formulario-enviar', [FormSerParteController::class, 'enviar'])->name('formulario.enviar'); //ruta que envia  la regla post del formulario
+Route::get('/formar/parte', [FormSerParteController::class, "formarparte"]); // redireccionamiento al formulario
+Route::post('/formulario/enviar', [FormSerParteController::class, 'enviar'])->name('formulario.enviar'); //ruta que envia  la regla post del formulario
 
 
 //RUTAS EMPRENDEDORES
@@ -70,3 +72,8 @@ Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
 
 //programas
 Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('programas');;
+
+
+//para exportar excel de busqueda de empleo sector administrativo
+Route::get("/solicitantes", [EmpleosController::class, "showForm"]);
+Route::get('/empleos/export', [EmpleosController::class, 'export'])->name('empleos.export');

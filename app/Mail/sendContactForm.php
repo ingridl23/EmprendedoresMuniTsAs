@@ -17,8 +17,21 @@ class sendContactForm extends Mailable
 
     public function build()
     {
-        return $this->subject('Nuevo formulario de contacto')
+        $email = $this->subject($this->data['asunto'] ?? 'Nuevo formulario de contacto')
             ->view('emails.contact')
             ->with('data', $this->data);
+
+        // Si hay un archivo adjunto tipo UploadedFile
+        if (isset($this->data['cv']) && $this->data['cv'] instanceof \Illuminate\Http\UploadedFile) {
+            $email->attach(
+                $this->data['cv']->getRealPath(), // Ruta temporal del archivo
+                [
+                    'as' => $this->data['cv']->getClientOriginalName(), // Nombre original
+                    'mime' => $this->data['cv']->getClientMimeType(),   // Tipo MIME
+                ]
+            );
+        }
+
+        return $email;
     }
 }

@@ -31,9 +31,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                             </li>
-                            <li class="nav-item serParte">
-                                <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
-                            </li>
+                            @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/solicitantes') }}">Solicitantes</a>
+                                </li>
+                            @else
+                                <li class="nav-item serParte">
+                                    <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
+                                </li>
+                            @endif
                         </ul>
 
                         <!-- Botones de servicios externos -->

@@ -25,6 +25,7 @@
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 
@@ -68,7 +69,7 @@
                     </p>
                     <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
                     <br>
-                    <a class="btn btn-light btn-xl btn-xl" href="#contact">Quiero Ser Parte</a>
+                    <a class="btn btn-light btn-xl btn-xl" href="{{ url('/formar/parte') }}">Quiero Ser Parte</a>
                 </div>
             </div>
         </div>
@@ -164,158 +165,11 @@
 
     </section>
 
-
-
-    @include('layouts.componentProgramas');
-
-
-
-
-
-
-
-    <!-- Contact-->
-    <section class="page-section" id="contact" style="background-color: white">
-
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8 col-xl-6 text-center">
-                    <img class="divider" src="{{ asset('assets/img/iconos/empleosinfondo.png') }}">
-                    <h2 class="mt-0"> Unite a los programas vigentes</h2>
-                    </h2>
-                    <p class="text-muted mb-5">
-                        Completá el formulario con tus datos y desde la Oficina de Empleo y Capacitación nos pondremos
-                        en
-                        contacto para
-                        que puedas integrarte a esta valiosa propuesta.
-                    </p>
-
-                    {{-- ✅ Mensaje de éxito --}}
-                    @if (session('success'))
-                        <div class="alert alert-success text-center mb-3">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-
-                    {{-- ✅ Errores generales --}}
-                    @if ($errors->any())
-                        <div class="alert alert-danger text-start mb-3">
-                            <ul class="mb-0">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                </div>
-            </div>
-
-
-            <div class="row gx-4 gx-lg-5 justify-content-center mb-5" id="page-top">
-
-                <div class="col-lg-6">
-
-                    <form method="POST" class="form" id="contactForm" action="{{ route('formulario.enviar') }}">
-                        <!-- Name input-->
-                        @csrf
-                        <div class="field-group">
-
-                            <input id="name" name="first_name" type="text" required placeholder=""
-                                value="{{ old('first_name') }}"></input>
-
-                            @error('first_name')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
-
-
-                            <label class="message" for="message">Nombre y Apellido<span
-                                    class="asterisco">*</span></label>
-                            <p class="form-subtitulos">Otorgar al menos un nombre y un apellido</p>
-                        </div>
-
-                        <!--inpt email-->
-
-                        <div class="field-group">
-
-                            <input id="email" name="email" type="email" required placeholder=""
-                                value="{{ old('email') }}"></input>
-
-
-                            @error('email')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
-
-
-                            <label class="message" for="message">Email<span class="asterisco">*</span></label>
-                            <p class="form-subtitulos">Otorgar un email de uso frecuente</p>
-                        </div>
-
-
-                        <!--input telefono -->
-
-                        <div class="field-group">
-
-                            <input type="tel" id="phone" name="tel" required placeholder=""
-                                value="{{ old('tel') }}"></input>
-
-
-                            @error('tel')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
-
-                            <label class="message" for="message">Teléfono<span class="asterisco">*</span></label>
-                            <p class="form-subtitulos">Otorgar un número de teléfono </p>
-                        </div>
-
-                        <!-- input descripcion -->
-                        <div class="field-group">
-
-                            <textarea id="descripcion" name="description" type="text" required placeholder=""
-                                value="{{ old('description') }}"></textarea>
-
-                            @error('description')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
-
-
-                            <label class="message" for="message">Describir brevemente el emprendimiento<span
-                                    class="asterisco">*</span></label>
-                            <p class="form-subtitulos">Escribir una descripción respecto al negocio o emprendimiento
-                            </p>
-                        </div>
-
-                        <!-- input oculto -->
-
-                        <input type="text" id="oculto" name="oculto" class="oculto" autocomplete="off"
-                            value="">
-
-                        <!-- Submit Button-->
-                        <div class=" d-grid  ">
-                            <button class="submit btn btn-primary btn-xl" id="submitButton" type="submit">
-
-                                <span class="btntext"> Enviar
-                                    Formulario </span>
-
-
-                            </button>
-
-
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-
-        </div>
-
-        </div>
-
-    </section>
-
+    @include('layouts.componentProgramas')
+    <br>
+    <br>
+    <br>
     @include('layouts.sectionredes')
-
-
-
 
 
     <a href="https://wa.me/2983603748?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de empleo"

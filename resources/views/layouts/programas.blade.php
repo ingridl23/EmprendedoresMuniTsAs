@@ -74,6 +74,8 @@
                             </ul>
 
 
+
+
                             <!-- Botones de servicios externos -->
                             <div class="get-started-buttons d-flex align-items-center">
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
@@ -131,22 +133,17 @@
         </header>
     </div>
 
-        <header class="masthead headerProgramas">
+    <header class="masthead autorizacion">
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Programas para Emprendedores en Tres Arroyos</h1>
+                    <h1 class="text-white font-weight-bold">Programas Vigentes</h1>
+
                 </div>
                 <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 ">
-                        Desde la Oficina de Empleo y Capacitación de Tres Arroyos impulsamos iniciativas que acompañan a emprendedores en cada etapa de su desarrollo.
-                        Actualmente contamos con cuatro programas activos: el Club de Emprendedores, la Escuela de Emprendedores,
-                        la Feria Parque Cabañas y diversas propuestas de empleo que fortalecen el ecosistema emprendedor local.</p>
-
-                    <p class="text-white-75 ">
-                        Nuestro objetivo es brindar herramientas, formación y espacios de visibilidad para quienes apuestan a crecer con su propio proyecto.
+                    <p class="text-white-75 mb-5">
+                        Enterate de los programas vigentes a los cuales podes acceder
                     </p>
-                    <br>
                 </div>
             </div>
         </div>
@@ -158,10 +155,17 @@
 
     @include('layouts.componentProgramas')
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     @include('emprendedor.footer')
 
-         <!--JQuery para el manejo de link internos en Programas-->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--JQuery para el manejo de link internos en Programas-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
