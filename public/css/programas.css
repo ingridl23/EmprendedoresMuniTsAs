@@ -302,6 +302,8 @@
         section.page-section.text-white#SeccionFotosEmprendedores {
             background-color: #2cc4b4;
         }
+
+    }
         /*Estilo para el carrusel de links internos de los programas que se ofrecen*/
         button.flechaIzquierda,
         button.flechaDerecha {

@@ -2,7 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     /*MANEJO DE CARRUSEL DE LINKS INTERNOS*/
-
     const carousel = document.querySelector(".carouselLinks");
     const inner = document.querySelector(".carousel-links-inner");
     const items = document.querySelectorAll(".carousel-links-item");
@@ -17,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (
         window.matchMedia("(min-width:1200px) and (max-width: 5000px)").matches
     ) {
+
         // Mostrar todas las cards lado a lado
         let scrollPosition = 0;
         items.forEach((itemFor) => {
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (
         window.matchMedia("(min-width:650px) and (max-width: 1200px)").matches
     ) {
+         console.log("aca");
         let scrollPosition = 0;
         items.forEach((itemFor) => {
             itemFor.classList.remove("visible");
