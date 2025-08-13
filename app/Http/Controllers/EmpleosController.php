@@ -113,8 +113,8 @@ class EmpleosController extends Controller
 
 
 
-
         $empleos = $query->get();
+
 
 
 
