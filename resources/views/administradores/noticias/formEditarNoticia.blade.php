@@ -19,7 +19,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
-        <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -81,8 +81,8 @@
         @endif
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
-                <form action="/noticias/{{ $noticia->id }}" method="POST" enctype="multipart/form-data"
-                    class="form" id="editarForm" data-id="{{$noticia->id}}">
+                <form action="/noticias/{{ $noticia->id }}" method="POST" enctype="multipart/form-data" class="form"
+                    id="editarForm" data-id="{{ $noticia->id }}">
                     @csrf
                     {{ method_field('PATCH') }}
                     @include('administradores.noticias.form')
@@ -101,31 +101,34 @@
     @include('emprendedor.footer')
 
     <script>
-    const params = new URLSearchParams(window.location.search);
-    const messageParam = params.get('message');
+        const params = new URLSearchParams(window.location.search);
+        const messageParam = params.get('message');
 
-    if (messageParam) {
-        try {
-            window.mensajeError = JSON.parse(messageParam);
-            // Ahora podés usar window.mensajeError.titulo y .detalle
-        } catch (e) {
-            console.error('Error parsing mensajeError JSON:', e);
-            window.mensajeError = { titulo: 'Error', detalle: messageParam };
+        if (messageParam) {
+            try {
+                window.mensajeError = JSON.parse(messageParam);
+                // Ahora podés usar window.mensajeError.titulo y .detalle
+            } catch (e) {
+                console.error('Error parsing mensajeError JSON:', e);
+                window.mensajeError = {
+                    titulo: 'Error',
+                    detalle: messageParam
+                };
+            }
         }
-    }
-</script>
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts3.js') }} "></script>
-    
+
     <script src="{{ asset('js/navbar.js') }}"></script>
     <script src="{{ asset('js/loader.js') }}"></script>
     <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
     <script src="{{ asset('js/noticias/envioImagenesNoticias.js') }}"></script>
 
-        <!--Para las alertas en JS-->
+    <!--Para las alertas en JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- SimpleLightbox plugin JS-->
