@@ -2,16 +2,9 @@
 
 ![Texto alternativo](\EmprendedoresMuniTsAs\public\assets\img\iconos\logo-muni-azul-claro-removebg-preview.png)
 
-## Tabla de contenidos
--   [Objetivo](#objetivo)
--   [Tecnologías utilizadas](#🧰-tecnologías-utilizadas)
--   [Instalación y ejecución](#instalación-y-ejecución)
--   [Estructura general](#📂-estructura-general)
--   [Rutas](#rutas)
--   [Créditos](#créditos)
 
 
-## Objetivo 📌 
+## 📌  Objetivo 
 
 El sistema tiene como finalidad **visibilizar, registrar y gestionar los emprendimientos locales** y las propuestas de capacitación para la comunidad. Permite:
 
@@ -76,6 +69,7 @@ php artisan serve
 
 ## 📂 Estructura general
 
+### Estructura de archivos
 ```
 ├── app/
    |_______http/
@@ -109,13 +103,16 @@ php artisan serve
 ├── .env
 └── README.md
 ```
+### Estructura de la base de datos
+
+![Diagrama de base de datos](URL-de-la-imagen)
 
 ## Dimensión determinada de las imagenes
 
 Cada imagen tendrá como máximo de ancho : 1920px y de alto:1080px.
 Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muestra de estas en la vista.
 
-## Rutas
+## 📍 Rutas
 ```
 +--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+-----------------------
 | Method   | URI          | Middleware                   | Name              | Action
@@ -230,7 +227,7 @@ Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muest
 |        | GET|HEAD | solicitantes                                |                   | App\Http\Controllers\EmpleosController@showForm                           | web                                                          |
 +--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+--------------------------------------------------------------+
 ```
-## Créditos
+## 📚 Créditos
 
 ### Desarrollado por:
 
