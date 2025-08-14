@@ -1,10 +1,6 @@
 #_SITIO WEB PARA OFICINA DE EMPLEO Y CAPACITACION DEL MUNICIPIO DE TRES ARROYOS_
 
-<<<<<<< HEAD
-![Texto alternativo]()
-=======
 ![Texto alternativo](./docs/-muni-azul-claro-removebg-preview.png)
->>>>>>> 8687c6951f903cefb1c3ae62d65f8a967228876b
 
 ## 📌 Objetivo
 
