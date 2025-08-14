@@ -23,12 +23,9 @@ class RoleAndPermissionsSeeder extends Seeder
             'crear emprendimiento',
             'editar emprendimiento',
             'eliminar emprendimiento',
-            'ver emprendimiento',
             'crear noticia',
             'editar noticia',
             'eliminar noticia',
-            'ver noticia'
-
         ];
 
         foreach ($permissions as $permission) {

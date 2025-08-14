@@ -31,11 +31,6 @@ class administradorController extends Controller
                 'showFormCrearEmprendimiento'
             ]
         ]);
-        $this->middleware('can:ver emprendimiento', [
-            'only' => [
-                'emprendedores'
-            ]
-        ]);
         $this->middleware('can:editar emprendimiento', [
             'only' => [
                 'editarEmprendimiento',
