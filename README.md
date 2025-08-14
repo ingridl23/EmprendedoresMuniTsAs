@@ -2,6 +2,8 @@
 
 ![Logo tres arroyos](./docs/logo-muni-azul-claro.png)
 
+![Logo tres arroyos](./docs/logoOficinaEMpleo.jpg)
+
 ## 📌 Objetivo
 
 El sistema tiene como finalidad **visibilizar, registrar y gestionar los emprendimientos locales** y las propuestas de capacitación para la comunidad. Permite:
