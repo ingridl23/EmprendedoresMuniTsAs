@@ -1,6 +1,6 @@
 #_SITIO WEB PARA OFICINA DE EMPLEO Y CAPACITACION DEL MUNICIPIO DE TRES ARROYOS_
 
-![Logo tres arroyos](./docs/-muni-azul-claro-removebg-preview.png)
+![Logo tres arroyos](./docs/logo-muni-azul-claro.png)
 
 ## 📌 Objetivo
 
