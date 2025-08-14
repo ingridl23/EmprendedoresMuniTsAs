@@ -42,13 +42,14 @@
 
 #mainNav .navbar-nav .nav-link:hover,
 #mainNav .navbar-nav .nav-link:focus {
-    color: #0b3f49;
+    color: #4eb987;
 }
 
 #mainNav {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
+
 
 /* Efecto underline en hover */
 
@@ -107,15 +108,17 @@
     font-size: 1.25rem;
     color: #dfdfdf;
 }
-#mainNav .navbar-nav li.nav-item a.dropdown-item:active{
-    background-color: #0c2c1d;
+
+#mainNav .navbar-nav li.nav-item a.dropdown-item:active {
+    background-color: #75d4a8;
 }
 
-#mainNav .navbar-nav li.nav-item a.dropdown-toggle::after{
+#mainNav .navbar-nav li.nav-item a.dropdown-toggle::after {
     margin: 0 0 -0.3rem 0;
     background-color: transparent;
     color: #36c09d;
 }
+
 
 /* ======= BOTONES DE SERVICIOS EXTERNOS ======= */
 
@@ -169,7 +172,7 @@
 }
 
 .get-started-btn:hover {
-    background: #066b7f;
+    background: #83e4c4;
     color: #f9fcff;
     box-shadow: 0 4px 15px rgba(240, 231, 213, 0.4);
     /* Eliminar movimiento vertical
@@ -337,10 +340,7 @@ nav ul li.nav-item.serParte {
         padding: 1rem;
         text-align: left;
     }
-    #mainNav .navbar-nav .nav-link:hover {
-        /*  background-color: #25c39c;*/
-    }
-    #mainNav .navbar-nav .nav-link:last-child{
+    #mainNav .navbar-nav .nav-link:last-child {
         border-bottom: none;
     }
     #header {

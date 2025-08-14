@@ -144,12 +144,16 @@
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
-                       Enterate de las últimas novedades de la Oficina de Empleo y Capacitación de Tres Arroyos. 
-                       En esta sección publicamos noticias sobre eventos, ferias, capacitaciones, charlas y también oportunidades laborales disponibles en la ciudad.
-                        </p>
+                        Mantente al día con la información más reciente de la Oficina de Empleo y Capacitación de Tres
+                        Arroyos.
+                        En esta sección encontrarás actualizaciones sobre eventos, ferias, capacitaciones, charlas y
+                        oportunidades laborales disponibles en la ciudad.
+                    </p>
 
                     <p class="text-white-75 ">
-                        Un espacio para mantenerte informado y aprovechar todo lo que tenemos para ofrecerte como emprendedor o buscador de empleo.
+                        Un espacio pensado para que, como emprendedor o buscador de empleo, puedas acceder a información
+                        útil y aprovechar al
+                        máximo las iniciativas y recursos que ponemos a tu disposición.
                     </p>
                     <br>
                 </div>
@@ -172,46 +176,58 @@
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-               Tìtulo
-            </button>
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Tìtulo
+                </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
                 <div class="search accordion-body">
-                    <input class="inputSearch inputFiltrosNoticias" id="Titulo" type="text" placeholder="Buscar por título">
-                    <button class="buttonSearch botonFiltro"> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
+                    <input class="inputSearch inputFiltrosNoticias" id="Titulo" type="text"
+                        placeholder="Buscar por título">
+                    <button class="buttonSearch botonFiltro"> <img
+                            id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Categoria
-            </button>
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Categoria
+                </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
                 <div class="search accordion-body">
-                    <input class="inputSearch inputFiltrosNoticias" id="Categoria" type="text" placeholder="Buscar por categoria">
-                    <button class="buttonSearch botonFiltro"> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
+                    <input class="inputSearch inputFiltrosNoticias" id="Categoria" type="text"
+                        placeholder="Buscar por categoria">
+                    <button class="buttonSearch botonFiltro"> <img
+                            id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Fecha de publicación
-            </button>
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Fecha de publicación
+                </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
                 <div class="search accordion-body">
-                    <input class="inputSearch inputFiltrosNoticias" id="Fecha" type="date" placeholder="Buscar por fecha de publicación">
-                    <button class="buttonSearch botonFiltro"> <img id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
+                    <input class="inputSearch inputFiltrosNoticias" id="Fecha" type="date"
+                        placeholder="Buscar por fecha de publicación">
+                    <button class="buttonSearch botonFiltro"> <img
+                            id= "img-lupa"src="{{ asset('assets/img/iconos/lupa.png') }}" title="lupa"></button>
                 </div>
             </div>
         </div>
     </div>
 
-         <div id="noticias-container"></div>
+    <div id="noticias-container"></div>
 
     <!-- aca todo esto deberia iterarse-->
     <div class="container-fluid">
@@ -223,8 +239,7 @@
 
 
                 <div class="card mb-3">
-                    <img src="{{ $noticia->imagen }}" class="card-img-top1"
-                        alt={{ $noticia->titulo }}>
+                    <img src="{{ $noticia->imagen }}" class="card-img-top1" alt={{ $noticia->titulo }}>
                     <div class="card-body">
                         <h5 class="card-title">{{ $noticia->titulo }}</h5>
                         <p class="card-text">{{ $noticia->categoria }}</p>
@@ -263,19 +278,19 @@
     <!-- barra de navegacion footer -->
     @include('emprendedor.footer')
 
-     @if (session('success'))
+    @if (session('success'))
         <script>
             window.mensajeExito = @json(session('success'));
         </script>
     @endif
 
-    @if(session('error'))
+    @if (session('error'))
         <script>
             window.mensajeError = @json(session('error'));
         </script>
     @endif
 
-    
+
 
     <!--Para cambio de color del navbar-->
     <script src="{{ asset('js/navbar.js') }} "></script>
