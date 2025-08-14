@@ -1,10 +1,8 @@
 #_SITIO WEB PARA OFICINA DE EMPLEO Y CAPACITACION DEL MUNICIPIO DE TRES ARROYOS_
 
-![Texto alternativo](\EmprendedoresMuniTsAs\public\assets\img\iconos\logo-muni-azul-claro-removebg-preview.png)
+![Texto alternativo]()
 
-
-
-## 📌  Objetivo 
+## 📌 Objetivo
 
 El sistema tiene como finalidad **visibilizar, registrar y gestionar los emprendimientos locales** y las propuestas de capacitación para la comunidad. Permite:
 
@@ -22,7 +20,7 @@ El sistema tiene como finalidad **visibilizar, registrar y gestionar los emprend
 -   **Control de versiones:** Git y GitHub
 -   **Servidor local:** Laragon
 
-## Instalación y ejecución 🚀 
+## Instalación y ejecución 🚀
 
 ### Requisitos previos
 
@@ -70,6 +68,7 @@ php artisan serve
 ## 📂 Estructura general
 
 ### Estructura de archivos
+
 ```
 ├── app/
    |_______http/
@@ -103,6 +102,7 @@ php artisan serve
 ├── .env
 └── README.md
 ```
+
 ### Estructura de la base de datos
 
 ![Diagrama de base de datos](URL-de-la-imagen)
@@ -113,6 +113,7 @@ Cada imagen tendrá como máximo de ancho : 1920px y de alto:1080px.
 Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muestra de estas en la vista.
 
 ## 📍 Rutas
+
 ```
 +--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+-----------------------
 | Method   | URI          | Middleware                   | Name              | Action
@@ -122,7 +123,7 @@ Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muest
                                                                                              |
 |          |                                             |                   |
                                    | App\Http\Middleware\Authenticate:sanctum                     |
-| POST     | crearEmprendimiento                         | form.crear        | App\Http\Controllers\administradorController@crearEmprendimiento          | web                            
+| POST     | crearEmprendimiento                         | form.crear        | App\Http\Controllers\administradorController@crearEmprendimiento          | web
 |          |                                             |                   |
                                    | App\Http\Middleware\Authenticate        |
 |        |          |                                             |                   |
@@ -227,6 +228,7 @@ Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muest
 |        | GET|HEAD | solicitantes                                |                   | App\Http\Controllers\EmpleosController@showForm                           | web                                                          |
 +--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+--------------------------------------------------------------+
 ```
+
 ## 📚 Créditos
 
 ### Desarrollado por:
