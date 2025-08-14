@@ -60,9 +60,28 @@ class Horario extends Model
         $horario->save();
     }
 
+    public static function buscarPorIdEmprendedor($idEmprendedor){
+        $horarios = Horario::where('horario.emprendedor_id', $idEmprendedor)->get();
+        return $horarios;
+    }
 
-    public static function eliminarHorarios(Horario $horario)
+
+    public static function eliminarHorarios($horarios)
     {
-        $horario->delete();
+        $totalHorarios = count($horarios);
+        $totalEliminados = 0;
+        foreach ($horarios as $horario) {
+            $eliminado = $horario->delete();
+            if($eliminado){
+                $totalEliminados++;
+            }
+        }
+        if($totalEliminados == $totalHorarios){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
 };

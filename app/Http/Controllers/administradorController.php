@@ -351,6 +351,7 @@ class administradorController extends Controller
             $redes = redes::find($emprendimiento->redes_id);
             $direccion = direccion::find($emprendimiento->direccion_id);
             $imagenes = imagenes::find($emprendimiento->id);
+            $horarios = horario::buscarPorIdEmprendedor($emprendimiento->id);
             if ($redes != null && $direccion != null) {
                 foreach ($imagenes as $imagen) {
                     try {
@@ -367,7 +368,8 @@ class administradorController extends Controller
                 $emprendimientoEliminado = Emprendedor::eliminarEmprendimiento($emprendimiento);
                 $redesEliminado = redes::eliminarEmprendimiento($redes);
                 $direccionEliminado = direccion::eliminarEmprendimiento($direccion);
-                if ($emprendimientoEliminado && $redesEliminado && $direccionEliminado) {
+                $horarioEiminado = horario::eliminarHorarios($horarios);
+                if ($emprendimientoEliminado && $redesEliminado && $direccionEliminado && $horarioEiminado) {
                     $mensajes = [
                         'titulo' => '¡Eliminado!',
                         'detalle' => 'Emprendimiento eliminado con éxito.'
