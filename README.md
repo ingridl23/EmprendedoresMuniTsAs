@@ -2,8 +2,6 @@
 
 ![Logo tres arroyos](./docs/logo-muni-azul-claro.png)
 
-![Logo tres arroyos](./docs/logoOficinaEMpleo.jpg)
-
 ## 📌 Objetivo
 
 El sistema tiene como finalidad **visibilizar, registrar y gestionar los emprendimientos locales** y las propuestas de capacitación para la comunidad. Permite:
@@ -68,6 +66,60 @@ php artisan serve
 ```
 
 ## 📂 Estructura general
+
+Este proyecto sigue la estructura estándar de Laravel, organizada para mantener una separación clara entre la lógica de negocio, la configuración, las vistas y los recursos públicos.
+
+Descripción de carpetas y archivos
+
+-   **`app/`** –
+    Contiene el núcleo de la aplicación, incluyendo controladores, modelos, middleware y otros elementos relacionados con la lógica de negocio.
+-   **`Http/`**
+    Incluye la capa de control y gestión de las peticiones HTTP.
+
+-   `Controllers` – Controladores que procesan solicitudes y devuelven respuestas.
+
+    -   `Middleware` – Filtros que procesan solicitudes antes o después del controlador.
+
+    -   `Requests` – Clases para validar datos de entrada de formularios y peticiones.
+
+-   **`Mail/`** – Clases para la gestión y envío de correos electrónicos.
+
+    -   **`Models/`** – Representación de las entidades y su interacción con la base de datos. Ejemplos: Direccion, Emprendedor, Imagen, Noticia, Red, User.
+
+-   **`Providers/`** – Registro y configuración de servicios del framework.
+
+-   **`View/Components/`** – Componentes reutilizables para las vistas.
+
+-   **`bootstrap/`** –
+    Archivos de inicialización del framework y configuración del arranque de la aplicación.
+
+-   **`config/`** –
+    Archivos de configuración general del proyecto (base de datos, correo, servicios, etc.).
+
+-   **`database/`** –
+    Migraciones, seeders y factories para gestionar la estructura y datos de la base de datos.
+-   **`node_modules/`** –
+    Dependencias instaladas mediante Node.js, utilizadas para compilación y construcción de recursos frontend.
+
+-   **`public/`** –
+    Carpeta accesible públicamente donde se almacenan archivos compilados (CSS, JS, imágenes) y el archivo de entrada index.php.
+
+-   **`resources/`** –
+    Contiene los recursos sin procesar utilizados en el frontend.
+
+-   `views/` – Vistas Blade.
+-   `css/` – Estilos personalizados.
+-   `js/` – Scripts personalizados.
+-   `lang/` – Archivos de traducción.
+-   `sass/` – Estilos SASS/SCSS.
+
+-   **`routes/`** – Definición de rutas.
+
+    -   `web.php` – Rutas para solicitudes HTTP web.
+
+-   **`.env`** – Variables de entorno y configuración sensible.
+
+-   **`README.md`** – Documentación del proyecto.
 
 ### Estructura de archivos
 
