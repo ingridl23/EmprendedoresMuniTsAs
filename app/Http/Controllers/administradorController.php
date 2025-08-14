@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Storage;
 use App\constants;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
+
 class administradorController extends Controller
 {
     public function __construct()
@@ -206,6 +207,20 @@ class administradorController extends Controller
      */
     public function editarImagenesEmprendimiento($id, Request $request)
     {
+        $validator = Validator::make($request->all(),[
+            'imagenes' => 'array|max:5',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+        ]);
+        if($validator->fails()){
+            return response()->json([
+                'redirect' => "/emprendedores/formEditarEmprendimiento/{$id}",
+                'message' => [
+                    'titulo' => '¡Error!',
+                    'detalle' => 'Ha sucedido un error en la edición de la imagen',
+                ],
+                'status' => 'error',
+            ], 400);
+        };
         $emprendimiento = Emprendedor::find($id);
         $imagenesBD = imagenes::find($emprendimiento->id);
         $imagenesRequest = $request->file("imagenes");

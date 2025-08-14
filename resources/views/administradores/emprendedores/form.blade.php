@@ -37,7 +37,7 @@
 <div class="field-group" id="imagenesFormulario">
     <input type="file" name="imagenes[]" id="imagenes" multiple accept="image/*">
     <label for="imagenes">Cargar Imágenes <span class="asterisco">*</span></label>
-    @error('imagenes')
+    @error('imagenes*')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
     <div id="previousImagen" data-mostrar="{{isset($imagenes) ? 'true' : 'false'}}" data-array="{{isset($imagenes) ? json_encode($imagenes) : 'false' }}">
@@ -141,64 +141,61 @@
         $dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
     @endphp
 
-
+<div class="row">
     @foreach ($dias as $dia)
         @php
             // Cargar datos antiguos o valores ya cargados del emprendimiento
             $horario = isset($emprendimiento) ? $emprendimiento->horarios->firstWhere('dia', $dia) : null;
         @endphp
+            <strong class="{{$dia}}">{{ $dia }}</strong>
+            <div class="inputFlex ocultarInputsCerrado{{$dia}}">
+                <div class="col-md-4">
+                    <input type="time" name="horarios[{{ $dia }}][hora_de_apertura]" class="form-control"
+                        value="{{ old("horarios.$dia.hora_de_apertura", $horario->hora_de_apertura ?? '') }}"
+                        {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'disabled' : '' }}>
 
-        <strong>{{ $dia }}</strong>
-        <div class="row">
+                    @error('horaApertura')
+                        <div class="text-danger small">{{ $message }}</div>
+                    @enderror
+                    <p class="form-subtitulos">Otorgar el horario de apertura</p>
+                </div>
 
-            <div class="col-md-4">
-                <input type="time" name="horarios[{{ $dia }}][hora_de_apertura]" class="form-control"
-                    value="{{ old("horarios.$dia.hora_de_apertura", $horario->hora_de_apertura ?? '') }}"
-                    {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'disabled' : '' }}>
+                <div class="col-md-4">
+                    <input type="time" name="horarios[{{ $dia }}][hora_de_cierre]" class="form-control"
+                        value="{{ old("horarios.$dia.hora_de_cierre", $horario->hora_de_cierre ?? '') }}"
+                        {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'disabled' : '' }}>
 
-                @error('horaApertura')
-                    <div class="text-danger small">{{ $message }}</div>
-                @enderror
-                <p class="form-subtitulos">Otorgar el horario de apertura</p>
+                    @error('horaCierre')
+                        <div class="text-danger small">{{ $message }}</div>
+                    @enderror
+                    <p class="form-subtitulos">Otorgar el horario de cierre</p>
+
+                </div>
+
+                <div class="cerrado-checkbox col-md-4" data-dia="{{ $dia }}">
+                    <p class="form-subtitulos">Marcar si permanece cerrado</p>
+                    <input type="checkbox" id="cerrado_{{ $dia }}"
+                        name="horarios[{{ $dia }}][cerrado]" value="1" data-dia="{{ $dia }}"
+                        class="me-2 checkbox checkbox-cerrado"
+                        {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'checked' : '' }}>
+                </div>
+                @if($dia == 'Domingo')
+                <div class="col-md-4">
+                    <input type="checkbox" name="horarios[{{ $dia }}][participa_feria]" value="1"
+                        {{ old("horarios.$dia.participa_feria", $horario->participa_feria ?? false) ? 'checked' : '' }}>
+
+                    @error('feria')
+                        <div class="text-danger small">{{ $message }}</div>
+                    @enderror
+                    <p class="form-subtitulos ">Marcar si participa en la feria municipal</p>
+                </div>
+                @endif
             </div>
-
-            <div class="col-md-4">
-                <input type="time" name="horarios[{{ $dia }}][hora_de_cierre]" class="form-control"
-                    value="{{ old("horarios.$dia.hora_de_cierre", $horario->hora_de_cierre ?? '') }}"
-                    {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'disabled' : '' }}>
-
-                @error('horaCierre')
-                    <div class="text-danger small">{{ $message }}</div>
-                @enderror
-                <p class="form-subtitulos">Otorgar el horario de cierre</p>
-
-            </div>
-
-            <div class="col-md-4">
-                <input type="checkbox" name="horarios[{{ $dia }}][participa_feria]" value="1"
-                    {{ old("horarios.$dia.participa_feria", $horario->participa_feria ?? false) ? 'checked' : '' }}>
-
-                @error('feria')
-                    <div class="text-danger small">{{ $message }}</div>
-                @enderror
-                <p class="form-subtitulos ">Marcar si participa en la feria municipal</p>
-            </div>
-
-            <div class="cerrado-checkbox col-md-4">
-
-                <p class="form-subtitulos">Marcar si permanece cerrado</p>
-                <input type="checkbox" id="cerrado_{{ $dia }}"
-                    name="horarios[{{ $dia }}][cerrado]" value="1" data-dia="{{ $dia }}"
-                    class="me-2 checkbox"
-                    {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'checked' : '' }}>
-
-                <label for="cerrado_{{ $dia }}">
-                    Cerrado
-                </label>
-
-            </div>
+            <p class="cerrado_{{ $dia }} oculto">
+                        Cerrado
+                    </p>
     @endforeach
-
+</div>
 
 
 

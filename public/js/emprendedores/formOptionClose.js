@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const checkboxes = document.querySelectorAll(".cerrado-checkbox");
+    const checkboxes = document.querySelectorAll(".checkbox-cerrado");
     checkboxes.forEach((chk) => {
         chk.addEventListener("change", function () {
             const dia = this.dataset.dia;
@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 `[name="horarios[${dia}][hora_de_cierre]"]`
             );
             if (this.checked) {
+                console.log(document.querySelector(`.cerrado_${dia}`));
+                document.querySelector(`.cerrado_${dia}`).classList.remove(`oculto`);
+                document.querySelector(`.ocultarInputsCerrado${dia}`).style.display = "none";
                 apertura.disabled = true;
                 cierre.disabled = true;
             } else {
