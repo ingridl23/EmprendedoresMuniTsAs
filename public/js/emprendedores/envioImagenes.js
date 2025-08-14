@@ -104,9 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 icon: "error",
                 confirmButtonColor: "#36be7f",
             });
-            input.value = dtCopia;
-            console.log(dtCopia);
-
+            input.files = dtCopia;
             return;
         }
         const archivosPermitidos = nuevosArchivos.slice(0, espacioDisponible);
