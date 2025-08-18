@@ -165,7 +165,7 @@
                             <div class="col-lg-4 col-sm-6">
                                 @if ($emprendedor->imagenes->isNotEmpty())
                                     <a class="portfolio-box"
-                                        href="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
+                                        href="{{ asset('storage/public/img' . $emprendedor->imagenes->first()->url) }}"
                                         title="{{ $emprendedor->nombre }}">
                                         <img class="img-fluid"
                                             src="{{ asset('storage/' . $emprendedor->imagenes->first()->url) }}"
