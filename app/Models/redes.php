@@ -12,7 +12,7 @@ class Redes extends Model
 
     protected $table = 'redes'; // tu tabla real
 
-     protected $fillable = [
+    protected $fillable = [
         'instagram',
         'facebook',
         'whatsapp'
@@ -22,34 +22,36 @@ class Redes extends Model
     {
         return $this->hasOne(Emprendedor::class, 'redes_id', 'id');
     }
-    public static function editarEmprendimiento($redes){
-        $cadena="https";
-        if(!strpos($redes->instagram, $cadena)){
+    public static function editarEmprendimiento($redes)
+    {
+        $cadena = "https";
+        if (!strpos($redes->instagram, $cadena)) {
             $redes->instagram = "https://instagram.com/{$redes->instagram}";
         }
-        if(!strpos($redes->facebook, $cadena)){
-             $redes->facebook = "https://facebook.com/{$redes->facebook}";
+        if (!strpos($redes->facebook, $cadena)) {
+            $redes->facebook = "https://facebook.com/{$redes->facebook}";
         }
         $redesEdit = $redes->save();
         return $redesEdit;
     }
-    public static function eliminarEmprendimiento($redes){
+    public static function eliminarEmprendimiento($redes)
+    {
         $redesEliminar = $redes->delete();
         return $redesEliminar;
     }
-    public static function crearRedes($instagram, $facebook, $whatsapp){
-        if(isset($instagram)){
+    public static function crearRedes($instagram, $facebook, $whatsapp)
+    {
+        if (isset($instagram)) {
             $instagram = "https://instagram.com/{$instagram}";
         }
-        if(isset($facebook)){
-             $facebook = "https://facebook.com/{$facebook}";
+        if (isset($facebook)) {
+            $facebook = "https://facebook.com/{$facebook}";
         }
-        $redes= redes::create([
+        $redes = redes::create([
             'instagram' => $instagram,
             'facebook' => $facebook,
             'whatsapp' => $whatsapp,
         ]);
         return $redes->id;
     }
-
 }

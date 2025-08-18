@@ -79,7 +79,7 @@ class administradorController extends Controller
 
     public function showFormCrearEmprendimiento()
     {
-        $categorias = Emprendedor::obtenerCategoriasEmprendedores();
+        $categorias = Emprendedor::obtenerCategorias();
         return view('administradores.emprendedores.formNuevoEmprendimiento', compact('categorias'));
     }
 
@@ -175,7 +175,7 @@ class administradorController extends Controller
             if ($emprendimiento != null) {
                 $emprendimiento->redes->instagram = $this->obtenerRedes($emprendimiento->redes->instagram);
                 $emprendimiento->redes->facebook = $this->obtenerRedes($emprendimiento->redes->facebook);
-                $categorias = Emprendedor::obtenerCategoriasEmprendedores();
+                $categorias = Emprendedor::obtenerCategorias();
                 $imagenes = imagenes::find($emprendimiento->id);
                 return view("administradores.emprendedores.formEditarEmprendimiento", compact('emprendimiento', 'categorias', 'imagenes'));
             }

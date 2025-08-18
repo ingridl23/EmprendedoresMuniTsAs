@@ -25,7 +25,7 @@
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 
-        
+
     </head>
     @include('administradores.emprendedores.navBarAdmin')
 
@@ -60,7 +60,7 @@
                     <p class="text-muted mb-5">
                         Corregir datos cargados,
                         incorporar cambios en la actividad del emprendimiento .
-                        ¡Asegurar de revisar los campos antes de guardar los cambios!
+                        ¡Revisar los campos antes de guardar!
                     </p>
                 </div>
             </div>
@@ -68,14 +68,14 @@
 
         @if ($errors->any())
             <div class="alert alert-danger text-center mb-3">
-                <p class="mensajeError">Necesita completar correctamente todos los campos.</p>
+                <p class="mensajeError">Se debe completar correctamente todos los campos.</p>
             </div>
         @endif
 
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <form action="/emprendedores/{{ $emprendimiento->id }}" method="POST" enctype="multipart/form-data"
-                    class="form" id="editarForm" data-id="{{$emprendimiento->id}}">
+                    class="form" id="editarForm" data-id="{{ $emprendimiento->id }}">
                     @csrf
                     {{ method_field('PATCH') }}
                     @include('administradores.emprendedores.form')
@@ -87,12 +87,12 @@
                 </form>
             </div>
         </div>
-</section>
+    </section>
     @include('layouts.panelAdmin')
     @include('emprendedor.footer')
 
     <div class="contenedor_loader">
-       <div class="loader"></div>
+        <div class="loader"></div>
     </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -102,10 +102,10 @@
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
-    <script src="{{asset('js/emprendedores/envioImagenes.js')}}"></script>
+    <script src="{{ asset('js/emprendedores/envioImagenes.js') }}"></script>
     <script src="{{ asset('js/loader.js') }}"></script>
 
-            <!--Para las alertas en JS-->
+    <!--Para las alertas en JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- SimpleLightbox plugin JS-->
