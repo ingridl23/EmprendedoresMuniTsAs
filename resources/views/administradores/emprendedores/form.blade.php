@@ -19,8 +19,8 @@
 
     <select name="categoria" class="categoria" required>
         @foreach ($categorias as $item)
-            <option class="opcionesCategoria" value="{{ $item['categoria'] }}"
-                {{ (isset($emprendimiento) && $emprendimiento->categoria == $item['categoria']) || old('categoria') == $item['categoria'] ? 'selected' : '' }}>
+            <option class="opcionesCategoria" value="{{ $item['id'] }}"
+                {{ (isset($emprendimiento) && $emprendimiento->id == $item['categoria']) || old('categoria') == $item['id'] ? 'selected' : '' }}>
                 {{ $item['categoria'] }}</option>
         @endforeach
     </select>
@@ -138,21 +138,23 @@
 <label for="horaApertura">Horarios <span class="asterisco">*</span></label>
 <div class="field-group">
     @php
-        $dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+        $dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
     @endphp
 
 <div class="row">
-    @foreach ($dias as $dia)
+    @foreach ($dias as $index => $dia)
         @php
             // Cargar datos antiguos o valores ya cargados del emprendimiento
-            $horario = isset($emprendimiento) ? $emprendimiento->horarios->firstWhere('dia', $dia) : null;
+            $horario = isset($emprendimiento) ? $horarios->firstWhere('dia', $dia) : null;
         @endphp
             <strong class="{{$dia}}">{{ $dia }}</strong>
-            <div class="inputFlex ocultarInputsCerrado{{$dia}}">
-                <div class="col-md-4">
+            <p class="cerrado_{{ $dia }} oculto">
+                    Cerrado
+            </p>
+            <div class="inputFlex">
+                <div class="col-md-4 ocultarInputsCerrado{{$dia}}">
                     <input type="time" name="horarios[{{ $dia }}][hora_de_apertura]" class="form-control"
-                        value="{{ old("horarios.$dia.hora_de_apertura", $horario->hora_de_apertura ?? '') }}"
-                        {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'disabled' : '' }}>
+                        value="{{ old("horarios.$dia.hora_de_apertura", $horario->hora_apertura ?? '') }}"
 
                     @error('horaApertura')
                         <div class="text-danger small">{{ $message }}</div>
@@ -160,11 +162,9 @@
                     <p class="form-subtitulos">Otorgar el horario de apertura</p>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 ocultarInputsCerrado{{$dia}}">
                     <input type="time" name="horarios[{{ $dia }}][hora_de_cierre]" class="form-control"
-                        value="{{ old("horarios.$dia.hora_de_cierre", $horario->hora_de_cierre ?? '') }}"
-                        {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'disabled' : '' }}>
-
+                        value="{{ old("horarios.$dia.hora_de_cierre", $horario->hora_cierre ?? '') }}"
                     @error('horaCierre')
                         <div class="text-danger small">{{ $message }}</div>
                     @enderror
@@ -172,7 +172,7 @@
 
                 </div>
 
-                <div class="cerrado-checkbox col-md-4" data-dia="{{ $dia }}">
+                <div class="cerrado-checkbox col-md-4 " data-dia="{{ $dia }}">
                     <p class="form-subtitulos">Marcar si permanece cerrado</p>
                     <input type="checkbox" id="cerrado_{{ $dia }}"
                         name="horarios[{{ $dia }}][cerrado]" value="1" data-dia="{{ $dia }}"
@@ -191,9 +191,7 @@
                 </div>
                 @endif
             </div>
-            <p class="cerrado_{{ $dia }} oculto">
-                        Cerrado
-                    </p>
+            
     @endforeach
 </div>
 

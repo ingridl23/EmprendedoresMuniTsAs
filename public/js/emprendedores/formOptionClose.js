@@ -10,14 +10,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 `[name="horarios[${dia}][hora_de_cierre]"]`
             );
             if (this.checked) {
-                console.log(document.querySelector(`.cerrado_${dia}`));
                 document.querySelector(`.cerrado_${dia}`).classList.remove(`oculto`);
-                document.querySelector(`.ocultarInputsCerrado${dia}`).style.display = "none";
+                let inputs = document.querySelectorAll(`.ocultarInputsCerrado${dia}`);
+                inputs.forEach(input => {
+                    input.style.display = "none";
+                });
                 apertura.disabled = true;
                 cierre.disabled = true;
+
             } else {
                 apertura.disabled = false;
                 cierre.disabled = false;
+                let inputs = document.querySelectorAll(`.ocultarInputsCerrado${dia}`);
+                inputs.forEach(input => {
+                    input.style.display = "block";
+                });
             }
         });
 

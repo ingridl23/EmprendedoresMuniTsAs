@@ -11,6 +11,7 @@ use Database\Factories\HorarioFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Imagenes;
 use App\Models\Horario;
+use App\Models\categoria;
 
 /**
  * Class Emprendedor
@@ -43,7 +44,7 @@ class Emprendedor extends Model
     protected $fillable = [
         'nombre',
         'descripcion',
-        'categoria',
+        'categoria_id',
         'redes_id',
         'direccion_id',
     ];
@@ -67,6 +68,12 @@ class Emprendedor extends Model
     {
         return $this->hasMany(Imagenes::class);
     }
+
+    public function categoria()
+    {
+        return $this->belongsTo(categoria::class);
+    }
+
 
     public static function showEmprendimientos()
     {
@@ -94,7 +101,7 @@ class Emprendedor extends Model
     public static function obtenerCategoriasEmprendedoresAgrupados()
     {
         
-        $categorias = Emprendedor::all()->groupBy('categoria');
+        $categorias = Emprendedor::all()->groupBy('categoria_id');
         return $categorias;
     }
 

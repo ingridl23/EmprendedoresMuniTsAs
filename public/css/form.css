@@ -104,6 +104,12 @@ button.cierreEmprendedor img{
     height: auto;
 }
 
+.btnAgregarEmprendimiento, .btnEditarEmprendimiento{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 div.contenedorImgs{
     display: block;
     position: relative;
