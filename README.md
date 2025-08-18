@@ -283,6 +283,32 @@ Se busca optimizar el manejo de las imagenes, tanto en la carga como en la muest
 +--------+----------+---------------------------------------------+-------------------+---------------------------------------------------------------------------+--------------------------------------------------------------+
 ```
 
+## 👥 Roles y permisos
+
+El sistema cuenta con distintos tipos de usuarios, cada uno con funcionalidades específicas:
+
+### Administrador
+
+-   Gestionar emprendedores: crear, editar y eliminar perfiles.
+-   Publicar y editar noticias y capacitaciones.
+-   Administrar usuarios y permisos.
+-   Exportar información de empleos y emprendedores.
+-   Acceder a paneles de control y reportes.
+
+### Emprendedor
+
+-   Crear y editar su propio perfil y emprendimientos.
+-   Subir imágenes de sus proyectos.
+-   Consultar noticias, capacitaciones y programas disponibles.
+-   Contactar a otros usuarios o recibir consultas de visitantes.
+
+### Visitante / Usuario general
+
+-   Visualizar información pública de emprendedores y capacitaciones.
+-   Buscar emprendedores y noticias mediante filtros.
+-   Consultar programas y recursos de la Oficina de Empleo.
+-   Completar formularios de contacto o inscripción a programas.
+
 ## 📚 Créditos
 
 ### Desarrollado por:
