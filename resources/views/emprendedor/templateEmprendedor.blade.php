@@ -140,7 +140,7 @@
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">{{ $emprendimiento->nombre }} </h1>
                     <!--((emprendedor-nombre)) -->
-                    <hr class="divider text-white" />
+                    <hr class="divider text-white" style="background-color: white !important" />
                 </div>
                 <div class="align-self-baseline">
                     <p class="text-white-75 ">{{ $emprendimiento->descripcion }}</p>
@@ -161,7 +161,7 @@
             @if ($emprendimiento->imagenes->isNotEmpty())
                 <div class=" galeriaImagenes col-md-8">
                     @foreach ($emprendimiento->imagenes as $imagen)
-                        <img src="{{$imagen['url']}}" class=" img-fluid"
+                        <img src="{{ $imagen['url'] }}" class=" img-fluid"
                             alt="Imagen de {{ $emprendimiento->nombre }}">
                     @endforeach
 

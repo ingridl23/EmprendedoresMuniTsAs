@@ -17,6 +17,7 @@
 <label for="descripcion">Seleccionar Categoria<span class="asterisco">*</span></label>
 <div class="field-group">
 
+
     <select name="categoria" class="categoria" required>
         @foreach ($categorias as $item)
             <option class="opcionesCategoria" value="{{ $item['id'] }}"
@@ -40,7 +41,8 @@
     @error('imagenes*')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
-    <div id="previousImagen" data-mostrar="{{isset($imagenes) ? 'true' : 'false'}}" data-array="{{isset($imagenes) ? json_encode($imagenes) : 'false' }}">
+    <div id="previousImagen" data-mostrar="{{ isset($imagenes) ? 'true' : 'false' }}"
+        data-array="{{ isset($imagenes) ? json_encode($imagenes) : 'false' }}">
     </div>
     <p class="form-subtitulos">Subir maximo 5 imágenes del emprendimiento</p>
 </div>
@@ -76,7 +78,7 @@
     @error('whatsapp')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
-    <p class="form-subtitulos">Otorgue un número de WhatsApp del emprendimiento</p>
+    <p class="form-subtitulos">Ingresar un número de telefono del emprendedor/ra</p>
 </div>
 <div>
     <div class="field-group">
@@ -120,7 +122,7 @@
         @error('calle')
             <div class="text-danger small">{{ $message }}</div>
         @enderror
-        <p class="form-subtitulos">Otorgue el nombre de la calle</p>
+        <p class="form-subtitulos">Otorgar el nombre de la calle</p>
     </div>
     <div class="field-group">
         <input type="number" name="altura" id="altura" required placeholder="" min=1
@@ -129,7 +131,7 @@
         @error('altura')
             <div class="text-danger small">{{ $message }}</div>
         @enderror
-        <p class="form-subtitulos">Otorgue la altura de la calle</p>
+        <p class="form-subtitulos">Otorgar direccion </p>
     </div>
 </div>
 

@@ -105,7 +105,8 @@ class Emprendedor extends Model
         return $categorias;
     }
 
-    public static function obtenerCategoriasEmprendedores(){
+    public static function obtenerCategoriasEmprendedores()
+    {
         $categorias = Emprendedor::select("categoria")->groupBy("categoria")->get();
         return $categorias;
     }

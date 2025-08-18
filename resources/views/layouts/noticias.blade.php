@@ -151,7 +151,7 @@
                     </p>
 
                     <p class="text-white-75 ">
-                        Un espacio pensado para que, como emprendedor o buscador de empleo, puedas acceder a información
+                        Un espacio pensado para que puedas acceder a información
                         útil y aprovechar al
                         máximo las iniciativas y recursos que ponemos a tu disposición.
                     </p>

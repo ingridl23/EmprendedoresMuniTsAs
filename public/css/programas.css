@@ -83,7 +83,14 @@ h4 {
     height: 300px;
 }
 
+.container-img-logo-escuela {
+    margin: auto;
+    padding: 0;
+    align-items: center;
+}
+
 .imagen-escuela {
+    object-fit: contain;
     max-width: 685px;
 }
 
@@ -551,12 +558,14 @@ div.card-body a {
         padding: 3px;
         margin-top: 1rem;
     }
-}
-
-.imagen-escuela {
-    margin-left: 3%;
-    margin-right: 20%;
-    object-fit: contain;
+    .container-img-logo-escuela {
+        margin: auto;
+        padding: 0;
+        align-items: center;
+    }
+    .imagen-escuela {
+        object-fit: contain;
+    }
 }
 
 @media(min-width: 760px) {
@@ -579,12 +588,6 @@ div.card-body a {
     .seccionEscuelaDeEmprendedores h2.subtituloProgramas {
         margin: 0;
     }
-    .imagen-escuela {
-        .imagen-escuela {
-            max-width: 50%;
-            margin: 0;
-        }
-    }
 }
 
 @media(min-width: 992px) {
@@ -597,8 +600,5 @@ div.card-body a {
 @media (min-width: 1100px) {
     .section-lead {
         width: 40%;
-    }
-    .imagen-escuela {
-        max-width: 30%;
     }
 }
