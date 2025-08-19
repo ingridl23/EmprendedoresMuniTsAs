@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (
         window.matchMedia("(min-width:650px) and (max-width: 1200px)").matches
     ) {
-         console.log("aca");
         let scrollPosition = 0;
         items.forEach((itemFor) => {
             itemFor.classList.remove("visible");
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         //Se encarga de que, si se da siguiente, muestre la última card que queda (son cuatro cards y se muestran tres, entonces solo quedaria una sin mostrar)
         //Si da siguiente y es la última card, llevará al usuario a la primera card
         function goToSlideNextGrande() {
-            console.log("Scroll: " + scrollPosition);
             let cardWith = item.clientWidth; /*211px*/
             scrollPosition = scrollPosition + cardWith;
             if (scrollPosition == cardWith) {

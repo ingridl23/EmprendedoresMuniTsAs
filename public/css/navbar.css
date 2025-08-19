@@ -83,7 +83,9 @@
     transition: all 0.3s ease;
     align-items: baseline;
 }
-
+nav a.scrollto{
+    text-decoration: none;
+}
 .navbar-brand:hover {
     color: #25c39c !important;
 }

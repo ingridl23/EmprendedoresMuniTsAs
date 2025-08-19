@@ -155,10 +155,10 @@
         </div>
 
 
+        @if (!empty($ultimos) && $ultimos->count())
         <!-- seccion vista previa ultimos emprendedores-->
         <div id="portfolio">
             <div class="container-fluid p-0">
-                @if (!empty($ultimos) && $ultimos->count())
                     <div class="row g-0 portfolio-container">
                         @foreach ($ultimos as $emprendedor)
                             <div class="col-lg-4 col-sm-6">
@@ -177,7 +177,6 @@
                             </div>
                         @endforeach
                     </div>
-                @endif
             </div>
 
 
@@ -190,7 +189,7 @@
         </section>
     </div>
 
-
+    @endif
 
 
 

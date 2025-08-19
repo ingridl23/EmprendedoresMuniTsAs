@@ -13,7 +13,16 @@ use App\Models\Empleo;
 class EmpleosController extends Controller
 {
 
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('can:filtrar datos', [
+            'only' => [
+                'export',
+                'showForm'
+            ]
+        ]);
+    }
 
     public function showForm()
     {
@@ -24,8 +33,6 @@ class EmpleosController extends Controller
 
     public function export(Request $request)
     {
-
-
         $request->validate([
             'ciudad' => 'string|nullable',
             'edad' => 'integer|nullable',
