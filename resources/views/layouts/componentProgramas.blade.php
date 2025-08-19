@@ -163,9 +163,9 @@
                         @foreach ($ultimos as $emprendedor)
                             <div class="col-lg-4 col-sm-6">
                                 @if ($emprendedor->imagenes->isNotEmpty())
-                                    <a class="portfolio-box" href="https://res.cloudinary.com/djnlbzis1/image/upload/v1755605297/emprendedores/gst8nn8wxowzoztyq7nr.jpg"
+                                    <a class="portfolio-box" href="{{ $emprendedor->imagenes->first()->url }}"
                                         title="{{ $emprendedor->nombre }}">
-                                        <img class="img-fluid" src="https://res.cloudinary.com/djnlbzis1/image/upload/v1755605297/emprendedores/gst8nn8wxowzoztyq7nr.jpg"
+                                        <img class="img-fluid" src="{{ $emprendedor->imagenes->first()->url }}"
                                             alt={{ $emprendedor->nombre }} />
                                 
                                         <div class="portfolio-box-caption">
