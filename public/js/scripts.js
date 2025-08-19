@@ -69,6 +69,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
         )
         .forEach((el) => observer.observe(el));
 
+    $(document).ready(function () {
+        $('.portfolio-box').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+        });
+    });
+
+    $('.portfolio-container').magnificPopup({
+    delegate: 'a.portfolio-box',
+    type: 'image',
+    gallery: { enabled: true }
+});
     /*   window.addEventListener("load", () => {
         document
             .querySelectorAll(

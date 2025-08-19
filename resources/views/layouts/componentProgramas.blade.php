@@ -159,29 +159,28 @@
         <div id="portfolio">
             <div class="container-fluid p-0">
                 @if (!empty($ultimos) && $ultimos->count())
-                    <div class="row g-0">
-
+                    <div class="row g-0 portfolio-container">
                         @foreach ($ultimos as $emprendedor)
                             <div class="col-lg-4 col-sm-6">
                                 @if ($emprendedor->imagenes->isNotEmpty())
-                                    <a class="portfolio-box" href="{{ $emprendedor->imagenes->first()->url }}"
+                                    <a class="portfolio-box" href="https://res.cloudinary.com/djnlbzis1/image/upload/v1755605297/emprendedores/gst8nn8wxowzoztyq7nr.jpg"
                                         title="{{ $emprendedor->nombre }}">
-                                        <img class="img-fluid" src="{{ $emprendedor->imagenes->first()->url }}"
+                                        <img class="img-fluid" src="https://res.cloudinary.com/djnlbzis1/image/upload/v1755605297/emprendedores/gst8nn8wxowzoztyq7nr.jpg"
                                             alt={{ $emprendedor->nombre }} />
+                                
+                                        <div class="portfolio-box-caption">
+                                            <div class="project-category text-white-50">{{ $emprendedor->categoria->categoria }}</div>
+                                            <div class="project-name">{{ $emprendedor->nombre }}</div>
+                                        </div>
+                                    </a>
                                 @endif
-                                <div class="portfolio-box-caption">
-                                    <div class="project-category text-white-50">{{ $emprendedor->categoria }}</div>
-                                    <div class="project-name">{{ $emprendedor->nombre }}</div>
-                                </div>
-                                </a>
                             </div>
                         @endforeach
+                    </div>
                 @endif
-
             </div>
-        </div>
 
-
+                    
 
 
         <!-- Call to action-->
