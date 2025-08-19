@@ -58,21 +58,24 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link"href="{{ url('/') }}">Volver a Inicio</a>
+                                    <a class="nav-link"href="{{ url('/') }}">Volver a inicio</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
                                 </li>
-
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                                 </li>
-                                <li class="nav-item serParte">
-                                    <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
-                                </li>
+                                @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('/solicitantes') }}">Solicitantes</a>
+                                    </li>
+                                @else
+                                    <li class="nav-item serParte">
+                                        <a class="nav-link" href="{{ url('/formar/parte') }}">Ser parte</a>
+                                    </li>
+                                @endif
                             </ul>
-
 
 
 

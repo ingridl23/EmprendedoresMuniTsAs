@@ -50,25 +50,29 @@
                             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-
                         <!-- Menú de navegación principal -->
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav mx-auto my-2 my-lg-0">
-
                                 <li class="nav-item">
-                                    <a class="nav-link"href="{{ url('/') }}">Volver a Inicio</a>
+                                    <a class="nav-link"href="{{ url('/') }}">Volver a inicio</a>
                                 </li>
-
                                 <li class="nav-item">
-                                    <a class="nav-link"href="{{ url('/programas') }}">Programas</a>
+                                    <a class="nav-link" href="{{ url('/programas') }}">Programas</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
                                 </li>
-                                <li class="nav-item serParte">
-                                    <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
-                                </li>
+                                @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('/solicitantes') }}">Solicitantes</a>
+                                    </li>
+                                @else
+                                    <li class="nav-item serParte">
+                                        <a class="nav-link" href="{{ url('/formar/parte') }}">Ser parte</a>
+                                    </li>
+                                @endif
                             </ul>
+
 
                             <!-- Botones de servicios externos -->
                             <div class="get-started-buttons d-flex align-items-center">
@@ -347,7 +351,7 @@
 
 
     <div class="contenedor_loader">
-       <div class="loader"></div>
+        <div class="loader"></div>
     </div>
 
 
@@ -360,13 +364,13 @@
     <!-- Core theme JS-->
 
 
-     @if (session('success'))
+    @if (session('success'))
         <script>
             window.mensajeExito = @json(session('success'));
         </script>
     @endif
 
-    @if(session('error'))
+    @if (session('error'))
         <script>
             window.mensajeError = @json(session('error'));
         </script>

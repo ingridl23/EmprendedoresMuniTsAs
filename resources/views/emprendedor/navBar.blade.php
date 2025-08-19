@@ -37,7 +37,7 @@
                                 </li>
                             @else
                                 <li class="nav-item serParte">
-                                    <a class="nav-link" href="{{ url('/formar/parte') }}">ser parte</a>
+                                    <a class="nav-link" href="{{ url('/formar/parte') }}">Ser parte</a>
                                 </li>
                             @endif
                         </ul>

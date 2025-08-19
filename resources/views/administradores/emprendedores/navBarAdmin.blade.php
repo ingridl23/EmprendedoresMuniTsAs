@@ -26,6 +26,14 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/') }}">Inicio</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/programas') }}">Programas</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
                             </li>
