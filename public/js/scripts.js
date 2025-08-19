@@ -51,8 +51,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // ) Intersection Observer para animaciones scroll
-
-    const observer = new IntersectionObserver(
+    /*const observer = new IntersectionObserver(
         (entries, obs) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -69,20 +68,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         )
         .forEach((el) => observer.observe(el));
 
-    $(document).ready(function () {
-        $('.portfolio-box').magnificPopup({
-            type: 'image',
-            gallery: {
-                enabled: true
-            }
-        });
-    });
-
-    $('.portfolio-container').magnificPopup({
-    delegate: 'a.portfolio-box',
-    type: 'image',
-    gallery: { enabled: true }
-});
     /*   window.addEventListener("load", () => {
         document
             .querySelectorAll(
