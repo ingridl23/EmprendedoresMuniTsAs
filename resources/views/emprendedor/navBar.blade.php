@@ -45,7 +45,7 @@
                         <!-- Botones de servicios externos -->
                         <div class="get-started-buttons d-flex align-items-center">
                             <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
-                                class="get-started-btn crollto">
+                                class="get-started-btn scrollto">
                                 <div class="get-started-group font-color-bl containerLinksExternos">
                                     <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}" slt
                                         class=" img-btn-logonav mb-1">

@@ -3,7 +3,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     var navbarShrink = function() {
         const navbarCollapsible = document.body.querySelector("#mainNav");
         const header = document.querySelector("#header");
-
         if (!navbarCollapsible) return;
         if (!header) return;
 
@@ -31,8 +30,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 
+
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector(".navbar-toggler");
+    console.log(navbarToggler);
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll("#navbarResponsive .nav-link")
     );
@@ -51,7 +52,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // ) Intersection Observer para animaciones scroll
-
     const observer = new IntersectionObserver(
         (entries, obs) => {
             entries.forEach((entry) => {

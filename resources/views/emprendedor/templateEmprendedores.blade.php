@@ -224,7 +224,9 @@
         <div id="emprendedores-container" class="emprendedores-container"></div>
         <div class="seccionCarrusel">
             @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
-                <h3 id="link{{ $categoria }}">{{ $categoria }}</h3>
+            @if (!empty($emprendedores[0]))
+                <h3 id="link{{ $categoria }}">{{ $emprendedores[0]->categoria->categoria }}</h3>
+            @endif
                 <div class="container d-flex justify-content-center align-items-center min-vh-100">
                     <div id="carrousel-{{ $loop->index }}" class="shadow-wrapper p-2 rounded-4"
                         data-interval="200000">
@@ -248,7 +250,7 @@
                                         <div class="portfolio-caption">
                                             <div class="portfolio-caption-heading">{{ $emprendedor->nombre }}</div>
                                             <div class="portfolio-caption-subheading text-muted">
-                                                {{ $emprendedor->categoria }}</div>
+                                                {{ $emprendedor->categoria->categoria }}</div>
                                         </div>
                                     </div>
 
@@ -275,7 +277,7 @@
                                                                 <ul class="list-inline">
                                                                     <li><strong>Emprendedor</strong></li>
                                                                     <li><strong>Categoria:</strong>
-                                                                        {{ $emprendedor->categoria }}</li>
+                                                                        {{ $emprendedor->categoria->categoria }}</li>
                                                                 </ul>
                                                                 <button
                                                                     class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"

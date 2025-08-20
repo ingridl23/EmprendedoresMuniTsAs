@@ -80,7 +80,7 @@
                     {{ method_field('PATCH') }}
                     @include('administradores.emprendedores.form')
                     <div class=" d-grid  ">
-                        <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
+                        <button class="btn btn-primary btn-xl submit btnEditarEmprendimiento" id="submitButton" type="submit">
                             <span class="btntext" value="Guardar datos"> Editar emprendimiento </span>
                         </button>
                     </div>
@@ -102,7 +102,8 @@
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
-    <script src="{{ asset('js/emprendedores/envioImagenes.js') }}"></script>
+    <script src="{{asset('js/emprendedores/envioImagenes.js')}}"></script>
+      <script src="{{ asset('js/emprendedores/formOptionClose.js') }} "></script>
     <script src="{{ asset('js/loader.js') }}"></script>
 
     <!--Para las alertas en JS-->
