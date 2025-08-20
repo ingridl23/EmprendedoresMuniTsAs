@@ -63,6 +63,16 @@ div#previousImagen{
     width: 40%;
 }
 
+.inputFlex{
+    display: flex;
+}
+label.oculto{
+    display: none;
+}
+.ocultarInputsCerradoDomingo{
+    flex-wrap: wrap;
+}
+
 #previousImagen .imgEmprendimiento{
     width: 100%;
     margin: 0.4rem;
@@ -92,6 +102,12 @@ button.cierreEmprendedor img:hover{
 button.cierreEmprendedor img{
     width: 100%;
     height: auto;
+}
+
+.btnAgregarEmprendimiento, .btnEditarEmprendimiento{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 div.contenedorImgs{

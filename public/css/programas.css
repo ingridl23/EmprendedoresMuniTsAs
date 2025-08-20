@@ -9,8 +9,8 @@
 
 .programas {
     padding-top: 2rem;
-    padding-bottom: 2rem;
     margin: 2rem;
+    margin-bottom: 5rem;
 }
 
 .titulo1 {
@@ -25,8 +25,6 @@
 }
 
 .subtitulo2 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     margin-top: 4rem;
     text-align: center;
 }
@@ -106,11 +104,14 @@ h4 {
     justify-items: center;
 }
 
+a.portfolio-box .img-fluid{
+    height: 300px;
+}
 
 /* Asegura que el portafolio comience separado visualmente */
 
 #portfolio {
-    padding-top: 4rem;
+    margin-top: 4rem;
     padding-bottom: 2rem;
     background-color: #1dffce;
 }
@@ -126,7 +127,6 @@ h4 {
 
 .detallesClub {
     display: flex;
-    padding-top: 2rem;
 }
 
 .detallesClub ul {
@@ -157,12 +157,20 @@ div.contenedorTituloDetalles h3 {
     border-radius: 0.90rem;
     align-items: center;
     color: rgb(228, 228, 228);
-    padding: 0rem 1rem;
+    padding: 1.5rem 4rem;
+}
+
+div.contenedorTituloDetalles h3.requisitos{
+    font-size: 250%;
 }
 
 h3+p.text-clubs {
     margin-top: 1rem;
     margin-bottom: 2rem;
+}
+
+.contenedorMasGrande{
+    height: 2%;
 }
 
 
@@ -217,16 +225,11 @@ div.programas.row {
     .beneficiosDetallesClub {
         flex-direction: row-reverse;
     }
-    .detallesClub {
-        padding-top: 6rem;
-    }
     div.contenedorTituloDetalles {
         width: 40%;
     }
     .detallesClub {
-        padding-top: 6rem;
         padding-bottom: 3rem;
-        margin-bottom: 5rem !important;
     }
 }
 

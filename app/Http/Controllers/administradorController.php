@@ -15,10 +15,12 @@ use App\Models\Noticias;
 use App\Models\redes;
 use App\Models\direccion;
 use App\Models\Imagenes;
+use App\Models\categoria;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\constants;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+
 
 class administradorController extends Controller
 {
@@ -79,7 +81,7 @@ class administradorController extends Controller
 
     public function showFormCrearEmprendimiento()
     {
-        $categorias = Emprendedor::obtenerCategorias();
+         $categorias = categoria::obtenerCategorias();
         return view('administradores.emprendedores.formNuevoEmprendimiento', compact('categorias'));
     }
 
@@ -87,6 +89,7 @@ class administradorController extends Controller
 
     public function crearEmprendimiento(validacionEmprendimiento $request)
     {
+       
         $data = $request->validated();
         $idRedes = redes::crearRedes(
             $request->instagram,
@@ -103,18 +106,16 @@ class administradorController extends Controller
 
         $emprendimiento = Emprendedor::create([
             'nombre' => $data['nombre'],
-            'categoria' => $data['categoria'],
+            'categoria_id' => $data['categoria'],
             'descripcion' => $data['descripcion'],
             'redes_id' => $idRedes,
             'direccion_id' => $idDireccion,
         ]);
-
         foreach ($request->horarios as $dia => $datos) {
             $hora_apertura = $datos['hora_de_apertura'] ?? null;
             $hora_cierre = $datos['hora_de_cierre'] ?? null;
             $participa_feria = isset($datos['participa_feria']) ? 1 : 0;
             $cerrado = isset($datos['cerrado']) ? 1 : 0;
-
             // Evitar guardar si no hay datos relevantes
             if ($hora_apertura || $hora_cierre || $participa_feria || $cerrado) {
                 $horario = Horario::create([
@@ -175,9 +176,10 @@ class administradorController extends Controller
             if ($emprendimiento != null) {
                 $emprendimiento->redes->instagram = $this->obtenerRedes($emprendimiento->redes->instagram);
                 $emprendimiento->redes->facebook = $this->obtenerRedes($emprendimiento->redes->facebook);
-                $categorias = Emprendedor::obtenerCategorias();
+                $categorias = categoria::obtenerCategorias();
+                $horarios = Horario::obtenerHorarios($id);
                 $imagenes = imagenes::find($emprendimiento->id);
-                return view("administradores.emprendedores.formEditarEmprendimiento", compact('emprendimiento', 'categorias', 'imagenes'));
+                return view("administradores.emprendedores.formEditarEmprendimiento", compact('emprendimiento', 'categorias', 'imagenes', 'horarios'));
             }
         };
 
@@ -206,6 +208,20 @@ class administradorController extends Controller
      */
     public function editarImagenesEmprendimiento($id, Request $request)
     {
+        $validator = Validator::make($request->all(),[
+            'imagenes' => 'array|max:5',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+        ]);
+        if($validator->fails()){
+            return response()->json([
+                'redirect' => "/emprendedores/formEditarEmprendimiento/{$id}",
+                'message' => [
+                    'titulo' => '¡Error!',
+                    'detalle' => 'Ha sucedido un error en la edición de la imagen',
+                ],
+                'status' => 'error',
+            ], 400);
+        };
         $emprendimiento = Emprendedor::find($id);
         $imagenesBD = imagenes::find($emprendimiento->id);
         $imagenesRequest = $request->file("imagenes");
@@ -285,57 +301,75 @@ class administradorController extends Controller
     public function editarEmprendimiento($id, validacionEditarEmprendimiento $request)
     {
         $emprendimiento = Emprendedor::find($id);
-
-        $redes = redes::find($emprendimiento->redes_id);
-        $redes->instagram = $this->obtenerRedes($redes->instagram);
-        $redes->facebook = $this->obtenerRedes($redes->facebook);
-        $direccion = direccion::find($emprendimiento->direccion_id);
-        if ($redes != null && $emprendimiento != null) {
-            if (
-                $redes->instagram != $request->input('instagram') || $redes->facebook != $request->input('facebook')
-                || $redes->whatsapp != $request->input('whatsapp')
-            ) {
-                $redes->instagram = "https://instagram.com/{$request->input('instagram')}";
-                $redes->facebook = "https://facebook.com/{$request->input('facebook')}";
-                $redes->whatsapp = $request->input('whatsapp');
+        if($emprendimiento != null){
+            $horarios = Horario::obtenerHorarios($id);
+            $redes = redes::find($emprendimiento->redes_id);
+            $redes->instagram = $this->obtenerRedes($redes->instagram);
+            $redes->facebook = $this->obtenerRedes($redes->facebook);
+            $direccion = direccion::find($emprendimiento->direccion_id);
+            if ($redes != null) {
+                if (
+                    $redes->instagram != $request->input('instagram') || $redes->facebook != $request->input('facebook')
+                    || $redes->whatsapp != $request->input('whatsapp')) {
+                        $redes->instagram = "https://instagram.com/{$request->input('instagram')}";
+                        $redes->facebook = "https://facebook.com/{$request->input('facebook')}";
+                        $redes->whatsapp = $request->input('whatsapp');
+                }
             }
-            if (
-                $direccion->ciudad != $request->input('ciudad') || $direccion->localidad != $request->input('localidad') || $direccion->calle != $request->input('calle')
-                || $direccion->altura != $request->input('altura')
-            ) {
-                $direccion->ciudad = $request->input('ciudad');
-                $direccion->localidad = $request->input('localidad');
-                $direccion->calle = $request->input('calle');
-                $direccion->altura = $request->input('altura');
+            if($direccion != null){
+                if (
+                    $direccion->ciudad != $request->input('ciudad') || $direccion->localidad != $request->input('localidad') || $direccion->calle != $request->input('calle')
+                    || $direccion->altura != $request->input('altura')) {
+                        $direccion->ciudad = $request->input('ciudad');
+                        $direccion->localidad = $request->input('localidad');
+                        $direccion->calle = $request->input('calle');
+                        $direccion->altura = $request->input('altura');
+                }
             }
-
             $emprendimiento->nombre = $request->input('nombre');
             $emprendimiento->descripcion = Str::ucfirst($request->input('descripcion'));
-            $emprendimiento->categoria = Str::ucfirst($request->input('categoria'));
+            $emprendimiento->categoria_id = $request->input('categoria');
 
+            foreach ($request->horarios as $dia => $datos) {
+                $diaHorarioViejo = $horarios->where('dia', $dia)->first();
+                $hora_apertura = $datos['hora_de_apertura'] ?? null;
+                $hora_cierre = $datos['hora_de_cierre'] ?? null;
+                $participa_feria = isset($datos['participa_feria']) ? 1 : 0;
+                $cerrado = isset($datos['cerrado']) ? 1 : 0;
 
+                // Evitar guardar si no hay datos relevantes
+                if ($hora_apertura || $hora_cierre || $participa_feria || $cerrado) {
+                    $diaHorarioViejo->hora_apertura = $hora_apertura;
+                    $diaHorarioViejo->hora_cierre = $hora_cierre;
+                    $diaHorarioViejo->participa_feria = $participa_feria;
+                    $diaHorarioViejo->cerrado = $cerrado;
+                    $horariosActualizado = Horario::editarHorarios($diaHorarioViejo);
+                    // Vincular el horario al emprendedor
+                }
+            }
 
             $emprendedorEdit = Emprendedor::editarEmprendimiento($emprendimiento);
             $redesEdit = redes::editarEmprendimiento($redes);
             $direccionEdit = direccion::editarEmprendimiento($direccion);
 
-            if ($emprendedorEdit && $redesEdit && $direccionEdit) {
-                $mensajes = [
-                    'titulo' => '¡Editado!',
-                    'detalle' => 'Emprendimiento editado con éxito.'
-                ];
+                if ($emprendedorEdit && $redesEdit && $direccionEdit) {
+                    $mensajes = [
+                        'titulo' => '¡Editado!',
+                        'detalle' => 'Emprendimiento editado con éxito.'
+                    ];
 
-                return redirect('/emprendedores')->with('success', $mensajes);
-            } else {
-                $mensajes = [
-                    'titulo' => '¡Error!',
-                    'detalle' => 'Ha sucedido un error al editar el emprendimiento, inténtelo nuevamente.'
-                ];
+                    return redirect('/emprendedores')->with('success', $mensajes);
+                } else {
+                    $mensajes = [
+                        'titulo' => '¡Error!',
+                        'detalle' => 'Ha sucedido un error al editar el emprendimiento, inténtelo nuevamente.'
+                    ];
 
-                return redirect('/emprendedores')->with('error', $mensajes);
-            }
+                    return redirect('/emprendedores')->with('error', $mensajes);
+                }
+            }   
         }
-    }
+
 
     /**
      * Elimina un emprendimiento con sus redes, direccion y horarios.

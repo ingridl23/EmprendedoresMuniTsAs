@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Emprendedor;
+use App\Models\categoria;
 use App\Http\Requests\EmprendedorRequest;
 use App\constants;
 use Illuminate\Http\Request;
@@ -18,9 +19,10 @@ class EmprendedorController extends Controller
     public function emprendedores()
     {
         $emprendedoresPorCategoria = Emprendedor::obtenerCategoriasEmprendedoresAgrupados();
+        $categorias = categoria::obtenerCategorias();
         $emprendedores = Emprendedor::with('imagenes')->get();
         //  return response()->json($emprendedores);
-        return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria', 'emprendedores'));
+        return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria', 'emprendedores', 'categorias'));
     }
 
     /*Filtro de busqueda de emprendedores por nombre*/
