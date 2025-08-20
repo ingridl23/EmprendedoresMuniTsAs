@@ -67,7 +67,7 @@
     @endif
 
     <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-        <div class="col-lg-6">
+        <div class="col-lg-6 solicitantes">
 
             <form method="GET" action="{{ route('empleos.export') }}">
 

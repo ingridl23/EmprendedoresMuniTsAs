@@ -134,6 +134,12 @@ nav form {
 }
 
 @media (max-width:992px) {
+    div.col-lg-6.solicitantes{
+        width: 60%;
+    }
+    div.col-lg-6.solicitantes form{
+        width: 100%;
+    }
     div.col-lg-6 {
         justify-content: center;
         display: flex;
@@ -160,12 +166,40 @@ nav form {
     display: flex;
     align-items: center;
     /* Mejor que baseline */
-    gap: 4px;
+    gap: 10px;
     /* Espacio entre checkbox y texto */
     margin-top: 3px;
+    width: 100%;
+}
+.checkbox, .checkbox-participa-feria input{
+    width: auto;
+}
+.checkbox{
+    margin: auto;
+}
+/*Contenedor de input cerrado y feria*/
+.contenedorForm .checkbox-compartido{
+    margin-bottom: 2rem;
 }
 
-.checkbox {}
+.separacion{
+    margin-bottom: 2rem;
+}
+
+.cerradoPalabra{
+    margin-bottom: 0;
+}
+
+div.contenedorForm.checkbox-compartido p.form-subtitulos{
+    margin: auto;
+    width: auto;
+}
+
+.checkbox-participa-feria{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
 
 
 /********************************************************************************/

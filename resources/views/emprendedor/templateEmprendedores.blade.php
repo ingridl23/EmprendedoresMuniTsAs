@@ -174,7 +174,7 @@
             <br>
 
             @if (Auth::check() && Auth::user()->hasRole('admin'))
-                <div class="search">
+                <div class="search agregar">
                     <button class="btn btn-primary btn-xl text-uppercase botonAgregarEmprendimiento">
                         <a href="emprendedores/nuevoEmprendimiento">Agregar Emprendimiento</a>
                     </button>
@@ -213,8 +213,9 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample">
                     <div class="search accordion-body accordionCategoria">
-                        @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
-                            <a class="linkCategoria" href="#link{{ $categoria }}">{{ $categoria }}</a>
+                        @foreach ($categorias as $categoria)
+                            <a class="linkCategoria"
+                                href="#link{{ $categoria->categoria }}">{{ $categoria->categoria }}</a>
                         @endforeach
                     </div>
                 </div>
