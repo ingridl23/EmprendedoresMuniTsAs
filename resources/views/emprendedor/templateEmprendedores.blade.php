@@ -174,7 +174,7 @@
             <br>
 
             @if (Auth::check() && Auth::user()->hasRole('admin'))
-                <div class="search">
+                <div class="search agregar">
                     <button class="btn btn-primary btn-xl text-uppercase botonAgregarEmprendimiento">
                         <a href="emprendedores/nuevoEmprendimiento">Agregar Emprendimiento</a>
                     </button>
@@ -213,8 +213,8 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample">
                     <div class="search accordion-body accordionCategoria">
-                        @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
-                            <a class="linkCategoria" href="#link{{ $categoria }}">{{ $categoria }}</a>
+                        @foreach ($categorias as $categoria)
+                            <a class="linkCategoria" href="#link{{ $categoria->categoria }}">{{ $categoria->categoria }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -225,7 +225,7 @@
         <div class="seccionCarrusel">
             @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
             @if (!empty($emprendedores[0]))
-                <h3 id="link{{ $categoria }}">{{ $emprendedores[0]->categoria->categoria }}</h3>
+                <h3 id="link{{ $emprendedores[0]->categoria->categoria }}">{{ $emprendedores[0]->categoria->categoria }}</h3>
             @endif
                 <div class="container d-flex justify-content-center align-items-center min-vh-100">
                     <div id="carrousel-{{ $loop->index }}" class="shadow-wrapper p-2 rounded-4"

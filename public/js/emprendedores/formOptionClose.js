@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
             if (this.checked) {
                 document.querySelector(`.cerrado_${dia}`).classList.remove(`oculto`);
+                document.querySelector(`.contenedor-cerrado-${dia}`).classList.add(`separacion`);
                 let inputs = document.querySelectorAll(`.ocultarInputsCerrado${dia}`);
                 inputs.forEach(input => {
                     input.style.display = "none";
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 cierre.disabled = true;
 
             } else {
+                document.querySelector(`.contenedor-cerrado-${dia}`).classList.remove(`separacion`);
                 apertura.disabled = false;
                 cierre.disabled = false;
                 let inputs = document.querySelectorAll(`.ocultarInputsCerrado${dia}`);

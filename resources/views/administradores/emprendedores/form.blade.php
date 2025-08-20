@@ -116,7 +116,7 @@
         @if (isset($emprendimiento->direccion->calle))
             <textarea name="calle" id="calle" required placeholder="">{{ isset($emprendimiento) ? $emprendimiento->direccion->calle : old('calle') }}</textarea>
         @else
-            <input type="text" name="calle" id="calle" required placeholder="" value: old('calle')>
+            <input type="text" name="calle" id="calle" required placeholder="" value={{ old('calle') }}>
         @endif
         <label for="calle">Calle <span class="asterisco">*</span></label>
         @error('calle')
@@ -150,7 +150,7 @@
             $horario = isset($emprendimiento) ? $horarios->firstWhere('dia', $dia) : null;
         @endphp
             <strong class="{{$dia}}">{{ $dia }}</strong>
-            <p class="cerrado_{{ $dia }} oculto">
+            <p class="cerrado_{{ $dia }} oculto cerradoPalabra">
                     Cerrado
             </p>
             <div class="inputFlex">
@@ -173,7 +173,7 @@
                     <p class="form-subtitulos">Otorgar el horario de cierre</p>
 
                 </div>
-
+            <div class="contenedorForm checkbox-compartido contenedor-cerrado-{{$dia}}">
                 <div class="cerrado-checkbox col-md-4 " data-dia="{{ $dia }}">
                     <p class="form-subtitulos">Marcar si permanece cerrado</p>
                     <input type="checkbox" id="cerrado_{{ $dia }}"
@@ -181,19 +181,20 @@
                         class="me-2 checkbox checkbox-cerrado"
                         {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'checked' : '' }}>
                 </div>
-                @if($dia == 'Domingo')
-                <div class="col-md-4">
-                    <input type="checkbox" name="horarios[{{ $dia }}][participa_feria]" value="1"
-                        {{ old("horarios.$dia.participa_feria", $horario->participa_feria ?? false) ? 'checked' : '' }}>
+                    @if($dia == 'Domingo')
+                    <div class="col-md-4 checkbox-participa-feria">
+                        <input type="checkbox" name="horarios[{{ $dia }}][participa_feria]" value="1" class="me-2 checkbox"
+                            {{ old("horarios.$dia.participa_feria", $horario->participa_feria ?? false) ? 'checked' : '' }}>
 
-                    @error('feria')
-                        <div class="text-danger small">{{ $message }}</div>
-                    @enderror
-                    <p class="form-subtitulos ">Marcar si participa en la feria municipal</p>
-                </div>
-                @endif
+                        @error('feria')
+                            <div class="text-danger small">{{ $message }}</div>
+                        @enderror
+                        <p class="form-subtitulos ">Marcar si participa en la feria municipal</p>
+                    </div>
+                    @endif
+           
+            </div>   
             </div>
-            
     @endforeach
 </div>
 
