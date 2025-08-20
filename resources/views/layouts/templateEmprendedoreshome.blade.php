@@ -15,9 +15,10 @@
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
 
-    
+
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 
@@ -39,7 +40,7 @@
 
 <body id="page-top">
     <!-- Navigation-->
-        @include('emprendedor.navBar')
+    @include('emprendedor.navBar')
     <!--  ********************************************************************* -->
 
 
@@ -66,7 +67,7 @@
                     </p>
                     <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
                     <br>
-                    <a class="btn btn-light btn-xl btn-xl" href="{{ url('/formar/parte') }}">Quiero Ser Parte</a>
+                    <a class="btn btn-light " href="{{ url('/formar/parte') }}">Quiero Ser Parte</a>
                 </div>
             </div>
         </div>
@@ -194,7 +195,7 @@
 
 
 
-        <!-- SimpleLightbox plugin JS-->
+    <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
