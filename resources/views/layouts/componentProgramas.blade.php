@@ -155,12 +155,11 @@
         </div>
 
 
+        @if (!empty($ultimos) && $ultimos->count())
         <!-- seccion vista previa ultimos emprendedores-->
         <div id="portfolio">
             <div class="container-fluid p-0">
-                @if (!empty($ultimos) && $ultimos->count())
-                    <div class="row g-0">
-
+                    <div class="row g-0 portfolio-container">
                         @foreach ($ultimos as $emprendedor)
                             <div class="col-lg-4 col-sm-6">
                                 @if ($emprendedor->imagenes->isNotEmpty())
@@ -168,20 +167,17 @@
                                         title="{{ $emprendedor->nombre }}">
                                         <img class="img-fluid" src="{{ $emprendedor->imagenes->first()->url }}"
                                             alt={{ $emprendedor->nombre }} />
+                                
+                                        <div class="portfolio-box-caption">
+                                            <div class="project-category text-white-50">{{ $emprendedor->categoria->categoria }}</div>
+                                            <div class="project-name">{{ $emprendedor->nombre }}</div>
+                                        </div>
+                                    </a>
                                 @endif
-                                <div class="portfolio-box-caption">
-                                    <div class="project-category text-white-50">{{ $emprendedor->categoria }}</div>
-                                    <div class="project-name">{{ $emprendedor->nombre }}</div>
-                                </div>
-                                </a>
                             </div>
                         @endforeach
-                @endif
-
+                    </div>
             </div>
-        </div>
-
-
 
 
         <!-- Call to action-->
@@ -193,7 +189,7 @@
         </section>
     </div>
 
-
+    @endif
 
 
 
@@ -422,7 +418,7 @@
 
 <div class="detallesClub">
     <div class="contenedorTituloDetalles">
-        <h3 class="col"> Requisitos para empresas </h3>
+        <h3 class="col requisitos"> Requisitos para empresas </h3>
     </div>
     <ul class="estiloLista">
 
@@ -435,7 +431,9 @@
         <li>Informar a los participantes todos los derechos, obligaciones y requisitos derivados de su
             participación en las acciones que componen el proyecto.
         </li>
-        Garantizar a los participantes un contexto de aprendizaje libre de violencia de género y acoso.</li>
+        <li>
+            Garantizar a los participantes un contexto de aprendizaje libre de violencia de género y acoso.
+        </li>
 
         <li>
             Pueden presentar proyectos todas las empresas y cooperativas cualquiera sea su tamaño y actividad,
@@ -468,7 +466,7 @@
     que cubre parte del salario del trabajador.</p>
 
 
-<div class="detallesClub">
+<div class="detallesClub contenedorMasGrande">
     <div class="contenedorTituloDetalles">
         <h3 class="col">Beneficios </h3>
     </div>
@@ -485,7 +483,7 @@
 
 
 
-<div class="detallesClub  beneficiosDetallesClub">
+<div class="detallesClub contenedorMasGrande">
     <div class="contenedorTituloDetalles">
         <h3 class="col">Requisitos para empresas </h3>
     </div>
@@ -521,28 +519,19 @@
 
 <div class="detallesClub  beneficiosDetallesClub">
     <div class="contenedorTituloDetalles">
-
-        <h3> Requisitos para empresas</h3>
+        <h3 class="col"> Requisitos para empresas</h3>
     </div>
-
-
     <ul class="estiloLista">
         <li>No figurar en Registro Público de Empleadores con Sanciones Laborales (REPSAL)
-
         </li>
     </ul>
-
 </div>
 
 <div class="detallesClub">
     <div class="contenedorTituloDetalles">
-
         <h3 class="col"> Requisitos para trabajadores </h3>
     </div>
-
-
     <ul class="estiloLista">
         <li>Trabajadores desocupados mayores de 18 años </li>
-
     </ul>
 </div>

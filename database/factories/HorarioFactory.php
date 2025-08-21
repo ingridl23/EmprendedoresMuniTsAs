@@ -20,10 +20,10 @@ class HorarioFactory extends Factory
             'dia' => $this->faker->randomElement([
                 'Lunes',
                 'Martes',
-                'Miércoles',
+                'Miercoles',
                 'Jueves',
                 'Viernes',
-                'Sábado',
+                'Sabado',
                 'Domingo'
             ]),
 

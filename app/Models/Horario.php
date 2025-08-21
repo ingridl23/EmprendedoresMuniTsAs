@@ -46,18 +46,15 @@ class Horario extends Model
         return $horario->id;
     }
 
+    public static function obtenerHorarios($id){
+        $horarios =  Horario::where('emprendedor_id', $id)->get();
+        return $horarios;
+    }
 
-    public static function editarHorarios(Horario $horario, $datos)
+    public static function editarHorarios(Horario $horario)
     {
+        return $horario->save();
 
-        $horario->update([
-            'hora_de_apertura' => $datos['hora_de_apertura'],
-            'hora_de_cierre' => $datos['hora_de_cierre'],
-            'participa_feria' => $datos['participa_feria'] ?? false,
-            'cerrado' => $datos['cerrado'] ?? false,
-        ]);
-
-        $horario->save();
     }
 
     public static function buscarPorIdEmprendedor($idEmprendedor){

@@ -87,7 +87,7 @@
                     @csrf
                     @include('administradores.emprendedores.form')
                     <div class=" d-grid  ">
-                        <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
+                        <button class="btn btn-primary btn-xl submit btnAgregarEmprendimiento" id="submitButton" type="submit">
                             <span class="btntext" value="Guardar datos"> Agregar emprendimiento </span>
                         </button>
                     </div>
