@@ -214,7 +214,8 @@
                     data-bs-parent="#accordionExample">
                     <div class="search accordion-body accordionCategoria">
                         @foreach ($categorias as $categoria)
-                            <a class="linkCategoria" href="#link{{ $categoria->categoria }}">{{ $categoria->categoria }}</a>
+                            <a class="linkCategoria"
+                                href="#link{{ $categoria->categoria }}">{{ $categoria->categoria }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -224,9 +225,9 @@
         <div id="emprendedores-container" class="emprendedores-container"></div>
         <div class="seccionCarrusel">
             @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
-            @if (!empty($emprendedores[0]))
-                <h3 id="link{{ $emprendedores[0]->categoria->categoria }}">{{ $emprendedores[0]->categoria->categoria }}</h3>
-            @endif
+                @if (!empty($emprendedores[0]))
+                    <h3 id="link{{ $categoria }}">{{ $emprendedores[0]->categoria }}</h3>
+                @endif
                 <div class="container d-flex justify-content-center align-items-center min-vh-100">
                     <div id="carrousel-{{ $loop->index }}" class="shadow-wrapper p-2 rounded-4"
                         data-interval="200000">
@@ -250,7 +251,7 @@
                                         <div class="portfolio-caption">
                                             <div class="portfolio-caption-heading">{{ $emprendedor->nombre }}</div>
                                             <div class="portfolio-caption-subheading text-muted">
-                                                {{ $emprendedor->categoria->categoria }}</div>
+                                                {{ $emprendedor->categoria }}</div>
                                         </div>
                                     </div>
 
@@ -277,7 +278,7 @@
                                                                 <ul class="list-inline">
                                                                     <li><strong>Emprendedor</strong></li>
                                                                     <li><strong>Categoria:</strong>
-                                                                        {{ $emprendedor->categoria->categoria }}</li>
+                                                                        {{ $emprendedor->categoria }}</li>
                                                                 </ul>
                                                                 <button
                                                                     class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
