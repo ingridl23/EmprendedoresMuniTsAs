@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     return data;
                 })
                 .then((data) => {
-                    console.log(data);
                     document.querySelector("#editarForm").submit();
                 })
                 .catch((error) => console.log(error));

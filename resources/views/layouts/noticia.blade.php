@@ -209,7 +209,7 @@
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
-    <script src="{{ asset('js/carteles/cartelEliminar.js') }} "></script>
+    <script type="module" src="{{ asset('js/carteles/cartelEliminar.js') }} "></script>
     <script src="{{ asset('js/loader.js') }}"></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

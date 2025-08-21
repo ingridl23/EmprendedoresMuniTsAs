@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
             const response = await fetch(`emprendedores/user`);
             if (response.ok) {
                 const data = await response.json();
-                console.log(data);
                 admin = data;
             } else {
                 console.error(
@@ -111,7 +110,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                     </a>
                                     <div class="portfolio-caption">
                                         <div class="portfolio-caption-heading">${emprendimiento.nombre}</div>
-                                        <div class="portfolio-caption-subheading text-muted">${emprendimiento.categoria}</div>
+                                        <div class="portfolio-caption-subheading text-muted">${emprendimiento.categoria.categoria}</div>
                                     </div>
                                 </div>
                                 <div class="portfolio-modal modal fade" id="portfolioModal${emprendimiento.id}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -133,7 +132,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                                                                     <strong> Emprendedor</strong>
                                                                 </li>
                                                                 <li>
-                                                                    <strong>Categoria:</strong>${emprendimiento.categoria}
+                                                                    <strong>Categoria: </strong>${emprendimiento.categoria.categoria}
                                                                 </li>
                                                             </ul>
                                                             <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"

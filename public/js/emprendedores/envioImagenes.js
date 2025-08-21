@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "imagenes_conservar",
                 JSON.stringify(imagenesTotales)
             );
-            console.log(formData);
+
 
             //Sirve para visualizar en consola los datos guardados en formData
             for (let [key, value] of formData.entries()) {
@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     return data;
                 })
                 .then((data) => {
-                    console.log(data);
                     document.querySelector("#editarForm").submit();
                 })
                 .catch((error) => console.log(error));

@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function(){
     input.addEventListener('change', ()=>{
         const nuevosArchivos = Array.from(input.files);
         const espacioDisponible = MAX - imagenesTotales.length;
-        console.log(espacioDisponible);
         if (espacioDisponible <= 0) {
             Swal.fire({
                 title: "Error",

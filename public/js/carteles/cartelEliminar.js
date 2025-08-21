@@ -6,7 +6,6 @@
 
     function asignarCartel() {
         let formularios = document.querySelectorAll(".formEliminar");
-        console.log("aca");
         formularios.forEach((formulario) => {
             formulario.addEventListener("submit", (e) => {
                 e.preventDefault();
@@ -30,3 +29,5 @@
         });
     }
 
+
+export { asignarCartel };
