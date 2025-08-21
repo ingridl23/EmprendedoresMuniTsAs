@@ -20,6 +20,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\constants;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Illuminate\Support\Facades\Auth;
 
 
 class administradorController extends Controller
@@ -43,6 +44,11 @@ class administradorController extends Controller
         $this->middleware('can:eliminar emprendimiento', [
             'only' => [
                 'eliminarEmprendimiento'
+            ]
+            ]);
+        $this->middleware('can:ver rol', [
+            'only' => [
+                'obtenerRol'
             ]
         ]);
 
@@ -70,14 +76,14 @@ class administradorController extends Controller
         ]);
     }
 
-    public function emprendedores()
+    /*public function emprendedores()
     {
         $emprendedores = Emprendedor::paginate(10);
         return view('emprendedor.index', compact('emprendedores'))
             ->with('i', (request()->input('page', 1) - 1) * $emprendedores->perPage());
 
         // return view("emprendedor.index", compact("emprendedores"));
-    }
+    }*/
 
     public function showFormCrearEmprendimiento()
     {
@@ -285,6 +291,15 @@ class administradorController extends Controller
             }
         }
         return response()->json(['ok' => "No se ha cargado una nueva/s imagen/es"], 200);
+    }
+
+    public function obtenerRol()
+    {
+        $rol = false;
+        if (Auth::check() && Auth::user()->hasRole('admin')) {
+            $rol = true;
+        }
+        return response()->json($rol);
     }
 
 

@@ -145,41 +145,37 @@
 
 
 
-    <div class="page-top-news">
-
-        <section aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li><a class="breadcrumb-item" href="#">Bolsa de Empleo <span>/</span></a></li>
-                <li> <a class="breadcrumb-item " href="#">Eventos</a></li>
-            </ol>
+    <div>
+        <section aria-label="breadcrumb" class="breadcrumb">
+            <p class="breadcrumb-item">Categoria: {{$noticia->categoria}}</p>
         </section>
     </div>
 
     @if (Auth::check() && Auth::user()->hasRole('admin'))
-        <div class="search">
-            <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
-                <a href="/noticias/formEditarNoticia/{{ $noticia->id }}">Editar noticia</a>
-            </button>
+    <div class="centrarContenedor">
+        <div class="contenedorBotones">
+            <div class="search">
+                <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
+                    <a href="/noticias/formEditarNoticia/{{ $noticia->id }}">Editar noticia</a>
+                </button>
+            </div>
+            <br>
+            <form action="/noticias/{{ $noticia->id }}" class="formEliminar" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">Eliminar noticia</button>
+            </form>
         </div>
-        <br>
-        <form action="/noticias/{{ $noticia->id }}" class="formEliminar" method="post">
-            @csrf
-            @method('DELETE')
-            <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">Eliminar noticia</button>
-        </form>
+    </div>
+    
     @endif
 
 
     <!-- aca todo esto deberia iterarse-->
-    <div id="#noticias-container">
+    <div id="noticias-container">
 
         <div class=" card   container-card ">
-
-
-
-
-
-            <p <small class=" text-body-secondary">Fecha de publicación:
+            <p> <small class=" text-body-secondary">Fecha de publicación:
                 {{ $noticia->created_at->format('Y-m-d') }}</small></p>
             <h2 class="noticiaTitulo">{{ $noticia->titulo }}</h2>
             <img src="{{$noticia->imagen }}" class="img-noticia img-fluid "
@@ -191,9 +187,11 @@
 
             </div>
         </div>
-
-
     </div>
+
+    <button class="vermas">
+        <a href="/noticias">Volver</a>
+    </button>
 
     <div class="contenedor_loader">
        <div class="loader"></div>

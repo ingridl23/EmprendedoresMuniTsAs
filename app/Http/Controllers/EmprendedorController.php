@@ -7,7 +7,7 @@ use App\Models\categoria;
 use App\Http\Requests\EmprendedorRequest;
 use App\constants;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 
 /**
  * Class EmprendedorController
@@ -56,12 +56,4 @@ class EmprendedorController extends Controller
 
 
 
-    public function obtenerRol()
-    {
-        $rol = false;
-        if (Auth::check() && Auth::user()->hasRole('admin')) {
-            $rol = true;
-        }
-        return response()->json($rol);
-    }
 }

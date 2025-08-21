@@ -236,6 +236,10 @@
         </div>
     </section>
 
+        <button class="vermas">
+        <a href="/emprendedores">Volver</a>
+    </button>
+
     <section class="page-section custom-about" id="about2">
 
 

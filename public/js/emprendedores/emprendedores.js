@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 })
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data);
                     showContent(data);
                 })
                 .catch((error) => console.log(error));
@@ -42,6 +41,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
             const response = await fetch(`emprendedores/user`);
             if (response.ok) {
                 const data = await response.json();
+                console.log(data);
                 admin = data;
             } else {
                 console.error(
@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
             let card = document.createElement("div");
             card.className = "card";
             let url="";
-            console.log(emprendimiento);
             if (emprendimiento.imagenes && emprendimiento.imagenes.length > 0) {
                 url = emprendimiento.imagenes[0].url;
                 // usar `url` en tu HTML

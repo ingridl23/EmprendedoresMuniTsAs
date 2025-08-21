@@ -27,7 +27,7 @@ Route::post("/noticias/cargarNuevaNoticia", [administradorController::class, "cr
 //Route::get('/noticias/nuevaNoticia', [NoticiasController::class, 'obtenerCategorias']);
 Route::get('/noticias/nuevaNoticia', [administradorController::class, "showFormCreateNoticia"]); //Muestra formulario para cargar una nueva noticia
 Route::get('/noticias/formEditarNoticia/{id}', [administradorController::class, "showFormEditNoticia"]); //Muestra formulario para editar los datos de una noticia
-Route::PATCH('/noticias/{id}', [administradorController::class, "EditNoticia"]); //Edita la noticia con los datos que llegan del formulario
+Route::PATCH('/noticias/{id}', [administradorController::class, "editNoticia"]); //Edita la noticia con los datos que llegan del formulario
 Route::DELETE('/noticias/{id}', [administradorController::class, "deleteNoticia"]); //Elimina la noticia segun el id único que tenga.
 
 
@@ -47,13 +47,11 @@ Route::post('/formulario/enviar', [FormSerParteController::class, 'enviar'])->na
 //RUTAS EMPRENDEDORES
 Route::get('/emprendedores/buscador', [EmprendedorController::class, 'filterEmprendimientosByName']); //Filtro para emprendedores por nombre
 Route::get('/emprendedores', [EmprendedorController::class, "emprendedores"])->name("emprendedores"); //vista general para emprendedores
-Route::get('emprendedores/user', [EmprendedorController::class, "obtenerRol"]); //Se usa en JS para obtener el rol y saber si es admin o no para mostrar contenido generado en JS
+Route::get('emprendedores/user', [administradorController::class, "obtenerRol"]); //Se usa en JS para obtener el rol y saber si es admin o no para mostrar contenido generado en JS
 //(hay botones solo disponibles para admin)
 
 Route::get('/emprendedor/{id}', [EmprendedorController::class, "showEmprendimientoId"]); // ruta para las secciones individuales del emprendedor
 
-//  para admin
-Route::get('/emprendedores/acciones', [administradorController::class, "emprendedores"]);
 
 //RUTAS EMPRENDEDORES ADMIN
 Route::get('/emprendedores/nuevoEmprendimiento', [administradorController::class, "showFormCrearEmprendimiento"]); //Muestra form para cargar nuevo emprendimiento
@@ -75,7 +73,7 @@ Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
 
 
 //programas
-Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('programas');;
+Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('programas');
 
 
 //para exportar excel de busqueda de empleo sector administrativo

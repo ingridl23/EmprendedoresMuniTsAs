@@ -27,6 +27,7 @@ class RoleAndPermissionsSeeder extends Seeder
             'editar noticia',
             'eliminar noticia',
             'filtrar datos',
+            'ver rol'
         ];
 
         foreach ($permissions as $permission) {
