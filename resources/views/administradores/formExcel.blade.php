@@ -31,7 +31,7 @@
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">Filtrar los datos que sean necesarios de solicitantes
                     </h1>
-                    <hr class="divider" />
+                    <hr class="divider" style=" background-color:aliceblue;" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
