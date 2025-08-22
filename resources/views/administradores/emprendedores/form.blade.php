@@ -17,11 +17,10 @@
 <label for="descripcion">Seleccionar Categoria<span class="asterisco">*</span></label>
 <div class="field-group">
 
-
     <select name="categoria" class="categoria" required>
         @foreach ($categorias as $item)
             <option class="opcionesCategoria" value="{{ $item['id'] }}"
-                {{ (isset($emprendimiento) && $emprendimiento->id == $item['categoria']) || old('categoria') == $item['id'] ? 'selected' : '' }}>
+                {{ (isset($emprendimiento) && $emprendimiento->categoria_id == $item['id']) || old('categoria') == $item['id'] ? 'selected' : '' }}>
                 {{ $item['categoria'] }}</option>
         @endforeach
     </select>

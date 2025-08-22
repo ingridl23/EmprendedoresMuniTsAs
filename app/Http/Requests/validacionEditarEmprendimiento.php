@@ -31,7 +31,7 @@ class validacionEditarEmprendimiento extends FormRequest
             'descripcion'=>'bail|required|string|min:10',
             'categoria' => 'bail|required|exists:categoria,id',
             'imagenes' => 'array|max:5',
-            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|dimensions:max_width=1920,max_height=1080',
             'facebook'=>'nullable|string|min:3|max:100',
             'instagram'=>'nullable|string|min:3|max:100',
             'whatsapp'=>'integer|digits_between:8,11|min:1',
@@ -57,7 +57,6 @@ class validacionEditarEmprendimiento extends FormRequest
             'categoria.required' => 'La categoría es obligatoria.',
             'categoria_id.exists' => 'La categoría seleccionada no existe.',
 
-            'imagenes.required' => 'Debes subir al menos una imagen.',
             'imagenes.array' => 'Las imágenes deben enviarse como un arreglo.',
             'imagenes.max' => 'No puedes subir más de 5 imágenes.',
 

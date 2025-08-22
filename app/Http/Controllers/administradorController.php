@@ -139,22 +139,22 @@ class administradorController extends Controller
 
         if ($request->hasFile('imagenes')) {
             foreach ($request->file('imagenes') as $imagen) {
-                //try {
-                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
-                    'folder' => 'emprendedores',
-                    'quality' => '100'
-                ]);
-                $emprendimiento->imagenes()->create([
-                    'url' => $uploadedFileUrl->getSecurePath(),
-                    'public_id' => $uploadedFileUrl->getPublicId(),
-                ]);
-                /* } catch (\Exception $e) {
+                try {
+                    $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
+                        'folder' => 'emprendedores',
+                        'quality' => '100'
+                    ]);
+                    $emprendimiento->imagenes()->create([
+                        'url' => $uploadedFileUrl->getSecurePath(),
+                        'public_id' => $uploadedFileUrl->getPublicId(),
+                    ]);
+                } catch (\Exception $e) {
                     $mensajes = [
                         'titulo' => '¡Error!',
-                        'detalle' => 'Ha sucedido un error en la carga de las imagenes, aca, intente nuevamente.'
+                        'detalle' => 'Ha sucedido un error en la carga de las imagenes, intente nuevamente.'
                     ];
                     return redirect('/emprendedores')->with('error', $mensajes);
-                }*/
+                }
             }
         }
         if ($idRedes && $idDireccion && $emprendimiento) {
@@ -166,9 +166,9 @@ class administradorController extends Controller
         } else {
             $mensajes = [
                 'titulo' => 'Error!',
-                'detalle' => 'Ha sucedido un error al crear el emprendimiento, cargo bien las cosas, inténtelo nuevamente.'
+                'detalle' => 'Ha sucedido un error al crear el emprendimiento, inténtelo nuevamente.'
             ];
-            return redirect('/emprendedores')->with('success', $mensajes);
+            return redirect('/emprendedores')->with('error', $mensajes);
         }
     }
 
@@ -187,16 +187,29 @@ class administradorController extends Controller
                 $imagenes = imagenes::find($emprendimiento->id);
                 return view("administradores.emprendedores.formEditarEmprendimiento", compact('emprendimiento', 'categorias', 'imagenes', 'horarios'));
             }
-        };
+            else{
+                $mensajes = [
+                    'titulo' => 'Error!',
+                    'detalle' => 'No se ha logrado encontrar el eprendimiento, inténtelo nuevamente.'
+                ];
+                return redirect('/emprendedores')->with('error', $mensajes);
+            }
+        }
+        else{
+            $mensajes = [
+                    'titulo' => 'Error!',
+                    'detalle' => 'Debe ingresar un número mayor a cero para buscar y editar el emprendimiento.'
+                ];
+                return redirect('/emprendedores')->with('error', $mensajes);
+        }
 
-        return view("/error");
     }
 
     public function obtenerRedes($redes)
     {
-        $redes = rtrim($redes, '/');
-        $posicion = strrpos($redes, '/');
-        $usuarioNombre = substr($redes, $posicion + 1);
+        $redes = rtrim($redes, '/'); //Elimina todos los caracteres "/" que se encuentren al final
+        $posicion = strrpos($redes, '/'); // posición del último '/'
+        $usuarioNombre = substr($redes, $posicion + 1); // obtiene "El nombre del usuario en redes"
         return $usuarioNombre;
     }
 
@@ -216,20 +229,20 @@ class administradorController extends Controller
     {
         $validator = Validator::make($request->all(),[
             'imagenes' => 'array|max:5',
-            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|dimensions:max_width=1920,max_height=1080',
         ]);
         if($validator->fails()){
             return response()->json([
                 'redirect' => "/emprendedores/formEditarEmprendimiento/{$id}",
                 'message' => [
                     'titulo' => '¡Error!',
-                    'detalle' => 'Ha sucedido un error en la edición de la imagen',
+                    'detalle' => 'Ha sucedido un error en la validación de la imagen',
                 ],
                 'status' => 'error',
             ], 400);
         };
         $emprendimiento = Emprendedor::find($id);
-        $imagenesBD = imagenes::find($emprendimiento->id);
+        $imagenesBD = Imagenes::where('emprendedor_id', $emprendimiento->id)->get();
         $imagenesRequest = $request->file("imagenes");
         $totalImagenesDB = count($imagenesBD);
 
@@ -245,20 +258,13 @@ class administradorController extends Controller
                         imagenes::eliminarImagen($imagen);
                         $totalImagenesDB = $totalImagenesDB - 1;
                     } catch (\Exception $e) {
-                        return response()->json([
-                            'redirect' => "/emprendedores/formEditarEmprendimiento/{$id}",
-                            'message' => [
-                                'titulo' => '¡Error!',
-                                'detalle' => 'Ha sucedido un error en la edición de la imagen',
-                            ],
-                            'status' => 'error',
-                        ], 400);
+                        return response()->json(['error' => "No se ha podido cargar las imagenes"], 400);
                     }
                 }
             }
         }
         if ($imagenesRequest != null) {
-            if (count($imagenesBD) < 5 && (count($imagenesRequest) + $totalImagenesDB) <= 5) {
+            if (count($imagenesBD) <= 5 && (count($imagenesRequest) + $totalImagenesDB) <= 5) {
                 foreach ($imagenesRequest as $imagen) {
                     try {
                         $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
@@ -269,14 +275,7 @@ class administradorController extends Controller
                             'public_id' => $uploadedFileUrl->getPublicId(),
                         ]);
                     } catch (\Exception $e) {
-                        return response()->json([
-                            'redirect' => "/noticias/formEditarNoticia/{$id}",
-                            'message' => [
-                                'titulo' => '¡Error!',
-                                'detalle' => 'Ha sucedido un error en la carga de la imagen',
-                            ],
-                            'status' => 'error',
-                        ], 400);
+                        return response()->json(['error' => "No se ha podido cargar las imagenes"], 400);
                     }
                 }
             } else {

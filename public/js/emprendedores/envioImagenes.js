@@ -25,17 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    document.querySelector(".form").addEventListener("submit", () => {
-        contenedorLoader.style.opacity = 1;
-        contenedorLoader.style.visibility = "visible";
-    });
-
     formEditar.addEventListener("submit", (e) => {
         e.preventDefault();
+        console.log(imagenesTotales)
         let id = formEditar.dataset.id;
         let formData = new FormData();
 
         if (imagenesTotales.length > 0) {
+            contenedorLoader.style.opacity = 1;
+            contenedorLoader.style.visibility = "visible";
             imagenesTotales.forEach((img) => {
                 if (img.tipo == "nuevo") {
                     formData.append("imagenes[]", img.file); // archivos reales
@@ -63,22 +61,31 @@ document.addEventListener("DOMContentLoaded", () => {
             })
                 .then(async (response) => {
                     const data = await response.json();
+                    console.log(data);
                     if (!response.ok) {
-                        const redirectUrl =
-                            data.redirect +
-                            "?status=" +
-                            encodeURIComponent(data.status) +
-                            "&message=" +
-                            encodeURIComponent(JSON.stringify(data.message));
-                        window.location.href = redirectUrl;
-                        return;
+                         Swal.fire({
+                            title: "Error",
+                            text: "Hubo un error inesperado en la carga de imagenes, intentelo nuevamente.",
+                            icon: "error",
+                            confirmButtonColor: "#36be7f",
+                        });
+                        contenedorLoader.style.opacity = 0;
+                        contenedorLoader.style.visibility = "hidden";
+                        imagenesTotales = imagenesTotales.filter(img => img.tipo !== "nuevo");
+                        input.value = "";
+                        modificarVista();
+                        throw new Error("Error en el envío de imágenes");
                     }
                     return data;
                 })
                 .then((data) => {
                     document.querySelector("#editarForm").submit();
                 })
-                .catch((error) => console.log(error));
+                .catch((error) => {
+                    console.log(error)
+                    contenedorLoader.style.opacity = 0;
+                    contenedorLoader.style.visibility = "hidden";
+                });
         } else {
             Swal.fire({
                 title: "Error",
