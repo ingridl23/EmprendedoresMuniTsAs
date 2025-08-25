@@ -189,7 +189,7 @@ class administradorController extends Controller
             }
             else{
                 $mensajes = [
-                    'titulo' => 'Error!',
+                    'titulo' => '¡Error!',
                     'detalle' => 'No se ha logrado encontrar el eprendimiento, inténtelo nuevamente.'
                 ];
                 return redirect('/emprendedores')->with('error', $mensajes);
@@ -197,7 +197,7 @@ class administradorController extends Controller
         }
         else{
             $mensajes = [
-                    'titulo' => 'Error!',
+                    'titulo' => '¡Error!',
                     'detalle' => 'Debe ingresar un número mayor a cero para buscar y editar el emprendimiento.'
                 ];
                 return redirect('/emprendedores')->with('error', $mensajes);
@@ -519,13 +519,13 @@ class administradorController extends Controller
         $creado = Noticias::createNoticia($request, $path, $imagen_public_id);
         if ($creado && $creado != null) {
             $mensajes = [
-                'titulo' => 'Creado!',
+                'titulo' => '¡Creado!',
                 'detalle' => 'Noticia creada con éxito.'
             ];
             return redirect('/noticias')->with('success', $mensajes);
         } else {
             $mensajes = [
-                'titulo' => 'Error!',
+                'titulo' => '¡Error!',
                 'detalle' => 'Ha sucedido un error al crear la noticia, inténtelo nuevamente.'
             ];
             return redirect('/noticias')->with('error', $mensajes);
