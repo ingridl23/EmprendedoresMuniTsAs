@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Emprendedor;
+use App\Models\Categoria;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,5 +32,14 @@ class DatabaseSeeder extends Seeder
         // $this->call([
         //EmpleosSeeder::class,
         //]);
+
+
+        foreach (Emprendedor::all() as $emp) {
+            $cat = categoria::where('categoria', $emp->categoria)->first();
+            if ($cat) {
+                $emp->categoria_id = $cat->id;
+                $emp->save();
+            }
+        }
     }
 }

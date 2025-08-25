@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Categorias extends Migration
+class RemoveCategoriaStringFromEmprendedoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class Categorias extends Migration
      */
     public function up()
     {
-        Schema::create("categoria", function (Blueprint $table) {
-            $table->id();
-            $table->string('categoria');
-            $table->timestamps();
+        Schema::table('emprendedor', function (Blueprint $table) {
+            //
+            $table->dropColumn('categoria');
         });
     }
 
@@ -27,6 +26,8 @@ class Categorias extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists("categoria");
+        Schema::table('emprendedor', function (Blueprint $table) {
+            //
+        });
     }
 }

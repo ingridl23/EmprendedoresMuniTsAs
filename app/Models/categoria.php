@@ -29,10 +29,11 @@ class Categoria extends Model
 
     public function EmprendedorCategoria()
     {
-        return $this->hasMany(Emprendedor::class);
+        return $this->hasMany(Emprendedor::class, 'categoria_id', 'id');
     }
 
-    public static function obtenerCategorias(){
+    public static function obtenerCategorias()
+    {
         $categorias = categoria::all();
         return $categorias;
     }

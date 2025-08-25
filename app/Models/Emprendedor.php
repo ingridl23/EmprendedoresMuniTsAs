@@ -19,7 +19,7 @@ use App\Models\categoria;
  * @property $id
  * @property $nombre
  * @property $descripcion
- * @property $categoria
+ * @property $categoria_id
  * @property $redes_id
  * @property $horario_id
  * @property $created_at
@@ -71,7 +71,7 @@ class Emprendedor extends Model
 
     public function categoria()
     {
-        return $this->belongsTo(categoria::class);
+        return $this->belongsTo(Categoria::class, 'categoria_id', 'id');
     }
 
 
@@ -98,17 +98,22 @@ class Emprendedor extends Model
 
 
     /////////////////////////////////////////////
-    public static function obtenerCategoriasEmprendedoresAgrupados()
+    /* public static function obtenerCategoriasEmprendedoresAgrupados()
     {
-        
+
         $categorias = Emprendedor::all()->groupBy('categoria_id');
         return $categorias;
-    }
-
+    }*/
+    /*
     public static function obtenerCategoriasEmprendedores()
     {
         $categorias = Emprendedor::select("categoria")->groupBy("categoria")->get();
         return $categorias;
+    }
+*/
+    public static function obtenerCategoriasEmprendedoresAgrupados()
+    {
+        return Emprendedor::with('categoria')->get()->groupBy('categoria_id');
     }
 
     public static function obtenerCategorias()

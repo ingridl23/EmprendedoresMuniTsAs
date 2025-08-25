@@ -57,7 +57,7 @@ class validacionEmprendimiento  extends FormRequest
 
             'categoria.required' => 'La categoría es obligatoria.',
             'categoria_id.exists' => 'La categoría seleccionada no existe.',
-
+            'categoria_id' => 'required|exist:categoria_id',
             'imagenes.required' => 'Debes subir al menos una imagen.',
             'imagenes.array' => 'Las imágenes deben enviarse como un arreglo.',
             'imagenes.max' => 'No puedes subir más de 5 imágenes.',

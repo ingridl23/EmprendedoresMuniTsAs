@@ -19,14 +19,14 @@
 
     <select name="categoria" class="categoria" required>
         @foreach ($categorias as $item)
-            <option class="opcionesCategoria" value="{{ $item['id'] }}"
-                {{ (isset($emprendimiento) && $emprendimiento->categoria_id == $item['id']) || old('categoria') == $item['id'] ? 'selected' : '' }}>
-                {{ $item['categoria'] }}</option>
+            <option class="opcionesCategoria" value="{{ $item->id }}"
+                {{ (isset($emprendimiento) && $emprendimiento->categoria_id == $item->id) || old('categoria_id') == $item->id ? 'selected' : '' }}>
+                {{ $item->categoria }}</option>
         @endforeach
     </select>
 
 
-    @error('categoria')
+    @error('categoria_id')
         <div class="text-danger small">{{ $message }}</div>
     @enderror
 
@@ -142,60 +142,61 @@
         $dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
     @endphp
 
-<div class="row">
-    @foreach ($dias as $index => $dia)
-        @php
-            // Cargar datos antiguos o valores ya cargados del emprendimiento
-            $horario = isset($emprendimiento) ? $horarios->firstWhere('dia', $dia) : null;
-        @endphp
-            <strong class="{{$dia}}">{{ $dia }}</strong>
+    <div class="row">
+        @foreach ($dias as $index => $dia)
+            @php
+                // Cargar datos antiguos o valores ya cargados del emprendimiento
+                $horario = isset($emprendimiento) ? $horarios->firstWhere('dia', $dia) : null;
+            @endphp
+            <strong class="{{ $dia }}">{{ $dia }}</strong>
             <p class="cerrado_{{ $dia }} oculto cerradoPalabra">
-                    Cerrado
+                Cerrado
             </p>
             <div class="inputFlex">
-                <div class="col-md-4 ocultarInputsCerrado{{$dia}}">
-                    <input type="time" name="horarios[{{ $dia }}][hora_de_apertura]" class="form-control"
+                <div class="col-md-4 ocultarInputsCerrado{{ $dia }}">
+                    <input type="time" name="horarios[{{ $dia }}][hora_de_apertura]"
+                        class="form-control"
                         value="{{ old("horarios.$dia.hora_de_apertura", $horario->hora_apertura ?? '') }}"
-
-                    @error('horaApertura')
+                        @error('horaApertura')
                         <div class="text-danger small">{{ $message }}</div>
                     @enderror
-                    <p class="form-subtitulos">Otorgar el horario de apertura</p>
+                        <p class="form-subtitulos">Otorgar el horario de apertura</p>
                 </div>
 
-                <div class="col-md-4 ocultarInputsCerrado{{$dia}}">
+                <div class="col-md-4 ocultarInputsCerrado{{ $dia }}">
                     <input type="time" name="horarios[{{ $dia }}][hora_de_cierre]" class="form-control"
                         value="{{ old("horarios.$dia.hora_de_cierre", $horario->hora_cierre ?? '') }}"
-                    @error('horaCierre')
+                        @error('horaCierre')
                         <div class="text-danger small">{{ $message }}</div>
                     @enderror
-                    <p class="form-subtitulos">Otorgar el horario de cierre</p>
+                        <p class="form-subtitulos">Otorgar el horario de cierre</p>
 
                 </div>
-            <div class="contenedorForm checkbox-compartido contenedor-cerrado-{{$dia}}">
-                <div class="cerrado-checkbox col-md-4 " data-dia="{{ $dia }}">
-                    <p class="form-subtitulos">Marcar si permanece cerrado</p>
-                    <input type="checkbox" id="cerrado_{{ $dia }}"
-                        name="horarios[{{ $dia }}][cerrado]" value="1" data-dia="{{ $dia }}"
-                        class="me-2 checkbox checkbox-cerrado"
-                        {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'checked' : '' }}>
-                </div>
-                    @if($dia == 'Domingo')
-                    <div class="col-md-4 checkbox-participa-feria">
-                        <input type="checkbox" name="horarios[{{ $dia }}][participa_feria]" value="1" class="me-2 checkbox"
-                            {{ old("horarios.$dia.participa_feria", $horario->participa_feria ?? false) ? 'checked' : '' }}>
-
-                        @error('feria')
-                            <div class="text-danger small">{{ $message }}</div>
-                        @enderror
-                        <p class="form-subtitulos ">Marcar si participa en la feria municipal</p>
+                <div class="contenedorForm checkbox-compartido contenedor-cerrado-{{ $dia }}">
+                    <div class="cerrado-checkbox col-md-4 " data-dia="{{ $dia }}">
+                        <p class="form-subtitulos">Marcar si permanece cerrado</p>
+                        <input type="checkbox" id="cerrado_{{ $dia }}"
+                            name="horarios[{{ $dia }}][cerrado]" value="1"
+                            data-dia="{{ $dia }}" class="me-2 checkbox checkbox-cerrado"
+                            {{ old("horarios.$dia.cerrado", $horario->cerrado ?? false) ? 'checked' : '' }}>
                     </div>
+                    @if ($dia == 'Domingo')
+                        <div class="col-md-4 checkbox-participa-feria">
+                            <input type="checkbox" name="horarios[{{ $dia }}][participa_feria]"
+                                value="1" class="me-2 checkbox"
+                                {{ old("horarios.$dia.participa_feria", $horario->participa_feria ?? false) ? 'checked' : '' }}>
+
+                            @error('feria')
+                                <div class="text-danger small">{{ $message }}</div>
+                            @enderror
+                            <p class="form-subtitulos ">Marcar si participa en la feria municipal</p>
+                        </div>
                     @endif
-           
-            </div>   
+
+                </div>
             </div>
-    @endforeach
-</div>
+        @endforeach
+    </div>
 
 
 
