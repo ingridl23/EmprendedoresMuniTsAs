@@ -16,12 +16,6 @@ class EmpleosController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('can:filtrar datos', [
-            'only' => [
-                'export',
-                'showForm'
-            ]
-        ]);
     }
 
     public function showForm()

@@ -324,12 +324,12 @@
                             </div>
 
                             <!-- Controles del carrusel -->
-                            <a class="carousel-control-prev" href="#carousel-{{ $categoria }}" role="button"
+                            <a class="carousel-control-prev" href="#carousel-{{ $loop->index }}" role="button"
                                 data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Anterior</span>
                             </a>
-                            <a class="carousel-control-next" href="#carousel-{{ $categoria }}" role="button"
+                            <a class="carousel-control-next" href="#carousel-{{ $loop->index }}" role="button"
                                 data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Siguiente</span>
