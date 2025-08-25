@@ -20,10 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    document.querySelector(".form").addEventListener("submit", () => {
-        contenedorLoader.style.opacity = 1;
-        contenedorLoader.style.visibility = "visible";
-    });
 
     formEditar.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -59,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     return data;
                 })
                 .then((data) => {
+                    contenedorLoader.style.opacity = 1;
+                    contenedorLoader.style.visibility = "visible";
                     document.querySelector("#editarForm").submit();
                 })
                 .catch((error) => console.log(error));

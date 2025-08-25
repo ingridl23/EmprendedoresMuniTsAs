@@ -165,7 +165,7 @@ class administradorController extends Controller
             return redirect('/emprendedores')->with('success', $mensajes);
         } else {
             $mensajes = [
-                'titulo' => 'Error!',
+                'titulo' => '¡Error!',
                 'detalle' => 'Ha sucedido un error al crear el emprendimiento, inténtelo nuevamente.'
             ];
             return redirect('/emprendedores')->with('error', $mensajes);
@@ -381,7 +381,14 @@ class administradorController extends Controller
 
                     return redirect('/emprendedores')->with('error', $mensajes);
                 }
-            }   
+            }
+        else {
+            $mensajes = [
+                'titulo' => '¡Error!',
+                'detalle' => 'No se ha encontrado el emprendimiento que se desea editar, intentelo nuevamente.'
+            ];
+            return redirect('/emprendedores')->with('error', $mensajes);
+        }  
         }
 
 
@@ -431,6 +438,13 @@ class administradorController extends Controller
                     return redirect('/emprendedores')->with('error', $mensajes);
                 }
             }
+        }
+        else {
+            $mensajes = [
+                'titulo' => '¡Error!',
+                'detalle' => 'No se ha encontrado el emprendimiento que se desea eliminar, intentelo nuevamente.'
+            ];
+            return redirect('/emprendedores')->with('error', $mensajes);
         }
     }
 
@@ -489,14 +503,14 @@ class administradorController extends Controller
             } catch (\Exception $e) {
                 $mensajes = [
                     'titulo' => '¡Error!',
-                    'detalle' => 'Ha sucedido un error al crear la noticia, intente nuevamente.'
+                    'detalle' => 'Ha sucedido un error en la carga de la imagen, intente nuevamente.'
                 ];
                 return redirect('/noticias')->with('error', $mensajes);
             }
         } else {
             $mensajes = [
                 'titulo' => '¡Error!',
-                'detalle' => 'Ha sucedido un error en la carga de la imagen, intente nuevamente..'
+                'detalle' => 'Necesita cargar una imagen para poder agregar la noticia.'
             ];
             return redirect('/noticias')->with('error', $mensajes);
         }
@@ -544,6 +558,20 @@ class administradorController extends Controller
      */
     protected function editarImgsNoticias($id, Request $request)
     {
+        $validator = Validator::make($request->all(),[
+            'imagen' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
+        ]);
+        if($validator->fails()){
+            return response()->json([
+                'redirect' => "/noticias/formEditarNoticia/{$id}",
+                'message' => [
+                    'titulo' => '¡Error!',
+                    'detalle' => 'Ha sucedido un error en la validación de la imagen',
+                ],
+                'status' => 'error',
+            ], 400);
+        };
+
         $noticia = Noticias::find($id);
         $imagenRequest = $request->file("imagen");
         $formPublicId = $request->input("public_id");
@@ -639,7 +667,7 @@ class administradorController extends Controller
             } else {
                 $mensajes = [
                     'titulo' => '¡Error!',
-                    'detalle' => 'Ha sucedido un error al eliminar la noticia, intente nuevamente.'
+                    'detalle' => 'Ha sucedido un error al eliminar la noticia, intentelo más tarde.'
                 ];
                 return redirect('/noticias')->with('error', $mensajes);
             }
