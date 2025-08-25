@@ -625,7 +625,7 @@ class administradorController extends Controller
             } catch (\Exception $e) {
                 $mensajes = [
                     'titulo' => '¡Error!',
-                    'detalle' => 'Ha sucedido un error al eliminar la imagen, intente nuevamente.'
+                    'detalle' => 'Ha sucedido un error al eliminar la imagen de la noticia, intente nuevamente.'
                 ];
                 return redirect('/noticias')->with('error', $mensajes);
             }
@@ -639,7 +639,7 @@ class administradorController extends Controller
             } else {
                 $mensajes = [
                     'titulo' => '¡Error!',
-                    'detalle' => 'Ha sucedido un error al eliminar el emprendimiento, intente nuevamente.'
+                    'detalle' => 'Ha sucedido un error al eliminar la noticia, intente nuevamente.'
                 ];
                 return redirect('/noticias')->with('error', $mensajes);
             }
