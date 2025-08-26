@@ -40,16 +40,16 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">¡Agrega una nueva noticia!</h1>
+                    <h1 class="text-white font-weight-bold">¡Panel De Publicaciones!</h1>
 
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
-                        En esta sección podés completar el formulario para cargar una nueva noticia al sitio.
-                        Ingresá el título, el contenido principal y agregá una imágen que complemente la información.
+                        Completar el formulario para cargar una nueva publicacion al sitio.
+                        Ingresár el título, el contenido principal y agregá una imágen que complemente la información.
                         Es importante que la noticia sea clara, actual y relevante para los lectores.
                     </p>
-                    <p class="text-white-75 ">Asegurate de revisar bien los datos antes de enviarlos.
+                    <p class="text-white-75 ">Asegurar revision de los datos antes de publicarlos.
                         Una vez cargada, la noticia será visible en la plataforma y podrá ser editada más adelante si es
                         necesario.</p>
                     <br>
@@ -65,11 +65,9 @@
                     <h2 class="mt-0">Cargar una nueva noticia</h2>
 
                     <p class="text-muted textoNuevoEmprendimiento">
-                        Completá el formulario con los datos de la noticia, envialos
+                        Completar el formulario con los datos de la publicacion
                     </p>
-                    <p class="text-muted mb-5">
-                        ¡y ya se cargará para poder ser vista!
-                    </p>
+
                 </div>
             </div>
         </div>

@@ -33,17 +33,14 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Edita los datos que sean necesarios sobre un emprendimiento
+                    <h1 class="text-white font-weight-bold">Formulario De Edicion
                     </h1>
-                    <hr class="divider" />
+                    <hr class="divider" style="background-color: white" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
-                        Desde esta sección del panel de administración, podés actualizar los datos de los
-                        emprendimientos registrados en la plataforma.
-                        Es posible modificar información clave como el nombre, la descripción, el rubro, los datos de
-                        contacto y
-                        cualquier otro campo necesario para mantener la información precisa y actualizada.
+                        Panel de administración , actualizacion de datos de
+                        emprendores registrados en la plataforma.
                     </p>
 
                     <br>
@@ -56,7 +53,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
                     <h2 class="mt-0"> Modificar Información del Emprendimiento</h2>
-                    <hr class="divider" />
+                    <hr class="divider" style="background-color: white" />
                     <p class="text-muted mb-5">
                         Corregir datos cargados,
                         incorporar cambios en la actividad del emprendimiento .
@@ -80,7 +77,8 @@
                     {{ method_field('PATCH') }}
                     @include('administradores.emprendedores.form')
                     <div class=" d-grid  ">
-                        <button class="btn btn-primary btn-xl submit btnEditarEmprendimiento" id="submitButton" type="submit">
+                        <button class="btn btn-primary btn-xl submit btnEditarEmprendimiento" id="submitButton"
+                            type="submit">
                             <span class="btntext" value="Guardar datos"> Editar emprendimiento </span>
                         </button>
                     </div>
@@ -100,8 +98,8 @@
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
-    <script src="{{asset('js/emprendedores/envioImagenes.js')}}"></script>
-      <script src="{{ asset('js/emprendedores/formOptionClose.js') }} "></script>
+    <script src="{{ asset('js/emprendedores/envioImagenes.js') }}"></script>
+    <script src="{{ asset('js/emprendedores/formOptionClose.js') }} "></script>
     <script src="{{ asset('js/loader.js') }}"></script>
 
     <!--Para las alertas en JS-->

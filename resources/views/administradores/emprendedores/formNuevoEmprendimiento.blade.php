@@ -19,7 +19,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
-     <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/loader.css') }}" rel="stylesheet" />
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -42,7 +42,7 @@
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">Agregar un nuevo emprendedor </h1>
-                    <hr class="divider" />
+                    <hr class="divider" style="background-color: white" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
@@ -65,7 +65,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
                     <h2 class="mt-0"> Cargar un emprendimiento</h2>
-                    <hr class="divider" />
+                    <hr class="divider" style="background-color: white" />
                     <p class="text-muted textoNuevoEmprendimiento">
                         Completár el formulario con los datos del emprendimiento,para agregar al sitio
                     </p>
@@ -87,7 +87,8 @@
                     @csrf
                     @include('administradores.emprendedores.form')
                     <div class=" d-grid  ">
-                        <button class="btn btn-primary btn-xl submit btnAgregarEmprendimiento" id="submitButton" type="submit">
+                        <button class="btn btn-primary btn-xl submit btnAgregarEmprendimiento" id="submitButton"
+                            type="submit">
                             <span class="btntext" value="Guardar datos"> Agregar emprendimiento </span>
                         </button>
                     </div>
@@ -110,10 +111,10 @@
     <script src="{{ asset('js/navbar.js') }}"></script>
     <script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
     <script src="{{ asset('js/emprendedores/formOptionClose.js') }} "></script>
-    <script src="{{asset('js/emprendedores/previsualizacionImagenes.js')}}"></script>
+    <script src="{{ asset('js/emprendedores/previsualizacionImagenes.js') }}"></script>
     <script src="{{ asset('js/loader.js') }}"></script>
 
-                <!--Para las alertas en JS-->
+    <!--Para las alertas en JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
