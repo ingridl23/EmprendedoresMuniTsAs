@@ -226,7 +226,7 @@
         <div class="seccionCarrusel">
             @foreach ($emprendedoresPorCategoria as $categoria => $emprendedores)
                 @if (!empty($emprendedores[0]))
-                    <h3 id="link{{ $categoria }}">{{ $emprendedores[0]->categoria }}</h3>
+                    <h3 id="link{{ $categoria }}">{{ $emprendedores[0]->categoria->categoria }}</h3>
                 @endif
                 <div class="container d-flex justify-content-center align-items-center min-vh-100">
                     <div id="carrousel-{{ $loop->index }}" class="shadow-wrapper p-2 rounded-4"
@@ -251,7 +251,7 @@
                                         <div class="portfolio-caption">
                                             <div class="portfolio-caption-heading">{{ $emprendedor->nombre }}</div>
                                             <div class="portfolio-caption-subheading text-muted">
-                                                {{ $emprendedor->categoria }}</div>
+                                                {{ $emprendedor->categoria->categoria }}</div>
                                         </div>
                                     </div>
 
@@ -278,7 +278,7 @@
                                                                 <ul class="list-inline">
                                                                     <li><strong>Emprendedor</strong></li>
                                                                     <li><strong>Categoria:</strong>
-                                                                        {{ $emprendedor->categoria }}</li>
+                                                                        {{ $emprendedor->categoria->categoria }}</li>
                                                                 </ul>
                                                                 <button
                                                                     class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
@@ -324,12 +324,12 @@
                             </div>
 
                             <!-- Controles del carrusel -->
-                            <a class="carousel-control-prev" href="#carousel-{{ $loop->index }}" role="button"
+                            <a class="carousel-control-prev" href="#carousel-{{ $loop->index + 1 }}" role="button"
                                 data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Anterior</span>
                             </a>
-                            <a class="carousel-control-next" href="#carousel-{{ $loop->index }}" role="button"
+                            <a class="carousel-control-next" href="#carousel-{{ $loop->index + 1 }}" role="button"
                                 data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Siguiente</span>

@@ -116,7 +116,7 @@ class Emprendedor extends Model
         return Emprendedor::with('categoria')->get()->groupBy('categoria_id');
     }
 
-    public static function obtenerCategorias()
+    /* public static function obtenerCategorias()
     {
         return [
             'Gastronomía',
@@ -126,7 +126,7 @@ class Emprendedor extends Model
             'Artesanía',
         ];
     }
-
+*/
     /////////////////////////////////////////////
 
 
