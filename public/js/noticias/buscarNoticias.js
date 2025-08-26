@@ -83,9 +83,7 @@ document.addEventListener('DOMContentLoaded', e=>{
                         <div class="container-vermas">
                             <p class="card-text actualizacionFecha"><small class="text-body-secondary">Publicación : ${soloFechaCreado}</small></p>
                             <p class="card-text actualizacionFecha"><small class="text-body-secondary">Última actualización: ${soloFechaActualizado}</small></p>
-                            <a href="/noticias/${noticia.id}">
-                                <button class="vermas">Ver más</button>
-                            </a>
+                            <button class="vermas"><a href="noticias/${noticia.id}">Ver más</a></button>
                         </div>
                     </div>
                 </div>`;
