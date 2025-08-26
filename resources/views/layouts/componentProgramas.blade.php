@@ -169,7 +169,8 @@
                                             alt={{ $emprendedor->nombre }} />
 
                                         <div class="portfolio-box-caption">
-                                            <div class="project-category text-white-50">{{ $emprendedor->categoria }}
+                                            <div class="project-category text-white-50">
+                                                {{ $emprendedor->categoria->categoria }}
                                             </div>
                                             <div class="project-name">{{ $emprendedor->nombre }}</div>
                                         </div>
