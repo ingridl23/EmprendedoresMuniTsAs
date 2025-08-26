@@ -41,8 +41,8 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">¡Edita los datos de una noticia ya cargada!</h1>
-                    <hr class="divider" />
+                    <h1 class="text-white font-weight-bold">¡Formulario De Edicion!</h1>
+                    <hr class="divider" style="background-color: white" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 ">
