@@ -39,7 +39,7 @@ class validacionNoticia  extends FormRequest
 
         return [
             'titulo' => 'bail|required|string|min:3|max:100',
-            'descripcion' => 'bail|required|string|min:1',
+            'descripcion' => 'bail|required|string|min:20',
             'categoria' => 'bail|required|string|min:1|max:60',
             'imagen' => 'bail|required|image|mimes:jpeg,jpg,png,webp'
         ];
