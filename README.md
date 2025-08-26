@@ -159,7 +159,7 @@ Descripción de carpetas y archivos
 
 ### Estructura de la base de datos
 
-![Diagrama de base de datos](./docs/Modelo-de-Base-de-Datos.png)
+![Diagrama de base de datos](./docs/sitioOficinaEMpleoimgnueva.png)
 
 ## Dimensión determinada de las imagenes
 
