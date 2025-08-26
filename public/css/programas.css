@@ -206,7 +206,7 @@ div.programas.row {
 
 /*Estilo programas*/
 
-@media(min-width:1000px) {
+@media(min-width:999px) {
     div.contenedorListaProgramas {
         display: flex;
         align-items: flex-start;
@@ -229,6 +229,7 @@ div.programas.row {
         width: 40%;
     }
     .detallesClub {
+        padding: 0.5rem;
         padding-bottom: 3rem;
     }
 }
@@ -259,7 +260,12 @@ ul.estiloLista li {
 
 div.beneficiosDetallesClub ul.estiloLista {
     margin-left: 0;
-    margin-right: 1%;
+}
+
+@media (min-width: 999px){
+    div.beneficiosDetallesClub ul.estiloLista {
+        margin-right: 1%;
+    } 
 }
 
 ul.estiloLista li::before {
@@ -300,7 +306,7 @@ ul.estiloLista li::before {
     justify-content: center;
 }
 
-@media(max-width:1000px) {
+@media(max-width:998px) {
     .detallesClub {
         display: block;
         margin-left: 1%;

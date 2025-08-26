@@ -10965,7 +10965,6 @@
                 
                 #mainNav {
                     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-                    background-color: #fff;
                     transition: background-color 0.2s ease;
                 }
                 
@@ -10995,7 +10994,6 @@
                 @media (min-width: 992px) {
                     #mainNav {
                         box-shadow: none;
-                        background-color: transparent;
                     }
                     #mainNav .navbar-brand {
                         color: rgba(255, 255, 255, 0.7);
