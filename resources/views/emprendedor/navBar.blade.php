@@ -35,6 +35,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/solicitantes') }}">Solicitantes</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('emprendedores/excel') }}">Vigencia
+                                        emprendedores</a>
+                                </li>
                             @else
                                 <li class="nav-item serParte">
                                     <a class="nav-link" href="{{ url('/formar/parte') }}">Ser parte</a>

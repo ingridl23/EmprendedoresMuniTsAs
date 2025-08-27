@@ -81,6 +81,13 @@ class administradorController extends Controller
                 'showForm'
             ]
         ]);
+
+        $this->middleware('can:filtrar datos emprendedores', [
+            'only' => [
+                'export',
+                'showForm'
+            ]
+        ]);
     }
 
     /*public function emprendedores()

@@ -79,3 +79,5 @@ Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('pr
 //para exportar excel de busqueda de empleo sector administrativo
 Route::get("/solicitantes", [EmpleosController::class, "showForm"]);
 Route::get('/empleos/export', [EmpleosController::class, 'export'])->name('empleos.export');
+Route::get("emprendedores/export", [EmprendedorController::class, "showForm"]);
+Route::get('emprendedores/excel', [EmprendedorController::class, 'export'])->name('emprendedores.export');

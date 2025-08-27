@@ -26,6 +26,8 @@ class EmprendedorFactory extends Factory
             ]),
             'redes_id'     => Redes::factory(),
             'direccion_id' => Direccion::factory(),
+            'created_at'   => now(),
+            'ciudad' => $this->faker->city()
         ];
     }
 }
