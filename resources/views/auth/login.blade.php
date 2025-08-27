@@ -226,6 +226,7 @@
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scriptsnavlogin.js') }} "></script>
     <script src="{{ asset('js/scripts3.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/navbar.js') }}"></script>
 
 

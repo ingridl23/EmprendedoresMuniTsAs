@@ -98,7 +98,7 @@
 
 
     <!-- Core theme JS-->
-    <script src="{{ asset('js/scripts3.js') }} "></script>
+    <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }}"></script>
     <script src="{{ asset('js/noticias/previsualizacionImagenesNoticias.js') }}"></script>
     <script src="{{ asset('js/loader.js') }}"></script>

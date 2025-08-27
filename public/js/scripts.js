@@ -1,12 +1,14 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-    // Navbar shrink function
+
+    const navbarCollapsible = document.body.querySelector("#mainNav");
+    const navbarToggler = document.body.querySelector(".navbar-toggler");
+
     var navbarShrink = function() {
-        const navbarCollapsible = document.body.querySelector("#mainNav");
         const header = document.querySelector("#header");
         if (!navbarCollapsible) return;
         if (!header) return;
 
-        if (window.scrollY === 0) {
+        if (window.scrollY === 0 && navbarToggler.getAttribute("aria-expanded") === "false") {
             navbarCollapsible.classList.remove("navbar-shrink");
             header.classList.remove("header-scrolled");
         } else {
@@ -23,20 +25,31 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector("#mainNav");
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: "#mainNav",
+    if (mainNav && bootstrap.ScrollSpy) {
+        bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
+            target: '#mainNav',
             rootMargin: "0px 0px -40%",
-        });
+    });
+   
     }
 
-
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector(".navbar-toggler");
-    console.log(navbarToggler);
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll("#navbarResponsive .nav-link")
     );
+
+    navbarToggler.addEventListener("click", () =>{
+            const isExpanded = navbarToggler.getAttribute("aria-expanded") === "true";
+            if (isExpanded && window.scrollY === 0) {
+                navbarCollapsible.classList.add("navbar-shrink");
+                header.classList.add("header-scrolled");
+            }
+        setTimeout(() => {
+            if(!isExpanded && window.scrollY === 0) {
+                navbarCollapsible.classList.remove("navbar-shrink");
+                header.classList.remove("header-scrolled");
+            }
+        }, 200);
+    });
 
     responsiveNavItems.map(function(responsiveNavItem) {
         responsiveNavItem.addEventListener("click", () => {
