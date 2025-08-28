@@ -92,7 +92,9 @@
     color: white;
 }
 
-
+.container-card{
+        margin: 1rem;
+}
 /**** styles para cada noticia en vista general******/
 
 .card-text-noticia {

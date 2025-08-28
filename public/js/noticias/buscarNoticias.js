@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', e=>{
             let fechaActualizado = new Date(noticia.updated_at);
             let soloFechaActualizado = fechaActualizado.toISOString().split('T')[0];
             let card = document.createElement('div');
+            card.classList.add("row")
+            card.classList.add("container-card")
             let contenido = `
                 <div class="card mb-3">
                     <img src="${noticia.imagen}" class="card-img-top1"
