@@ -120,7 +120,11 @@ class EmpleosController extends Controller
 
 
         if ($empleos->isEmpty()) {
-            return back()->with('error', 'No se encontraron registros para los filtros seleccionados.');
+            $mensaje = [
+                'titulo' => '¡Error!',
+                'detalle' => 'No se encontraron registros para los filtros seleccionados.'
+            ];
+            return back()->with('error', $mensaje);
         } else {
 
             return Excel::download(new EmpleosExport($empleos), 'solicitantes.xlsx');
