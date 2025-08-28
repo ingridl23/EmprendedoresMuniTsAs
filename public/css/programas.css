@@ -306,6 +306,12 @@ ul.estiloLista li::before {
     justify-content: center;
 }
 
+ul.estiloLista {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 @media(max-width:998px) {
     .detallesClub {
         display: block;

@@ -107,7 +107,7 @@
     </div>
 
     <!-- Core theme JS-->
-    <script src="{{ asset('js/scripts3.js') }} "></script>
+    <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }}"></script>
     <script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
     <script src="{{ asset('js/emprendedores/formOptionClose.js') }} "></script>

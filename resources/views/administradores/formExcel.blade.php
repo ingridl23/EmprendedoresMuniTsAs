@@ -18,8 +18,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
             rel="stylesheet" />
         <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
-        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
     </head>
@@ -118,20 +118,26 @@
     @include('layouts.panelAdmin')
     @include('emprendedor.footer')
 
-
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    @if (session('error'))
+        <script>
+            window.mensajeError = @json(session('error'));
+        </script>
+    @endif
 
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts3.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>
+    <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!--Para las alertas en JS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
