@@ -1,0 +1,618 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.1">
+  <diagram name="Página-1" id="dhFwNfUQCcNTCvmvYsL6">
+    <mxGraphModel dx="3870" dy="591" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-1" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-2260" y="240" width="395" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-22" value="US1: Como usuario quiero poder entrar al sitio y encontrar los programas disponibles para poder informarme sobre los mismos y saber de que tratan" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1Ir8e28wF9ucRZ7bTjXy-1" vertex="1">
+          <mxGeometry y="40" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-24" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1Ir8e28wF9ucRZ7bTjXy-1" vertex="1">
+          <mxGeometry x="10" y="90" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-26" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-1" vertex="1">
+          <mxGeometry x="10" y="120" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-27" value="Se debe presentar una seccion persuasiva con&amp;nbsp;&lt;div&gt;informacion relevante sobre los programas vigentes&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-1" vertex="1">
+          <mxGeometry x="15" y="115" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-1" value="Se debe poder visualizar cada uno de los programas vigentes de&amp;nbsp;&lt;div&gt;manera rapida y dinamica&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-1">
+          <mxGeometry x="20" y="175" width="370" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-2" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-1">
+          <mxGeometry x="10" y="175" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-5" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-1">
+          <mxGeometry x="10" y="220" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-7" value="Se debe poder incentivar al publico a que quieran participar de los&lt;div&gt;&amp;nbsp;programas vigentes y las diferentes propuestas(ver US 8)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-1">
+          <mxGeometry x="15" y="220" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-2" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1810" y="240" width="400" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-30" value="US2: Como usuario quiero poder ver los emprendedores que son&amp;nbsp;&lt;div&gt;parte del programa&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;municipal para conocer&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;nuevas propuestas&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;de compras y donde encontrarlos&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-2" vertex="1">
+          <mxGeometry y="25" width="370" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-31" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1Ir8e28wF9ucRZ7bTjXy-2" vertex="1">
+          <mxGeometry x="10" y="90" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-33" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-2" vertex="1">
+          <mxGeometry x="10" y="120" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-34" value="Se&amp;nbsp; debe presentar una seccion persuasiva &lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;que exponga a los&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;div&gt;emprendedores que&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;son parte del ecosistema municipal&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-2" vertex="1">
+          <mxGeometry x="20" y="120" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-4" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-2">
+          <mxGeometry x="10" y="160" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-15" value="Se debe poder visualizar de manera general los nombres de los&lt;div&gt;&amp;nbsp;emprendimientos publicados,&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;sus categorias&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(si son gastronomia,indumentaria etc)&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;y&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;una imagen&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;representativa de cada uno.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-2">
+          <mxGeometry x="20" y="160" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-3" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;USUARIO PUBLICO&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-2310" y="90" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-4" value="ACCEDER AL SITIO" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-2290" y="148" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-5" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-820" y="230" width="480" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-39" value="US5: Como usuario quiero poder visualizar las ultimas novedades respecto&amp;nbsp;&lt;div&gt;a eventos&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;y&amp;nbsp; empleos para&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;no perderme de ninguna propuesta vigente&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-5" vertex="1">
+          <mxGeometry x="-10" y="25" width="430" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-42" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1Ir8e28wF9ucRZ7bTjXy-5" vertex="1">
+          <mxGeometry x="10" y="85" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-43" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-5" vertex="1">
+          <mxGeometry x="10" y="120" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-44" value="Se debe permitir visualizar una seccion de publicaciones recientes con&lt;div&gt;&amp;nbsp;la informacion de propuestas vigentes para la comunidad&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-5" vertex="1">
+          <mxGeometry x="15" y="115" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-19" value="Se debe permitir visualizar en la seccion los titulos,&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;una imagen&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;representativa&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;y la fecha de publicacion&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-5">
+          <mxGeometry x="15" y="160" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-20" value="Se debe poder filtrar las publicaciones por diferentes criterios (ver US 7)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-5">
+          <mxGeometry x="15" y="210" width="410" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-21" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-5">
+          <mxGeometry x="10" y="160" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-22" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-5">
+          <mxGeometry x="10" y="215" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-6" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1290" y="240" width="400" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-38" value="El&amp;nbsp; debe permitir&amp;nbsp; filtrar por categoria y&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;nombre&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;de emprendedores&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-6" vertex="1">
+          <mxGeometry x="10" y="165" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-46" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1Ir8e28wF9ucRZ7bTjXy-6" vertex="1">
+          <mxGeometry x="5" y="100" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-54" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-6" vertex="1">
+          <mxGeometry x="5" y="215" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-55" value="Se&amp;nbsp; debe devolver un listado con el resultado de la busqueda" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-6" vertex="1">
+          <mxGeometry x="10" y="210" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-37" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-6" vertex="1">
+          <mxGeometry x="5" y="170" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-8" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-6">
+          <mxGeometry x="5" y="130" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-9" value="Se debe poder visualizar los emprendimientos por secciones,&lt;div&gt;&amp;nbsp;es decir todos los conjuntos por categoria&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-6">
+          <mxGeometry x="15" y="130" width="350" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-36" value="US4 :Como usuario ya que pude visualizar los emprendedores&amp;nbsp;&lt;div&gt;&amp;nbsp;quiero poder filtrarlos&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;para&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;una busqueda&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;mas rapida de&amp;nbsp; los&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;mismos dependiendo de mi interes&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-6" vertex="1">
+          <mxGeometry x="15" y="35" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-10" value="Se debe permitir seleccionar un emprendimiento&amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;visualizado en&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;cualquier momento (ver US3)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-6">
+          <mxGeometry x="10" y="240" width="370" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-11" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-6">
+          <mxGeometry x="5" y="240" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-7" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-290" y="230" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-45" value="US7: Como usuario me gustaria poder encontrar facilmente&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;las novedades&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;recientes para aplicar a propuestas&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-7" vertex="1">
+          <mxGeometry y="40" width="420" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-47" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1Ir8e28wF9ucRZ7bTjXy-7" vertex="1">
+          <mxGeometry x="20" y="90" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-48" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-7" vertex="1">
+          <mxGeometry x="20" y="120" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-49" value="Se&amp;nbsp; debe proveeer la funcionalidad de filtrar por categoria&amp;nbsp;&lt;div&gt;y fecha de publicaciones&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-7" vertex="1">
+          <mxGeometry x="30" y="120" width="330" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-50" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-7" vertex="1">
+          <mxGeometry x="20" y="170" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-53" value="Se debe permitir devolver un listado con el resultado de la busqueda" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-7" vertex="1">
+          <mxGeometry x="40" y="165" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-8" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;ADMINISTRADOR&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1240" y="100" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-9" value="GESTION DEL SITIO" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="140" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-10" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1210" y="220" width="605" height="280" as="geometry">
+            <mxRectangle x="1200" y="230" width="210" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-56" value="US9: Como administrador quiero poder cargar emprendedores que ya hayan pasado por&lt;div&gt;&amp;nbsp;la&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;entrevista en la oficina&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;de empleo para asi poder darles acceso a ser visibles en el sitio&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-10" vertex="1">
+          <mxGeometry y="40" width="510" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-57" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1Ir8e28wF9ucRZ7bTjXy-10" vertex="1">
+          <mxGeometry x="15" y="85" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-59" value="Se debe verificar que acceda solo el administrador (ver us n° 15)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-10" vertex="1">
+          <mxGeometry x="5" y="115" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-60" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-10" vertex="1">
+          <mxGeometry y="150" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-62" value="Se debe permitir acceder al formulario de edicion, carga de emprendimientos" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-10" vertex="1">
+          <mxGeometry x="10" y="145" width="430" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-64" value="Verificar que se permita guardar los datos del emprendedor y asignarlos al lugar visible del sitio correctos." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-10" vertex="1">
+          <mxGeometry x="15" y="240" width="590" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-58" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-10" vertex="1">
+          <mxGeometry y="120" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-63" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-10" vertex="1">
+          <mxGeometry y="245" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-34" value="." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-10">
+          <mxGeometry x="215" y="188" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-35" value="Verificar que se soliciten nombre,categoria,descripcion,horarios de atencion,redes sociales,&lt;div&gt;numero de contacto,&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;participacion en ferias municipales. 5 fotos representativas&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-10">
+          <mxGeometry x="10" y="188" width="510" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-36" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-10">
+          <mxGeometry y="193" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-11" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1210" y="530" width="610" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-65" value="US10: Como administrador quiero poder modificar un emprendedor publicado en el sitio,&amp;nbsp;&lt;div&gt;para poder mantener el sistema actualizado con los emprendedores vigentes&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-11" vertex="1">
+          <mxGeometry x="-10" y="40" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-66" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1Ir8e28wF9ucRZ7bTjXy-11" vertex="1">
+          <mxGeometry x="15" y="80" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-69" value="Se&amp;nbsp; debe permitir seleccionar el emprendimiento a editar" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-11" vertex="1">
+          <mxGeometry x="30" y="130" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-68" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-11" vertex="1">
+          <mxGeometry x="15" y="135" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-70" value="Se debe verificar que acceda solo el administrador (ver us n° 15)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-11" vertex="1">
+          <mxGeometry x="25" y="110" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-71" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-11" vertex="1">
+          <mxGeometry x="15" y="115" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-72" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-11" vertex="1">
+          <mxGeometry x="15" y="165" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-74" value="Se debe permitir acceder al formulario de edicion para el emprendimiento seleccionado" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-11" vertex="1">
+          <mxGeometry x="30" y="160" width="490" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-76" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-11" vertex="1">
+          <mxGeometry x="15" y="195" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-37" value="Verificar que se solicite modificar&amp;nbsp; nombre,categoria,descripcion,horarios de atencion,redes sociales,&lt;div&gt;numero de contacto,&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;participacion en ferias municipales. 5 fotos representativas&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-11">
+          <mxGeometry x="15" y="190" width="560" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-38" value="Verificar que se permita guardar los cambios aplicados y asignarlos al lugar visible del sitio correctos." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-11">
+          <mxGeometry x="35" y="240" width="560" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-40" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-11">
+          <mxGeometry x="15" y="245" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-12" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1210" y="850" width="611" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-77" value="US11 :Como administrador quiero poder dar de baja un emprendedor publicado en el sitio, para mantener&lt;div&gt;&amp;nbsp;actualizado&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;el mismo&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;y controlar que se brinde el servicio de visibilidad de manera justa.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-12" vertex="1">
+          <mxGeometry x="-5" y="30" width="590" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-78" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1Ir8e28wF9ucRZ7bTjXy-12" vertex="1">
+          <mxGeometry x="20" y="75" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-79" value="Se debe verificar que acceda solo el administrador (ver us n° 15)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-12" vertex="1">
+          <mxGeometry x="25" y="105" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-80" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-12" vertex="1">
+          <mxGeometry x="21" y="110" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-82" value="Se debe permitir seleccionar un emprendimiento vigente" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-12" vertex="1">
+          <mxGeometry x="30" y="133" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-84" value="Verificar que se permita acceder de manera rapida a la baja del emprendedor seleccionado" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1Ir8e28wF9ucRZ7bTjXy-12" vertex="1">
+          <mxGeometry x="25" y="158" width="510" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-85" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-12" vertex="1">
+          <mxGeometry x="21" y="190" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-83" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" parent="1Ir8e28wF9ucRZ7bTjXy-12" vertex="1">
+          <mxGeometry x="20" y="163" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-41" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-12">
+          <mxGeometry x="21" y="135" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-42" value="Verificar que se permita guardar y visibilizar los cambios aplicados." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-12">
+          <mxGeometry x="30" y="185" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-13" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1860" y="220" width="590" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-43" value="US12: Como administrador quiero poder cargar noticias/publicaciones sobre eventos y propuestas&lt;div&gt;&amp;nbsp;laborales para incentivar&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;a que la comunidad a que&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;se comuniquen y se acerquen a la oficina&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;y asi poder comunicar sobre las propuestas diarias.&lt;/span&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry x="-15" y="30" width="550" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-44" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry x="10" y="95" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-45" value="Se debe verificar que acceda solo el administrador (ver us n° 15)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry x="5" y="125" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-46" value="Se debe permitir acceder al formulario de edicion, carga de emprendimientos" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry x="10" y="155" width="430" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-47" value="Verificar que se soliciten titulo,categoria,descripcion,&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;y una imagen representativa/ilustrativa del tema&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry x="7.5" y="190" width="560" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-48" value="Verificar que se permita guardar los datos del emprendedor y asignarlos al lugar visible del sitio correctos." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry x="7.5" y="230" width="590" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-49" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry y="130" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-50" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry y="160" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-51" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry y="195" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-52" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-13">
+          <mxGeometry y="230" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-16" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1860" y="530" width="607.5" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-53" value="US13: Como administrador quiero poder modificar un publicacion/noticia publicada en el sitio,&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;para&amp;nbsp;&lt;/span&gt;&lt;div&gt;poder mantener el sistema actualizado con las propuestas&amp;nbsp; vigentes o por algun error de tipeo previamente.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="7.5" y="40" width="600" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-54" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="7.5" y="90" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-55" value="Se debe verificar que acceda solo el administrador (ver us n° 15)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="10" y="120" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-56" value="Se&amp;nbsp; debe permitir seleccionar la publicacion/noticia a editar" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="12.5" y="150" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-57" value="Se debe permitir acceder al formulario de edicion para la noticia/publicacion seleccionada." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="15" y="180" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-58" value="Verificar que se solicite modificar&amp;nbsp; titulo,categoria,descripcion y la imagen&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;representativa/ilustrativa.&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="12.5" y="215" width="550" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-59" value="Verificar que se permita guardar los cambios aplicados y asignarlos al lugar visible del sitio correctos." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="12.5" y="245" width="560" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-65" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="7.5" y="125" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-64" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="7.5" y="155" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-63" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="7.5" y="185" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-62" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="7.5" y="220" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-61" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-16">
+          <mxGeometry x="7.5" y="250" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-17" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1860" y="850" width="620" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-66" value="US14 :Como administrador quiero poder dar de baja una publicacion/noticia publicada en el sitio, para mantener&lt;div&gt;&amp;nbsp;actualizada las novedades&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry y="30" width="620" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-67" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry x="7.5" y="75" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-68" value="Se debe verificar que acceda solo el administrador (ver us n° 15)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry x="2.5" y="105" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-69" value="Se debe permitir seleccionar un emprendimiento vigente" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry x="7.5" y="130" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-70" value="Verificar que se permita acceder de manera rapida a la baja del emprendedor seleccionado" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry x="7.5" y="170" width="510" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-71" value="Verificar que se permita guardar y visibilizar los cambios aplicados." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry x="7.5" y="210" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-72" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry y="110" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-73" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry y="135" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-74" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry y="175" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-75" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-17">
+          <mxGeometry y="215" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1Ir8e28wF9ucRZ7bTjXy-19" value="" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2550" y="220" width="601" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-76" value="US15 : Como administrador quiero poder acceder a la funcionalidad de gestion para&lt;div&gt;&amp;nbsp;el sitio para administrar&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;las secciones&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;y mantener&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;actualizada la informacion y propuestas&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;de publico conocimiento&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="10" y="30" width="500" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-77" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="20" y="90" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-78" value="Se debe permitir acceder al formulario de inicio de sesion." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="10" y="125" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-79" value="Verificar que se soliciten correo institucional registrado&amp;nbsp; en el sistema, y una contraseña." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="10" y="155" width="490" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-80" value="Verificar que se permita guardar los datos de la sesion abierta y asignar el rol corresponidente a la misma" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="5.5" y="185" width="590" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-81" value="Permitir el acceso a las diferentes funcionalidades de gestion (Ver US :9,10,11,12,13,14,16,17,18)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="10" y="215" width="540" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-82" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="5.5" y="130" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-83" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="5.5" y="160" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-84" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="5.5" y="190" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-85" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1Ir8e28wF9ucRZ7bTjXy-19">
+          <mxGeometry x="5.5" y="220" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-12" value="" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1810" y="560" width="462.5" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-13" value="US3 : Como usuario quiero poder no solo ver un listado de emprendedores de&lt;div&gt;&amp;nbsp;la zona&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;sino&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;tambien poder conocer a cerca de sus propuestas con mas detalles&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;div&gt;para un mejor acceso a la publicidad de los mismos.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-12">
+          <mxGeometry x="2.5" y="30" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-14" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-12">
+          <mxGeometry x="2.5" y="100" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-3" value="Se debe permitir mostrar por cada emprendedor su nombre, descripcion,&lt;div&gt;redes sociales,&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ubicacion,horarios de atencion&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;y un maximo&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;de 5 imagenes representativas del mismo&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-12">
+          <mxGeometry x="27.5" y="180" width="410" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-18" value="Se debe permitir seleccionar cualquier emprendimiento en cualquier&lt;div&gt;&amp;nbsp;momento y acceder a los detalles del mismo&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-12">
+          <mxGeometry x="20" y="130" width="390" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-17" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-12">
+          <mxGeometry x="2.5" y="130" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-16" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-12">
+          <mxGeometry x="2.5" y="180" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-23" value="" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-820" y="550" width="480" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-27" value="US6 : Como usuario quiero poder no solo ver un listado de noticias recientes&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;sino&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;tambien poder informarme&amp;nbsp; a cerca de sus propuestas y publicaciones&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;con mas detalles&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;para un mejor entendimiento&amp;nbsp; de las mismas.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-23">
+          <mxGeometry x="15" y="30" width="430" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-28" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-23">
+          <mxGeometry x="15" y="95" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-29" value="Se debe permitir seleccionar cualquier noticia/publicacion en cualquier&lt;div&gt;&amp;nbsp;momento y acceder a los detalles de la misma.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-23">
+          <mxGeometry x="25" y="125" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-30" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-23">
+          <mxGeometry x="15" y="125" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-31" value="Se debe permitir detallar por cada noticia/publicacion su titulo, descripcion,&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;fecha de publicacion y una imagen a modo ilustrativa o representativa.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-23">
+          <mxGeometry x="30" y="180" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-32" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-23">
+          <mxGeometry x="15" y="180" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-24" value="&lt;b&gt;ADMINISTRAR EMPRENDIMIENTOS&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="178" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-25" value="&lt;b&gt;ADMINISTRAR NOTICIAS&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="178" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-26" value="&lt;b&gt;ACCEDER CON UN ROL&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="2540" y="178" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-86" value="" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="230" width="670" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-87" value="US8 : Como usuario quiero poder tener un acceso de contacto y la infomacion necesaria para&lt;div&gt;&amp;nbsp;comunicarme&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;con la oficina&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;o entidad publica.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Para participar de las propuestas&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;y&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;acceder a las diferentes oportunidades brindadas.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry x="40" y="35" width="520" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-88" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry x="10" y="95" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-89" value="Se debe permitir accder&amp;nbsp; a la informacion de contacto con la oficina tanto sus redes&amp;nbsp;&lt;div&gt;sociales&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;como su ubicacion en mapa de la oficina/sucursal.&lt;/span&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry x="15" y="125" width="470" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-90" value="Se debe permitir acceder a un formulario de contacto para que se envie a la casilla de&lt;div&gt;&amp;nbsp;email de la oficina/empresa.&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry x="15" y="175" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-104" value="Verificar que se solicite&amp;nbsp; nombre,asunto,email,descripcion/motivo de consulta,&lt;div&gt;numero de contacto&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;. si es empresa (nombre del representante),&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;si es emprendedor:(si participa de algun programa),&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;si busca empleo :( edad,dni,localidad,ciudad,estudios cursados,referencias laborales,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;si posee CUD,&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;si trabaja en dependencia,cargar cv en formato pdf)(ver US 18).&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry x="20" y="230" width="480" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-105" value="Permitir enviar datos y almacenar segun requisitos del administrador (ver US 18)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry x="15" y="338" width="450" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-106" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry y="130" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-108" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry y="180" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-109" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry y="239" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-110" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-86">
+          <mxGeometry y="343" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-114" value="COMUNICACION CON LA OFICINA/EMPRESA" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="210" y="148" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-116" value="" style="swimlane;whiteSpace=wrap;html=1;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="3250" y="225" width="720" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-126" value="US16: Como administrador quiero poder descargar datos de solicitantes que se hayan comunicado&lt;div&gt;&amp;nbsp;mediante el email institucional.&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Para poder tener un control de&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;quienes&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;se comunican y filtrar mas&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;rapido&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;a los postulantes de&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;las propuestas laborales.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;De esa manera no se&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;me pierden en la casilla de email posibles buenos candidatos.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry x="5" y="45" width="550" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-128" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry x="10" y="120" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-129" value="Se debe verificar que acceda solo el administrador (ver us n° 15)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry x="5" y="150" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-130" value="Se debe permitir acceder al formulario de descarga, que permita aplicar filtros para la misma." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry x="10" y="180" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-131" value="Verificar que se ingresen almenos uno de los filtros de :nombre,dni,ciudad,edad,fecha,si posee CUD)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry x="10" y="210" width="560" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-133" value="Verificar que se permita la descarga de los datos solicitados y encontrados.Esto debe ser mdiante formato&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;.xlsx (hoja de calculo).&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry x="10" y="253" width="710" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-143" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry y="258" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-142" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry y="215" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-144" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry y="185" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-148" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-116">
+          <mxGeometry y="155" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-117" value="&lt;span style=&quot;font-weight: 700; text-wrap-mode: wrap;&quot;&gt;VISUALIZAR PROGRAMAS&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-2290" y="200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-118" value="&lt;span style=&quot;font-weight: 700; text-wrap-mode: wrap;&quot;&gt;VISUALIZAR EMPRENDEDORES&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1825" y="200" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-119" value="&lt;span style=&quot;font-weight: 700; text-wrap-mode: wrap;&quot;&gt;FILTRAR EMPRENDEDORES&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1300" y="200" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-120" value="&lt;span style=&quot;font-weight: 700; text-wrap-mode: wrap;&quot;&gt;VISUALIZAR NOTICIAS&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-710" y="188" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-121" value="&lt;span style=&quot;font-weight: 700; text-wrap-mode: wrap;&quot;&gt;FILTRAR NOTICIAS&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="190" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-122" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="270" y="190" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-124" value="&lt;b&gt;ENVIAR DATOS A PROPUESTAS&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="230" y="190" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-125" value="&lt;b&gt;EXPORTAR DATOS&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="3240" y="178" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-134" value="" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3250" y="600" width="730" height="365" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-135" value="US17: Como administrador quiero poder descargar emprendimientos que se hayan publicado&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;en la plataforma.&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Para poder tener un control de&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;quienes&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;estan visiblesy filtrar mas&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;rapido&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;a los mismos para tener un seguimiento&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;de quienes pueden seguir participando&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;De esa manera brindar el servicio de publicidad y visibilidad de manera justa para todos&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="-5" y="35" width="710" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-136" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="20" y="115" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-137" value="Se debe verificar que acceda solo el administrador (ver us n° 15)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="15" y="155" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-138" value="Se debe permitir acceder al formulario de descarga, que permita aplicar filtros para la misma." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="20" y="195" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-139" value="Verificar que se ingresen almenos uno de los filtros de :nombre,ciudad,fecha,categoria)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="20" y="235" width="490" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-140" value="Verificar que se permita la descarga de los datos solicitados y encontrados.Esto debe ser mdiante formato&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;.xlsx (hoja de calculo).&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="20" y="285" width="710" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-147" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="10" y="290" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-146" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="10" y="240" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-145" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="10" y="200" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-141" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-134">
+          <mxGeometry x="10" y="160" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-149" value="" style="swimlane;whiteSpace=wrap;html=1;startSize=35;" vertex="1" parent="1">
+          <mxGeometry x="4050" y="225" width="670" height="505" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-151" value="US18: Como administrador me gustaria que al momento en que las personas rellenen el formulario&lt;div&gt;&amp;nbsp;de contacto del sitio&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;se haga como un prefiltrado de los envios.&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;Para mantener visible desde&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;el email y desde la&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;recopilacion de los datos organizados por secciones de empresa, emprendedor&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;y solicitante.&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;De esa manera puedo identificar mucho mas rapido las solicitudes entrantes&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;div&gt;e ir dando prioridad segun criterios laborales de la oficina/empresa,&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry x="10" y="40" width="560" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-152" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;CRITERIOS DE ACEPTACION:&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry x="10" y="130" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-153" value="Se debe permitir acceder al formulario de contacto." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry x="10" y="160" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-154" value="Verificar que se solicite&amp;nbsp; nombre,asunto,email,descripcion/motivo de consulta,&lt;div&gt;numero de contacto&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;. si es empresa (nombre del representante),&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;si es emprendedor:(si participa de algun programa),&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;si busca empleo :( edad,dni,localidad,ciudad,estudios cursados,referencias laborales,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;si posee CUD,&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;si trabaja en dependencia,cargar cv en formato pdf).&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry x="20" y="190" width="480" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-155" value="Verificar que se envien los datos al email segun el grupo seleccionado en formulario junto&lt;div&gt;&amp;nbsp;a los datos correspondientes para la seleccion.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry x="20" y="295" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-156" value="Verificar que cuando se envien los datos por seleccion de buscqueda de empleo,&amp;nbsp;&lt;div&gt;estos se almacenen en la bd del siastema para su posterior descarga.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry x="10" y="339" width="460" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-158" value="Se debe verificar que acceda solo el administrador&amp;nbsp; para el acceso a los datos de solicitantes&lt;div&gt;&amp;nbsp;registrados (ver us n°15 )&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry x="10" y="400" width="520" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-161" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry y="400" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-160" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry y="340" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-159" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry y="295" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-162" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry y="195" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-163" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="sRMBBAahNfiQHYWM_lNw-149">
+          <mxGeometry y="165" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sRMBBAahNfiQHYWM_lNw-150" value="&lt;b&gt;ENVIAR POR GRUPO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="4030" y="178" width="150" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
