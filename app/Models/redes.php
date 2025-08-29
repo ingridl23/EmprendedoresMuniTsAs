@@ -26,10 +26,14 @@ class Redes extends Model
     {
         $cadena = "https";
         if (!strpos($redes->instagram, $cadena)) {
-            $redes->instagram = "https://instagram.com/{$redes->instagram}";
+            if($redes->instagram != null || $redes->instagram != ""){
+                $redes->instagram = "https://instagram.com/{$redes->instagram}";
+            }
         }
         if (!strpos($redes->facebook, $cadena)) {
-            $redes->facebook = "https://facebook.com/{$redes->facebook}";
+            if($redes->facebook != null || $redes->facebook != ""){
+                $redes->facebook = "https://facebook.com/{$redes->facebook}";
+            }
         }
         $redesEdit = $redes->save();
         return $redesEdit;

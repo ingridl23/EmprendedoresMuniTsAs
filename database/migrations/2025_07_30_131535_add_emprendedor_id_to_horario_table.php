@@ -10,7 +10,7 @@ class AddEmprendedorIdToHorarioTable extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+    */
     public function up()
     {
 
@@ -23,7 +23,7 @@ class AddEmprendedorIdToHorarioTable extends Migration
      * Reverse the migrations.
      *
      * @return void
-     */
+    */
     public function down()
     {
         Schema::table('horario', function (Blueprint $table) {

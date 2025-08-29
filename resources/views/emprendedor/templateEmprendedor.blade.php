@@ -200,12 +200,14 @@
                                     @else
                                         <span class="ms-auto"> desde {{ $horario->hora_apertura }}hs -
                                             hasta {{ $horario->hora_cierre }}hs</span>
-                                        @if ($horario->participa_feria)
-                                <li> Participa en feria parque cabañas primer domingo de cada
-                                    mes
-                                </li>
-                        @endif
-                        @endif
+                                
+                                    @endif
+                                @if ($horario->participa_feria == 1)
+                                    <li> Participa en feria parque cabañas primer domingo de cada
+                                        mes
+                                    </li>
+                                @endif
+                        
                         </li>
 
                         </ul>

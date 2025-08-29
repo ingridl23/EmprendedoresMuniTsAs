@@ -24,7 +24,12 @@ class EmprendedorController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+         $this->middleware('can:filtrar emprendedores', [
+            'only' => [
+                'showForm',
+                'export'
+            ]
+        ]);
     }
 
     public function showForm()

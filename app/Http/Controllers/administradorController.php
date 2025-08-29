@@ -23,6 +23,7 @@ use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class administradorController extends Controller
 {
     public function __construct()
@@ -333,12 +334,9 @@ class administradorController extends Controller
             $redes->facebook = $this->obtenerRedes($redes->facebook);
             $direccion = direccion::find($emprendimiento->direccion_id);
             if ($redes != null) {
-                if (
-                    $redes->instagram != $request->input('instagram') || $redes->facebook != $request->input('facebook')
-                    || $redes->whatsapp != $request->input('whatsapp')
-                ) {
-                    $redes->instagram = "https://instagram.com/{$request->input('instagram')}";
-                    $redes->facebook = "https://facebook.com/{$request->input('facebook')}";
+                $redes->instagram = $request->input('instagram');
+                $redes->facebook = $request->input('facebook');
+                if($redes->whatsapp != $request->input('whatsapp')){
                     $redes->whatsapp = $request->input('whatsapp');
                 }
             }
@@ -361,18 +359,14 @@ class administradorController extends Controller
                 $diaHorarioViejo = $horarios->where('dia', $dia)->first();
                 $hora_apertura = $datos['hora_de_apertura'] ?? null;
                 $hora_cierre = $datos['hora_de_cierre'] ?? null;
-                $participa_feria = isset($datos['participa_feria']) ? 1 : 0;
+                $participa_feria = isset($datos["participa_feria"]) ? 1 : 0;
                 $cerrado = isset($datos['cerrado']) ? 1 : 0;
 
-                // Evitar guardar si no hay datos relevantes
-                if ($hora_apertura || $hora_cierre || $participa_feria || $cerrado) {
-                    $diaHorarioViejo->hora_apertura = $hora_apertura;
-                    $diaHorarioViejo->hora_cierre = $hora_cierre;
-                    $diaHorarioViejo->participa_feria = $participa_feria;
-                    $diaHorarioViejo->cerrado = $cerrado;
-                    $horariosActualizado = Horario::editarHorarios($diaHorarioViejo);
-                    // Vincular el horario al emprendedor
-                }
+                $diaHorarioViejo->hora_apertura = $hora_apertura;
+                $diaHorarioViejo->hora_cierre = $hora_cierre;
+                $diaHorarioViejo->participa_feria = $participa_feria;
+                $diaHorarioViejo->cerrado = $cerrado;
+                $horariosActualizado = Horario::editarHorarios($diaHorarioViejo);
             }
 
             $emprendedorEdit = Emprendedor::editarEmprendimiento($emprendimiento);
