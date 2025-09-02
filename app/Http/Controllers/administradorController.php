@@ -547,10 +547,30 @@ class administradorController extends Controller
      */
     public function showFormEditNoticia($id)
     {
-        $categorias = $this->obtenerCategorias();
-        $noticia = Noticias::showNoticiasId($id);
-        return view("administradores.noticias.formEditarNoticia", compact("noticia", "categorias"));
-    }
+        if(is_numeric($id) && $id > constants::VALORMIN){
+            $categorias = $this->obtenerCategorias();
+            $noticia = Noticias::showNoticiasId($id);
+            if($noticia != null){
+                return view("administradores.noticias.formEditarNoticia", compact("noticia", "categorias"));
+            }
+            else{
+                $mensajes = [
+                    'titulo' => '¡Error!',
+                    'detalle' => 'No se ha encontrado una noticia que coincida, intentelo nuevamente.'
+                ];
+                return redirect('/noticias')->with('error', $mensajes);
+            }
+        }
+        else{
+            $mensajes = [
+                'titulo' => '¡Error!',
+                'detalle' => 'Debe ingresar un número mayor a cero para buscar y editar una noticia.'
+            ];
+
+            return redirect('/noticias')->with('error', $mensajes);
+        }
+        
+        }
 
 
     /**
