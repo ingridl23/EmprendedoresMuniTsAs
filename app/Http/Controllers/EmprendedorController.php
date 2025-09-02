@@ -153,7 +153,11 @@ class EmprendedorController extends Controller
                 return view("emprendedor.templateEmprendedor", compact('emprendimiento'));
             }
         }
-        //return view("errors.mensaje")->with('mensaje', "No se encuentra cargado ningún emprendimiento");
+        $mensajes = [
+                'titulo' => '¡Error!',
+                'detalle' => 'No existe el usuario que desea buscar, intentelo nuevamente.'
+            ];
+        return redirect('/emprendedores')->with('error', $mensajes);
     }
 
 
