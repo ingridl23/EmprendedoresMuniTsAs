@@ -22,10 +22,26 @@ use App\constants;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\Auth;
 
-
+/**
+ * @class administradorController
+ *
+ * @brief Controlador para la gestión de emprendimientos y noticias por parte del rol administrador.
+ *
+ * Este controller define las operaciones que un administrador puede realizar
+ * sobre emprendimientos y noticias: crear, editar, eliminar, filtrar y obtener información.
+ *
+ * @package App\Http\Controllers
+ */
 
 class administradorController extends Controller
 {
+    /**
+     * Constructor del controlador.
+     *
+     * Define los middlewares de autenticación y autorización necesarios
+     * para restringir las acciones según los permisos del rol administrador.
+     */
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -100,6 +116,20 @@ class administradorController extends Controller
         // return view("emprendedor.index", compact("emprendedores"));
     }*/
 
+
+    /**
+     * Visualizar para Crear un nuevo emprendimiento en el sistema:
+     *
+     * Valida los datos recibidos desde el formulario y los persiste en la base de datos,
+     * asociando también redes sociales, dirección, horarios e imágenes.
+     *
+     * @param validacionEmprendimiento $request Datos validados del emprendimiento.
+     *
+     * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores con mensaje de éxito o error.
+     *
+     * @throws \Exception Si ocurre un error al subir las imágenes a Cloudinary.
+     */
+
     public function showFormCrearEmprendimiento()
     {
         $categorias = categoria::obtenerCategorias();
@@ -107,7 +137,16 @@ class administradorController extends Controller
     }
 
 
-
+    /**
+     *  Dar de alta emprendimientos:
+     *
+     *Una vez validados los datos del formulario se deben persistir en la base de datos,asociando tambien redes sociales,
+     direccion,horarios e imagenes.
+     *
+     * @param  validacionEmprendimiento $request Datos validados del emprendimiento.
+     * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores con mensaje de éxito o error.
+     * @throws \Exception Si ocurre un error al persistir los datos en el sistema.
+     */
     public function crearEmprendimiento(validacionEmprendimiento $request)
     {
 
@@ -187,6 +226,20 @@ class administradorController extends Controller
         }
     }
 
+    /**
+     * Formulario para modificar emprendimientos:
+     *
+     * Al seleccionar un emprendimiento cargado se devuelven sus datos persistidos dentro del sistema.
+     * Se valida los datos actualizados y recibidos desde el formulario y se los persiste nuevamente ,
+     * asociando también redes sociales, dirección, horarios e imágenes.
+     *
+     * @param validacionEmprendimiento $request Datos validados del emprendimiento.
+     *
+     * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores con mensaje de éxito o error.
+     *
+     * @throws \Exception Si ocurre un error al subir las imágenes a Cloudinary.
+     *  @throws \Exception Si ocurre un error al persistir datos.
+     */
 
 
 
@@ -217,6 +270,13 @@ class administradorController extends Controller
         }
     }
 
+    /**
+     * Obtener el nombre de usuario desde la URL de una red social:
+     *
+     * @param string $redes URL completa de la red social.
+     *
+     * @return string Nombre de usuario extraído de la URL.
+     */
     public function obtenerRedes($redes)
     {
         $redes = rtrim($redes, '/'); //Elimina todos los caracteres "/" que se encuentren al final
@@ -226,14 +286,14 @@ class administradorController extends Controller
     }
 
     /**
-     * Edita las imagenes cargadas en la base de datos y en la nube
+     *Modificar imagenes de emprendimientos:
      *
      * Recorre las imagenes que ya se encuentran cargadas en la BD, en caso de no estar en el $request (imagenes_conservar) que llega por parametro, se eliminan
      * (ya que no se desean tener cargadas). Si viene en el arreglo de imagenes_conservar hay que agregarlas, teniendo la restriccion que, solo agrega, como máximo, cinco
      * imagenes.
      *
      * @param int $id, ID perteneciente al emprendedor a modificar
-     * @param Request $request, Viene en FormData son las nueva imagenes a cargar
+     * @param Request $request, Viene en FormData con las nueva imagenes a cargar
      *
      * @return JsonResponse, Envio de estado de la respuesta del fetch
      */
@@ -315,9 +375,9 @@ class administradorController extends Controller
 
 
     /**
-     * Edita el emprendimiento cargado en la base de datos
+     * Editar emprendimiento:
      *
-     * Obtiene los datos del formulario del emprendimiento (redes, direccion, horarios, informacion) para que sea modificada en cada tabla en la BD
+     * Se obtiene los datos del formulario para el emprendimiento seleccionado (redes, direccion, horarios, informacion) y es persistido en el sistema.
      *
      * @param int $id, ID perteneciente al emprendedor a modificar
      * @param Request $request, los nuevos datos del emprendimiento
@@ -336,7 +396,7 @@ class administradorController extends Controller
             if ($redes != null) {
                 $redes->instagram = $request->input('instagram');
                 $redes->facebook = $request->input('facebook');
-                if($redes->whatsapp != $request->input('whatsapp')){
+                if ($redes->whatsapp != $request->input('whatsapp')) {
                     $redes->whatsapp = $request->input('whatsapp');
                 }
             }
@@ -399,11 +459,12 @@ class administradorController extends Controller
 
 
     /**
-     * Elimina un emprendimiento con sus redes, direccion y horarios.
+     * Eliminar un emprendimiento con sus redes, direccion y horarios asociados:
      *
-     * @param int id, ID único del emprendimiento a eliminar
+     * @param int id, ID único del emprendimiento seleccionado
      *
-     * @return RedirectResponse redirecciona a la página principal de emprendedorescon un mensaje correspondiente a lo sucedido en la eliminación del emprendimiento.
+     * @return RedirectResponse redirecciona a la página principal de emprendedimientos.
+     *  @throws \Exception Si ocurre un error al persistir datos.
      */
     public function eliminarEmprendimiento($id)
     {
@@ -460,7 +521,7 @@ class administradorController extends Controller
 
 
     /**
-     * Obtiene las categorias cargadas
+     * Obtener las categorias presentes en el sistema:
      *
      * @return Array, Categorias cargadas
      */
@@ -473,9 +534,9 @@ class administradorController extends Controller
 
 
     /**
-     * Muestra el formulario para crear nuevas noticias
+     * Visualizar el formulario de Altas de publicaciones
      *
-     * @return \Illuminate\View\View, Muestra el formulario a completar para cargar la noticia
+     * @return \Illuminate\View\View, retorna el formulario para completar la alta de la publicacion.
      */
     public function showFormCreateNoticia()
     {
@@ -488,11 +549,12 @@ class administradorController extends Controller
 
 
     /**
-     * Crea una noticia según los datos del formulario
+     * Dar alta de una publicacion:
      *
-     * @param Request $request, Datos de la nueva noticia
+     * @param Request $request, Datos de la nueva publicacion
      *
-     * @return RedirectResponse Redirige al administrador a la página principal de noticias con un mensaje correspondiente a lo sucedido con la nueva noticia
+     * @return RedirectResponse Redirige al administrador a la página principal de noticias.
+     *  @throws \Exception Si ocurre un error al persistir datos.
      */
     public function createNoticia(validacionNoticia $request)
     {
@@ -539,11 +601,12 @@ class administradorController extends Controller
 
 
     /**
-     * Muestra el formulario para editar noticias ya subidas
+     * Visualizar el formulario para la modificacion de publicaciones
      *
      * @param int $id, ID perteneciente a la noticia que se va a mostrar para modificar
      *
-     * @return \Illuminate\View\View, Muestra el formulario con los datos ya cargados de la noticia para que se puedan modificar
+     * @return \Illuminate\View\View, Muestra el formulario con los datos persistidos.
+
      */
     public function showFormEditNoticia($id)
     {
@@ -554,10 +617,10 @@ class administradorController extends Controller
 
 
     /**
-     * Edita la imagen de una noticia en la base de datos y en la nube donde se guardan las imgs
+     * Modificacion de  la imagen ilustrativa de una publicacion:
      *
-     * @param int $id, ID perteneciente a la noticia a modificar
-     * @param Request $request, Datos nuevos de la imagen con la cual se desea reemplazar a la vieja
+     * @param int $id, ID unico de identificacion para la publicacion seleccionada.
+     * @param Request $request, Datos ingresados para la modificacion.
      *
      * @return JsonResponse, Envio de estado de la respuesta del fetch
      */
@@ -610,12 +673,13 @@ class administradorController extends Controller
     }
 
     /**
-     * Edita los datos de una noticia para ser actualizados en la base de datos
+     * Modificacion de una publicacion
      *
-     * @param int $id, ID perteneciente a la noticia a modificar
-     * @param Request $request, Datos nuevos de la noticia enviados a través de un formulario para actualizarlos en la base de datos
+     * @param int $id, ID unico de identificacion de la publicacion seleccionada.
+     * @param Request $request, Datos recibidos para persistir de la publicacion seleccionada.
      *
-     * @return RedirectResponse Redirige al administrador a la página principal de noticias con un mensaje correspondiente a lo sucedido con las modificaciones
+     * @return RedirectResponse Redirige al usuario administrador hacia la homepage  de noticias.
+     *  @throws \Exception Si ocurre un error al persistir datos.
      */
     protected function editNoticia($id, validacionEditarNoticia $request)
     {
@@ -643,11 +707,12 @@ class administradorController extends Controller
 
 
     /**
-     * Elimina una noticia especifica
+     * Dar de baja una publicacion
      *
-     * @param int $id, ID perteneciente a la noticia a eliminar
+     * @param int $id, ID unico de identificacion de la publicacion seleccionada.
      *
-     * @return RedirectResponse Redirige al administrador a la página principal de noticias con un mensaje correspondiente a lo sucedido con la eliminacion de la noticia
+     * @return RedirectResponse Redirige al usuario administrador a la homepage de noticias.
+     *  @throws \Exception Si ocurre un error al persistir datos.
      */
     protected function deleteNoticia($id)
     {

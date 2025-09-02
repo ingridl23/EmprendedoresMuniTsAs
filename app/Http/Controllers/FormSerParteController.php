@@ -10,10 +10,29 @@ use App\Mail\sendContactForm;
 use App\Models\Empleo;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @class FormSerParteController
+ *
+ * @brief Controlador para el formulario de contacto dirigido a los usuarios generales del sistema.
+ *
+ * Este controller define lasimplementacion de la funcionalidad de envio de datos para persistirlos en el sistema o redirigirlos hacia otros fuera del mismo ( SISTEMA DE EMAIL).
+ *
+ *
+ * @package App\Http\Controllers
+ */
 
 class FormSerParteController extends Controller
 {
 
+
+    /**
+     * Visualizar el formulario de contacto en el sistema.
+     *
+
+     *
+     * @return \Illuminate\Http\RedirectResponse Redirige al usuario a la seccion del formulario de contacto.
+     *
+     */
 
 
     public function formarparte()
@@ -22,6 +41,19 @@ class FormSerParteController extends Controller
     }
 
 
+
+    /**
+     * Realizar el envio de la informacion mediante el formulario de contacto:
+     *
+     * Validar los datos recibidos desde el formulario y los persiste en la base de datos o exportarlos hacia fuera del sistema (casilla de email).
+     * asociando esos datos a un grupo particular d usuarios.
+     *
+     * @param validacionFormularioContacto $request Datos validados del formulario de contacto.
+     *
+     * @return Response , devuelve los datos del usuario recibidos desde el formulario y los envia y persiste segun la logica de negocio.
+     *
+     * @throws \Exception Si ocurre un error al enviar los datos.
+     */
 
     public function enviar(validacionFormularioContacto $request)
     {

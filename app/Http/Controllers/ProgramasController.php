@@ -9,9 +9,19 @@ use Illuminate\Http\Request;
 class ProgramasController extends Controller
 {
 
+    /**
+     * @class ProgramasController
+     *
+     * @brief Controlador para la presentacion de programas vigentes segun la logica de negocio.
+     *
+     * @package App\Http\Controllers
+     */
+    /**
+     * @return \Illuminate\Http\RedirectResponse redirige la informacion a la seccion de programas retornando los ultimos emprendedores cargados aleatoriamente.
+     */
     public function ShowPrograma()
     {
-        // return view("layouts.programas");
+
         // 1.1) Traigo los últimos 6 emprendedores
         $ultimos = Emprendedor::traerAleatoriamenteSeis();
         //  dd($ultimos->pluck('nombre')->toArray());
