@@ -24,7 +24,7 @@ class EmprendedorController extends Controller
 
     public function __construct()
     {
-         $this->middleware('can:filtrar emprendedores', [
+        $this->middleware('can:filtrar emprendedores', [
             'only' => [
                 'showForm',
                 'export'
@@ -106,20 +106,6 @@ class EmprendedorController extends Controller
             return Excel::download(new EmprendedoresExport($emprendedores), 'emprendedores.xlsx');
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
