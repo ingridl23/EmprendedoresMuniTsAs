@@ -1,0 +1,303 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.2">
+  <diagram name="Página-1" id="VQN0Ko3GxS_B0FJIKpsk">
+    <mxGraphModel dx="2127" dy="1725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-2" value="Visualizar programas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="20" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-3" value="Visualizar emprendedores" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-4" value="filtrar emprendedores" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-5" value="visualizar noticias" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-6" value="filtrar noticias" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="470" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-8" value="usuarios&amp;nbsp;&lt;div&gt;publicos&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="30" y="190" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-10" value="" style="endArrow=none;html=1;rounded=0;exitX=0.75;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-8" target="pbBF8Dm_z8GlBgMk-2Db-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="170" as="sourcePoint" />
+            <mxPoint x="440" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-11" value="" style="endArrow=none;html=1;rounded=0;exitX=0.75;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-8" target="pbBF8Dm_z8GlBgMk-2Db-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="170" as="sourcePoint" />
+            <mxPoint x="440" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-12" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-8" target="pbBF8Dm_z8GlBgMk-2Db-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="170" as="sourcePoint" />
+            <mxPoint x="440" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-13" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.1;entryY=0.175;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-8" target="pbBF8Dm_z8GlBgMk-2Db-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="470" as="sourcePoint" />
+            <mxPoint x="440" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-14" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-8" target="pbBF8Dm_z8GlBgMk-2Db-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="470" as="sourcePoint" />
+            <mxPoint x="440" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-15" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="530" y="190" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-16" value="Agregar emprendedor" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="690" y="-10" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-17" value="Editar emprendedor" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="690" y="90" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-18" value="Eliminar emprendedor" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="700" y="200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-19" value="Agregar noticia" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="690" y="300" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-20" value="Editar noticia" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="670" y="410" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-21" value="Eliminar noticia" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="490" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-22" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-15" target="pbBF8Dm_z8GlBgMk-2Db-20" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-23" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-15" target="pbBF8Dm_z8GlBgMk-2Db-19" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-24" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" target="pbBF8Dm_z8GlBgMk-2Db-18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="220" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-25" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="pbBF8Dm_z8GlBgMk-2Db-17" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="210" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-26" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="pbBF8Dm_z8GlBgMk-2Db-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="200" as="sourcePoint" />
+            <mxPoint x="440" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-27" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-6" target="pbBF8Dm_z8GlBgMk-2Db-15" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-28" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-5" target="pbBF8Dm_z8GlBgMk-2Db-15" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-29" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="510" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-30" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="520" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-31" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="270" as="sourcePoint" />
+            <mxPoint x="520" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pbBF8Dm_z8GlBgMk-2Db-32" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-15" target="pbBF8Dm_z8GlBgMk-2Db-21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="270" as="sourcePoint" />
+            <mxPoint x="440" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-1" value="CU N°1 : VISUALIZAR PROGRAMAS&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;1.El caso de uso comienza cuando el usuario quiere visualizar los programas&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2. El sistema debe actualizar la interfaz mostrando la seccion de programas&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema actualiza la vista mostrando los programas vigentes de manera persuasiva y clara&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-310" y="830" width="530" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-2" value="CU N°2: VISUALIZAR EMPRENDEDORES&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;1.El caso de uso comienza cuando el usuario quiere visualizar los emprendedores en el sitio&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2. El sistema debe actualizar la interfaz mostrando la seccion de emprendedores&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema actualiza la vista mostrando los emprendedores vigentes de manera persuasiva y clara&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4. El sistema permite realizar una busqueda de emprendedores mediantes diferentes filtros (nombre,categoria) (Incluye CU N°3)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;5. El sistema permite seleccionar un emprendedor en particular y visualizar su informacion (nombre,imagenes representativas, horarios,direccion,redes sociales) (INCLUYE CU N°7)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-315" y="950" width="990" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-4" target="pbBF8Dm_z8GlBgMk-2Db-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="270" as="sourcePoint" />
+            <mxPoint x="300" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-8" value="include" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="T9vUNknEH7Xv9dv8QbIu-7" vertex="1" connectable="0">
+          <mxGeometry x="-0.15" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-6" target="pbBF8Dm_z8GlBgMk-2Db-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="320" as="sourcePoint" />
+            <mxPoint x="300" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-10" value="include" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="T9vUNknEH7Xv9dv8QbIu-9" vertex="1" connectable="0">
+          <mxGeometry y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-11" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CU N°3: FILTRAR EMPRENDEDORES&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;1. El caso de uso comienza cuando el usuario quiere hacer una busqueda rapida dentro del sitio ,seccion emprendedores.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;2.&amp;nbsp; El sistema proporciona una seccion de filtrado de busqueda dentro de la seccion de emprendedores&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;3 El sistema permite realizar la busqueda de un emprendedor en particular mediante atributos de nombre y categoria.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;4. El sistema devuelve el resultado de busqueda del usuario.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;5. El sistema permite seleccionar un emprendedor en particular y visualizar su informacion (nombre,imagenes,horarios,direccion,redes sociales) (INCLUYE CU N°7)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-315" y="1080" width="900" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-12" value="CU N°4: VISUALIZAR NOTICIAS&lt;div&gt;1. El caso de uso comienza cuando el usuario quiere ver las novedades e informacion relevante en relacion a eventos y oprtunidades laborales&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2.&amp;nbsp; El sistema debe actualizar la interfaz mostrando la seccion de noticias&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema actualiza la vista mostrando las noticias y publicaciones vigentes de manera persuasiva y clara.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4. El sistema permite realizar una busqueda de noticias mediante diferentes filtros( titulo, fecha de publicacion) (INCLUYE CU N°5).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;5. El sistema perite seleccionar una noticia en particular y visualizar su informacion(titulo,descripcion,imagen y fecha) (INLCUYE CU N°6).&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-315" y="1220" width="790" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-13" value="CU N°5: FILTRAR NOTICIAS&lt;div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;1. El caso de uso comienza cuando el usuario quiere&amp;nbsp; realizar una busqueda rapida entre las noticias del sitio&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2. El sistema brinda una seccion de filtrado de busqueda dentro de la seccion de noticias/publicaciones.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema permite realizar la busqueda de una noticia/publicacion&amp;nbsp; en particular mediante atributos de titulo y fecha de publicacion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4. El sistema devuelve el resultado de la busqueda del usuario.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;5. El sistema permite seleccionar una noticia en particular y visualizar su informacion(titulo,descripcion,imagen,fecha) (INCLUYE CU N°6)&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-315" y="1340" width="750" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-14" value="visualizar noticia" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="585" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="T9vUNknEH7Xv9dv8QbIu-15" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-8" target="T9vUNknEH7Xv9dv8QbIu-14" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="520" as="sourcePoint" />
+            <mxPoint x="190" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-19" target="pbBF8Dm_z8GlBgMk-2Db-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="555" y="405" as="sourcePoint" />
+            <mxPoint x="605" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-2" value="include" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xuzazUVQMNmOcmDW87rD-1">
+          <mxGeometry x="0.1778" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.1;exitY=0.188;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-21" target="pbBF8Dm_z8GlBgMk-2Db-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-4" value="include" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xuzazUVQMNmOcmDW87rD-3">
+          <mxGeometry x="0.1088" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-20" target="pbBF8Dm_z8GlBgMk-2Db-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-6" value="include" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xuzazUVQMNmOcmDW87rD-5">
+          <mxGeometry x="-0.0816" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-16" target="pbBF8Dm_z8GlBgMk-2Db-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="270" as="sourcePoint" />
+            <mxPoint x="440" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-8" value="include" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xuzazUVQMNmOcmDW87rD-7">
+          <mxGeometry x="-0.136" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-17" target="pbBF8Dm_z8GlBgMk-2Db-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="270" as="sourcePoint" />
+            <mxPoint x="440" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-10" value="include" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xuzazUVQMNmOcmDW87rD-9">
+          <mxGeometry x="-0.1234" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-18" target="pbBF8Dm_z8GlBgMk-2Db-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="270" as="sourcePoint" />
+            <mxPoint x="440" y="220" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-12" value="include" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xuzazUVQMNmOcmDW87rD-11">
+          <mxGeometry x="-0.4179" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-13" value="CU N°6: VISUALIZAR NOTICIA&lt;div&gt;1. El caso de uso comienza cuando el usuario quiere seleccionar una publicacion para ver informacion relevante en relacion de un&amp;nbsp; evento y oportunidad laboral&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2. El sistema debe actualizar la interfaz mostrando la seccion de noticias (INCLUYE CU N°4)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;. El sistema permite realizar una busqueda de noticias mediante diferentes filtros( titulo, fecha de publicacion) (INCLUYE CU N°5).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4.&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;El sistema permite seleccionar una noticia en particular y visualizar su informacion(titulo,descripcion,imagen y fecha).&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-315" y="1490" width="880" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-14" value="visualizar emprendedor" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="710" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-15" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="xuzazUVQMNmOcmDW87rD-14" target="pbBF8Dm_z8GlBgMk-2Db-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="570" as="sourcePoint" />
+            <mxPoint x="140" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-16" value="CU N°7: VISUALIZAR EMPRENDEDOR&lt;div style=&quot;text-align: justify;&quot;&gt;1. El caso de uso comienza cuando el usuario quiere seleccionar un emprendedor/emprendimiento para ver la propuesta comercial del mismo.&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2. El sistema debe actualizar la interfaz mostrando la seccion de emprendedores (INCLUYE CU N°2)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;. El sistema permite realizar una busqueda de emprendedores mediante diferentes filtros( nombre, categoria) (INCLUYE CU N°3).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4.&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;El sistema permite seleccionar un emprendedor&amp;nbsp; y visualizar su informacion(nombre,descripcion,imagenes representativas del negocio, horarios, direccion y redes sociales).&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-310" y="1620" width="950" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-17" value="CU&amp;nbsp; N°9: AGREGAR UN EMPRENDEDOR&lt;div style=&quot;text-align: justify;&quot;&gt;1. El caso de uso comienza cuando el usuario administrador quiere agregar al sistema un nuevo emprendedor.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2.&amp;nbsp; El sistema debe verificar que se haya ingresado con rol de administrador del sitio (INCLUYE CU N°8).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema debe permitir visualizar los emprendedores publicados (INCLUYE CU N°2)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4.El sistema debe permitir seleccionar un emprendedor publicado (INCLUYE CU N°7)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;5. El sistema debe permitir el ingreso de datos del nuevo emprendedor (nombre,descripcion,imagenes ilustrativas,horarios,direccion y redes sociales).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6. El sistema debe poder persistir los datos ingresados.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;7.El sistema debe reflejar los datos ingresados en el sistema.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;FLUJO ALTERNATIVO&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 En caso de no poder guardar correctamente los datos ingresados , el sistema debe reportar la situacion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 El sistema vuelve al punto 5&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-305" y="2020" width="820" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-18" value="Iniciar sesion con rol" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="-120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-19" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pbBF8Dm_z8GlBgMk-2Db-15" target="xuzazUVQMNmOcmDW87rD-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="130" as="sourcePoint" />
+            <mxPoint x="520" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-20" value="CU N°8: INICIAR SESION CON UN ROL:&lt;div&gt;1.El caso comienza cuando el la persona responsable de gestionar el sistema quiere ingresar para comenzar a trabajar en el mismo.&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;2.El sistema debe permitir acceder a una interfaz funcional para el ingreso de los datos de inicio de sesion, segu la logica de negocio.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;3. El sistema debe permitir el ingreso de los datos de inicio de sesion (email corporativo autorizado y una contraseña).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;4. El sistema debe validar los datos ingresados.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;5. El sistema debe permitir dar de alta un emprendedor (INCLUYE CU N°9).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;6. El sistema debe permitir modificar un emprendedor (INCLUYE CU N°10).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;7.El sistema debe permitir&amp;nbsp; dar de baja un emprendedor (INCLUYE CU N°11).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;8.El sitema debe permitir dar de alta una noticia/publicacion (INCLUYE CU N°12).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;9.El sistema debe permitir modificar una noticia/publicacion (INCLUYE CU N°13).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;10. El sistema debe peritir dar de baja una noticia/publicacion&amp;nbsp; (INCLUYE CU N°14).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;11. El sistema debe permitir cerrar la sesion.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;FLUJO ALTERNATIVO&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3.1 En caso de ingresar mal los datos de ingreso o no coincidir con los autorizados , el sistema debe reportar la situacion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3.2 El sistema vuelve a pedir los datos de ingreso (continua con el paso 2).&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-305" y="1735" width="730" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-21" value="CU&amp;nbsp; N°10: MODIFICAR UN EMPRENDEDOR&lt;div style=&quot;text-align: justify;&quot;&gt;1. El caso de uso comienza cuando el usuario administrador quiere modificar del sistema un&amp;nbsp; emprendedor/emprendimiento publicado.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2.&amp;nbsp; El sistema debe verificar que se haya ingresado con rol de administrador del sitio (INCLUYE CU N°8).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema debe permitir visualizar los emprendedores publicados (INCLUYE CU N°2)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4.El sistema debe permitir seleccionar un emprendedor publicado (INCLUYE CU N°7)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;5. El sistema debe permitir el ingreso de datos para la modificacion de los mismos del emprendedor&amp;nbsp; cargado(nombre,descripcion,imagenes ilustrativas,horarios,direccion y redes sociales).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6. El sistema debe poder persistir los datos ingresados.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;7.El sistema debe reflejar los datos ingresados en el sistema.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;FLUJO ALTERNATIVO&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 En caso de no poder guardar correctamente los datos ingresados , el sistema debe reportar la situacion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 El sistema vuelve al punto 5&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-305" y="2250" width="1020" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-22" value="CU&amp;nbsp; N°11: ELIMINAR UN EMPRENDEDOR&lt;div&gt;&lt;br&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;1. El caso de uso comienza cuando el usuario administrador quiere eliminar del sistema un&amp;nbsp; emprendedor/emprendimiento publicado.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2.&amp;nbsp; El sistema debe verificar que se haya ingresado con rol de administrador del sitio (INCLUYE CU N°8).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema debe permitir visualizar los emprendedores publicados (INCLUYE CU N°2)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4.El sistema debe permitir seleccionar un emprendedor publicado (INCLUYE CU N°7)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;5. El sistema debe permitir el acceso rapido a la accion para eliminar sobre el emprendedor/emprendimiento seleccionado.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6. El sistema debe poder actualizar los datos en la persistencia&amp;nbsp; luego de realizada la accion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;7.El sistema debe reflejar la accion realizada en el sistema.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;FLUJO ALTERNATIVO&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 En caso de no poder eliminar correctamente el emprendimiento/emprendedor seleccionado , el sistema debe reportar la situacion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 El sistema vuelve al punto 4.&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-310" y="2465" width="740" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-23" value="CU&amp;nbsp; N°12: AGREGAR UNA NOTICIA/PUBLICACION&lt;div&gt;&lt;br&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;1. El caso de uso comienza cuando el usuario administrador quiere subir una noticia/publicacion al&amp;nbsp; sistema.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2.&amp;nbsp; El sistema debe verificar que se haya ingresado con rol de administrador del sitio (INCLUYE CU N°8).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema debe permitir visualizar las noticias/publicaciones vigentes (INCLUYE CU N°5)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4.El sistema debe permitir seleccionar una noticia publicada (INCLUYE CU N°6)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;5. El sistema debe permitir el acceso a la interfaz funcional de ingreso de datos para la publicacion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6. El sistema debe permitir el ingreso de los datos para la nueva publicacion/noticia (titulo,descripcion,imagen ilustrativa)(fecha de publicacion se debe actualizar automaticamente por el sistema).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;7.El sistema debe poder persistir los datos en el sistema.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;9. El sistema debe reflejar la accion realizada en el mismo.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;FLUJO ALTERNATIVO&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 En caso de no poder dar de alta una nueva noticia/publicacion&amp;nbsp; , el sistema debe reportar la situacion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 El sistema vuelve al punto 5.&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-310" y="2705" width="1060" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-24" value="CU&amp;nbsp; N°13:MODIFICAR UNA NOTICIA/PUBLICACION&lt;div&gt;&lt;br&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;1. El caso de uso comienza cuando el usuario administrador quiere subir una noticia/publicacion al&amp;nbsp; sistema.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2.&amp;nbsp; El sistema debe verificar que se haya ingresado con rol de administrador del sitio (INCLUYE CU N°8).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema debe permitir visualizar las noticias/publicaciones vigentes (INCLUYE CU N°5)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4.El sistema debe permitir seleccionar una noticia publicada (INCLUYE CU N°6)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;5. El sistema debe permitir el acceso a la interfaz funcional de modificacion de datos para la publicacion seleccionada.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6. El sistema debe permitir el ingreso de los datos para modificar la publicacion/noticia (titulo,descripcion,imagen ilustrativa)(fecha de publicacion se debe actualizar automaticamente por el sistema).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;7.El sistema debe poder persistir los datos modificados en el sistema.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;9. El sistema debe reflejar la accion realizada en el mismo.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;FLUJO ALTERNATIVO&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 En caso de no poder dar de alta una nueva noticia/publicacion&amp;nbsp; , el sistema debe reportar la situacion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 El sistema vuelve al punto 5.&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-300" y="2950" width="1070" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="xuzazUVQMNmOcmDW87rD-25" value="CU&amp;nbsp; N°14: ELIMINAR UNA NOTICIA/PUBLICACION&lt;div&gt;&lt;br&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;1. El caso de uso comienza cuando el usuario administrador quiere eliminar del sistema unA noticia/publicacion publicada.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;2.&amp;nbsp; El sistema debe verificar que se haya ingresado con rol de administrador del sitio (INCLUYE CU N°8).&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;3. El sistema debe permitir visualizar las noticias/publicaciones vigentes (INCLUYE CU N°5)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;4.El sistema debe permitir seleccionar una noticia/publicacion publicada (INCLUYE CU N°6)&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;5. El sistema debe permitir el acceso rapido a la accion para eliminar sobre la noticia/publicacion seleccionada.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6. El sistema debe poder actualizar los datos en la persistencia&amp;nbsp; luego de realizada la accion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;7.El sistema debe reflejar la accion realizada en el sistema.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;FLUJO ALTERNATIVO&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 En caso de no poder eliminar correctamente la noticia/publicacion seleccionada , el sistema debe reportar la situacion.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;6.1 El sistema vuelve al punto 4.&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-300" y="3180" width="670" height="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
