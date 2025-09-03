@@ -9,21 +9,54 @@ use Maatwebsite\Excel\Excel as ExcelFormat; // alias para evitar confusión
 use App\Exports\EmpleosExportCollection;
 use App\Models\Empleo;
 
-
+/**
+ * @class EmpleosController
+ *
+ * @brief Controlador para la gestión de solicitantes ingresados y persistidos en el sistema.
+ *
+ * Este controller define la operacion que un  usuario administrador puede realizar
+ * sobre los datos persistidos.
+ *
+ * @package App\Http\Controllers
+ */
 class EmpleosController extends Controller
 {
+
+    /**
+     * Constructor del controlador:
+     *
+     * Define los middlewares de autenticación y autorización necesarios
+     * para restringir las acciones según los permisos del rol administrador.
+     */
 
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     * Visualizar el formulario de descarga de datos persistidos de solicitantes de empleo:
+     * Permite al usuario administrador la visualizacion y el acceso a el uso del formulario para la exportacion de los datos del sistema.
+     * @return Response dirige al usuario administrador al formulario de descarga.
+
+     */
+
     public function showForm()
     {
         return view("administradores.formExcel");
     }
 
+    /**
+     * Exportar datos de solicitantes:
+     *
+     * Se Valida los filtros aplicados desde el formulario ,para su posterior  descarga automatica de los mismos.
 
+     * @param validacionEmprendimiento $request Datos validados de solicitantes.
+     *
+     * @return Response , devuelve la exportacion de los datos almacenado en un archivo con el formato xlsx.
+     *
+     * @throws \Exception Si ocurre un error al exportar datos.
+     */
 
     public function export(Request $request)
     {

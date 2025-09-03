@@ -10,10 +10,28 @@ use App\Mail\sendContactForm;
 use App\Models\Empleo;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @class FormSerParteController
+ *
+ * @brief Controlador para el formulario de contacto dirigido a los usuarios generales del sistema.
+ *
+ * Este controller define la implementacion de la funcionalidad de envio de datos la persistencia de los mismos y su exportacion  ( SISTEMA DE EMAIL).
+ *
+ *
+ * @package App\Http\Controllers
+ */
 
 class FormSerParteController extends Controller
 {
 
+
+    /**
+     * Visualizar el formulario de contacto en el sistema:
+     * Permite a los usuarios acceder a la interfaz funcional del formulario de contacto.
+     *
+     * @return \Illuminate\Http\RedirectResponse Redirige al usuario a la seccion del formulario de contacto.
+     *
+     */
 
 
     public function formarparte()
@@ -22,6 +40,18 @@ class FormSerParteController extends Controller
     }
 
 
+
+    /**
+     * Realizar el envio de la informacion mediante el formulario de contacto:
+     *
+     * Se Validan los datos recibidos desde el formulario y son persistidos dentro del sistema o exportados hacia fuera del sistema (casilla de email). Segun la logica de negocio. Asociando esos datos a un grupo particular de usuarios.
+     *
+     * @param validacionFormularioContacto $request Datos validados del formulario de contacto.
+     *
+     * @return Response , devuelve los datos del usuario recibidos desde el formulario y se aplica la logica de negocio.
+     *
+     * @throws \Exception Si ocurre un error al enviar los datos.
+     */
 
     public function enviar(validacionFormularioContacto $request)
     {
@@ -42,7 +72,7 @@ class FormSerParteController extends Controller
                     return back()->withErrors(['cv' => 'Archivo de currículum inválido'])->withInput();
                 }
 
-                // Guardar en la base de datos
+                /**  Guardar en la base de datos*/
                 $empleoData = [
                     'nombre' => $request->first_name,
                     'asunto' => $request->asunto,
@@ -68,23 +98,24 @@ class FormSerParteController extends Controller
                 Empleo::create($empleoData);
 
 
-                // Preparar datos para enviar por correo si es busqueda de empleo
+                /**
+                 * Preparar datos para enviar por correo si es busqueda de  ========== EMPLEO  ==========*/
                 $data = $request->except('cv');
                 $data['cv'] = $request->file('cv');
             }
-            // ========== EMPRENDEDOR ==========
+            /**Preparar datos para enviar por correo si es ========== EMPRENDEDOR ========== */
             elseif ($subconjunto === 'emprendedor') {
 
                 $data =  $request->all();
             }
-            // ========== EMPRESA ==========
+            /**Preparar datos para enviar por correo si es ========== EMPRESA ==========*/
             elseif ($subconjunto === 'empresa') {
 
                 $data =  $request->all();
             }
 
 
-            // Enviar correo en todos los casos
+            /**  Enviar correo en todos los casos*/
             Mail::to('oficina.empleo@tresarroyos.gov.ar')->send(new sendContactForm($data));
 
             return back()->with('success', 'Formulario enviado correctamente.');

@@ -10,8 +10,10 @@ use Illuminate\Database\Eloquent\Model;
 
 
 /**
- * Class Empleo
+ * @class Empleo
+ * Representa un solicitante de empleo dentro del sistema.
  *
+ * @package App\Models
  * @property $id
  * @property $nombre
  * @property $asunto
@@ -40,7 +42,10 @@ use Illuminate\Database\Eloquent\Model;
 class Empleo extends Model
 {
 
+
+    /** @var string $table Nombre de la tabla asociada */
     protected $table = "empleos";
+
 
     protected static function newFactory()
     {
@@ -50,7 +55,7 @@ class Empleo extends Model
 
     use HasFactory;
 
-
+    /** @var array $fillable Campos asignables en masa */
     protected $fillable = [
         'nombre',
         'asunto',

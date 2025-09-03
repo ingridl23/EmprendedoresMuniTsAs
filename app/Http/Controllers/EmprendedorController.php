@@ -15,12 +15,21 @@ use App\Exports\EmprendedoresExportCollection;
 
 /**
  * Class EmprendedorController
+ *  @brief Controlador para la gestión de emprendimientos.
+ *
+ * Este controller define las operaciones que un usuario puede realizar sobre emprendimientos.
+ *
  * @package App\Http\Controllers
  */
 class EmprendedorController extends Controller
 {
 
-
+    /**
+     * Constructor del controlador:
+     *
+     * Define el middlewares de autenticación y autorización necesario
+     * para restringir las acciones según los permisos de rol de usuarios.
+     */
 
     public function __construct()
     {
@@ -32,12 +41,35 @@ class EmprendedorController extends Controller
         ]);
     }
 
+
+
+    /**
+     *Visualizar la seccion de exportacion de datos para solicitantes persistidos en el sistema:
+     *
+     *
+     * @return \Illuminate\Http\RedirectResponse Redirige al usuario al formulario de exportacion de datos.
+     *
+     * @throws \Exception Si ocurre un error al mostrar la secion.
+     */
+
     public function showForm()
     {
         $categorias = categoria::all();
         return view("administradores.formExcelEmprendedores", compact('categorias'));
     }
 
+
+    /**
+     * Aplicar busqueda por filtros dentro de la seccion de exportacion de solicitantes de empleo:
+     *
+     * Se Valida los datos filtros aplicados  desde el formulario.
+     *
+     * @param validacionSolicitantes $request Datos validados de los solicitantes encontrados.
+     *
+     * @return Response , devuelve el archivo en formato .xlsx creado apartir de los datos filtrados por los campos del  formulario de exportacion y persistidos en el sistema.
+     *
+     * @throws \Exception Si ocurre un error al exportar datos.
+     */
 
     //funcion de filtros para el excel
 
@@ -109,6 +141,15 @@ class EmprendedorController extends Controller
 
 
 
+    /**
+     *Visualizar la seccion de emprendedores persistidos en el sistema:
+     *
+     *
+     * @return \Illuminate\Http\RedirectResponse Redirige al usuario a la seccion de emprendedores.
+     *
+     * @throws \Exception Si ocurre un error al mostrar la seccion.
+     */
+
 
     public function emprendedores()
     {
@@ -118,6 +159,17 @@ class EmprendedorController extends Controller
         //  return response()->json($emprendedores);
         return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria', 'emprendedores', 'categorias'));
     }
+
+
+
+    /**
+     *Aplicar una busqueda eficiente para emprendedores dentro del sistema:
+     *
+     *
+     * @return  Response , devuelve al usuario  un conjunto de emprendimientos que coincidan  con el filtro aplicado por el campo "nombre".
+     *
+     * @throws \Exception Si ocurre un error al mostrar la secion.
+     */
 
     /*Filtro de busqueda de emprendedores por nombre*/
     public function filterEmprendimientosByName(Request $request)
@@ -129,6 +181,17 @@ class EmprendedorController extends Controller
             ->get();
         return response()->json($emprendimientos);
     }
+
+
+
+    /**
+     *Aplicar una busqueda eficiente para emprendedores dentro del sistema opcion 2:
+     *
+     * @param int $id, ID perteneciente al emprendedor a modificar
+     * @return  Response , devuelve al usuario un emprendimiento seleccionado.
+     *
+     * @throws \Exception Si ocurre un error al mostrar la seccion.
+     */
 
     public function showEmprendimientoId($id)
     {
@@ -146,6 +209,14 @@ class EmprendedorController extends Controller
         return redirect('/emprendedores')->with('error', $mensajes);
     }
 
+    /**
+     * visualizar El alta de un emprendimiento en el sistema:
+     *
+     *
+     * @return  \Illuminate\Http\RedirectResponse redirige al usuario administrador  a la seccion de altas de emprendimientos.
+     *
+     * @throws \Exception Si ocurre un error al mostrar la secion.
+     */
 
     public function showFormCrearEmprendimiento()
     {
