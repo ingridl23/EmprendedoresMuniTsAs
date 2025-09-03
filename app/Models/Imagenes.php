@@ -59,7 +59,7 @@ class Imagenes extends Model
     /**
      * Busqueda de un emprendimiento en relacion a su imagen en el sistema:
      *@param mixed $id_emprendedor, ID de identificacion para el emprendimiento seleccionado
-     * @return \Illuminate\Database\Eloquent\Collection , devuelve la coleccion encontrada de imagenes asociadas al emprendimiento seleccionado.
+     * @return \Illuminate\Database\Eloquent\Collection , devuelve la coleccion encontrada de imagenes asociadas al emprendimiento.
      */
 
     public static function find($id_emprendedor)

@@ -44,7 +44,7 @@ class Horario extends Model
     ];
 
     /**
-     * Relación: una horario pertenece a un emprendedor.
+     * Relación: un horario pertenece a un emprendimiento/emprendedor.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -56,7 +56,7 @@ class Horario extends Model
     /**
      *  Dar de alta horarios:
      *
-     *Una vez validados los datos del formulario se deben persistir,asociandolos a un emprendimiento.
+     *  Una vez validados los datos del formulario se deben persistir,asociandolos a un emprendimiento/emprendedor.
      *
      * @param string $dia
      * @param \Carbon\Carbons\null $hora_apertura
@@ -97,6 +97,7 @@ class Horario extends Model
         return $horarios;
     }
 
+
     /**
      * Modificar horarios:
      *
@@ -124,7 +125,7 @@ class Horario extends Model
 
 
     /**
-     * RDar de baja un emprendimiento :
+     * Dar de baja un emprendimiento :
      *
      * @param <App>
      <Model>horario $horarios ,ID de identificacion para el horario seleccionado.

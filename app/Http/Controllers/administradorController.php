@@ -120,7 +120,7 @@ class administradorController extends Controller
     /**
      * Visualizar para Crear un nuevo emprendimiento en el sistema:
      *
-     * Valida los datos recibidos desde el formulario y los persiste en la base de datos,
+     *Se deben Validar los datos recibidos desde el formulario y  persistirlos en la base de datos,
      * asociando también redes sociales, dirección, horarios e imágenes.
      *
      * @param validacionEmprendimiento $request Datos validados del emprendimiento.
@@ -138,13 +138,13 @@ class administradorController extends Controller
 
 
     /**
-     *  Dar de alta emprendimientos:
+     *  Dar de alta un emprendimiento:
      *
-     *Una vez validados los datos del formulario se deben persistir en la base de datos,asociando tambien redes sociales,
-     direccion,horarios e imagenes.
+     *  Una vez realizadas las validaciones, los datos del formulario de proveniente del formulario del usuario administrador, se deben persistir a la base de datos,asociando tambien redes sociales,
+     *   direccion, horarios e imagenes.
      *
      * @param  validacionEmprendimiento $request Datos validados del emprendimiento.
-     * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores con mensaje de éxito o error.
+     * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores.
      * @throws \Exception Si ocurre un error al persistir los datos en el sistema.
      */
     public function crearEmprendimiento(validacionEmprendimiento $request)
@@ -227,15 +227,14 @@ class administradorController extends Controller
     }
 
     /**
-     * Formulario para modificar emprendimientos:
+     * Formulario para realizar modificaciones en un emprendimiento:
      *
-     * Al seleccionar un emprendimiento cargado se devuelven sus datos persistidos dentro del sistema.
-     * Se valida los datos actualizados y recibidos desde el formulario y se los persiste nuevamente ,
-     * asociando también redes sociales, dirección, horarios e imágenes.
+     * Al seleccionar un emprendimiento cargado se devuelven sus datos persistidos dentro del sistema. Y se da acceso al usuario administrador el permiso de uso para el formulario de
+     * modificacion. Al validar los datos actualizados se los persiste nuevamente, asociando también redes sociales, dirección, horarios e imágenes que hayan sido modificadas.
      *
      * @param validacionEmprendimiento $request Datos validados del emprendimiento.
      *
-     * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores con mensaje de éxito o error.
+     * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores.
      *
      * @throws \Exception Si ocurre un error al subir las imágenes a Cloudinary.
      *  @throws \Exception Si ocurre un error al persistir datos.
@@ -286,11 +285,10 @@ class administradorController extends Controller
     }
 
     /**
-     *Modificar imagenes de emprendimientos:
+     *Modificar imagenes de un  emprendimiento:
      *
-     * Recorre las imagenes que ya se encuentran cargadas en la BD, en caso de no estar en el $request (imagenes_conservar) que llega por parametro, se eliminan
-     * (ya que no se desean tener cargadas). Si viene en el arreglo de imagenes_conservar hay que agregarlas, teniendo la restriccion que, solo agrega, como máximo, cinco
-     * imagenes.
+     * Se deben iterar  las imagenes persistidas, en caso de no estar en el $request (imagenes_conservar) que llega por parametro, pasan a estar eliminadas.
+     * Si el resultado de la coleccion no esta vacio, las imagenes (url) se agregan. Teniendo esta logica de negocio, solo se permitiran cinco imagenes asociadas por emprendedor/emprendimiento.
      *
      * @param int $id, ID perteneciente al emprendedor a modificar
      * @param Request $request, Viene en FormData con las nueva imagenes a cargar
@@ -375,14 +373,15 @@ class administradorController extends Controller
 
 
     /**
-     * Editar emprendimiento:
+     * Editar un emprendimiento:
      *
-     * Se obtiene los datos del formulario para el emprendimiento seleccionado (redes, direccion, horarios, informacion) y es persistido en el sistema.
+     * Se obtienen los datos del formulario para el emprendimiento seleccionado (redes, direccion, horarios, informacion) y es persistido en el sistema.
      *
      * @param int $id, ID perteneciente al emprendedor a modificar
      * @param Request $request, los nuevos datos del emprendimiento
      *
-     * @return RedirectResponse Redirige al administrador a la página principal de emprendedores con un mensaje correspondiente al editar el emprendimiento
+     * @return RedirectResponse Redirige al administrador a la página principal de emprendedores
+     * @throws \Exception Si ocurre un error al persistir datos.
      */
     public function editarEmprendimiento($id, validacionEditarEmprendimiento $request)
     {
@@ -461,7 +460,7 @@ class administradorController extends Controller
     /**
      * Eliminar un emprendimiento con sus redes, direccion y horarios asociados:
      *
-     * @param int id, ID único del emprendimiento seleccionado
+     * @param int $id, ID único del emprendimiento seleccionado
      *
      * @return RedirectResponse redirecciona a la página principal de emprendedimientos.
      *  @throws \Exception Si ocurre un error al persistir datos.
@@ -534,9 +533,9 @@ class administradorController extends Controller
 
 
     /**
-     * Visualizar el formulario de Altas de publicaciones
-     *
-     * @return \Illuminate\View\View, retorna el formulario para completar la alta de la publicacion.
+     * Visualizar el formulario de Altas de publicaciones:
+     * Permite al usuario administrador acceder y dar uso del formulario de Altas para publicaciones.
+     * @return \Illuminate\View\View, retorna el formulario  para completar la alta de la publicacion.
      */
     public function showFormCreateNoticia()
     {
@@ -553,7 +552,7 @@ class administradorController extends Controller
      *
      * @param Request $request, Datos de la nueva publicacion
      *
-     * @return RedirectResponse Redirige al administrador a la página principal de noticias.
+     * @return RedirectResponse Redirige al usuario administrador a la homepage de noticias.
      *  @throws \Exception Si ocurre un error al persistir datos.
      */
     public function createNoticia(validacionNoticia $request)
@@ -601,8 +600,8 @@ class administradorController extends Controller
 
 
     /**
-     * Visualizar el formulario para la modificacion de publicaciones
-     *
+     * Visualizar el formulario para la modificacion de publicaciones:
+     *Permite al usuario administrador acceder y dar uso del formulario de modificaciones para publicaciones.
      * @param int $id, ID perteneciente a la noticia que se va a mostrar para modificar
      *
      * @return \Illuminate\View\View, Muestra el formulario con los datos persistidos.
@@ -617,7 +616,7 @@ class administradorController extends Controller
 
 
     /**
-     * Modificacion de  la imagen ilustrativa de una publicacion:
+     * Modificacion de la imagen ilustrativa de una publicacion:
      *
      * @param int $id, ID unico de identificacion para la publicacion seleccionada.
      * @param Request $request, Datos ingresados para la modificacion.
@@ -673,7 +672,7 @@ class administradorController extends Controller
     }
 
     /**
-     * Modificacion de una publicacion
+     * Modificacion de una publicacion:
      *
      * @param int $id, ID unico de identificacion de la publicacion seleccionada.
      * @param Request $request, Datos recibidos para persistir de la publicacion seleccionada.
@@ -707,7 +706,7 @@ class administradorController extends Controller
 
 
     /**
-     * Dar de baja una publicacion
+     * Dar de baja una publicacion:
      *
      * @param int $id, ID unico de identificacion de la publicacion seleccionada.
      *

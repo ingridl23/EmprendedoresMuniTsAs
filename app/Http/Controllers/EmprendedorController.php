@@ -62,11 +62,11 @@ class EmprendedorController extends Controller
     /**
      * Aplicar busqueda por filtros dentro de la seccion de exportacion de solicitantes de empleo:
      *
-     * Valida los datos filtros aplicados  desde el formulario,
+     * Se Valida los datos filtros aplicados  desde el formulario.
      *
      * @param validacionSolicitantes $request Datos validados de los solicitantes encontrados.
      *
-     * @return Response , devuelve el archivo en formato xls creado apartir de los datos filtrados por los campos del  formulario de exportacion y persistidos en el sistema.
+     * @return Response , devuelve el archivo en formato .xlsx creado apartir de los datos filtrados por los campos del  formulario de exportacion y persistidos en el sistema.
      *
      * @throws \Exception Si ocurre un error al exportar datos.
      */

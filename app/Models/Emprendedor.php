@@ -30,6 +30,8 @@ use App\Models\categoria;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
+
+
 class Emprendedor extends Model
 {
     protected $perPage = 20;
@@ -112,7 +114,7 @@ class Emprendedor extends Model
 
 
     /**
-     * Visualizar todos los emprendimientos presentes en el sistema.
+     * Visualizar todos los emprendimientos presentes en el sistema:
      *
      * @return \Illuminate\Database\Eloquent\Collection , devuelve una coleccion de emprendimientos.
      */
@@ -178,8 +180,8 @@ class Emprendedor extends Model
     /**   Modificar un emprendimiento:
      *
      * Al seleccionar un emprendimiento cargado se devuelven sus datos persistidos dentro del sistema.
-     * Se valida los datos actualizados y recibidos desde el formulario y se los persiste nuevamente ,
-     * asociando también redes sociales, dirección, horarios e imágenes.
+     * Se valida los datos actualizados y recibidos desde el formulario y son persistidos nuevamente,
+     * asociando también redes sociales, dirección, horarios e imágenes modificadas.
 
      * @param mixed $emprendimiento Datos  del emprendimiento.
      *

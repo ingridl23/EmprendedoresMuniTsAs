@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @class Empleo
- * Representa un empleo dentro del sistema.
+ * Representa un solicitante de empleo dentro del sistema.
  *
  * @package App\Models
  * @property $id

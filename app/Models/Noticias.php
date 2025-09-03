@@ -21,7 +21,7 @@ use Illuminate\Support\Str;
  * @property $descripcion
  * @property $categoria
  * @property $imagen
- * @package App
+ * @package App\Models
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Noticias extends Model
@@ -117,10 +117,12 @@ class Noticias extends Model
         ];
     }
 
+
+
     /**
      *  Dar de alta publicaciones:
      *
-     *Una vez validados los datos del formulario se deben persistir en la base de datos,asociado categorias
+     *Una vez validados los datos del formulario se persisten en el sistema,asociado por la categoria a la que pertenece.
      *
      * @param mixed $request
      * @param string $path
@@ -128,6 +130,9 @@ class Noticias extends Model
      * @return Response , devuelve una publicacion junto a sus datos
      * @throws \Exception Si ocurre un error al persistir los datos en el sistema.
      */
+
+
+
     public static function createNoticia($request, $path, $imagen_public_id)
     {
         $noticia = Noticias::create([
@@ -167,7 +172,7 @@ class Noticias extends Model
 
 
     /**
-     * Modificar una publicacion en el sistema en relacion a su imagen asociada
+     * Modificar una publicacion en el sistema en relacion a su imagen asociada:
      * @param string $url
      * @param int $imagen_public_id
      *@param  mixed $noticia, publicacion selecionada para modificar.

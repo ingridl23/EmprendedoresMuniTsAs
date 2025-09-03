@@ -18,7 +18,7 @@ use App\Models\Emprendedor;
  * @property string $ciudad Nombre de la ciudad
  * @property string $localidad nombre de la localidad dentro de la ciudad
  * @property string $calle nombre de la calle dentro de la localidad
- * @property int $altura dewcripcion numerica de la calle
+ * @property int $altura descripcion numerica de la calle
  * @property \Carbon\Carbon $created_at Fecha de creación
  * @property \Carbon\Carbon $updated_at Fecha de última actualización
  *
@@ -75,7 +75,7 @@ class direccion extends Model
     /**
      * Modificar una direccion en el sistema:
      * @param mixed $direccion, se recibe la direccion a modificar.
-     * @return response, devuelve una direccion modificada asociada a un emprendedor.
+     * @return response, devuelve una direccion modificada asociada a un emprendiiento/emprendedor.
      */
     public static function editarEmprendimiento($direccion)
     {

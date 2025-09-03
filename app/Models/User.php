@@ -9,6 +9,20 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+
+/**
+ * @class Redes
+ * Representa los usuarios dentro del sistema.
+ * @property $nombre
+ * @property $email
+ * @property $password
+ * @property $redes_id
+ * @property $created_at
+ * @property $updated_at
+ * @package App\Models
+ * @mixin \Illuminate\Database\Eloquent\Factories\HasFactory
+ */
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
@@ -18,6 +32,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    /** @var array $fillable Campos asignables en masa */
     protected $fillable = [
         'name',
         'email',

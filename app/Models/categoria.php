@@ -21,6 +21,7 @@ use App\Models\Emprendedor;
  *
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
+
 class Categoria extends Model
 {
     /** @var string $table Nombre de la tabla asociada */
@@ -46,9 +47,9 @@ class Categoria extends Model
 
 
     /**
-     * Obtener todas las categorías registradas en el sistema.
+     * Obtener todas las categorías registradas en el sistema:
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Database\Eloquent\Collection , retorna la coleccion de categorias.
      */
 
     public static function obtenerCategorias()

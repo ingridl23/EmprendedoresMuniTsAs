@@ -12,10 +12,10 @@ use App\Models\Empleo;
 /**
  * @class EmpleosController
  *
- * @brief Controlador para la gestión de solicitantes ingresados ypersistidos en el sistema.
+ * @brief Controlador para la gestión de solicitantes ingresados y persistidos en el sistema.
  *
  * Este controller define la operacion que un  usuario administrador puede realizar
- * sobre los datos peristidos.
+ * sobre los datos persistidos.
  *
  * @package App\Http\Controllers
  */
@@ -23,7 +23,7 @@ class EmpleosController extends Controller
 {
 
     /**
-     * Constructor del controlador.
+     * Constructor del controlador:
      *
      * Define los middlewares de autenticación y autorización necesarios
      * para restringir las acciones según los permisos del rol administrador.
@@ -35,8 +35,8 @@ class EmpleosController extends Controller
     }
 
     /**
-     * Visualizar el formulario de descarga de datos persistidos de solicitantes de empleo.
-     *
+     * Visualizar el formulario de descarga de datos persistidos de solicitantes de empleo:
+     * Permite al usuario administrador la visualizacion y el acceso a el uso del formulario para la exportacion de los datos del sistema.
      * @return Response dirige al usuario administrador al formulario de descarga.
 
      */
@@ -49,11 +49,11 @@ class EmpleosController extends Controller
     /**
      * Exportar datos de solicitantes:
      *
-     * Valida los filtros aplicados desde el formulario de descarga de datos,para la descarga directa de los mismos.
+     * Se Valida los filtros aplicados desde el formulario ,para su posterior  descarga automatica de los mismos.
 
      * @param validacionEmprendimiento $request Datos validados de solicitantes.
      *
-     * @return Response , devuelve la exportacion de los datos almacenado en un archivo con el formato xls.
+     * @return Response , devuelve la exportacion de los datos almacenado en un archivo con el formato xlsx.
      *
      * @throws \Exception Si ocurre un error al exportar datos.
      */

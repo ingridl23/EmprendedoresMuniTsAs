@@ -19,6 +19,14 @@ class ProgramasController extends Controller
     /**
      * @return \Illuminate\Http\RedirectResponse redirige la informacion a la seccion de programas retornando los ultimos emprendedores cargados aleatoriamente.
      */
+
+
+    /**
+     * Visualizar los programas:
+     * Permite visualizar la interfaz funcional  de los programas a los usuarios.
+     *
+     * @return Response, devuelve  la interfaz de la seccion de programas.
+     */
     public function ShowPrograma()
     {
 
