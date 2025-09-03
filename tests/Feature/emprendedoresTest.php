@@ -128,11 +128,10 @@ class emprendedoresTest extends TestCase
 
         $response->assertRedirect('/emprendedores');
         $response->assertStatus(302);
-        $response->assertSessionHas('success', [
-            'titulo' => '¡Creado!',
-            'detalle' => 'Emprendimiento creado con éxito.'
-        ]);
-
+        $response->assertSessionHas('success');
+        $sessionData = session('success');
+        $this->assertEquals('¡Creado!', $sessionData['titulo']);
+        $this->assertEquals('Emprendimiento creado con éxito.', $sessionData['detalle']);
         $this->assertDatabaseHas('emprendedor', [
             'nombre' => 'Mi emprendimiento',
             'descripcion' => 'Descripción del emprendimiento',
@@ -172,10 +171,11 @@ class emprendedoresTest extends TestCase
 
         $response->assertStatus(302);
         $response->assertRedirect('/emprendedores');
-        $response->assertSessionHas('success', [
-            'titulo' => '¡Eliminado!',
-            'detalle' => 'Emprendimiento eliminado con éxito.',
-        ]);
+        $response->assertSessionHas('success');
+        $sessionData = session('success');
+        $this->assertEquals('¡Eliminado!', $sessionData['titulo']);
+        $this->assertEquals('Emprendimiento eliminado con éxito.', $sessionData['detalle']);
+    
 
         // Confirmar que se eliminaron de la base de datos
         $this->assertDatabaseMissing('emprendedor', ['id' => $emprendimiento->id]);
@@ -197,10 +197,10 @@ class emprendedoresTest extends TestCase
         $response = $this->actingAs($admin)->delete("/emprendedor/999");
 
         $response->assertRedirect('/emprendedores');
-        $response->assertSessionHas('error', [
-            'titulo' => '¡Error!',
-            'detalle' => 'No se ha encontrado el emprendimiento que se desea eliminar, intentelo nuevamente.',
-        ]);
+        $response->assertSessionHas('error');
+        $sessionData = session('error');
+        $this->assertEquals('¡Error!', $sessionData['titulo']);
+        $this->assertEquals('No se ha encontrado el emprendimiento que se desea eliminar, intentelo nuevamente.', $sessionData['detalle']);
     }
 
 
@@ -281,10 +281,10 @@ class emprendedoresTest extends TestCase
         $response = $this->get("/emprendedores/formEditarEmprendimiento/12333");
         $response->assertStatus(302);
         $response->assertRedirect('/emprendedores');
-        $response->assertSessionHas('error', [
-            'titulo' => '¡Error!',
-            'detalle' => 'No se ha logrado encontrar el eprendimiento, inténtelo nuevamente.',
-        ]);
+        $response->assertSessionHas('error');
+        $sessionData = session('error');
+        $this->assertEquals('¡Error!', $sessionData['titulo']);
+        $this->assertEquals('No se ha logrado encontrar el eprendimiento, inténtelo nuevamente.', $sessionData['detalle']);
     }
 
 
@@ -294,10 +294,10 @@ class emprendedoresTest extends TestCase
         $response = $this->get("/emprendedores/formEditarEmprendimiento/Pastel");
         $response->assertStatus(302);
         $response->assertRedirect('/emprendedores');
-        $response->assertSessionHas('error', [
-            'titulo' => '¡Error!',
-            'detalle' => 'Debe ingresar un número mayor a cero para buscar y editar el emprendimiento.',
-        ]);
+        $response->assertSessionHas('error');
+        $sessionData = session('error');
+        $this->assertEquals('¡Error!', $sessionData['titulo']);
+        $this->assertEquals('Debe ingresar un número mayor a cero para buscar y editar el emprendimiento.', $sessionData['detalle']);
     }
 
 
@@ -307,10 +307,11 @@ class emprendedoresTest extends TestCase
         $response = $this->get("/emprendedores/formEditarEmprendimiento/-4");
         $response->assertStatus(302);
         $response->assertRedirect('/emprendedores');
-        $response->assertSessionHas('error', [
-            'titulo' => '¡Error!',
-            'detalle' => 'Debe ingresar un número mayor a cero para buscar y editar el emprendimiento.',
-        ]);
+        $response->assertSessionHas('error');
+        $sessionData = session('error');
+        $this->assertEquals('¡Error!', $sessionData['titulo']);
+        $this->assertEquals('Debe ingresar un número mayor a cero para buscar y editar el emprendimiento.', $sessionData['detalle']);
+    
     }
     
 }

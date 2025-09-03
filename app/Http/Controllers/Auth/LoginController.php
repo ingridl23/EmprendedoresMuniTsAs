@@ -49,9 +49,7 @@ class LoginController extends Controller
     }
 
 
-    public function login(Request $request)
-    {
-
+    public function login(Request $request){
         if ($request->filled('oculto')) {
             return back()->with("error", "formulario rechazado posible bot detectado"); // posible bot detectado
         }
@@ -60,8 +58,6 @@ class LoginController extends Controller
             'email' => ['required',  "string",],
             'password' => ['required', "min:8", "max:14"],
         ]);
-
-
 
         // Verificar si el usuario existe
         $user = User::where('email', $credentials['email'])->first();
