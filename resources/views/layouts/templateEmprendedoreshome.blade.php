@@ -67,7 +67,9 @@
                     </p>
                     <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
                     <br>
-                    <a class="btn btn-light " href="{{ url('/formar/parte') }}">Quiero Ser Parte</a>
+                    <a class="btn btn-light" style="text-color: rgb(189, 182, 182) !important; "
+                        href="{{ url('/formar/parte') }}">Quiero
+                        Ser Parte</a>
                 </div>
             </div>
         </div>
