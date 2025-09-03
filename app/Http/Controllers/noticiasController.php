@@ -28,6 +28,20 @@ class noticiasController extends Controller
             if ($noticia != null) {
                 return view("layouts.noticia", compact('noticia'));
             }
+            else{
+                $mensajes = [
+                    'titulo' => '¡Error!',
+                    'detalle' => 'No se ha encontrado una noticia que coincida, intentelo nuevamente.'
+                ];
+                return redirect('/noticias')->with('error', $mensajes);
+            }
+        }
+        else{
+            $mensajes = [
+                    'titulo' => '¡Error!',
+                    'detalle' => 'Debe ingresar un número mayor a cero para buscar la noticia.'
+                ];
+            return redirect('/noticias')->with('error', $mensajes);
         }
     }
 
