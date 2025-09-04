@@ -35,8 +35,8 @@ class EmprendedorController extends Controller
     {
         $this->middleware('can:descargar excel', [
             'only' => [
-                'showForm',
-                'export'
+                'showFormEm',
+                'exportEm'
             ]
         ]);
     }
