@@ -29,9 +29,14 @@ class EmpleosController extends Controller
      * para restringir las acciones según los permisos del rol administrador.
      */
 
-    public function __construct()
+        public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('can:descargar excel', [
+            'only' => [
+                'showForm',
+                'export'
+            ]
+        ]);
     }
 
     /**
@@ -75,8 +80,7 @@ class EmpleosController extends Controller
         $query->when($request->filled('ciudad'), function ($q) use ($request) {
             $ciudad = strtolower(trim($request->ciudad));
             $q->whereRaw('LOWER(ciudad) LIKE ?', ["%{$ciudad}%"]);
-        });
-*/
+        });*/
 
         if ($request->filled('ciudad')) {
             $ciudad = strtolower(trim($request->ciudad));
@@ -124,8 +128,7 @@ class EmpleosController extends Controller
         $query->when($request->filled('nombre'), function ($q) use ($request) {
             $nombre = trim($request->nombre);
             $q->where('nombre', 'LIKE', "%{$nombre}%");
-        });
-*/
+        });*/
         // Para cud, tené en cuenta que si no viene explícitamente el booleano, puede fallar el filtro
         if ($request->filled('cud')) {
             // Convertir a booleano estricto
@@ -145,11 +148,7 @@ class EmpleosController extends Controller
         }
 
 
-
-
         $empleos = $query->get();
-
-
 
 
         if ($empleos->isEmpty()) {

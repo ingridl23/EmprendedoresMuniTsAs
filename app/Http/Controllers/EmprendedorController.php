@@ -33,7 +33,7 @@ class EmprendedorController extends Controller
 
     public function __construct()
     {
-        $this->middleware('can:filtrar emprendedores', [
+        $this->middleware('can:descargar excel', [
             'only' => [
                 'showForm',
                 'export'
