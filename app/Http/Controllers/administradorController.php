@@ -64,6 +64,14 @@ class administradorController extends Controller
             ]
         ]);
 
+        $this->middleware('can:ver rol', [
+            'only' => [
+                'obtenerRol'
+            ]
+        ]);
+
+
+
         //para noticias
         $this->middleware('can:crear noticia', [
             'only' => [
@@ -93,7 +101,7 @@ class administradorController extends Controller
             ]
         ]);
 
-        $this->middleware('can:filtrar datos', [
+        $this->middleware('can:filtrar datos emprendedores', [
             'only' => [
                 'exportEm',
                 'showFormEm'
