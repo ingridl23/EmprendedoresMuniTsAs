@@ -72,7 +72,7 @@ class noticiasController extends Controller
      *Se Validan los datos ingresados desde el formulario de busqueda y retorna los resultados que coincidan con los criterios propuestos por el usuario.
      *@return Response, devuelve al usuario una/s publicacion/es que coincidan con la busqueda realizada, aplicando el campo "titulo".
      *
-
+    */
 
     /*Filtro de busqueda de noticias por titulo*/
     public function filterNoticiasByTittle(Request $request)
@@ -89,7 +89,7 @@ class noticiasController extends Controller
      * Permite realizar busquedas (atajo visual) a los usuarios del sistema.
      * Se  Validan los datos ingresados desde el formulario de busqueda y retorna los resultados que coincidan con los criterios propuestos por el usuario.
      *@return Response, devuelve al usuario una/s publicacion/es que coincidan con la busqueda realizada, aplicando el campo "categoria".
-     *
+     */
 
     /*Filtro de busqueda de noticias por categoria*/
     public function filterNoticiasByCategory(Request $request)
@@ -106,7 +106,7 @@ class noticiasController extends Controller
      * Permite realizar busquedas (atajo visual) a los usuarios del sistema.
      * Se Validan los datos ingresados desde el formulario de busqueda y retorna los resultados que coincidan con los criterios propuestos por el usuario.
      *@return Response, devuelve al usuario una/s publicacion/es que coincidan con la busqueda realizada, aplicando el campo "fecha".
-     *
+     */
 
     /*Filtro de busqueda de noticias por fecha*/
     public function filterNoticiasByDate(Request $request)
