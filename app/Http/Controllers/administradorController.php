@@ -101,8 +101,8 @@ class administradorController extends Controller
 
         $this->middleware('can:filtrar datos emprendedores', [
             'only' => [
-                'export',
-                'showForm'
+                'exportEm',
+                'showFormEm'
             ]
         ]);
     }
@@ -609,21 +609,19 @@ class administradorController extends Controller
      */
     public function showFormEditNoticia($id)
     {
-        if(is_numeric($id) && $id > constants::VALORMIN){
+        if (is_numeric($id) && $id > constants::VALORMIN) {
             $categorias = $this->obtenerCategorias();
             $noticia = Noticias::showNoticiasId($id);
-            if($noticia != null){
+            if ($noticia != null) {
                 return view("administradores.noticias.formEditarNoticia", compact("noticia", "categorias"));
-            }
-            else{
+            } else {
                 $mensajes = [
                     'titulo' => '¡Error!',
                     'detalle' => 'No se ha encontrado una noticia que coincida, intentelo nuevamente.'
                 ];
                 return redirect('/noticias')->with('error', $mensajes);
             }
-        }
-        else{
+        } else {
             $mensajes = [
                 'titulo' => '¡Error!',
                 'detalle' => 'Debe ingresar un número mayor a cero para buscar y editar una noticia.'
@@ -631,8 +629,7 @@ class administradorController extends Controller
 
             return redirect('/noticias')->with('error', $mensajes);
         }
-        
-        }
+    }
 
 
     /**

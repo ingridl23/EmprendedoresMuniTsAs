@@ -52,7 +52,7 @@ class EmprendedorController extends Controller
      * @throws \Exception Si ocurre un error al mostrar la secion.
      */
 
-    public function showForm()
+    public function showFormEm()
     {
         $categorias = categoria::all();
         return view("administradores.formExcelEmprendedores", compact('categorias'));
@@ -73,7 +73,7 @@ class EmprendedorController extends Controller
 
     //funcion de filtros para el excel
 
-    public function export(Request $request)
+    public function exportEm(Request $request)
     {
         $request->validate([
             'ciudad' => 'string|nullable',
@@ -203,9 +203,9 @@ class EmprendedorController extends Controller
             }
         }
         $mensajes = [
-                'titulo' => '¡Error!',
-                'detalle' => 'No existe el usuario que desea buscar, intentelo nuevamente.'
-            ];
+            'titulo' => '¡Error!',
+            'detalle' => 'No existe el usuario que desea buscar, intentelo nuevamente.'
+        ];
         return redirect('/emprendedores')->with('error', $mensajes);
     }
 
