@@ -93,12 +93,12 @@ class administradorController extends Controller
             ]
         ]);
 
-        $this->middleware('can:descargar excel', [
+        /* $this->middleware('can:descargar excel', [
             'only' => [
                 'showForm',
                 'export'
             ]
-        ]);
+        ]);*/
 
         /**
         $this->middleware('can:filtrar datos', [
@@ -110,8 +110,8 @@ class administradorController extends Controller
 
         $this->middleware('can:filtrar datos emprendedores', [
             'only' => [
-                'export',
-                'showForm'
+                'exportEm',
+                'showFormEm'
             ]
         ]);
          */
