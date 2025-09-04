@@ -53,9 +53,6 @@
             <div class="col-lg-8 col-xl-6 text-center">
                 <h2 class="mt-0"> Descargar Información De Solicitantes</h2>
 
-                <p class="text-muted mb-5">
-
-                </p>
             </div>
         </div>
     </div>
