@@ -29,9 +29,9 @@ class EmpleosController extends Controller
      * para restringir las acciones según los permisos del rol administrador.
      */
 
-        public function __construct()
+    public function __construct()
     {
-        $this->middleware('can:descargar excel', [
+        $this->middleware('can:filtrar datos', [
             'only' => [
                 'showForm',
                 'export'
