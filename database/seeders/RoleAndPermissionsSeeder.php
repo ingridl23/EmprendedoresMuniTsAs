@@ -28,6 +28,7 @@ class RoleAndPermissionsSeeder extends Seeder
             'eliminar noticia',
             'ver rol',
             'filtrar datos',
+            'filtrar datos emprendedores',
             'descargar excel'
         ];
 
