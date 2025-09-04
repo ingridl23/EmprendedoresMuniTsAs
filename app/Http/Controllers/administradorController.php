@@ -102,8 +102,8 @@ class administradorController extends Controller
 
         $this->middleware('can:filtrar datos emprendedores', [
             'only' => [
-                'showForm',
-                'export'
+                'export',
+                'showForm'
             ]
         ]);
     }
