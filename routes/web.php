@@ -80,5 +80,5 @@ Route::get('/programas', [ProgramasController::class, "ShowPrograma"])->name('pr
 Route::get("/solicitantes", [EmpleosController::class, "showForm"]);
 Route::get('/empleos/export', [EmpleosController::class, 'export'])->name('empleos.export');
 //para exportar excel de emprendedores/emprendimientos presentes.
-Route::get("/emprendedores/excel", [EmprendedorController::class, "showFormEm"]);
-Route::get('/emprendedores/export', [EmprendedorController::class, 'exportEm'])->name('emprendedores.export');
+Route::get("/emprendedores/excel", [EmprendedorController::class, "showForm"]);
+Route::get('/emprendedores/export', [EmprendedorController::class, 'export'])->name('emprendedores.export');

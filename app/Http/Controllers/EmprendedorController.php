@@ -35,8 +35,8 @@ class EmprendedorController extends Controller
     {
         $this->middleware('can:descargar excel', [
             'only' => [
-                'showFormEm',
-                'exportEm'
+                'showForm',
+                'export'
             ]
         ]);
     }
@@ -73,7 +73,7 @@ class EmprendedorController extends Controller
 
     //funcion de filtros para el excel
 
-    public function exportEm(Request $request)
+    public function export(Request $request)
     {
         $request->validate([
             'ciudad' => 'string|nullable',
