@@ -69,8 +69,8 @@
             </div>
         @endif
 
-        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-            <div class="col-lg-6">
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5 centrarFormulario">
+            <div class="col-lg-6 editarEmprendimiento">
                 <form action="/emprendedores/{{ $emprendimiento->id }}" method="POST" enctype="multipart/form-data"
                     class="form" id="editarForm" data-id="{{ $emprendimiento->id }}">
                     @csrf
