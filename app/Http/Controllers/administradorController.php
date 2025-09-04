@@ -91,20 +91,6 @@ class administradorController extends Controller
                 'deleteNoticia'
             ]
         ]);
-
-        $this->middleware('can:filtrar datos', [
-            'only' => [
-                'export',
-                'showForm'
-            ]
-        ]);
-
-        $this->middleware('can:filtrar datos emprendedores', [
-            'only' => [
-                'export',
-                'showForm'
-            ]
-        ]);
     }
 
     /*public function emprendedores()
