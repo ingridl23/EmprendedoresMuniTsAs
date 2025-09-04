@@ -14,6 +14,7 @@ use App\Models\Imagenes;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
+use Carbon\Carbon;
 
 class noticiasTest extends TestCase
 {
@@ -319,5 +320,45 @@ class noticiasTest extends TestCase
         $response->assertStatus(403);
     }
 
+    /**------------------ FILTROS ------------------------- */
+
+    public function test_filtro_por_titulo(){
+        Noticias::factory()->create([
+            'titulo' => 'Nueva apertura del parque industrial',
+        ]);
+        $response = $this->getJson('/noticias/buscadorTitulo?busqueda=parque');
+        $response->assertStatus(200);
+        $response->assertJsonCount(1);
+        $response->assertJsonFragment([
+            'titulo' => 'Nueva apertura del parque industrial',
+        ]);
+    }
+
+    public function test_filtro_por_categoria(){
+        Noticias::factory()->create([
+            'categoria' => 'Evento',
+        ]);
+        $response = $this->getJson('/noticias/buscadorCategoria?busqueda=Evento');
+        $response->assertStatus(200);
+        $response->assertJsonCount(1);
+        $response->assertJsonFragment([
+            'categoria' => 'Evento',
+        ]);
+    }
+
+    public function test_filtro_por_fecha(){
+        $fecha = '2025-09-04';
+        Noticias::factory()->create([
+            'created_at' => \Carbon\Carbon::parse($fecha),
+        ]);
+        $response = $this->getJson("/noticias/buscadorFecha?busqueda={$fecha}");
+        $response->assertStatus(200);
+        $response->assertJsonCount(1);
+        $jsonData = $response->json();
+        //Obtiene la fecha de la noticia y la convierte a un formato: YYYY-MM-DD 
+        //para compararla con la fecha que se estaba buscando
+        $createdAt = \Carbon\Carbon::parse($jsonData[0]['created_at'])->toDateString();
+        $this->assertEquals($fecha, $createdAt);
+    }
 
 }
