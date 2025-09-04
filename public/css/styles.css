@@ -11460,6 +11460,16 @@
                         border-top-left-radius: 0rem;
                         border-top-right-radius: 0rem;
                     }
+                    div.centrarFormulario{
+                        width: 50%;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    div.col-lg-6.solicitantes, div.col-lg-6.nuevoEmprendimiento, div.col-lg-6.editarEmprendimiento,
+                    div.col-lg-6.nuevaNoticia, div.col-lg-6.editarNoticia{
+                        width: 100%;
+                    }
                 }
                 
                 .tituloFiltroNoticias {

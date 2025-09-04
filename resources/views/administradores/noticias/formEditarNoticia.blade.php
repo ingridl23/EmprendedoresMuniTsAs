@@ -79,8 +79,8 @@
                 <p class="mensajeError">Necesita completar correctamente todos los campos.</p>
             </div>
         @endif
-        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-            <div class="col-lg-6">
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5 centrarFormulario">
+            <div class="col-lg-6 editarNoticia">
                 <form action="/noticias/{{ $noticia->id }}" method="POST" enctype="multipart/form-data" class="form"
                     id="editarForm" data-id="{{ $noticia->id }}">
                     @csrf
