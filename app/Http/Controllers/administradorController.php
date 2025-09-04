@@ -71,7 +71,6 @@ class administradorController extends Controller
         ]);
 
 
-
         //para noticias
         $this->middleware('can:crear noticia', [
             'only' => [
