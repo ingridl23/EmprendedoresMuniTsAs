@@ -67,7 +67,7 @@ Auth::routes();
 
 //vista de passwords reset
 Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
-
+//noticias
 Route::get("/noticias", [noticiasController::class, "showNoticias"]);
 Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
 
