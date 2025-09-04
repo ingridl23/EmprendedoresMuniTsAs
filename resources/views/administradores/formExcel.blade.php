@@ -23,7 +23,7 @@
         <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
     </head>
-    @include('administradores.emprendedores.navBarAdmin')
+    @include('emprendedor.navBar')
 
     <header class="masthead">
         <div class="container px-4 px-lg-5 h-100">
@@ -136,7 +136,7 @@
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-        <!--Para las alertas en JS-->
+    <!--Para las alertas en JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

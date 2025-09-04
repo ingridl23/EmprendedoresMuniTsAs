@@ -52,7 +52,7 @@ class EmprendedorController extends Controller
      * @throws \Exception Si ocurre un error al mostrar la secion.
      */
 
-    public function showFormEm()
+    public function showForm()
     {
         $categorias = categoria::all();
         return view("administradores.formExcelEmprendedores", compact('categorias'));
