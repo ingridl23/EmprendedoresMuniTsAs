@@ -1,3 +1,9 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 label.direccionEmprendimiento {
     display: block;
     position: relative;
@@ -166,6 +172,52 @@ nav form {
     .form {
         width: 60%;
     }
+}
+
+
+/* Ajustes generales de select en móvil */
+
+@media (max-width: 575px) {
+    select,
+    .ciudad-select,
+    #localidadesDeLaCiudad {
+        font-size: 0.9rem !important;
+        padding: 0.6rem !important;
+        width: 100% !important;
+        border-radius: 6px !important;
+    }
+    .field-group {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media (max-width: 575px) {
+    .group-subconjuntos {
+        flex-wrap: wrap;
+        gap: 0.5rem !important;
+    }
+    .group-subconjuntos .opcion-radio {
+        width: 100%;
+        margin: 0.5rem 0 !important;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .form {
+        width: 100% !important;
+    }
+    div.col-lg-6.solicitantes {
+        width: 100% !important;
+    }
+}
+
+
+/* Evitar que el select se corte hacia los costados cuando se despliega */
+
+select:focus {
+    overflow: hidden;
 }
 
 .page-section {
