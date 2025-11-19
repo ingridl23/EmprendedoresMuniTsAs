@@ -117,7 +117,8 @@
             border-radius: 10rem;
         }
         
-        button.detalleEmprendedor a, button.botonAgregarEmprendimiento a,
+        button.detalleEmprendedor a,
+        button.botonAgregarEmprendimiento a,
         button.detalleEmprendedor input {
             color: white;
         }
@@ -144,46 +145,45 @@
             background-color: #0c2c1d;
             transform: scale(0.95);
         }
-
-        div.seccionCarrusel{
+        
+        div.seccionCarrusel {
             margin-top: 6rem;
         }
-
-
-    /*Estilo del filtro Categoria en emprendedores*/
-    a.linkCategoria  {
-        color: #6f7983;
-        font-weight: 600;
-        display: block;
-        width: 100%;
-        position: relative;
-        font-size: 14px !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 0.75rem 1.25rem;
-        transition: all 0.3s ease;
-    }
-
-    a.linkCategoria::after{
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: 0; 
-        height: 2px;
-        left: 50%;
-        background-color: #36c09d;
-        transition: all 0.5s ease; 
-        transform: translateX(-50%);
-    }
-
-    a.linkCategoria:hover::after {
-    width: 100%;
-    }
-
-    a.linkCategoria:hover{
-        color:#0e0f0f;
-    }
-
+        /*Estilo del filtro Categoria en emprendedores*/
+        
+        a.linkCategoria {
+            color: #6f7983;
+            font-weight: 600;
+            display: block;
+            width: 100%;
+            position: relative;
+            font-size: 14px !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.75rem 1.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        a.linkCategoria::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            left: 50%;
+            background-color: #36c09d;
+            transition: all 0.5s ease;
+            transform: translateX(-50%);
+        }
+        
+        a.linkCategoria:hover::after {
+            width: 100%;
+        }
+        
+        a.linkCategoria:hover {
+            color: #0e0f0f;
+        }
+        
         @media (prefers-reduced-motion: no-preference) {
              :root {
                 scroll-behavior: smooth;
@@ -5986,6 +5986,16 @@
         
         .modal-footer>* {
             margin: calc(var(--bs-modal-footer-gap) * 0.5);
+        }
+        /* Ajustar modal para pantallas chicas */
+        
+        @media (max-width: 575px) {
+            .modal {
+                --bs-modal-width: 90vw !important;
+            }
+            .modal-dialog {
+                margin: auto !important;
+            }
         }
         
         @media (min-width: 576px) {
@@ -11921,8 +11931,7 @@
             align-items: center;
             justify-content: center;
         }
-
         
-div.search.agregar{
-    justify-content: center;
-}
+        div.search.agregar {
+            justify-content: center;
+        }

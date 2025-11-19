@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="" />
     <meta name="author" content="" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -267,8 +267,8 @@
                                                     <div class="row justify-content-center">
                                                         <div class="col-lg-8">
                                                             <div class="modal-body">
-                                                                <h2 class="text-uppercase">{{ $emprendedor->nombre }}
-                                                                </h2>
+                                                                <h3 class="text-uppercase">{{ $emprendedor->nombre }}
+                                                                </h3>
                                                                 @if ($emprendedor->imagenes->isNotEmpty())
                                                                     <img class="img-fluid d-block mx-auto img-modalEmprendedor"
                                                                         src="{{ $emprendedor->imagenes->first()['url'] }}"

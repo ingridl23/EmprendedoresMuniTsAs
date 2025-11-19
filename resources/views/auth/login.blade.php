@@ -175,7 +175,8 @@
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
 
-                        <label for="password">Ingresar contraseña</label>
+                        <label for="password">Contraseña</label>
+                        <p class="form-subtituloslogin">Ingrese contraseña</p>
                     </div>
 
                     {{-- Recordar credenciales --}}

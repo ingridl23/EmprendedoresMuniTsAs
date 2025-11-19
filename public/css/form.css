@@ -51,29 +51,31 @@ div.alturaYCalle p.form-subtitulos {
     margin-left: 0;
 }
 
-div#previousImagen{
+div#previousImagen {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-.position{
+.position {
     position: relative;
     width: 40%;
 }
 
-.inputFlex{
+.inputFlex {
     display: flex;
 }
-label.oculto{
+
+label.oculto {
     display: none;
 }
-.ocultarInputsCerradoDomingo{
+
+.ocultarInputsCerradoDomingo {
     flex-wrap: wrap;
 }
 
-#previousImagen .imgEmprendimiento{
+#previousImagen .imgEmprendimiento {
     width: 100%;
     margin: 0.4rem;
     height: fit-content;
@@ -95,27 +97,29 @@ label.oculto{
     background-color: transparent;
 }
 
-button.cierreEmprendedor img:hover{
+button.cierreEmprendedor img:hover {
     opacity: 0.5;
 }
 
-button.cierreEmprendedor img{
+button.cierreEmprendedor img {
     width: 100%;
     height: auto;
 }
 
-.btnAgregarEmprendimiento, .btnEditarEmprendimiento{
+.btnAgregarEmprendimiento,
+.btnEditarEmprendimiento {
     width: 50%;
     margin-right: auto;
     margin-left: auto;
 }
 
-div.contenedorImgs{
+div.contenedorImgs {
     display: block;
     position: relative;
     margin: 1rem;
     width: 20%;
 }
+
 @keyframes mostrarDiv {
     0% {
         width: 0%;
@@ -134,10 +138,25 @@ nav form {
 }
 
 @media (max-width:992px) {
-    div.col-lg-6.solicitantes{
+    .group-subconjuntos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .group-subconjuntos .opcion-radio {
+        width: 100%;
+        /* 2 radios por fila */
+        text-align: center;
+    }
+    .group-subconjuntos h6 {
+        font-size: 0.9rem;
+        /* Ajuste de tipografía */
+        margin-top: 0.3rem;
+    }
+    div.col-lg-6.solicitantes {
         width: 60%;
     }
-    div.col-lg-6.solicitantes form{
+    div.col-lg-6.solicitantes form {
         width: 100%;
     }
     div.col-lg-6 {
@@ -146,15 +165,6 @@ nav form {
     }
     .form {
         width: 60%;
-    }
-    .group-subconjuntos {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    .group-subconjuntos .opcion-radio {
-        margin: 0;
-        padding: 0.5rem;
     }
 }
 
@@ -171,31 +181,37 @@ nav form {
     margin-top: 3px;
     width: 100%;
 }
-.checkbox, .checkbox-participa-feria input{
+
+.checkbox,
+.checkbox-participa-feria input {
     width: auto;
 }
-.checkbox{
+
+.checkbox {
     margin: auto;
 }
+
+
 /*Contenedor de input cerrado y feria*/
-.contenedorForm .checkbox-compartido{
+
+.contenedorForm .checkbox-compartido {
     margin-bottom: 2rem;
 }
 
-.separacion{
+.separacion {
     margin-bottom: 2rem;
 }
 
-.cerradoPalabra{
+.cerradoPalabra {
     margin-bottom: 0;
 }
 
-div.contenedorForm.checkbox-compartido p.form-subtitulos{
+div.contenedorForm.checkbox-compartido p.form-subtitulos {
     margin: auto;
     width: auto;
 }
 
-.checkbox-participa-feria{
+.checkbox-participa-feria {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;

@@ -117,10 +117,11 @@
             <ul class="estiloLista">
                 <div>
                     <li>Ampliar la base emprendedora mediante actividades de sensibilización y promoción para diversos
-                    públicos.</li>
+                        públicos.</li>
                     <li>Identificar emprendimientos de alto impacto para potenciar el desarrollo económico y social del
                         distrito.</li>
-                    <li>Proveer apoyo estratégico con herramientas, capacitaciones, redes de contacto y asistencia técnica,
+                    <li>Proveer apoyo estratégico con herramientas, capacitaciones, redes de contacto y asistencia
+                        técnica,
                         articulando con instituciones si es necesario.</li>
                     <li>Acompañar y orientar a personas con ideas o proyectos en marcha, ofreciendo una escucha activa y
                         guía clara para fortalecer sus iniciativas.</li>
@@ -137,16 +138,19 @@
             <ul class="estiloLista">
                 <div>
                     <li>Participación en la Mesa de Emprendedores:
-                        Reuniones periódicas con otros miembros activos para compartir ideas, planificar acciones y acceder
+                        Reuniones periódicas con otros miembros activos para compartir ideas, planificar acciones y
+                        acceder
                         a información relevante.</li>
                     <li>Acceso y planificación de Ferias de Emprendedores:
-                        Oportunidad de formar parte de la organización y exposición en ferias locales para dar visibilidad a
+                        Oportunidad de formar parte de la organización y exposición en ferias locales para dar
+                        visibilidad a
                         los proyectos.</li>
                     <li>Asesoramiento en habilitación comercial:
                         Contacto directo con autoridades municipales para gestionar correctamente la habilitación de
                         comercios.</li>
                     <li>Asesoramiento en registro de productos alimenticios:
-                        Orientación y acompañamiento para registrar productos de manera legal y cumplir con los requisitos
+                        Orientación y acompañamiento para registrar productos de manera legal y cumplir con los
+                        requisitos
                         sanitarios y normativos.</li>
                 </div>
             </ul>
@@ -199,7 +203,7 @@
                     alt="Logo de Escuela de Emprendedores" />
             </div>
 
-            <h2 id="escuelaDeEmprendedores" class="subtitulo1 subtituloProgramas">Escuela de Emprendedores</h2>
+            <h3 id="escuelaDeEmprendedores" class="subtitulo1">Escuela de Emprendedores</h3>
             <h4>Formación y acompañamiento para el desarrollo emprendedor</h4>
 
 
@@ -400,11 +404,11 @@
         <ul class="estiloLista">
             <div>
                 <li> Brindar una cobertura de riesgos del trabajo y una cobertura de salud que garantice el Programa
-                Médico Obligatorio a los/as participantes. </li>
+                    Médico Obligatorio a los/as participantes. </li>
                 <li>Abonar parte de la ayuda económica que reciben los aprendices (excepto las microempresas).</li>
                 <li>Brindar la infraestructura, equipamiento, insumos y herramientas.</li>
                 <li>Informar a los participantes todos los derechos, obligaciones y requisitos derivados de su
-                participación en las acciones que componen el proyecto.</li>
+                    participación en las acciones que componen el proyecto.</li>
                 <li>Garantizar a los participantes un contexto de aprendizaje libre de violencia de género y acoso.</li>
                 <li>
                     Pueden presentar proyectos todas las empresas y cooperativas cualquiera sea su tamaño y actividad,

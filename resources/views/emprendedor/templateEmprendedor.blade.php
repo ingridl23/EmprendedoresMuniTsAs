@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Emprendedor</title>
@@ -200,14 +200,13 @@
                                     @else
                                         <span class="ms-auto"> desde {{ $horario->hora_apertura }}hs -
                                             hasta {{ $horario->hora_cierre }}hs</span>
-                                
                                     @endif
-                                @if ($horario->participa_feria == 1)
-                                    <li> Participa en feria parque cabañas primer domingo de cada
-                                        mes
-                                    </li>
-                                @endif
-                        
+                                    @if ($horario->participa_feria == 1)
+                                <li> Participa en feria parque cabañas primer domingo de cada
+                                    mes
+                                </li>
+                        @endif
+
                         </li>
 
                         </ul>
@@ -238,7 +237,7 @@
         </div>
     </section>
 
-        <button class="vermas">
+    <button class="vermas">
         <a href="/emprendedores">Volver</a>
     </button>
 

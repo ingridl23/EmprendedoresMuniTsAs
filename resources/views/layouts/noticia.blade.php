@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>noticias</title>
@@ -147,27 +147,26 @@
 
     <div>
         <section aria-label="breadcrumb" class="breadcrumb">
-            <p class="breadcrumb-item">Categoria: {{$noticia->categoria}}</p>
+            <p class="breadcrumb-item">Categoria: {{ $noticia->categoria }}</p>
         </section>
     </div>
 
     @if (Auth::check() && Auth::user()->hasRole('admin'))
-    <div class="centrarContenedor">
-        <div class="contenedorBotones">
-            <div class="search">
-                <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
-                    <a href="/noticias/formEditarNoticia/{{ $noticia->id }}">Editar noticia</a>
-                </button>
+        <div class="centrarContenedor">
+            <div class="contenedorBotones">
+                <div class="search">
+                    <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">
+                        <a href="/noticias/formEditarNoticia/{{ $noticia->id }}">Editar noticia</a>
+                    </button>
+                </div>
+                <br>
+                <form action="/noticias/{{ $noticia->id }}" class="formEliminar" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">Eliminar noticia</button>
+                </form>
             </div>
-            <br>
-            <form action="/noticias/{{ $noticia->id }}" class="formEliminar" method="post">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-primary btn-xl text-uppercase agregarNoticia">Eliminar noticia</button>
-            </form>
         </div>
-    </div>
-    
     @endif
 
 
@@ -176,12 +175,12 @@
 
         <div class=" card   container-card ">
             <p> <small class=" text-body-secondary">Fecha de publicación:
-                {{ $noticia->created_at->format('Y-m-d') }}</small></p>
+                    {{ $noticia->created_at->format('Y-m-d') }}</small></p>
             <h2 class="noticiaTitulo">{{ $noticia->titulo }}</h2>
-            <img src="{{$noticia->imagen }}" class="img-noticia img-fluid "
+            <img src="{{ $noticia->imagen }}" class="img-noticia img-fluid "
                 alt="Imagen de la noticia: {{ $noticia->titulo }}">
             <div class="card-body">
-                <p class="card-text-noticia">{!!nl2br($noticia->descripcion)!!}
+                <p class="card-text-noticia">{!! nl2br($noticia->descripcion) !!}
                 </p>
 
 
@@ -194,7 +193,7 @@
     </button>
 
     <div class="contenedor_loader">
-       <div class="loader"></div>
+        <div class="loader"></div>
     </div>
 
     <!-- barra de navegacion footer -->

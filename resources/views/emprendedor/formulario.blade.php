@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Contacto</title>
@@ -539,7 +541,7 @@
 
                             <label for="nombre-telefonica">Referencia telefonica
                                 <span class="asterisco">*</span></label>
-                            <p class="form-subtitulos">Otorgar nombre/s del negocio o empresa en el que trabajó</p>
+                            <p class="form-subtitulos">Otorgar telefono del negocio o empresa en el que trabajó</p>
                         </div>
 
 
