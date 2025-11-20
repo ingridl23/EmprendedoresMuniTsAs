@@ -1,0 +1,278 @@
+openapi: 3.0.3
+info:
+  title: SITIO OFICINA DE EMPLEO MUNICIPIO TRES ARROYOS
+  description:
+    Documentación de endpoints presentes en el sitio web para la oficina de empleo y capacitación municipal.
+    Pensado para ofrecer un canal de información profesional y garantizar el acceso a la misma de manera completa y clara.
+    Se presentan campañas de búsqueda de empleo, mediación con empresas para la capacitación y aceptación laboral de postulantes
+    y además programas de acompañamiento financiero, publicitario y social para emprendedores locales.
+  version: "1.0.0"
+
+servers:
+  - url: http://emprendedores.tresarroyos.gov.ar
+    description: Servidor remoto
+
+paths:
+  /:
+    get:
+      summary: Homepage inicial
+      description: Página principal del sitio
+      responses:
+        "200":
+          description: Muestra la presentación inicial correctamente
+
+  /emprendedores/export:
+    get:
+      summary: Descarga Excel
+      description: Exportación del archivo Excel con datos de emprendedores activos
+      responses:
+        "200":
+          description: Descarga exitosa
+
+  /emprendedores/excel:
+    get:
+      summary: Formulario Excel emprendedores
+      description: Acceso al formulario de descarga para emprendedores activos
+      responses:
+        "200":
+          description: Formulario accesible correctamente
+
+  /empleos/export:
+    get:
+      summary: Descarga Excel solicitantes de empleo
+      description: Exportación archivo Excel de solicitantes de empleo activos
+      responses:
+        "200":
+          description: Descarga exitosa
+
+  /solicitantes:
+    get:
+      summary: Acceso a formulario Excel de solicitantes
+      responses:
+        "200":
+          description: Formulario accesible correctamente
+
+  /programas:
+    get:
+      summary: Programas vigentes
+      description: Programas municipales dirigidos a emprendedores y solicitantes de empleo
+      responses:
+        "200":
+          description: Información de programas devuelta correctamente
+
+  /noticias:
+    get:
+      summary: Noticias
+      description: Listado de noticias y actualizaciones
+      responses:
+        "200":
+          description: Noticias devueltas correctamente
+
+  /noticias/{id}:
+    get:
+      summary: Visualización de noticia
+      description: Devuelve la noticia seleccionada por su ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Noticia encontrada
+
+    delete:
+      summary: Eliminar noticia
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Noticia eliminada
+
+  /noticias/formEditarNoticia/{id}:
+    get:
+      summary: Formulario edición noticia
+      description: Acceso a formulario de edición de noticia
+      responses:
+        "200":
+          description: Acceso correcto
+
+  /noticias/nuevaNoticia:
+    get:
+      summary: Formulario alta noticia
+      responses:
+        "200":
+          description: Formulario accesible
+
+  /noticias/cargarNuevaNoticia:
+    post:
+      summary: Envío de datos nueva noticia
+      responses:
+        "201":
+          description: Noticia creada correctamente
+
+  /noticias/editarImgs/{id}:
+    post:
+      summary: Editar imagen noticia
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Imagen actualizada correctamente
+
+  /noticias/buscadorTitulo:
+    get:
+      summary: Búsqueda por título
+      responses:
+        "200":
+          description: Búsqueda exitosa
+
+  /noticias/buscadorCategoria:
+    get:
+      summary: Búsqueda por categoría
+      responses:
+        "200":
+          description: Resultados encontrados
+
+  /noticias/buscadorFecha:
+    get:
+      summary: Búsqueda por fecha
+      responses:
+        "200":
+          description: Resultados encontrados
+
+  /passwords/reset:
+    get:
+      summary: Recuperación de contraseña
+      responses:
+        "200":
+          description: Sección accesible
+
+  /emprendedores:
+    get:
+      summary: Listado de emprendedores
+      responses:
+        "200":
+          description: Información devuelta correctamente
+
+  /emprendedores/user:
+    get:
+      summary: Rol del usuario
+      responses:
+        "200":
+          description: Datos de rol devueltos
+
+  /emprendedor/{id}:
+    get:
+      summary: Visualización de un emprendedor
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Información devuelta correctamente
+    delete:
+      summary: Eliminar emprendedor
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Eliminado correctamente
+
+  /emprendedores/buscador:
+    get:
+      summary: Buscador emprendedores
+      responses:
+        "200":
+          description: Resultados encontrados correctamente
+
+  /emprendedores/nuevoEmprendimiento:
+    get:
+      summary: Formulario nuevo emprendimiento
+      responses:
+        "200":
+          description: Acceso correcto
+
+  /crearEmprendimiento:
+    post:
+      summary: Crear emprendimiento
+      responses:
+        "201":
+          description: Creado correctamente
+
+  /emprendedores/formEditarEmprendimiento/{id}:
+    get:
+      summary: Formulario edición emprendimiento
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Formulario accesible
+
+  /emprendedores/editarImgs/{id}:
+    post:
+      summary: Editar imagen emprendimiento
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Imagen enviada correctamente
+
+  /formulario/enviar:
+    post:
+      summary: Envío formulario de contacto
+      responses:
+        "201":
+          description: Formulario enviado
+
+  /formar/parte:
+    get:
+      summary: Acceso al formulario de contacto
+      responses:
+        "200":
+          description: Acceso correcto
+
+  /showlogin:
+    get:
+      summary: Formulario login admin
+      responses:
+        "200":
+          description: Formulario accesible
+
+  /login:
+    get:
+      summary: Inicio de sesión admin
+      responses:
+        "200":
+          description: Acceso correcto
+
+  /logout:
+    post:
+      summary: Cierre de sesión
+      responses:
+        "200":
+          description: Sesión cerrada correctamente
