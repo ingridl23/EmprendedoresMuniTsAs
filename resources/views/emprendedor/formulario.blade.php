@@ -10,7 +10,7 @@
     <meta name="author" content="" />
     <title>Contacto</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href= "{{ asset('assets/img/iconos/favicon.png') }}" />
     <!-- Font Awesome -->
 
 

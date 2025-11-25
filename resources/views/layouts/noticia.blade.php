@@ -8,7 +8,7 @@
     <meta name="author" content="" />
     <title>Noticias</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href= "{{ asset('assets/img/iconos/favicon.png') }}" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
