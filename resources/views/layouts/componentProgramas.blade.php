@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="carousel-links-item visible">
-                <div class="card w-100">
+                <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Programa 4</h5>
                         <a href="#programasDeEmpleo" class="card-link">Programas de empleo</a>
