@@ -82,9 +82,11 @@
     transition: all 0.3s ease;
     align-items: baseline;
 }
-nav a.scrollto{
+
+nav a.scrollto {
     text-decoration: none;
 }
+
 .navbar-brand:hover {
     color: #25c39c !important;
 }
@@ -399,4 +401,13 @@ html {
 
 #header.header-scrolled .btn-text {
     color: #4f5052;
+}
+
+
+/* Forzar color con scroll */
+
+#header.header-scrolled .servicio-icono,
+#header.header-scrolled .fas.fa-laptop,
+#header.header-scrolled .fas.fa-lock-open {
+    color: #48dac6 !important;
 }
