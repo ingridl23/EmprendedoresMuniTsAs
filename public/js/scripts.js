@@ -1,75 +1,72 @@
-console.log("Scripts JS cargado");
-
 window.addEventListener("DOMContentLoaded", (event) => {
-    const header = document.querySelector("#header");
     const navbarCollapsible = document.body.querySelector("#mainNav");
     const navbarToggler = document.body.querySelector(".navbar-toggler");
-    const navbarResponsive = document.querySelector("#navbarResponsive");
 
-    // Inicializar collapse cerrado al inicio
-    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(
-        navbarResponsive,
-        { toggle: false }
-    );
-    bsCollapse.hide(); // asegurar que esté cerrado
-
-    // Función para shrink y header transparente
-    const navbarShrink = function () {
-        if (!header || !navbarCollapsible) return;
+    var navbarShrink = function () {
+        const header = document.querySelector("#header");
+        if (!navbarCollapsible) return;
+        if (!header) return;
 
         if (
             window.scrollY === 0 &&
-            !navbarResponsive.classList.contains("show")
+            navbarToggler.getAttribute("aria-expanded") === "false"
         ) {
             navbarCollapsible.classList.remove("navbar-shrink");
             header.classList.remove("header-scrolled");
-            document.body.classList.add("at-top");
         } else {
             navbarCollapsible.classList.add("navbar-shrink");
             header.classList.add("header-scrolled");
-            document.body.classList.remove("at-top");
         }
     };
 
-    // Ejecutar al cargar y al scrollear
+    // Shrink the navbar
     navbarShrink();
+
+    // Shrink the navbar when page is scrolled
     document.addEventListener("scroll", navbarShrink);
 
-    // Toggle mobile usando Bootstrap Collapse
-    navbarToggler.addEventListener("click", () => {
-        if (navbarResponsive.classList.contains("show")) {
-            bsCollapse.hide();
-        } else {
-            bsCollapse.show();
-        }
-    });
-
-    // Cerrar menú al hacer click en un link (mobile)
-    const responsiveNavItems = document.querySelectorAll(
-        "#navbarResponsive .nav-link"
-    );
-    responsiveNavItems.forEach((item) => {
-        item.addEventListener("click", () => {
-            if (window.getComputedStyle(navbarToggler).display !== "none") {
-                bsCollapse.hide();
-            }
-        });
-    });
-
-    // Activar Bootstrap ScrollSpy
-    if (navbarCollapsible && bootstrap.ScrollSpy) {
+    // Activate Bootstrap scrollspy on the main nav element
+    const mainNav = document.body.querySelector("#mainNav");
+    if (mainNav && bootstrap.ScrollSpy) {
         bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
             target: "#mainNav",
             rootMargin: "0px 0px -40%",
         });
     }
 
-    // Activar SimpleLightbox para portfolio items
+    const responsiveNavItems = [].slice.call(
+        document.querySelectorAll("#navbarResponsive .nav-link")
+    );
+
+    navbarToggler.addEventListener("click", () => {
+        const isExpanded =
+            navbarToggler.getAttribute("aria-expanded") === "true";
+        if (isExpanded && window.scrollY === 0) {
+            navbarCollapsible.classList.add("navbar-shrink");
+            header.classList.add("header-scrolled");
+        }
+        setTimeout(() => {
+            if (!isExpanded && window.scrollY === 0) {
+                navbarCollapsible.classList.remove("navbar-shrink");
+                header.classList.remove("header-scrolled");
+            }
+        }, 200);
+    });
+
+    responsiveNavItems.map(function (responsiveNavItem) {
+        responsiveNavItem.addEventListener("click", () => {
+            if (window.getComputedStyle(navbarToggler).display !== "none") {
+                navbarToggler.click();
+            }
+        });
+    });
+
+    // Activate SimpleLightbox plugin for portfolio items
     new SimpleLightbox({
         elements: "#portfolio a.portfolio-box",
     });
 
-    // Intersection Observer para animaciones scroll
+    // ) Intersection Observer para animaciones scroll
     const observer = new IntersectionObserver(
         (entries, obs) => {
             entries.forEach((entry) => {
@@ -84,7 +81,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     document
         .querySelectorAll(
-            ".section-services, .seccion-tenes-emprendimiento, .portfolio-box, .text-white"
+            ".section-services, .seccion-tenes-emprendimiento, .portfolio-box,.text-white"
         )
         .forEach((el) => observer.observe(el));
+
+    /*   window.addEventListener("load", () => {
+        document
+            .querySelectorAll(
+                ".section-services, .seccion-tenes-emprendimiento, .portfolio-box, .text-white"
+            )
+            .forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add("visible");
+                }
+            });
+    });*/
 });
