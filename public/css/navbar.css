@@ -1,7 +1,7 @@
 /* ======= NAVBAR PRINCIPAL ======= */
 
 
-/* Header inicial: si quieres que sea transparente solo en top */
+/* Fondo por defecto, visible desde que carga la página */
 
 #header {
     position: fixed;
@@ -9,15 +9,24 @@
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.98);
-    /* fondo por defecto */
+    /* fondo visible desde el inicio */
+    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     z-index: 1000;
 }
 
 
-/* Solo transparenta si body no tiene clase 'scrolled' */
+/* Cuando scrolleamos, se agrega clase 'scrolled' al html */
 
-body.at-top #header {
+html.scrolled #header {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Si querés transparencia solo al top */
+
+html:not(.scrolled) #header {
     background: transparent;
     backdrop-filter: blur(10px);
 }

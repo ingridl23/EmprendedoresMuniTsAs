@@ -1,5 +1,18 @@
 console.log("Scripts JS cargado");
 
+// Antes de DOMContentLoaded
+function updateScrollClass() {
+    if (window.scrollY === 0) {
+        document.documentElement.classList.remove("scrolled");
+    } else {
+        document.documentElement.classList.add("scrolled");
+    }
+}
+
+// Ejecutar inmediatamente y al hacer scroll
+updateScrollClass();
+window.addEventListener("scroll", updateScrollClass);
+
 window.addEventListener("DOMContentLoaded", (event) => {
     const navbarCollapsible = document.body.querySelector("#mainNav");
     const navbarToggler = document.body.querySelector(".navbar-toggler");
