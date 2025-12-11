@@ -2,7 +2,7 @@
     <header id="header" class="fixed-top header-scrolled">
         <div class="container-fluid px-4 container">
             <!-- Navbar principal -->
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
+            <nav class="navbar navbar-expand-lg navbar-light  py-2" id="mainNav">
                 <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
 
                     <!-- Logo y marca -->
