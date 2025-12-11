@@ -15,6 +15,38 @@
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
+
+/* Iconos de servicios externos */
+
+#header .servicio-icono {
+    color: #dfdfdf;
+    /* Color inicial */
+    transition: color 0.3s ease;
+}
+
+
+/* Color iconos al hacer scroll */
+
+#header.header-scrolled .servicio-icono {
+    color: #48dac6 !important;
+    /* Color al scrollear */
+}
+
+
+/* Texto botones externos */
+
+#header .btn-text {
+    color: #dfdfdf;
+    /* Color inicial */
+}
+
+
+/* Color texto al hacer scroll */
+
+#header.header-scrolled .btn-text {
+    color: #4f5052;
+}
+
 .btn-text {
     color: #4f5052;
 }
