@@ -1,6 +1,6 @@
 console.log("Scripts JS cargado");
 
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("#header");
     const navbarCollapsible = document.querySelector("#mainNav");
     const navbarToggler = document.querySelector(".navbar-toggler");
@@ -8,15 +8,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
         document.querySelectorAll("#navbarResponsive .nav-link")
     );
 
-    // Función para manejar el scroll y aplicar clases
-    const navbarShrink = () => {
+    // Función que maneja el scroll
+    const handleScroll = () => {
         if (!header) return;
-
         if (window.scrollY === 0) {
+            document.documentElement.classList.remove("scrolled");
             header.classList.remove("header-scrolled");
             navbarCollapsible.classList.remove("navbar-shrink");
             document.body.classList.add("at-top");
         } else {
+            document.documentElement.classList.add("scrolled");
             header.classList.add("header-scrolled");
             navbarCollapsible.classList.add("navbar-shrink");
             document.body.classList.remove("at-top");
@@ -24,19 +25,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
     };
 
     // Ejecutar al cargar
-    navbarShrink();
+    handleScroll();
 
     // Ejecutar al hacer scroll
-    window.addEventListener("scroll", navbarShrink);
+    window.addEventListener("scroll", handleScroll);
 
-    // Toggle navbar mobile: solo abre/cierra, no modifica clases de scroll
+    // Toggle de navbar (solo abrir/cerrar, sin tocar scroll)
     if (navbarToggler) {
         navbarToggler.addEventListener("click", () => {
             navbarCollapsible.classList.toggle("show");
         });
     }
 
-    // Cerrar navbar al click en link (mobile)
+    // Cerrar navbar mobile al click en link
     responsiveNavItems.forEach((item) => {
         item.addEventListener("click", () => {
             if (window.getComputedStyle(navbarToggler).display !== "none") {
@@ -45,7 +46,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 
-    // Bootstrap ScrollSpy
+    // ScrollSpy de Bootstrap
     if (navbarCollapsible && bootstrap.ScrollSpy) {
         bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
             target: "#mainNav",
@@ -53,7 +54,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 
-    // SimpleLightbox para portfolio
+    // SimpleLightbox
     new SimpleLightbox({
         elements: "#portfolio a.portfolio-box",
     });
