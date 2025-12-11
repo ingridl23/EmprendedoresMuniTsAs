@@ -192,7 +192,7 @@
 
     <!-- Bootstrap core JS-->
     <script src="{{ asset('js/scripts.js') }} "></script>
-    {{--   <script src="{{ asset('js/navbar.js') }} "></script> --}}
+    <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/carruselProgramasLinks.js') }} "></script>
 
 
