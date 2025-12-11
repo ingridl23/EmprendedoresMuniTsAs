@@ -27,7 +27,7 @@
 
     <link href="{{ asset('css/noticias.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/acordeon.css') }}" rel="stylesheet" />
+
 </head>
 
 

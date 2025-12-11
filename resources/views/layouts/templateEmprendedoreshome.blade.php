@@ -31,9 +31,9 @@
     <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="path-to-your-creative-template.css" rel="stylesheet">
+
 
 
 </head>
@@ -193,7 +193,7 @@
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/carruselProgramasLinks.js') }} "></script>
 
-    <script src="path-to-creative-template-scripts.js"></script>
+
 
 
 
@@ -203,7 +203,7 @@
 
 
 
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
 
     <!--Carrusel-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

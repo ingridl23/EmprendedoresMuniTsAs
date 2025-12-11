@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
-        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
@@ -57,9 +56,9 @@
 </div>
 
 @if ($errors->any())
-<div class="alert alert-danger text-center mb-3">
-    <p class="mensajeError">Seleccionar como filtrar</p>
-</div>
+    <div class="alert alert-danger text-center mb-3">
+        <p class="mensajeError">Seleccionar como filtrar</p>
+    </div>
 @endif
 
 <div class="row gx-4 gx-lg-5 justify-content-center mb-5 centrarFormulario">
@@ -105,35 +104,35 @@
                 <button class="btn btn-primary btn-xl submit" id="submitButton" type="submit">
                     <span class="btntext""> Descargar Datos </span>
 
-                    </button>
-                </div>
-            </form>
-        </div>
+                </button>
+            </div>
+        </form>
     </div>
+</div>
 
-    @include('layouts.panelAdmin')
-    @include('emprendedor.footer')
+@include('layouts.panelAdmin')
+@include('emprendedor.footer')
 
-    @if (session('error'))
-        <script>
-            window.mensajeError = @json(session('error'));
-        </script>
-    @endif
+@if (session('error'))
+    <script>
+        window.mensajeError = @json(session('error'));
+    </script>
+@endif
 
-    <!-- Core theme JS-->
-    <script src=" {{ asset('js/scripts3.js') }}"></script>
-                        <script src="{{ asset('js/scripts.js') }} "></script>
-                        <script src="{{ asset('js/navbar.js') }} "></script>
-                        <script src="{{ asset('js/logicaSelectLocalidades.js') }} "></script>
-                        <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
+<!-- Core theme JS-->
+<script src=" {{ asset('js/scripts3.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }} "></script>
+<script src="{{ asset('js/navbar.js') }} "></script>
+<script src="{{ asset('js/emprendedores/logicaSelectLocalidades.js') }} "></script>
+<script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
 
-                        <!-- SimpleLightbox plugin JS-->
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-                        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- SimpleLightbox plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-                        <!--Para las alertas en JS-->
-                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                        </body>
+<!--Para las alertas en JS-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
 
 </html>
