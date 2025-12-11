@@ -38,7 +38,7 @@
 
 </head>
 
-<body id="page-top">
+<body>
     <div class="custom-navbar-container">
         <header id="header" class="fixed-top header-scrolled">
             <div class="container-fluid px-4 container">
