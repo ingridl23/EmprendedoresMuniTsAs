@@ -66,6 +66,14 @@
     align-content: space-between;
 }
 
+
+/*Fondo nav cuando scrollea */
+
+#header.header-scrolled #mainNav {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
 #mainNav .navbar-nav .nav-link {
     color: #6f7983 !important;
     font-weight: 500;
