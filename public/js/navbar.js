@@ -8,11 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     window.addEventListener("scroll", function () {
-        if (this.window.pageXOffset == 0) {
-            contenedores.forEach((contenedor) => {
-                asignarClase(contenedor);
-            });
-        }
+        contenedores.forEach((contenedor) => {
+            asignarClase(contenedor);
+        });
     });
 
     function asignarClase(contenedor) {
