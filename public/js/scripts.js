@@ -6,8 +6,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const navbarToggler = document.body.querySelector(".navbar-toggler");
     const navbarResponsive = document.querySelector("#navbarResponsive");
 
+    // Inicializar collapse cerrado
+    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(
+        navbarResponsive,
+        { toggle: false }
+    );
+    bsCollapse.hide(); // aseguramos que esté cerrado al inicio
+
     // Función para cambiar clases al hacer scroll
-    const navbarShrink = function() {
+    const navbarShrink = function () {
         if (!header || !navbarCollapsible) return;
 
         if (
@@ -22,19 +29,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
     };
 
-    // Ejecutar al cargar
+    // Ejecutar al cargar y al hacer scroll
     navbarShrink();
-
-    // Ejecutar al hacer scroll
     document.addEventListener("scroll", navbarShrink);
 
-    // Activar Bootstrap ScrollSpy
-    if (navbarCollapsible && bootstrap.ScrollSpy) {
-        bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
-            target: "#mainNav",
-            rootMargin: "0px 0px -40%",
-        });
-    }
+    // Toggle mobile usando Bootstrap Collapse
+    navbarToggler.addEventListener("click", () => {
+        if (navbarResponsive.classList.contains("show")) {
+            bsCollapse.hide();
+        } else {
+            bsCollapse.show();
+        }
+    });
 
     // Cerrar menú al hacer click en un link (mobile)
     const responsiveNavItems = document.querySelectorAll(
@@ -43,19 +49,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
     responsiveNavItems.forEach((item) => {
         item.addEventListener("click", () => {
             if (window.getComputedStyle(navbarToggler).display !== "none") {
-                bootstrap.Collapse.getInstance(navbarResponsive) ? .hide();
+                bsCollapse.hide();
             }
         });
     });
 
-    // Toggle mobile usando Bootstrap Collapse
-    navbarToggler.addEventListener("click", () => {
-        if (navbarResponsive.classList.contains("show")) {
-            bootstrap.Collapse.getInstance(navbarResponsive) ? .hide();
-        } else {
-            bootstrap.Collapse.getOrCreateInstance(navbarResponsive).show();
-        }
-    });
+    // Activar Bootstrap ScrollSpy
+    if (navbarCollapsible && bootstrap.ScrollSpy) {
+        bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
+            target: "#mainNav",
+            rootMargin: "0px 0px -40%",
+        });
+    }
 
     // Activar SimpleLightbox para portfolio items
     new SimpleLightbox({
@@ -71,7 +76,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.2 }
+        },
+        { threshold: 0.2 }
     );
 
     document
