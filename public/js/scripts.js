@@ -1,14 +1,18 @@
-window.addEventListener("DOMContentLoaded", (event) => {
+console.log("Scripts JS cargado");
 
+window.addEventListener("DOMContentLoaded", (event) => {
     const navbarCollapsible = document.body.querySelector("#mainNav");
     const navbarToggler = document.body.querySelector(".navbar-toggler");
 
-    var navbarShrink = function() {
+    var navbarShrink = function () {
         const header = document.querySelector("#header");
         if (!navbarCollapsible) return;
         if (!header) return;
 
-        if (window.scrollY === 0 && navbarToggler.getAttribute("aria-expanded") === "false") {
+        if (
+            window.scrollY === 0 &&
+            navbarToggler.getAttribute("aria-expanded") === "false"
+        ) {
             navbarCollapsible.classList.remove("navbar-shrink");
             header.classList.remove("header-scrolled");
         } else {
@@ -27,31 +31,31 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const mainNav = document.body.querySelector("#mainNav");
     if (mainNav && bootstrap.ScrollSpy) {
         bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
-            target: '#mainNav',
+            target: "#mainNav",
             rootMargin: "0px 0px -40%",
-    });
-   
+        });
     }
 
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll("#navbarResponsive .nav-link")
     );
 
-    navbarToggler.addEventListener("click", () =>{
-            const isExpanded = navbarToggler.getAttribute("aria-expanded") === "true";
-            if (isExpanded && window.scrollY === 0) {
-                navbarCollapsible.classList.add("navbar-shrink");
-                header.classList.add("header-scrolled");
-            }
+    navbarToggler.addEventListener("click", () => {
+        const isExpanded =
+            navbarToggler.getAttribute("aria-expanded") === "true";
+        if (isExpanded && window.scrollY === 0) {
+            navbarCollapsible.classList.add("navbar-shrink");
+            header.classList.add("header-scrolled");
+        }
         setTimeout(() => {
-            if(!isExpanded && window.scrollY === 0) {
+            if (!isExpanded && window.scrollY === 0) {
                 navbarCollapsible.classList.remove("navbar-shrink");
                 header.classList.remove("header-scrolled");
             }
         }, 200);
     });
 
-    responsiveNavItems.map(function(responsiveNavItem) {
+    responsiveNavItems.map(function (responsiveNavItem) {
         responsiveNavItem.addEventListener("click", () => {
             if (window.getComputedStyle(navbarToggler).display !== "none") {
                 navbarToggler.click();
@@ -73,7 +77,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.2 }
+        },
+        { threshold: 0.2 }
     );
 
     document
