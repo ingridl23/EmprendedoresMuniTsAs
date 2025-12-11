@@ -11,9 +11,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
         if (window.scrollY === 0) {
             header.classList.remove("header-scrolled");
             navbarCollapsible.classList.remove("navbar-shrink");
+            document.body.classList.add("at-top"); // clase para CSS
         } else {
             header.classList.add("header-scrolled");
             navbarCollapsible.classList.add("navbar-shrink");
+            document.body.classList.remove("at-top");
         }
     };
 
