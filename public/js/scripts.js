@@ -6,14 +6,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const navbarToggler = document.body.querySelector(".navbar-toggler");
     const navbarResponsive = document.querySelector("#navbarResponsive");
 
-    // Inicializar collapse cerrado
+    // Inicializar collapse cerrado al inicio
     const bsCollapse = bootstrap.Collapse.getOrCreateInstance(
         navbarResponsive,
         { toggle: false }
     );
-    bsCollapse.hide(); // aseguramos que esté cerrado al inicio
+    bsCollapse.hide(); // asegurar que esté cerrado
 
-    // Función para cambiar clases al hacer scroll
+    // Función para shrink y header transparente
     const navbarShrink = function () {
         if (!header || !navbarCollapsible) return;
 
@@ -23,13 +23,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
         ) {
             navbarCollapsible.classList.remove("navbar-shrink");
             header.classList.remove("header-scrolled");
+            document.body.classList.add("at-top");
         } else {
             navbarCollapsible.classList.add("navbar-shrink");
             header.classList.add("header-scrolled");
+            document.body.classList.remove("at-top");
         }
     };
 
-    // Ejecutar al cargar y al hacer scroll
+    // Ejecutar al cargar y al scrollear
     navbarShrink();
     document.addEventListener("scroll", navbarShrink);
 
