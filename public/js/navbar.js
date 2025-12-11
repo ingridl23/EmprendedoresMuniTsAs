@@ -1,4 +1,5 @@
-"use scrict";
+"use strict";
+
 console.log("Navbar JS cargado");
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,18 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function asignarClase(contenedor) {
-        let hijos = contenedor.children;
-        let icono = hijos[0];
-        let texto = hijos[1];
+        let icono = contenedor.querySelector("i"); // solo iconos
+        let texto = contenedor.querySelector(".btn-text");
+
         if (window.pageYOffset > 0) {
-            icono.classList.add("colorNuevoIcono");
+            if (icono) icono.classList.add("colorNuevoIcono");
+            if (texto) texto.classList.add("colorNuevoTexto");
         } else {
-            icono.classList.remove("colorNuevoIcono");
-        }
-        if (window.pageYOffset > 0) {
-            texto.classList.add("colorNuevoTexto");
-        } else {
-            texto.classList.remove("colorNuevoTexto");
+            if (icono) icono.classList.remove("colorNuevoIcono");
+            if (texto) texto.classList.remove("colorNuevoTexto");
         }
     }
 });
