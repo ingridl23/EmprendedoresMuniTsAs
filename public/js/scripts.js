@@ -4,20 +4,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const navbarCollapsible = document.body.querySelector("#mainNav");
     const navbarToggler = document.body.querySelector(".navbar-toggler");
 
-    var navbarShrink = function () {
+    const navbarShrink = function () {
         const header = document.querySelector("#header");
-        if (!navbarCollapsible) return;
         if (!header) return;
 
-        if (
-            window.scrollY === 0 &&
-            navbarToggler.getAttribute("aria-expanded") === "false"
-        ) {
-            navbarCollapsible.classList.remove("navbar-shrink");
+        if (window.scrollY === 0) {
             header.classList.remove("header-scrolled");
+            navbarCollapsible.classList.remove("navbar-shrink");
         } else {
-            navbarCollapsible.classList.add("navbar-shrink");
             header.classList.add("header-scrolled");
+            navbarCollapsible.classList.add("navbar-shrink");
         }
     };
 
