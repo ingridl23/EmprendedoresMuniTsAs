@@ -1,6 +1,6 @@
 <div class="custom-navbar-container">
     <header id="header" class="fixed-top header-scrolled">
-        <div class="container-fluid px-4 container">
+        <div class="container-fluid px-4 ">
             <!-- Navbar principal -->
             <nav class="navbar navbar-expand-lg navbar-light  py-2" id="mainNav">
                 <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
