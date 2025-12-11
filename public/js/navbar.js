@@ -1,7 +1,5 @@
 "use strict";
 
-console.log("Navbar JS cargado");
-
 document.addEventListener("DOMContentLoaded", function () {
     let contenedores = document.querySelectorAll(".containerLinksExternos");
     contenedores.forEach((contenedor) => {
@@ -9,21 +7,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     window.addEventListener("scroll", function () {
-        contenedores.forEach((contenedor) => {
-            asignarClase(contenedor);
-        });
+        if (this.window.pageXOffset == 0) {
+            contenedores.forEach((contenedor) => {
+                asignarClase(contenedor);
+            });
+        }
     });
 
     function asignarClase(contenedor) {
-        let icono = contenedor.querySelector("i"); // solo iconos
-        let texto = contenedor.querySelector(".btn-text");
-
+        let hijos = contenedor.children;
+        let icono = hijos[0];
+        let texto = hijos[1];
         if (window.pageYOffset > 0) {
-            if (icono) icono.classList.add("colorNuevoIcono");
-            if (texto) texto.classList.add("colorNuevoTexto");
+            icono.classList.add("colorNuevoIcono");
         } else {
-            if (icono) icono.classList.remove("colorNuevoIcono");
-            if (texto) texto.classList.remove("colorNuevoTexto");
+            icono.classList.remove("colorNuevoIcono");
+        }
+        if (window.pageYOffset > 0) {
+            texto.classList.add("colorNuevoTexto");
+        } else {
+            texto.classList.remove("colorNuevoTexto");
         }
     }
 });

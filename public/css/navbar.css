@@ -4,13 +4,15 @@
 /* Header principal */
 
 #header {
-    background: rgba(255, 255, 255, 0.95);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
     z-index: 1000;
-    backdrop-filter: none;
 }
 
 #header.header-scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-text {
@@ -401,13 +403,4 @@ html {
 
 #header.header-scrolled .btn-text {
     color: #4f5052;
-}
-
-
-/* Forzar color con scroll */
-
-#header.header-scrolled .servicio-icono,
-#header.header-scrolled .fas.fa-laptop,
-#header.header-scrolled .fas.fa-lock-open {
-    color: #48dac6 !important;
 }
