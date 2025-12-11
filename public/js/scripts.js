@@ -1,30 +1,21 @@
 console.log("Scripts JS cargado");
 
-// Antes de DOMContentLoaded
-function updateScrollClass() {
-    if (window.scrollY === 0) {
-        document.documentElement.classList.remove("scrolled");
-    } else {
-        document.documentElement.classList.add("scrolled");
-    }
-}
-
-// Ejecutar inmediatamente y al hacer scroll
-updateScrollClass();
-window.addEventListener("scroll", updateScrollClass);
-
 window.addEventListener("DOMContentLoaded", (event) => {
-    const navbarCollapsible = document.body.querySelector("#mainNav");
-    const navbarToggler = document.body.querySelector(".navbar-toggler");
+    const header = document.querySelector("#header");
+    const navbarCollapsible = document.querySelector("#mainNav");
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const responsiveNavItems = Array.from(
+        document.querySelectorAll("#navbarResponsive .nav-link")
+    );
 
-    const navbarShrink = function () {
-        const header = document.querySelector("#header");
+    // Función para manejar el scroll y aplicar clases
+    const navbarShrink = () => {
         if (!header) return;
 
         if (window.scrollY === 0) {
             header.classList.remove("header-scrolled");
             navbarCollapsible.classList.remove("navbar-shrink");
-            document.body.classList.add("at-top"); // clase para CSS
+            document.body.classList.add("at-top");
         } else {
             header.classList.add("header-scrolled");
             navbarCollapsible.classList.add("navbar-shrink");
@@ -32,54 +23,42 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
     };
 
-    // Shrink the navbar
+    // Ejecutar al cargar
     navbarShrink();
 
-    // Shrink the navbar when page is scrolled
-    document.addEventListener("scroll", navbarShrink);
+    // Ejecutar al hacer scroll
+    window.addEventListener("scroll", navbarShrink);
 
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector("#mainNav");
-    if (mainNav && bootstrap.ScrollSpy) {
-        bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
-            target: "#mainNav",
-            rootMargin: "0px 0px -40%",
+    // Toggle navbar mobile: solo abre/cierra, no modifica clases de scroll
+    if (navbarToggler) {
+        navbarToggler.addEventListener("click", () => {
+            navbarCollapsible.classList.toggle("show");
         });
     }
 
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll("#navbarResponsive .nav-link")
-    );
-
-    navbarToggler.addEventListener("click", () => {
-        const isExpanded =
-            navbarToggler.getAttribute("aria-expanded") === "true";
-        if (isExpanded && window.scrollY === 0) {
-            navbarCollapsible.classList.add("navbar-shrink");
-            header.classList.add("header-scrolled");
-        }
-        setTimeout(() => {
-            if (!isExpanded && window.scrollY === 0) {
-                navbarCollapsible.classList.remove("navbar-shrink");
-                header.classList.remove("header-scrolled");
-            }
-        }, 200);
-    });
-
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener("click", () => {
+    // Cerrar navbar al click en link (mobile)
+    responsiveNavItems.forEach((item) => {
+        item.addEventListener("click", () => {
             if (window.getComputedStyle(navbarToggler).display !== "none") {
                 navbarToggler.click();
             }
         });
     });
 
-    // Activate SimpleLightbox plugin for portfolio items
+    // Bootstrap ScrollSpy
+    if (navbarCollapsible && bootstrap.ScrollSpy) {
+        bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
+            target: "#mainNav",
+            rootMargin: "0px 0px -40%",
+        });
+    }
+
+    // SimpleLightbox para portfolio
     new SimpleLightbox({
         elements: "#portfolio a.portfolio-box",
     });
 
-    // ) Intersection Observer para animaciones scroll
+    // Intersection Observer para animaciones
     const observer = new IntersectionObserver(
         (entries, obs) => {
             entries.forEach((entry) => {
@@ -94,20 +73,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     document
         .querySelectorAll(
-            ".section-services, .seccion-tenes-emprendimiento, .portfolio-box,.text-white"
+            ".section-services, .seccion-tenes-emprendimiento, .portfolio-box, .text-white"
         )
         .forEach((el) => observer.observe(el));
-
-    /*   window.addEventListener("load", () => {
-        document
-            .querySelectorAll(
-                ".section-services, .seccion-tenes-emprendimiento, .portfolio-box, .text-white"
-            )
-            .forEach((el) => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    el.classList.add("visible");
-                }
-            });
-    });*/
 });
