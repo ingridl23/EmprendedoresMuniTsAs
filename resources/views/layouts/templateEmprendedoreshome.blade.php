@@ -41,280 +41,301 @@
 <body>
     <div class="custom-navbar-container">
         <header id="header" class="fixed-top header-scrolled">
-            <div class="container-fluid px-4 container">
-                <!-- Navbar principal -->
-                <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
-                    <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
+            <div class="custom-navbar-container">
+                <header id="header" class="fixed-top header-scrolled">
+                    <div class="container-fluid px-6 container">
+                        <!-- Navbar principal -->
+                        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
+                            <div class="container px-4 px-lg-6 d-flex align-items-center justify-content-between">
 
-                        <!-- Logo y marca -->
-                        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                            <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
-                                alt="Logo Tres Arroyos" class="logo-img me-2">
-                            <span class="brand-text"></span>
-                        </a>
-
-                        <!-- Botones de toggle para móvil -->
-                        <button class="navbar-toggler navbar-toggler-right d-lg-none" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <!-- Menú de navegación principal -->
-                        <div class="collapse navbar-collapse" id="navbarResponsive">
-                            <ul class="navbar-nav mx-auto my-2 my-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link"href="{{ url('/programas') }}">Programas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
-                                </li>
-                                @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/solicitantes') }}">Solicitantes</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('emprendedores/excel') }}">Vigencia
-                                            emprendedores</a>
-                                    </li>
-                                @else
-                                    <li class="nav-item serParte">
-                                        <a class="nav-link" href="{{ url('/formar/parte') }}">Ser parte</a>
-                                    </li>
-                                @endif
-                            </ul>
-
-                            <!-- Botones de servicios externos -->
-                            <div class="get-started-buttons d-flex align-items-center">
-                                <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
-                                    class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
-                                            slt class=" img-btn-logonav mb-1">
-                                        <span class="btn-text">MiTresa</span>
-                                    </div>
+                                <!-- Logo y marca -->
+                                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                                    <img src="{{ asset('assets/img/iconos/oficinaempleodireccioncomercio-02.png') }}"
+                                        alt="Logo Tres Arroyos" class="logo-img me-2">
+                                    <span class="brand-text"></span>
                                 </a>
 
-                                <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
-                                    class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <i class="fa-solid fa-laptop servicio-icono"></i>
-                                        <span class="btn-text">Autogestion</span>
+                                <!-- Botones de toggle para móvil -->
+                                <button class="navbar-toggler navbar-toggler-right d-lg-none" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                                    aria-controls="navbarResponsive" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
 
-                                    </div>
-                                </a>
+                                <!-- Menú de navegación principal -->
+                                <div class="collapse navbar-collapse" id="navbarResponsive">
+                                    <ul class="navbar-nav mx-auto my-2 my-lg-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link"href="{{ url('/programas') }}">Programas</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/noticias') }}">Noticias</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/emprendedores') }}">Emprendedores</a>
+                                        </li>
+                                        @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ url('/solicitantes') }}">Solicitantes</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ url('emprendedores/excel') }}">Vigencia
+                                                    emprendedores</a>
+                                            </li>
+                                        @else
+                                            <li class="nav-item serParte">
+                                                <a class="nav-link" href="{{ url('/formar/parte') }}">Ser parte</a>
+                                            </li>
+                                        @endif
+                                    </ul>
 
-                                <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
-                                    class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
-
-                                        </i>
-                                        <span class="btn-text">Gobierno<br>Abierto</span>
-                                    </div>
-                                </a>
-
-                                @if (Auth::check() && Auth::user()->hasRole('admin'))
-                                    <form action="/logout" method="post"
-                                        class="get-started-btn scrollto btn-contact cerrarSesion">
-                                        @csrf
-                                        <button type="submit">
+                                    <!-- Botones de servicios externos -->
+                                    <div class="get-started-buttons d-flex align-items-center">
+                                        <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
+                                            class="get-started-btn scrollto">
                                             <div class="get-started-group font-color-bl containerLinksExternos">
-                                                <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
-                                                <span class="btn-text">cerrar<br>sesion</span>
+                                                <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
+                                                    slt class=" img-btn-logonav mb-1">
+                                                <span class="btn-text">MiTresa</span>
                                             </div>
-                                        </button>
-                                    </form>
-                                @else
-                                    <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                        <div class="get-started-group font-color-bl containerLinksExternos">
-                                            <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
-                                            </i>
-                                            <span class="btn-text">Panel<br>Admin</span>
-                                        </div>
-                                    </a>
-                                @endif
+                                        </a>
+
+                                        <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
+                                            class="get-started-btn scrollto">
+                                            <div class="get-started-group font-color-bl containerLinksExternos">
+                                                <i class="fa-solid fa-laptop servicio-icono"></i>
+                                                <span class="btn-text">Autogestion</span>
+
+                                            </div>
+                                        </a>
+
+                                        <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
+                                            class="get-started-btn scrollto">
+                                            <div class="get-started-group font-color-bl containerLinksExternos">
+                                                <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
+
+                                                </i>
+                                                <span class="btn-text">Gobierno<br>Abierto</span>
+                                            </div>
+                                        </a>
+
+                                        @if (Auth::check() && Auth::user()->hasRole('admin'))
+                                            <form action="/logout" method="post"
+                                                class="get-started-btn scrollto btn-contact cerrarSesion">
+                                                @csrf
+                                                <button type="submit">
+                                                    <div
+                                                        class="get-started-group font-color-bl containerLinksExternos">
+                                                        <i
+                                                            class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
+                                                        <span class="btn-text">cerrar<br>sesion</span>
+                                                    </div>
+                                                </button>
+                                            </form>
+                                        @else
+                                            <a href="{{ url('/showlogin') }}"
+                                                class="get-started-btn scrollto btn-contact">
+                                                <div class="get-started-group font-color-bl containerLinksExternos">
+                                                    <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
+                                                    </i>
+                                                    <span class="btn-text">Panel<br>Admin</span>
+                                                </div>
+                                            </a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+
+            <!-- End Header -->
+
+            <!--  ********************************************************************* -->
+
+
+
+            <!-- Masthead-->
+            <header class="masthead headerHome">
+                <div class="container px-4 px-lg-5 h-100">
+                    <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                        <div class="col-lg-8 align-self-end">
+                            <h1 class="text-white font-weight-bold">Bienvenidos a la Oficina de Empleo y Capacitación
+                                de Tres
+                                Arroyos </h1>
+                        </div>
+                        <div class="col-lg-8 align-self-baseline">
+                            <p class="text-white-75 ">
+                                Desde la Oficina de Empleo y Capacitación de Tres Arroyos trabajamos diariamente para
+                                acompañar
+                                a quienes buscan oportunidades laborales y
+                                a quienes desean mejorar sus habilidades a través de la formación.</p>
+
+                            <p class="text-white-75 ">
+                                Nuestro objetivo es ser el vínculo entre quienes buscan trabajo y las empresas que
+                                necesitan
+                                incorporar talento local, promoviendo la inclusión laboral,
+                                el desarrollo profesional y el crecimiento de nuestra comunidad.
+
+                            </p>
+                            <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
+                            <br>
+                            <a class="btn btn-light" style="text-color: rgb(189, 182, 182) !important; "
+                                href="{{ url('/formar/parte') }}">Quiero
+                                Ser Parte</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+
+
+            <!-- About-->
+            <section class="page-section custom-about" id="about">
+
+
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <p class="text-white-75 mb-5">Contamos con programas, beneficios e incentivos para
+                                contratar y
+                                capacitar a nuevo personal, además de brindar información útil para propietarios,
+                                referentes de
+                                empresas y áreas de Recursos Humanos. </p>
+
+                            <p class="text-white-75 mb-5">Te invitamos a recorrer nuestra página y a sumarte a esta red
+                                de
+                                oportunidades.
+
+                            </p>
+
+                            <h2 class="text-white mt-0">¿Quiénes pueden participar?</h2>
+                            <hr class="divider divider-light" />
+                            <p class="text-white-75 ">
+
+
+                            <details class="details btn btn-light">
+                                <p> Este programa forma parte de las acciones promovidas por el Municipio de Tres
+                                    Arroyos,
+                                    para el desarrollo local y el apoyo a emprendimientos que sean sustentables en el
+                                    mediano y
+                                    largo plazo y que aporten al crecimiento productivo de la región.
+
+                                    Se tiene como objetivo general potenciar el desarrollo de las micro y pequeñas
+                                    empresas, así
+                                    como el apoyo a nuevos emprendimientos.
+                                </p>
+
+                            </details>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
+            <!-- Services-->
+            <section class="page-section section-services" id="services">
+                <div class="container px-4 px-lg-5">
+                    <h2 class="text-center mt-0">Apoyamos el talento local, visibilizamos el trabajo cultural</h2>
+
+                    <div class="row justify-content-center  align-baseline">
+                        <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                            <div class="mt-5">
+                                <div class="mb-2"><i
+                                        class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                                </div>
+                                <img src="{{ asset('assets/img/iconos/empleador.png') }}" class="divider">
+                                <h3 class="h4 mb-2">¿Sos empleador?</h3>
+                                <p class="text-muted mb-0">Podrás asesorarte acerca de los programas de empleo y
+                                    capacitación
+                                    vigentes.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                            <div class="mt-5">
+                                <div class="mb-2"><i
+                                        class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                                </div>
+                                <img src="{{ asset('assets/img/iconos/analitica.png') }}" class="divider">
+                                <h3 class="h4 mb-2">¿Tenés un emprendimiento?</h3>
+                                <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes
+                                    quieran
+                                    iniciar un emprendimiento o reforzar uno existente.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
+                            <div class="mt-5">
+                                <div class="mb-2"><i
+                                        class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
+                                </div>
+                                <br>
+                                <img src="{{ asset('assets/img/iconos/curriculum-vitae.png') }}" class="divider">
+                                <h3 class="h4 mb-2">¿Te encontras en búsqueda de empleo?</h3>
+
+                                <p class="text-muted mb-0">Recibimos tu CV y llevamos adelante acciones para la
+                                    búsqueda de
+                                    empleo y la intermediación laboral.</p>
                             </div>
                         </div>
                     </div>
-                </nav>
-            </div>
-        </header>
-    </div>
-
-    <!-- End Header -->
-
-    <!--  ********************************************************************* -->
 
 
-
-    <!-- Masthead-->
-    <header class="masthead headerHome">
-        <div class="container px-4 px-lg-5 h-100">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Bienvenidos a la Oficina de Empleo y Capacitación de Tres
-                        Arroyos </h1>
-                </div>
-                <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 ">
-                        Desde la Oficina de Empleo y Capacitación de Tres Arroyos trabajamos diariamente para acompañar
-                        a quienes buscan oportunidades laborales y
-                        a quienes desean mejorar sus habilidades a través de la formación.</p>
-
-                    <p class="text-white-75 ">
-                        Nuestro objetivo es ser el vínculo entre quienes buscan trabajo y las empresas que necesitan
-                        incorporar talento local, promoviendo la inclusión laboral,
-                        el desarrollo profesional y el crecimiento de nuestra comunidad.
-
-                    </p>
-                    <h5 class="text-white-75"> ¡Estamos para ayudarte a dar el próximo paso!</h5>
-                    <br>
-                    <a class="btn btn-light" style="text-color: rgb(189, 182, 182) !important; "
-                        href="{{ url('/formar/parte') }}">Quiero
-                        Ser Parte</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-
-
-    <!-- About-->
-    <section class="page-section custom-about" id="about">
-
-
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <p class="text-white-75 mb-5">Contamos con programas, beneficios e incentivos para contratar y
-                        capacitar a nuevo personal, además de brindar información útil para propietarios, referentes de
-                        empresas y áreas de Recursos Humanos. </p>
-
-                    <p class="text-white-75 mb-5">Te invitamos a recorrer nuestra página y a sumarte a esta red de
-                        oportunidades.
-
-                    </p>
-
-                    <h2 class="text-white mt-0">¿Quiénes pueden participar?</h2>
-                    <hr class="divider divider-light" />
-                    <p class="text-white-75 ">
-
-
-                    <details class="details btn btn-light">
-                        <p> Este programa forma parte de las acciones promovidas por el Municipio de Tres Arroyos,
-                            para el desarrollo local y el apoyo a emprendimientos que sean sustentables en el mediano y
-                            largo plazo y que aporten al crecimiento productivo de la región.
-
-                            Se tiene como objetivo general potenciar el desarrollo de las micro y pequeñas empresas, así
-                            como el apoyo a nuevos emprendimientos.
-                        </p>
-
-                    </details>
-                    </p>
 
                 </div>
-            </div>
-        </div>
+
+
+            </section>
+
+            @include('layouts.componentProgramas')
+            <br>
+            <br>
+            <br>
+            @include('layouts.sectionredes')
+
+
+            <a href="https://wa.me/2983603748?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de empleo"
+                class="whatsapp-float" target="_blank" rel="noopener">
+
+                <img class="whatsapp" src="assets/img/iconos/whatsapp.png">
+            </a>
 
 
 
-    </section>
-    <!-- Services-->
-    <section class="page-section section-services" id="services">
-        <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Apoyamos el talento local, visibilizamos el trabajo cultural</h2>
+            <!-- barra de navegacion footer -->
+            @include('emprendedor.footer')
 
-            <div class="row justify-content-center  align-baseline">
-                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
-                        </div>
-                        <img src="{{ asset('assets/img/iconos/empleador.png') }}" class="divider">
-                        <h3 class="h4 mb-2">¿Sos empleador?</h3>
-                        <p class="text-muted mb-0">Podrás asesorarte acerca de los programas de empleo y capacitación
-                            vigentes.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
-                        </div>
-                        <img src="{{ asset('assets/img/iconos/analitica.png') }}" class="divider">
-                        <h3 class="h4 mb-2">¿Tenés un emprendimiento?</h3>
-                        <p class="text-muted mb-0">Brindamos asistencia técnica y financiera para quienes quieran
-                            iniciar un emprendimiento o reforzar uno existente.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 text-center seccion-tenes-emprendimiento">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class=" fs-1 text-primary  style="color:#004d4d!important;"></i>
-                        </div>
-                        <br>
-                        <img src="{{ asset('assets/img/iconos/curriculum-vitae.png') }}" class="divider">
-                        <h3 class="h4 mb-2">¿Te encontras en búsqueda de empleo?</h3>
+            <!--JQuery para el manejo de link internos en Programas-->
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-                        <p class="text-muted mb-0">Recibimos tu CV y llevamos adelante acciones para la búsqueda de
-                            empleo y la intermediación laboral.</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Bootstrap JS (NECESARIO para el navbar) -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
-        </div>
-
-
-    </section>
-
-    @include('layouts.componentProgramas')
-    <br>
-    <br>
-    <br>
-    @include('layouts.sectionredes')
-
-
-    <a href="https://wa.me/2983603748?text=¡Hola, contactanos a traves de nuestro whatsapp, muchas gracias , oficina de empleo"
-        class="whatsapp-float" target="_blank" rel="noopener">
-
-        <img class="whatsapp" src="assets/img/iconos/whatsapp.png">
-    </a>
-
-
-
-    <!-- barra de navegacion footer -->
-    @include('emprendedor.footer')
-
-    <!--JQuery para el manejo de link internos en Programas-->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-    <!-- Bootstrap JS (NECESARIO para el navbar) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Bootstrap core JS-->
-    <script src="{{ asset('js/navbar.js') }} "></script>
-    <script src="{{ asset('js/scripts.js') }} "></script>
-    <script src="{{ asset('js/carruselProgramasLinks.js') }} "></script>
+            <!-- Bootstrap core JS-->
+            <script src="{{ asset('js/navbar.js') }} "></script>
+            <script src="{{ asset('js/scripts.js') }} "></script>
+            <script src="{{ asset('js/carruselProgramasLinks.js') }} "></script>
 
 
 
 
 
-    <!-- SimpleLightbox plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <!-- SimpleLightbox plugin JS-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 
 
 
-    <!--Carrusel-->
-    {{--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+            <!--Carrusel-->
+            {{--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 
 </body>
 
