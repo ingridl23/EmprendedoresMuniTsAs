@@ -29,10 +29,10 @@
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/sectionredes.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styleslogin.css') }}" rel="stylesheet" />
+    {{--    <link href="{{ asset('css/form.css') }}" rel="stylesheet" /> --}}
+
 
 
 
@@ -44,7 +44,8 @@
             <div class="container-fluid px-6 container">
                 <!-- Navbar principal -->
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
-                    <div class="container px-4 px-lg-5 d-flex align-items-center justify-content-between">
+                    <div class="container px-4 px-lg-6 d-flex align-items-center justify-content-between">
+
 
                         <!-- Logo y marca -->
                         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
@@ -90,18 +91,18 @@
                             <!-- Botones de servicios externos -->
                             <div class="get-started-buttons d-flex align-items-center">
                                 <a href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"
-                                    class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
+                                    class="get-started-btn crollto">
+                                    <div class="get-started-group font-color-bl">
                                         <img src="{{ asset('assets/img/iconos/MiTr-remove-removebg-preview.png') }}"
-                                            slt class=" img-btn-logonav mb-1">
+                                            slt class=" img-btn-logonav mb-1" alt="Imagen municipalidad">
                                         <span class="btn-text">MiTresa</span>
                                     </div>
                                 </a>
 
                                 <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
-                                        <i class="fa-solid fa-laptop servicio-icono"></i>
+                                    <div class="get-started-group font-color-bl">
+                                        <i class="fa-solid fa-laptop  servicio-icono"></i>
                                         <span class="btn-text">Autogestion</span>
 
                                     </div>
@@ -109,28 +110,27 @@
 
                                 <a href="https://www.tresarroyos.gov.ar/transparencia-fiscal" target="_blank"
                                     class="get-started-btn scrollto">
-                                    <div class="get-started-group font-color-bl containerLinksExternos">
+                                    <div class="get-started-group font-color-bl">
                                         <i class="fas fa-lock-open  img-btn-logonav servicio-icono">
 
                                         </i>
                                         <span class="btn-text">Gobierno<br>Abierto</span>
                                     </div>
                                 </a>
-
                                 @if (Auth::check() && Auth::user()->hasRole('admin'))
                                     <form action="/logout" method="post"
                                         class="get-started-btn scrollto btn-contact cerrarSesion">
                                         @csrf
                                         <button type="submit">
-                                            <div class="get-started-group font-color-bl containerLinksExternos">
+                                            <div class="get-started-group font-color-bl">
                                                 <i class="fa fa-user-circle img-btn-logonav servicio-icono  "></i>
-                                                <span class="btn-text">cerrar<br>sesion</span>
+                                                <span class="btn-text">cerrar<br>sesión</span>
                                             </div>
                                         </button>
                                     </form>
                                 @else
                                     <a href="{{ url('/showlogin') }}" class="get-started-btn scrollto btn-contact">
-                                        <div class="get-started-group font-color-bl containerLinksExternos">
+                                        <div class="get-started-group font-color-bl">
                                             <i class="fa fa-user-circle img-btn-logonav servicio-icono  ">
                                             </i>
                                             <span class="btn-text">Panel<br>Admin</span>
@@ -293,12 +293,11 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    <!-- Bootstrap JS (NECESARIO para el navbar) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <!-- Bootstrap core JS-->
-    <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
+
     <script src="{{ asset('js/carruselProgramasLinks.js') }} "></script>
 
 
@@ -307,7 +306,7 @@
 
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    {{--   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> --}}
 
 
 
