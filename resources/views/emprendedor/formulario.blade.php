@@ -425,27 +425,27 @@
                                 class="asterisco grupo-empleo">*</span></label>
                         <div class="field-group  group-subconjuntos">
 
-                            <div class="opcion-radio">
-                                <input type="radio" id="formacion-primario" name="formacion" value="primario"
-                                    required {{ old('formacion') == 'primario' ? 'checked' : '' }}>
-                                <h6>Primario completo</h6>
-                            </div>
+                            <label class="opcion-radio">
+                                <input type="radio" name="formacion" value="primario" required
+                                    {{ old('formacion') == 'primario' ? 'checked' : '' }}>
+                                <span>Primario completo</span>
+                            </label>
 
-                            <div class="opcion-radio">
-                                <input type="radio" id="formacion-primario" name="formacion" value="secundario"
-                                    required {{ old('formacion') == 'secundario' ? 'checked' : '' }}>
-                                <h6>Secundario completo</h6>
-                            </div>
-                            <div class="opcion-radio">
-                                <input type="radio" id="formacion-primario" name="formacion" value="terciario"
-                                    required {{ old('formacion') == 'terciario' ? 'checked' : '' }}>
-                                <h6>terciario completo</h6>
-                            </div>
-                            <div class="opcion-radio">
-                                <input type="radio" id="formacion-primario" name="formacion" value="curso"
-                                    required {{ old('formacion') == 'curso' ? 'checked' : '' }}>
-                                <h6>Curso/s completo/s</h6>
-                            </div>
+                            <label class="opcion-radio">
+                                <input type="radio" name="formacion" value="secundario" required
+                                    {{ old('formacion') == 'primario' ? 'checked' : '' }}>
+                                <span>Secundario completo</span>
+                            </label>
+                            <label class="opcion-radio">
+                                <input type="radio" name="formacion" value="terciario" required
+                                    {{ old('formacion') == 'primario' ? 'checked' : '' }}>
+                                <span>Terciario completo</span>
+                            </label>
+                            <label class="opcion-radio">
+                                <input type="radio" name="formacion" value="curso" required
+                                    {{ old('formacion') == 'primario' ? 'checked' : '' }}>
+                                <span>Curso/s completo/s</span>
+                            </label>
                             @error('formacion')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror

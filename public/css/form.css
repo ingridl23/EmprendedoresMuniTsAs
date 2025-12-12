@@ -393,28 +393,47 @@ section.section-new-entrepreneur {
 }
 
 
-/* ===============================
-   FIX para PRIMARIO / SECUNDARIO / TERCIARIO / UNIVERSITARIO
-   =============================== */
+/* --------------------
+   Radios Formación – Fix final
+--------------------- */
 
-@media (max-width: 768px) {
+.group-subconjuntos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.group-subconjuntos .opcion-radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.group-subconjuntos .opcion-radio input {
+    transform: scale(1.2);
+    margin-bottom: 0.5rem;
+}
+
+.group-subconjuntos .opcion-radio span {
+    font-size: 1rem;
+    display: block;
+    max-width: 200px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 575px) {
     .group-subconjuntos {
         flex-direction: column !important;
-        align-items: stretch !important;
-        justify-content: flex-start !important;
-        gap: 1rem !important;
-        width: 100% !important;
+        gap: 1rem;
     }
     .group-subconjuntos .opcion-radio {
         width: 100% !important;
-        text-align: left !important;
-        margin: 0 !important;
-        padding: 0.5rem 0 !important;
-    }
-    .group-subconjuntos h6 {
-        font-size: 1rem !important;
-        white-space: normal !important;
-        max-width: 100% !important;
-        text-align: left !important;
     }
 }
