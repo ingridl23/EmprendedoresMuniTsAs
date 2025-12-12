@@ -164,9 +164,7 @@ nav form {
 
 .form {
     width: 100%;
-    /* universal y seguro */
-    max-width: 600px;
-    /* opcional para que no se estire mucho en desktop */
+    max-width: 100% !important;
     margin: auto;
 }
 
@@ -195,8 +193,8 @@ nav form {
         width: 100%;
     }
     div.col-lg-6 {
-        justify-content: center;
-        display: flex;
+        display: block !important;
+        justify-content: unset !important;
     }
 }
 
@@ -346,4 +344,77 @@ section.section-new-entrepreneur {
     margin-top: 0;
     padding-top: 0;
     margin-bottom: 8rem;
+}
+
+
+/* ==================================================
+   FIX DEFINITIVO PARA VERSION MOBILE
+   ================================================== */
+
+
+/* Quitar la restricción de ancho del container en mobile */
+
+@media (max-width: 768px) {
+    .container,
+    .container-fluid,
+    .px-4 {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    /* Columnas a ancho completo real */
+    .col-lg-6,
+    .col-xl-6,
+    .col-lg-8 {
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding: 0 !important;
+    }
+    /* Formulario ancho completo */
+    .form {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem !important;
+    }
+    /* Radio buttons apilados */
+    .group-subconjuntos {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 1rem !important;
+    }
+    /* Selects */
+    select,
+    .ciudad-select,
+    #localidadesDeLaCiudad {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+
+/* ===============================
+   FIX para PRIMARIO / SECUNDARIO / TERCIARIO / UNIVERSITARIO
+   =============================== */
+
+@media (max-width: 768px) {
+    .group-subconjuntos {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+    .group-subconjuntos .opcion-radio {
+        width: 100% !important;
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 0.5rem 0 !important;
+    }
+    .group-subconjuntos h6 {
+        font-size: 1rem !important;
+        white-space: normal !important;
+        max-width: 100% !important;
+        text-align: left !important;
+    }
 }
