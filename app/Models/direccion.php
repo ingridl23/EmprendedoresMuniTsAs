@@ -32,7 +32,7 @@ class direccion extends Model
     /** @var string $table Nombre de la tabla asociada */
     protected $table = 'direccion'; // tu tabla real
 
-    /** @var array $fillable Campos asignables en masa */
+    /** @var array<int, string> $fillable Campos asignables en masa */
     protected $fillable = [
         'ciudad',
         'localidad',
@@ -56,7 +56,11 @@ class direccion extends Model
     /**
      * Dar de alta una direccion en el sistema:
      *
-     * @return response, devuelve una direccion asociada a un emprendedor.
+     * @param string $ciudad
+     * @param string $localidad
+     * @param string $calle
+     * @param int $altura
+     * @return int Devuelve el id de la direccion creada asociada a un emprendedor.
      */
 
     public static function crearDireccion($ciudad, $localidad, $calle, $altura)
@@ -74,8 +78,8 @@ class direccion extends Model
 
     /**
      * Modificar una direccion en el sistema:
-     * @param mixed $direccion, se recibe la direccion a modificar.
-     * @return response, devuelve una direccion modificada asociada a un emprendiiento/emprendedor.
+     * @param direccion $direccion Se recibe la direccion a modificar.
+     * @return bool Devuelve true si la direccion se guardó.
      */
     public static function editarEmprendimiento($direccion)
     {
@@ -85,8 +89,8 @@ class direccion extends Model
 
     /**
      * Dar de baja una direccion en el sistema:
-     * @param mixed $direccion, se recibe la direccion para eliminar.
-     * @return response, devuelve una direccion eliminada asociada a un emprendedor.
+     * @param direccion $direccion Se recibe la direccion para eliminar.
+     * @return bool|null Devuelve true si la direccion se eliminó.
      */
 
     public static function eliminarEmprendimiento($direccion)

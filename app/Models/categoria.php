@@ -28,7 +28,7 @@ class Categoria extends Model
     protected $table = "categoria";
 
     use HasFactory;
-    /** @var array $fillable Campos asignables en masa */
+    /** @var array<int, string> $fillable Campos asignables en masa */
     protected $fillable = [
         'categoria'
     ];

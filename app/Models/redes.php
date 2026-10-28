@@ -11,13 +11,12 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * Representa las redes sociales de un emprendimiento/emprendedor dentro del sistema.
  *
  * @package App\Models
- * @property $id
- * @property $redes_id
- * @property $created_at
- * @property $updated_at
- * @property $instagram
- * @property $facebook
- * @property $whatsapp
+ * @property int $id
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property string|null $instagram
+ * @property string|null $facebook
+ * @property int $whatsapp
  * @package App\Models
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -27,7 +26,7 @@ class Redes extends Model
 
     /** @var string $table Nombre de la tabla asociada */
     protected $table = 'redes'; // tu tabla real
-    /** @var array $fillable Campos asignables en masa */
+    /** @var array<int, string> $fillable Campos asignables en masa */
     protected $fillable = [
         'instagram',
         'facebook',
@@ -50,8 +49,8 @@ class Redes extends Model
     /**
      * Modificar las redes sociales vinculadas a un emprendimiento/emprendedor:
      *  Permite al usuario administrador modificar los datos de las redes sociales de un emprendimiento/emprendedor asociado y vigente en el sistema.
-     * @param mixed $redes, redes seleccionadas a modificar.
-     * @return Response, devuelve el conjunto de redes sociales de un emprendimiento/emprendedor modificado.
+     * @param Redes $redes Redes seleccionadas a modificar.
+     * @return bool Devuelve true si las redes sociales se guardaron.
      */
     public static function editarEmprendimiento($redes)
     {
@@ -74,8 +73,8 @@ class Redes extends Model
     /**
      * Dar de baja las redes sociales vinculadas a un emprendimiento/emprendedor:
      *  Permite al usuario administrador eliminar los datos de las redes sociales de un emprendimiento/emprendedor asociado y eliminado del sistema.
-     * @param mixed $redes, redes seleccionadas para dar de baja.
-     * @return Response, devuelve el conjunto de redes sociales de un emprendimiento/emprendedor eliminado.
+     * @param Redes $redes Redes seleccionadas para dar de baja.
+     * @return bool|null Devuelve true si las redes sociales se eliminaron.
      */
 
 
@@ -92,7 +91,7 @@ class Redes extends Model
      * @param mixed $instagram
      * @param mixed $facebook
      * @param mixed $whatsapp
-     * @return Response, devuelve el conjunto por id de las redes sociales agregadas en el sistema que estan asociadas a un nuevo emprendimiento/emprendedor.
+     * @return int Devuelve el id de las redes sociales agregadas en el sistema que estan asociadas a un nuevo emprendimiento/emprendedor.
      */
     public static function crearRedes($instagram, $facebook, $whatsapp)
     {

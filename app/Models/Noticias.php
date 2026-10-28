@@ -14,13 +14,14 @@ use Illuminate\Support\Str;
  * Representa una noticia dentro del sistema.
  *
  * @package App\Models
- * @property $id
- * @property $created_at
- * @property $updated_at
- * @property $nombre
- * @property $descripcion
- * @property $categoria
- * @property $imagen
+ * @property int $id
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property string $titulo
+ * @property string $descripcion
+ * @property string $categoria
+ * @property string $imagen
+ * @property string $imagen_public_id
  * @package App\Models
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -36,7 +37,7 @@ class Noticias extends Model
         return NoticiasFactory::new();
     }
     use HasFactory;
-    /** @var array $fillable Campos asignables en masa */
+    /** @var array<int, string> $fillable Campos asignables en masa */
     protected $fillable = [
         'titulo',
         'descripcion',

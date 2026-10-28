@@ -18,14 +18,14 @@ use App\Models\categoria;
  * Representa una emprendedor dentro del sistema.
  *
  * @package App\Models
- * @property $id
- * @property $nombre
- * @property $descripcion
- * @property $categoria_id
- * @property $redes_id
- * @property $horario_id
- * @property $created_at
- * @property $updated_at
+ * @property int $id
+ * @property string $nombre
+ * @property string $descripcion
+ * @property int $categoria_id
+ * @property int $redes_id
+ * @property int $direccion_id
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -46,7 +46,7 @@ class Emprendedor extends Model
 
 
 
-    /** @var array $fillable Campos asignables en masa */
+    /** @var array<int, string> $fillable Campos asignables en masa */
     protected $fillable = [
         'nombre',
         'descripcion',
@@ -202,7 +202,8 @@ class Emprendedor extends Model
     /**
      * Eliminar un emprendimiento con sus redes, direccion y horarios asociados:
      *
-     * @param int id, ID único del emprendimiento seleccionado.
+     * @param Emprendedor $emprendimiento Emprendimiento seleccionado.
+     * @return bool|null Devuelve true si el emprendimiento se eliminó.
      *  @throws \Exception Si ocurre un error al persistir datos.
      */
     public static function eliminarEmprendimiento($emprendimiento)

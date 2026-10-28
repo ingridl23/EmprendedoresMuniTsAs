@@ -11,16 +11,17 @@ use Spatie\Permission\Traits\HasRoles;
 
 
 /**
- * @class Redes
+ * @class User
  * Representa los usuarios dentro del sistema.
- * @property $nombre
- * @property $email
- * @property $password
- * @property $redes_id
- * @property $created_at
- * @property $updated_at
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property \Carbon\Carbon|null $email_verified_at
+ * @property string $password
+ * @property string|null $remember_token
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
  * @package App\Models
- * @mixin \Illuminate\Database\Eloquent\Factories\HasFactory
  */
 
 class User extends Authenticatable
@@ -32,7 +33,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    /** @var array $fillable Campos asignables en masa */
+    /** @var array<int, string> $fillable Campos asignables en masa */
     protected $fillable = [
         'name',
         'email',

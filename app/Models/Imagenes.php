@@ -12,12 +12,13 @@ use App\Models\Emprendedor;
  *  Representa una imagen dentro del sistema.
  *
  * @package App\Models
- * @property $img_id , Identificador unico de la imagen
- * @property $emprendedor_id, Identificador unico del emprendimiento.
- * @property $url , ruta de almacenamiento para el recurso.
+ * @property int $id Identificador unico de la imagen
+ * @property int $emprendedor_id Identificador unico del emprendimiento.
+ * @property string|null $url Ruta de almacenamiento para el recurso.
+ * @property string|null $public_id Identificador de la imagen en Cloudinary.
  *
- * @property $created_at , fechas de alta
- * @property $updated_at , fecha de modificacion
+ * @property \Carbon\Carbon|null $created_at Fecha de alta
+ * @property \Carbon\Carbon|null $updated_at Fecha de modificacion
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -34,7 +35,7 @@ class Imagenes extends Model
         return ImagenesFactory::new();
     }
     use HasFactory;
-    /** @var array $fillable Campos asignables en masa */
+    /** @var array<int, string> $fillable Campos asignables en masa */
     protected $fillable = [
         'id',
         'url',

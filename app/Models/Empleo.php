@@ -14,28 +14,28 @@ use Illuminate\Database\Eloquent\Model;
  * Representa un solicitante de empleo dentro del sistema.
  *
  * @package App\Models
- * @property $id
- * @property $nombre
- * @property $asunto
- * @property $email
- * @property $telefono
- * @property $edad
- * @property $dni
- * @property $ciudad
- * @property $localidad
- * @property $formacion
- * @property $nombre_curso
- * @property $description
- *  @property $referencia_laboral
- *  @property $referencia_rubro
- *  @property $referencia_actividad
- *  @property $contratista
- *  @property $referencia_telefonica
- * @property $cud
- * @property $dependencia
- * @property $cv_path
- * @property $created_at
- * @property $updated_at
+ * @property int $id
+ * @property string $nombre
+ * @property string $asunto
+ * @property string $email
+ * @property string|null $telefono
+ * @property int $edad
+ * @property int $dni
+ * @property string $ciudad
+ * @property string $localidad
+ * @property string $formacion
+ * @property string|null $nombre_curso
+ * @property string|null $description
+ * @property string|null $referencia_laboral
+ * @property string|null $referencia_rubro
+ * @property string|null $referencia_actividad
+ * @property string|null $contratista
+ * @property string $referencia_telefonica
+ * @property bool $cud
+ * @property bool $dependencia
+ * @property string|null $cv_path
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -55,7 +55,7 @@ class Empleo extends Model
 
     use HasFactory;
 
-    /** @var array $fillable Campos asignables en masa */
+    /** @var array<int, string> $fillable Campos asignables en masa */
     protected $fillable = [
         'nombre',
         'asunto',
