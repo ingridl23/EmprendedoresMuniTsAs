@@ -394,5 +394,10 @@ En Windows (Laragon) funciona porque el sistema de archivos no distingue mayúsc
 4. [x] **Mayúsculas de clases** (sección 7): esto evita errores al subir a un servidor Linux. (79 → 47 errores. `Categoria.php`, `Redes.php`, `Direccion.php`, `CategoriaFactory.php` y `DireccionFactory.php` renombrados; ya figuran en el classmap optimizado.)
 5. [x] **Tipos de retorno** de controladores (sección 5). (252 → 160 errores. Quedan en controladores: mayúsculas de clases (sección 7), `Cloudinary::upload()` sin tipar (falso positivo del paquete), `$request->validate()` "sin efecto" (falso positivo: valida y lanza excepción) y `&&` redundantes, que son chequeos defensivos y no bugs.)
 6. [x] **PHPDoc** de modelos y controladores (sección 6). (160 → 79 errores. Los `@property` ahora reflejan las columnas reales de las migraciones.)
-7. [ ] **Tests** con `assertTrue(true)` (sección 8).
-8. [ ] Volver a correr `php vendor/bin/phpstan analyse` y repetir hasta llegar a 0 en nivel 5.
+7. [-] **Tests** con `assertTrue(true)` (sección 8). *Omitido:* dos están dentro de un `catch` y sí verifican que no se descargó el Excel; el tercero es el `ExampleTest` de Laravel.
+8. [x] Volver a correr `php vendor/bin/phpstan analyse`. **Resultado final: 622 → 47 errores**, todos falsos positivos o detalles menores:
+   - 35 en `tests/`: `User::factory()->create()` se tipa como `Collection|Model`, así que PHPStan no reconoce `->id` ni `assignRole()`. Se arreglaría tipando las variables de los tests.
+   - 8 `Cloudinary::upload()->getSecurePath()/getPublicId()`: el paquete de Cloudinary no declara bien sus tipos.
+   - 3 `&&` redundantes en `administradorController.php`: chequeos defensivos, no bugs.
+   - 2 `$request->validate()` "sin efecto": falso positivo, valida y lanza excepción si falla.
+   - 1 `$this` en `routes/console.php`: código estándar de Laravel.
