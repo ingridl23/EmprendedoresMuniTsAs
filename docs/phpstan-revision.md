@@ -390,7 +390,7 @@ En Windows (Laragon) funciona porque el sistema de archivos no distingue mayúsc
 
 1. [x] **Configuración** (sección 2): Larastan + `phpstan.neon` + volver a correr el análisis. (622 → 287 errores)
 2. [x] **Bugs reales** (sección 3): primero el `assignRole('admin')` del login y `eliminarEmprendimiento()`. (287 → 252 errores)
-3. [ ] **Borrar** `routes/auth.php` y revisar `config/permission.php` (sección 4).
+3. [x] **Borrar** `routes/auth.php` y revisar `config/permission.php` (sección 4). (Se quitó la clave `team_resolver`, que Spatie 5.11 no usa.)
 4. [ ] **Mayúsculas de clases** (sección 7): esto evita errores al subir a un servidor Linux.
 5. [ ] **Tipos de retorno** de controladores (sección 5).
 6. [ ] **PHPDoc** de modelos y controladores (sección 6).
