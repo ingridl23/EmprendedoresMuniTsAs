@@ -29,7 +29,7 @@ class FormSerParteController extends Controller
      * Visualizar el formulario de contacto en el sistema:
      * Permite a los usuarios acceder a la interfaz funcional del formulario de contacto.
      *
-     * @return \Illuminate\Http\RedirectResponse Redirige al usuario a la seccion del formulario de contacto.
+     * @return \Illuminate\Contracts\View\View Seccion del formulario de contacto.
      *
      */
 
@@ -48,7 +48,7 @@ class FormSerParteController extends Controller
      *
      * @param validacionFormularioContacto $request Datos validados del formulario de contacto.
      *
-     * @return Response , devuelve los datos del usuario recibidos desde el formulario y se aplica la logica de negocio.
+     * @return \Illuminate\Http\RedirectResponse Redirige de vuelta al formulario con mensaje de exito o error.
      *
      * @throws \Exception Si ocurre un error al enviar los datos.
      */

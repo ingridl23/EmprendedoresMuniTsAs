@@ -47,7 +47,7 @@ class EmprendedorController extends Controller
      *Visualizar la seccion de exportacion de datos para solicitantes persistidos en el sistema:
      *
      *
-     * @return \Illuminate\Http\RedirectResponse Redirige al usuario al formulario de exportacion de datos.
+     * @return \Illuminate\Contracts\View\View Formulario de exportacion de datos.
      *
      * @throws \Exception Si ocurre un error al mostrar la secion.
      */
@@ -64,9 +64,9 @@ class EmprendedorController extends Controller
      *
      * Se Valida los datos filtros aplicados  desde el formulario.
      *
-     * @param validacionSolicitantes $request Datos validados de los solicitantes encontrados.
+     * @param Request $request Filtros del formulario de exportacion.
      *
-     * @return Response , devuelve el archivo en formato .xlsx creado apartir de los datos filtrados por los campos del  formulario de exportacion y persistidos en el sistema.
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse|\Illuminate\Http\RedirectResponse Devuelve el archivo .xlsx con los datos filtrados, o redirige si no hay resultados.
      *
      * @throws \Exception Si ocurre un error al exportar datos.
      */
@@ -145,7 +145,7 @@ class EmprendedorController extends Controller
      *Visualizar la seccion de emprendedores persistidos en el sistema:
      *
      *
-     * @return \Illuminate\Http\RedirectResponse Redirige al usuario a la seccion de emprendedores.
+     * @return \Illuminate\Contracts\View\View Seccion de emprendedores.
      *
      * @throws \Exception Si ocurre un error al mostrar la seccion.
      */
@@ -166,7 +166,8 @@ class EmprendedorController extends Controller
      *Aplicar una busqueda eficiente para emprendedores dentro del sistema:
      *
      *
-     * @return  Response , devuelve al usuario  un conjunto de emprendimientos que coincidan  con el filtro aplicado por el campo "nombre".
+     * @param Request $request Contiene el parametro "busqueda".
+     * @return \Illuminate\Http\JsonResponse Devuelve al usuario  un conjunto de emprendimientos que coincidan  con el filtro aplicado por el campo "nombre".
      *
      * @throws \Exception Si ocurre un error al mostrar la secion.
      */
@@ -187,8 +188,8 @@ class EmprendedorController extends Controller
     /**
      *Aplicar una busqueda eficiente para emprendedores dentro del sistema opcion 2:
      *
-     * @param int $id, ID perteneciente al emprendedor a modificar
-     * @return  Response , devuelve al usuario un emprendimiento seleccionado.
+     * @param int $id ID perteneciente al emprendedor a modificar
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse Devuelve al usuario un emprendimiento seleccionado, o redirige si no existe.
      *
      * @throws \Exception Si ocurre un error al mostrar la seccion.
      */
@@ -213,7 +214,7 @@ class EmprendedorController extends Controller
      * visualizar El alta de un emprendimiento en el sistema:
      *
      *
-     * @return  \Illuminate\Http\RedirectResponse redirige al usuario administrador  a la seccion de altas de emprendimientos.
+     * @return \Illuminate\Contracts\View\View Seccion de altas de emprendimientos.
      *
      * @throws \Exception Si ocurre un error al mostrar la secion.
      */

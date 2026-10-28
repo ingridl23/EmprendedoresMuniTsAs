@@ -42,7 +42,7 @@ class EmpleosController extends Controller
     /**
      * Visualizar el formulario de descarga de datos persistidos de solicitantes de empleo:
      * Permite al usuario administrador la visualizacion y el acceso a el uso del formulario para la exportacion de los datos del sistema.
-     * @return Response dirige al usuario administrador al formulario de descarga.
+     * @return \Illuminate\Contracts\View\View Formulario de descarga.
 
      */
 
@@ -56,9 +56,9 @@ class EmpleosController extends Controller
      *
      * Se Valida los filtros aplicados desde el formulario ,para su posterior  descarga automatica de los mismos.
 
-     * @param validacionEmprendimiento $request Datos validados de solicitantes.
+     * @param Request $request Filtros del formulario de exportacion.
      *
-     * @return Response , devuelve la exportacion de los datos almacenado en un archivo con el formato xlsx.
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse|\Illuminate\Http\RedirectResponse Devuelve el archivo .xlsx con los datos filtrados, o redirige si no hay resultados.
      *
      * @throws \Exception Si ocurre un error al exportar datos.
      */

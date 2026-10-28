@@ -392,7 +392,7 @@ En Windows (Laragon) funciona porque el sistema de archivos no distingue mayúsc
 2. [x] **Bugs reales** (sección 3): primero el `assignRole('admin')` del login y `eliminarEmprendimiento()`. (287 → 252 errores)
 3. [x] **Borrar** `routes/auth.php` y revisar `config/permission.php` (sección 4). (Se quitó la clave `team_resolver`, que Spatie 5.11 no usa.)
 4. [ ] **Mayúsculas de clases** (sección 7): esto evita errores al subir a un servidor Linux.
-5. [ ] **Tipos de retorno** de controladores (sección 5).
+5. [x] **Tipos de retorno** de controladores (sección 5). (252 → 160 errores. Quedan en controladores: mayúsculas de clases (sección 7), `Cloudinary::upload()` sin tipar (falso positivo del paquete), `$request->validate()` "sin efecto" (falso positivo: valida y lanza excepción) y `&&` redundantes, que son chequeos defensivos y no bugs.)
 6. [ ] **PHPDoc** de modelos y controladores (sección 6).
 7. [ ] **Tests** con `assertTrue(true)` (sección 8).
 8. [ ] Volver a correr `php vendor/bin/phpstan analyse` y repetir hasta llegar a 0 en nivel 5.

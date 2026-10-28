@@ -24,7 +24,7 @@ class noticiasController extends Controller
     /**
      * Visualizar las publicaciones vigentes en el sistema:
      * Permite a todos los usuarios acceder a la interfaz funcional de las publicaciones.
-     * @return \Illuminate\Http\RedirectResponse Redirige al usuario hacia la seccion de ultimas publicaciones.
+     * @return \Illuminate\Contracts\View\View Seccion de ultimas publicaciones.
      */
     public function showNoticias()
     {
@@ -38,7 +38,8 @@ class noticiasController extends Controller
     /**
      * Visualizar una publicacion seleccionada:
      * Permite a los usuarios interactuar con el sistema, permitiendo la seleccion de una publicacion y el acceso a la informacion detalla de la misma.
-     *@return \Illuminate\Http\RedirectResponse Redirige al usuario hacia la seccion de la publicacion seleccionada.
+     * @param mixed $id ID de la publicacion seleccionada.
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse Seccion de la publicacion seleccionada, o redireccion si no existe.
      *
      */
     public function showNoticia($id)
@@ -70,7 +71,7 @@ class noticiasController extends Controller
      * Realizar una busqueda de una publicacion:
      * Permite realizar busquedas (atajo visual) a los usuarios del sistema.
      *Se Validan los datos ingresados desde el formulario de busqueda y retorna los resultados que coincidan con los criterios propuestos por el usuario.
-     *@return Response, devuelve al usuario una/s publicacion/es que coincidan con la busqueda realizada, aplicando el campo "titulo".
+     * @return \Illuminate\Http\JsonResponse Devuelve al usuario una/s publicacion/es que coincidan con la busqueda realizada, aplicando el campo "titulo".
      *
     */
 
@@ -88,7 +89,7 @@ class noticiasController extends Controller
      * Realizar una busqueda de una publicacion :
      * Permite realizar busquedas (atajo visual) a los usuarios del sistema.
      * Se  Validan los datos ingresados desde el formulario de busqueda y retorna los resultados que coincidan con los criterios propuestos por el usuario.
-     *@return Response, devuelve al usuario una/s publicacion/es que coincidan con la busqueda realizada, aplicando el campo "categoria".
+     * @return \Illuminate\Http\JsonResponse Devuelve al usuario una/s publicacion/es que coincidan con la busqueda realizada, aplicando el campo "categoria".
      */
 
     /*Filtro de busqueda de noticias por categoria*/
@@ -105,7 +106,7 @@ class noticiasController extends Controller
      * Realizar una busqueda de una publicacion :
      * Permite realizar busquedas (atajo visual) a los usuarios del sistema.
      * Se Validan los datos ingresados desde el formulario de busqueda y retorna los resultados que coincidan con los criterios propuestos por el usuario.
-     *@return Response, devuelve al usuario una/s publicacion/es que coincidan con la busqueda realizada, aplicando el campo "fecha".
+     * @return \Illuminate\Http\JsonResponse Devuelve al usuario una/s publicacion/es que coincidan con la busqueda realizada, aplicando el campo "fecha".
      */
 
     /*Filtro de busqueda de noticias por fecha*/
@@ -121,7 +122,7 @@ class noticiasController extends Controller
     /**
      * Dar de alta una publicacion en el sistema:
      *  Se Validan los datos ingresados desde el formulario de busqueda y su persistencia en el sistema segun la logica de negocio.
-     *@return Response, devuelve al usuario administrador la seccion de alta de publicaciones del sistema.
+     * @return \Illuminate\Contracts\View\View Seccion de alta de publicaciones del sistema.
      **/
     public function showFormCrearNoticia()
     {

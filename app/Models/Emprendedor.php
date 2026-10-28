@@ -135,9 +135,9 @@ class Emprendedor extends Model
      * Al seleccionar un emprendimiento cargado se devuelven sus datos persistidos dentro del sistema.
      *
      *
-     * @param int $id, ID de identificacion para el emprendimiento seleccionado.
+     * @param int $id ID de identificacion para el emprendimiento seleccionado.
      *
-     * @return Response, devuelve un emprendimiento seleccionado junto a sus datos.
+     * @return Emprendedor|null Devuelve un emprendimiento seleccionado junto a sus datos, o null si no existe.
      *  @throws \Exception Si ocurre un error al persistir datos.
      */
 

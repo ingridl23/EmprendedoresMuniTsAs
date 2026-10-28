@@ -8,6 +8,9 @@ use App\Http\Requests\validacionNoticia;
 use App\Http\Requests\validacionEditarNoticia;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Contracts\View\View;
 use App\Models\user;
 use App\Models\Emprendedor;
 use App\Models\Horario;
@@ -128,11 +131,7 @@ class administradorController extends Controller
      *Se deben Validar los datos recibidos desde el formulario y  persistirlos en la base de datos,
      * asociando también redes sociales, dirección, horarios e imágenes.
      *
-     * @param validacionEmprendimiento $request Datos validados del emprendimiento.
-     *
-     * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores con mensaje de éxito o error.
-     *
-     * @throws \Exception Si ocurre un error al subir las imágenes a Cloudinary.
+     * @return View Formulario de alta de emprendimiento con las categorias cargadas.
      */
 
     public function showFormCrearEmprendimiento()
@@ -237,12 +236,9 @@ class administradorController extends Controller
      * Al seleccionar un emprendimiento cargado se devuelven sus datos persistidos dentro del sistema. Y se da acceso al usuario administrador el permiso de uso para el formulario de
      * modificacion. Al validar los datos actualizados se los persiste nuevamente, asociando también redes sociales, dirección, horarios e imágenes que hayan sido modificadas.
      *
-     * @param validacionEmprendimiento $request Datos validados del emprendimiento.
+     * @param int $id ID del emprendimiento a modificar.
      *
-     * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores.
-     *
-     * @throws \Exception Si ocurre un error al subir las imágenes a Cloudinary.
-     *  @throws \Exception Si ocurre un error al persistir datos.
+     * @return View|RedirectResponse Formulario de edicion, o redireccion al listado si el emprendimiento no existe.
      */
 
 
@@ -295,10 +291,10 @@ class administradorController extends Controller
      * Se deben iterar  las imagenes persistidas, en caso de no estar en el $request (imagenes_conservar) que llega por parametro, pasan a estar eliminadas.
      * Si el resultado de la coleccion no esta vacio, las imagenes (url) se agregan. Teniendo esta logica de negocio, solo se permitiran cinco imagenes asociadas por emprendedor/emprendimiento.
      *
-     * @param int $id, ID perteneciente al emprendedor a modificar
-     * @param Request $request, Viene en FormData con las nueva imagenes a cargar
+     * @param int $id ID perteneciente al emprendedor a modificar
+     * @param Request $request Viene en FormData con las nueva imagenes a cargar
      *
-     * @return JsonResponse, Envio de estado de la respuesta del fetch
+     * @return JsonResponse Envio de estado de la respuesta del fetch
      */
     public function editarImagenesEmprendimiento($id, Request $request)
     {
@@ -382,8 +378,8 @@ class administradorController extends Controller
      *
      * Se obtienen los datos del formulario para el emprendimiento seleccionado (redes, direccion, horarios, informacion) y es persistido en el sistema.
      *
-     * @param int $id, ID perteneciente al emprendedor a modificar
-     * @param Request $request, los nuevos datos del emprendimiento
+     * @param int $id ID perteneciente al emprendedor a modificar
+     * @param validacionEditarEmprendimiento $request Los nuevos datos del emprendimiento
      *
      * @return RedirectResponse Redirige al administrador a la página principal de emprendedores
      * @throws \Exception Si ocurre un error al persistir datos.
@@ -532,7 +528,7 @@ class administradorController extends Controller
     /**
      * Obtener las categorias presentes en el sistema:
      *
-     * @return Array, Categorias cargadas
+     * @return array<int, string> Categorias cargadas
      */
     public function obtenerCategorias()
     {
@@ -545,7 +541,7 @@ class administradorController extends Controller
     /**
      * Visualizar el formulario de Altas de publicaciones:
      * Permite al usuario administrador acceder y dar uso del formulario de Altas para publicaciones.
-     * @return \Illuminate\View\View, retorna el formulario  para completar la alta de la publicacion.
+     * @return View Retorna el formulario  para completar la alta de la publicacion.
      */
     public function showFormCreateNoticia()
     {
@@ -560,7 +556,7 @@ class administradorController extends Controller
     /**
      * Dar alta de una publicacion:
      *
-     * @param Request $request, Datos de la nueva publicacion
+     * @param validacionNoticia $request Datos de la nueva publicacion
      *
      * @return RedirectResponse Redirige al usuario administrador a la homepage de noticias.
      *  @throws \Exception Si ocurre un error al persistir datos.
@@ -612,9 +608,9 @@ class administradorController extends Controller
     /**
      * Visualizar el formulario para la modificacion de publicaciones:
      *Permite al usuario administrador acceder y dar uso del formulario de modificaciones para publicaciones.
-     * @param int $id, ID perteneciente a la noticia que se va a mostrar para modificar
+     * @param int $id ID perteneciente a la noticia que se va a mostrar para modificar
      *
-     * @return \Illuminate\View\View, Muestra el formulario con los datos persistidos.
+     * @return View|RedirectResponse Muestra el formulario con los datos persistidos, o redirige si la noticia no existe.
 
      */
     public function showFormEditNoticia($id)
@@ -645,10 +641,10 @@ class administradorController extends Controller
     /**
      * Modificacion de la imagen ilustrativa de una publicacion:
      *
-     * @param int $id, ID unico de identificacion para la publicacion seleccionada.
-     * @param Request $request, Datos ingresados para la modificacion.
+     * @param int $id ID unico de identificacion para la publicacion seleccionada.
+     * @param Request $request Datos ingresados para la modificacion.
      *
-     * @return JsonResponse, Envio de estado de la respuesta del fetch
+     * @return JsonResponse Envio de estado de la respuesta del fetch
      */
     protected function editarImgsNoticias($id, Request $request)
     {
@@ -701,8 +697,8 @@ class administradorController extends Controller
     /**
      * Modificacion de una publicacion:
      *
-     * @param int $id, ID unico de identificacion de la publicacion seleccionada.
-     * @param Request $request, Datos recibidos para persistir de la publicacion seleccionada.
+     * @param int $id ID unico de identificacion de la publicacion seleccionada.
+     * @param validacionEditarNoticia $request Datos recibidos para persistir de la publicacion seleccionada.
      *
      * @return RedirectResponse Redirige al usuario administrador hacia la homepage  de noticias.
      *  @throws \Exception Si ocurre un error al persistir datos.
