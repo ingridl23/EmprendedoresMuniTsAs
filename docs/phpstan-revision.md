@@ -107,7 +107,7 @@ Estos errores apuntan a fallas que **ya pueden estar rompiendo** el sistema o ab
 
 | Línea | Error | Qué revisar |
 |---|---|---|
-| 479 | `property.notFound` | `imagenes::find($emprendimiento->id)` busca **una imagen cuyo `id` es el id del emprendimiento**: está mal. Debería ser `$emprendimiento->imagenes` (relación) o `Imagenes::where('emprendedor_id', $emprendimiento->id)->get()`. Después se hace `foreach` sobre ese resultado, que es un solo modelo o `null`. |
+| 479 | `property.notFound` | `imagenes::find($emprendimiento->id)` **funcionaba bien**: el modelo `Imagenes` redefine `find()` para buscar por `emprendedor_id` ([Imagenes.php:65](../app/Models/Imagenes.php#L65)). Igual se cambió a `$emprendimiento->imagenes`, que da el mismo resultado y es más claro. **Queda pendiente** renombrar el `find()` redefinido (ver MIGRACION.md 3.6). |
 | 481 | `return.missing` | Si `$redes` o `$direccion` son `null`, el método termina **sin devolver respuesta**. Agregar un `return redirect()->back()->with('error', ...)` al final. |
 | 333 | `argument.type` | `Imagenes::eliminarImagen()` recibe un `Builder` y no una `Imagenes`. Revisar si falta `->first()` / `->get()` en la consulta de la línea ~330. |
 | 330-332 | `property.notFound` en `Builder::$id`, `$public_id` | Mismo problema: se usa una consulta sin ejecutar (`where(...)` sin `->first()`) como si fuera un modelo. |
