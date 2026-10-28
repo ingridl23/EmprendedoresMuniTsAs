@@ -17,8 +17,8 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models
  * @property int $emprendedor_id Identificador único
  * @property string $dia Nombre del dia
- * @property \Carbon\Carbon\null $hora_apertura hora de inicio
- * @property \Carbon\Carbons\null $hora_cierre hora de cierre
+ * @property \Carbon\Carbon|null $hora_apertura hora de inicio
+ * @property \Carbon\Carbon|null $hora_cierre hora de cierre
  * @property boolean $participa_feria  si participa de ferias o eventos
  * @property boolean $cerrado si permanece cerrado
  * @property \Carbon\Carbon $created_at Fecha de creación
@@ -33,7 +33,7 @@ class Horario extends Model
     /** @var string $table Nombre de la tabla asociada */
     protected $table = 'horario'; //  tabla
 
-    /** @var string $table Nombre de la tabla asociada */
+    /** @var array<int, string> $fillable Atributos asignables de forma masiva */
     protected $fillable = [
         'dia',
         'hora_apertura',
@@ -59,12 +59,12 @@ class Horario extends Model
      *  Una vez validados los datos del formulario se deben persistir,asociandolos a un emprendimiento/emprendedor.
      *
      * @param string $dia
-     * @param \Carbon\Carbons\null $hora_apertura
-     * @param \Carbon\Carbons\null $hora_cierre
+     * @param \Carbon\Carbon|string|null $hora_apertura
+     * @param \Carbon\Carbon|string|null $hora_cierre
      * @param boolean $participa_feria
      * @param boolean $cerrado
      * @param int $emprendedor_id
-     * @return Response , devuelve un horario creado asociado a un emprendimiento.
+     * @return int Devuelve el ID del horario creado asociado a un emprendimiento.
      * @throws \Exception Si ocurre un error al persistir los datos en el sistema.
      */
     public static function crearHorario($dia, $hora_apertura, $hora_cierre, $participa_feria, $cerrado, $emprendedor_id)
@@ -89,7 +89,8 @@ class Horario extends Model
     /**
      * Visualizar horarios:
      *
-     * @return Response, devuelve los horarios asociados a un emprendimiento seleccionado
+     * @param int $id ID del emprendimiento seleccionado.
+     * @return \Illuminate\Database\Eloquent\Collection Devuelve los horarios asociados a un emprendimiento seleccionado.
      */
     public static function obtenerHorarios($id)
     {
@@ -101,7 +102,8 @@ class Horario extends Model
     /**
      * Modificar horarios:
      *
-     * @return Response, devuelve los horarios modificados asociados a un emprendimiento seleccionado.
+     * @param Horario $horario Horario modificado.
+     * @return bool Devuelve true si el horario se guardó.
      */
 
     public static function editarHorarios(Horario $horario)
@@ -113,8 +115,8 @@ class Horario extends Model
     /**
      * Realizar busqueda de emprendimiento :
      *
-     * @param int $idEmprendedor ,ID de identificacion para el emprendimiento seleccionado.
-     * @return Response, devuelve los horarios de un emprendimiento seleccionado.
+     * @param int $idEmprendedor ID de identificacion para el emprendimiento seleccionado.
+     * @return \Illuminate\Database\Eloquent\Collection Devuelve los horarios de un emprendimiento seleccionado.
      */
 
     public static function buscarPorIdEmprendedor($idEmprendedor)
@@ -127,9 +129,8 @@ class Horario extends Model
     /**
      * Dar de baja un emprendimiento :
      *
-     * @param <App>
-     <Model>horario $horarios ,ID de identificacion para el horario seleccionado.
-     * @return Response, devuelve el horario del emprendimiento eliminado.
+     * @param \Illuminate\Database\Eloquent\Collection $horarios Horarios del emprendimiento a eliminar.
+     * @return bool Devuelve true si se eliminaron todos los horarios.
      */
     public static function eliminarHorarios($horarios)
     {

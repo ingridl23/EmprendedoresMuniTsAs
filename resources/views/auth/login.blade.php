@@ -169,7 +169,7 @@
                     {{-- Contraseña --}}
                     <div class="field-group">
                         <input id="password" type="password" name="password" required placeholder=""
-                            autocomplete="current-password" value="{{ old('email') }}">
+                            autocomplete="current-password">
 
                         @error('password')
                             <div class="text-danger small">{{ $message }}</div>

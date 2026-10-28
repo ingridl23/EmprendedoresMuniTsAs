@@ -18,7 +18,13 @@ class ImagenesFactory extends Factory
     public function definition()
     {
 
-        $path = $this->faker->image(public_path('img'), 640, 480, null, false);
+        // Carpeta donde guardaremos las imágenes de prueba (igual que NoticiasFactory)
+        $dir = storage_path('app/public/img/prueba');
+        if (! is_dir($dir)) {
+            mkdir($dir, 0755, true);
+        }
+
+        $path = $this->faker->image($dir, 640, 480, null, false);
 
         return [
             'url' => 'imagenes/' . $path,

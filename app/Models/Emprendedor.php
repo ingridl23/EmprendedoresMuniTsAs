@@ -116,7 +116,7 @@ class Emprendedor extends Model
     /**
      * Visualizar todos los emprendimientos presentes en el sistema:
      *
-     * @return \Illuminate\Database\Eloquent\Collection , devuelve una coleccion de emprendimientos.
+     * @return \Illuminate\Database\Eloquent\Collection|null Devuelve una coleccion de emprendimientos, o null si no hay ninguno.
      */
     public static function showEmprendimientos()
     {
@@ -217,7 +217,7 @@ class Emprendedor extends Model
      * Esta funcionalidad retorna 6 emprendedores aleatoriamente persistidos en el sistema.
      *
      *
-     * @return \Illuminate\Http\Collection redirige la informacion  retornando los ultimos emprendedores cargados aleatoriamente.
+     * @return \Illuminate\Database\Eloquent\Collection Redirige la informacion  retornando los ultimos emprendedores cargados aleatoriamente.
      */
     public static function traerAleatoriamenteSeis()
     {

@@ -29,7 +29,7 @@ class emprendedoresExcelTest extends TestCase
     }
 
     public function test_exporta_con_resultados(){
-        $admin = $this->crearUsuario("descargar excel");
+        $admin = $this->crearUsuario("filtrar datos");
         $this->actingAs($admin);
         Excel::fake();
         Emprendedor::factory()->count(10)->create();
@@ -39,7 +39,7 @@ class emprendedoresExcelTest extends TestCase
     }
 
     public function test_exporta_sin_resultados(){
-        $admin = $this->crearUsuario("descargar excel");
+        $admin = $this->crearUsuario("filtrar datos");
         $this->actingAs($admin);
 
         Excel::fake();
@@ -56,7 +56,7 @@ class emprendedoresExcelTest extends TestCase
     }
 
     public function test_exporta_con_algun_filtro(){
-        $admin = $this->crearUsuario("descargar excel");
+        $admin = $this->crearUsuario("filtrar datos");
         $this->actingAs($admin);
         $categoria = Categoria::factory()->create([
             "categoria" => 'Indumentaria',
@@ -67,7 +67,7 @@ class emprendedoresExcelTest extends TestCase
             'nombre' => 'Valen',
             'categoria_id' => $categoria->id,
         ]);
-        $response = $this->get("/emprendedores/export?nombre=Valen&categoria=1");
+        $response = $this->get("/emprendedores/export?nombreEm=Valen&categoria={$categoria->id}");
         $response->assertStatus(200);
         Excel::assertDownloaded('emprendedores.xlsx');
     }

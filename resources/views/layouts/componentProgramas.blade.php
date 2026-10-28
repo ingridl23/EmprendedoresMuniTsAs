@@ -353,7 +353,7 @@
             <!--seccion carrousel ferias de emprendedores al aire libre -->
             <div id="carouselFeriasEmprendedores" class="carousel slide carrousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    @for ($i = 1; $i <= count(scandir('assets/img/emprendedoresferiaadaptadas/')) - 2; $i++)
+                    @for ($i = 1; $i <= count(scandir(public_path('assets/img/emprendedoresferiaadaptadas/'))) - 2; $i++)
                         <div class="carousel-item {{ $i === 1 ? 'active' : '' }}" data-bs-interval="5000">
                             <img src="{{ asset('assets/img/emprendedoresferiaadaptadas/' . $i . '.jpg') }}"
                                 class="d-block w-100" alt="Imagen de emprendedores al aire libre">

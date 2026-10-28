@@ -59,19 +59,14 @@ class LoginController extends Controller
             'password' => ['required', "min:8", "max:14"],
         ]);
 
-        // Verificar si el usuario existe
-        $user = User::where('email', $credentials['email'])->first();
-        // Intentar login
+        // Intentar login (el rol admin se asigna en UserSeeder / RegisterController, no al iniciar sesión)
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            $user->assignRole('admin');
             return back()->with('success', 'Logueado  correctamente.');
-            return redirect('/showLogin');
         }
         return back()->withErrors([
             'error' => 'Credenciales incorrectas Login.',
 
         ]);
-        return redirect($redirectTo);
     }
 }

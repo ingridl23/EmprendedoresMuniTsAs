@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 
 class serParteTest extends TestCase
 {
+    use RefreshDatabase;
 
     public function test_formulario_empresa_se_envia_correctamente(){
         Mail::fake(); // Evita que realmente se envíe el correo

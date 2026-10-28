@@ -51,7 +51,7 @@ class Noticias extends Model
     /**
      * Obtener las ultimas publicaciones registradas en el sistema:
      * @param int $cantidad
-     * @return \Illuminate\Database\Eloquent\Collection , devuelve una coleccion limitada de publicaciones segun la query solicitada (atributo cantidad)
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator Devuelve una coleccion paginada de publicaciones segun la query solicitada (atributo cantidad)
      */
     public static function getUltimasNoticias($cantidad = 10)
     {
@@ -62,8 +62,8 @@ class Noticias extends Model
 
     /**
      * Busqueda de una publicacion vigente en el sistema:
-     *@param mixed $id, ID de identificacion para la publicacion seleccionada
-     * @return \Illuminate\Database\Eloquent\Collection , devuelve la coleccion encontrada de publicaciones.
+     * @param mixed $id ID de identificacion para la publicacion seleccionada
+     * @return Noticias|null Devuelve la publicacion encontrada, o null si no existe.
      */
 
     public static function showNoticiasId($id)
@@ -73,13 +73,14 @@ class Noticias extends Model
             $noticia = $noticia[0];
             return $noticia;
         }
+        return null;
     }
 
 
     /**
      * Obtener todas las categorías de publicaciones registradas en el sistema:
-     *@param int $cantidad
-     * @return \Illuminate\Database\Eloquent\Collection , devuelve una coleccion limitada de publicaciones segun criterio de la query(atributo cantidad).
+     * @param int $cantidad
+     * @return \Illuminate\Support\Collection Devuelve una coleccion limitada de publicaciones segun criterio de la query(atributo cantidad).
      */
 
     public static function obtenerCategoriasNoticias($cantidad = 10)
@@ -106,7 +107,7 @@ class Noticias extends Model
     /**
      * Obtener las categorias cargadas:
      *
-     * @return Array, Categorias cargadas
+     * @return array<int, string> Categorias cargadas
      */
     public static function obtenerCategorias()
     {
@@ -127,7 +128,7 @@ class Noticias extends Model
      * @param mixed $request
      * @param string $path
      * @param int $imagen_public_id
-     * @return Response , devuelve una publicacion junto a sus datos
+     * @return Noticias Devuelve una publicacion junto a sus datos
      * @throws \Exception Si ocurre un error al persistir los datos en el sistema.
      */
 
@@ -150,18 +151,18 @@ class Noticias extends Model
 
     /**
      * Modificar una publicacion en el sistema:
-     *@param  mixed $noticia, publicacion selecionada para modificar.
-     * @return Response , devuelve la publicacion modificada.
+     * @param mixed $noticia Publicacion selecionada para modificar.
+     * @return bool Devuelve true si la publicacion se guardó.
      */
 
     public static function editNoticia($noticia)
     {
-        $noticia->save();
+        return $noticia->save();
     }
     /**
      * Dar de baja una publicacion en el sistema:
-     *@param  mixed $noticia, publicacion selecionada para eliminar.
-     * @return Response , devuelve la publicacion eliminada.
+     * @param mixed $noticia Publicacion selecionada para eliminar.
+     * @return bool|null Devuelve true si la publicacion se eliminó.
      */
 
     public static function deleteNoticia($noticia)
@@ -175,8 +176,8 @@ class Noticias extends Model
      * Modificar una publicacion en el sistema en relacion a su imagen asociada:
      * @param string $url
      * @param int $imagen_public_id
-     *@param  mixed $noticia, publicacion selecionada para modificar.
-     * @return Response , devuelve la imagen modificada de una publicacion asociada.
+     * @param mixed $noticia Publicacion selecionada para modificar.
+     * @return bool Devuelve true si la imagen de la publicacion se guardó.
      */
     public static function editarImagen($noticia, $url, $imagen_public_id)
     {

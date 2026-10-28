@@ -26,7 +26,7 @@ class solicitantesTest extends TestCase{
     }
 
     public function test_exporta_con_resultados(){
-        $admin = $this->crearUsuario("descargar excel");
+        $admin = $this->crearUsuario("filtrar datos");
         $this->actingAs($admin);
 
         Excel::fake();
@@ -37,7 +37,7 @@ class solicitantesTest extends TestCase{
     }
 
     public function test_exporta_sin_resultados(){
-        $admin = $this->crearUsuario("descargar excel");
+        $admin = $this->crearUsuario("filtrar datos");
         $this->actingAs($admin);
 
         Excel::fake();
@@ -54,7 +54,7 @@ class solicitantesTest extends TestCase{
     }
 
     public function test_exporta_con_algun_filtro(){
-        $admin = $this->crearUsuario("descargar excel");
+        $admin = $this->crearUsuario("filtrar datos");
         $this->actingAs($admin);
 
         Excel::fake();

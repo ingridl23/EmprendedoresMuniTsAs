@@ -256,7 +256,7 @@ class administradorController extends Controller
                 $emprendimiento->redes->facebook = $this->obtenerRedes($emprendimiento->redes->facebook);
                 $categorias = categoria::obtenerCategorias();
                 $horarios = Horario::obtenerHorarios($id);
-                $imagenes = imagenes::find($emprendimiento->id);
+                $imagenes = $emprendimiento->imagenes;
                 return view("administradores.emprendedores.formEditarEmprendimiento", compact('emprendimiento', 'categorias', 'imagenes', 'horarios'));
             } else {
                 $mensajes = [
@@ -476,7 +476,7 @@ class administradorController extends Controller
         if ($emprendimiento != null) {
             $redes = redes::find($emprendimiento->redes_id);
             $direccion = direccion::find($emprendimiento->direccion_id);
-            $imagenes = imagenes::find($emprendimiento->id);
+            $imagenes = $emprendimiento->imagenes;
             $horarios = horario::buscarPorIdEmprendedor($emprendimiento->id);
             if ($redes != null && $direccion != null) {
                 foreach ($imagenes as $imagen) {
@@ -509,6 +509,11 @@ class administradorController extends Controller
                     return redirect('/emprendedores')->with('error', $mensajes);
                 }
             }
+            $mensajes = [
+                'titulo' => '¡Error!',
+                'detalle' => 'El emprendimiento no tiene redes o dirección asociadas, no se pudo eliminar.'
+            ];
+            return redirect('/emprendedores')->with('error', $mensajes);
         } else {
             $mensajes = [
                 'titulo' => '¡Error!',

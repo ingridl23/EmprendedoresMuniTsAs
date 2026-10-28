@@ -77,12 +77,12 @@ class Imagenes extends Model
 
     /**
      * Dar de baja un emprendimiento en relacion a su imagen en el sistema:
-     *@param  Imagenes $imagen, imagen selecionada para eliminar.
-     * @return Response , devuelve la imagen asociada al emprendimiento seleccionado.
+     * @param Imagenes $imagen Imagen selecionada para eliminar.
+     * @return bool|null Devuelve true si la imagen se eliminó.
      */
 
     public static function eliminarImagen(Imagenes $imagen)
     {
-        $imagen->delete();
+        return $imagen->delete();
     }
 }

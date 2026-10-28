@@ -117,7 +117,6 @@ return [
     'uploaded'             => 'Subir :attribute ha fallado.',
     'url'                  => 'El formato :attribute es inválido.',
     'uuid'                 => 'El campo :attribute debe ser un UUID válido.',
-    'image'                => 'La imagen es necesaria',
 
     /*
     |--------------------------------------------------------------------------
@@ -179,7 +178,6 @@ return [
         "facebook"              => "facebook",
         "instagram"             => "instagram",
         "calle"                 => "calle",
-        "city"                  => "ciudad"
 
     ],
 ];

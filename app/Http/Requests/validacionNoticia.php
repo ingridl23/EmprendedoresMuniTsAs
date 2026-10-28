@@ -3,8 +3,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Http\Request;
-
 use Illuminate\Foundation\Http\FormRequest;
 
 class validacionNoticia  extends FormRequest
@@ -17,16 +15,6 @@ class validacionNoticia  extends FormRequest
     public function authorize()
     {
         return true;
-    }
-
-    public function store(Request $request)
-    {
-        if ($request->filled('oculto')) {
-            return back()->with("error", "formulario rechazado "); // posible bot detectado
-        }
-
-        $this->validate($request, $this->rules());
-        return back()->with('success', ' Se agrega una noticia correctamente.');
     }
 
     /**
