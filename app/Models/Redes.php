@@ -37,7 +37,7 @@ class Redes extends Model
     /**
      * Relacion emprendedor y sus redes sociales:
      * Un emprendimiento/emprendedor puede tener varias redes sociales de como medio de comunicacion con sus clientes, pero las redes sociales pertenecen a un emprendimiento/emprendedor en particular.
-     * @return \Illuminate\Database\Eloquent\Relations\hasOne , devuelve la coleccion encontrada de redes sociales.
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne , devuelve la coleccion encontrada de redes sociales.
      */
     public function emprendedor(): HasOne
     {
@@ -101,7 +101,7 @@ class Redes extends Model
         if (isset($facebook)) {
             $facebook = "https://facebook.com/{$facebook}";
         }
-        $redes = redes::create([
+        $redes = Redes::create([
             'instagram' => $instagram,
             'facebook' => $facebook,
             'whatsapp' => $whatsapp,

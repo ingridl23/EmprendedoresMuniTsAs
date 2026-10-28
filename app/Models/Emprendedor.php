@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\constants;
 use Database\Factories\EmprendedorFactory;
-use Database\Factories\imagenesFactory;
+use Database\Factories\ImagenesFactory;
 use Database\Factories\HorarioFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Imagenes;
 use App\Models\Horario;
-use App\Models\categoria;
+use App\Models\Categoria;
 
 /**
  * @class Emprendedor
@@ -60,28 +60,28 @@ class Emprendedor extends Model
     /**
      * Relación: un emprendedor puede tener varias redes.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function redes(): BelongsTo
     {
-        return $this->belongsTo(redes::class, 'redes_id', 'id');
+        return $this->belongsTo(Redes::class, 'redes_id', 'id');
     }
 
     /**
      * Relación: un emprendedor puede tener una direccion.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
 
     public function direccion(): BelongsTo
     {
-        return $this->belongsTo(direccion::class, 'direccion_id', 'id');
+        return $this->belongsTo(Direccion::class, 'direccion_id', 'id');
     }
 
     /**
      * Relación: un emprendedor puede tener varios horarios.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function horarios()
     {
@@ -93,7 +93,7 @@ class Emprendedor extends Model
     /**
      * Relación: un emprendedor puede tener varias imagenes.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function imagenes()
     {
@@ -104,7 +104,7 @@ class Emprendedor extends Model
     /**
      * Relación: un emprendedor puede pertenecer a una categoria.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
 
     public function categoria()

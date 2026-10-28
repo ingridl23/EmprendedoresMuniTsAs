@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Database\Factories\imagenesFactory;
+use Database\Factories\ImagenesFactory;
 use App\Models\Emprendedor;
 
 /**
@@ -50,7 +50,7 @@ class Imagenes extends Model
     /**
      * Relación: una imagen pertenece a un emprendimiento.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function EmprendedorImagen()
     {

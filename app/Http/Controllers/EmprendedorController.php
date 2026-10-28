@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Emprendedor;
-use App\Models\categoria;
-use App\Models\direccion;
+use App\Models\Categoria;
+use App\Models\Direccion;
 use App\Http\Requests\EmprendedorRequest;
 use App\constants;
 use Illuminate\Http\Request;
@@ -54,7 +54,7 @@ class EmprendedorController extends Controller
 
     public function showForm()
     {
-        $categorias = categoria::all();
+        $categorias = Categoria::all();
         return view("administradores.formExcelEmprendedores", compact('categorias'));
     }
 
@@ -154,7 +154,7 @@ class EmprendedorController extends Controller
     public function emprendedores()
     {
         $emprendedoresPorCategoria = Emprendedor::obtenerCategoriasEmprendedoresAgrupados();
-        $categorias = categoria::obtenerCategorias();
+        $categorias = Categoria::obtenerCategorias();
         $emprendedores = Emprendedor::with('imagenes')->get();
         //  return response()->json($emprendedores);
         return view('emprendedor.templateEmprendedores', compact('emprendedoresPorCategoria', 'emprendedores', 'categorias'));

@@ -11,14 +11,14 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Contracts\View\View;
-use App\Models\user;
+use App\Models\User;
 use App\Models\Emprendedor;
 use App\Models\Horario;
 use App\Models\Noticias;
-use App\Models\redes;
-use App\Models\direccion;
+use App\Models\Redes;
+use App\Models\Direccion;
 use App\Models\Imagenes;
-use App\Models\categoria;
+use App\Models\Categoria;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\constants;
@@ -136,7 +136,7 @@ class administradorController extends Controller
 
     public function showFormCrearEmprendimiento()
     {
-        $categorias = categoria::obtenerCategorias();
+        $categorias = Categoria::obtenerCategorias();
         return view('administradores.emprendedores.formNuevoEmprendimiento', compact('categorias'));
     }
 
@@ -155,13 +155,13 @@ class administradorController extends Controller
     {
 
         $data = $request->validated();
-        $idRedes = redes::crearRedes(
+        $idRedes = Redes::crearRedes(
             $request->instagram,
             $request->facebook,
             $request->whatsapp
         );
 
-        $idDireccion = direccion::crearDireccion(
+        $idDireccion = Direccion::crearDireccion(
             $request->ciudad,
             $request->localidad,
             $request->calle,
@@ -250,7 +250,7 @@ class administradorController extends Controller
             if ($emprendimiento != null) {
                 $emprendimiento->redes->instagram = $this->obtenerRedes($emprendimiento->redes->instagram);
                 $emprendimiento->redes->facebook = $this->obtenerRedes($emprendimiento->redes->facebook);
-                $categorias = categoria::obtenerCategorias();
+                $categorias = Categoria::obtenerCategorias();
                 $horarios = Horario::obtenerHorarios($id);
                 $imagenes = $emprendimiento->imagenes;
                 return view("administradores.emprendedores.formEditarEmprendimiento", compact('emprendimiento', 'categorias', 'imagenes', 'horarios'));
@@ -326,7 +326,7 @@ class administradorController extends Controller
                 if (!in_array($imagen->id, $idsConservar)) {
                     try {
                         Cloudinary::uploadApi()->destroy($imagen->public_id);
-                        imagenes::eliminarImagen($imagen);
+                        Imagenes::eliminarImagen($imagen);
                         $totalImagenesDB = $totalImagenesDB - 1;
                     } catch (\Exception $e) {
                         return response()->json(['error' => "No se ha podido cargar las imagenes"], 400);
@@ -389,10 +389,10 @@ class administradorController extends Controller
         $emprendimiento = Emprendedor::find($id);
         if ($emprendimiento != null) {
             $horarios = Horario::obtenerHorarios($id);
-            $redes = redes::find($emprendimiento->redes_id);
+            $redes = Redes::find($emprendimiento->redes_id);
             $redes->instagram = $this->obtenerRedes($redes->instagram);
             $redes->facebook = $this->obtenerRedes($redes->facebook);
-            $direccion = direccion::find($emprendimiento->direccion_id);
+            $direccion = Direccion::find($emprendimiento->direccion_id);
             if ($redes != null) {
                 $redes->instagram = $request->input('instagram');
                 $redes->facebook = $request->input('facebook');
@@ -430,8 +430,8 @@ class administradorController extends Controller
             }
 
             $emprendedorEdit = Emprendedor::editarEmprendimiento($emprendimiento);
-            $redesEdit = redes::editarEmprendimiento($redes);
-            $direccionEdit = direccion::editarEmprendimiento($direccion);
+            $redesEdit = Redes::editarEmprendimiento($redes);
+            $direccionEdit = Direccion::editarEmprendimiento($direccion);
 
             if ($emprendedorEdit && $redesEdit && $direccionEdit) {
                 $mensajes = [
@@ -470,10 +470,10 @@ class administradorController extends Controller
     {
         $emprendimiento = Emprendedor::find($id);
         if ($emprendimiento != null) {
-            $redes = redes::find($emprendimiento->redes_id);
-            $direccion = direccion::find($emprendimiento->direccion_id);
+            $redes = Redes::find($emprendimiento->redes_id);
+            $direccion = Direccion::find($emprendimiento->direccion_id);
             $imagenes = $emprendimiento->imagenes;
-            $horarios = horario::buscarPorIdEmprendedor($emprendimiento->id);
+            $horarios = Horario::buscarPorIdEmprendedor($emprendimiento->id);
             if ($redes != null && $direccion != null) {
                 foreach ($imagenes as $imagen) {
                     try {
@@ -488,9 +488,9 @@ class administradorController extends Controller
                     }
                 }
                 $emprendimientoEliminado = Emprendedor::eliminarEmprendimiento($emprendimiento);
-                $redesEliminado = redes::eliminarEmprendimiento($redes);
-                $direccionEliminado = direccion::eliminarEmprendimiento($direccion);
-                $horarioEiminado = horario::eliminarHorarios($horarios);
+                $redesEliminado = Redes::eliminarEmprendimiento($redes);
+                $direccionEliminado = Direccion::eliminarEmprendimiento($direccion);
+                $horarioEiminado = Horario::eliminarHorarios($horarios);
                 if ($emprendimientoEliminado && $redesEliminado && $direccionEliminado && $horarioEiminado) {
                     $mensajes = [
                         'titulo' => '¡Eliminado!',

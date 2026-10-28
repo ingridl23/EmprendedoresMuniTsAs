@@ -54,7 +54,7 @@ class Categoria extends Model
 
     public static function obtenerCategorias()
     {
-        $categorias = categoria::all();
+        $categorias = Categoria::all();
         return $categorias;
     }
 }

@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
 
 
         foreach (Emprendedor::all() as $emp) {
-            $cat = categoria::where('categoria', $emp->categoria)->first();
+            $cat = Categoria::where('categoria', $emp->categoria)->first();
             if ($cat) {
                 $emp->categoria_id = $cat->id;
                 $emp->save();

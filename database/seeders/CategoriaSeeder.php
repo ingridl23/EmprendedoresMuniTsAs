@@ -24,7 +24,7 @@ class CategoriaSeeder extends Seeder
         ];
 
         foreach ($categorias as $cat) {
-            categoria::create(['categoria' => $cat]);
+            Categoria::create(['categoria' => $cat]);
         }
     }
 }

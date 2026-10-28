@@ -391,7 +391,7 @@ En Windows (Laragon) funciona porque el sistema de archivos no distingue mayúsc
 1. [x] **Configuración** (sección 2): Larastan + `phpstan.neon` + volver a correr el análisis. (622 → 287 errores)
 2. [x] **Bugs reales** (sección 3): primero el `assignRole('admin')` del login y `eliminarEmprendimiento()`. (287 → 252 errores)
 3. [x] **Borrar** `routes/auth.php` y revisar `config/permission.php` (sección 4). (Se quitó la clave `team_resolver`, que Spatie 5.11 no usa.)
-4. [ ] **Mayúsculas de clases** (sección 7): esto evita errores al subir a un servidor Linux.
+4. [x] **Mayúsculas de clases** (sección 7): esto evita errores al subir a un servidor Linux. (79 → 47 errores. `Categoria.php`, `Redes.php`, `Direccion.php`, `CategoriaFactory.php` y `DireccionFactory.php` renombrados; ya figuran en el classmap optimizado.)
 5. [x] **Tipos de retorno** de controladores (sección 5). (252 → 160 errores. Quedan en controladores: mayúsculas de clases (sección 7), `Cloudinary::upload()` sin tipar (falso positivo del paquete), `$request->validate()` "sin efecto" (falso positivo: valida y lanza excepción) y `&&` redundantes, que son chequeos defensivos y no bugs.)
 6. [x] **PHPDoc** de modelos y controladores (sección 6). (160 → 79 errores. Los `@property` ahora reflejan las columnas reales de las migraciones.)
 7. [ ] **Tests** con `assertTrue(true)` (sección 8).

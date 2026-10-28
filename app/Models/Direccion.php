@@ -26,7 +26,7 @@ use App\Models\Emprendedor;
  */
 
 
-class direccion extends Model
+class Direccion extends Model
 {
     use HasFactory;
     /** @var string $table Nombre de la tabla asociada */
@@ -65,7 +65,7 @@ class direccion extends Model
 
     public static function crearDireccion($ciudad, $localidad, $calle, $altura)
     {
-        $direccion = direccion::create([
+        $direccion = Direccion::create([
             'ciudad' => $ciudad,
             'localidad' => $localidad,
             'calle' => $calle,
@@ -78,7 +78,7 @@ class direccion extends Model
 
     /**
      * Modificar una direccion en el sistema:
-     * @param direccion $direccion Se recibe la direccion a modificar.
+     * @param Direccion $direccion Se recibe la direccion a modificar.
      * @return bool Devuelve true si la direccion se guardó.
      */
     public static function editarEmprendimiento($direccion)
@@ -89,7 +89,7 @@ class direccion extends Model
 
     /**
      * Dar de baja una direccion en el sistema:
-     * @param direccion $direccion Se recibe la direccion para eliminar.
+     * @param Direccion $direccion Se recibe la direccion para eliminar.
      * @return bool|null Devuelve true si la direccion se eliminó.
      */
 
