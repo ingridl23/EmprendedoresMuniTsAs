@@ -63,8 +63,8 @@ Route::post('/emprendedores/editarImgs/{id}', [administradorController::class, "
 Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmprendimiento"]); //Elimina un emprendimiento por su ID
 
 
-//rutas admin y roles
-Auth::routes();
+//rutas admin y roles (registro público desactivado: las cuentas admin se crean por seeder)
+Auth::routes(['register' => false]);
 
 //vista de passwords reset
 Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
