@@ -240,7 +240,6 @@
 
                 <!-- Mostrar cada noticia -->
 
-
                 <div class="card mb-3">
                     <img src="{{ $noticia->imagen }}" class="card-img-top1" alt={{ $noticia->titulo }}>
                     <div class="card-body">
