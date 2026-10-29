@@ -59,11 +59,19 @@ class LoginController extends Controller
             'password' => ['required', "min:8", "max:14"],
         ]);
 
+        // Límite de intentos (ThrottlesLogins, incluido en AuthenticatesUsers): 5 fallos por email+IP bloquean 1 minuto
+        if ($this->hasTooManyLoginAttempts($request)) {
+            $this->fireLockoutEvent($request);
+            return $this->sendLockoutResponse($request);
+        }
+
         // Intentar login (el rol admin se asigna en UserSeeder / RegisterController, no al iniciar sesión)
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            $this->clearLoginAttempts($request);
             return back()->with('success', 'Logueado  correctamente.');
         }
+        $this->incrementLoginAttempts($request);
         return back()->withErrors([
             'error' => 'Credenciales incorrectas Login.',
 
