@@ -47,7 +47,7 @@ class EmpleosExport implements FromCollection, WithHeadings, WithMapping
             'Teléfono de Referencia',
             'Posee CUD',
             'Relación de Dependencia',
-            'CV (ruta)',
+            'CV (link de descarga, requiere sesión)',
             'Fecha de Envío',
         ];
     }
@@ -74,7 +74,7 @@ class EmpleosExport implements FromCollection, WithHeadings, WithMapping
             $empleo->referencia_telefonica,
             $empleo->cud ? 'Sí' : 'No',
             $empleo->dependencia ? 'Sí' : 'No',
-            $empleo->cv_path,
+            $empleo->cv_path ? route('solicitantes.cv', $empleo->id) : '',
             $empleo->created_at->format('Y-m-d'),
         ];
     }

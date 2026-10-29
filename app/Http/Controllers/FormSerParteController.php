@@ -67,7 +67,9 @@ class FormSerParteController extends Controller
             if ($subconjunto === 'busqueda de empleo') {
                 // Subir el archivo CV si está presente
                 if ($request->hasFile('cv') && $request->file('cv')->isValid()) {
-                    $cvPath = $request->file('cv')->store('cvs', 'public');
+                    // Disco privado (storage/app/cvs): los CV tienen datos personales y solo se descargan
+                    // con sesión iniciada desde EmpleosController::descargarCv()
+                    $cvPath = $request->file('cv')->store('cvs', 'local');
                 } else {
                     return back()->withErrors(['cv' => 'Archivo de currículum inválido'])->withInput();
                 }

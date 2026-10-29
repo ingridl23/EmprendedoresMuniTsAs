@@ -81,10 +81,16 @@ class serParteTest extends TestCase
             'cv' => $cv,
         ];
 
+        Storage::fake('local');
         $response = $this->post('/formulario/enviar', $data);
-        $response->assertRedirect(); 
+        $response->assertRedirect();
         $response->assertSessionHas('success', 'Formulario enviado correctamente.');
         Mail::assertSent(\App\Mail\sendContactForm::class);
+
+        // El CV queda en el disco privado, no en el público
+        $cvPath = \App\Models\Empleo::firstOrFail()->cv_path;
+        Storage::disk('local')->assertExists($cvPath);
+        Storage::disk('public')->assertMissing($cvPath);
     }
 
 

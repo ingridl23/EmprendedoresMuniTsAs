@@ -8,6 +8,7 @@ use App\Exports\EmpleosExport;
 use Maatwebsite\Excel\Excel as ExcelFormat; // alias para evitar confusión
 use App\Exports\EmpleosExportCollection;
 use App\Models\Empleo;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @class EmpleosController
@@ -31,12 +32,32 @@ class EmpleosController extends Controller
 
     public function __construct()
     {
+        $this->middleware('auth')->only('descargarCv');
         $this->middleware('can:filtrar datos', [
             'only' => [
                 'showForm',
-                'export'
+                'export',
+                'descargarCv'
             ]
         ]);
+    }
+
+    /**
+     * Descargar el CV de un solicitante:
+     *
+     * Los CV se guardan en el disco privado (storage/app/cvs), fuera de la carpeta pública,
+     * así que solo se pueden bajar por esta ruta, con sesión iniciada y el permiso "filtrar datos".
+     *
+     * @param int $id ID del solicitante (tabla empleos).
+     * @return \Symfony\Component\HttpFoundation\StreamedResponse
+     */
+    public function descargarCv($id)
+    {
+        $empleo = Empleo::findOrFail($id);
+        if (!$empleo->cv_path || !Storage::disk('local')->exists($empleo->cv_path)) {
+            abort(404);
+        }
+        return Storage::disk('local')->download($empleo->cv_path, "cv-solicitante-{$empleo->id}.pdf");
     }
 
     /**
