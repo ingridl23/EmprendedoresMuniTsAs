@@ -8,7 +8,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\administradorController;
 use App\Http\Controllers\EmprendedorController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\EmprendedoresController;
 use App\Http\Controllers\FormSerParteController;
 use App\Http\Controllers\noticiasController;
@@ -66,8 +65,6 @@ Route::delete('/emprendedor/{id}', [administradorController::class, "eliminarEmp
 //rutas admin y roles (registro público desactivado: las cuentas admin se crean por seeder)
 Auth::routes(['register' => false]);
 
-//vista de passwords reset
-Route::get('/passwords/reset', [ResetPasswordController::class, "reset"]);
 //noticias
 Route::get("/noticias", [noticiasController::class, "showNoticias"]);
 Route::get("/noticias/{id}", [noticiasController::class, "showNoticia"]);
