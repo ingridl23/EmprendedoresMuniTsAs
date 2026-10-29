@@ -69,6 +69,61 @@ class ResetPasswordTest extends TestCase
         $this->assertTrue(Hash::check('ClaveVieja1', $user->fresh()->password));
     }
 
+    /**
+     * @dataProvider largosDeContrasena
+     */
+    public function test_reset_respeta_el_largo_de_8_a_14_caracteres(string $nueva, bool $aceptada)
+    {
+        $user = $this->crearUsuario();
+        $token = Password::broker()->createToken($user);
+
+        $response = $this->post('/password/reset', [
+            'token' => $token,
+            'email' => $user->email,
+            'password' => $nueva,
+            'password_confirmation' => $nueva,
+        ]);
+
+        if ($aceptada) {
+            $response->assertSessionHasNoErrors();
+            $this->assertTrue(Hash::check($nueva, $user->fresh()->password));
+        } else {
+            $response->assertSessionHasErrors('password');
+            $this->assertTrue(Hash::check('ClaveVieja1', $user->fresh()->password));
+        }
+    }
+
+    public function largosDeContrasena(): array
+    {
+        return [
+            '7 caracteres' => ['Clave01', false],
+            '8 caracteres' => ['Clave012', true],
+            '14 caracteres' => ['ClaveNueva0123', true],
+            '15 caracteres' => ['ClaveNueva01234', false],
+        ];
+    }
+
+    public function test_contrasena_de_14_caracteres_sirve_para_iniciar_sesion()
+    {
+        $user = $this->crearUsuario();
+        $token = Password::broker()->createToken($user);
+
+        $this->post('/password/reset', [
+            'token' => $token,
+            'email' => $user->email,
+            'password' => 'ClaveNueva0123',
+            'password_confirmation' => 'ClaveNueva0123',
+        ]);
+        $this->post('/logout'); // el reset deja la sesión iniciada
+
+        $this->post('/login', [
+            'email' => $user->email,
+            'password' => 'ClaveNueva0123',
+        ]);
+
+        $this->assertAuthenticatedAs($user);
+    }
+
     public function test_ruta_vieja_sin_token_ya_no_existe()
     {
         $this->get('/passwords/reset')->assertStatus(404);
