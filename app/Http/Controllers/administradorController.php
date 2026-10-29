@@ -300,7 +300,7 @@ class administradorController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'imagenes' => 'array|max:5',
-            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|dimensions:max_width=1920,max_height=1080',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048|dimensions:max_width=1920,max_height=1080',
         ]);
         if ($validator->fails()) {
             return response()->json([
@@ -649,7 +649,7 @@ class administradorController extends Controller
     protected function editarImgsNoticias($id, Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'imagen' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'imagen' => 'image|mimes:jpeg,jpg,png,webp|max:2048',
         ]);
         if ($validator->fails()) {
             return response()->json([

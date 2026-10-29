@@ -29,7 +29,7 @@ class validacionNoticia  extends FormRequest
             'titulo' => 'bail|required|string|min:3|max:100',
             'descripcion' => 'bail|required|string|min:20',
             'categoria' => 'bail|required|string|min:1|max:60',
-            'imagen' => 'bail|required|image|mimes:jpeg,jpg,png,webp'
+            'imagen' => 'bail|required|image|mimes:jpeg,jpg,png,webp|max:2048'
         ];
     }
     public function messages()
@@ -43,6 +43,7 @@ class validacionNoticia  extends FormRequest
             'descripcion.string' => 'Debe ingresar una descripcion válida',
             'categoria.string' => 'Debe ingresar una categoría válida',
             'imagen.mimes' => 'El formato de la imagen debe de ser en: jpeg,jpg,png,webp',
+            'imagen.max' => 'La imagen no debe pesar más de 2 MB.',
             'titulo.min' => 'El titulo debe contener al menos un caracter',
             'titulo.max' => 'El titulo no debe contener más de 100 caracteres',
             'descripcion.min' => 'La descripción debe contener al menos un caracter',

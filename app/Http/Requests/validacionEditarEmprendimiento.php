@@ -31,7 +31,7 @@ class validacionEditarEmprendimiento extends FormRequest
             'descripcion'=>'bail|required|string|min:10',
             'categoria' => 'bail|required|exists:categoria,id',
             'imagenes' => 'array|max:5',
-            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048|dimensions:max_width=1920,max_height=1080',
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048|dimensions:max_width=1920,max_height=1080',
             'facebook'=>'nullable|string|min:3|max:100',
             'instagram'=>'nullable|string|min:3|max:100',
             'whatsapp'=>'integer|digits_between:8,11|min:1',
@@ -39,7 +39,7 @@ class validacionEditarEmprendimiento extends FormRequest
             'localidad'=>'bail|required|string',
             'calle'=>'bail|required|string',
             'altura'=>'required|integer|min:1',
-        ];
+        ] + validacionEmprendimiento::reglasHorarios();
     }
 
        public function messages()
@@ -61,7 +61,7 @@ class validacionEditarEmprendimiento extends FormRequest
             'imagenes.max' => 'No puedes subir más de 5 imágenes.',
 
             'imagenes.*.image' => 'Cada archivo debe ser una imagen.',
-            'imagenes.*.mimes' => 'Las imágenes deben estar en formato: jpeg, png, jpg, gif, svg o webp.',
+            'imagenes.*.mimes' => 'Las imágenes deben estar en formato: jpeg, png, jpg, gif o webp.',
             'imagenes.*.max' => 'Cada imagen no debe pesar más de 2 MB.',
             'imagenes.*.dimensions' => 'Cada imagen debe tener un máximo de 1920px de ancho y 1080px de alto.',
 
@@ -88,6 +88,11 @@ class validacionEditarEmprendimiento extends FormRequest
 
             'localidad.required' => 'La localidad es obligatoria.',
             'localidad.string' => 'La localidad debe ser un texto.',
+
+            'horarios.required' => 'Los horarios son obligatorios.',
+            'horarios.array' => 'Los horarios no tienen un formato válido.',
+            'horarios.*.hora_de_apertura.regex' => 'La hora de apertura debe tener el formato HH:MM.',
+            'horarios.*.hora_de_cierre.regex' => 'La hora de cierre debe tener el formato HH:MM.',
         ];
     }
 }

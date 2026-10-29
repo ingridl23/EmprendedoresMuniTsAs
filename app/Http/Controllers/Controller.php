@@ -26,4 +26,22 @@ class Controller extends BaseController
 
      */
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    /**
+     * Arma el patrón LIKE para los buscadores públicos a partir del parámetro "busqueda".
+     *
+     * Valida que sea texto de hasta 100 caracteres y escapa los comodines % y _ (y la barra
+     * invertida, que es el carácter de escape de MySQL) para que se busquen como texto común.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return string|null Patrón "%texto%", o null si la búsqueda no es válida.
+     */
+    protected function patronBusqueda(\Illuminate\Http\Request $request): ?string
+    {
+        $busqueda = $request->query('busqueda', '');
+        if (!is_string($busqueda) || mb_strlen($busqueda) > 100) {
+            return null;
+        }
+        return '%' . str_replace(['\\', '%', '_'], ['\\\\', '\\%', '\\_'], $busqueda) . '%';
+    }
 }

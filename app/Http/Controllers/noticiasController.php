@@ -78,8 +78,11 @@ class noticiasController extends Controller
     /*Filtro de busqueda de noticias por titulo*/
     public function filterNoticiasByTittle(Request $request)
     {
-        $busqueda = $request->query('busqueda');
-        $noticias = Noticias::where('titulo', 'LIKE', '%' . $busqueda . '%')
+        $patron = $this->patronBusqueda($request);
+        if ($patron === null) {
+            return response()->json([], 422);
+        }
+        $noticias = Noticias::where('titulo', 'LIKE', $patron)
             // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
             ->get();
         return response()->json($noticias);
@@ -95,8 +98,11 @@ class noticiasController extends Controller
     /*Filtro de busqueda de noticias por categoria*/
     public function filterNoticiasByCategory(Request $request)
     {
-        $busqueda = $request->query('busqueda');
-        $noticias = Noticias::where('categoria', 'LIKE', '%' . $busqueda . '%')
+        $patron = $this->patronBusqueda($request);
+        if ($patron === null) {
+            return response()->json([], 422);
+        }
+        $noticias = Noticias::where('categoria', 'LIKE', $patron)
             // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
             ->get();
         return response()->json($noticias);
@@ -112,8 +118,11 @@ class noticiasController extends Controller
     /*Filtro de busqueda de noticias por fecha*/
     public function filterNoticiasByDate(Request $request)
     {
-        $busqueda = $request->query('busqueda');
-        $noticias = Noticias::where('created_at', 'LIKE', '%' . $busqueda . '%')
+        $patron = $this->patronBusqueda($request);
+        if ($patron === null) {
+            return response()->json([], 422);
+        }
+        $noticias = Noticias::where('created_at', 'LIKE', $patron)
             // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
             ->get();
         return response()->json($noticias);

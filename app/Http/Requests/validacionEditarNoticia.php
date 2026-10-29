@@ -23,7 +23,7 @@ class validacionEditarNoticia extends validacionNoticia
             'titulo' => 'bail|required|string|min:3|max:100',
             'descripcion' => 'bail|required|string|min:1',
             'categoria' => 'bail|required|string|min:1|max:60',
-            'imagen' => 'bail|image|mimes:jpeg,jpg,png,webp'
+            'imagen' => 'bail|image|mimes:jpeg,jpg,png,webp|max:2048'
         ];
     }
 }

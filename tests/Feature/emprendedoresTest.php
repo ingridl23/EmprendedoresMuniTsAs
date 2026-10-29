@@ -115,7 +115,7 @@ class emprendedoresTest extends TestCase
             'altura' => '123',
             // horarios
             'horarios' => [
-                'lunes' => [
+                'Lunes' => [
                     'hora_de_apertura' => '08:00',
                     'hora_de_cierre' => '18:00',
                     'participa_feria' => true,
@@ -137,7 +137,7 @@ class emprendedoresTest extends TestCase
             'descripcion' => 'Descripción del emprendimiento',
         ]);
         $this->assertDatabaseHas('horario', [
-            'dia' => 'lunes',
+            'dia' => 'Lunes',
             'hora_apertura' => '08:00',
             'hora_cierre' => '18:00',
         ]);

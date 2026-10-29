@@ -175,9 +175,12 @@ class EmprendedorController extends Controller
     /*Filtro de busqueda de emprendedores por nombre*/
     public function filterEmprendimientosByName(Request $request)
     {
-        $busqueda = $request->query('busqueda');
+        $patron = $this->patronBusqueda($request);
+        if ($patron === null) {
+            return response()->json([], 422);
+        }
         $emprendimientos = Emprendedor::with(['redes', 'imagenes', 'categoria'])
-            ->where('nombre', 'LIKE', '%' . $busqueda . '%')
+            ->where('nombre', 'LIKE', $patron)
             // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
             ->get();
         return response()->json($emprendimientos);
