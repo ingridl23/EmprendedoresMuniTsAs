@@ -385,7 +385,8 @@
 
     <script type="module" src="{{ asset('js/carteles/cartelEliminar.js') }} "></script>
     <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
-    <script type="module" src="{{ asset('js/emprendedores/emprendedores.js') }}"></script>
+    {{-- ?v= cambia con cada actualización del archivo para que navegador y Cloudflare no sirvan la versión vieja --}}
+    <script type="module" src="{{ asset('js/emprendedores/emprendedores.js') }}?v={{ filemtime(public_path('js/emprendedores/emprendedores.js')) }}"></script>
     <script src="{{ asset('js/navbar.js') }} "></script>
     <script src="{{ asset('js/loader.js') }}"></script>
 

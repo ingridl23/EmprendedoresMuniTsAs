@@ -296,7 +296,8 @@
 
     <!--Para cambio de color del navbar-->
     <script src="{{ asset('js/navbar.js') }} "></script>
-    <script src="{{ asset('js/noticias/buscarNoticias.js') }} "></script>
+    {{-- ?v= cambia con cada actualización del archivo para que navegador y Cloudflare no sirvan la versión vieja --}}
+    <script src="{{ asset('js/noticias/buscarNoticias.js') }}?v={{ filemtime(public_path('js/noticias/buscarNoticias.js')) }}"></script>
     <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
 
     <!--Para alertas desde JS-->
