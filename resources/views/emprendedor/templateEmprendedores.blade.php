@@ -274,7 +274,7 @@
                                                                         src="{{ $emprendedor->imagenes->first()['url'] }}"
                                                                         alt="{{ $emprendedor->nombre }}" />
                                                                 @endif
-                                                                <p>{!! nl2br($emprendedor->descripcion) !!}</p>
+                                                                <p>{!! nl2br(e($emprendedor->descripcion)) !!}</p>
                                                                 <ul class="list-inline">
                                                                     <li><strong>Emprendedor</strong></li>
                                                                     <li><strong>Categoria:</strong>
