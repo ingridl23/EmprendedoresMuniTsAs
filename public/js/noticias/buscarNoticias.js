@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', e=>{
     function filtrarEmprendedor(id){
         if(document.getElementById(`${id}`).value!=""){
             let search = document.getElementById(`${id}`).value;
-            fetch(`noticias/buscador${id}?busqueda=${search}`, {
+            fetch(`noticias/buscador${id}?busqueda=${encodeURIComponent(search)}`, {
                 method: 'get'
             })
             .then(response => response.json())
@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', e=>{
             card.classList.add("container-card")
             let contenido = `
                 <div class="card mb-3">
-                    <img src="${noticia.imagen}" class="card-img-top1"
+                    <img src="${escaparHtml(noticia.imagen)}" class="card-img-top1"
                         alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">${noticia.titulo}</h5>
-                        <p class="card-text">${noticia.categoria}</p>
+                        <h5 class="card-title">${escaparHtml(noticia.titulo)}</h5>
+                        <p class="card-text">${escaparHtml(noticia.categoria)}</p>
                         <div class="container-vermas">
                             <p class="card-text actualizacionFecha"><small class="text-body-secondary">Publicación : ${soloFechaCreado}</small></p>
                             <p class="card-text actualizacionFecha"><small class="text-body-secondary">Última actualización: ${soloFechaActualizado}</small></p>
@@ -96,6 +96,19 @@ document.addEventListener('DOMContentLoaded', e=>{
         let linea = document.createElement('hr');
 
         container.appendChild(linea);
+    }
+
+    // Escapa los datos que vienen de la API antes de insertarlos con innerHTML (evita XSS)
+    function escaparHtml(texto) {
+        if (texto === undefined || texto === null) {
+            return '';
+        }
+        return String(texto)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
     }
 
 })

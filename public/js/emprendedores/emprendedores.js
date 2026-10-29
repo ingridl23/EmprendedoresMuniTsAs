@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         estaLogueado();
         if (document.getElementById("emprendedores-filter").value != "") {
             let search = document.getElementById("emprendedores-filter").value;
-            fetch(`emprendedores/buscador?busqueda=${search}`, {
+            fetch(`emprendedores/buscador?busqueda=${encodeURIComponent(search)}`, {
                     method: "get",
                 })
                 .then((response) => response.json())
@@ -99,6 +99,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 // Mostrar imagen por defecto si no hay ninguna
                 url = "assets/img/default.jpg";
             }
+            url = escaparHtml(url);
+            const nombre = escaparHtml(emprendimiento.nombre);
+            const categoria = escaparHtml(emprendimiento.categoria.categoria);
 
             let contenido = `
                 <div class="portfolio-item">
@@ -106,11 +109,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
                         <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="${url}" alt="${emprendimiento.nombre}" />
+                        <img class="img-fluid" src="${url}" alt="${nombre}" />
                     </a>
                                     <div class="portfolio-caption">
-                                        <div class="portfolio-caption-heading">${emprendimiento.nombre}</div>
-                                        <div class="portfolio-caption-subheading text-muted">${emprendimiento.categoria.categoria}</div>
+                                        <div class="portfolio-caption-heading">${nombre}</div>
+                                        <div class="portfolio-caption-subheading text-muted">${categoria}</div>
                                     </div>
                                 </div>
                                 <div class="portfolio-modal modal fade" id="portfolioModal${emprendimiento.id}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -122,23 +125,23 @@ document.addEventListener("DOMContentLoaded", (e) => {
                                                 <div class="row justify-content-center">
                                                     <div class="col-lg-8">
                                                         <div class="modal-body">
-                                                            <h2 class="text-uppercase"> ${emprendimiento.nombre}</h2>
+                                                            <h2 class="text-uppercase"> ${nombre}</h2>
                                                             <img class="img-fluid d-block mx-auto img-modalEmprendedor"
-                                                                src=${url}
-                                                                alt="${emprendimiento.nombre}" />
-                                                            <p>${nl2br(emprendimiento.descripcion)}</p>
+                                                                src="${url}"
+                                                                alt="${nombre}" />
+                                                            <p>${nl2br(escaparHtml(emprendimiento.descripcion))}</p>
                                                             <ul class="list-inline">
                                                                 <li>
                                                                     <strong> Emprendedor</strong>
                                                                 </li>
                                                                 <li>
-                                                                    <strong>Categoria: </strong>${emprendimiento.categoria.categoria}
+                                                                    <strong>Categoria: </strong>${categoria}
                                                                 </li>
                                                             </ul>
                                                             <button class="btn btn-primary btn-xl text-uppercase detalleEmprendedor"
                                                                 data-bs-dismiss="modal" type="button">
                                                                 <a href="/emprendedor/${emprendimiento.id}">
-                                                                    ver más acerca de ${emprendimiento.nombre}
+                                                                    ver más acerca de ${nombre}
                                                                 </a>
                                                             </button>
                                                             <div class="containerBotonesEmprendedor">`;
@@ -186,6 +189,19 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }
         const breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
         return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+    }
+
+    // Escapa los datos que vienen de la API antes de insertarlos con innerHTML (evita XSS)
+    function escaparHtml(texto) {
+        if (texto === undefined || texto === null) {
+            return '';
+        }
+        return String(texto)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
     }
     
     
