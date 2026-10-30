@@ -212,18 +212,4 @@ class EmprendedorController extends Controller
         ];
         return redirect('/emprendedores')->with('error', $mensajes);
     }
-
-    /**
-     * visualizar El alta de un emprendimiento en el sistema:
-     *
-     *
-     * @return \Illuminate\Contracts\View\View Seccion de altas de emprendimientos.
-     *
-     * @throws \Exception Si ocurre un error al mostrar la secion.
-     */
-
-    public function showFormCrearEmprendimiento()
-    {
-        return view('administradores.formNuevoEmprendimiento');
-    }
 }

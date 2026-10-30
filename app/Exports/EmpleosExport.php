@@ -78,35 +78,4 @@ class EmpleosExport implements FromCollection, WithHeadings, WithMapping
             $empleo->created_at->format('Y-m-d'),
         ];
     }
-
-    /*
-
-    public function headings(): array
-    {
-        return [
-            'ID',
-            'Nombre',
-            'Asunto',
-            'Email',
-            'Teléfono',
-            'Edad',
-            'DNI',
-            'Ciudad',
-            'Localidad',
-            'Formación',
-            'Nombre del Curso',
-            'Descripción',
-            'Referencia Laboral',
-            'Rubro de Referencia',
-            'Actividad Referida',
-            'Contratista',
-            'Teléfono de Referencia',
-            'Posee CUD',
-            'Relación de Dependencia',
-            'CV (ruta)',
-            'Fecha de Envío',
-        ];
-    }
-
-        */
 }

@@ -114,22 +114,6 @@ class Emprendedor extends Model
 
 
     /**
-     * Visualizar todos los emprendimientos presentes en el sistema:
-     *
-     * @return \Illuminate\Database\Eloquent\Collection|null Devuelve una coleccion de emprendimientos, o null si no hay ninguno.
-     */
-    public static function showEmprendimientos()
-    {
-        //$emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen', 'categoria'])->get();
-        $emprendimientos = Emprendedor::all();
-        if (count($emprendimientos) > Constants::VALORMIN) {
-            return $emprendimientos;
-        }
-        return null;
-    }
-
-
-    /**
      * Visibilizar un emprendimiento vigente en el sistema:
      *
      * Al seleccionar un emprendimiento cargado se devuelven sus datos persistidos dentro del sistema.
@@ -161,21 +145,6 @@ class Emprendedor extends Model
     {
         return Emprendedor::with('categoria')->get()->groupBy('categoria_id');
     }
-
-    /* public static function obtenerCategorias()
-    {
-        return [
-            'Gastronomía',
-            'Indumentaria',
-            'Tecnología',
-            'Servicios',
-            'Artesanía',
-        ];
-    }
-*/
-    /////////////////////////////////////////////
-
-
 
     /**   Modificar un emprendimiento:
      *

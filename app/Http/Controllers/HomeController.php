@@ -20,13 +20,6 @@ use Illuminate\Http\Request;
 //controller para emprendedores  general
 class HomeController extends Controller
 {
-
-    /* public function __construct()
-    {
-        $this->middleware('auth');
-    }*/
-
-
     /**
      * Carga de emprendimietos aleatorios dentor de la homepage:
      * Se devuelve la seccion dentro de la homepage  de los ultimos emprendimientos publicadosdentro del sistema.

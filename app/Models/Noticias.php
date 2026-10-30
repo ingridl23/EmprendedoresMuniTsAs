@@ -80,22 +80,6 @@ class Noticias extends Model
 
     /**
      * Obtener todas las categorías de publicaciones registradas en el sistema:
-     * @param int $cantidad
-     * @return \Illuminate\Support\Collection Devuelve una coleccion limitada de publicaciones segun criterio de la query(atributo cantidad).
-     */
-
-    public static function obtenerCategoriasNoticias($cantidad = 10)
-    {
-
-        return Noticias::with(['categoria']) // relacion
-            ->orderBy('created_at', 'desc')
-            ->take($cantidad)
-            ->get();
-    }
-
-
-    /**
-     * Obtener todas las categorías de publicaciones registradas en el sistema:
      *
      * @return \Illuminate\Database\Eloquent\Collection , devuelve una coleccion completa de publicaciones segun criterio de la query.
      */

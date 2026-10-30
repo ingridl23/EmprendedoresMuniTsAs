@@ -594,8 +594,6 @@ class AdministradorController extends Controller
             ];
             return redirect('/noticias')->with('error', $mensajes);
         }
-        //nl2br Salto de linea
-        $descripcion = nl2br($request->descripcion);
         $creado = Noticias::createNoticia($request, $path, $imagen_public_id);
         if ($creado && $creado != null) {
             $mensajes = [

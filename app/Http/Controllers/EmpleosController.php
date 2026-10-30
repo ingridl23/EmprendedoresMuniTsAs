@@ -97,30 +97,10 @@ class EmpleosController extends Controller
 
         $query = Empleo::query();
 
-        /*
-        $query->when($request->filled('ciudad'), function ($q) use ($request) {
-            $ciudad = strtolower(trim($request->ciudad));
-            $q->whereRaw('LOWER(ciudad) LIKE ?', ["%{$ciudad}%"]);
-        });*/
-
         if ($request->filled('ciudad')) {
             $ciudad = strtolower(trim($request->ciudad));
             $query->whereRaw('LOWER(ciudad) LIKE ?', ["%{$ciudad}%"]);
         }
-
-        /*    // Filtro edad >=
-        $query->when($request->filled('edad'), function ($q) use ($request) {
-            $q->where('edad', '>=', (int) $request->edad);
-        });
-
-
-
-
-        // Filtro fecha exacta (created_at)
-        $query->when($request->filled('created_at'), function ($q) use ($request) {
-            $q->whereDate('created_at', $request->created_at);
-        });*/
-
 
         if ($request->filled('edad')) {
             $query->where('edad', '>=', (int) $request->edad);
@@ -130,26 +110,6 @@ class EmpleosController extends Controller
             $query->whereDate('created_at', $request->created_at);
         }
 
-
-
-        /*
-        // Filtro booleano cud
-        $query->when($request->filled('cud'), function ($q) use ($request) {
-            $q->where('cud', (bool) $request->cud);
-        });
-
-
-        // Filtro dni exacto
-        $query->when($request->filled('dni'), function ($q) use ($request) {
-            $q->where('dni', $request->dni);
-        });
-
-
-        // Filtro nombre con LIKE para coincidencia parcial
-        $query->when($request->filled('nombre'), function ($q) use ($request) {
-            $nombre = trim($request->nombre);
-            $q->where('nombre', 'LIKE', "%{$nombre}%");
-        });*/
         // Para cud, tené en cuenta que si no viene explícitamente el booleano, puede fallar el filtro
         if ($request->filled('cud')) {
             // Convertir a booleano estricto

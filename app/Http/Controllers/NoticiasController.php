@@ -127,14 +127,4 @@ class NoticiasController extends Controller
             ->get();
         return response()->json($noticias);
     }
-
-    /**
-     * Dar de alta una publicacion en el sistema:
-     *  Se Validan los datos ingresados desde el formulario de busqueda y su persistencia en el sistema segun la logica de negocio.
-     * @return \Illuminate\Contracts\View\View Seccion de alta de publicaciones del sistema.
-     **/
-    public function showFormCrearNoticia()
-    {
-        return view('administradores.noticias.formNuevaNoticia');
-    }
 }
