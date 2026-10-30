@@ -531,7 +531,7 @@ class administradorController extends Controller
 
 
 
-    /**************************************** funciones del crud noticias*************************** */
+    /**************************************** funciones del crud noticias *************************** */
 
 
     /**

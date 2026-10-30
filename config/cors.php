@@ -19,7 +19,8 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    // Solo el sitio propio: ninguna otra aplicación consume /api (confirmado el 30/10/2026)
+    'allowed_origins' => ['https://emprendedores.tresarroyos.gov.ar'],
 
     'allowed_origins_patterns' => [],
 
