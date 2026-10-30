@@ -352,7 +352,7 @@ class AdministradorController extends Controller
                 }
             } else {
                 return response()->json([
-                    'redirect' => "/noticias/formEditarNoticia/{$id}",
+                    'redirect' => "/emprendedores/formEditarEmprendimiento/{$id}",
                     'message' => [
                         'titulo' => '¡Error!',
                         'detalle' => 'Ha excedido la cantidad de imagenes permitidas.',
@@ -652,7 +652,7 @@ class AdministradorController extends Controller
      *
      * @return JsonResponse Envio de estado de la respuesta del fetch
      */
-    protected function editarImgsNoticias($id, Request $request)
+    public function editarImgsNoticias($id, Request $request)
     {
         $validator = Validator::make($request->all(), [
             'imagen' => 'image|mimes:jpeg,jpg,png,webp|max:2048',
@@ -709,7 +709,7 @@ class AdministradorController extends Controller
      * @return RedirectResponse Redirige al usuario administrador hacia la homepage  de noticias.
      *  @throws \Exception Si ocurre un error al persistir datos.
      */
-    protected function editNoticia($id, ValidacionEditarNoticia $request)
+    public function editNoticia($id, ValidacionEditarNoticia $request)
     {
         $noticia = Noticias::find($id);
         if ($noticia != null) {
@@ -742,7 +742,7 @@ class AdministradorController extends Controller
      * @return RedirectResponse Redirige al usuario administrador a la homepage de noticias.
      *  @throws \Exception Si ocurre un error al persistir datos.
      */
-    protected function deleteNoticia($id)
+    public function deleteNoticia($id)
     {
         $noticia = Noticias::find($id);
         if ($noticia != null) {
