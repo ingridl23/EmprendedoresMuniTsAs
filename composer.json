@@ -20,6 +20,7 @@
         "spatie/laravel-permission": "^5.11"
     },
     "require-dev": {
+        "driftingly/rector-laravel": "^1.2",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "ibex/crud-generator": "^1.6",
@@ -28,7 +29,8 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
         "nunomaduro/larastan": "1.0",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "rector/rector": "^1.2"
     },
     "autoload": {
         "psr-4": {
