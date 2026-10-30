@@ -54,16 +54,13 @@ class Redes extends Model
      */
     public static function editarEmprendimiento($redes)
     {
+        // Si ya viene la URL completa se deja como está; si viene solo el usuario se arma la URL
         $cadena = "https";
-        if (!strpos($redes->instagram, $cadena)) {
-            if ($redes->instagram != null || $redes->instagram != "") {
-                $redes->instagram = "https://instagram.com/{$redes->instagram}";
-            }
+        if (filled($redes->instagram) && !str_contains($redes->instagram, $cadena)) {
+            $redes->instagram = "https://instagram.com/{$redes->instagram}";
         }
-        if (!strpos($redes->facebook, $cadena)) {
-            if ($redes->facebook != null || $redes->facebook != "") {
-                $redes->facebook = "https://facebook.com/{$redes->facebook}";
-            }
+        if (filled($redes->facebook) && !str_contains($redes->facebook, $cadena)) {
+            $redes->facebook = "https://facebook.com/{$redes->facebook}";
         }
         $redesEdit = $redes->save();
         return $redesEdit;

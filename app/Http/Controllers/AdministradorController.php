@@ -273,16 +273,17 @@ class AdministradorController extends Controller
     /**
      * Obtener el nombre de usuario desde la URL de una red social:
      *
-     * @param string $redes URL completa de la red social.
+     * @param string|null $redes URL completa de la red social.
      *
-     * @return string Nombre de usuario extraído de la URL.
+     * @return string|null Nombre de usuario extraído de la URL, o null si no hay red cargada.
      */
     public function obtenerRedes($redes)
     {
+        if ($redes === null) {
+            return null;
+        }
         $redes = rtrim($redes, '/'); //Elimina todos los caracteres "/" que se encuentren al final
-        $posicion = strrpos($redes, '/'); // posición del último '/'
-        $usuarioNombre = substr($redes, $posicion + 1); // obtiene "El nombre del usuario en redes"
-        return $usuarioNombre;
+        return Str::afterLast($redes, '/'); // lo que sigue al último '/'; si no hay '/', el texto completo
     }
 
     /**
@@ -390,8 +391,6 @@ class AdministradorController extends Controller
         if ($emprendimiento != null) {
             $horarios = Horario::obtenerHorarios($id);
             $redes = Redes::find($emprendimiento->redes_id);
-            $redes->instagram = $this->obtenerRedes($redes->instagram);
-            $redes->facebook = $this->obtenerRedes($redes->facebook);
             $direccion = Direccion::find($emprendimiento->direccion_id);
             if ($redes != null) {
                 $redes->instagram = $request->input('instagram');
