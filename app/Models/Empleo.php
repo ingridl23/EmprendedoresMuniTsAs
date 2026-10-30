@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-use App\constants;
+use App\Constants;
 use Database\Factories\EmpleoFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

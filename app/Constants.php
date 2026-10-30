@@ -2,7 +2,7 @@
 
 namespace App;
 
-class constants
+class Constants
 {
     const VALORMIN = 0;
 }

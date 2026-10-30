@@ -20,7 +20,7 @@ use Mockery;
 use App\Models\Imagenes;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
-class emprendedoresTest extends TestCase
+class EmprendedoresTest extends TestCase
 {
     use RefreshDatabase;
 

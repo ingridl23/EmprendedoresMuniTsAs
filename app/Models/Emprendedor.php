@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\constants;
+use App\Constants;
 use Database\Factories\EmprendedorFactory;
 use Database\Factories\ImagenesFactory;
 use Database\Factories\HorarioFactory;
@@ -122,7 +122,7 @@ class Emprendedor extends Model
     {
         //$emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen', 'categoria'])->get();
         $emprendimientos = Emprendedor::all();
-        if (count($emprendimientos) > constants::VALORMIN) {
+        if (count($emprendimientos) > Constants::VALORMIN) {
             return $emprendimientos;
         }
         return null;
@@ -144,7 +144,7 @@ class Emprendedor extends Model
     public static function showEmprendimientoId($id)
     {
         $emprendimiento = Emprendedor::with(['redes', 'direccion'])->where('emprendedor.id', $id)->get();
-        if (count($emprendimiento) > constants::VALORMIN) {
+        if (count($emprendimiento) > Constants::VALORMIN) {
             $emprendimiento = $emprendimiento[0];
             return $emprendimiento;
         }

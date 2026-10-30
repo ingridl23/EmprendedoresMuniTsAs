@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Http\Requests\validacionEditarEmprendimiento;
-use App\Http\Requests\validacionEmprendimiento;
-use App\Http\Requests\validacionNoticia;
+use App\Http\Requests\ValidacionEditarEmprendimiento;
+use App\Http\Requests\ValidacionEmprendimiento;
+use App\Http\Requests\ValidacionNoticia;
 use App\Models\Emprendedor;
 use App\Models\Noticias;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -94,14 +94,14 @@ class ValidacionEntradasTest extends TestCase
 
     private function reglaImagenEmprendimiento(): array
     {
-        return ['imagenes.*' => (new validacionEmprendimiento())->rules()['imagenes.*']];
+        return ['imagenes.*' => (new ValidacionEmprendimiento())->rules()['imagenes.*']];
     }
 
     public function test_svg_no_se_acepta_en_emprendimientos()
     {
         $svg = UploadedFile::fake()->createWithContent('logo.svg', '<svg xmlns="http://www.w3.org/2000/svg"><script>alert(1)</script></svg>');
 
-        foreach ([new validacionEmprendimiento(), new validacionEditarEmprendimiento()] as $request) {
+        foreach ([new ValidacionEmprendimiento(), new ValidacionEditarEmprendimiento()] as $request) {
             $v = Validator::make(['imagenes' => [$svg]], ['imagenes.*' => $request->rules()['imagenes.*']]);
             $this->assertTrue($v->fails(), get_class($request) . ' acepta SVG');
         }
@@ -118,7 +118,7 @@ class ValidacionEntradasTest extends TestCase
     {
         $grande = UploadedFile::fake()->image('foto.jpg')->size(2049);
         $chica = UploadedFile::fake()->image('foto.jpg')->size(2048);
-        $regla = ['imagen' => (new validacionNoticia())->rules()['imagen']];
+        $regla = ['imagen' => (new ValidacionNoticia())->rules()['imagen']];
 
         $this->assertTrue(Validator::make(['imagen' => $grande], $regla)->fails());
         $this->assertFalse(Validator::make(['imagen' => $chica], $regla)->fails());
@@ -128,7 +128,7 @@ class ValidacionEntradasTest extends TestCase
 
     private function validarHorarios(array $datos): \Illuminate\Contracts\Validation\Validator
     {
-        return Validator::make($datos, validacionEmprendimiento::reglasHorarios());
+        return Validator::make($datos, ValidacionEmprendimiento::reglasHorarios());
     }
 
     public function test_horarios_validos_se_aceptan()

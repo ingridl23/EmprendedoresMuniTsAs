@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
 use Carbon\Carbon;
 
-class noticiasTest extends TestCase
+class NoticiasTest extends TestCase
 {
     use RefreshDatabase;
 

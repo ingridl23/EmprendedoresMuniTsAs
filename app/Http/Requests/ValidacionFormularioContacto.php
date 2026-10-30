@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class validacionFormularioContacto  extends FormRequest
+class ValidacionFormularioContacto  extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

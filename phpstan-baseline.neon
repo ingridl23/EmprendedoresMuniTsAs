@@ -13,22 +13,22 @@ parameters:
 		-
 			message: "#^Call to an undefined method Cloudinary\\\\Api\\\\ApiResponse\\:\\:getPublicId\\(\\)\\.$#"
 			count: 4
-			path: app/Http/Controllers/administradorController.php
+			path: app/Http/Controllers/AdministradorController.php
 
 		-
 			message: "#^Call to an undefined method Cloudinary\\\\Api\\\\ApiResponse\\:\\:getSecurePath\\(\\)\\.$#"
 			count: 4
-			path: app/Http/Controllers/administradorController.php
+			path: app/Http/Controllers/AdministradorController.php
 
 		-
 			message: "#^Left side of && is always true\\.$#"
 			count: 1
-			path: app/Http/Controllers/administradorController.php
+			path: app/Http/Controllers/AdministradorController.php
 
 		-
 			message: "#^Right side of && is always true\\.$#"
 			count: 2
-			path: app/Http/Controllers/administradorController.php
+			path: app/Http/Controllers/AdministradorController.php
 
 		-
 			message: "#^Undefined variable\\: \\$this$#"
@@ -38,59 +38,59 @@ parameters:
 		-
 			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
 			count: 2
-			path: tests/Feature/emprendedoresExcelTest.php
+			path: tests/Feature/EmprendedoresExcelTest.php
 
 		-
 			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:assignRole\\(\\)\\.$#"
 			count: 1
-			path: tests/Feature/emprendedoresExcelTest.php
+			path: tests/Feature/EmprendedoresExcelTest.php
 
 		-
 			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
 			count: 13
-			path: tests/Feature/emprendedoresTest.php
+			path: tests/Feature/EmprendedoresTest.php
 
 		-
 			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
 			count: 2
-			path: tests/Feature/emprendedoresTest.php
+			path: tests/Feature/EmprendedoresTest.php
 
 		-
 			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:assignRole\\(\\)\\.$#"
 			count: 1
-			path: tests/Feature/emprendedoresTest.php
+			path: tests/Feature/EmprendedoresTest.php
 
 		-
 			message: "#^Parameter \\#1 \\$user of method Illuminate\\\\Foundation\\\\Testing\\\\TestCase\\:\\:actingAs\\(\\) expects Illuminate\\\\Contracts\\\\Auth\\\\Authenticatable, Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model given\\.$#"
 			count: 1
-			path: tests/Feature/emprendedoresTest.php
+			path: tests/Feature/EmprendedoresTest.php
 
 		-
 			message: "#^Parameter \\#1 \\$user of method Illuminate\\\\Foundation\\\\Testing\\\\TestCase\\:\\:actingAs\\(\\) expects Illuminate\\\\Contracts\\\\Auth\\\\Authenticatable, Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model given\\.$#"
 			count: 1
-			path: tests/Feature/loginTest.php
+			path: tests/Feature/LoginTest.php
 
 		-
 			message: "#^Parameter \\#1 \\$user of method Illuminate\\\\Foundation\\\\Testing\\\\TestCase\\:\\:assertAuthenticatedAs\\(\\) expects Illuminate\\\\Contracts\\\\Auth\\\\Authenticatable, Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model given\\.$#"
 			count: 1
-			path: tests/Feature/loginTest.php
+			path: tests/Feature/LoginTest.php
 
 		-
 			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
 			count: 8
-			path: tests/Feature/noticiasTest.php
+			path: tests/Feature/NoticiasTest.php
 
 		-
 			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$imagen_public_id\\.$#"
 			count: 1
-			path: tests/Feature/noticiasTest.php
+			path: tests/Feature/NoticiasTest.php
 
 		-
 			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:assignRole\\(\\)\\.$#"
 			count: 1
-			path: tests/Feature/noticiasTest.php
+			path: tests/Feature/NoticiasTest.php
 
 		-
 			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:assignRole\\(\\)\\.$#"
 			count: 1
-			path: tests/Feature/solicitantesTest.php
+			path: tests/Feature/SolicitantesTest.php

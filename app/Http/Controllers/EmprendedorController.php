@@ -6,7 +6,7 @@ use App\Models\Emprendedor;
 use App\Models\Categoria;
 use App\Models\Direccion;
 use App\Http\Requests\EmprendedorRequest;
-use App\constants;
+use App\Constants;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EmprendedoresExport;
@@ -199,7 +199,7 @@ class EmprendedorController extends Controller
 
     public function showEmprendimientoId($id)
     {
-        if (is_numeric($id) && $id > constants::VALORMIN) {
+        if (is_numeric($id) && $id > Constants::VALORMIN) {
             // $emprendimiento = Emprendedor::find($id);
             $emprendimiento = Emprendedor::showEmprendimientoId($id);
             if ($emprendimiento != null) {

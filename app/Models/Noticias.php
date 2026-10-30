@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\constants;
+use App\Constants;
 use Database\Factories\NoticiasFactory;
 use Illuminate\Support\Str;
 
@@ -70,7 +70,7 @@ class Noticias extends Model
     public static function showNoticiasId($id)
     {
         $noticia = Noticias::where('noticias.id', $id)->get();
-        if (count($noticia) > constants::VALORMIN) {
+        if (count($noticia) > Constants::VALORMIN) {
             $noticia = $noticia[0];
             return $noticia;
         }

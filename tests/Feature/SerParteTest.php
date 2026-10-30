@@ -6,12 +6,12 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Mail\Signedup;
-use App\Mail\sendContactForm;
+use App\Mail\SendContactForm;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
-class serParteTest extends TestCase
+class SerParteTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -30,7 +30,7 @@ class serParteTest extends TestCase
         $response = $this->post('/formulario/enviar', $data);
         $response->assertRedirect(); 
         $response->assertSessionHas('success', 'Formulario enviado correctamente.');
-        Mail::assertSent(\App\Mail\sendContactForm::class);
+        Mail::assertSent(\App\Mail\SendContactForm::class);
     }
 
 
@@ -50,7 +50,7 @@ class serParteTest extends TestCase
         $response = $this->post('/formulario/enviar', $data);
         $response->assertRedirect(); 
         $response->assertSessionHas('success', 'Formulario enviado correctamente.');
-        Mail::assertSent(\App\Mail\sendContactForm::class);
+        Mail::assertSent(\App\Mail\SendContactForm::class);
     }
 
 
@@ -85,7 +85,7 @@ class serParteTest extends TestCase
         $response = $this->post('/formulario/enviar', $data);
         $response->assertRedirect();
         $response->assertSessionHas('success', 'Formulario enviado correctamente.');
-        Mail::assertSent(\App\Mail\sendContactForm::class);
+        Mail::assertSent(\App\Mail\SendContactForm::class);
 
         // El CV queda en el disco privado, no en el público
         $cvPath = \App\Models\Empleo::firstOrFail()->cv_path;

@@ -8,7 +8,7 @@ use Tests\TestCase;
 use App\Models\Emprendedor;
 use Illuminate\Support\Facades\File;
 
-class programasTest extends TestCase
+class ProgramasTest extends TestCase
 {
     use RefreshDatabase;
 

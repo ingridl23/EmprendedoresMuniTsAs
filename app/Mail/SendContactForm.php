@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class sendContactForm extends Mailable
+class SendContactForm extends Mailable
 {
     public $data;
 
