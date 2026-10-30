@@ -1,10 +1,8 @@
-window._ = require('lodash');
+// lodash se quitó el 30/10/2026: ningún código usaba window._ y la versión 4.17.21 tenía CVE
 
 try {
     require('bootstrap');
 } catch (e) {}
-
-window.Swal = require('sweetalert2');
 
 // axios se quitó el 30/10/2026: ningún código lo usaba (los buscadores usan fetch) y la versión 0.21 tenía CVE
 
