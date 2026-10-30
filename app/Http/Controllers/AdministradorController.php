@@ -313,7 +313,7 @@ class AdministradorController extends Controller
                 'status' => 'error',
             ], 400);
         };
-        $emprendimiento = Emprendedor::find($id);
+        $emprendimiento = Emprendedor::findOrFail($id);
         $imagenesBD = Imagenes::where('emprendedor_id', $emprendimiento->id)->get();
         $imagenesRequest = $request->file("imagenes");
         $totalImagenesDB = count($imagenesBD);
@@ -668,7 +668,7 @@ class AdministradorController extends Controller
             ], 400);
         };
 
-        $noticia = Noticias::find($id);
+        $noticia = Noticias::findOrFail($id);
         $imagenRequest = $request->file("imagen");
         $formPublicId = $request->input("public_id");
         if ($imagenRequest != null) {

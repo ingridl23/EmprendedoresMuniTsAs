@@ -58,19 +58,6 @@ class Imagenes extends Model
     }
 
     /**
-     * Busqueda de un emprendimiento en relacion a su imagen en el sistema:
-     *@param mixed $id_emprendedor, ID de identificacion para el emprendimiento seleccionado
-     * @return \Illuminate\Database\Eloquent\Collection , devuelve la coleccion encontrada de imagenes asociadas al emprendimiento.
-     */
-
-    public static function find($id_emprendedor)
-    {
-        $imagenes = Imagenes::where("emprendedor_id", $id_emprendedor)->get();
-        return $imagenes;
-    }
-
-
-    /**
      * Dar de baja un emprendimiento en relacion a su imagen en el sistema:
      * @param Imagenes $imagen Imagen selecionada para eliminar.
      * @return bool|null Devuelve true si la imagen se eliminó.

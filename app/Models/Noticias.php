@@ -127,8 +127,6 @@ class Noticias extends Model
             'descripcion' => Str::ucfirst($request->descripcion),
             'imagen' => $path,
             'imagen_public_id' => $imagen_public_id,
-            'created_at' => date('m-d-Y G:i:s'),
-            'updated_at' => date('m-d-Y G:i:s'),
         ]);
         return $noticia;
     }
