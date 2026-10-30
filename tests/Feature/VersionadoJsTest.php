@@ -25,6 +25,14 @@ class VersionadoJsTest extends TestCase
             ->assertSee($this->srcVersionado('js/emprendedores/emprendedores.js'), false);
     }
 
+    public function test_paginas_de_reset_piden_app_js_y_app_css_versionados()
+    {
+        $this->get('/password/reset')
+            ->assertStatus(200)
+            ->assertSee($this->srcVersionado('js/app.js'), false)
+            ->assertSee($this->srcVersionado('css/app.css'), false);
+    }
+
     public function test_noticias_pide_el_js_versionado()
     {
         $this->get('/noticias')
