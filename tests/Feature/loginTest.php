@@ -18,12 +18,12 @@ class loginTest extends TestCase
         // Crear usuario
         $user = User::factory()->create([
             'email' => 'adminempleo@tresarroyos.gov.ar',
-            'password' => bcrypt('AdminE016'), // La contraseña real
+            'password' => bcrypt('ClaveDePrueba1'), // contraseña inventada, solo para el test
         ]);
 
         $response = $this->post('/login', [
             'email' => 'adminempleo@tresarroyos.gov.ar',
-            'password' => 'AdminE016', // Lo que el usuario ingresa
+            'password' => 'ClaveDePrueba1', // Lo que el usuario ingresa
         ]);
 
         $response->assertRedirect();
@@ -39,12 +39,12 @@ class loginTest extends TestCase
         // Crear usuario
         $user = User::factory()->create([
             'email' => 'adminempleo@tresarroyos.gov.ar',
-            'password' => bcrypt('AdminE016'), // La contraseña real
+            'password' => bcrypt('ClaveDePrueba1'), // contraseña inventada, solo para el test
         ]);
 
         $response = $this->post('/login', [
             'email' => 'adminempleo@tresarroyos.gov.ar',
-            'password' => 'admine016', // Lo que el usuario ingresa
+            'password' => 'clavedeprueba1', // Lo que el usuario ingresa (mal: minúsculas)
         ]);
 
         $response->assertRedirect();
