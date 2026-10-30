@@ -422,6 +422,15 @@ class administradorController extends Controller
                 $participa_feria = isset($datos["participa_feria"]) ? 1 : 0;
                 $cerrado = isset($datos['cerrado']) ? 1 : 0;
 
+                // Al crear solo se guardan los días con datos, pero el formulario de edición manda los 7:
+                // si el día no existe se crea, con la misma regla que crearEmprendimiento()
+                if ($diaHorarioViejo === null) {
+                    if (!($hora_apertura || $hora_cierre || $participa_feria || $cerrado)) {
+                        continue;
+                    }
+                    $diaHorarioViejo = new Horario(['dia' => $dia, 'emprendedor_id' => $emprendimiento->id]);
+                }
+
                 $diaHorarioViejo->hora_apertura = $hora_apertura;
                 $diaHorarioViejo->hora_cierre = $hora_cierre;
                 $diaHorarioViejo->participa_feria = $participa_feria;
