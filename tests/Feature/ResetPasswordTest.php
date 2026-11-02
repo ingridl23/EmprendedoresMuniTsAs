@@ -93,7 +93,7 @@ class ResetPasswordTest extends TestCase
         }
     }
 
-    public function largosDeContrasena(): array
+    public static function largosDeContrasena(): array
     {
         return [
             '7 caracteres' => ['Clave01', false],

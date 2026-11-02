@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
 use App\Models\Noticias;
+use CloudinaryLabs\CloudinaryLaravel\CloudinaryEngine;
 use Mockery;
 use App\Models\Imagenes;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -106,7 +107,7 @@ class NoticiasTest extends TestCase
         //técnica que se usa en programación, especialmente en tests, 
         // para crear versiones simuladas o falsas de objetos, funciones o servicios.
         Cloudinary::shouldReceive('upload')
-            ->andReturn(Mockery::mock([
+            ->andReturn(Mockery::mock(CloudinaryEngine::class, [
                 'getSecurePath' => 'https://fake.cloudinary.com/noticia.jpg',
                 'getPublicId' => 'noticia_123',
         ]));
@@ -209,7 +210,7 @@ class NoticiasTest extends TestCase
 
         Cloudinary::shouldReceive('upload')
             ->once()
-            ->andReturn(Mockery::mock([
+            ->andReturn(Mockery::mock(CloudinaryEngine::class, [
                 'getSecurePath' => 'https://cloudinary.com/nueva.jpg',
                 'getPublicId' => 'new_public_id',
             ]));
