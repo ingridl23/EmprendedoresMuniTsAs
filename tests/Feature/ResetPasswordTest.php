@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Tests\TestCase;
@@ -69,9 +70,8 @@ class ResetPasswordTest extends TestCase
         $this->assertTrue(Hash::check('ClaveVieja1', $user->fresh()->password));
     }
 
-    /**
-     * @dataProvider largosDeContrasena
-     */
+    #[DataProvider('largosDeContrasena')]
+
     public function test_reset_respeta_el_largo_de_8_a_14_caracteres(string $nueva, bool $aceptada)
     {
         $user = $this->crearUsuario();
