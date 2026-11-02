@@ -13,12 +13,12 @@ class DireccionFactory extends Factory
      */
     public function definition()
     {
-        $username = $this->faker->userName;
+        $username = fake()->userName;
         return [
-            'ciudad'=>$this->faker->city,
-            'localidad'=>$this->faker->city,
-            'calle' => $this->faker->streetName,
-            'altura' => $this->faker->numerify('####'),
+            'ciudad'=>fake()->city,
+            'localidad'=>fake()->city,
+            'calle' => fake()->streetName,
+            'altura' => fake()->numerify('####'),
             'created_at' => now(),
             'updated_at' => now(),
         ];

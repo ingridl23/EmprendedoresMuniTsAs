@@ -9,6 +9,9 @@ use App\Models\Categoria;
 use App\Models\Horario;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Emprendedor>
+ */
 class EmprendedorFactory extends Factory
 {
     protected $model = Emprendedor::class;
@@ -16,8 +19,8 @@ class EmprendedorFactory extends Factory
     public function definition()
     {
         return [
-            'nombre'       => $this->faker->company(),
-            'descripcion'  => $this->faker->paragraph(),
+            'nombre'       => fake()->company(),
+            'descripcion'  => fake()->paragraph(),
             'categoria_id'    => Categoria::factory(),
             'redes_id'     => Redes::factory(),
             'direccion_id' => Direccion::factory(),
