@@ -33,7 +33,7 @@ class Horario extends Model
     /** @var string $table Nombre de la tabla asociada */
     protected $table = 'horario'; //  tabla
 
-    /** @var array<int, string> $fillable Atributos asignables de forma masiva */
+    /** @var list<string> $fillable Atributos asignables de forma masiva */
     protected $fillable = [
         'dia',
         'hora_apertura',

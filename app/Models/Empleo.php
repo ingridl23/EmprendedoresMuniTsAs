@@ -55,7 +55,7 @@ class Empleo extends Model
 
     use HasFactory;
 
-    /** @var array<int, string> $fillable Campos asignables en masa */
+    /** @var list<string> $fillable Campos asignables en masa */
     protected $fillable = [
         'nombre',
         'asunto',

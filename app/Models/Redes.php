@@ -26,7 +26,7 @@ class Redes extends Model
 
     /** @var string $table Nombre de la tabla asociada */
     protected $table = 'redes'; // tu tabla real
-    /** @var array<int, string> $fillable Campos asignables en masa */
+    /** @var list<string> $fillable Campos asignables en masa */
     protected $fillable = [
         'instagram',
         'facebook',

@@ -35,7 +35,7 @@ class Imagenes extends Model
         return ImagenesFactory::new();
     }
     use HasFactory;
-    /** @var array<int, string> $fillable Campos asignables en masa */
+    /** @var list<string> $fillable Campos asignables en masa */
     protected $fillable = [
         'id',
         'url',

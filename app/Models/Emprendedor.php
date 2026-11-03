@@ -51,7 +51,7 @@ class Emprendedor extends Model
 
 
 
-    /** @var array<int, string> $fillable Campos asignables en masa */
+    /** @var list<string> $fillable Campos asignables en masa */
     protected $fillable = [
         'nombre',
         'descripcion',
