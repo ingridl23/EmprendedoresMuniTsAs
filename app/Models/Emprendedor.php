@@ -26,6 +26,11 @@ use App\Models\Categoria;
  * @property int $direccion_id
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
+ * @property-read Redes|null $redes
+ * @property-read Direccion|null $direccion
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Horario> $horarios
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Imagenes> $imagenes
+ * @property-read Categoria|null $categoria
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder

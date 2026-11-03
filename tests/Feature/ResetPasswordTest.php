@@ -25,7 +25,7 @@ class ResetPasswordTest extends TestCase
         $response = $this->get('/password/reset');
 
         $response->assertStatus(200);
-        $response->assertSee(route('password.email'), false);
+        $response->assertSeeHtml(route('password.email'));
     }
 
     public function test_formulario_de_reset_con_token_se_muestra()
@@ -36,7 +36,7 @@ class ResetPasswordTest extends TestCase
         $response = $this->get("/password/reset/{$token}?email={$user->email}");
 
         $response->assertStatus(200);
-        $response->assertSee($token, false); // el token viaja en el input oculto
+        $response->assertSeeHtml($token); // el token viaja en el input oculto
     }
 
     public function test_reset_cambia_la_contrasena()
