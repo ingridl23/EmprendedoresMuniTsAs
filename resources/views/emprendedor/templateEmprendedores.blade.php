@@ -382,6 +382,7 @@
 
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
+    <script src="{{ asset('js/botonesConEnlace.js') }}?v={{ filemtime(public_path('js/botonesConEnlace.js')) }}"></script>
 
     <script type="module" src="{{ asset('js/carteles/cartelEliminar.js') }} "></script>
     <script src="{{ asset('js/carteles/carteles_error_success.js') }} "></script>
