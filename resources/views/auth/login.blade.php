@@ -157,11 +157,12 @@
                     <div class="field-group">
                         <input id="email" type="email" name="email" required placeholder=""
                             value="{{ old('email') }}">
+                        {{-- El label va pegado al input: el CSS lo hace flotar con "input + label" --}}
+                        <label for="email">Email</label>
 
                         @error('email')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-                        <label for="message">Email</label>
                         <p class="form-subtituloslogin">Ingrese con su email institucional</p>
                     </div>
 
@@ -170,12 +171,11 @@
                     <div class="field-group">
                         <input id="password" type="password" name="password" required placeholder=""
                             autocomplete="current-password">
+                        <label for="password">Contraseña</label>
 
                         @error('password')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
-
-                        <label for="password">Contraseña</label>
                         <p class="form-subtituloslogin">Ingrese contraseña</p>
                     </div>
 
@@ -237,6 +237,31 @@
     <!-- Core theme JS-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    @if (session('bloqueo_segundos'))
+        <script>
+            // Cuenta regresiva del bloqueo por intentos fallidos (LoginController)
+            document.addEventListener('DOMContentLoaded', function () {
+                let segundos = {{ (int) session('bloqueo_segundos') }};
+                const boton = document.getElementById('submitButton');
+                const mensajes = document.querySelectorAll('.alert-danger li, .field-group .text-danger');
+
+                boton.disabled = true;
+                const reloj = setInterval(function () {
+                    segundos--;
+                    if (segundos <= 0) {
+                        clearInterval(reloj);
+                        boton.disabled = false;
+                        mensajes.forEach(function (el) { el.textContent = 'Ya puede volver a intentar.'; });
+                        return;
+                    }
+                    mensajes.forEach(function (el) {
+                        el.textContent = el.textContent.replace(/\d+ segundos?/, segundos + (segundos === 1 ? ' segundo' : ' segundos'));
+                    });
+                }, 1000);
+            });
+        </script>
+    @endif
 </body>
 
 </html>
