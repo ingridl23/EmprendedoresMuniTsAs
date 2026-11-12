@@ -40,3 +40,5 @@ jobs:
         # Los tests simulan Cloudinary (Mockery), pero el paquete exige una URL: va una falsa
         CLOUDINARY_URL: cloudinary://000000000000000:secret-de-prueba@cloud-de-prueba
       run: php artisan test
+    - name: Analisis estatico (PHPStan)
+      run: vendor/bin/phpstan analyse --memory-limit=1G --no-progress

@@ -1,0 +1,25 @@
+name: Seguridad
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 11 * * 1'   # lunes 8:00 (hora de Argentina)
+  workflow_dispatch:       # permite correrlo a mano desde Actions
+
+permissions:
+  contents: read
+
+jobs:
+  composer-audit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+      with:
+        php-version: '8.3'
+    # Solo las dependencias de producción, que son las que se suben al servidor
+    - name: Avisos de seguridad (composer audit)
+      run: composer audit --locked --no-dev
