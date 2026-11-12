@@ -17,3 +17,4 @@ yarn-error.log
 /.vscode
 *lnk
 *.swp
+.phpunit.cache/test-results
