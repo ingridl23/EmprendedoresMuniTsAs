@@ -7,6 +7,9 @@ use App\Models\Imagenes;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Imagenes>
+ */
 class ImagenesFactory extends Factory
 {
      protected $model = Imagenes::class;
@@ -24,11 +27,11 @@ class ImagenesFactory extends Factory
             mkdir($dir, 0755, true);
         }
 
-        $path = $this->faker->image($dir, 640, 480, null, false);
+        $path = fake()->image($dir, 640, 480, null, false);
 
         return [
             'url' => 'imagenes/' . $path,
-            'public_id' =>$this->faker->numerify('##########'),
+            'public_id' =>fake()->numerify('##########'),
             'emprendedor_id' => Emprendedor::factory(),
         ];
     }

@@ -35,7 +35,7 @@ class Imagenes extends Model
         return ImagenesFactory::new();
     }
     use HasFactory;
-    /** @var array<int, string> $fillable Campos asignables en masa */
+    /** @var list<string> $fillable Campos asignables en masa */
     protected $fillable = [
         'id',
         'url',
@@ -55,25 +55,6 @@ class Imagenes extends Model
     public function EmprendedorImagen()
     {
         return $this->belongsTo(Emprendedor::class, 'emprendedor_id');
-    }
-
-    /**
-     * Busqueda de un emprendimiento en relacion a su imagen en el sistema:
-     *@param mixed $id_emprendedor, ID de identificacion para el emprendimiento seleccionado
-     * @return \Illuminate\Database\Eloquent\Collection , devuelve la coleccion encontrada de imagenes asociadas al emprendimiento.
-     */
-
-    public static function find($id_emprendedor)
-    {
-        $imagenes = Imagenes::where("emprendedor_id", $id_emprendedor)->get();
-        return $imagenes;
-    }
-
-
-    public static function buscar($id_emprendedor)
-    {
-        $imagenes = Imagenes::where("emprendedor_id", $id_emprendedor)->get();
-        return $imagenes;
     }
 
     /**

@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
-use App\Http\Requests\validacionFormularioContacto;
+use App\Http\Requests\ValidacionFormularioContacto;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\sendContactForm;
+use App\Mail\SendContactForm;
 use App\Models\Empleo;
 use Illuminate\Support\Facades\Validator;
 
@@ -46,14 +46,14 @@ class FormSerParteController extends Controller
      *
      * Se Validan los datos recibidos desde el formulario y son persistidos dentro del sistema o exportados hacia fuera del sistema (casilla de email). Segun la logica de negocio. Asociando esos datos a un grupo particular de usuarios.
      *
-     * @param validacionFormularioContacto $request Datos validados del formulario de contacto.
+     * @param ValidacionFormularioContacto $request Datos validados del formulario de contacto.
      *
      * @return \Illuminate\Http\RedirectResponse Redirige de vuelta al formulario con mensaje de exito o error.
      *
      * @throws \Exception Si ocurre un error al enviar los datos.
      */
 
-    public function enviar(validacionFormularioContacto $request)
+    public function enviar(ValidacionFormularioContacto $request)
     {
         if ($request->filled('oculto')) {
             return back()->with("error", "Formulario rechazado")->withInput();
@@ -118,7 +118,7 @@ class FormSerParteController extends Controller
 
 
             /**  Enviar correo en todos los casos*/
-            Mail::to('oficina.empleo@tresarroyos.gov.ar')->send(new sendContactForm($data));
+            Mail::to('oficina.empleo@tresarroyos.gov.ar')->send(new SendContactForm($data));
 
             return back()->with('success', 'Formulario enviado correctamente.');
         } catch (\Exception $e) {

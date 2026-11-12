@@ -10,8 +10,11 @@ use App\Exports\EmpleosExport;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
+use App\Models\Emprendedor;
+use App\Models\Categoria;
 
-class solicitantesTest extends TestCase{
+class EmprendedoresExcelTest extends TestCase
+{
     use RefreshDatabase;
 
     private function crearUsuario($permission){
@@ -28,12 +31,11 @@ class solicitantesTest extends TestCase{
     public function test_exporta_con_resultados(){
         $admin = $this->crearUsuario("filtrar datos");
         $this->actingAs($admin);
-
         Excel::fake();
-        Empleo::factory()->count(10)->create();
-        $response = $this->get('/empleos/export');
+        Emprendedor::factory()->count(10)->create();
+        $response = $this->get('/emprendedores/export');
         $response->assertStatus(200);
-        Excel::assertDownloaded('solicitantes.xlsx');
+        Excel::assertDownloaded('emprendedores.xlsx');
     }
 
     public function test_exporta_sin_resultados(){
@@ -41,13 +43,13 @@ class solicitantesTest extends TestCase{
         $this->actingAs($admin);
 
         Excel::fake();
-        $response = $this->get('/empleos/export');
+        $response = $this->get('/emprendedores/export');
         $response->assertStatus(302);
 
         //Comprueba que no se haya descargado el archivo Excel al no haber coincidencias
         try {
-            Excel::assertDownloaded('solicitantes.xlsx');
-            $this->fail('El archivo solicitantes.xlsx no debería haberse descargado.');
+            Excel::assertDownloaded('emprendedores.xlsx');
+            $this->fail('El archivo emprendedores.xlsx no debería haberse descargado.');
         } catch (\PHPUnit\Framework\ExpectationFailedException $e) {
             $this->assertTrue(true);
         }
@@ -56,14 +58,17 @@ class solicitantesTest extends TestCase{
     public function test_exporta_con_algun_filtro(){
         $admin = $this->crearUsuario("filtrar datos");
         $this->actingAs($admin);
+        $categoria = Categoria::factory()->create([
+            "categoria" => 'Indumentaria',
+        ]);
 
         Excel::fake();
-        Empleo::factory()->create([
-            'ciudad' => 'Tres Arroyos',
-            'edad' => 20
+        Emprendedor::factory()->create([
+            'nombre' => 'Valen',
+            'categoria_id' => $categoria->id,
         ]);
-        $response = $this->get('/empleos/export?ciudad=Tres Arroyos&edad=20');
+        $response = $this->get("/emprendedores/export?nombreEm=Valen&categoria={$categoria->id}");
         $response->assertStatus(200);
-        Excel::assertDownloaded('solicitantes.xlsx');
+        Excel::assertDownloaded('emprendedores.xlsx');
     }
 }

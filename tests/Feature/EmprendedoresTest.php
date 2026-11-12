@@ -16,11 +16,12 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Horario;
 use App\Models\Direccion;
 use App\Models\Redes;
+use CloudinaryLabs\CloudinaryLaravel\CloudinaryEngine;
 use Mockery;
 use App\Models\Imagenes;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
-class emprendedoresTest extends TestCase
+class EmprendedoresTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -94,7 +95,7 @@ class emprendedoresTest extends TestCase
         //técnica que se usa en programación, especialmente en tests, 
         // para crear versiones simuladas o falsas de objetos, funciones o servicios.
         Cloudinary::shouldReceive('upload')
-            ->andReturn(Mockery::mock([
+            ->andReturn(Mockery::mock(CloudinaryEngine::class, [
                 'getSecurePath' => 'https://fake.cloudinary.com/emprendedor.jpg',
                 'getPublicId' => 'emprendedor_123',
         ]));
@@ -235,7 +236,7 @@ class emprendedoresTest extends TestCase
             ['id' => $imagenesExistentes[0]->id]
         ]);
 
-        $mockUploadResponse = \Mockery::mock();
+        $mockUploadResponse = \Mockery::mock(CloudinaryEngine::class);
         $mockUploadResponse->shouldReceive('getSecurePath')->andReturn('http://fakeurl.com/image.jpg');
         $mockUploadResponse->shouldReceive('getPublicId')->andReturn('public_id_fake');
 

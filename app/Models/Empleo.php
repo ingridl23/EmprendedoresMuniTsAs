@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-use App\constants;
+use App\Constants;
 use Database\Factories\EmpleoFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -55,7 +55,7 @@ class Empleo extends Model
 
     use HasFactory;
 
-    /** @var array<int, string> $fillable Campos asignables en masa */
+    /** @var list<string> $fillable Campos asignables en masa */
     protected $fillable = [
         'nombre',
         'asunto',

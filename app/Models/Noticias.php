@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\constants;
+use App\Constants;
 use Database\Factories\NoticiasFactory;
 use Illuminate\Support\Str;
 
@@ -37,7 +37,7 @@ class Noticias extends Model
         return NoticiasFactory::new();
     }
     use HasFactory;
-    /** @var array<int, string> $fillable Campos asignables en masa */
+    /** @var list<string> $fillable Campos asignables en masa */
     protected $fillable = [
         'titulo',
         'descripcion',
@@ -70,27 +70,11 @@ class Noticias extends Model
     public static function showNoticiasId($id)
     {
         $noticia = Noticias::where('noticias.id', $id)->get();
-        if (count($noticia) > constants::VALORMIN) {
+        if (count($noticia) > Constants::VALORMIN) {
             $noticia = $noticia[0];
             return $noticia;
         }
         return null;
-    }
-
-
-    /**
-     * Obtener todas las categorías de publicaciones registradas en el sistema:
-     * @param int $cantidad
-     * @return \Illuminate\Support\Collection Devuelve una coleccion limitada de publicaciones segun criterio de la query(atributo cantidad).
-     */
-
-    public static function obtenerCategoriasNoticias($cantidad = 10)
-    {
-
-        return Noticias::with(['categoria']) // relacion
-            ->orderBy('created_at', 'desc')
-            ->take($cantidad)
-            ->get();
     }
 
 
@@ -143,8 +127,6 @@ class Noticias extends Model
             'descripcion' => Str::ucfirst($request->descripcion),
             'imagen' => $path,
             'imagen_public_id' => $imagen_public_id,
-            'created_at' => date('m-d-Y G:i:s'),
-            'updated_at' => date('m-d-Y G:i:s'),
         ]);
         return $noticia;
     }

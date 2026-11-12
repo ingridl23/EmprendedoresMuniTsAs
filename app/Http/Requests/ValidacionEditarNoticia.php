@@ -4,10 +4,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\validacionNoticia;
+use App\Http\Requests\ValidacionNoticia;
 use Illuminate\Foundation\Http\FormRequest;
 
-class validacionEditarNoticia extends validacionNoticia
+class ValidacionEditarNoticia extends ValidacionNoticia
 {
 
 

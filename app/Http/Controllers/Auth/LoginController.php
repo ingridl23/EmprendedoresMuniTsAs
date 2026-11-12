@@ -62,6 +62,8 @@ class LoginController extends Controller
         // Límite de intentos (ThrottlesLogins, incluido en AuthenticatesUsers): 5 fallos por email+IP bloquean 1 minuto
         if ($this->hasTooManyLoginAttempts($request)) {
             $this->fireLockoutEvent($request);
+            // Para la cuenta regresiva de la vista de login
+            $request->session()->flash('bloqueo_segundos', $this->limiter()->availableIn($this->throttleKey($request)));
             return $this->sendLockoutResponse($request);
         }
 

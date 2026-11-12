@@ -1,15 +1,15 @@
 <?php
 
-
 namespace App\Http\Requests;
 
 use Illuminate\Http\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class validacionEmprendimiento  extends FormRequest
+class ValidacionEditarEmprendimiento extends FormRequest
 {
-    /**
+
+     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
@@ -19,7 +19,6 @@ class validacionEmprendimiento  extends FormRequest
         return true;
     }
 
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -27,43 +26,23 @@ class validacionEmprendimiento  extends FormRequest
      */
     public function rules()
     {
-
         return [
-            'nombre' => 'bail|required|string|min:3|max:100',
-            'descripcion' => 'bail|required|string|min:10',
+            'nombre'=>'bail|required|string|min:3|max:100',
+            'descripcion'=>'bail|required|string|min:10',
             'categoria' => 'bail|required|exists:categoria,id',
-            'imagenes' => 'required|array|max:5',
+            'imagenes' => 'array|max:5',
             'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048|dimensions:max_width=1920,max_height=1080',
-            'facebook' => 'nullable|string|min:3|max:100',
-            'instagram' => 'nullable|string|min:3|max:100',
-            'whatsapp' => 'numeric|digits_between:8,11',
-            'ciudad' => 'bail|required|string',
-            'calle' => 'bail|required|string',
-            'altura' => 'required|numeric|min:1',
-            "localidad" => "required|string"
-        ] + self::reglasHorarios();
+            'facebook'=>'nullable|string|min:3|max:100',
+            'instagram'=>'nullable|string|min:3|max:100',
+            'whatsapp'=>'integer|digits_between:8,11|min:1',
+            'ciudad'=>'bail|required|string',
+            'localidad'=>'bail|required|string',
+            'calle'=>'bail|required|string',
+            'altura'=>'required|integer|min:1',
+        ] + ValidacionEmprendimiento::reglasHorarios();
     }
 
-    /**
-     * Reglas de los horarios del formulario (crear y editar emprendimiento).
-     *
-     * Los días son los que arma la vista administradores/emprendedores/form.blade.php. Las horas
-     * aceptan HH:MM y también HH:MM:SS, porque al editar el input se carga con la hora de la base.
-     *
-     * @return array<string, string|array<int, string>>
-     */
-    public static function reglasHorarios(): array
-    {
-        // En formato array: la regex contiene "|" y en formato texto Laravel lo tomaría como separador de reglas
-        $hora = ['nullable', 'regex:/^([01]\d|2[0-3]):[0-5]\d(:[0-5]\d)?$/'];
-        return [
-            'horarios' => 'required|array:Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo',
-            'horarios.*' => 'array',
-            'horarios.*.hora_de_apertura' => $hora,
-            'horarios.*.hora_de_cierre' => $hora,
-        ];
-    }
-    public function messages()
+       public function messages()
     {
         return [
             'nombre.required' => 'El nombre es obligatorio.',
@@ -73,12 +52,11 @@ class validacionEmprendimiento  extends FormRequest
 
             'descripcion.required' => 'La descripción es obligatoria.',
             'descripcion.string' => 'La descripción debe ser un texto.',
-            'descripcion.min' => 'La descripción debe tener al menos 10 caracteres.',
+            'descripcion.min' => 'La descripción debe tener al menos 10 carácteres.',
 
             'categoria.required' => 'La categoría es obligatoria.',
             'categoria_id.exists' => 'La categoría seleccionada no existe.',
-            'categoria_id' => 'required|exist:categoria_id',
-            'imagenes.required' => 'Debes subir al menos una imagen.',
+
             'imagenes.array' => 'Las imágenes deben enviarse como un arreglo.',
             'imagenes.max' => 'No puedes subir más de 5 imágenes.',
 

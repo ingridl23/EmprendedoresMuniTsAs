@@ -5,6 +5,9 @@ namespace Database\Factories;
 use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Categoria>
+ */
 class CategoriaFactory extends Factory
 {
     protected $model = Categoria::class;
@@ -13,7 +16,7 @@ class CategoriaFactory extends Factory
     {
         return [
             // El campo 'categoria' que definiste en tu modelo
-            'categoria' => $this->faker->word(), // genera una palabra random
+            'categoria' => fake()->word(), // genera una palabra random
         ];
     }
 }

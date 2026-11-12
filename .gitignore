@@ -18,3 +18,5 @@ yarn-error.log
 *lnk
 *.swp
 .phpunit.cache/test-results
+/.vs
+/.phpunit.cache

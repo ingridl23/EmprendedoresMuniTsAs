@@ -31,9 +31,9 @@ class EscapadoDescripcionesTest extends TestCase
         $response = $this->get("/noticias/{$noticia->id}");
 
         $response->assertStatus(200);
-        $response->assertDontSee("<script>alert('xss')</script>", false);
-        $response->assertSee('&lt;script&gt;', false);
-        $response->assertSee('Primera linea<br />', false);
+        $response->assertDontSeeHtml("<script>alert('xss')</script>");
+        $response->assertSeeHtml('&lt;script&gt;');
+        $response->assertSeeHtml('Primera linea<br />');
     }
 
     public function test_descripcion_de_emprendimiento_se_muestra_escapada()
@@ -43,8 +43,8 @@ class EscapadoDescripcionesTest extends TestCase
         $response = $this->get('/emprendedores');
 
         $response->assertStatus(200);
-        $response->assertDontSee("<script>alert('xss')</script>", false);
-        $response->assertSee('&lt;script&gt;', false);
-        $response->assertSee('Primera linea<br />', false);
+        $response->assertDontSeeHtml("<script>alert('xss')</script>");
+        $response->assertSeeHtml('&lt;script&gt;');
+        $response->assertSeeHtml('Primera linea<br />');
     }
 }

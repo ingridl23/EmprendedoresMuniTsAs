@@ -77,7 +77,6 @@ class RegisterController extends Controller
             $user->assignRole('user');
         }
 
-        $token = $user->createToken('auth_token')->plainTextToken;
         return $user;
     }
     protected function showRegister()

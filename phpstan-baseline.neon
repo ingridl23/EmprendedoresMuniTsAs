@@ -1,96 +1,145 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Call to static method Illuminate\\\\Http\\\\Request\\:\\:validate\\(\\) on a separate line has no effect\\.$#"
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$cerrado\.$#'
+			identifier: property.notFound
 			count: 1
-			path: app/Http/Controllers/EmpleosController.php
+			path: app/Http/Controllers/AdministradorController.php
 
 		-
-			message: "#^Call to static method Illuminate\\\\Http\\\\Request\\:\\:validate\\(\\) on a separate line has no effect\\.$#"
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$hora_apertura\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$hora_cierre\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$participa_feria\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Call to function is_numeric\(\) with int will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 2
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Left side of && is always true\.$#'
+			identifier: booleanAnd.leftAlwaysTrue
+			count: 1
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Loose comparison using \!\= between true and null will always evaluate to true\.$#'
+			identifier: notEqual.alwaysTrue
+			count: 1
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Parameter \#1 \$horario of static method App\\Models\\Horario\:\:editarHorarios\(\) expects App\\Models\\Horario, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Parameter \#3 \$imagen_public_id of static method App\\Models\\Noticias\:\:createNoticia\(\) expects int, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Parameter \#3 \$imagen_public_id of static method App\\Models\\Noticias\:\:editarImagen\(\) expects int, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Right side of && is always true\.$#'
+			identifier: booleanAnd.rightAlwaysTrue
+			count: 1
+			path: app/Http/Controllers/AdministradorController.php
+
+		-
+			message: '#^Call to function is_numeric\(\) with int will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
 			count: 1
 			path: app/Http/Controllers/EmprendedorController.php
 
 		-
-			message: "#^Call to an undefined method Cloudinary\\\\Api\\\\ApiResponse\\:\\:getPublicId\\(\\)\\.$#"
-			count: 4
-			path: app/Http/Controllers/administradorController.php
-
-		-
-			message: "#^Call to an undefined method Cloudinary\\\\Api\\\\ApiResponse\\:\\:getSecurePath\\(\\)\\.$#"
-			count: 4
-			path: app/Http/Controllers/administradorController.php
-
-		-
-			message: "#^Left side of && is always true\\.$#"
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
 			count: 1
-			path: app/Http/Controllers/administradorController.php
+			path: database/seeders/UserSeeder.php
 
 		-
-			message: "#^Right side of && is always true\\.$#"
-			count: 2
-			path: app/Http/Controllers/administradorController.php
-
-		-
-			message: "#^Undefined variable\\: \\$this$#"
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:assignRole\(\)\.$#'
+			identifier: method.notFound
 			count: 1
-			path: routes/console.php
+			path: tests/Feature/EmprendedoresExcelTest.php
 
 		-
-			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
-			count: 2
-			path: tests/Feature/emprendedoresExcelTest.php
-
-		-
-			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:assignRole\\(\\)\\.$#"
+			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true will always evaluate to true\.$#'
+			identifier: method.alreadyNarrowedType
 			count: 1
-			path: tests/Feature/emprendedoresExcelTest.php
+			path: tests/Feature/EmprendedoresExcelTest.php
 
 		-
-			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
-			count: 13
-			path: tests/Feature/emprendedoresTest.php
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 3
+			path: tests/Feature/EmprendedoresTest.php
 
 		-
-			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
-			count: 2
-			path: tests/Feature/emprendedoresTest.php
-
-		-
-			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:assignRole\\(\\)\\.$#"
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:assignRole\(\)\.$#'
+			identifier: method.notFound
 			count: 1
-			path: tests/Feature/emprendedoresTest.php
+			path: tests/Feature/EmprendedoresTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$user of method Illuminate\\\\Foundation\\\\Testing\\\\TestCase\\:\\:actingAs\\(\\) expects Illuminate\\\\Contracts\\\\Auth\\\\Authenticatable, Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model given\\.$#"
+			message: '#^Parameter \#1 \$user of method Illuminate\\Foundation\\Testing\\TestCase\:\:actingAs\(\) expects Illuminate\\Contracts\\Auth\\Authenticatable, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
 			count: 1
-			path: tests/Feature/emprendedoresTest.php
+			path: tests/Feature/EmprendedoresTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$user of method Illuminate\\\\Foundation\\\\Testing\\\\TestCase\\:\\:actingAs\\(\\) expects Illuminate\\\\Contracts\\\\Auth\\\\Authenticatable, Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model given\\.$#"
+			message: '#^Parameter \#1 \$user of method Illuminate\\Foundation\\Testing\\TestCase\:\:actingAs\(\) expects Illuminate\\Contracts\\Auth\\Authenticatable, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
 			count: 1
-			path: tests/Feature/loginTest.php
+			path: tests/Feature/LoginTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$user of method Illuminate\\\\Foundation\\\\Testing\\\\TestCase\\:\\:assertAuthenticatedAs\\(\\) expects Illuminate\\\\Contracts\\\\Auth\\\\Authenticatable, Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model given\\.$#"
+			message: '#^Parameter \#1 \$user of method Illuminate\\Foundation\\Testing\\TestCase\:\:assertAuthenticatedAs\(\) expects Illuminate\\Contracts\\Auth\\Authenticatable, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
 			count: 1
-			path: tests/Feature/loginTest.php
+			path: tests/Feature/LoginTest.php
 
 		-
-			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
-			count: 8
-			path: tests/Feature/noticiasTest.php
-
-		-
-			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$imagen_public_id\\.$#"
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:assignRole\(\)\.$#'
+			identifier: method.notFound
 			count: 1
-			path: tests/Feature/noticiasTest.php
+			path: tests/Feature/NoticiasTest.php
 
 		-
-			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:assignRole\\(\\)\\.$#"
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:assignRole\(\)\.$#'
+			identifier: method.notFound
 			count: 1
-			path: tests/Feature/noticiasTest.php
+			path: tests/Feature/SolicitantesTest.php
 
 		-
-			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<Illuminate\\\\Database\\\\Eloquent\\\\Model\\>\\|Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:assignRole\\(\\)\\.$#"
+			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true will always evaluate to true\.$#'
+			identifier: method.alreadyNarrowedType
 			count: 1
-			path: tests/Feature/solicitantesTest.php
+			path: tests/Feature/SolicitantesTest.php
+
+		-
+			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true will always evaluate to true\.$#'
+			identifier: method.alreadyNarrowedType
+			count: 1
+			path: tests/Unit/ExampleTest.php

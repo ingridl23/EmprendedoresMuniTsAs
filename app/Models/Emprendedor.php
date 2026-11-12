@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\constants;
+use App\Constants;
 use Database\Factories\EmprendedorFactory;
 use Database\Factories\ImagenesFactory;
 use Database\Factories\HorarioFactory;
@@ -26,6 +26,11 @@ use App\Models\Categoria;
  * @property int $direccion_id
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
+ * @property-read Redes|null $redes
+ * @property-read Direccion|null $direccion
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Horario> $horarios
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Imagenes> $imagenes
+ * @property-read Categoria|null $categoria
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -46,7 +51,7 @@ class Emprendedor extends Model
 
 
 
-    /** @var array<int, string> $fillable Campos asignables en masa */
+    /** @var list<string> $fillable Campos asignables en masa */
     protected $fillable = [
         'nombre',
         'descripcion',
@@ -114,22 +119,6 @@ class Emprendedor extends Model
 
 
     /**
-     * Visualizar todos los emprendimientos presentes en el sistema:
-     *
-     * @return \Illuminate\Database\Eloquent\Collection|null Devuelve una coleccion de emprendimientos, o null si no hay ninguno.
-     */
-    public static function showEmprendimientos()
-    {
-        //$emprendimientos = emprendedores::select(['id', 'nombre', 'descripcion', 'imagen', 'categoria'])->get();
-        $emprendimientos = Emprendedor::all();
-        if (count($emprendimientos) > constants::VALORMIN) {
-            return $emprendimientos;
-        }
-        return null;
-    }
-
-
-    /**
      * Visibilizar un emprendimiento vigente en el sistema:
      *
      * Al seleccionar un emprendimiento cargado se devuelven sus datos persistidos dentro del sistema.
@@ -144,7 +133,7 @@ class Emprendedor extends Model
     public static function showEmprendimientoId($id)
     {
         $emprendimiento = Emprendedor::with(['redes', 'direccion'])->where('emprendedor.id', $id)->get();
-        if (count($emprendimiento) > constants::VALORMIN) {
+        if (count($emprendimiento) > Constants::VALORMIN) {
             $emprendimiento = $emprendimiento[0];
             return $emprendimiento;
         }
@@ -161,21 +150,6 @@ class Emprendedor extends Model
     {
         return Emprendedor::with('categoria')->get()->groupBy('categoria_id');
     }
-
-    /* public static function obtenerCategorias()
-    {
-        return [
-            'Gastronomía',
-            'Indumentaria',
-            'Tecnología',
-            'Servicios',
-            'Artesanía',
-        ];
-    }
-*/
-    /////////////////////////////////////////////
-
-
 
     /**   Modificar un emprendimiento:
      *

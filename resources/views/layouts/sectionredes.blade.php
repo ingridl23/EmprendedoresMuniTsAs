@@ -36,7 +36,7 @@
 
             </div>
             <div class="col-lg-8 text-center">
-                <h2 class="text-white mt-0"> Nos encotramos en Brandsen Nº 181 </h2>
+                <h2 class="text-white mt-0"> Nos encontramos en Brandsen Nº 181 </h2>
                 <h4 class="text-white mt-0">Horarios de atencion : De lunes a viernes de 7hs a 14hs </h4>
                 <hr class="divider divider-light" />
 

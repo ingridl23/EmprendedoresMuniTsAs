@@ -32,7 +32,7 @@ class Direccion extends Model
     /** @var string $table Nombre de la tabla asociada */
     protected $table = 'direccion'; // tu tabla real
 
-    /** @var array<int, string> $fillable Campos asignables en masa */
+    /** @var list<string> $fillable Campos asignables en masa */
     protected $fillable = [
         'ciudad',
         'localidad',

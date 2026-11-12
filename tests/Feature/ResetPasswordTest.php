@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Tests\TestCase;
@@ -24,7 +25,7 @@ class ResetPasswordTest extends TestCase
         $response = $this->get('/password/reset');
 
         $response->assertStatus(200);
-        $response->assertSee(route('password.email'), false);
+        $response->assertSeeHtml(route('password.email'));
     }
 
     public function test_formulario_de_reset_con_token_se_muestra()
@@ -35,7 +36,7 @@ class ResetPasswordTest extends TestCase
         $response = $this->get("/password/reset/{$token}?email={$user->email}");
 
         $response->assertStatus(200);
-        $response->assertSee($token, false); // el token viaja en el input oculto
+        $response->assertSeeHtml($token); // el token viaja en el input oculto
     }
 
     public function test_reset_cambia_la_contrasena()
@@ -69,9 +70,8 @@ class ResetPasswordTest extends TestCase
         $this->assertTrue(Hash::check('ClaveVieja1', $user->fresh()->password));
     }
 
-    /**
-     * @dataProvider largosDeContrasena
-     */
+    #[DataProvider('largosDeContrasena')]
+
     public function test_reset_respeta_el_largo_de_8_a_14_caracteres(string $nueva, bool $aceptada)
     {
         $user = $this->crearUsuario();
@@ -93,7 +93,7 @@ class ResetPasswordTest extends TestCase
         }
     }
 
-    public function largosDeContrasena(): array
+    public static function largosDeContrasena(): array
     {
         return [
             '7 caracteres' => ['Clave01', false],

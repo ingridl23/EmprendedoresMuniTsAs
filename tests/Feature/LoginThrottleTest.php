@@ -37,6 +37,30 @@ class LoginThrottleTest extends TestCase
         $this->assertGuest();
     }
 
+    public function test_el_bloqueo_pasa_los_segundos_restantes_para_la_cuenta_regresiva()
+    {
+        $user = $this->crearUsuario();
+
+        for ($i = 0; $i < 5; $i++) {
+            $this->intentarLogin($user, 'ClaveMala1');
+        }
+        $this->intentarLogin($user, 'ClaveBuena1');
+
+        $segundos = session('bloqueo_segundos');
+        $this->assertIsInt($segundos);
+        $this->assertGreaterThan(0, $segundos);
+        $this->assertLessThanOrEqual(60, $segundos);
+    }
+
+    public function test_la_vista_de_login_muestra_la_cuenta_regresiva_solo_si_hay_bloqueo()
+    {
+        $this->get('/showlogin')->assertDontSeeHtml('let segundos =');
+
+        $this->withSession(['bloqueo_segundos' => 42])
+            ->get('/showlogin')
+            ->assertSeeHtml('let segundos = 42;');
+    }
+
     public function test_4_fallos_no_bloquean()
     {
         $user = $this->crearUsuario();

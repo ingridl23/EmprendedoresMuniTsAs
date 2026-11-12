@@ -33,7 +33,7 @@ class Horario extends Model
     /** @var string $table Nombre de la tabla asociada */
     protected $table = 'horario'; //  tabla
 
-    /** @var array<int, string> $fillable Atributos asignables de forma masiva */
+    /** @var list<string> $fillable Atributos asignables de forma masiva */
     protected $fillable = [
         'dia',
         'hora_apertura',
@@ -52,39 +52,6 @@ class Horario extends Model
     {
         return $this->belongsTo(Emprendedor::class, 'emprendedor_id');
     }
-
-    /**
-     *  Dar de alta horarios:
-     *
-     *  Una vez validados los datos del formulario se deben persistir,asociandolos a un emprendimiento/emprendedor.
-     *
-     * @param string $dia
-     * @param \Carbon\Carbon|string|null $hora_apertura
-     * @param \Carbon\Carbon|string|null $hora_cierre
-     * @param boolean $participa_feria
-     * @param boolean $cerrado
-     * @param int $emprendedor_id
-     * @return int Devuelve el ID del horario creado asociado a un emprendimiento.
-     * @throws \Exception Si ocurre un error al persistir los datos en el sistema.
-     */
-    public static function crearHorario($dia, $hora_apertura, $hora_cierre, $participa_feria, $cerrado, $emprendedor_id)
-    {
-        $horario =  Horario::create([
-
-            'dia' => $dia,
-            'hora_apertura' => $hora_apertura,
-            'hora_cierre' => $hora_cierre,
-            'participa_feria' => $participa_feria,
-            'cerrado' => $cerrado,
-            'emprendedor_id' => $emprendedor_id,
-
-        ]);
-
-
-        return $horario->id;
-    }
-
-
 
     /**
      * Visualizar horarios:

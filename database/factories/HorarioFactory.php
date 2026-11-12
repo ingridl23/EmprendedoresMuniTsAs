@@ -8,16 +8,16 @@ class HorarioFactory extends Factory
 {
     public function definition()
     {
-        $horaApertura = $this->faker->time('H:i');
-        $horaCierre = $this->faker->time('H:i');
+        $horaApertura = fake()->time('H:i');
+        $horaCierre = fake()->time('H:i');
 
         // Nos aseguramos que la hora de cierre sea después
         while (strtotime($horaCierre) <= strtotime($horaApertura)) {
-            $horaCierre = $this->faker->time('H:i');
+            $horaCierre = fake()->time('H:i');
         }
 
         return [
-            'dia' => $this->faker->randomElement([
+            'dia' => fake()->randomElement([
                 'Lunes',
                 'Martes',
                 'Miercoles',
@@ -27,8 +27,8 @@ class HorarioFactory extends Factory
                 'Domingo'
             ]),
 
-            'participa_feria' => $this->faker->boolean(),
-            'cerrado' => $this->faker->boolean(),
+            'participa_feria' => fake()->boolean(),
+            'cerrado' => fake()->boolean(),
 
             'created_at' => now(),
             'updated_at' => now(),

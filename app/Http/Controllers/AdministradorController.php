@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\validacionEmprendimiento;
-use App\Http\Requests\validacionEditarEmprendimiento;
-use App\Http\Requests\validacionNoticia;
-use App\Http\Requests\validacionEditarNoticia;
+use App\Http\Requests\ValidacionEmprendimiento;
+use App\Http\Requests\ValidacionEditarEmprendimiento;
+use App\Http\Requests\ValidacionNoticia;
+use App\Http\Requests\ValidacionEditarNoticia;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -21,12 +21,12 @@ use App\Models\Imagenes;
 use App\Models\Categoria;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-use App\constants;
+use App\Constants;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\Auth;
 
 /**
- * @class administradorController
+ * @class AdministradorController
  *
  * @brief Controlador para la gestión de emprendimientos y noticias por parte del rol administrador.
  *
@@ -36,7 +36,7 @@ use Illuminate\Support\Facades\Auth;
  * @package App\Http\Controllers
  */
 
-class administradorController extends Controller
+class AdministradorController extends Controller
 {
     /**
      * Constructor del controlador.
@@ -147,11 +147,11 @@ class administradorController extends Controller
      *  Una vez realizadas las validaciones, los datos del formulario de proveniente del formulario del usuario administrador, se deben persistir a la base de datos,asociando tambien redes sociales,
      *   direccion, horarios e imagenes.
      *
-     * @param  validacionEmprendimiento $request Datos validados del emprendimiento.
+     * @param  ValidacionEmprendimiento $request Datos validados del emprendimiento.
      * @return \Illuminate\Http\RedirectResponse Redirige al listado de emprendedores.
      * @throws \Exception Si ocurre un error al persistir los datos en el sistema.
      */
-    public function crearEmprendimiento(validacionEmprendimiento $request)
+    public function crearEmprendimiento(ValidacionEmprendimiento $request)
     {
 
         $data = $request->validated();
@@ -245,7 +245,7 @@ class administradorController extends Controller
 
     public function showFormEditarEmprendimiento($id)
     {
-        if (is_numeric($id) && $id > constants::VALORMIN) {
+        if (is_numeric($id) && $id > Constants::VALORMIN) {
             $emprendimiento = Emprendedor::showEmprendimientoId($id);
             if ($emprendimiento != null) {
                 $emprendimiento->redes->instagram = $this->obtenerRedes($emprendimiento->redes->instagram);
@@ -273,16 +273,17 @@ class administradorController extends Controller
     /**
      * Obtener el nombre de usuario desde la URL de una red social:
      *
-     * @param string $redes URL completa de la red social.
+     * @param string|null $redes URL completa de la red social.
      *
-     * @return string Nombre de usuario extraído de la URL.
+     * @return string|null Nombre de usuario extraído de la URL, o null si no hay red cargada.
      */
     public function obtenerRedes($redes)
     {
+        if ($redes === null) {
+            return null;
+        }
         $redes = rtrim($redes, '/'); //Elimina todos los caracteres "/" que se encuentren al final
-        $posicion = strrpos($redes, '/'); // posición del último '/'
-        $usuarioNombre = substr($redes, $posicion + 1); // obtiene "El nombre del usuario en redes"
-        return $usuarioNombre;
+        return Str::afterLast($redes, '/'); // lo que sigue al último '/'; si no hay '/', el texto completo
     }
 
     /**
@@ -312,7 +313,7 @@ class administradorController extends Controller
                 'status' => 'error',
             ], 400);
         };
-        $emprendimiento = Emprendedor::find($id);
+        $emprendimiento = Emprendedor::findOrFail($id);
         $imagenesBD = Imagenes::where('emprendedor_id', $emprendimiento->id)->get();
         $imagenesRequest = $request->file("imagenes");
         $totalImagenesDB = count($imagenesBD);
@@ -351,7 +352,7 @@ class administradorController extends Controller
                 }
             } else {
                 return response()->json([
-                    'redirect' => "/noticias/formEditarNoticia/{$id}",
+                    'redirect' => "/emprendedores/formEditarEmprendimiento/{$id}",
                     'message' => [
                         'titulo' => '¡Error!',
                         'detalle' => 'Ha excedido la cantidad de imagenes permitidas.',
@@ -379,19 +380,17 @@ class administradorController extends Controller
      * Se obtienen los datos del formulario para el emprendimiento seleccionado (redes, direccion, horarios, informacion) y es persistido en el sistema.
      *
      * @param int $id ID perteneciente al emprendedor a modificar
-     * @param validacionEditarEmprendimiento $request Los nuevos datos del emprendimiento
+     * @param ValidacionEditarEmprendimiento $request Los nuevos datos del emprendimiento
      *
      * @return RedirectResponse Redirige al administrador a la página principal de emprendedores
      * @throws \Exception Si ocurre un error al persistir datos.
      */
-    public function editarEmprendimiento($id, validacionEditarEmprendimiento $request)
+    public function editarEmprendimiento($id, ValidacionEditarEmprendimiento $request)
     {
         $emprendimiento = Emprendedor::find($id);
         if ($emprendimiento != null) {
             $horarios = Horario::obtenerHorarios($id);
             $redes = Redes::find($emprendimiento->redes_id);
-            $redes->instagram = $this->obtenerRedes($redes->instagram);
-            $redes->facebook = $this->obtenerRedes($redes->facebook);
             $direccion = Direccion::find($emprendimiento->direccion_id);
             if ($redes != null) {
                 $redes->instagram = $request->input('instagram');
@@ -565,12 +564,12 @@ class administradorController extends Controller
     /**
      * Dar alta de una publicacion:
      *
-     * @param validacionNoticia $request Datos de la nueva publicacion
+     * @param ValidacionNoticia $request Datos de la nueva publicacion
      *
      * @return RedirectResponse Redirige al usuario administrador a la homepage de noticias.
      *  @throws \Exception Si ocurre un error al persistir datos.
      */
-    public function createNoticia(validacionNoticia $request)
+    public function createNoticia(ValidacionNoticia $request)
     {
         if ($request->hasFile('imagen')) {
             try {
@@ -595,8 +594,6 @@ class administradorController extends Controller
             ];
             return redirect('/noticias')->with('error', $mensajes);
         }
-        //nl2br Salto de linea
-        $descripcion = nl2br($request->descripcion);
         $creado = Noticias::createNoticia($request, $path, $imagen_public_id);
         if ($creado && $creado != null) {
             $mensajes = [
@@ -624,7 +621,7 @@ class administradorController extends Controller
      */
     public function showFormEditNoticia($id)
     {
-        if (is_numeric($id) && $id > constants::VALORMIN) {
+        if (is_numeric($id) && $id > Constants::VALORMIN) {
             $categorias = $this->obtenerCategorias();
             $noticia = Noticias::showNoticiasId($id);
             if ($noticia != null) {
@@ -655,7 +652,7 @@ class administradorController extends Controller
      *
      * @return JsonResponse Envio de estado de la respuesta del fetch
      */
-    protected function editarImgsNoticias($id, Request $request)
+    public function editarImgsNoticias($id, Request $request)
     {
         $validator = Validator::make($request->all(), [
             'imagen' => 'image|mimes:jpeg,jpg,png,webp|max:2048',
@@ -671,7 +668,7 @@ class administradorController extends Controller
             ], 400);
         };
 
-        $noticia = Noticias::find($id);
+        $noticia = Noticias::findOrFail($id);
         $imagenRequest = $request->file("imagen");
         $formPublicId = $request->input("public_id");
         if ($imagenRequest != null) {
@@ -707,12 +704,12 @@ class administradorController extends Controller
      * Modificacion de una publicacion:
      *
      * @param int $id ID unico de identificacion de la publicacion seleccionada.
-     * @param validacionEditarNoticia $request Datos recibidos para persistir de la publicacion seleccionada.
+     * @param ValidacionEditarNoticia $request Datos recibidos para persistir de la publicacion seleccionada.
      *
      * @return RedirectResponse Redirige al usuario administrador hacia la homepage  de noticias.
      *  @throws \Exception Si ocurre un error al persistir datos.
      */
-    protected function editNoticia($id, validacionEditarNoticia $request)
+    public function editNoticia($id, ValidacionEditarNoticia $request)
     {
         $noticia = Noticias::find($id);
         if ($noticia != null) {
@@ -745,7 +742,7 @@ class administradorController extends Controller
      * @return RedirectResponse Redirige al usuario administrador a la homepage de noticias.
      *  @throws \Exception Si ocurre un error al persistir datos.
      */
-    protected function deleteNoticia($id)
+    public function deleteNoticia($id)
     {
         $noticia = Noticias::find($id);
         if ($noticia != null) {

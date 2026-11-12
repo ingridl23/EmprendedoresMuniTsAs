@@ -307,6 +307,7 @@
     @include('emprendedor.footer')
 
     <script src="{{ asset('js/scripts.js') }} "></script>
+    <script src="{{ asset('js/botonesConEnlace.js') }}?v={{ filemtime(public_path('js/botonesConEnlace.js')) }}"></script>
     <script src="{{ asset('js/scripts2.js') }}"></script>
     <script src="{{ asset('js/scriptsnavlogin.js') }}"></script>
     <script src="{{ asset('js/navbar.js') }}"></script>

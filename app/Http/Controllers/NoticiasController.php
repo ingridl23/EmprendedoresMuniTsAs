@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\constants;
+use App\Constants;
 use App\Models\Noticias;
 
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Auth;
 
 /**
- * @class noticiasController
+ * @class NoticiasController
  *
  * @brief Controlador para la gestión y visualizacion de publicaciones del sistema.
  *
@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
  *
  * @package App\Http\Controllers
  */
-class noticiasController extends Controller
+class NoticiasController extends Controller
 {
 
     /**
@@ -44,7 +44,7 @@ class noticiasController extends Controller
      */
     public function showNoticia($id)
     {
-        if (is_numeric($id) && $id > constants::VALORMIN) {
+        if (is_numeric($id) && $id > Constants::VALORMIN) {
             $noticia = Noticias::showNoticiasId($id);
             if ($noticia != null) {
                 return view("layouts.noticia", compact('noticia'));
@@ -126,15 +126,5 @@ class noticiasController extends Controller
             // ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
             ->get();
         return response()->json($noticias);
-    }
-
-    /**
-     * Dar de alta una publicacion en el sistema:
-     *  Se Validan los datos ingresados desde el formulario de busqueda y su persistencia en el sistema segun la logica de negocio.
-     * @return \Illuminate\Contracts\View\View Seccion de alta de publicaciones del sistema.
-     **/
-    public function showFormCrearNoticia()
-    {
-        return view('administradores.noticias.formNuevaNoticia');
     }
 }
