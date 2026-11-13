@@ -324,16 +324,16 @@
                             </div>
 
                             <!-- Controles del carrusel -->
-                            <a class="carousel-control-prev" href="#carousel-{{ $loop->index + 1 }}" role="button"
-                                data-slide="prev">
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carousel-{{ $categoria }}" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Anterior</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carousel-{{ $loop->index + 1 }}" role="button"
-                                data-slide="next">
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carousel-{{ $categoria }}" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Siguiente</span>
-                            </a>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -397,11 +397,6 @@
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!--Carrusel-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
