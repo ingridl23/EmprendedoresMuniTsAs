@@ -22,7 +22,8 @@ use App\Models\Categoria;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\Constants;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use App\Services\AlmacenImagenes;
+//use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -198,15 +199,20 @@ class AdministradorController extends Controller
         if ($request->hasFile('imagenes')) {
             foreach ($request->file('imagenes') as $imagen) {
                 try {
-                    $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
-                        'folder' => 'emprendedores',
-                        'quality' => '100'
-                    ]);
-                    $emprendimiento->imagenes()->create([
-                        'url' => $uploadedFileUrl->getSecurePath(),
-                        'public_id' => $uploadedFileUrl->getPublicId(),
-                    ]);
-                } catch (\Exception $e) {
+
+                 //   $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
+                   //     'folder' => 'emprendedores',
+                  //      'quality' => '100'
+                    //]);
+                  //  $emprendimiento->imagenes()->create([
+                  //      'url' => $uploadedFileUrl->getSecurePath(),
+                 //       'public_id' => $uploadedFileUrl->getPublicId(),
+                  //  ]);
+
+                 $emprendimiento->imagenes()->create(AlmacenImagenes::guardar($imagen, 'emprendedores'));
+
+
+                       } catch (\Exception $e) {
                     $mensajes = [
                         'titulo' => '¡Error!',
                         'detalle' => 'Ha sucedido un error en la carga de las imagenes, intente nuevamente.'
@@ -326,7 +332,8 @@ class AdministradorController extends Controller
             foreach ($imagenesBD as $imagen) {
                 if (!in_array($imagen->id, $idsConservar)) {
                     try {
-                        Cloudinary::uploadApi()->destroy($imagen->public_id);
+                      //  Cloudinary::uploadApi()->destroy($imagen->public_id);
+                       AlmacenImagenes::eliminar($imagen->public_id);
                         Imagenes::eliminarImagen($imagen);
                         $totalImagenesDB = $totalImagenesDB - 1;
                     } catch (\Exception $e) {
@@ -339,13 +346,7 @@ class AdministradorController extends Controller
             if (count($imagenesBD) <= 5 && (count($imagenesRequest) + $totalImagenesDB) <= 5) {
                 foreach ($imagenesRequest as $imagen) {
                     try {
-                        $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
-                            'folder' => 'emprendedores'
-                        ]);
-                        $emprendimiento->imagenes()->create([
-                            'url' => $uploadedFileUrl->getSecurePath(),
-                            'public_id' => $uploadedFileUrl->getPublicId(),
-                        ]);
+                        $emprendimiento->imagenes()->create(AlmacenImagenes::guardar($imagen, 'emprendedores'));
                     } catch (\Exception $e) {
                         return response()->json(['error' => "No se ha podido cargar las imagenes"], 400);
                     }
@@ -485,7 +486,8 @@ class AdministradorController extends Controller
             if ($redes != null && $direccion != null) {
                 foreach ($imagenes as $imagen) {
                     try {
-                        Cloudinary::uploadApi()->destroy($imagen->public_id);
+                     //   Cloudinary::uploadApi()->destroy($imagen->public_id);
+                      AlmacenImagenes::eliminar($imagen->public_id);
                         Imagenes::eliminarImagen($imagen);
                     } catch (\Exception $e) {
                         $mensajes = [
@@ -574,12 +576,17 @@ class AdministradorController extends Controller
         if ($request->hasFile('imagen')) {
             try {
                 $imagen = $request->file('imagen');
-                $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
+            /*   $uploadedFileUrl = Cloudinary::upload($imagen->getRealPath(), [
                     'quality' => 'auto:best',
                     'folder' => 'noticias'
                 ]);
                 $path = $uploadedFileUrl->getSecurePath();
-                $imagen_public_id =  $uploadedFileUrl->getPublicId();
+                $imagen_public_id =  $uploadedFileUrl->getPublicId();*/
+
+                 $guardada = AlmacenImagenes::guardar($imagen, 'noticias');
+                  $path = $guardada['url'];
+                   $imagen_public_id = $guardada['public_id'];
+
             } catch (\Exception $e) {
                 $mensajes = [
                     'titulo' => '¡Error!',
@@ -674,12 +681,20 @@ class AdministradorController extends Controller
         if ($imagenRequest != null) {
             if ($noticia->imagen_public_id != $formPublicId) {
                 try {
-                    Cloudinary::uploadApi()->destroy($noticia->imagen_public_id);
+              /*      Cloudinary::uploadApi()->destroy($noticia->imagen_public_id);
                     $uploadedFileUrl = Cloudinary::upload($imagenRequest->getRealPath(), [
                         'folder' => 'noticias'
                     ]);
                     $path = $uploadedFileUrl->getSecurePath();
-                    $imagen_public_id =  $uploadedFileUrl->getPublicId();
+                    $imagen_public_id =  $uploadedFileUrl->getPublicId();*/
+
+                      $imagenAnterior = $noticia->imagen_public_id;
+                      $guardada = AlmacenImagenes::guardar($imagenRequest, 'noticias');
+                      $path = $guardada['url'];
+                      $imagen_public_id = $guardada['public_id'];
+                      AlmacenImagenes::eliminar($imagenAnterior);
+
+
                     $noticiaEditImg = Noticias::editarImagen($noticia, $path, $imagen_public_id);
                     return response()->json(['OK' => "La imagen es la misma"], 200);
                 } catch (\Exception $e) {
@@ -747,7 +762,8 @@ class AdministradorController extends Controller
         $noticia = Noticias::find($id);
         if ($noticia != null) {
             try {
-                Cloudinary::uploadApi()->destroy($noticia->imagen_public_id);
+              //  Cloudinary::uploadApi()->destroy($noticia->imagen_public_id);
+                  AlmacenImagenes::eliminar($noticia->imagen_public_id);
             } catch (\Exception $e) {
                 $mensajes = [
                     'titulo' => '¡Error!',

@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Horario;
 use App\Models\Direccion;
 use App\Models\Redes;
-use CloudinaryLabs\CloudinaryLaravel\CloudinaryEngine;
 use Mockery;
 use App\Models\Imagenes;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -88,18 +87,11 @@ class EmprendedoresTest extends TestCase
         $admin = $this->crearUsuario('crear emprendimiento');
         $categoria = Categoria::factory()->create();
         // Simular imagen
-        Storage::fake('public');
+       // Storage::fake('public');
+          Storage::fake('imagenes');
         $imagenFake = UploadedFile::fake()->image('foto.jpg');
 
-        // Mockear Cloudinary
-        //técnica que se usa en programación, especialmente en tests, 
-        // para crear versiones simuladas o falsas de objetos, funciones o servicios.
-        Cloudinary::shouldReceive('upload')
-            ->andReturn(Mockery::mock(CloudinaryEngine::class, [
-                'getSecurePath' => 'https://fake.cloudinary.com/emprendedor.jpg',
-                'getPublicId' => 'emprendedor_123',
-        ]));
-        
+
         //Simular request POST con datos válidos
         $response = $this->actingAs($admin)->post('/crearEmprendimiento', [
             'nombre' => 'Mi emprendimiento',
@@ -125,6 +117,8 @@ class EmprendedoresTest extends TestCase
             ],
             // imagenes
             'imagenes' => [$imagenFake],
+
+
         ]);
 
         $response->assertRedirect('/emprendedores');
@@ -142,12 +136,17 @@ class EmprendedoresTest extends TestCase
             'hora_apertura' => '08:00',
             'hora_cierre' => '18:00',
         ]);
+
+         $imagen = Imagenes::first();
+        $this->assertStringStartsWith('/imagenes/emprendedores/', $imagen->url);
+        $this->assertStringStartsWith('local:emprendedores/', $imagen->public_id);
+        Storage::disk('imagenes')->assertExists(substr($imagen->public_id, strlen('local:')));
     }
 
 
     public function test_eliminar_emprendimiento(){
         $admin = $this->crearUsuario('eliminar emprendimiento');
-        
+
         $categoria = Categoria::factory()->create();
         $redes = Redes::factory()->create();
         $direccion = Direccion::factory()->create();
@@ -176,7 +175,7 @@ class EmprendedoresTest extends TestCase
         $sessionData = session('success');
         $this->assertEquals('¡Eliminado!', $sessionData['titulo']);
         $this->assertEquals('Emprendimiento eliminado con éxito.', $sessionData['detalle']);
-    
+
 
         // Confirmar que se eliminaron de la base de datos
         $this->assertDatabaseMissing('emprendedor', ['id' => $emprendimiento->id]);
@@ -189,6 +188,39 @@ class EmprendedoresTest extends TestCase
             $this->assertDatabaseMissing('horario', ['id' => $horario->id]);
         }
     }
+
+
+ public function test_eliminar_emprendimiento_con_imagen_local_borra_el_archivo(){
+        $admin = $this->crearUsuario('eliminar emprendimiento');
+        Storage::fake('imagenes');
+        Storage::disk('imagenes')->put('emprendedores/foto.jpg', 'contenido');
+
+        $categoria = Categoria::factory()->create();
+        $redes = Redes::factory()->create();
+        $direccion = Direccion::factory()->create();
+        $emprendimiento = Emprendedor::factory()->create([
+            'categoria_id' => $categoria->id,
+            'redes_id' => $redes->id,
+            'direccion_id' => $direccion->id,
+        ]);
+        Imagenes::factory()->create([
+            'emprendedor_id' => $emprendimiento->id,
+            'url' => '/imagenes/emprendedores/foto.jpg',
+            'public_id' => 'local:emprendedores/foto.jpg',
+        ]);
+        Horario::factory()->create(['emprendedor_id' => $emprendimiento->id]);
+
+        // Una imagen local no tiene que tocar Cloudinary
+        Cloudinary::shouldReceive('uploadApi')->never();
+
+        $response = $this->actingAs($admin)->delete("/emprendedor/{$emprendimiento->id}");
+
+        $response->assertRedirect('/emprendedores');
+        $response->assertSessionHas('success');
+        Storage::disk('imagenes')->assertMissing('emprendedores/foto.jpg');
+    }
+
+
 
 
     public function test_eliminar_emprendimiento_inexistente(){
@@ -236,13 +268,12 @@ class EmprendedoresTest extends TestCase
             ['id' => $imagenesExistentes[0]->id]
         ]);
 
-        $mockUploadResponse = \Mockery::mock(CloudinaryEngine::class);
-        $mockUploadResponse->shouldReceive('getSecurePath')->andReturn('http://fakeurl.com/image.jpg');
-        $mockUploadResponse->shouldReceive('getPublicId')->andReturn('public_id_fake');
+
 
         Cloudinary::shouldReceive('uploadApi->destroy')->once()->andReturn(true);
-        Cloudinary::shouldReceive('upload')->once()->andReturn($mockUploadResponse);
 
+
+        Storage::fake('imagenes');
         // Simular archivo subido
         $file = UploadedFile::fake()->image('test.jpg');
 
@@ -252,6 +283,7 @@ class EmprendedoresTest extends TestCase
             'imagenes_conservar' => $imagenesConservar,
         ]);
         $response->assertStatus(200);
+        $this->assertCount(1, Storage::disk('imagenes')->allFiles('emprendedores'));
     }
 
     public function test_acceder_formulario_editar_sin_logueo(){
@@ -312,7 +344,7 @@ class EmprendedoresTest extends TestCase
         $sessionData = session('error');
         $this->assertEquals('¡Error!', $sessionData['titulo']);
         $this->assertEquals('Debe ingresar un número mayor a cero para buscar y editar el emprendimiento.', $sessionData['detalle']);
-    
+
     }
-    
+
 }

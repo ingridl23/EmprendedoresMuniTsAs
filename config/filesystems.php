@@ -40,6 +40,13 @@ return [
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
+
+        ],
+        'imagenes' => [
+            'driver' => 'local',
+            'root' => public_path('imagenes'),
+            'url' => '/imagenes',
+            'visibility' => 'public',
         ],
 
         's3' => [

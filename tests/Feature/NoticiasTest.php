@@ -9,7 +9,6 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
 use App\Models\Noticias;
-use CloudinaryLabs\CloudinaryLaravel\CloudinaryEngine;
 use Mockery;
 use App\Models\Imagenes;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -100,18 +99,11 @@ class NoticiasTest extends TestCase
     public function test_crear_noticia_exitosa(){
         $admin = $this->crearUsuario('crear noticia');
 
-        Storage::fake('public');
+        Storage::fake('imagenes');
         $imagenFake = UploadedFile::fake()->image('foto.jpg');
 
-        // Mockear Cloudinary
-        //técnica que se usa en programación, especialmente en tests, 
-        // para crear versiones simuladas o falsas de objetos, funciones o servicios.
-        Cloudinary::shouldReceive('upload')
-            ->andReturn(Mockery::mock(CloudinaryEngine::class, [
-                'getSecurePath' => 'https://fake.cloudinary.com/noticia.jpg',
-                'getPublicId' => 'noticia_123',
-        ]));
-        
+
+
         //Simular request POST con datos válidos
         $response = $this->actingAs($admin)->post('/noticias/cargarNuevaNoticia', [
             'titulo' => 'Mi noticia',
@@ -127,12 +119,17 @@ class NoticiasTest extends TestCase
         $sessionData = session('success');
         $this->assertEquals('¡Creado!', $sessionData['titulo']);
         $this->assertEquals('Noticia creada con éxito.', $sessionData['detalle']);
-    
+
 
         $this->assertDatabaseHas('noticias', [
             'titulo' => 'Mi noticia',
             'descripcion' => 'Descripción de la noticia',
         ]);
+
+           $noticia = Noticias::where('titulo', 'Mi noticia')->first();
+        $this->assertStringStartsWith('/imagenes/noticias/', $noticia->imagen);
+        Storage::disk('imagenes')->assertExists(substr($noticia->imagen_public_id, strlen('local:')));
+
     }
 
 
@@ -199,7 +196,7 @@ class NoticiasTest extends TestCase
         ]);
 
          // Falsificar almacenamiento
-        Storage::fake('public');
+        Storage::fake('imagenes');
         $imagenFake = UploadedFile::fake()->image('nueva.jpg');
 
         // Mockear Cloudinary destroy y upload
@@ -208,12 +205,6 @@ class NoticiasTest extends TestCase
             ->with('old_public_id')
             ->andReturn(['result' => 'ok']);
 
-        Cloudinary::shouldReceive('upload')
-            ->once()
-            ->andReturn(Mockery::mock(CloudinaryEngine::class, [
-                'getSecurePath' => 'https://cloudinary.com/nueva.jpg',
-                'getPublicId' => 'new_public_id',
-            ]));
 
         // Ejecutar el POST al endpoint de edición
         $response = $this->actingAs($admin)->postJson("/noticias/editarImgs/{$noticia->id}", [
@@ -228,11 +219,10 @@ class NoticiasTest extends TestCase
         ]);
 
         // Verificar que se haya actualizado en la base
-        $this->assertDatabaseHas('noticias', [
-            'id' => $noticia->id,
-            'imagen' => 'https://cloudinary.com/nueva.jpg',
-            'imagen_public_id' => 'new_public_id',
-        ]);
+        $noticia->refresh();
+        $this->assertStringStartsWith('/imagenes/noticias/', $noticia->imagen);
+        $this->assertStringStartsWith('local:noticias/', $noticia->imagen_public_id);
+        Storage::disk('imagenes')->assertExists(substr($noticia->imagen_public_id, strlen('local:')));
     }
 
 
@@ -281,7 +271,7 @@ class NoticiasTest extends TestCase
 
     public function test_eliminar_noticia(){
         $admin = $this->crearUsuario('eliminar noticia');
-        
+
         $noticia = Noticias::factory()->create([
             'id' => 1
         ]);
@@ -301,6 +291,26 @@ class NoticiasTest extends TestCase
         // Confirmar que se eliminaron de la base de datos
         $this->assertDatabaseMissing('noticias', ['id' => $noticia->id]);
     }
+
+  public function test_eliminar_noticia_con_imagen_local_borra_el_archivo(){
+        $admin = $this->crearUsuario('eliminar noticia');
+        Storage::fake('imagenes');
+        Storage::disk('imagenes')->put('noticias/foto.jpg', 'contenido');
+
+        $noticia = Noticias::factory()->create([
+            'imagen' => '/imagenes/noticias/foto.jpg',
+            'imagen_public_id' => 'local:noticias/foto.jpg',
+        ]);
+
+        Cloudinary::shouldReceive('uploadApi')->never();
+
+        $response = $this->actingAs($admin)->delete("/noticias/{$noticia->id}");
+
+        $response->assertRedirect('/noticias');
+        $response->assertSessionHas('success');
+        Storage::disk('imagenes')->assertMissing('noticias/foto.jpg');
+    }
+
 
 
     public function test_eliminar_noticia_inexistente(){
@@ -356,7 +366,7 @@ class NoticiasTest extends TestCase
         $response->assertStatus(200);
         $response->assertJsonCount(1);
         $jsonData = $response->json();
-        //Obtiene la fecha de la noticia y la convierte a un formato: YYYY-MM-DD 
+        //Obtiene la fecha de la noticia y la convierte a un formato: YYYY-MM-DD
         //para compararla con la fecha que se estaba buscando
         $createdAt = \Carbon\Carbon::parse($jsonData[0]['created_at'])->toDateString();
         $this->assertEquals($fecha, $createdAt);
